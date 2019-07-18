@@ -6,18 +6,30 @@ use App\Photography_event;
 use Image;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Exception;
+use DB;
+
+
 
 class PhotographyController extends Controller
 {
+	
+	public function index(Request $request)
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+          ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+   
 
     /**
      * Show the form for creating a new resource.
