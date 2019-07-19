@@ -46,7 +46,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Music')
             {
-                return view('createMusician');
+                return view('CreateMusician');
             }
             if(($data1->category)=='Dancing')
             {

@@ -22,3 +22,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category', 'HomeController@category');
 Route::get('/hall', 'HomeController@hall');
 Route::post('/addphotographyer', 'PhotographyController@store');
+Route::post('/addmusician', 'MusicianController@store');
+
+Route::get('/Cake', function () {
+    return view('Cake');
+});
+
+Route::get('/Music', function () {
+    return view('Music');
+});
+
