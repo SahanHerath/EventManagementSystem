@@ -143,7 +143,7 @@
         <div class="row align-items-center">
           <div class="col-md-6">
             <h2 class="text-white">Brighten your career as Photographer</h2>
-            <a href="#" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Now</a>
+            <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Now</a>
           </div>
           <div class="col-md-6">
             <span class="caption">Promote before</span>
@@ -176,8 +176,8 @@
                <br>
                
                <h5>Address :- {{$leve->Address}}</h5>
-                <h5>Contact No. :- {{$leve->ContactNo}}</h5>
-                <h5>Email :-  {{$leve->email}} </h5>
+                <h5>Contact No. :- <a href="#">{{$leve->ContactNo}}</a></h5>
+                <h5>Email :-  <a href="#">{{$leve->email}}</a> </h5>
                 
               <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>
           

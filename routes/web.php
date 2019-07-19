@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/Photographyview', function () {
+    return view('Photographyview');
+});
+
 Route::get('/Photography', 'PhotographyController@index')  ; 
 Auth::routes();
 
