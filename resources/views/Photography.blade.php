@@ -113,11 +113,11 @@
                   <span class="">
                     <span class=""></span>
                   </span>
-                  <img src="images/hero_10.jpg" alt="" class="img-fluid">
+                  <img src="images/photo.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/photo.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
@@ -127,7 +127,7 @@
               <h2 class="mb-5">Description</h2>
             </div>
             <p class="mb-4">You are able to find your photographer or videographer for your special event.We can cover your Wedding, Birth day, Get to Gather, Professional event & party.</p>
-            <video width="600" height="300" controls>
+            <video width="600" height="300" poster="/images/hero_10.jpg" controls>
   <source src="mov_bbb.mp4" type="video/mp4">
   <source src="mov_bbb.ogg" type="video/ogg">
 </video>
@@ -165,8 +165,8 @@
         </div>
         <div class="row no-gutters">
      
-        @foreach($level as $leve) 
-        <h2>  {{$leve->Studio_Name}}</h2><br><br>
+        @foreach($level as $leve)
+        
           <div class="site-block d-lg-flex">
           
 		  <div class="col-md-7 col-lg-4">
@@ -174,17 +174,16 @@
           </div>
                <div class="text">
                <br>
-               
-               <h5>Address :- {{$leve->Address}}</h5>
-                <h5>Contact No. :- <a href="#">{{$leve->ContactNo}}</a></h5>
-                <h5>Email :-  <a href="#">{{$leve->email}}</a> </h5>
+               <h2 > {{$leve->Studio_Name}}</h2>
+               <h5>Address :- <i>{{$leve->Address}}</i></h5>
+                <h5>Contact No. :- <i>{{$leve->ContactNo}}</i></h5>
+                <h5>Email :-  <i>{{$leve->email}}</i> </h5>
                 
               <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>
           
 			  </div>
             </div>
-          
-
+            <br><br><br>
             @endforeach
 			
 			
