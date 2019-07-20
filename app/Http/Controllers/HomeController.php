@@ -62,7 +62,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Decoration')
             {
-                return view('createDecorator');
+                return view('CreateDecorator');
             }
             if(($data1->category)=='Cake_Designers')
             {
