@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2019 at 03:16 PM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Jul 21, 2019 at 11:24 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,8 +47,8 @@ CREATE TABLE `decorators` (
   `pic2` varchar(191) NOT NULL,
   `pic3` varchar(191) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -65,8 +65,8 @@ CREATE TABLE `decorator_events` (
   `Get_Together` varchar(20) NOT NULL,
   `Parties` varchar(20) NOT NULL,
   `Outside_events` varchar(20) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -105,8 +105,8 @@ CREATE TABLE `musicians` (
   `pic2` varchar(191) NOT NULL,
   `pic3` varchar(191) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `Created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -123,8 +123,8 @@ CREATE TABLE `musician_events` (
   `Beach_Party` varchar(20) NOT NULL,
   `Get_Together` varchar(20) NOT NULL,
   `Parties` varchar(20) NOT NULL,
-  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `Created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -163,8 +163,8 @@ CREATE TABLE `photographies` (
   `pic2` varchar(191) NOT NULL,
   `pic3` varchar(191) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -183,8 +183,53 @@ CREATE TABLE `photography_events` (
   `Professional_Events` varchar(20) NOT NULL,
   `Sports` varchar(20) NOT NULL,
   `Trips` varchar(20) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salons`
+--
+
+CREATE TABLE `salons` (
+  `id` int(11) NOT NULL,
+  `Salon_Name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `Groom_Dressing` varchar(20) NOT NULL,
+  `Bride_Dressing` varchar(20) NOT NULL,
+  `Dress_Making` varchar(20) NOT NULL,
+  `Jewelry` varchar(20) NOT NULL,
+  `Makeup` varchar(20) NOT NULL,
+  `Bridesman` varchar(20) NOT NULL,
+  `Bridesmaid` varchar(20) NOT NULL,
+  `Profile_Pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salon_events`
+--
+
+CREATE TABLE `salon_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `wedding` varchar(20) NOT NULL,
+  `parties` varchar(20) NOT NULL,
+  `fashion_show` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -259,6 +304,18 @@ ALTER TABLE `photography_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `salons`
+--
+ALTER TABLE `salons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `salon_events`
+--
+ALTER TABLE `salon_events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -309,6 +366,18 @@ ALTER TABLE `photographies`
 -- AUTO_INCREMENT for table `photography_events`
 --
 ALTER TABLE `photography_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `salons`
+--
+ALTER TABLE `salons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `salon_events`
+--
+ALTER TABLE `salon_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
