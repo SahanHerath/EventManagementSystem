@@ -57,29 +57,12 @@
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li class="active">
-                        <a href="Welcome.html">Home</a>
+                        <a href="Welcome">Home</a>
                       </li>
-                      <li class="has-children">
-                        <a href="rooms.html">Rooms</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="rooms.html">Standard Room</a></li>
-                          <li><a href="rooms.html">Family Room</a></li>
-                          <li><a href="rooms.html">Single Room</a></li>
-                          <li class="has-children">
-                            <a href="rooms.html">Rooms</a>
-                            <ul class="dropdown">
-                              <li><a href="rooms.html">America</a></li>
-                              <li><a href="rooms.html">Europe</a></li>
-                              <li><a href="rooms.html">Asia</a></li>
-                              <li><a href="rooms.html">Africa</a></li>
-                              
-                            </ul>
-                          </li>
+                      <li><a href="Decorator">Decorator</a></li>
 
-                        </ul>
-                      </li>
                       <li><a href="Music.html">DJs/Music</a></li>
-                      <li><a href="Photography.html">Photography</a></li>
+                      <li><a href="Photography">Photography</a></li>
                       <li><a href="Cake_Designers.html">Cake Designers</a></li>
                     </ul>
                   </div>
