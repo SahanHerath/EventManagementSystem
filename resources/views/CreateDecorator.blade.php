@@ -286,6 +286,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="pic4" class="col-md-4 col-form-label text-md-right">Picture 4</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" required>
+
+                                    @if ($errors->has('pic4'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('pic4') }}</strong>
+                                    </span>
+                                    @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -102,6 +102,18 @@ class salonController extends Controller
              $salon->pic3=$filename;
              
          }
+
+         if($request->hasFile('pic4'))
+          {
+             $pic4=$request->file('pic4');
+           
+             $filename=time().'.'.$pic4->getClientOriginalExtension();
+             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/salon/'. $filename));
+
+             
+             $salon->pic4=$filename;
+             
+         }
              $salon->save();
 
 

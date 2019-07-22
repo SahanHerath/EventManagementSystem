@@ -237,6 +237,12 @@
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
                                     <img src="uploads/decoration/{{$data1->pic3}}" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="uploads/decoration/{{$data1->pic4}}" alt="IMage" class="img-fluid">
                                 </div>
                             </div>
                         </div>
