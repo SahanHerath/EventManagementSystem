@@ -57,8 +57,8 @@
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li><a href="/">Home</a></li>
-                      <li class="active"><a href="index.html">Decorations</a></li>
-                      <li><a href="#">DJs/Music</a></li>
+                      <li class="active"><a href="Decorator">Decorations</a></li>
+                      <li><a href="Music">DJs/Music</a></li>
                       <li><a href="Photography">Photography</a></li>
                       <li><a href="#">Cake Designers</a></li>
                     </ul>
@@ -160,7 +160,7 @@
                 <h2 >{{$deco->Team_Name}}</h2>
                 <h5>Address :- <i>{{$deco->Address}}</i></h5>
                 <h5>Contact No. :- <i>{{$deco->Contact_No}}</i></h5> 
-                <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+                <p><a href="{{URL('/DecoratorView'.$deco->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
               </div>
             </div>
             <br><br>

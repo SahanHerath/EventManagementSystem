@@ -20,11 +20,11 @@ class decorationController extends Controller
     {
         //
         $decos = DB::table('decorators')
-        ->join('users','users.id','=','decorators.user_id')
-  ->get();
+                ->join('users','users.id','=','decorators.user_id')
+                ->get();
 
 
-return view('Decorator', compact('decos'));
+        return view('Decorator', compact('decos'));
     }
 
     /**
@@ -168,5 +168,17 @@ return view('Decorator', compact('decos'));
     public function destroy($id)
     {
         //
+    }
+
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->get();
+
+                return view('DecoratorView',compact('data'));
     }
 }

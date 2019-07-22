@@ -74,9 +74,8 @@
         <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_8.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam vitae sed cum mollitia itaque soluta laboriosam eaque sit ratione, aliquid.</p>">
           <a href="#"><img src="images/nature_small_8.jpg" alt="IMage" class="img-fluid"></a>
         </div>
-        </div>
-
       </div>
+    </div>
     </div>
   </div>
 

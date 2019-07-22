@@ -35,8 +35,7 @@ Route::get('/Cake', function () {
     return view('Cake');
 });
 
-Route::get('/Music', function () {
-    return view('Music');
-});
+Route::get('/Music', 'MusicianController@index')  ;
 
 Route::get('/Decorator', 'DecorationController@index')  ;
+Route::get('/DecoratorView{id}','DecorationController@viewProfile');
