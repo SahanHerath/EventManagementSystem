@@ -56,10 +56,10 @@
                     
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li><a href="Welcome">Home</a></li>
+                      <li><a href="/">Home</a></li>
                       <li class="active"><a href="index.html">Decorations</a></li>
                       <li><a href="#">DJs/Music</a></li>
-                      <li><a href="#">Photography</a></li>
+                      <li><a href="Photography">Photography</a></li>
                       <li><a href="#">Cake Designers</a></li>
                     </ul>
                   </div>
@@ -191,6 +191,107 @@
         
       </div>
     </div>
+
+    
+    
+
+
+    
+
+    <div class="site-section block-14 bg-light">
+
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2>What People Say</h2>
+          </div>
+        </div>
+
+        <div class="nonloop-block-14 owl-carousel">
+          
+          <div class="p-4">
+            <div class="d-flex block-testimony">
+              <div class="person mr-3">
+                <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded">
+              </div>
+              <div>
+                <h2 class="h5">Katie Johnson</h2>
+                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="d-flex block-testimony">
+              <div class="person mr-3">
+                <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded">
+              </div>
+              <div>
+                <h2 class="h5">Jane Mars</h2>
+                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="d-flex block-testimony">
+              <div class="person mr-3">
+                <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded">
+              </div>
+              <div>
+                <h2 class="h5">Shane Holmes</h2>
+                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="d-flex block-testimony">
+              <div class="person mr-3">
+                <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded">
+              </div>
+              <div>
+                <h2 class="h5">Mark Johnson</h2>
+                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+    </div>
+    
+
+    <!-- <div class="py-5 quick-contact-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div>
+              <span class="icon-room text-white h2 d-block"></span>
+              <h2>Location</h2>
+              <p class="mb-0">New York - 2398 <br>  10 Hadson Carl Street</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div>
+              <span class="icon-clock-o text-white h2 d-block"></span>
+              <h2>Service Times</h2>
+              <p class="mb-0">Wednesdays at 6:30PM - 7:30PM <br>
+              Fridays at Sunset - 7:30PM <br>
+              Saturdays at 8:00AM - Sunset</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div>
+              <span class="icon-comments text-white h2 d-block"></span>
+              <h2>Get In Touch</h2>
+              <p class="mb-0">Email: info@yoursite.com <br>
+              Phone: (123) 3240-345-9348 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
     
     <footer class="site-footer">
