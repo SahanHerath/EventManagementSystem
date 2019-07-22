@@ -57,11 +57,11 @@
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li class="active">
-                        <a href="Welcome">Home</a>
+                        <a href="/">Home</a>
                       </li>
                       <li><a href="Decorator">Decorator</a></li>
 
-                      <li><a href="Music.html">DJs/Music</a></li>
+                      <li><a href="Music">DJs/Music</a></li>
                       <li><a href="Photography">Photography</a></li>
                       <li><a href="Cake_Designers.html">Cake Designers</a></li>
                     </ul>
