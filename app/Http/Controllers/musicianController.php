@@ -7,6 +7,7 @@ use App\Musician;
 use Auth;
 use App\Musician_event;
 use Image;
+use DB;
 
 class musicianController extends Controller
 {
@@ -18,6 +19,12 @@ class musicianController extends Controller
     public function index()
     {
         //
+        $musics = DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->get();
+
+
+        return view('Music', compact('musics'));
     }
 
     /**
