@@ -38,3 +38,5 @@ Route::get('/Cake', function () {
 Route::get('/Music', function () {
     return view('Music');
 });
+
+Route::get('/Decorator', 'DecorationController@index')  ;
