@@ -28,7 +28,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -211,40 +211,39 @@
         <!--================End Feature Area =================-->
         
         <!--================Home Gallery Area =================-->
-        <section class="home_gallery_area p_120">
         
-          
-        <div class="row">
-          <div class="media-with-text p-md-5">
-            <div class="img-border-sm mb-4">
-              <a href="#" class="popup-vimeo image-play">
-                <img src="uploads/decoration/{{$data1->pic1}}" hight="300" width="400" alt="" class="img-fluid">
-              </a>
-            </div>
-            <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-            <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="#">Admin</a></span>
-             </div>
-        
-          <div class="media-with-text p-md-4">
-            <div class="img-border-sm mb-4">
-              <a href="#" class="popup-vimeo image-play">
-                <img src="uploads/decoration/{{$data1->pic2}}" hight="300" width="400" alt="" class="img-fluid">
-              </a>
-            </div>
-            <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-            <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="#">Admin</a></span>
-             </div>
-        
-          <div class="media-with-text p-md-4">
-            <div class="img-border-sm mb-4">
-              <a href="#" class="popup-vimeo image-play">
-                <img src="uploads/decoration/{{$data1->pic3}}" hight="300" width="400" alt="" class="img-fluid">
-              </a>
-            </div>
-            <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
-            <span class="mb-3 d-block post-date">Dec 20th, 2018 &bullet; By <a href="">Admin</a></span>
-            </div>
-        </div>
+        <section class="welcome_area p_120">
+				<div class="colorlib-narrow-content">
+                    
+					<div class="container">
+                    <div class="main_title">
+                        <h2>Events we recently covered</h2>
+                    </div>
+					    <div class="row">
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="uploads/decoration/{{$data1->pic1}}" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+                                <div class="project" >
+                                    <img src="uploads/decoration/{{$data1->pic2}}" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="uploads/decoration/{{$data1->pic3}}" alt="IMage" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					
+				</div>
+			
         </section>
         @endforeach
         <!--================End Home Gallery Area =================-->

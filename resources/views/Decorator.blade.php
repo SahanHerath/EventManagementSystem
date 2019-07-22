@@ -96,12 +96,12 @@
         </div>
       </div> 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/lighting.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Relaxing Room</h1>
-              <h2 class="caption">Your Room, Your Stay</h2>
+              <h1 class="mb-2">Colorfull</h1>
+              <h2 class="caption">brightn as sunshine</h2>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@
             
               <div class="img-border">
                 <a class="popup-vimeo image-play">
-                  <img src="images/deco.jpg" alt="" class="img-fluid">
+                  <img src="images/light.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
@@ -133,8 +133,7 @@
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
             <p class="mb-4">You are able to find your decorators from here.there are many decorators to colorful your events. </p>
-            <p><a href="https://vimeo.com/28959265" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p>
-          </div>
+            </div>
         </div>
       </div>
     </div>
