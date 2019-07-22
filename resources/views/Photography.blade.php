@@ -168,23 +168,21 @@
         @foreach($level as $leve)
         
           <div class="site-block d-lg-flex">
-          
-		  <div class="col-md-7 col-lg-4">
-            <a href="uploads/photography/{{$leve->main_pic}}" class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image" class="img-fluid"></a>
-          </div>
-               <div class="text">
-               <br>
-               <h2 > {{$leve->Studio_Name}}</h2>
-               <h5>Address :- <i>{{$leve->Address}}</i></h5>
-                <h5>Contact No. :- <i>{{$leve->ContactNo}}</i></h5>
-                <h5>Email :-  <i>{{$leve->email}}</i> </h5>
-                
-              <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>
-          
-			  </div>
+            <div class="col-md-7 col-lg-4">
+              <a href="uploads/photography/{{$leve->main_pic}}" class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image" class="img-fluid"></a>
             </div>
-            <br><br><br>
-            @endforeach
+            <div class="text">
+              <br>
+              <h2 > {{$leve->Studio_Name}}</h2>
+              <h5>Address :- <i>{{$leve->Address}}</i></h5>
+              <h5>Contact No. :- <i>{{$leve->ContactNo}}</i></h5>
+              <h5>Email :-  <i>{{$leve->email}}</i> </h5>
+                
+              <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+            </div>
+          </div>
+          <br><br><br>
+        @endforeach
 			
 			
         </div>

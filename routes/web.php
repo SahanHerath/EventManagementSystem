@@ -28,6 +28,8 @@ Route::get('/hall', 'HomeController@hall');
 Route::post('/addphotographyer', 'PhotographyController@store');
 Route::post('/addmusician', 'MusicianController@store');
 Route::post('/addDecorator', 'decorationController@store');
+Route::post('/addSalon', 'SalonController@store');
+
 
 Route::get('/Cake', function () {
     return view('Cake');
@@ -36,4 +38,3 @@ Route::get('/Cake', function () {
 Route::get('/Music', function () {
     return view('Music');
 });
-
