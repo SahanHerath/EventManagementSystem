@@ -64,6 +64,8 @@
                       <li><a href="Music">DJs/Music</a></li>
                       <li><a href="Photography">Photography</a></li>
                       <li><a href="Cake_Designers.html">Cake Designers</a></li>
+                      <li><a href="login">Login</a></li>
+                      <li><a href="register">Register</a></li>
                     </ul>
                   </div>
                 </nav>
