@@ -186,4 +186,15 @@ class PhotographyController extends Controller
     {
         //
     }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->get();
+
+                return view('Photographyview',compact('data'));
+    }
 }
