@@ -18,7 +18,7 @@ class PhotographyController extends Controller
 	public function index(Request $request)
     {    $level = DB::table('photographies')
                 ->join('users','users.id','=','photographies.user_id')
-          ->get();
+                ->get();
       
        
        return view('Photography', compact('level'));

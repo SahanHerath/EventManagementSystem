@@ -37,3 +37,5 @@ Route::get('/Music', 'MusicianController@index')  ;
 
 Route::get('/Decorator', 'DecorationController@index')  ;
 Route::get('/DecoratorView{id}','DecorationController@viewProfile');
+
+Route::get('/Bridal', 'salonController@index')  ;

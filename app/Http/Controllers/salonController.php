@@ -7,6 +7,7 @@ use App\Salon;
 use App\Salon_event;
 use Auth;
 use Image;
+use DB;
 
 class salonController extends Controller
 {
@@ -18,6 +19,13 @@ class salonController extends Controller
     public function index()
     {
         //
+        $level = DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->get();
+      
+       
+       return view('Salon', compact('level'));
+
     }
 
     /**
