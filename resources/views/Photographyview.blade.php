@@ -58,18 +58,18 @@
 					<div class="banner_content">
 						<div class="media">
 							<div class="d-flex">
-								<img src="uploads/photography/{{$data1->Main_Pic}}" width="500" hight="800" alt="">
+								<img src="uploads/photography/{{$data1->main_pic}}" width="500" hight="800" alt="">
 							</div>
                             
 							<div class="media-body">
 								<div class="personal_text">
 									<h6>Hello Everybody, we are</h6>
-									<h3>{{$data1->Team_Name}}</h3>
+									<h3>{{$data1->Studio_Name}}</h3>
 									<h5>Contact Person :-{{$data1->name }}</h5>
                                     <br>
 									<ul class="list basic_info">
 										<li><a href="#"><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
-										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->Contact_No}}</a></li>
+										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
 										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
 									</ul>
@@ -125,6 +125,10 @@
                                 Wedding Card
                             @endif
                             <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
                            
         				</div>
         			</div>
@@ -135,64 +139,101 @@
                             <img src="images/birthday.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Birthdays</h4>
-                            @if($data1->Preshoot_Vedio == "Available")
-                                Pre Shoot Video
-                            @endif
-                            <br>
+                           
                             @if($data1->Album_Making == "Available")
                                  Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
                             @endif
                             <br>
         				</div>
         			</div>
                     @endif
-                    @if($data1->Parties=="Available")
+                    @if($data1->Competition=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                         <img src="images/party.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>party</h4>
-        					@if($data1->Preshoot_Vedio == "Available")
-                                Pre Shoot Video
-                            @endif
-                            <br>
+        					<h4>Competition</h4>
                             @if($data1->Album_Making == "Available")
                                  Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
                             @endif
                             <br>
                         </div>
         			</div>
                     @endif
-                    @if($data1->Get_Together=="Available")
+                    @if($data1->Get_togather=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                         <img src="images/get-together.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>get-together</h4>
-                  @if($data1->Preshoot_Vedio == "Available")
-                                Pre Shoot Video
-                            @endif
-                            <br>
                             @if($data1->Album_Making == "Available")
                                  Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
                             @endif
                             <br>
                         </div>
         			</div>
                     @endif
-                    @if($data1->Outside_events=="Available")
+                    @if($data1->Professional_Events=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                         <img src="images/outside-events.jpg"  width="300" height="200 ">
                             <br><br>
                         
-        					<h4>outside-events</h4>
-                  @if($data1->Preshoot_Vedio == "Available")
-                                Pre Shoot Video
-                            @endif
-                            <br>
+        					<h4>Professional Events</h4>
                             @if($data1->Album_Making == "Available")
                                  Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->Sports=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                            <br><br>
+                        
+        					<h4>Sports</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->Trips=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                            <br><br>
+                        
+        					<h4>Trips</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
                             @endif
                             <br>
                         </div>
