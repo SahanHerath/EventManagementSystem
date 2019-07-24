@@ -8,6 +8,6 @@ class Salon_event extends Model
 {
     //
     protected $fillable = [
-        'user_id','wedding', 'parties', 'fashion_show'
+        'user_id','wedding', 'parties', 'fashion_show',
     ];
 }
