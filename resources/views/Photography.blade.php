@@ -57,30 +57,14 @@
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li>
-                        <a href="Welcome.html">Home</a>
+                        <a href="/">Home</a>
                       </li>
-                      <li class="has-children">
-                        <a href="rooms.html">Wedding Halls</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="rooms.html">Standard Room</a></li>
-                          <li><a href="rooms.html">Family Room</a></li>
-                          <li><a href="rooms.html">Single Room</a></li>
-                          <li class="has-children">
-                            <a href="rooms.html">Rooms</a>
-                            <ul class="dropdown">
-                              <li><a href="rooms.html">America</a></li>
-                              <li><a href="rooms.html">Europe</a></li>
-                              <li><a href="rooms.html">Asia</a></li>
-                              <li><a href="rooms.html">Africa</a></li>
-                              
-                            </ul>
-                          </li>
+                      
 
-                        </ul>
-                      </li>
-                      <li><a href="Music.html">DJs/Music</a></li>
-                      <li class="active"><a href="Photography.html">Photography</a></li>
-                      <li><a href="Cake_Designers.html">Cake Designers</a></li>
+                      <li><a href="Decorator">Decorations</a></li>  
+                      <li><a href="Music">DJs/Music</a></li>
+                      <li class="active"><a href="Photography">Photography</a></li>
+                      <li><a href="Cake_Designers">Cake Designers</a></li>
                     </ul>
                   </div>
                 </nav>
@@ -168,23 +152,21 @@
         @foreach($level as $leve)
         
           <div class="site-block d-lg-flex">
-          
-		  <div class="col-md-7 col-lg-4">
-            <a href="uploads/photography/{{$leve->main_pic}}" class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image" class="img-fluid"></a>
-          </div>
-               <div class="text">
-               <br>
-               <h2 > {{$leve->Studio_Name}}</h2>
-               <h5>Address :- <i>{{$leve->Address}}</i></h5>
-                <h5>Contact No. :- <i>{{$leve->ContactNo}}</i></h5>
-                <h5>Email :-  <i>{{$leve->email}}</i> </h5>
-                
-              <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>
-          
-			  </div>
+            <div class="col-md-7 col-lg-4">
+              <a href="uploads/photography/{{$leve->main_pic}}" class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image" class="img-fluid"></a>
             </div>
-            <br><br><br>
-            @endforeach
+            <div class="text">
+              <br>
+              <h2 > {{$leve->Studio_Name}}</h2>
+              <h5>Address :- <i>{{$leve->Address}}</i></h5>
+              <h5>Contact No. :- <i>{{$leve->ContactNo}}</i></h5>
+              <h5>Email :-  <i>{{$leve->email}}</i> </h5>
+                
+              <p><a href="{{URL('/Photographyview'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+            </div>
+          </div>
+          <br><br><br>
+        @endforeach
 			
 			
         </div>

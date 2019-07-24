@@ -7,6 +7,7 @@ use App\Salon;
 use App\Salon_event;
 use Auth;
 use Image;
+use DB;
 
 class salonController extends Controller
 {
@@ -18,6 +19,13 @@ class salonController extends Controller
     public function index()
     {
         //
+        $level = DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->get();
+      
+       
+       return view('Salon', compact('level'));
+
     }
 
     /**
@@ -100,6 +108,18 @@ class salonController extends Controller
 
              
              $salon->pic3=$filename;
+             
+         }
+
+         if($request->hasFile('pic4'))
+          {
+             $pic4=$request->file('pic4');
+           
+             $filename=time().'.'.$pic4->getClientOriginalExtension();
+             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/salon/'. $filename));
+
+             
+             $salon->pic4=$filename;
              
          }
              $salon->save();

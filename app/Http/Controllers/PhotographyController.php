@@ -18,7 +18,7 @@ class PhotographyController extends Controller
 	public function index(Request $request)
     {    $level = DB::table('photographies')
                 ->join('users','users.id','=','photographies.user_id')
-          ->get();
+                ->get();
       
        
        return view('Photography', compact('level'));
@@ -111,6 +111,18 @@ class PhotographyController extends Controller
              $photography->pic3=$filename;
              
          }
+
+         if($request->hasFile('pic4'))
+          {
+             $pic4=$request->file('pic4');
+           
+             $filename=time().'.'.$pic4->getClientOriginalExtension();
+             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/photography/'. $filename));
+
+             
+             $photography->pic4=$filename;
+             
+         }
             $photography->save();
 
 
@@ -173,5 +185,16 @@ class PhotographyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->get();
+
+                return view('Photographyview',compact('data'));
     }
 }

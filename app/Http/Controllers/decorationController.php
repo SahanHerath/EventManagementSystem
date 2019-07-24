@@ -7,6 +7,7 @@ use App\Decorator;
 use App\Decorator_event;
 use Auth;
 use Image;
+use DB;
 
 class decorationController extends Controller
 {
@@ -18,6 +19,12 @@ class decorationController extends Controller
     public function index()
     {
         //
+        $decos = DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->get();
+
+
+        return view('Decorator', compact('decos'));
     }
 
     /**
@@ -60,7 +67,7 @@ class decorationController extends Controller
              $Main_Pic=$request->file('Main_Pic');
            
              $filename=time().'.'.$Main_Pic->getClientOriginalExtension();
-             Image::make($Main_Pic)->resize(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+             Image::make($Main_Pic)->resize(480,480)->save(public_path('/uploads/decoration/'. $filename));
 
              
              $decorate->Main_Pic=$filename;
@@ -100,6 +107,18 @@ class decorationController extends Controller
 
              
              $decorate->pic3=$filename;
+             
+         }
+
+         if($request->hasFile('pic4'))
+          {
+             $pic4=$request->file('pic4');
+           
+             $filename=time().'.'.$pic4->getClientOriginalExtension();
+             Image::make($pic4)->resize(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+
+             
+             $decorate->pic4=$filename;
              
          }
              $decorate->save();
@@ -161,5 +180,17 @@ class decorationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->get();
+
+                return view('DecoratorView',compact('data'));
     }
 }

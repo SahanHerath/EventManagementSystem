@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Photographyview', function () {
-    return view('Photographyview');
-});
+Route::get('/Photographyview{id}','PhotographyController@viewProfile');
 
 Route::get('/Photography', 'PhotographyController@index')  ; 
 Auth::routes();
@@ -35,7 +33,9 @@ Route::get('/Cake', function () {
     return view('Cake');
 });
 
-Route::get('/Music', function () {
-    return view('Music');
-});
+Route::get('/Music', 'MusicianController@index')  ;
 
+Route::get('/Decorator', 'DecorationController@index')  ;
+Route::get('/DecoratorView{id}','DecorationController@viewProfile');
+
+Route::get('/Bridal', 'salonController@index')  ;

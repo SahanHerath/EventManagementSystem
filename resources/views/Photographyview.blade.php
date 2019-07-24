@@ -1,150 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <title>Evora</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-    <link rel="stylesheet" href="css/lightgallery.min.css">    
-    
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    
-    <link rel="stylesheet" href="css/swiper.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/style1.css" rel="stylesheet" /> 
-    <link href="css/style2.css" rel="stylesheet" /> 
-    
-  </head>
-  <body>
-  
-  
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-    
-	
-
-
-  
-
-    <div class="site-section"  data-aos="fade">
-    <div class="container">
-      
-      <div class="row no-gutters" id="lightgallery">
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
-          <a href="#"><img src="images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_2.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis quaerat molestiae, praesentium. Ipsam, reiciendis. Aut molestiae animi earum laudantium.</p>">
-          <a href="#"><img src="images/nature_small_2.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_3.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem reiciendis, dolorum illo temporibus culpa eaque dolore rerum quod voluptate doloribus.</p>">
-          <a href="#"><img src="images/nature_small_3.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_4.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim perferendis quae iusto omnis praesentium labore tempore eligendi quo corporis sapiente.</p>">
-          <a href="#"><img src="images/nature_small_4.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_5.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, voluptatum voluptate tempore aliquam, dolorem distinctio. In quas maiores tenetur sequi.</p>">
-          <a href="#"><img src="images/nature_small_5.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_6.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum cum culpa blanditiis illum, voluptatum iusto quisquam mollitia debitis quaerat maiores?</p>">
-          <a href="#"><img src="images/nature_small_6.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_7.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores similique impedit possimus, laboriosam enim at placeat nihil voluptatibus voluptate hic!</p>">
-          <a href="#"><img src="images/nature_small_7.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-5 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_8.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam vitae sed cum mollitia itaque soluta laboriosam eaque sit ratione, aliquid.</p>">
-          <a href="#"><img src="images/nature_small_8.jpg" alt="IMage" class="img-fluid"></a>
-        </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-   <div class="py-3 mb-5 pt-5">
-     <div class="container">
-       <div class="row">
-         <div class="col-md-12 d-md-flex align-items-center">
-           <h1 class="text-black mb-5 mb-md-0 text-center text-md-left">Need a photographer?</h1>
-           <div class="ml-auto text-center text-md-left">
-            <a href="contact.html" class="btn btn-danger py-3 px-5 rounded">Contact Me</a>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="site-section"  data-aos="fade">
-    <div class="container-fluid">
-    </div>
-    </div>
-
-  
-
-   <footer class="site-footer">
-      <div class="container">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Evora</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/css/style.css">
+        <link rel="stylesheet" href="css/css/responsive.css">
+    </head>
+    <body>
         
-
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="/Decorator">Decorations</a></li> 
+								<li class="nav-item"><a class="nav-link" href="/Music">DJs/Music</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Photography">Photography</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Cake designer</a></li> 
+							</ul>
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
         
-        <div class="row pt-3 mt-3 text-center">
-          <div class="col-md-12">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Evora</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
+        <!--================Home Banner Area =================-->
+        @foreach($data as $data1)
+        <section class="home_banner_area">
+           	<div class="container box_1620">
+           		<div class="banner_inner d-flex align-items-center">
+					<div class="banner_content">
+						<div class="media">
+							<div class="d-flex">
+								<img src="uploads/photography/{{$data1->main_pic}}" width="500" hight="800" alt="">
+							</div>
+                            
+							<div class="media-body">
+								<div class="personal_text">
+									<h6>Hello Everybody, we are</h6>
+									<h3>{{$data1->Studio_Name}}</h3>
+									<h5>Contact Person :-{{$data1->name }}</h5>
+                                    <br>
+									<ul class="list basic_info">
+										<li><a href="#"><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
+										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
+										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
+										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
+									</ul>
+								</div>
+							</div>
+                            
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Welcome Area =================-->
+        <section class="welcome_area p_120">
+        	<div class="container">
+                <div class="welcome_text">
+                    <h4>What we are doing?</h4>
+                    <p>{{$data1->Description}}</p>
+                    </div>		  		
+        	</div>
+        </section>
+        <!--================Feature Area =================-->
+        <section class="feature_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>offerings to my clients</h2>
+        		</div>
+        		<div class="feature_inner row">
+                    @if($data1->Wedding=="Available")
+        			<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+        					<img src="images/wedding.jpg"  width="300" height="200 ">
+                            <br><br>
+        					<h4>Wedding</h4>
+                            @if($data1->Wedding_Photography == "Available")
+                                Wedding Photography
+                            @endif
+                            <br>
+                            @if($data1->Preshoot_Vedio == "Available")
+                                Pre Shoot Video
+                            @endif
+                            <br>
+                            @if($data1->Wedding_Vedio == "Available")
+                                Wedding Video
+                            @endif
+                            <br>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Wedding_Card == "Available")
+                                Wedding Card
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                           
+        				</div>
+        			</div>
+                    @endif
+                    @if($data1->Birthday=="Available")
+        			<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                            <img src="images/birthday.jpg"  width="300" height="200 ">
+                            <br><br>
+        					<h4>Birthdays</h4>
+                           
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+        				</div>
+        			</div>
+                    @endif
+                    @if($data1->Competition=="Available")
+        			<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/party.jpg"  width="300" height="200 ">
+                            <br><br>
+        					<h4>Competition</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->Get_togather=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/get-together.jpg"  width="300" height="200 ">
+                            <br><br>
+        					<h4>get-together</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->Professional_Events=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                            <br><br>
+                        
+        					<h4>Professional Events</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->Sports=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                            <br><br>
+                        
+        					<h4>Sports</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->Trips=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                            <br><br>
+                        
+        					<h4>Trips</h4>
+                            @if($data1->Album_Making == "Available")
+                                 Album Making
+                            @endif
+                            <br>
+                            @if($data1->Drone == "Available")
+                                Drone coverage
+                            @endif
+                            <br>
+                        </div>
+        			</div>
+                    @endif
+        		</div>
+        	</div>
+        </section>
+        <!--================End Feature Area =================-->
+        
+        <!--================Home Gallery Area =================-->
+        
+        <section class="welcome_area p_120">
+				<div class="colorlib-narrow-content">
+                    
+					<div class="container">
+                    <div class="main_title">
+                        <h2>Events we recently covered</h2>
+                    </div>
+					    <div class="row">
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="uploads/photography/{{$data1->pic1}}" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+                                <div class="project" >
+                                    <img src="uploads/photography/{{$data1->pic2}}" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
 
-    
-    
-  </div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/swiper.min.js"></script>
-  <script src="js/aos.js"></script>
-
-  <script src="js/picturefill.min.js"></script>
-  <script src="js/lightgallery-all.min.js"></script>
-  <script src="js/jquery.mousewheel.min.js"></script>
-
-  <script src="js/main.js"></script>
-  
-  <script>
-    $(document).ready(function(){
-      $('#lightgallery').lightGallery();
-    });
-  </script>
-    
-  </body>
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="uploads/photography/{{$data1->pic3}}" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="uploads/photography/{{$data1->pic4}}" alt="IMage" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					
+				</div>
+			
+        </section>
+        @endforeach
+        <!--================End Home Gallery Area =================-->
+        
+        <!--================Testimonials Area =================-->
+        <section class="testimonials_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Testimonials</h2>
+        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
+        		</div>
+        		<div class="testi_inner">
+					<div class="testi_slider owl-carousel">
+						<div class="item">
+							<div class="testi_item">
+								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
+								<h4>Fanny Spencer</h4>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star-half-o"></i></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testi_item">
+								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
+								<h4>Fanny Spencer</h4>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star-half-o"></i></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testi_item">
+								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
+								<h4>Fanny Spencer</h4>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star-half-o"></i></a>
+							</div>
+						</div>
+					</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Testimonials Area =================-->
+        
+        <!--================Footer Area =================-->
+        <footer class="footer_area p_120">
+        	<div class="container">
+        		<div class="row footer_inner">
+        			<div class="col-lg-5 col-sm-6">
+        				<aside class="f_widget ab_widget">
+        					<div class="f_title">
+        						<h3>About Me</h3>
+        					</div>
+        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
+        					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        				</aside>
+        			</div>
+        			<div class="col-lg-5 col-sm-6">
+        				<aside class="f_widget news_widget">
+        					<div class="f_title">
+        						<h3>Newsletter</h3>
+        					</div>
+        					<p>Stay updated with our latest trends</p>
+        					<div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                	<div class="input-group d-flex flex-row">
+                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
+                                    </div>				
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+        				</aside>
+        			</div>
+        			<div class="col-lg-2">
+        				<aside class="f_widget social_widget">
+        					<div class="f_title">
+        						<h3>Follow Me</h3>
+        					</div>
+        					<p>Let us be social</p>
+        					<ul class="list">
+        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+        					</ul>
+        				</aside>
+        			</div>
+        		</div>
+        	</div>
+        </footer>
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/js/jquery-3.3.1.min.js"></script>
+        <script src="js/js/popper.js"></script>
+        <script src="js/js/bootstrap.min.js"></script>
+        <script src="js/js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope.pkgd.min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="js/js/jquery.ajaxchimp.min.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/js/mail-script.js"></script>
+        <script src="js/js/theme.js"></script>
+    </body>
 </html>
