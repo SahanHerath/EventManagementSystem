@@ -95,11 +95,11 @@
               <div class="img-border">
                 
                   
-                  <img src="images/Bridal5.jpg" alt="" class="img-fluid">
+                  <img src="images/Bride5.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/Bridal5.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/Bride5.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
