@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/css1/style.css">
+	<link rel="stylesheet" href="css/css1/responsive.css">
     
   </head>
   <body>
@@ -154,6 +157,7 @@
 						<h4>Waterfall
 							<br> Mountain Island</h4>
 					</div>
+          
 					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay="1s">
 						<img class="img-fluid w-100" src="img/places/p3.jpg" alt="">
 						<div class="overlay"></div>
