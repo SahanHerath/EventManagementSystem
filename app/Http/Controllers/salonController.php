@@ -60,6 +60,7 @@ class salonController extends Controller
         $salon->Makeup=$request->Makeup;
         $salon->Bridesman=$request->Bridesman;
         $salon->Bridesmaid=$request->Bridesmaid;
+        $salon->HairStyle=$request->HairStyle;
         
         $salon->user_id = Auth::user()->id;
         
@@ -181,5 +182,17 @@ class salonController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('salons','users.id','=','salons.user_id')
+                ->join('salon_events','users.id','=','salon_events.user_id')
+                ->where('category','=','Bridel_Designers')
+                ->get();
+
+                return view('SalonView',compact('data'));
     }
 }

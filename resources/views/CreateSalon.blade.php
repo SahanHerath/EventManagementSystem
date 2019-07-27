@@ -169,6 +169,18 @@
                                 </select>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="HairStyle" class="col-md-4 col-form-label text-md-right">Hair Style</label>
+                            
+                            <div class="col-md-6">
+                                <select id="HairStyle" class="form-control" name="HairStyle" value="{{ old('HairStyle') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
                
 
                         <label><b>Events That You Can Cover</b></label><br><br>
