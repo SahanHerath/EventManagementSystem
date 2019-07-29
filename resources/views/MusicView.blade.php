@@ -19,6 +19,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
+        
     </head>
     <body>
         
@@ -79,9 +80,9 @@
 										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
 										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
-                                        <li><h5>Normal Playing Hours :-{{$data1->Playing_Hrs }}</h5></li>
-                                        <li><h5>Normal Payment :-{{$data1->Payment }}</h5></li>
-                                        <li><h5>Cost Per Extra Hour :-{{$data1->Extra_Cost }}</h5></li>
+                                        <li><h5>Normal Playing Hours :- {{$data1->Playing_Hrs }}</h5></li>
+                                        <li><h5>Normal Payment :- Rs {{$data1->Payment }}</h5></li>
+                                        <li><h5>Cost Per Extra Hour :- Rs {{$data1->Extra_Cost }}</h5></li>
                                         
 									</ul>
 								</div>
@@ -118,7 +119,7 @@
                     @if($data1->Wedding=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-        					<img src="images/wedding1.jpg"  width="300" height="200 ">
+        					<img src="images/musicwedding.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Wedding</h4>
                             @if($data1->Fire== "Available")
@@ -164,7 +165,7 @@
                     @if($data1->Birthday=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/fashionshow.jpg"  width="300" height="200 ">
+                        <img src="images/musicbday.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Birthday Party</h4>
                             @if($data1->Fire== "Available")
@@ -187,9 +188,9 @@
                     @if($data1->Get_Together=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/fashionshow.jpg"  width="300" height="200 ">
+                        <img src="images/musicget.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Birthday Party</h4>
+        					<h4>Get Togather</h4>
                             @if($data1->Fire== "Available")
                                 Firing Machine<br>
                             @endif
@@ -210,7 +211,7 @@
                     @if($data1->Beach_Party=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/fashionshow.jpg"  width="300" height="200 ">
+                        <img src="images/musicbp.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Beach Party</h4>
                             @if($data1->Fire== "Available")
