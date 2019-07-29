@@ -158,7 +158,7 @@
             <h5>Contact No. :- <i>{{$levee->ContactNo}}</i></h5>
             <h5>Email :-  <i>{{$levee->email}}</i> </h5>
               
-            <p><a href="#" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+            <p><a href="{{URL('/MusicView'.$levee->id)}}"class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
           </div>
         </div>
         <br><br><br>

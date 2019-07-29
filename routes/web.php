@@ -34,6 +34,7 @@ Route::get('/Cake', function () {
 });
 
 Route::get('/Music', 'MusicianController@index')  ;
+Route::get('/MusicView{id}','musicianController@viewProfile');
 
 Route::get('/Decorator', 'DecorationController@index')  ;
 Route::get('/DecoratorView{id}','DecorationController@viewProfile');
