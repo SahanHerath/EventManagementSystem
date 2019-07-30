@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2019 at 11:08 PM
+-- Generation Time: Jul 30, 2019 at 04:09 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -210,6 +210,7 @@ CREATE TABLE `salons` (
   `Makeup` varchar(20) NOT NULL,
   `Bridesman` varchar(20) NOT NULL,
   `Bridesmaid` varchar(20) NOT NULL,
+  `HairStyle` varchar(20) NOT NULL,
   `Profile_Pic` varchar(191) NOT NULL,
   `pic1` varchar(191) NOT NULL,
   `pic2` varchar(191) NOT NULL,
@@ -364,7 +365,7 @@ ALTER TABLE `musician_events`
 -- AUTO_INCREMENT for table `photographies`
 --
 ALTER TABLE `photographies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `photography_events`
