@@ -75,16 +75,42 @@
     </div>
   
     
-    <div class="site-blocks-cover overlay" style="background-image: url(images/dj2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="slide-one-item home-slider owl-carousel">
+      
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dj2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <span class="caption mb-3"></span>
-              <h1 class="mb-4">DJs/Music</h1>
+              <h1 class="mb-2">DJs And Music</h1>
+              <h2 class="caption">Loud And Clear</h2>
             </div>
           </div>
         </div>
       </div>  
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dj3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Any Music Event</h1>
+              <h2 class="caption">Enjoy With Us</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dj6.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Rock And Roll</h1>
+              <h2 class="caption">Remember The Day</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </div>
 
     
     <div class="site-section">
