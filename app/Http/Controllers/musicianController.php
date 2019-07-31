@@ -179,4 +179,15 @@ class musicianController extends Controller
     {
         //
     }
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('category','=','Music')
+                ->get();
+
+                return view('MusicView',compact('data'));
+    }
 }

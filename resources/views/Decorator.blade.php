@@ -100,7 +100,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Colorfull</h1>
+              <h1 class="mb-2">Colorful</h1>
               <h2 class="caption">brightn as sunshine</h2>
             </div>
           </div>

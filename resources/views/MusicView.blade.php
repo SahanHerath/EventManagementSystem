@@ -19,6 +19,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
+        
     </head>
     <body>
         
@@ -37,9 +38,9 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="/">Home</a></li> 
 								<li class="nav-item"><a class="nav-link" href="/Decorator">Decorations</a></li> 
-								<li class="nav-item"><a class="nav-link" href="/Music">DJs/Music</a></li>
+								<li class="nav-item active"><a class="nav-link" href="/Music">DJs/Music</a></li>
                                 <li class="nav-item"><a class="nav-link" href="/Photography">Photography</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#">Cake designer</a></li> 
 							</ul>
@@ -53,27 +54,48 @@
         <!--================Home Banner Area =================-->
         @foreach($data as $data1)
         <section class="home_banner_area">
+        
            	<div class="container box_1620">
+               <div class="offset-3">
+               <h1>DJs And Music Bands<h1>
+               </div>
            		<div class="banner_inner d-flex align-items-center">
 					<div class="banner_content">
 						<div class="media">
 							<div class="d-flex">
-								<img src="uploads/photography/{{$data1->main_pic}}" width="500" hight="800" alt="">
+								<img src="uploads/music/{{$data1->Main_Logo}}" width="500" hight="800" alt="">
 							</div>
                             
 							<div class="media-body">
+                            <div class="row">
+                            <div class="column">
 								<div class="personal_text">
-									<h6>Hello Everybody, we are</h6>
-									<h3>{{$data1->Studio_Name}}</h3>
+									<h6>Hello Everybody, we are</h6> 
+									<h3>{{$data1->Dj_Name}}</h3>
 									<h5>Contact Person :-{{$data1->name }}</h5>
                                     <br>
+                                    
 									<ul class="list basic_info">
 										<li><a href="#"><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
 										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
 										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
+                                        
 									</ul>
+                                    <br>
+                                    <h5>More Details..</h5>
+                                    <br>
+                                    <ul class="list basic_info">    
+                                        <li><a href="#"><i class="lnr lnr-clock"></i>Normal Playing Hours :- {{$data1->Playing_Hrs }}</a></li>
+                                        <li><a href="#"><i class="lnr lnr-star"></i>Normal Payment :- Rs {{$data1->Payment }}</a></li>
+                                        <li><a href="#"><i class="lnr lnr-hourglass"></i>Cost Per Extra Hour :- Rs {{$data1->Extra_Cost }}</a></li>
+                                    </h5>    
 								</div>
+                            </div>
+                            <div class="column" >
+                            <img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
+                            </div>
+                            </div>    
 							</div>
                             
 						</div>
@@ -102,143 +124,119 @@
                     @if($data1->Wedding=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-        					<img src="images/wedding.jpg"  width="300" height="200 ">
+        					<img src="images/musicwedding.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Wedding</h4>
-                            @if($data1->Wedding_Photography == "Available")
-                                Wedding Photography
+                            @if($data1->Fire== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
-                            <br>
-                            @if($data1->Preshoot_Vedio == "Available")
-                                Pre Shoot Video
+                            
+                            @if($data1->Smoke == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Smoke Machine<br>
                             @endif
-                            <br>
-                            @if($data1->Wedding_Vedio == "Available")
-                                Wedding Video
-                            @endif
-                            <br>
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
-                            @endif
-                            <br>
-                            @if($data1->Wedding_Card == "Available")
-                                Wedding Card
-                            @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
-                            @endif
-                            <br>
+                            
+                            @if($data1->Lights == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span> Dj Lights<br>
                            
+                            @endif
+                            
+                        </div>
+        			</div>
+                    @endif
+
+                    @if($data1->Parties=="Available")
+        			<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                            <img src="images/partysalon.jpg"  width="300" height="200 ">
+                            <br><br>
+        					<h4>Parties</h4>
+                           
+                            @if($data1->Fire== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span> Firing Machine<br>
+                            @endif
+                            
+                            @if($data1->Smoke == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span> Smoke Machine<br>
+                            @endif
+                            
+                            @if($data1->Lights == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span> Dj Lights<br>
+                           
+                            @endif
         				</div>
         			</div>
                     @endif
+
                     @if($data1->Birthday=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                            <img src="images/birthday.jpg"  width="300" height="200 ">
+                        <img src="images/musicbday.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Birthdays</h4>
+        					<h4>Birthday Party</h4>
+                            @if($data1->Fire== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
+                            @endif
+                            
+                            @if($data1->Smoke == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Smoke Machine<br>
+                            @endif
+                            
+                            @if($data1->Lights == "Available")
+                                <span class="lnr lnr-checkmark-circle"></span>Dj Lights<br>
                            
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
                             @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
-                            @endif
-                            <br>
-        				</div>
+                            
+                        </div>
         			</div>
                     @endif
-                    @if($data1->Competition=="Available")
+
+                    @if($data1->Get_Together=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/party.jpg"  width="300" height="200 ">
+                        <img src="images/musicget.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Competition</h4>
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
+        					<h4>Get Togather</h4>
+                            @if($data1->Fire== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
+                            
+                            @if($data1->Smoke == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Smoke Machine<br>
                             @endif
-                            <br>
+                            
+                            @if($data1->Lights == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dj Lights<br>
+                           
+                            @endif
+                            
                         </div>
         			</div>
                     @endif
-                    @if($data1->Get_togather=="Available")
-					<div class="col-lg-4 col-md-6">
+
+                    @if($data1->Beach_Party=="Available")
+        			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/get-together.jpg"  width="300" height="200 ">
+                        <img src="images/musicbp.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>get-together</h4>
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
+        					<h4>Beach Party</h4>
+                            @if($data1->Fire== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
+                            
+    
+                            
+                            @if($data1->Lights == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dj Lights<br>
+                           
                             @endif
-                            <br>
+                            
                         </div>
         			</div>
                     @endif
-                    @if($data1->Professional_Events=="Available")
-					<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
-                            <br><br>
-                        
-        					<h4>Professional Events</h4>
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
-                            @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
-                            @endif
-                            <br>
-                        </div>
-        			</div>
-                    @endif
-                    @if($data1->Sports=="Available")
-					<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
-                            <br><br>
-                        
-        					<h4>Sports</h4>
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
-                            @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
-                            @endif
-                            <br>
-                        </div>
-        			</div>
-                    @endif
-                    @if($data1->Trips=="Available")
-					<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
-                            <br><br>
-                        
-        					<h4>Trips</h4>
-                            @if($data1->Album_Making == "Available")
-                                 Album Making
-                            @endif
-                            <br>
-                            @if($data1->Drone == "Available")
-                                Drone coverage
-                            @endif
-                            <br>
-                        </div>
-        			</div>
-                    @endif
+                    
+                    
+                    
+                   
         		</div>
         	</div>
         </section>
@@ -256,27 +254,27 @@
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/photography/{{$data1->pic1}}" alt="IMage" class="img-fluid" >
+                                    <img src="uploads/music/{{$data1->pic1}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
                                 <div class="project" >
-                                    <img src="uploads/photography/{{$data1->pic2}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/music/{{$data1->pic2}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
 
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/photography/{{$data1->pic3}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/music/{{$data1->pic3}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/photography/{{$data1->pic4}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/music/{{$data1->pic4}}" alt="IMage" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -319,8 +317,10 @@
 								<a href="#"><i class="fa fa-star-half-o"></i></a>
 							</div>
 						</div>
+                        
 						<div class="item">
 							<div class="testi_item">
+                                
 								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
 								<h4>Fanny Spencer</h4>
 								<a href="#"><i class="fa fa-star"></i></a>
@@ -330,6 +330,7 @@
 								<a href="#"><i class="fa fa-star-half-o"></i></a>
 							</div>
 						</div>
+                        
 					</div>
         		</div>
         	</div>
