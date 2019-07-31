@@ -148,7 +148,23 @@
             </div>
           </div>
           <div class="row">
-        
+          @foreach($trans as $tran)
+          <div class="container">
+            <div class="site-block d-lg-flex">
+              <div class="col-md-7 col-lg-3">
+                <a href="uploads/{{$tran->Main_pic}}" class="image-popup img-opacity"><img src="uploads/{{$tran->Main_pic}}" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="text">
+                <br>
+                <h2 >{{$tran->Transport_Service}}</h2>
+                <h5>Address :- <i>{{$tran->Address}}</i></h5>
+                <h5>Contact No. :- <i>{{$tran->Contact_No}}</i></h5> 
+                <p><a href="{{URL('/DecoratorView'.$tran->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+              </div>
+            </div>
+            <br><br>
+          </div>
+          @endforeach
             
         </div>
       </div>

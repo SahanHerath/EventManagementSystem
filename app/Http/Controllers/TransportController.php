@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class TransportController extends Controller
 {
     /**
@@ -14,6 +14,12 @@ class TransportController extends Controller
     public function index()
     {
         //
+        $trans = DB::table('transporters')
+                ->join('users','users.id','=','transporters.user_id')
+                ->get();
+
+
+        return view('Transport', compact('trans'));
     }
 
     /**
@@ -35,6 +41,8 @@ class TransportController extends Controller
     public function store(Request $request)
     {
         //
+        
+
     }
 
     /**
