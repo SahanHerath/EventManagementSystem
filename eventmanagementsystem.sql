@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2019 at 08:25 PM
+-- Generation Time: Aug 01, 2019 at 01:07 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -253,10 +253,7 @@ CREATE TABLE `transporters` (
   `driver` varchar(20) NOT NULL,
   `decoration` varchar(20) NOT NULL,
   `rent_hours` int(11) NOT NULL,
-  `rent_km` int(11) NOT NULL,
-  `cost` double NOT NULL,
-  `extra_km` double NOT NULL,
-  `extra_hour` double NOT NULL,
+  `rent_km` decimal(10,2) NOT NULL,
   `Main_pic` varchar(191) NOT NULL,
   `pic1` varchar(191) NOT NULL,
   `pic2` varchar(191) NOT NULL,
