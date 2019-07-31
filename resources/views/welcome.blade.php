@@ -144,7 +144,7 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="single_place wow fadeIn text-center mt-480" data-wow-duration="1s">
-						<img class="img-fluid w-100" src="img/places/p1.jpg" alt="">
+						<img class="img-fluid w-100" src="images/img_30.jpg" alt="">
 						<div class="overlay"></div>
 						<h4>Photography <br>Videography
 							</h4>
@@ -152,39 +152,39 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".2s">
-						<img class="img-fluid w-100" src="img/places/p2.jpg" alt="">
+						<img class="img-fluid w-100" src="images/hall.jpg" alt="">
 						<div class="overlay"></div>
-						<h4>Waterfall
-							<br> Mountain Island</h4>
+						<h4>Hall
+							<br>Reservation </h4>
 					</div>
           
 					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay="1s">
-						<img class="img-fluid w-100" src="img/places/p3.jpg" alt="">
+						<img class="img-fluid w-100" src="images/dj.jpg" alt="">
 						<div class="overlay"></div>
-						<h4>Waterfall
-							<br> Mountain Island</h4>
+						<h4>Music/
+							<br> DJ</h4>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".4s">
-						<img class="img-fluid w-100" src="img/places/p4.jpg" alt="">
+						<img class="img-fluid w-100" src="images/light1.jpg" alt="">
 						<div class="overlay"></div>
-						<h4>Waterfall
-							<br> Mountain Island</h4>
+						<h4>Decorations
+							</h4>
 					</div>
 					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".8s">
-						<img class="img-fluid w-100" src="img/places/p5.jpg" alt="">
+						<img class="img-fluid w-100" src="images/bridal5.jpg" alt="">
 						<div class="overlay"></div>
-						<h4>Waterfall
-							<br> Mountain Island</h4>
+						<h4>Salon
+							</h4>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".6s">
-						<img class="img-fluid w-100" src="img/places/p6.jpg" alt="">
+						<img class="img-fluid w-100" src="images/dance.jpg" alt="">
 						<div class="overlay"></div>
-						<h4>Waterfall
-							<br> Mountain Island</h4>
+						<h4>Dance
+							</h4>
 					</div>
 				</div>
 			</div>
