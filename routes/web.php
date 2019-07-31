@@ -41,3 +41,8 @@ Route::get('/DecoratorView{id}','DecorationController@viewProfile');
 
 Route::get('/Bridal', 'salonController@index')  ;
 Route::get('/SalonView{id}','salonController@viewProfile');
+
+//Route::get('/Transport', 'TransportController@index')  ;
+Route::get('/Transport', function () {
+    return view('Transport');
+});

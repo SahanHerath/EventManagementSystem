@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Evora-decorations</title>
+    <title>Evora-Transport</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -57,7 +57,8 @@
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li><a href="/">Home</a></li>
-                      <li class="active"><a href="Decorator">Decorations</a></li>
+                      <li><a href="Decorator">Decorations</a></li>
+                      <li class="active"><a href="Transport">Wedding Cars</a></li>
                       <li><a href="Music">DJs/Music</a></li>
                       <li><a href="Photography">Photography</a></li>
                       <li><a href="#">Cake Designers</a></li>
@@ -74,34 +75,34 @@
     
     <div class="slide-one-item home-slider owl-carousel">
       
-      <div class="site-blocks-cover overlay" style="background-image: url(images/deco.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/weddingcar1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Decorations</h1>
-              <h2 class="caption">Let Us color your dreams</h2>
+              <h1 class="mb-2">Wedding Cars</h1>
+              <h2 class="caption">choose your dream car</h2>
             </div>
           </div>
         </div>
       </div>  
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/deco2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/weddingcar7.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Any Special Occation</h1>
-              <h2 class="caption">Enjoy With Us</h2>
+              <h1 class="mb-2">Luxury vehicles</h1>
+              <h2 class="caption">Cars,Jeeps & Limousines</h2>
             </div>
           </div>
         </div>
       </div> 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/lighting.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/weddingcar5.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Colorful</h1>
-              <h2 class="caption">brightn as sunshine</h2>
+              <h1 class="mb-2">Classic Cars</h1>
+              <h2 class="caption"></h2>
             </div>
           </div>
         </div>
@@ -119,11 +120,11 @@
             
               <div class="img-border">
                 <a class="popup-vimeo image-play">
-                  <img src="images/light.jpg" alt="" class="img-fluid">
+                  <img src="images/weddingcar4.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/deco4.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/weddingcar8.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
@@ -132,7 +133,7 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p class="mb-4">You are able to find your decorators from here.there are many decorators to colorful your events. </p>
+            <p class="mb-4">You are able to find your wedding cars,special coaches from here.there are many companies to get your dream vehicle for your special events. </p>
             </div>
         </div>
       </div>
@@ -143,28 +144,12 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-              <h2 class="mb-5">Our Decorators</h2>
+              <h2 class="mb-5">Our Collaboraters</h2>
             </div>
           </div>
           <div class="row">
         
-          @foreach($decos as $deco)
-          <div class="container">
-            <div class="site-block d-lg-flex">
-              <div class="col-md-7 col-lg-3">
-                <a href="uploads/decoration/{{$deco->Main_Pic}}" class="image-popup img-opacity"><img src="uploads/decoration/{{$deco->Main_Pic}}" alt="Image" class="img-fluid"></a>
-              </div>
-              <div class="text">
-                <br>
-                <h2 >{{$deco->Team_Name}}</h2>
-                <h5>Address :- <i>{{$deco->Address}}</i></h5>
-                <h5>Contact No. :- <i>{{$deco->Contact_No}}</i></h5> 
-                <p><a href="{{URL('/DecoratorView'.$deco->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
-              </div>
-            </div>
-            <br><br>
-          </div>
-          @endforeach    
+            
         </div>
       </div>
           
@@ -179,7 +164,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <h2 class="text-white">Are you Professional Decorator? Join with Us.</h2>
+            <h2 class="text-white">Are you Renting your vehicle for special occations? Join with Us.</h2>
             <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
           </div>
           <div class="col-md-6">
