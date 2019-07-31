@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2019 at 04:09 AM
+-- Generation Time: Jul 31, 2019 at 08:25 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -240,6 +240,55 @@ CREATE TABLE `salon_events` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transporters`
+--
+
+CREATE TABLE `transporters` (
+  `id` int(11) NOT NULL,
+  `Transport_Service` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `driver` varchar(20) NOT NULL,
+  `decoration` varchar(20) NOT NULL,
+  `rent_hours` int(11) NOT NULL,
+  `rent_km` int(11) NOT NULL,
+  `cost` double NOT NULL,
+  `extra_km` double NOT NULL,
+  `extra_hour` double NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `pic4` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transport_categories`
+--
+
+CREATE TABLE `transport_categories` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `luxury` varchar(20) NOT NULL,
+  `classic` varchar(20) NOT NULL,
+  `vintage` varchar(20) NOT NULL,
+  `horse_cart` varchar(20) NOT NULL,
+  `air` varchar(20) NOT NULL,
+  `travelling_coach` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -321,6 +370,18 @@ ALTER TABLE `salon_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `transporters`
+--
+ALTER TABLE `transporters`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `transport_categories`
+--
+ALTER TABLE `transport_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -365,7 +426,7 @@ ALTER TABLE `musician_events`
 -- AUTO_INCREMENT for table `photographies`
 --
 ALTER TABLE `photographies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `photography_events`
@@ -383,6 +444,18 @@ ALTER TABLE `salons`
 -- AUTO_INCREMENT for table `salon_events`
 --
 ALTER TABLE `salon_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `transporters`
+--
+ALTER TABLE `transporters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `transport_categories`
+--
+ALTER TABLE `transport_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
