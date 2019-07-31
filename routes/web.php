@@ -43,3 +43,5 @@ Route::get('/Bridal', 'salonController@index')  ;
 Route::get('/SalonView{id}','salonController@viewProfile');
 
 Route::get('/Transport', 'TransportController@index')  ;
+
+Route::post('/addtransport', 'TransportController@store')  ;

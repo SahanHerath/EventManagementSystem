@@ -102,7 +102,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Classic Cars</h1>
-              <h2 class="caption"></h2>
+              <h2 class="caption">For old style</h2>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@
           <div class="container">
             <div class="site-block d-lg-flex">
               <div class="col-md-7 col-lg-3">
-                <a href="uploads/{{$tran->Main_pic}}" class="image-popup img-opacity"><img src="uploads/{{$tran->Main_pic}}" alt="Image" class="img-fluid"></a>
+                <a href="uploads/transport/{{$tran->Main_pic}}" class="image-popup img-opacity"><img src="uploads/transport/{{$tran->Main_pic}}" alt="Image" class="img-fluid"></a>
               </div>
               <div class="text">
                 <br>
