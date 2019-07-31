@@ -256,7 +256,7 @@
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/photography/{{$data1->pic1}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/photography/{{$data1->pic1}}" alt="IMage" class="img-fluid" >
                                     <br><br><br>
                                 </div>
                             </div>

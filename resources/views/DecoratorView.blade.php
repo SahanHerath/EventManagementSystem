@@ -106,33 +106,40 @@
                             <br><br>
         					<h4>Wedding</h4>
                             @if($data1->Poruwa == "Available")
-                                Poruwa decoration
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Poruwa decoration
                             <br>
+                            @endif
+                            
                             @if($data1->Flower == "Available")
-                                Flower decoration
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Flower decoration
                             <br>
+                            @endif
+                            
                             @if($data1->Table_Hall == "Available")
-                                Hall & Table decoration
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
                             <br>
+                            @endif
+                            
                             @if($data1->Setty_Backs == "Available")
-                                Settee back
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Settee back
                             <br>
+                            @endif
+                            
                             @if($data1->Lighting == "Available")
-                                Lighting
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
                             <br>
+                            @endif
+                            
                             @if($data1->Traditional == "Available")
-                                Traditional decoration
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Traditional decoration
                             <br>
+                            @endif
+                            
                             @if($data1->Wedding_Car == "Available")
-                                Wedding car decoration
-                            @endif
+                            <span class="lnr lnr-checkmark-circle"></span>  Wedding car decoration
                             <br>
+                            @endif
+                            
         				</div>
         			</div>
                     @endif
@@ -143,11 +150,11 @@
                             <br><br>
         					<h4>Birthdays</h4>
                             @if($data1->Table_Hall == "Available")
-                                Hall & Table decoration
+                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
                             @endif
                             <br>
                             @if($data1->Lighting == "Available")
-                                Lighting
+                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
                             @endif
                             <br>
         				</div>
@@ -160,11 +167,11 @@
                             <br><br>
         					<h4>party</h4>
         					@if($data1->Table_Hall == "Available")
-                                Hall & Table decoration
+                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
                             @endif
                             <br>
                             @if($data1->Lighting == "Available")
-                                Lighting
+                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
                             @endif
                             <br>
                         </div>
@@ -177,11 +184,11 @@
                             <br><br>
         					<h4>get-together</h4>
         					@if($data1->Table_Hall == "Available")
-                                Hall & Table decoration
+                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
                             @endif
                             <br>
                             @if($data1->Lighting == "Available")
-                                Lighting
+                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
                             @endif
                             <br>
                         </div>
@@ -195,11 +202,11 @@
                         
         					<h4>outside-events</h4>
         					@if($data1->Table_Hall == "Available")
-                                Hall & Table decoration
+                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
                             @endif
                             <br>
                             @if($data1->Lighting == "Available")
-                                Lighting
+                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
                             @endif
                             <br>
                         </div>

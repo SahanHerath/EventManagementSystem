@@ -80,14 +80,19 @@
 										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
 										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
-                                        <li><h5>Normal Playing Hours :- {{$data1->Playing_Hrs }}</h5></li>
-                                        <li><h5>Normal Payment :- Rs {{$data1->Payment }}</h5></li>
-                                        <li><h5>Cost Per Extra Hour :- Rs {{$data1->Extra_Cost }}</h5></li>
                                         
 									</ul>
+                                    <br>
+                                    <h5>More Details..</h5>
+                                    <br>
+                                    <ul class="list basic_info">    
+                                        <li><a href="#"><i class="lnr lnr-clock"></i>Normal Playing Hours :- {{$data1->Playing_Hrs }}</a></li>
+                                        <li><a href="#"><i class="lnr lnr-star"></i>Normal Payment :- Rs {{$data1->Payment }}</a></li>
+                                        <li><a href="#"><i class="lnr lnr-hourglass"></i>Cost Per Extra Hour :- Rs {{$data1->Extra_Cost }}</a></li>
+                                    </h5>    
 								</div>
                             </div>
-                            <div class="column">
+                            <div class="column" >
                             <img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
                             </div>
                             </div>    
@@ -123,15 +128,15 @@
                             <br><br>
         					<h4>Wedding</h4>
                             @if($data1->Fire== "Available")
-                                Firing Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
                             
                             @if($data1->Smoke == "Available")
-                                Smoke Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Smoke Machine<br>
                             @endif
                             
                             @if($data1->Lights == "Available")
-                                Dj Lights<br>
+                            <span class="lnr lnr-checkmark-circle"></span> Dj Lights<br>
                            
                             @endif
                             
@@ -147,15 +152,15 @@
         					<h4>Parties</h4>
                            
                             @if($data1->Fire== "Available")
-                                Firing Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span> Firing Machine<br>
                             @endif
                             
                             @if($data1->Smoke == "Available")
-                                Smoke Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span> Smoke Machine<br>
                             @endif
                             
                             @if($data1->Lights == "Available")
-                                Dj Lights<br>
+                            <span class="lnr lnr-checkmark-circle"></span> Dj Lights<br>
                            
                             @endif
         				</div>
@@ -169,15 +174,15 @@
                             <br><br>
         					<h4>Birthday Party</h4>
                             @if($data1->Fire== "Available")
-                                Firing Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
                             
                             @if($data1->Smoke == "Available")
-                                Smoke Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Smoke Machine<br>
                             @endif
                             
                             @if($data1->Lights == "Available")
-                                Dj Lights<br>
+                                <span class="lnr lnr-checkmark-circle"></span>Dj Lights<br>
                            
                             @endif
                             
@@ -192,15 +197,15 @@
                             <br><br>
         					<h4>Get Togather</h4>
                             @if($data1->Fire== "Available")
-                                Firing Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
                             
                             @if($data1->Smoke == "Available")
-                                Smoke Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Smoke Machine<br>
                             @endif
                             
                             @if($data1->Lights == "Available")
-                                Dj Lights<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Dj Lights<br>
                            
                             @endif
                             
@@ -215,13 +220,13 @@
                             <br><br>
         					<h4>Beach Party</h4>
                             @if($data1->Fire== "Available")
-                                Firing Machine<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Firing Machine<br>
                             @endif
                             
     
                             
                             @if($data1->Lights == "Available")
-                                Dj Lights<br>
+                            <span class="lnr lnr-checkmark-circle"></span>Dj Lights<br>
                            
                             @endif
                             
