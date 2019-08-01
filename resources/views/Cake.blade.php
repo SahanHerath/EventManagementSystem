@@ -48,7 +48,7 @@
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">
-                <h2 class="mb-0 site-logo"><a href="index.html">Evora</a></h2>
+                <h2 class="mb-0 site-logo"><a href="/">Evora</a></h2>
               </div>
               <div class="col-10">
                 <nav class="site-navigation text-right" role="navigation">
@@ -57,30 +57,15 @@
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li >
-                        <a href="Welcome.html">Home</a>
+                        <a href="/">Home</a>
                       </li>
-                      <li class="has-children">
-                        <a href="rooms.html">Wedding Halls</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="rooms.html">Standard Room</a></li>
-                          <li><a href="rooms.html">Family Room</a></li>
-                          <li><a href="rooms.html">Single Room</a></li>
-                          <li class="has-children">
-                            <a href="rooms.html">Rooms</a>
-                            <ul class="dropdown">
-                              <li><a href="rooms.html">America</a></li>
-                              <li><a href="rooms.html">Europe</a></li>
-                              <li><a href="rooms.html">Asia</a></li>
-                              <li><a href="rooms.html">Africa</a></li>
-                              
-                            </ul>
-                          </li>
+                      
 
-                        </ul>
-                      </li>
-                      <li><a href="Music.html">DJs/Music</a></li>
-                      <li><a href="Photography">Photography</a></li>
-                      <li class="active"><a href="Cake">Cake Designers</a></li>
+                        
+                      <li><a href="/Decorator">Decorations</a></li>
+                      <li><a href="/Music">DJs/Music</a></li>
+                      <li><a href="/Photography">Photography</a></li>
+                      <li class="active"><a href="/Cake">Cake Designers</a></li>
                     </ul>
                   </div>
                 </nav>
@@ -92,16 +77,68 @@
     </div>
   
     
-    <div class="site-blocks-cover overlay" style="background-image: url(images/cake11.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="slide-one-item home-slider owl-carousel">
+      
+      <div class="site-blocks-cover overlay" style="background-image: url(images/cake11.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <span class="caption mb-3"></span>
-              <h1 class="mb-4">Cake Designers</h1>
+              <h1 class="mb-2">Cake Designers</h1>
+              <h2 class="caption">Select Your Favourite Cake</h2>
             </div>
           </div>
         </div>
       </div>  
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/cake21.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Any Special Occation</h1>
+              <h2 class="caption">Best Cake Designs</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/cake25.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Best Tastes</h1>
+              <h2 class="caption">Find Your Taste</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </div> 
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-5 mb-md-0">
+            
+              <div class="img-border">
+                <a class="popup-vimeo image-play">
+                  <img src="images/cake26.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+
+              <img src="images/cake23.jpg" alt="Image" class="img-fluid image-absolute">
+            
+          </div>
+          <div class="col-md-5 ml-auto">
+            
+
+            <div class="section-heading text-left">
+              <h2 class="mb-5">Are you looking for?</h2>
+            </div>
+            <p class="mb-4">You are able to find best cake designers for any of your special occasions. </p>
+            </div>
+        </div>
+      </div>
+    </div>
 
     
     <div class="site-section">
@@ -120,6 +157,21 @@
       </div>
     </div>
 
+    <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="text-white">Are you a Professional Cake Designer? Join with Us.</h2>
+            <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
+          </div>
+          <div class="col-md-6">
+            <span class="caption">The Promo will start in</span>
+            <div id="date-countdown"></div>    
+          </div>
+        </div>
+        
+      </div>
+    </div>
 
     
     
@@ -129,32 +181,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Our Designers</h2>
+            <h2 class="mb-5">Our Cake Designers</h2>
           </div>
         </div>
         <div class="row no-gutters">
           
-          
-          <div class="site-block-half d-lg-flex">
-		  <div class="col-md-6 col-lg-3">
-            <a href="images/cake6.jpg" class="image-popup img-opacity"><img src="images/cake6.jpg" alt="Image" class="img-fluid"></a>
-          </div>
-               <div class="text">
-                <h3>RIO Icing Designers</h3>
-                <p>hfsjkl hscjdkc. zdhczc hslc,zx tium quo voluptatem provident voluptate tenetur illo.</p>
-              <p><a href="#" class="">View More <span class="icon-arrow-right small"></span></a></p>
-          
-			  </div>
-            </div>
-			
-			<div class="site-block-half d-lg-flex">
-		  <div class="col-md-6 col-lg-3">
-            <a href="images/cake.jpg" class="image-popup img-opacity"><img src="images/cake.jpg" alt="Image" class="img-fluid"></a>
-          </div>
-               <div class="text">
-                <h3>RIO Icing Designers</h3>
-                <p>hfsjkl hscjdkc. zdhczc hslc,zx tium quo voluptatem provident voluptate tenetur illo.</p>
-              <p><a href="#" class="">View More <span class="icon-arrow-right small"></span></a></p>
+      
           
 			  </div>
             </div>
