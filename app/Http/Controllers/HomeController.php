@@ -58,7 +58,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Wedding_Transport')
             {
-                return view('createWeddingTransport');
+                return view('CreateTransport');
             }
             if(($data1->category)=='Decoration')
             {
@@ -74,7 +74,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Bridel_Designers')
             {
-                return view('createSalon');
+                return view('CreateSalon');
             }
             if(($data1->category)=='Catering')
             {
