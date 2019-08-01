@@ -76,16 +76,42 @@
     </div>
   
     
-    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_10.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="slide-one-item home-slider owl-carousel">
+      
+      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_10.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <span class="caption mb-3"></span>
-              <h1 class="mb-4">Photography & Videography</h1>
+              <h1 class="mb-2">Photography & Videography</h1>
+              <h2 class="caption">Let Us color your dreams</h2>
             </div>
           </div>
         </div>
       </div>  
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/pre.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Any Special Occation</h1>
+              <h2 class="caption">Contact Us</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bridel1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Colorfull</h1>
+              <h2 class="caption">brightn as sunshine</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </div>
 	
     <div class="site-section">
       <div class="container">
