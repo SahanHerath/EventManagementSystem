@@ -188,7 +188,7 @@
                     @if($data1->Professional_Events=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/prof.jpg"  width="300" height="200 ">
                             <br><br>
                         
         					<h4>Professional Events</h4>
@@ -206,7 +206,7 @@
                     @if($data1->Sports=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/IMG_2932.jpg"  width="300" height="200 ">
                             <br><br>
                         
         					<h4>Sports</h4>
@@ -224,7 +224,7 @@
                     @if($data1->Trips=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/IMG_0401.jpg"  width="300" height="200 ">
                             <br><br>
                         
         					<h4>Trips</h4>
