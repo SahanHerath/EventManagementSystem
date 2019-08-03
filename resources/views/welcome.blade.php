@@ -173,7 +173,7 @@
 							</h4>
 					</div>
 					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".8s">
-						<img class="img-fluid w-100" src="images/bridal5.jpg" alt="">
+						<img class="img-fluid w-100" src="images/bridalw.jpg" alt="">
 						<div class="overlay"></div>
 						<h4>Salon
 							</h4>

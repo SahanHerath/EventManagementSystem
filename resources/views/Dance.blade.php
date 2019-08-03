@@ -59,12 +59,13 @@
                       <li >
                         <a href="/">Home</a>
                       </li>
-                      <li><a href="#">Wedding Hall</a></li>
                       
-                      <li><a href="Music">DJs/Music</a></li>
-                      <li><a href="Photography">Photography</a></li>
-                      <li><a href="#">Cake Designers</a></li>
-                      <li class="active"><a href="Bridal">Bridal</a></li>
+
+                        
+                      <li><a href="/Decorator">Decorations</a></li>
+                      <li><a href="/Music">DJs/Music</a></li>
+                      <li><a href="/Photography">Photography</a></li>
+                      <li class="active"><a href="/Dance">Dancing</a></li>
                     </ul>
                   </div>
                 </nav>
@@ -75,73 +76,113 @@
       </div>
     </div>
   
+    
     <div class="slide-one-item home-slider owl-carousel">
       
-      <div class="site-blocks-cover overlay" style="background-image: url(images/salon1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dance6.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Bridal & Groom Designers </h1>
-              <h2 class="caption"></h2>
+              <h1 class="mb-2">Dancers & Choregraphy</h1>
+              <h2 class="caption">Greatest Entertainers To Your Event </h2>
             </div>
           </div>
         </div>
       </div>  
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/salon2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dance2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Most Beautiful</h1>
-              <h2 class="caption">on your memorable day</h2>
+              <h1 class="mb-2">Best Dancers</h1>
+              <h2 class="caption">Any Special Occations </h2>
             </div>
           </div>
         </div>
       </div> 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/salon4.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dance1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Crown YourSelf</h1>
-              <h2 class="caption">with beauty & smile</h2>
+              <h1 class="mb-2">Rhythm Of Steps</h1>
+              <h2 class="caption">Fast Dance Moves</h2>
             </div>
           </div>
         </div>
       </div> 
+      
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dance11.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Symbol Of Culture</h1>
+              <h2 class="caption">Speak To Your Heart</h2>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div> 
-	
+
     <div class="site-section">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 mb-5 mb-md-0">
             
               <div class="img-border">
-                
-                  
-                  <img src="images/bridalb.jpg" alt="" class="img-fluid">
+                <a class="popup-vimeo image-play">
+                  <img src="images/dance3.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/bridal1.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/dance4.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
             
 
             <div class="section-heading text-left">
-              <h2 class="mb-5">Description</h2>
+              <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p>You are able to find your Bridal and Groom Designer for your special day. You can contact them and make your day colourful </p>
-           </div>
+            <p class="mb-4">You are able to find best dancers and choregraphers for any of your special occasions. </p>
+            </div>
         </div>
       </div>
     </div>
 
-
     
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-md-14 ml-auto">
+            
 
+            <div class="section-heading text-left">
+              <h2 class="mb-5">Description</h2>
+            </div>
+            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..</p>
+             </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="text-white">Are you a Professional Dancer or Choregrapher? Join with Us.</h2>
+            <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
+          </div>
+          <div class="col-md-6">
+            <span class="caption">The Promo will start in</span>
+            <div id="date-countdown"></div>    
+          </div>
+        </div>
+        
+      </div>
+    </div>
 
     
     
@@ -151,30 +192,15 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Our Bridel and Groom Designers</h2>
+            <h2 class="mb-5">Our Dancers & Choregraphers</h2>
           </div>
         </div>
         <div class="row no-gutters">
-        @foreach($level as $leve)
-        
-        <div class="site-block d-lg-flex">
-          <div class="col-md-7 col-lg-4">
-            <a href="uploads/salon/{{$leve->Profile_Pic}}" class="image-popup img-opacity"><img src="uploads/salon/{{$leve->Profile_Pic}}" alt="Image" class="img-fluid"></a>
-          </div>
-          <div class="text">
-            <br>
-            <h2 > {{$leve->Salon_Name}}</h2>
-            <h5>Address :- <i>{{$leve->Address}}</i></h5>
-            <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
-            <h5>Email :-  <i>{{$leve->email}}</i> </h5>
-              
-            <p><a href="{{URL('/SalonView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
-          </div>
-        </div>
-        <br><br><br>
-      @endforeach
           
+      
           
+			  </div>
+            </div>
 			
         </div>
       </div>
