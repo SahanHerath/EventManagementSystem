@@ -106,27 +106,27 @@
                             <br><br>
         					<h4>Wedding</h4>
                             @if($data1->Wedding_Photography == "Available")
-                                Wedding Photography
+                            <span class="lnr lnr-checkmark-circle"></span>Wedding Photography
                             @endif
                             <br>
                             @if($data1->Preshoot_Vedio == "Available")
-                                Pre Shoot Video
+                            <span class="lnr lnr-checkmark-circle"></span>Pre Shoot Video
                             @endif
                             <br>
                             @if($data1->Wedding_Vedio == "Available")
-                                Wedding Video
+                            <span class="lnr lnr-checkmark-circle"></span>Wedding Video
                             @endif
                             <br>
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Wedding_Card == "Available")
-                                Wedding Card
+                            <span class="lnr lnr-checkmark-circle"></span>Wedding Card
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
                            
@@ -141,11 +141,11 @@
         					<h4>Birthdays</h4>
                            
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
         				</div>
@@ -158,11 +158,11 @@
                             <br><br>
         					<h4>Competition</h4>
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
                         </div>
@@ -175,11 +175,11 @@
                             <br><br>
         					<h4>get-together</h4>
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
                         </div>
@@ -188,16 +188,16 @@
                     @if($data1->Professional_Events=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/prof.jpg"  width="300" height="200 ">
                             <br><br>
                         
         					<h4>Professional Events</h4>
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
                         </div>
@@ -206,16 +206,16 @@
                     @if($data1->Sports=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/IMG_2932.jpg"  width="300" height="200 ">
                             <br><br>
                         
         					<h4>Sports</h4>
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
                         </div>
@@ -224,16 +224,16 @@
                     @if($data1->Trips=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/IMG_0401.jpg"  width="300" height="200 ">
                             <br><br>
                         
         					<h4>Trips</h4>
                             @if($data1->Album_Making == "Available")
-                                 Album Making
+                            <span class="lnr lnr-checkmark-circle"></span>Album Making
                             @endif
                             <br>
                             @if($data1->Drone == "Available")
-                                Drone coverage
+                            <span class="lnr lnr-checkmark-circle"></span>Drone coverage
                             @endif
                             <br>
                         </div>
