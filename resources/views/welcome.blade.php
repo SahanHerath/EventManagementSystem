@@ -82,6 +82,28 @@
     
     <div class="slide-one-item home-slider owl-carousel">
       
+    <div class="site-blocks-cover overlay" style="background-image: url(images/hotel1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Hotels &  Resavation Halls</h1>
+              <h2 class="caption">Your Hotel, Your Stay</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/bridal1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Bridal & Groom Designers</h1>
+              <h2 class="caption">We Make You Beautiful</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
       <div class="site-blocks-cover overlay" style="background-image: url(images/photo.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -115,12 +137,24 @@
         </div>
       </div> 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hotel1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+   
+      <div class="site-blocks-cover overlay" style="background-image: url(images/dance2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Hotels &  Resavation Halls</h1>
-              <h2 class="caption">Your Hotel, Your Stay</h2>
+              <h1 class="mb-2">Dancers & Choregraphy</h1>
+              <h2 class="caption">Best Beats, Best Moves</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/weddingcar10.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Wedding Transport</h1>
+              <h2 class="caption">Your Comport, Our Service</h2>
             </div>
           </div>
         </div>

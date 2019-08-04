@@ -145,25 +145,8 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p class="mb-4">You are able to find best dancers and choregraphers for any of your special occasions. </p>
+            <p class="mb-4">You are able to find best dancers and choregraphers for any of your special occasions.You can select Traditional, Western, Indian dancing teams. </p>
             </div>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="site-section">
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <div class="col-md-14 ml-auto">
-            
-
-            <div class="section-heading text-left">
-              <h2 class="mb-5">Description</h2>
-            </div>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..</p>
-             </div>
         </div>
       </div>
     </div>
@@ -220,7 +203,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourfully <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Rumith</a>
+            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourfully <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Evora</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

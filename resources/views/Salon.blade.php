@@ -133,12 +133,27 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Description</h2>
             </div>
-            <p>You are able to find your Bridal and Groom Designer for your special day. You can contact them and make your day colourful </p>
+            <p>You are able to find your Bridal and Groom Designer for your special day. You can contact them and make your day colourful.</p>
            </div>
         </div>
       </div>
     </div>
 
+    <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="text-white">Are you a Professional Bridal & Groom Designer? Join with Us.</h2>
+            <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
+          </div>
+          <div class="col-md-6">
+            <span class="caption">The Promo will start in</span>
+            <div id="date-countdown"></div>    
+          </div>
+        </div>
+        
+      </div>
+    </div>
 
     
 
@@ -194,7 +209,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourfully <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Rumith</a>
+            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourfully <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Evora</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

@@ -126,16 +126,16 @@
                 
               </div>
 
-              <img src="images/dj6.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/dj4.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
             
 
             <div class="section-heading text-left">
-              <h2 class="mb-5">Description</h2>
+              <h2 class="mb-5">Are You Looking For ?</h2>
             </div>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..</p>
+            <p class="mb-4">You are able to contact Sri Lanka's Most professional, Most successful leading Dj & Bands with best music equipments. </p>
             
           </div>
         </div>

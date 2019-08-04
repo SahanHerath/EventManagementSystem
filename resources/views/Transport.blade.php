@@ -133,12 +133,27 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p class="mb-4">You are able to find your wedding cars,special coaches from here.there are many companies to get your dream vehicle for your special events. </p>
+            <p class="mb-4">You are able to find your wedding cars, special coaches from here. There are many companies to get your dream vehicle for your special events. </p>
             </div>
         </div>
       </div>
     </div>
 
+    <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="text-white">Are you Renting your vehicle for special occations? Join with Us.</h2>
+            <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
+          </div>
+          <div class="col-md-6">
+            <span class="caption">The Promo will start in</span>
+            <div id="date-countdown"></div>    
+          </div>
+        </div>
+        
+      </div>
+    </div>
     
     <div class="site-section bg-light">
         <div class="container">
@@ -175,29 +190,7 @@
         </div>
       </div>
     </div>
-    
-    <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2 class="text-white">Are you Renting your vehicle for special occations? Join with Us.</h2>
-            <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
-          </div>
-          <div class="col-md-6">
-            <span class="caption">The Promo will start in</span>
-            <div id="date-countdown"></div>    
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-    
-    
-
-
-    
-
+  
     <div class="site-section block-14 bg-light">
 
       <div class="container">

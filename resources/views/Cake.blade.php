@@ -79,7 +79,7 @@
     
     <div class="slide-one-item home-slider owl-carousel">
       
-      <div class="site-blocks-cover overlay" style="background-image: url(images/cake11.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/cake27.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -134,28 +134,14 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p class="mb-4">You are able to find best cake designers for any of your special occasions. </p>
+            <p class="mb-4">You are able to find best cake designers for any of your special occasions such as Weddings, Birthday parties, Annivesary parties & other events etc. </p>
             </div>
         </div>
       </div>
     </div>
 
     
-    <div class="site-section">
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <div class="col-md-14 ml-auto">
-            
-
-            <div class="section-heading text-left">
-              <h2 class="mb-5">Description</h2>
-            </div>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..</p>
-             </div>
-        </div>
-      </div>
-    </div>
+    
 
     <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
       <div class="container">
