@@ -180,4 +180,15 @@ class TransportController extends Controller
     {
         //
     }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('transporters','users.id','=','transporters.user_id')
+                ->join('transport_categories','users.id','=','transport_categories.user_id')
+                ->get();
+
+                return view('TransportView',compact('data'));
+    }
 }

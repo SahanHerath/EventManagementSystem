@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Evora-Decorators</title>
+        <title>Evora-transport</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -58,13 +58,13 @@
 					<div class="banner_content">
 						<div class="media">
 							<div class="d-flex">
-								<img src="uploads/decoration/{{$data1->Main_Pic}}" width="500" hight="800" alt="">
+								<img src="uploads/transport/{{$data1->Main_pic}}" width="500" hight="800" alt="">
 							</div>
                             
 							<div class="media-body">
 								<div class="personal_text">
 									<h6>Hello Everybody, we are</h6>
-									<h3>{{$data1->Team_Name}}</h3>
+									<h3>{{$data1->Transport_Service	}}</h3>
 									<h5>Contact Person :-{{$data1->name }}</h5>
                                     <br>
 									<ul class="list basic_info">
@@ -96,118 +96,73 @@
         <section class="feature_area p_120">
         	<div class="container">
         		<div class="main_title">
-        			<h2>offerings to my clients</h2>
+        			<h2>Type of vehicles we have</h2>
         		</div>
         		<div class="feature_inner row">
-                    @if($data1->Wedding=="Available")
+                    @if($data1->luxury=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
         					<img src="images/wedding.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Wedding</h4>
-                            @if($data1->Poruwa == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Poruwa decoration
+        					<h4>luxury collection</h4>
+                            <span class="lnr lnr-checkmark-circle"></span>  we provide you to luxury cars for your wedding contact us for more details.
                             <br>
-                            @endif
-                            
-                            @if($data1->Flower == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Flower decoration
-                            <br>
-                            @endif
-                            
-                            @if($data1->Table_Hall == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
-                            <br>
-                            @endif
-                            
-                            @if($data1->Setty_Backs == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Settee back
-                            <br>
-                            @endif
-                            
-                            @if($data1->Lighting == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
-                            <br>
-                            @endif
-                            
-                            @if($data1->Traditional == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Traditional decoration
-                            <br>
-                            @endif
-                            
-                            @if($data1->Wedding_Car == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Wedding car decoration
-                            <br>
-                            @endif
-                            
         				</div>
         			</div>
                     @endif
-                    @if($data1->Birthday=="Available")
+                    @if($data1->classic=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                             <img src="images/birthday.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Birthdays</h4>
-                            @if($data1->Table_Hall == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
-                            @endif
+        					<h4>classic collection</h4>
+                            <span class="lnr lnr-checkmark-circle"></span>  We have rare classic collection, you can choose classic car for your wedding.
+                           
                             <br>
-                            @if($data1->Lighting == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
-                            @endif
-                            <br>
+                            
         				</div>
         			</div>
                     @endif
-                    @if($data1->Parties=="Available")
+                    @if($data1->vintage=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                         <img src="images/party.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>party</h4>
-        					@if($data1->Table_Hall == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
-                            @endif
-                            <br>
-                            @if($data1->Lighting == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
-                            @endif
+        					<h4>vintage collection</h4>
+                            <span class="lnr lnr-checkmark-circle"></span>  If you are looking vintage series for your location contact us.
                             <br>
                         </div>
         			</div>
                     @endif
-                    @if($data1->Get_Together=="Available")
+                    @if($data1->horse_cart=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                         <img src="images/get-together.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>get-together</h4>
-        					@if($data1->Table_Hall == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
-                            @endif
-                            <br>
-                            @if($data1->Lighting == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
-                            @endif
+        					<h4>horse carts</h4>
+                            <span class="lnr lnr-checkmark-circle"></span>  horse rides to your wedding.
                             <br>
                         </div>
         			</div>
                     @endif
-                    @if($data1->Outside_events=="Available")
+                    @if($data1->air=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
                         <img src="images/outside-events.jpg"  width="300" height="200 ">
                             <br><br>
-                        
-        					<h4>outside-events</h4>
-        					@if($data1->Table_Hall == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
-                            @endif
+        					<h4>air</h4>
+                            <span class="lnr lnr-checkmark-circle"></span>  if you are looking helicopter,sea plane for your memorable day contact us.
                             <br>
-                            @if($data1->Lighting == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Lighting
-                            @endif
+                        </div>
+        			</div>
+                    @endif
+                    @if($data1->travelling_coach=="Available")
+					<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                            <br><br>
+        					<h4>travelling coach</h4>
+                            <span class="lnr lnr-checkmark-circle"></span>  35,50,50+ seats private coaches available.
                             <br>
                         </div>
         			</div>
@@ -229,27 +184,27 @@
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/decoration/{{$data1->pic1}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/transport/{{$data1->pic1}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
                                 <div class="project" >
-                                    <img src="uploads/decoration/{{$data1->pic2}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/transport/{{$data1->pic2}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
 
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/decoration/{{$data1->pic3}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/transport/{{$data1->pic3}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/decoration/{{$data1->pic4}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/transport/{{$data1->pic4}}" alt="IMage" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -260,54 +215,6 @@
         </section>
         @endforeach
         <!--================End Home Gallery Area =================-->
-        
-        <!--================Testimonials Area =================-->
-        <section class="testimonials_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>Testimonials</h2>
-        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
-        		</div>
-        		<div class="testi_inner">
-					<div class="testi_slider owl-carousel">
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-					</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Testimonials Area =================-->
         
         <!--================Footer Area =================-->
         <footer class="footer_area p_120">

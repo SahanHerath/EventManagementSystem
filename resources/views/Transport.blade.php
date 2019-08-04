@@ -120,7 +120,7 @@
             
               <div class="img-border">
                 <a class="popup-vimeo image-play">
-                  <img src="images/weddingcar4.jpg" alt="" class="img-fluid">
+                  <img src="images/weddingcar9.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
@@ -159,7 +159,7 @@
                 <h2 >{{$tran->Transport_Service}}</h2>
                 <h5>Address :- <i>{{$tran->Address}}</i></h5>
                 <h5>Contact No. :- <i>{{$tran->Contact_No}}</i></h5> 
-                <p><a href="{{URL('/DecoratorView'.$tran->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+                <p><a href="{{URL('/TransportView'.$tran->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
               </div>
             </div>
             <br><br>

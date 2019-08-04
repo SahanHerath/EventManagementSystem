@@ -50,3 +50,9 @@ Route::get('/Dancing', function () {
     return view('Dance');
 });
 
+Route::get('/TransportView{id}','TransportController@viewProfile');
+
+
+Route::get('/view', function () {
+    return view('View');
+});
