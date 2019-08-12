@@ -55,6 +55,7 @@
         <section class="home_banner_area">
            	<div class="container box_1620">
            		<div class="banner_inner d-flex align-items-center">
+           		<div class="banner_inner d-flex align-items-center">
 					<div class="banner_content">
 						<div class="media">
 							<div class="d-flex">
@@ -62,6 +63,7 @@
 							</div>
                             
 							<div class="media-body">
+                            
 								<div class="personal_text">
 									<h6>Hello Everybody, we are</h6>
 									<h3>{{$data1->Transport_Service	}}</h3>
@@ -72,6 +74,7 @@
 										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->Contact_No}}</a></li>
 										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
+                                        <img src="uploads/Gold.jpg" class="offset-2" width="200" hight="300" alt="">
 									</ul>
 								</div>
 							</div>
@@ -102,7 +105,7 @@
                     @if($data1->luxury=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-        					<img src="images/wedding.jpg"  width="300" height="200 ">
+        					<img src="images/wedding profile1.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>luxury collection</h4>
                             <span class="lnr lnr-checkmark-circle"></span>  we provide you to luxury cars for your wedding contact us for more details.
@@ -113,7 +116,7 @@
                     @if($data1->classic=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                            <img src="images/birthday.jpg"  width="300" height="200 ">
+                            <img src="images/wedding profile2.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>classic collection</h4>
                             <span class="lnr lnr-checkmark-circle"></span>  We have rare classic collection, you can choose classic car for your wedding.
@@ -126,7 +129,7 @@
                     @if($data1->vintage=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/party.jpg"  width="300" height="200 ">
+                        <img src="images/wedding profile3.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>vintage collection</h4>
                             <span class="lnr lnr-checkmark-circle"></span>  If you are looking vintage series for your location contact us.
@@ -137,7 +140,7 @@
                     @if($data1->horse_cart=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/get-together.jpg"  width="300" height="200 ">
+                        <img src="images/wedding profile4.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>horse carts</h4>
                             <span class="lnr lnr-checkmark-circle"></span>  horse rides to your wedding.
@@ -148,7 +151,7 @@
                     @if($data1->air=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/wedding profile5.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>air</h4>
                             <span class="lnr lnr-checkmark-circle"></span>  if you are looking helicopter,sea plane for your memorable day contact us.
@@ -159,7 +162,7 @@
                     @if($data1->travelling_coach=="Available")
 					<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/outside-events.jpg"  width="300" height="200 ">
+                        <img src="images/wedding profile6.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>travelling coach</h4>
                             <span class="lnr lnr-checkmark-circle"></span>  35,50,50+ seats private coaches available.
