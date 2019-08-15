@@ -140,16 +140,17 @@
                         
                         <div class="form-group row">
                         <label for="luxury" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="luxury" value="Not Available">
                             <label for="luxury">Luxury Vehicles </label> 
+                            <div class="primary-checkbox">
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="luxury" value="Available">
-                        </div>   
+                        </div></div> 
                         </div>
 
                         <div class="form-group row">
                         <label for="classic" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="classic" value="Not Available">
                             <label for="classic">Classic Vehicles </label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="classic" value="Available">
@@ -158,7 +159,7 @@
 
                         <div class="form-group row">
                         <label for="vintage" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="vintage" value="Not Available">
                             <label for="vintage">Vintage Vehicles</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="vintage" value="Available">
@@ -167,7 +168,7 @@
 
                         <div class="form-group row">
                         <label for="horse_cart" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="horse_cart" value="Not Available">
                             <label for="horse_cart">Horse Carts</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="horse_cart" value="Available">
@@ -176,7 +177,7 @@
 
                         <div class="form-group row">
                         <label for="air" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="air" value="Not Available">
                             <label for="air">Air Travelling Vehicle</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="air" value="Available">
@@ -185,7 +186,7 @@
 
                         <div class="form-group row">
                         <label for="travelling_coach" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="travelling_coach" value="Not Available">
                             <label for="travelling_coach">Travelling Coach</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="travelling_coach" value="Available">
