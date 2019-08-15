@@ -50,7 +50,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Dancing')
             {
-                return view('createDancers');
+                return view('CreateDancing');
             }
             if(($data1->category)=='Poruwa_Ceramony')
             {
