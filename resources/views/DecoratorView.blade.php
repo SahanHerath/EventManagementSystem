@@ -226,33 +226,24 @@
                     <div class="main_title">
                         <h2>Events we recently covered</h2>
                     </div>
-					    <div class="row">
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="project">
-                                    <img src="uploads/decoration/{{$data1->pic1}}" alt="IMage" class="img-fluid">
-                                    <br><br><br>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                                <div class="project" >
-                                    <img src="uploads/decoration/{{$data1->pic2}}" alt="IMage" class="img-fluid">
-                                    <br><br><br>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="project">
-                                    <img src="uploads/decoration/{{$data1->pic3}}" alt="IMage" class="img-fluid">
-                                    <br><br><br>
-                                </div>
-                            </div>
-                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                                <div class="project">
-                                    <img src="uploads/decoration/{{$data1->pic4}}" alt="IMage" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="section-top-border">
+						<h3 class="title_color">Image Gallery</h3>
+						<div class="row gallery-item">
+							<div class="col-md-6">
+								<a href="uploads/decoration/{{$data1->pic1}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/decoration/{{$data1->pic1}});"></div></a>
+							</div>
+							<div class="col-md-6">
+								<a href="uploads/decoration/{{$data1->pic2}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/decoration/{{$data1->pic2}});"></div></a>
+							</div>
+							<div class="col-md-6">
+								<a href="uploads/decoration/{{$data1->pic3}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/decoration/{{$data1->pic3}});"></div></a>
+							</div>
+							<div class="col-md-6">
+								<a href="uploads/decoration/{{$data1->pic4}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/decoration/{{$data1->pic4}});"></div></a>
+							</div>
+							
+						</div>
+					
 					</div>
 					
 				</div>

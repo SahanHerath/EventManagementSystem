@@ -228,7 +228,7 @@
 
 				</div>
 				<div class="col-lg-3 col-md-6">
-        <a href="#">
+        <a href="Dancing">
             <div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".6s">
               <img class="img-fluid w-100" src="images/dance.jpg" alt="">
               <div class="overlay"></div>

@@ -4,7 +4,8 @@
     <title>Evora</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Work+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -44,7 +45,7 @@
     </div> <!-- .site-mobile-menu -->
     
     
-    <div class="site-navbar-wrap js-site-navbar bg-white">
+    <div class="site-navbar-wrap js-site-navbar bg-light">
       
       <div class="container">
         <div class="site-navbar bg-light">
@@ -59,9 +60,7 @@
                     
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li class="active">
-                        <a href="/">Home</a>
-                      </li>
+                      <li class="active"><a href="/">Home</a></li>
                       <li><a href="Decorator">Decorator</a></li>
                       <li><a href="Transport">Wedding Cars</a></li>
                       <li><a href="Music">DJs/Music</a></li>
@@ -78,14 +77,292 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-        <div class="hire">
-          <h2>I am happy to know you <br>that 300+ projects done sucessfully!</h2>
-          <a href="#" class="btn-hire">Hire me</a>
+
+    <div class="slide-one-item home-slider owl-carousel">
+    <div class="site-blocks-cover overlay bg-light" style="background-image: url(images/events.jpg);"  data-aos="fade" data-stellar-background-ratio="0.5" >
+        <div class="container">
         </div>
-      </div>
-    </div>
+      </div> 
+
+      </div> 
+    <br><br>
+    
+    <section class="blog_categorie_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/wedding.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal1" data-toggle="modal"><h5>Wedding</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal1" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Wedding Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Hall and Reservation</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Bridal and Groom designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>DJ/Band</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Wedding Transport</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Dancing Group</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Costume Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Catering</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Cake Designers</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/birthday.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal2" data-toggle="modal"><h5>Birthday</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal2" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Birthday Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Hall and Reservation</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>DJ/Band</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Dancing Groups</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Catering</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Cake Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Actors</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/party.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal3" data-toggle="modal"><h5>Parties</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal3" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Party Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>DJ/Band</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Dancing Groups</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Catering</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Actors</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <br><br><br>
+                  
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/professional.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal4" data-toggle="modal"><h5>Professional or Corporate Events</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal4" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Professional Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Catering</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Costume Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Actors</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/sporting.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal5" data-toggle="modal"><h5>Sporting Events</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal5" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Sporting Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Costume Designers</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/outside-events.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal6" data-toggle="modal"><h5>Outside Events</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal6" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Outside Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographer</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>DJ/Band</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Catering</h3></a>
+                                      </div>
+                                      
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+    
     <footer class="site-footer">
       <div class="container">
         <div class="row pt-3 mt-3 text-center">
@@ -101,6 +378,11 @@
     </footer>
   </div>
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
