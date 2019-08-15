@@ -56,3 +56,5 @@ Route::get('/TransportView{id}','TransportController@viewProfile');
 Route::get('/Events', function () {
     return view('Events');
 });
+
+Route::post('/addactor', 'ActorController@store')  ;

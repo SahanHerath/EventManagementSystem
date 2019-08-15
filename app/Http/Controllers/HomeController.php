@@ -70,7 +70,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Actors')
             {
-                return view('createActors');
+                return view('CreateActors');
             }
             if(($data1->category)=='Bridel_Designers')
             {
