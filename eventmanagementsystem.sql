@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2019 at 09:51 AM
+-- Generation Time: Aug 15, 2019 at 01:26 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -66,6 +66,39 @@ CREATE TABLE `actor_events` (
   `Professional_event` varchar(20) NOT NULL,
   `Musical_event` varchar(20) NOT NULL,
   `Corporate_event` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `caterings`
+--
+
+CREATE TABLE `caterings` (
+  `id` int(11) NOT NULL,
+  `Service_Name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `Welcome_drink` varchar(20) NOT NULL,
+  `Catering_set` varchar(20) NOT NULL,
+  `Catering_tent` varchar(20) NOT NULL,
+  `Cake` varchar(20) NOT NULL,
+  `Special_Food` varchar(20) NOT NULL,
+  `Garden_umbrella` varchar(20) NOT NULL,
+  `Coffee_Machine` varchar(20) NOT NULL,
+  `Table_chair` varchar(20) NOT NULL,
+  `sink` varchar(20) NOT NULL,
+  `dessert` varchar(20) NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(20) NOT NULL,
+  `pic2` varchar(20) NOT NULL,
+  `pic3` varchar(20) NOT NULL,
+  `pic4` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -367,6 +400,12 @@ ALTER TABLE `actor_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `caterings`
+--
+ALTER TABLE `caterings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `decorators`
 --
 ALTER TABLE `decorators`
@@ -459,6 +498,12 @@ ALTER TABLE `actors`
 -- AUTO_INCREMENT for table `actor_events`
 --
 ALTER TABLE `actor_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `caterings`
+--
+ALTER TABLE `caterings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
