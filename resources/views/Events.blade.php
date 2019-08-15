@@ -243,7 +243,7 @@
                         </div>
                     </div>
                   </div>
-                  <br><br><br>
+                  <br><br>
                   
                 <div class="row">
                     <div class="col-lg-4">
@@ -251,7 +251,7 @@
                             <img src="images/professional.jpg" width="380" height="250" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
-                                    <a data-target="#myModal4" data-toggle="modal"><h5>Professional or Corporate Events</h5></a>
+                                    <a data-target="#myModal4" data-toggle="modal"><h5>Professional Events</h5></a>
                                     <div class="border_line"></div>
                                 </div>
                             </div>
