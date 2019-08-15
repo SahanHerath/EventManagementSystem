@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2019 at 01:07 AM
+-- Generation Time: Aug 15, 2019 at 09:51 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -21,6 +21,54 @@ SET time_zone = "+00:00";
 --
 -- Database: `eventmanagementsystem`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actors`
+--
+
+CREATE TABLE `actors` (
+  `id` int(11) NOT NULL,
+  `Actor_name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `Singer` varchar(20) NOT NULL,
+  `Magician` varchar(20) NOT NULL,
+  `Comedian` varchar(20) NOT NULL,
+  `Actor` varchar(20) NOT NULL,
+  `Announcer` varchar(20) NOT NULL,
+  `Entertainer` varchar(20) NOT NULL,
+  `Other` varchar(20) NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `pic4` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actor_events`
+--
+
+CREATE TABLE `actor_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Birthday` varchar(20) NOT NULL,
+  `Party` varchar(20) NOT NULL,
+  `Professional_event` varchar(20) NOT NULL,
+  `Musical_event` varchar(20) NOT NULL,
+  `Corporate_event` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -307,6 +355,18 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `actors`
+--
+ALTER TABLE `actors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `actor_events`
+--
+ALTER TABLE `actor_events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `decorators`
 --
 ALTER TABLE `decorators`
@@ -388,6 +448,18 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `actors`
+--
+ALTER TABLE `actors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `actor_events`
+--
+ALTER TABLE `actor_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `decorators`
