@@ -58,3 +58,5 @@ Route::get('/Events', function () {
 });
 
 Route::post('/addactor', 'ActorController@store')  ;
+
+Route::post('/addcatering', 'CateringController@store')  ;
