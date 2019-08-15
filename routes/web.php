@@ -53,6 +53,6 @@ Route::get('/Dancing', function () {
 Route::get('/TransportView{id}','TransportController@viewProfile');
 
 
-Route::get('/view', function () {
-    return view('View');
+Route::get('/Events', function () {
+    return view('Events');
 });

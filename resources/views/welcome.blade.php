@@ -177,49 +177,65 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
-					<div class="single_place wow fadeIn text-center mt-480" data-wow-duration="1s">
-						<img class="img-fluid w-100" src="images/img_30.jpg" alt="">
+				<a href="Photography">
+        <div class="single_place wow fadeIn text-center mt-480" data-wow-duration="1s">
+						<img  class="img-fluid w-100" src="images/img_30.jpg" alt="">
 						<div class="overlay"></div>
-						<h4>Photography <br>Videography
-							</h4>
+						<h4>Photography <br>Videography</h4>
 					</div>
+        </a>
+				</div>
+
+				<div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".2s">
+              <img class="img-fluid w-100" src="images/hall.jpg" alt="">
+              <div class="overlay"></div>
+              <h4>Hall
+                <br>Reservation </h4>
+            </div>
+          </a>
+            
+          <a href="Music">
+            <div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay="1s">
+              <img class="img-fluid w-100" src="images/dj.jpg" alt="">
+              <div class="overlay"></div>
+              <h4>Music/
+                <br> DJ</h4>
+            </div>
+          </a>
+				</div>
+
+
+				<div class="col-lg-3 col-md-6">
+          <a href="Decorator">
+            <div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".4s">
+              <img class="img-fluid w-100" src="images/light1.jpg" alt="">
+              <div class="overlay"></div>
+              <h4>Decorations
+                </h4>
+            </div>
+          </a>
+
+          <a href="Bridal">
+            <div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".8s">
+              <img class="img-fluid w-100" src="images/bridalw.jpg" alt="">
+              <div class="overlay"></div>
+              <h4>Salon
+                </h4>
+            </div>
+          </a>
+
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".2s">
-						<img class="img-fluid w-100" src="images/hall.jpg" alt="">
-						<div class="overlay"></div>
-						<h4>Hall
-							<br>Reservation </h4>
-					</div>
-          
-					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay="1s">
-						<img class="img-fluid w-100" src="images/dj.jpg" alt="">
-						<div class="overlay"></div>
-						<h4>Music/
-							<br> DJ</h4>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".4s">
-						<img class="img-fluid w-100" src="images/light1.jpg" alt="">
-						<div class="overlay"></div>
-						<h4>Decorations
-							</h4>
-					</div>
-					<div class="single_place wow fadeIn text-center" data-wow-duration="1s" data-wow-delay=".8s">
-						<img class="img-fluid w-100" src="images/bridalw.jpg" alt="">
-						<div class="overlay"></div>
-						<h4>Salon
-							</h4>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".6s">
-						<img class="img-fluid w-100" src="images/dance.jpg" alt="">
-						<div class="overlay"></div>
-						<h4>Dance
-							</h4>
-					</div>
+        <a href="#">
+            <div class="single_place wow fadeIn text-center mt-240" data-wow-duration="1s" data-wow-delay=".6s">
+              <img class="img-fluid w-100" src="images/dance.jpg" alt="">
+              <div class="overlay"></div>
+              <h4>Dance
+                </h4>
+            </div>
+            </a>
 				</div>
 			</div>
 		</div>
