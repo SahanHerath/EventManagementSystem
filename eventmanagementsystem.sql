@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2019 at 01:26 PM
+-- Generation Time: Aug 15, 2019 at 06:54 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -99,6 +99,54 @@ CREATE TABLE `caterings` (
   `pic3` varchar(20) NOT NULL,
   `pic4` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dancers`
+--
+
+CREATE TABLE `dancers` (
+  `id` int(11) NOT NULL,
+  `Team_Name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `choreography` varchar(20) NOT NULL,
+  `Gender` varchar(20) NOT NULL,
+  `Traditional` varchar(20) NOT NULL,
+  `Western` varchar(20) NOT NULL,
+  `Indian` varchar(20) NOT NULL,
+  `Kandyan` varchar(20) NOT NULL,
+  `Casual` varchar(20) NOT NULL,
+  `Other` varchar(20) NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `pic4` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dancer_events`
+--
+
+CREATE TABLE `dancer_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Wedding` varchar(20) NOT NULL,
+  `Party` varchar(20) NOT NULL,
+  `Musical_event` varchar(20) NOT NULL,
+  `Corporate_event` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -406,6 +454,18 @@ ALTER TABLE `caterings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `dancers`
+--
+ALTER TABLE `dancers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dancer_events`
+--
+ALTER TABLE `dancer_events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `decorators`
 --
 ALTER TABLE `decorators`
@@ -504,6 +564,18 @@ ALTER TABLE `actor_events`
 -- AUTO_INCREMENT for table `caterings`
 --
 ALTER TABLE `caterings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `dancers`
+--
+ALTER TABLE `dancers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `dancer_events`
+--
+ALTER TABLE `dancer_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
