@@ -196,3 +196,4 @@ class salonController extends Controller
                 return view('SalonView',compact('data'));
     }
 }
+ 

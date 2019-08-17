@@ -181,9 +181,24 @@
         <div class="row no-gutters">
           
       
-          
-			  </div>
-            </div>
+        @foreach($level as $leve)
+        
+        <div class="site-block d-lg-flex">
+          <div class="col-md-7 col-lg-4">
+            <a href="uploads/dancing/{{$leve->Main_pic}}" class="image-popup img-opacity"><img src="uploads/dancing/{{$leve->Main_pic}}" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="text">
+            <br>
+            <h2 > {{$leve->Team_Name}}</h2>
+            <h5>Address :- <i>{{$leve->Address}}</i></h5>
+            <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
+            <h5>Email :-  <i>{{$leve->email}}</i> </h5>
+              
+            <p><a href="{{URL('/DanceView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+          </div>
+        </div>
+        <br><br><br>
+        @endforeach
 			
         </div>
       </div>

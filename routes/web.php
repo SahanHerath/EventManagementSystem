@@ -46,9 +46,12 @@ Route::get('/Transport', 'TransportController@index')  ;
 
 Route::post('/addtransport', 'TransportController@store')  ;
 
-Route::get('/Dancing', function () {
+/*Route::get('/Dancing', function () {
     return view('Dance');
-});
+});*/
+
+Route::get('/Dancing', 'DancingController@index')  ;
+Route::get('/DanceView{id}','DancingController@viewProfile');
 
 Route::get('/TransportView{id}','TransportController@viewProfile');
 

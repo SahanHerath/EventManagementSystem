@@ -19,6 +19,13 @@ class DancingController extends Controller
     public function index()
     {
         //
+        $level = DB::table('dancers')
+                ->join('users','users.id','=','dancers.user_id')
+                ->get();
+      
+       
+       return view('Dance', compact('level'));
+
     }
 
     /**
@@ -175,5 +182,17 @@ class DancingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('dancers','users.id','=','dancers.user_id')
+                ->join('dancer_events','users.id','=','dancer_events.user_id')
+                ->where('category','=','Dancing')
+                ->get();
+
+                return view('DanceView',compact('data'));
     }
 }

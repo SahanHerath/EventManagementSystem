@@ -170,6 +170,7 @@
           </div>
         </div>
         <div class="row no-gutters">
+        
         @foreach($level as $leve)
         
         <div class="site-block d-lg-flex">

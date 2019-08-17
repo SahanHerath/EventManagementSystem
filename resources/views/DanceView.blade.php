@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
@@ -56,13 +56,13 @@
         
            	<div class="container box_1620">
                <div class="offset-3">
-               <h1>Bridal And Groom Designers<h1>
+               <h1>Dance and choreography<h1>
                </div>
            		<div class="banner_inner d-flex align-items-center">
 					<div class="banner_content">
 						<div class="media">
 							<div class="d-flex">
-								<img src="uploads/salon/{{$data1->Profile_Pic}}" width="500" hight="800" alt="">
+								<img src="uploads/dancing/{{$data1->Main_pic}}" width="500" hight="800" alt="">
 							</div>
                             
 							<div class="media-body">
@@ -70,7 +70,7 @@
                             <div class="column">
 								<div class="personal_text">
 									<h6>Hello Everybody, we are</h6> 
-									<h3>{{$data1->Salon_Name}}</h3>
+									<h3>{{$data1->Team_Name}}</h3>
 									<h5>Contact Person :-{{$data1->name }}</h5>
                                     <br>
                                     
@@ -80,6 +80,33 @@
 										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
 									</ul>
+                                    <br>
+                                        <h5>More Details..</h5>
+                                        <br>
+                                        <div class="group_type">
+                                           <h6>* Dancing team catergory,</h6><br>
+                                                <div class= "text-center">
+                                                    @if($data1->Gender == "Male")
+                                                        Only male dance members<br>
+                                                    @endif
+
+                                                    @if($data1->Gender == "Female")
+                                                        Only female dance members<br>
+                                                    @endif
+                                                    
+                                                    @if($data1->Gender == "Mix")
+                                                        Mix dance members<br>
+                                                    @endif
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <div class="cheography_type">
+                                             @if($data1->choreography == "Available")
+                                               <h6>* We are providing the choreographers</h6><br>
+                                            @endif
+                                        </div>
+
+                                        </h5>    
 								</div>
                             </div>
                             <div class="column">
@@ -111,93 +138,139 @@
         			<h2>offerings to my clients</h2>
         		</div>
         		<div class="feature_inner row">
-                    @if($data1->wedding=="Available")
+                    @if($data1->Wedding=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-        					<img src="images/wedding1.jpg"  width="300" height="200 ">
+        					<img src="images/dance3.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Wedding</h4>
-                            @if($data1->Bride_Dressing == "Available")
-                                Bride Dressing<br>
+
+                            @if($data1->Kandyan == "Available")
+                                Kandyan Dancing<br>
+                            @endif
+
+                            @if($data1->Traditional == "Available")
+                                Traditional Dancing<br>
                             @endif
                             
-                            @if($data1->Groom_Dressing == "Available")
-                                Groom Dressing<br>
+                            @if($data1->Indian == "Available")
+                                Indian Dancing<br>
                             @endif
                             
-                            @if($data1->Dress_Making == "Available")
-                                Dress Designing and Making<br>
+                            @if($data1->Western == "Available")
+                                Western Dancing<br>
                             @endif
                             
-                            @if($data1->Jewelry == "Available")
-                                 Jewelry<br> 
+                            @if($data1->Casual == "Available")
+                                 Casual Dancing<br> 
+                            @endif
+
+                            @if($data1->Other == "Available")
+                                 Other Dancing<br> 
                             @endif
                             
-                            @if($data1->Makeup == "Available")
-                                Make Up and facial<br> 
-                            @endif
                             
-                            @if($data1->Bridesman == "Available")
-                                 Bridesman Dressing and Dress Designing<br> 
-                            @endif
-                            
-                            @if($data1->Bridesmaid == "Available")
-                                Bridesman Dressing and Dress Designing<br>
-                            @endif
-                            
-                            @if($data1->HairStyle == "Available")
-                                Hair Style<br>
-                            @endif
                             
                         </div>
         			</div>
                     @endif
 
-                    @if($data1->parties=="Available")
+                    @if($data1->Party=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                            <img src="images/partysalon.jpg"  width="300" height="200 ">
+                            <img src="images/dance.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Parties</h4>
                            
-                            @if($data1->Dress_Making == "Available")
-                                 Dress Making and Dress Designing<br>
+                            @if($data1->Kandyan == "Available")
+                                Kandyan Dancing<br>
+                            @endif
+
+                            @if($data1->Traditional == "Available")
+                                Traditional Dancing<br>
                             @endif
                             
-                            @if($data1->Makeup == "Available")
-                                Makeup and facial<br>
+                            @if($data1->Indian == "Available")
+                                Indian Dancing<br>
                             @endif
                             
-                            @if($data1->HairStyle == "Available")
-                                HairStyle<br>
+                            @if($data1->Western == "Available")
+                                Western Dancing<br>
+                            @endif
+                            
+                            @if($data1->Casual == "Available")
+                                 Casual Dancing<br> 
+                            @endif
+
+                            @if($data1->Other == "Available")
+                                 Other Dancing<br> 
                             @endif
                             
         				</div>
         			</div>
                     @endif
 
-                    @if($data1->fashion_show=="Available")
+                    @if($data1->Musical_event=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/fashionshow.jpg"  width="300" height="200 ">
+                        <img src="images/dance8.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Fashion Show and Bridal Show</h4>
-                            @if($data1->Dress_Making == "Available")
-                                Dress Designing and Making<br>    
+        					<h4>Musical Show </h4>
+                                                                                   
+                            @if($data1->Indian == "Available")
+                                Indian Dancing<br>
                             @endif
                             
-                            @if($data1->Makeup == "Available")
-                                Makeup and facial<br>
+                            @if($data1->Western == "Available")
+                                Western Dancing<br>
                             @endif
                             
-                            @if($data1->HairStyle == "Available")
-                                Hair Style<br>
+                            @if($data1->Casual == "Available")
+                                 Casual Dancing<br> 
                             @endif
-                            
+
+                            @if($data1->Other == "Available")
+                                 Other Dancing<br> 
+                            @endif
+
                         </div>
         			</div>
                     @endif
                     
+                    @if($data1->Corporate_event=="Available")
+        			<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+                            <img src="images/dance10.png"  width="300" height="200 ">
+                            <br><br>
+        					<h4>Corporate_event</h4>
+                           
+                            @if($data1->Kandyan == "Available")
+                                Kandyan Dancing<br>
+                            @endif
+
+                            @if($data1->Traditional == "Available")
+                                Traditional Dancing<br>
+                            @endif
+                            
+                            @if($data1->Indian == "Available")
+                                Indian Dancing<br>
+                            @endif
+                            
+                            @if($data1->Western == "Available")
+                                Western Dancing<br>
+                            @endif
+                            
+                            @if($data1->Casual == "Available")
+                                 Casual Dancing<br> 
+                            @endif
+
+                            @if($data1->Other == "Available")
+                                 Other Dancing<br> 
+                            @endif
+                            
+        				</div>
+        			</div>
+                    @endif
                     
                     
                    
@@ -218,27 +291,27 @@
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/salon/{{$data1->pic1}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/dancing/{{$data1->pic1}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
                                 <div class="project" >
-                                    <img src="uploads/salon/{{$data1->pic2}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/dancing/{{$data1->pic2}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
 
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/salon/{{$data1->pic3}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/dancing/{{$data1->pic3}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/salon/{{$data1->pic4}}" alt="IMage" class="img-fluid">
+                                    <img src="uploads/dancing/{{$data1->pic4}}" alt="IMage" class="img-fluid">
                                 </div>
                             </div>
                         </div>
