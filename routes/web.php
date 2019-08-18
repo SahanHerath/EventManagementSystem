@@ -69,3 +69,5 @@ Route::post('/adddancing', 'DancingController@store')  ;
 Route::get('/Poruwa', function () {
     return view('PoruwaCeramony');
 });
+
+Route::post('/addPoruwa', 'PoruwaController@store') ;

@@ -54,7 +54,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Poruwa_Ceramony')
             {
-                return view('createPoruwaCeramony');
+                return view('CreatePoruwaCeramony');
             }
             if(($data1->category)=='Wedding_Transport')
             {
