@@ -125,7 +125,7 @@
                 </a>
               </div>
 
-              <img src="images/cake23.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/catering7.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
@@ -134,7 +134,7 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p class="mb-4">You are able to find best cake designers for any of your special occasions such as Weddings, Birthday parties, Annivesary parties & other events etc. </p>
+            <p class="mb-4">You are able to find best Catering Services for any of your special occasions such as Weddings, Birthday parties, Meetings & other corporate events etc. </p>
             </div>
         </div>
       </div>
@@ -147,7 +147,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <h2 class="text-white">Are you a Professional Cake Designer? Join with Us.</h2>
+            <h2 class="text-white">Join With Best Catering Services In The Area</h2>
             <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
           </div>
           <div class="col-md-6">
@@ -172,10 +172,26 @@
         </div>
         <div class="row no-gutters">
           
+        @foreach($level as $leve)
+        
+        <div class="site-block d-lg-flex">
+          <div class="col-md-7 col-lg-4">
+            <a href="uploads/catering/{{$leve->Main_pic}}" class="image-popup img-opacity"><img src="uploads/catering/{{$leve->Main_pic}}" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="text">
+            <br>
+            <h2 > {{$leve->Service_Name}}</h2>
+            <h5>Address :- <i>{{$leve->Address}}</i></h5>
+            <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
+            <h5>Email :-  <i>{{$leve->email}}</i> </h5>
+              
+            <p><a href="{{URL('/cateringview'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+          </div>
+        </div>
+        <br><br><br>
+      @endforeach
       
           
-			  </div>
-            </div>
 			
         </div>
       </div>
