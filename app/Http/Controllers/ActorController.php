@@ -16,9 +16,14 @@ class ActorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
     }
 
     /**
