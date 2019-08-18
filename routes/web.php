@@ -74,5 +74,9 @@ Route::post('/addPoruwa', 'PoruwaController@store') ;
 Route::get('/Poruwa', 'PoruwaController@index')  ;
 Route::get('/PoruwaCeramonyView{id}','salonController@viewProfile');
 
+<<<<<<< HEAD
 Route::get('/Actor', 'ActorController@index')  ;
 Route::get('/ActorView{id}','ActorController@viewProfile');
+=======
+Route::post('/addCakeDesigner', 'CakeController@store')  ;
+>>>>>>> a7141c90467a8edcaf26014c82ce2e96c07cfe40

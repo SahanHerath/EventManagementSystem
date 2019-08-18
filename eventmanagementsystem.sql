@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2019 at 08:34 AM
+-- Generation Time: Aug 18, 2019 at 01:53 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -66,6 +66,35 @@ CREATE TABLE `actor_events` (
   `Professional_event` varchar(20) NOT NULL,
   `Musical_event` varchar(20) NOT NULL,
   `Corporate_event` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cake_designers`
+--
+
+CREATE TABLE `cake_designers` (
+  `id` int(11) NOT NULL,
+  `Organization_Name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `Wedding_cake` varchar(20) NOT NULL,
+  `Birthday_cake` varchar(20) NOT NULL,
+  `Cake_Structure` varchar(20) NOT NULL,
+  `Pastry_cake` varchar(20) NOT NULL,
+  `Cup_Cake` varchar(20) NOT NULL,
+  `Other` varchar(20) NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `pic4` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -478,6 +507,12 @@ ALTER TABLE `actor_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cake_designers`
+--
+ALTER TABLE `cake_designers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `caterings`
 --
 ALTER TABLE `caterings`
@@ -594,6 +629,12 @@ ALTER TABLE `actors`
 -- AUTO_INCREMENT for table `actor_events`
 --
 ALTER TABLE `actor_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cake_designers`
+--
+ALTER TABLE `cake_designers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
