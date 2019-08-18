@@ -72,10 +72,24 @@ Route::post('/adddancing', 'DancingController@store')  ;
 
 Route::post('/addPoruwa', 'PoruwaController@store') ;
 Route::get('/Poruwa', 'PoruwaController@index')  ;
-Route::get('/PoruwaCeramonyView{id}','salonController@viewProfile');
+
 
 
 Route::get('/Actor', 'ActorController@index')  ;
 Route::get('/ActorView{id}','ActorController@viewProfile');
 Route::post('/addCakeDesigner', 'CakeController@store')  ;
+
+
+
+Route::post('/addCakeDesigner', 'CakeController@store')  ;
+
+Route::get('/catering', 'CateringController@index')  ;
+Route::get('/cateringview{id}','CateringController@viewProfile');
+
+Route::get('/PoruwaCeramonyView{id}','PoruwaController@viewProfile');
+
+
+Route::get('/Actor', 'ActorController@index')  ;
+Route::get('/ActorView{id}','ActorController@viewProfile');
+
 

@@ -18,6 +18,12 @@ class CateringController extends Controller
     public function index()
     {
         //
+        $decos = DB::table('caterings')
+        ->join('users','users.id','=','caterings.user_id')
+        ->get();
+
+
+return view('catering', compact('decos'));
     }
 
     /**
