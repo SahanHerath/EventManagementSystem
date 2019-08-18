@@ -3,27 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Actor;
-use App\Actor_event;
+use App\Cake_designer;
 use Auth;
 use Image;
-use DB;
 
-class ActorController extends Controller
+
+class CakeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {    $level = DB::table('actors')
-                ->join('users','users.id','=','actors.user_id')
-                ->get();
-      
-       
-       return view('Actor', compact('level'));
-      
+    public function index()
+    {
+        //
     }
 
     /**
@@ -45,30 +39,30 @@ class ActorController extends Controller
     public function store(Request $request)
     {
         //
-        $actor = new Actor;
-        $actor->Actor_name=$request->Actor_name;
-        $actor->Address=$request->Address;
-        $actor->Contact_No =$request->Contact_No;
-        $actor->Link =$request->Link;
-        $actor->Description =$request->Description;
-        $actor->Singer =$request->Singer;
-        $actor->Magician =$request->Magician;
-        $actor->Comedian=$request->Comedian;
-        $actor->Actor=$request->Actor;
-        $actor->Announcer =$request->Announcer;
-        $actor->Entertainer=$request->Entertainer;
-        $actor->Other=$request->Other;
-        $actor->user_id = Auth::user()->id;
+        $cake = new Cake_designer;
+        $cake->Organization_Name=$request->Organization_Name;
+        $cake->Address=$request->Address;
+        $cake->Contact_No =$request->Contact_No;
+        $cake->Link =$request->Link;
+        $cake->Description =$request->Description;
+        $cake->Wedding_cake =$request->Wedding_cake;
+        $cake->Birthday_cake =$request->Birthday_cake;
+        $cake->Cake_Structure=$request->Cake_Structure;
+        $cake->Pastry_cake=$request->Pastry_cake;
+        $cake->Cup_Cake =$request->Cup_Cake;
+        $cake->Other=$request->Other;
+        
+        $cake->user_id = Auth::user()->id;
         
         if($request->hasFile('Main_pic'))
           {
              $Main_pic=$request->file('Main_pic');
            
              $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
-             $actor->Main_pic=$filename;
+             $cake->Main_pic=$filename;
              
          }
 
@@ -77,10 +71,10 @@ class ActorController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
-             $actor->pic1=$filename;
+             $cake->pic1=$filename;
              
          }
 
@@ -89,10 +83,10 @@ class ActorController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
-             $actor->pic2=$filename;
+             $cake->pic2=$filename;
              
          }
 
@@ -101,10 +95,10 @@ class ActorController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
-             $actor->pic3=$filename;
+             $cake->pic3=$filename;
              
          }
 
@@ -113,28 +107,15 @@ class ActorController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
-             $actor->pic4=$filename;
+             $cake->pic4=$filename;
              
          }
-                $actor->save();
+                $cake->save();
 
-
-            $actor_event = new Actor_event;
-            $actor_event->user_id = Auth::user()->id;
-            $actor_event->Birthday=$request->Birthday;
-            $actor_event->Party =$request->Party;
-            $actor_event->Professional_event =$request->Professional_event;
-            $actor_event->Musical_event =$request->Musical_event;
-            $actor_event->Corporate_event =$request->Corporate_event;
-            
-            
-            $actor_event->save();
-
-            return view('home');
-
+                return view('home');
     }
 
     /**
