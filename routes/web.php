@@ -75,3 +75,6 @@ Route::get('/Poruwa', 'PoruwaController@index')  ;
 Route::get('/PoruwaCeramonyView{id}','salonController@viewProfile');
 
 Route::post('/addCakeDesigner', 'CakeController@store')  ;
+
+Route::get('/catering', 'CateringController@index')  ;
+Route::get('/cateringview{id}','CateringController@viewProfile');
