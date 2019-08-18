@@ -181,4 +181,15 @@ class ActorController extends Controller
     {
         //
     }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('actors','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->get();
+
+                return view('ActorView',compact('data'));
+    }
 }
