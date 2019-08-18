@@ -78,34 +78,34 @@
     
     <div class="slide-one-item home-slider owl-carousel">
       
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_10.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/actor1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Actors</h1>
-              <h2 class="caption"></h2>
+              <h1 class="mb-2">Presenters & Entertainers</h1>
+              <h2 class="caption">Best People That You Can Get</h2>
             </div>
           </div>
         </div>
       </div>  
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/pre.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/actor3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Any Special Occation</h1>
-              <h2 class="caption">Contact Us</h2>
+              <h1 class="mb-2">Singers</h1>
+              <h2 class="caption">Best Voices In Sri Lanka</h2>
             </div>
           </div>
         </div>
       </div> 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/bridel1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/actor4.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Colorfull</h1>
-              <h2 class="caption">brightn as sunshine</h2>
+              <h1 class="mb-2">Best Performances</h1>
+              <h2 class="caption">To Make Your Event Special</h2>
             </div>
           </div>
         </div>
@@ -123,11 +123,11 @@
                   <span class="">
                     <span class=""></span>
                   </span>
-                  <img src="images/photo.jpg" alt="" class="img-fluid">
+                  <img src="images/actor2.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/photo.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/actor5.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
@@ -167,7 +167,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Our Photographers</h2>
+            <h2 class="mb-5">Our Actors</h2>
           </div>
         </div>
         <div class="row no-gutters">
@@ -176,7 +176,7 @@
         
           <div class="site-block d-lg-flex">
             <div class="col-md-7 col-lg-4">
-              <a href="uploads/photography/{{$leve->main_pic}}" class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image" class="img-fluid"></a>
+              <a href="uploads/actor/{{$leve->Main_pic}}" class="image-popup img-opacity"><img src="uploads/actor/{{$leve->Main_pic}}" alt="Image" class="img-fluid"></a>
             </div>
             <div class="text">
               <br>

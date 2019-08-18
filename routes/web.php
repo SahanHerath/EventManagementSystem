@@ -74,6 +74,15 @@ Route::post('/addPoruwa', 'PoruwaController@store') ;
 Route::get('/Poruwa', 'PoruwaController@index')  ;
 
 
+
+
+Route::get('/Actor', 'ActorController@index')  ;
+Route::get('/ActorView{id}','ActorController@viewProfile');
+Route::post('/addCakeDesigner', 'CakeController@store')  ;
+
+
+
+
 Route::post('/addCakeDesigner', 'CakeController@store')  ;
 
 Route::get('/catering', 'CateringController@index')  ;
