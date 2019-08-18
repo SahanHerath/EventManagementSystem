@@ -72,9 +72,17 @@ Route::post('/adddancing', 'DancingController@store')  ;
 
 Route::post('/addPoruwa', 'PoruwaController@store') ;
 Route::get('/Poruwa', 'PoruwaController@index')  ;
-Route::get('/PoruwaCeramonyView{id}','salonController@viewProfile');
 
+<<<<<<< HEAD
 Route::post('/addCakeDesigner', 'CakeController@store')  ;
 
 Route::get('/catering', 'CateringController@index')  ;
 Route::get('/cateringview{id}','CateringController@viewProfile');
+=======
+Route::get('/PoruwaCeramonyView{id}','PoruwaController@viewProfile');
+
+
+Route::get('/Actor', 'ActorController@index')  ;
+Route::get('/ActorView{id}','ActorController@viewProfile');
+
+>>>>>>> 28ba931e21dcc476dcffed92151d0b7280c890d9
