@@ -66,8 +66,10 @@ Route::post('/addcatering', 'CateringController@store')  ;
 
 Route::post('/adddancing', 'DancingController@store')  ;
 
-Route::get('/Poruwa', function () {
+/*Route::get('/Poruwa', function () {
     return view('PoruwaCeramony');
-});
+});*/
 
 Route::post('/addPoruwa', 'PoruwaController@store') ;
+Route::get('/Poruwa', 'PoruwaController@index')  ;
+Route::get('/PoruwaCeramonyView{id}','salonController@viewProfile');

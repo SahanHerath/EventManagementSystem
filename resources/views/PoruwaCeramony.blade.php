@@ -166,11 +166,29 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Our Wedding Ritual Maker</h2>
+            <h2 class="mb-5">Our Wedding Ritual Makers</h2>
           </div>
         </div>
         <div class="row no-gutters">
         
+        @foreach($level as $leve)
+        
+        <div class="site-block d-lg-flex">
+          <div class="col-md-7 col-lg-4">
+            <a href="uploads/poruwa/{{$leve->Main_pic}}" class="image-popup img-opacity"><img src="uploads/poruwa/{{$leve->Main_pic}}" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="text">
+            <br>
+            <h2 >{{$leve->Name}}</h2>
+            <h5>Address :- <i>{{$leve->Address}}</i></h5>
+            <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
+            
+              
+            <p><a href="{{URL('/PoruwaCeramonyView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+          </div>
+        </div>
+        <br><br><br>
+      @endforeach
          
           
           

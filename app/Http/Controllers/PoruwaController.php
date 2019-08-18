@@ -18,6 +18,12 @@ class PoruwaController extends Controller
     public function index()
     {
         //
+        $level = DB::table('poruwa_ceramonies')
+                ->join('users','users.id','=','poruwa_ceramonies.user_id')
+                ->get();
+      
+       
+       return view('PoruwaCeramony', compact('level'));
     }
 
     /**
@@ -163,4 +169,16 @@ class PoruwaController extends Controller
     {
         //
     }
+    
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('poruwa_ceramonies','users.id','=','poruwa_ceramonies.user_id')
+                ->where('category','=','Poruwa_Ceramony')
+                ->get();
+
+                return view('PoruwaCeramonyView',compact('data'));
+    }
+    
 }
