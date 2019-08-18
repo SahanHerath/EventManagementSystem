@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2019 at 11:38 AM
+-- Generation Time: Aug 18, 2019 at 08:34 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -332,6 +332,12 @@ CREATE TABLE `poruwa_ceramonies` (
   `Contact_No` varchar(20) NOT NULL,
   `Link` varchar(191) NOT NULL,
   `Description` text NOT NULL,
+  `Poruwa_rituals` varchar(20) NOT NULL,
+  `Poruwa_items` varchar(20) NOT NULL,
+  `match_making` varchar(20) NOT NULL,
+  `Astrological_support` varchar(20) NOT NULL,
+  `jayamangala_gatha` varchar(20) NOT NULL,
+  `Wedding_dancers` varchar(20) NOT NULL,
   `Cost` double NOT NULL,
   `Main_pic` varchar(191) NOT NULL,
   `pic1` varchar(191) NOT NULL,
