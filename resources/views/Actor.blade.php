@@ -185,7 +185,7 @@
               <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
               <h5>Email :-  <i>{{$leve->email}}</i> </h5>
                 
-              <p><a href="{{URL('/Actorview'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+              <p><a href="{{URL('/ActorView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
             </div>
           </div>
           <br><br><br>
