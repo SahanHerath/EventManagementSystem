@@ -132,11 +132,11 @@
             
               <div class="img-border">
                 <a class="popup-vimeo image-play">
-                  <img src="images/dance3.jpg" alt="" class="img-fluid">
+                  <img src="images/eplaner9.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/dance4.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/eplanner3.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">

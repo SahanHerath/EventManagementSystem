@@ -178,4 +178,16 @@ class EventPlanersController extends Controller
     {
         //
     }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('event_planners','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('category','=','Event_Planners')
+                ->get();
+
+                return view('EventPlannerView',compact('data'));
+    }
 }
