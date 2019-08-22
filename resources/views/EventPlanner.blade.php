@@ -116,7 +116,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">As Your Dream Theam</h1>
+              <h1 class="mb-2">As Your Dream Them</h1>
               <h2 class="caption">Touch Your Heart</h2>
             </div>
           </div>
@@ -175,12 +175,29 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Our Dancers & Choregraphers</h2>
+            <h2 class="mb-5">Our Event Planners</h2>
           </div>
         </div>
         <div class="row no-gutters">
           
-      
+        @foreach($level as $leve)
+        
+        <div class="site-block d-lg-flex">
+          <div class="col-md-7 col-lg-4">
+            <a href="uploads/event/{{$leve->Main_pic}}" class="image-popup img-opacity"><img src="uploads/event/{{$leve->Main_pic}}" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="text">
+            <br>
+            <h2 > {{$leve->Organization_name}}</h2>
+            <h5>Address :- <i>{{$leve->Address}}</i></h5>
+            <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
+            <h5>Email :-  <i>{{$leve->email}}</i> </h5>
+              
+            <p><a href="{{URL('/EventPlannerView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+          </div>
+        </div>
+        <br><br><br>
+        @endforeach
         
 			
         </div>

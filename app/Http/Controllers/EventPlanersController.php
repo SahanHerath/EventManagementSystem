@@ -7,6 +7,7 @@ use App\Event_planner;
 use App\Event_planners_event;
 use Auth;
 use Image;
+use DB;
 
 
 class EventPlanersController extends Controller

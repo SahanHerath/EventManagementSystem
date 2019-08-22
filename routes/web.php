@@ -94,10 +94,10 @@ Route::get('/PoruwaCeramonyView{id}','PoruwaController@viewProfile');
 Route::get('/Actor', 'ActorController@index')  ;
 Route::get('/ActorView{id}','ActorController@viewProfile');
 
-Route::post('/addeventplanners','EventPlanersController@store');
-/*Route::get('/EventPalnner', 'EventPlanersController@index')  ;
-Route::get('/EventPalnnersView{id}','EventPlanersController@viewProfile');*/
+Route::post('/addeventplanner','EventPlanersController@store');
+Route::get('/EventPlanner', 'EventPlanersController@index')  ;
+Route::get('/EventPlannerView{id}','EventPlanersController@viewProfile');
 
-Route::get('/EventPalnner', function () {
+/*Route::get('/EventPalnner', function () {
     return view('EventPalnner');
 });
