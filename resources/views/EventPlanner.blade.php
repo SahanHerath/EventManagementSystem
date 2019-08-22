@@ -79,7 +79,7 @@
     
     <div class="slide-one-item home-slider owl-carousel">
       
-      <div class="site-blocks-cover overlay" style="background-image: url(images/eplaner2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/eplaner10.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -94,7 +94,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Best Planners Teams</h1>
+              <h1 class="mb-2">Best Planning Teams</h1>
               <h2 class="caption">Any Special Occations </h2>
             </div>
           </div>
@@ -105,7 +105,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Moderest & Creatively</h1>
+              <h1 class="mb-2">Fresh & Creatively</h1>
               <h2 class="caption">With The Best Ideas</h2>
             </div>
           </div>
@@ -132,7 +132,7 @@
             
               <div class="img-border">
                 <a class="popup-vimeo image-play">
-                  <img src="images/eplaner9.jpg" alt="" class="img-fluid">
+                  <img src="images/eplaner2.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 

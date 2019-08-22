@@ -182,6 +182,7 @@
             <h2 >{{$leve->Name}}</h2>
             <h5>Address :- <i>{{$leve->Address}}</i></h5>
             <h5>Contact No. :- <i>{{$leve->Contact_No}}</i></h5>
+            <h5>Email :-  <i>{{$leve->email}}</i> </h5>
             
               
             <p><a href="{{URL('/PoruwaCeramonyView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          

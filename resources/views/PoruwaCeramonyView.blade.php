@@ -71,6 +71,7 @@
                             <div class="column">
 								<div class="personal_text">
 									<h6>Hello Everybody, we are</h6><br>
+                                        <h3>{{$data1->Name}}</h3>
 										<h5>Contact Person :-{{$data1->name }}</h5>
                                     <br>
                                     
