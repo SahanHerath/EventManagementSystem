@@ -92,6 +92,9 @@
                                 <div class="radio">
                                     <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="category" value="Cloth_Designers"><span class="custom-control-label">Cloth Designers</span></label>
                                 </div>
+                                <div class="radio">
+                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="category" value="Event_Planners"><span class="custom-control-label">Event Planners</span></label>
+                                </div>
                             </div>
                         </div>
 

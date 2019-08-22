@@ -94,4 +94,6 @@ Route::get('/PoruwaCeramonyView{id}','PoruwaController@viewProfile');
 Route::get('/Actor', 'ActorController@index')  ;
 Route::get('/ActorView{id}','ActorController@viewProfile');
 
+Route::post('/addeventplanner','EventPlanersController@store');
+
 

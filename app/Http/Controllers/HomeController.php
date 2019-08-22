@@ -84,6 +84,10 @@ class HomeController extends Controller
             {
                 return view('createClothDesigners');
             }
+            if(($data1->category)=='Event_Planners')
+            {
+                return view('CreateEventPlanners');
+            }
            
         }
     }
