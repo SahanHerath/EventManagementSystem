@@ -19,6 +19,12 @@ class EventPlanersController extends Controller
     public function index()
     {
         //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
     }
 
     /**
