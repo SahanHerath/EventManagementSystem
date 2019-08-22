@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2019 at 01:53 PM
+-- Generation Time: Aug 22, 2019 at 03:09 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -224,6 +224,48 @@ CREATE TABLE `decorator_events` (
   `Get_Together` varchar(20) NOT NULL,
   `Parties` varchar(20) NOT NULL,
   `Outside_events` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_planners`
+--
+
+CREATE TABLE `event_planners` (
+  `id` int(11) NOT NULL,
+  `Organization_name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `pic4` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_planners_events`
+--
+
+CREATE TABLE `event_planners_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Wedding` varchar(20) NOT NULL,
+  `Parties` varchar(20) NOT NULL,
+  `Meetings` varchar(20) NOT NULL,
+  `Corporate_event` varchar(20) NOT NULL,
+  `Outside_event` varchar(20) NOT NULL,
+  `Sport_event` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -543,6 +585,18 @@ ALTER TABLE `decorator_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `event_planners`
+--
+ALTER TABLE `event_planners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `event_planners_events`
+--
+ALTER TABLE `event_planners_events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -666,6 +720,18 @@ ALTER TABLE `decorators`
 --
 ALTER TABLE `decorator_events`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `event_planners`
+--
+ALTER TABLE `event_planners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `event_planners_events`
+--
+ALTER TABLE `event_planners_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
