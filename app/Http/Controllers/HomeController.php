@@ -38,7 +38,7 @@ class HomeController extends Controller
         {
             if(($data1->category)=='Hall')
             {
-                return view('createhall');
+                return view('CreateHotel');
             }
             if(($data1->category)=='Photography')
             {

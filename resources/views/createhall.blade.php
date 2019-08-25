@@ -1,336 +1,233 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Boarding Details</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Add Hall Deatails</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('boarding.store')}}" enctype="multipart/form-data">
-                        {{ csrf_field() }}
+                
+                
+                <div class="card-body">
+                    <form method="POST" action="{{URL('/addhall'.$id)}}" enctype="multipart/form-data">
+                        @csrf
 
-                        <div class="form-group{{ $errors->has('address_of_boarding') ? ' has-error' : '' }}">
-                            <label for="address_of_boarding" class="col-md-4 control-label">Address_Of_Boarding</label>
-
-                            <div class="col-md-6">
-                                <input id="address_of_boarding" type="text" class="form-control" name="address_of_boarding" value="{{ old('address_of_boarding') }}"autofocus>
-
-                                @if ($errors->has('address_of_boarding'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('address_of_boarding') }}</strong>
-                                    </span>
-                                @endif
-                                
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('near_to') ? ' has-error' : '' }}">
-                            <label for="near_to" class="col-md-4 control-label">Near To</label>
+                        <div class="form-group row">
+                            <label for="Organization_name" class="col-md-4 col-form-label text-md-right">Team/Organization Name</label>
 
                             <div class="col-md-6">
-                                <input id="near_to" type="text" class="form-control" name="near_to"  value="{{ old('near_to') }}"autofocus>
+                                <input id="Organization_name" type="text" class="form-control @error('Organization_name') is-invalid @enderror" name="Organization_name" value="{{ old('Organization_name') }}" required autocomplete="Organization_name" autofocus>
 
-                                @if ($errors->has('near_to'))
+                                @if ($errors->has('Organization_name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('near_to') }}</strong>
+                                        <strong>{{ $errors->first('Organization_name') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="accomadation_type" class="col-md-4 control-label">Accomadation Type</label>
-                            <div class="col-md-6">
-                                <div class="radio">
-                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="accomadation_type" value="House" checked><span class="custom-control-label">House</span></label>
-                                </div>
-                                <div class="radio">
-                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="accomadation_type" value="Room"><span class="custom-control-label">Room</span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="available_for" class="col-md-4 control-label">Available For</label>
-                            <div class="col-md-6">
-                                <div class="radio">
-                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="available_for" value="Girls" checked><span class="custom-control-label">Girls</span></label>
-                                </div>
-                                <div class="radio">
-                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="available_for" value="Boys"><span class="custom-control-label">Boys</span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('number_of_boarders') ? ' has-error' : '' }}">
-                            <label for="number_of_boarders" class="col-md-4 control-label">Number Of Boarders</label>
+                        <div class="form-group row">
+                            <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_boarders" type="number" min="0" class="form-control" name="number_of_boarders" value="{{ old('number_of_boarders') }}">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}" required autocomplete="Address">
 
-                                @if ($errors->has('number_of_boarders'))
+                                @if ($errors->has('Address'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('number_of_boarders') }}</strong>
+                                        <strong>{{ $errors->first('Address') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="col-md-6">Number Of Rooms and  facilities</label><br><br>
-                            <div class="col-md-12" layout="row">
-                                
-                                <div class="col-md-6 offset-3" layout="column">
-                                <div class="form-group{{ $errors->has('Attached_washroom') ? ' has-error' : '' }}">
-                                        <label for="Attached_washroom" class="col-md-4 control-label">Attached Washroom</label>
 
-                                        <div class="col-md-6">
-                                            <input id="Attached_washroom" type="number" min="0" class="form-control" name="Attached_washroom" value="{{ old('Attached_washroom') }}">
+                        <div class="form-group row">
+                            <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
-                                            @if ($errors->has('Attached_washroom'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Attached_washroom') }}</strong>
-                                            </span>
-                                        @endif
-                                        </div>
-                                    </div>
-                                    <div class="form-group{{ $errors->has('Washrooms') ? ' has-error' : '' }}">
-                                        <label for="Washrooms" class="col-md-4 control-label">Washrooms</label>
+                            <div class="col-md-6">
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" required autocomplete="Contact_No" autofocus>
 
-                                        <div class="col-md-6">
-                                            <input id="Washrooms" type="number" min="0" class="form-control" name="Washrooms" value="{{ old('Washrooms') }}" >
-
-                                            @if ($errors->has('Washrooms'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Washrooms') }}</strong>
-                                            </span>
-                                        @endif
-                                        </div>
-                                    </div>
-                                
-                                    <div class="form-group{{ $errors->has('Bedrooms') ? ' has-error' : '' }}">
-                                        <label for="Bedrooms" class="col-md-4 control-label">Bedrooms</label>
-
-                                        <div class="col-md-6">
-                                            <input id="Bedrooms" type="number" min="0" class="form-control" name="Bedrooms" value="{{ old('Bedrooms') }}">
-
-                                            @if ($errors->has('Bedrooms'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Bedrooms') }}</strong>
-                                            </span>
-                                            @endif
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Kitchen') ? ' has-error' : '' }}">
-                                        <label for="Kitchen" class="col-md-4 control-label">Kitchen</label>
-
-                                        <div class="col-md-6">
-                                            <input id="Kitchen" type="number" min="0" class="form-control" name="Kitchen" value="{{ old('Kitchen') }}">
-
-                                            @if ($errors->has('Kitchen'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Kitchen') }}</strong>
-                                            </span>
-                                        @endif
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Chairs') ? ' has-error' : '' }}">
-                                        <label for="Chairs" class="col-md-4 control-label">Chairs</label>
-
-                                        <div class="col-md-6">
-                                            <input id="Chairs" type="number" min="0" class="form-control" name="Chairs" value="{{ old('Chairs') }}">
-                                            @if ($errors->has('Chairs'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Chairs') }}</strong>
-                                            </span>
-                                        @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Tables') ? ' has-error' : '' }}">
-                                        <label for="Tables" class="col-md-4 control-label">Tables</label>
-
-                                        <div class="col-md-6">
-                                            <input id="Tables" type="number" min="0" class="form-control" name="Tables" value="{{ old('Tables') }}">
-                                            @if ($errors->has('Tables'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Tables') }}</strong>
-                                            </span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Fans') ? ' has-error' : '' }}">
-                                        <label for="Fans" class="col-md-4 control-label">Fans</label>
-
-                                        <div class="col-md-6">
-                                            <input id="Fans" type="number" min="0" class="form-control" name="Fans" value="{{ old('Fans') }}">
-                                            @if ($errors->has('Fans'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Fans') }}</strong>
-                                            </span>
-                                        @endif
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Cupboards') ? ' has-error' : '' }}">
-                                        <label for="Cupboards" class="col-md-4 control-label">Cupboards</label>
-
-                                        <div class="col-md-6">
-                                            <input id="Cupboards" type="number" min="0" class="form-control" name="Cupboards" value="{{ old('Cupboards') }}">
-                                            @if ($errors->has('Cupboards'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Cupboards') }}</strong>
-                                            </span>
-                                        @endif
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Double_Beds') ? ' has-error' : '' }}">
-                                        <label for="DoubleBed" class="col-md-4 control-label">Double Bed</label>
-
-                                        <div class="col-md-6">
-                                            <input id="DoubleBed" type="number" min="0" class="form-control" name="Double_Beds" value="{{ old('Double_Beds') }}">
-                                            @if ($errors->has('Double_Beds'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Double_Beds') }}</strong>
-                                            </span>
-                                        @endif
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group{{ $errors->has('Single_Beds') ? ' has-error' : '' }}">
-                                        <label for="SingleBed" class="col-md-4 control-label">Single Bed</label>
-
-                                        <div class="col-md-6">
-                                            <input id="SingleBed" type="number" min="0" class="form-control" name="Single_Beds" value="{{ old('Single_Beds') }}">
-                                            @if ($errors->has('Single_Beds'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('Single_Beds') }}</strong>
-                                            </span>
-                                        @endif
-                                        </div>
-                                    </div>
-
-                                </div>
-                                
+                                @if ($errors->has('Contact_No'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Contact_No') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="security_cam_available" class="col-md-4 control-label">Security Cam</label>
+                        <div class="form-group row">
+                            <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
+
+                            <div class="col-md-6">
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}" required autocomplete="Link" autofocus>
+
+                                @if ($errors->has('Link'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Link') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('Description') ? ' has-error' : '' }}">
+                        <div class="form-group row">
+                            <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <select id="security_cam_available" class="form-control" name="security_cam_available" value="{{ old('security_cam_available') }}">
-                                    <option value="" >--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
+                                <textarea name='Description' cols='50' rows='5' id='Description' required></textarea>
                             </div>
+                        </div>
                         </div>
 
-                        <label>Select "Include" if the monthly boarding charge include mentioned payments below</label><br><br>
-                        <div class="form-group">
-                            
-                            <label for="electricity_bill" class="col-md-4 control-label">Electricity Bill</label>
-                            <div class="col-md-6">
-                                <select id="electricity_bill" class="form-control" name="electricity_bill" value="{{ old('electricity_bill') }}">
-                                    <option value="" disabled selected id="op1">--Select Type--</option>
-                                    <option value="Include">Include</option>
-                                    <option value="Not Include">Not Include</option>
-                                </select>
-                            </div>
-                        </div>
+                        <label><b>What are the events that you cover</b></label><br><br>
 
-                        <div class="form-group">
-                            <label for="Meals" class="col-md-4 control-label">Meals</label>
-                            <div class="col-md-6">
-                                <select id="Meals" class="form-control" name="Meals" value="{{ old('Meals') }}">
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Include">Include</option>
-                                    <option value="Not Include">Not Include</option>
-                                </select>
+                                                    
+                            <div class="form-group row">
+                            <label for="Wedding" class="col-md-4"></label>   
+                            <div class="col-md-4">
+                                <input type="hidden" name="Wedding" value="Not Available">
+                                <label for="Wedding">Wedding </label> 
+                                <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available">
+                            </div>   
                             </div>
-                        </div>
+
+                            <div class="form-group row">
+                            <label for="Parties" class="col-md-4"></label>   
+                            <div class="col-md-4">
+                                <input type="hidden" name="Parties" value="Not Available">
+                                <label for="Parties">Party </label> 
+                                <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Parties" value="Available">
+                            </div>   
+                            </div>
+
+                            <div class="form-group row">
+                            <label for="Meetings" class="col-md-4"></label>   
+                            <div class="col-md-4">
+                                <input type="hidden" name="Meetings" value="Not Available">
+                                <label for="Meetings">Meetings </label> 
+                                <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Meetings" value="Available">
+                            </div>   
+                            </div>
+
+                            <div class="form-group row">
+                            <label for="Corporate_event" class="col-md-4"></label>   
+                            <div class="col-md-4">
+                                <input type="hidden" name="Corporate_event" value="Not Available">
+                                <label for="Corporate_event">Corporate Event</label> 
+                                <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available">
+                            </div>   
+                            </div>
+
+                            <div class="form-group row">
+                            <label for="Outside_event" class="col-md-4"></label>   
+                            <div class="col-md-4">
+                                <input type="hidden" name="Outside_event" value="Not Available">
+                                <label for="Outside_event">Outside Events</label> 
+                                <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Outside_event" value="Available">
+                            </div>   
+                            </div>
+
+                            <div class="form-group row">
+                            <label for="Sport_event" class="col-md-4"></label>   
+                            <div class="col-md-4">
+                                <input type="hidden" name="Sport_event" value="Not Available">
+                                <label for="Sport_event">Sport Events</label> 
+                                <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Sport_event" value="Available">
+                            </div>   
+                            </div>
+
+
+
+
+
+                 
+
                         
-                        <div class="form-group">
-                            <label for="Water" class="col-md-4 control-label">Water</label>
+
+                     
+
+                        <div class="form-group row">
+                            <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main pic</label>
+    
                             <div class="col-md-6">
-                                <select id="Water" class="form-control" name="Water" value="{{ old('Water') }}">
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Include">Include</option>
-                                    <option value="Not Include">Not Include</option>
-                                </select>
-                            </div>
-                        </div>
+                                <input type="file" name="Main_pic" id="Main_pic" value="{{ old('Main_pic') }}" required>
 
-
-                        <div class="form-group{{ $errors->has('rent') ? ' has-error' : '' }}">
-                            <label for="rent" class="col-md-4 control-label">Monthly Boarding Charges</label>
-
-                            <div class="col-md-6">
-                                <input id="rent" type="number" min="0" class="form-control" name="rent" value="{{ old('rent') }}">
-
-                                @if ($errors->has('rent'))
+                                    @if ($errors->has('Main_pic'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('rent') }}</strong>
+                                        <strong>{{ $errors->first('Main_pic') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('main_pic') ? ' has-error' : '' }}">
-                            <label for="main_pic" class="col-md-4 control-label ">{{('Main Boarding Picture') }}</label>
+                        <div class="form-group row">
+                            <label for="pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="main_pic" id="main_pic" value="{{ old('main_pic') }}">
+                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" required>
 
-                                    @if ($errors->has('main_pic'))
+                                    @if ($errors->has('pic1'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('main_pic') }}</strong>
+                                        <strong>{{ $errors->first('pic1') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-    
-                        <div class="form-group row" >
-                            <label for="boarding_pics" class="col-md-4 control-label ">{{('Other Boarding Pictures') }}</label>
+
+                        <div class="form-group row">
+                            <label for="pic2" class="col-md-4 col-form-label text-md-right">Picture 2</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="img[]" id="img[]"  multiple="true">
-                            </div>
-                        </div>
-    
+                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" required>
 
-                        <div class="form-group{{ $errors->has('rules') ? ' has-error' : '' }}">
-                            <label for="rules" class="col-md-4 control-label">Rules and Conditions</label>
-
-                            <div class="col-md-6">
-                                <input id="rules" type="text" class="form-control" name="rules"  value="{{ old('rules') }}" autofocus>
-
-                                @if ($errors->has('rules'))
+                                    @if ($errors->has('pic2'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('rules') }}</strong>
+                                        <strong>{{ $errors->first('pic2') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+
+                        <div class="form-group row">
+                            <label for="pic3" class="col-md-4 col-form-label text-md-right">Picture 3</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" required>
+
+                                    @if ($errors->has('pic3'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('pic3') }}</strong>
+                                    </span>
+                                    @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="pic4" class="col-md-4 col-form-label text-md-right">Picture 4</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" required>
+
+                                    @if ($errors->has('pic4'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('pic4') }}</strong>
+                                    </span>
+                                    @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create
+                                    Submit
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
+
