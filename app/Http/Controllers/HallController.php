@@ -113,4 +113,9 @@ class HallController extends Controller
     {
         //
     }
+
+    public function storeReceptionHall(request $request, $id)
+    {
+
+    }
 }
