@@ -98,6 +98,4 @@ Route::post('/addeventplanner','EventPlanersController@store');
 Route::get('/EventPlanner', 'EventPlanersController@index')  ;
 Route::get('/EventPlannerView{id}','EventPlanersController@viewProfile');
 
-/*Route::get('/EventPalnner', function () {
-    return view('EventPalnner');
-});
+
