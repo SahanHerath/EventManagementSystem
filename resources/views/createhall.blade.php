@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="Capacity" class="col-md-4 col-form-label text-md-right">Hall Cost</label>
+                            <label for="Capacity" class="col-md-4 col-form-label text-md-right">Capacity</label>
 
                             <div class="col-md-6">
                                 <input id="Capacity" type="number" min="0" class="form-control @error('Capacity') is-invalid @enderror" name="Capacity" value="{{ old('Capacity') }}" required autocomplete="Capacity">
