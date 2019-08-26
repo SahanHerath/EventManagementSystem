@@ -103,3 +103,4 @@ Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 
 Route::get('/Venue', 'HallController@index')  ;
 Route::get('/HotelView{id}','HallController@viewHotel');
+

@@ -67,6 +67,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="facebook" class="col-md-4 col-form-label text-md-right">facebook</label>
+
+                            <div class="col-md-6">
+                                <input id="facebook" type="text" class="form-control @error('facebook') is-invalid @enderror" name="facebook" value="{{ old('facebook') }}" required autocomplete="facebook" autofocus>
+
+                                @if ($errors->has('facebook'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('facebook') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="instagram" class="col-md-4 col-form-label text-md-right">Instagram</label>
+
+                            <div class="col-md-6">
+                                <input id="instagram" type="text" class="form-control @error('instagram') is-invalid @enderror" name="instagram" value="{{ old('instagram') }}" required autocomplete="instagram" autofocus>
+
+                                @if ($errors->has('instagram'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('instagram') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('Description') ? ' has-error' : '' }}">
                         <div class="form-group row">
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
@@ -86,6 +114,20 @@
                                     @if ($errors->has('Main_logo'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('Main_logo') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Cover_photo" class="col-md-4 col-form-label text-md-right">Cover photo</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="Cover_photo" id="Cover_photo" value="{{ old('Cover_photo') }}" required>
+
+                                    @if ($errors->has('Cover_photo'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Cover_photo') }}</strong>
                                     </span>
                                 @endif
                             </div>

@@ -55,6 +55,8 @@ class HallController extends Controller
         $hotel->Contact_No =$request->Contact_No;
         $hotel->Link =$request->Link;
         $hotel->Description =$request->Description;
+        $hotel->facebook =$request->facebook;
+        $hotel->instagram =$request->instagram;
         
         $hotel->user_id = Auth::user()->id;
         
@@ -67,6 +69,18 @@ class HallController extends Controller
 
              
              $hotel->Main_logo=$filename;
+             
+         }
+
+         if($request->hasFile('Cover_photo'))
+          {
+             $Cover_photo=$request->file('Cover_photo');
+           
+             $filename=time().'.'.$Cover_photo->getClientOriginalExtension();
+             Image::make($Cover_photo)->resize(1920,1080)->save(public_path('/uploads/hall/'. $filename));
+
+             
+             $hotel->Cover_photo=$filename;
              
          }
 
@@ -257,4 +271,6 @@ class HallController extends Controller
 
               return view('HotelView',compact('hotel'));
     }
+
+   
 }
