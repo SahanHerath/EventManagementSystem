@@ -175,4 +175,14 @@ return view('catering', compact('level'));
     {
         //
     }
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('caterings','users.id','=','caterings.user_id')
+                ->where('category','=','Catering')
+                ->get();
+
+                return view('cateringview',compact('data'));
+    }
 }

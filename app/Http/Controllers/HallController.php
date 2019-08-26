@@ -269,7 +269,7 @@ class HallController extends Controller
               ->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
               ->get();
 
-              return view('HotelView',compact('hotel'));
+              return view('WeddingHotelProfile',compact('hotel'));
     }
 
    

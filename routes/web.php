@@ -101,6 +101,13 @@ Route::get('/EventPlannerView{id}','EventPlanersController@viewProfile');
 Route::post('/addhotel', 'HallController@store');
 Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 
+
 Route::get('/Venue', 'HallController@index')  ;
 Route::get('/HotelView{id}','HallController@viewHotel');
+
+
+
+Route::get('/Hotel', function () {
+    return view('WeddingHotelProfile');
+});
 
