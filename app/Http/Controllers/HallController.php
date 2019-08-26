@@ -10,6 +10,7 @@ use App\Hall_event;
 use App\Hall_feature;
 use App\Reception_hall;
 use App\Hall_table_arrangement;
+use DB;
 
 class HallController extends Controller
 {
@@ -21,6 +22,12 @@ class HallController extends Controller
     public function index()
     {
         //
+        $hall = DB::table('hotels')
+                ->join('users','users.id','=','hotels.user_id')
+                ->get();
+
+
+        return view('hotel', compact('hall'));
     }
 
     /**
@@ -239,5 +246,15 @@ class HallController extends Controller
             $hall_arrange->save();
 
             return view('home');
+    }
+
+    public function viewHotel($id)
+    {
+        $hotel=DB::table('hotels')
+              ->join('users','users.id','=','hotels.user_id')
+              ->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              ->get();
+
+              return view('HotelView',compact('hotel'));
     }
 }

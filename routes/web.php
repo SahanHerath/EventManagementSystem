@@ -101,3 +101,12 @@ Route::get('/EventPlannerView{id}','EventPlanersController@viewProfile');
 Route::post('/addhotel', 'HallController@store');
 Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 
+<<<<<<< HEAD
+=======
+Route::get('/Venue', 'HallController@index')  ;
+Route::get('/HotelView{id}','HallController@viewHotel');
+>>>>>>> 1186ab0dc4d6f7a59c6b8ff09862bc685f91498f
+
+Route::get('/Hotel', function () {
+    return view('WeddingHotelProfile');
+});
