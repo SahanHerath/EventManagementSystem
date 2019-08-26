@@ -170,7 +170,24 @@
         </div>
         <div class="row no-gutters">
           
-          
+        @foreach($hall as $hall1)
+        
+        <div class="site-block d-lg-flex">
+          <div class="col-md-7 col-lg-4">
+            <a href="uploads/hall/{{$hall1->Main_logo}}" class="image-popup img-opacity"><img src="uploads/hall/{{$hall1->Main_logo}}" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="text">
+            <br>
+            <h2 > {{$hall1->Hotel_Name}}</h2>
+            <h5>Address :- <i>{{$hall1->Address}}</i></h5>
+            <h5>Contact No. :- <i>{{$hall1->Contact_No}}</i></h5>
+            <h5>Email :-  <i>{{$hall1->email}}</i> </h5>
+              
+            <p><a href="{{URL('/SalonView'.$hall1->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+          </div>
+        </div>
+        <br><br><br>
+      @endforeach  
         
     
     
