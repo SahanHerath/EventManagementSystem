@@ -64,14 +64,14 @@
 		</div><!-- container -->
 	</header>
 	
-	<section class="intro-section" style="background-image: url(images/lighting.jpg)">
+	<section class="intro-section" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
 		<div class="container">
 		
 			<div class="row">
 				
 				<div class="offset-0 col-md-10 col-lg-4">
 					<div class="intro">
-						<div class="profile-img"><img src="images/person_4.jpg" alt=""></div>
+						<div class="profile-img"><img src="uploads/hall/{{$hotel1->Main_logo}}" alt=""></div>
 						<h2><b>{{$hotel1->Hotel_Name}}</b></h2>
 						<ul class="information margin-tb-30">
 							<li><b>ADDRESS : </b>{{$hotel1->Address}}</li>
