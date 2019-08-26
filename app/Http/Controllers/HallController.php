@@ -247,4 +247,14 @@ class HallController extends Controller
 
             return view('home');
     }
+
+    public function viewHotel($id)
+    {
+        $hotel=DB::table('hotels')
+              ->join('users','users.id','=','hotels.user_id')
+              ->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              ->get();
+
+              return view('HotelView',compact('hotel'));
+    }
 }

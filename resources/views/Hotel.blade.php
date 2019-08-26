@@ -183,7 +183,7 @@
             <h5>Contact No. :- <i>{{$hall1->Contact_No}}</i></h5>
             <h5>Email :-  <i>{{$hall1->email}}</i> </h5>
               
-            <p><a href="{{URL('/SalonView'.$hall1->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+            <p><a href="{{URL('/HotelView'.$hall1->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
           </div>
         </div>
         <br><br><br>
