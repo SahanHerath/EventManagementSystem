@@ -25,7 +25,7 @@
 	
 </head>
 <body>
-	
+	@foreach($hotel as $hotel1)	
 	<header>
 		<div class="container">
 			<div class="heading-wrapper">
@@ -34,8 +34,8 @@
 						<div class="info">
 							<i class="icon ion-ios-location-outline"></i>
 							<div class="right-area">
-								<h5>3008 Sarah Drive</h5>
-								<h5>Franklin,LA 70538</h5>
+								<h6>Address</h6>
+								<h5>{{$hotel1->Address}}</h5>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -44,8 +44,8 @@
 						<div class="info">
 							<i class="icon ion-ios-telephone-outline"></i>
 							<div class="right-area">
-								<h5>337-4139538</h5>
-								<h6>MIN - FRI,8AM - 7PM</h6>
+								<h6>Contact Us</h6>
+								<h5>{{$hotel1->Contact_No}}</h5>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -54,8 +54,8 @@
 						<div class="info">
 							<i class="icon ion-ios-chatboxes-outline"></i>
 							<div class="right-area">
-								<h5>contact@colorlib.com</h5>
-								<h6>REPLY IN 24 HOURS</h6>
+								<h6>Link</h6>
+								<h5>{{$hotel1->Link}}</h5>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -72,11 +72,10 @@
 				<div class="offset-0 col-md-10 col-lg-4">
 					<div class="intro">
 						<div class="profile-img"><img src="images/person_4.jpg" alt=""></div>
-						<h2><b>Hotel mount lavinia</b></h2>
+						<h2><b>{{$hotel1->Hotel_Name}}</b></h2>
 						<ul class="information margin-tb-30">
-							<li><b>BORN : </b>August 25, 1987</li>
-							<li><b>EMAIL : </b>mymith@mywebpage.com</li>
-							<li><b>MARITAL STATUS : </b>Married</li>
+							<li><b>ADDRESS : </b>{{$hotel1->Address}}</li>
+							<li><b>TELEPHONE : </b>{{$hotel1->Contact_No}}</li>
 						</ul>
 						<ul class="social-icons">
 							<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
@@ -103,14 +102,7 @@
 					</div>
 				</div><!-- col-sm-4 -->
 				<div class="col-sm-8">
-					<p class="margin-b-50">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque 
-					sit amet sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-					Nulla maximus pellentes que velit, quis consequat nulla effi citur at. 
-					Maecenas sed massa tristique.Duis non volutpat arcu, eu mollis tellus. 
-					Sed finibus aliquam neque sit amet sodales. Lorem ipsum dolor sit amet, 
-					consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur 
-					adipiscing elit. Nulla maximus pellentes que velit, quis consequat nulla 
-					effi citur at.Maecenas sed massa tristique.</p>
+					<p class="margin-b-50">{{$hotel1->Description}}</p>
 					
 					<div class="row">
 						
@@ -138,7 +130,7 @@
 		</div><!-- container -->
 		
 	</section><!-- experience-section -->
-	
+	@endforeach
 	
 
 	
