@@ -100,3 +100,7 @@ Route::get('/EventPlannerView{id}','EventPlanersController@viewProfile');
 
 Route::post('/addhotel', 'HallController@store');
 Route::post('/addhall{id}', 'HallController@storeReceptionHall');
+
+Route::get('/Hall', function () {
+    return view('Hotel');
+});
