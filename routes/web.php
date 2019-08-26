@@ -105,9 +105,12 @@ Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 Route::get('/Venue', 'HallController@index')  ;
 Route::get('/HotelView{id}','HallController@viewHotel');
 
+Route::get('/WeddingPhotographer', 'PhotographyController@wedding')  ;
+Route::get('/BirthdayPhotographer', 'PhotographyController@birthday')  ;
+Route::get('/PartyPhotographer', 'PhotographyController@party')  ;
+Route::get('/ProfessionalEventPhotographer', 'PhotographyController@prof')  ;
+Route::get('/SportsPhotographer', 'PhotographyController@sports')  ;
+Route::get('/OutsidePhotographer', 'PhotographyController@outside')  ;
 
 
-Route::get('/Hotel', function () {
-    return view('WeddingHotelProfile');
-});
 

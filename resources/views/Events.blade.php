@@ -114,7 +114,7 @@
                                           <a href="#"><h3>Bridal and Groom designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/WeddingPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>DJ/Band</h3></a>
@@ -167,7 +167,7 @@
                                           <a href="#"><h3>Hall and Reservation</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/BirthdayPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>DJ/Band</h3></a>
@@ -217,7 +217,7 @@
                                           <a href="#"><h3>Hall and Reservations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/PartyPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>DJ/Band</h3></a>
@@ -270,7 +270,7 @@
                                           <a href="#"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/ProfessionalEventPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Catering</h3></a>
@@ -308,7 +308,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/SportsPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Costume Designers</h3></a>
@@ -340,7 +340,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographer</h3></a>
+                                          <a href="/OutsidePhotographer"><h3>Photographer</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>DJ/Band</h3></a>
