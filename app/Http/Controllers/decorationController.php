@@ -193,4 +193,60 @@ class decorationController extends Controller
 
                 return view('DecoratorView',compact('data'));
     }
+
+    public function wedding()
+    {
+        //
+        $decos = DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->where('decorator_events.Wedding','=','Available')
+                ->get();
+
+
+        return view('Decorator', compact('decos'));
+    }
+
+    public function birthday()
+    {
+        //
+        $decos = DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->where('decorator_events.Birthday','=','Available')
+                ->get();
+
+
+        return view('Decorator', compact('decos'));
+    }
+
+    public function party()
+    {
+        //
+        $decos = DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->where('decorator_events.Parties','=','Available')
+                ->get();
+
+
+        return view('Decorator', compact('decos'));
+    }
+
+    public function outside()
+    {
+        //
+        $decos = DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->where('decorator_events.Outside_events','=','Available')
+                ->get();
+
+
+        return view('Decorator', compact('decos'));
+    }
+
+    
+
+    
 }

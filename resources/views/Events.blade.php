@@ -126,7 +126,7 @@
                                           <a href="#"><h3>Dancing Group</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/WeddingDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Costume Designers</h3></a>
@@ -176,7 +176,7 @@
                                           <a href="#"><h3>Dancing Groups</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/BirthdayDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Catering</h3></a>
@@ -226,7 +226,7 @@
                                           <a href="#"><h3>Dancing Groups</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/PartyDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Catering</h3></a>
@@ -346,7 +346,7 @@
                                           <a href="/OutsideMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/OutsideDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Catering</h3></a>

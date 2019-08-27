@@ -117,6 +117,11 @@ Route::get('/BirthdayMusic', 'MusicianController@birthday')  ;
 Route::get('/PartyMusic', 'MusicianController@party')  ;
 Route::get('/OutsideMusic', 'MusicianController@outside')  ;
 
+Route::get('/WeddingDecoration', 'DecorationController@wedding')  ;
+Route::get('/BirthdayDecoration', 'DecorationController@birthday')  ;
+Route::get('/PartyDecoration', 'DecorationController@party')  ;
+Route::get('/OutsideDecoration', 'DecorationController@outside')  ;
+
 
 
 
