@@ -122,6 +122,11 @@ Route::get('/BirthdayDecoration', 'DecorationController@birthday')  ;
 Route::get('/PartyDecoration', 'DecorationController@party')  ;
 Route::get('/OutsideDecoration', 'DecorationController@outside')  ;
 
+Route::get('/WeddingDancing', 'DancingController@wedding')  ;
+Route::get('/BirthdayDancing', 'DancingController@birthday')  ;
+Route::get('/PartyDancing', 'DancingController@party')  ;
+
+
 
 
 

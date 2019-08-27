@@ -123,7 +123,7 @@
                                           <a href="#"><h3>Wedding Transport</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Dancing Group</h3></a>
+                                          <a href="/WeddingDancing"><h3>Dancing Group</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/WeddingDecoration"><h3>Decorations</h3></a>
@@ -173,7 +173,7 @@
                                           <a href="/BirthdayMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Dancing Groups</h3></a>
+                                          <a href="/BirthdayDancing"><h3>Dancing Groups</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/BirthdayDecoration"><h3>Decorations</h3></a>
@@ -223,7 +223,7 @@
                                           <a href="/PartyMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Dancing Groups</h3></a>
+                                          <a href="/PartyDancing"><h3>Dancing Groups</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/PartyDecoration"><h3>Decorations</h3></a>
