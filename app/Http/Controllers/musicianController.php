@@ -190,4 +190,56 @@ class musicianController extends Controller
 
                 return view('MusicView',compact('data'));
     }
+
+    public function wedding()
+    {
+        //
+        $musics = DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('musician_events.Wedding','=','Available')
+                ->get();
+
+
+        return view('Music', compact('musics'));
+    }
+
+    public function birthday()
+    {
+        //
+        $musics = DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('musician_events.Birthday','=','Available')
+                ->get();
+
+
+        return view('Music', compact('musics'));
+    }
+
+    public function party()
+    {
+        //
+        $musics = DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('musician_events.Parties','=','Available')
+                ->get();
+
+
+        return view('Music', compact('musics'));
+    }
+
+    public function outside()
+    {
+        //
+        $musics = DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('musician_events.Beach_Party','=','Available')
+                ->get();
+
+
+        return view('Music', compact('musics'));
+    }
 }

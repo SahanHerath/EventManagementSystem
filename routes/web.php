@@ -112,5 +112,11 @@ Route::get('/ProfessionalEventPhotographer', 'PhotographyController@prof')  ;
 Route::get('/SportsPhotographer', 'PhotographyController@sports')  ;
 Route::get('/OutsidePhotographer', 'PhotographyController@outside')  ;
 
+Route::get('/WeddingMusic', 'MusicianController@wedding')  ;
+Route::get('/BirthdayMusic', 'MusicianController@birthday')  ;
+Route::get('/PartyMusic', 'MusicianController@party')  ;
+Route::get('/OutsideMusic', 'MusicianController@outside')  ;
+
+
 
 

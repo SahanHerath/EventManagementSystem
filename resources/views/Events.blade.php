@@ -117,7 +117,7 @@
                                           <a href="/WeddingPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/WeddingMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Wedding Transport</h3></a>
@@ -170,7 +170,7 @@
                                           <a href="/BirthdayPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/BirthdayMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Dancing Groups</h3></a>
@@ -220,7 +220,7 @@
                                           <a href="/PartyPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/PartyMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Dancing Groups</h3></a>
@@ -343,7 +343,7 @@
                                           <a href="/OutsidePhotographer"><h3>Photographer</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/OutsideMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Decorations</h3></a>
