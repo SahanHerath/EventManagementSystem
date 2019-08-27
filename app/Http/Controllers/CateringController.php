@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Catering;
+use App\Catering_event;
 use DB;
 use Image;
 use Auth;
@@ -125,7 +126,17 @@ return view('catering', compact('level'));
          }
             $catering->save();
 
+            $catering_event = new Catering_event;
+            $catering_event->user_id = Auth::user()->id;
+            $catering_event->Wedding=$request->Wedding;
+            $catering_event->Birthday =$request->Birthday;
+            $catering_event->Party =$request->Party;
+            $catering_event->Corporate_event =$request->Corporate_event;
+            $catering_event->Funeral =$request->Funeral;
+            
+            $catering_event->save();
 
+            
            
 
             return view('home');
