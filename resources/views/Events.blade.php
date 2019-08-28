@@ -132,7 +132,7 @@
                                           <a href="#"><h3>Costume Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="/catering"><h3>Catering</h3></a>
+                                          <a href="/WeddingCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Cake Designers</h3></a>
@@ -179,7 +179,7 @@
                                           <a href="/BirthdayDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="/catering"><h3>Catering</h3></a>
+                                          <a href="/BirthdayCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Cake Designers</h3></a>
@@ -229,7 +229,7 @@
                                           <a href="/PartyDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="/catering"><h3>Catering</h3></a>
+                                          <a href="/PartyCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Actors</h3></a>
@@ -273,7 +273,7 @@
                                           <a href="/ProfessionalEventPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
+                                          <a href="/CoperateCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Costume Designers</h3></a>
@@ -349,7 +349,7 @@
                                           <a href="/OutsideDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
+                                          <a href="/catering"><h3>Catering</h3></a>
                                       </div>
                                       
                                       <div class="modal-footer">

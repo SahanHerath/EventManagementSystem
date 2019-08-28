@@ -191,9 +191,62 @@ return view('catering', compact('level'));
         $data = DB::table('users')
                 ->where('users.id','=',$id)
                 ->join('caterings','users.id','=','caterings.user_id')
+                ->join('catering_events','users.id','=','catering_events.user_id')
                 ->where('category','=','Catering')
                 ->get();
 
                 return view('cateringview',compact('data'));
+    }
+
+    public function wedding()
+    {
+        //
+        $level = DB::table('caterings')
+        ->join('users','users.id','=','caterings.user_id')
+        ->join('catering_events','users.id','=','catering_events.user_id')
+        ->where('catering_events.Wedding','=','Available')
+        ->get();
+
+
+        return view('catering', compact('level'));
+    }
+
+    public function birthday()
+    {
+        //
+        $level = DB::table('caterings')
+        ->join('users','users.id','=','caterings.user_id')
+        ->join('catering_events','users.id','=','catering_events.user_id')
+        ->where('catering_events.Birthday','=','Available')
+        ->get();
+
+
+        return view('catering', compact('level'));
+    }
+
+    public function party()
+    {
+        //
+        $level = DB::table('caterings')
+        ->join('users','users.id','=','caterings.user_id')
+        ->join('catering_events','users.id','=','catering_events.user_id')
+        ->where('catering_events.Party','=','Available')
+        ->get();
+
+
+        return view('catering', compact('level'));
+    }
+
+    public function coperate()
+    {
+        //
+        $level = DB::table('caterings')
+        ->join('users','users.id','=','caterings.user_id')
+        ->join('catering_events','users.id','=','catering_events.user_id')
+        ->where('catering_events.Corporate_event','=','Available')
+        ->get();
+
+
+        return view('catering', compact('level'));
     }
 }
