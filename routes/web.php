@@ -148,3 +148,7 @@ Route::get('/ProfessionalEventPlanner', 'EventPlanersController@prof')  ;
 Route::get('/OutsideEventPlanner', 'EventPlanersController@outside')  ;
 Route::get('/CoperateEventPlanner', 'EventPlanersController@coperate')  ;
 Route::get('/SportEventPlanner', 'EventPlanersController@sport')  ;
+
+Route::get('/HallView', function () {
+    return view('HallView');
+});
