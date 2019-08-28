@@ -192,4 +192,82 @@ class ActorController extends Controller
 
                 return view('ActorView',compact('data'));
     }
+
+    public function birthdayMagician(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Birthday','=','Available')
+                ->where('Magician','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
+
+    public function birthdayEntertainer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Birthday','=','Available')
+                ->where('Entertainer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
+
+    public function partyEntertainer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Party','=','Available')
+                ->where('Entertainer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
+
+    public function profAnnouncer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Professional_event','=','Available')
+                ->where('Announcer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
+
+    public function copAnnouncer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Corporate_event','=','Available')
+                ->where('Announcer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
+
+    public function copEntertainer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Corporate_event','=','Available')
+                ->where('Entertainer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
 }

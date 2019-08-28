@@ -111,7 +111,7 @@
                                           <a href="#"><h3>Hall and Reservation</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Bridal and Groom designers</h3></a>
+                                          <a href="/WeddingBeautician"><h3>Bridal and Groom designers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/WeddingPhotographer"><h3>Photographers</h3></a>
@@ -120,7 +120,7 @@
                                           <a href="/WeddingMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Wedding Transport</h3></a>
+                                          <a href="/Transport"><h3>Wedding Transport</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/WeddingDancing"><h3>Dancing Group</h3></a>
@@ -185,7 +185,10 @@
                                           <a href="#"><h3>Cake Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/BirthdayMagician"><h3>Magicians</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/BirthdayEntertainer"><h3>Entertainer</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -232,7 +235,10 @@
                                           <a href="/PartyCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/partyEntertainer"><h3>Entertainers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/PartyBeautician"><h3>Beautician</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -277,7 +283,7 @@
                                           <a href="#"><h3>Costume Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/ProfessionalEventAnnouncer"><h3>Announcers</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -396,7 +402,10 @@
                                           <a href="#"><h3>Costume Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/coperateEventEntertainers"><h3>Entertainers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/coperateEventAnnouncers"><h3>Announcers</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>

@@ -81,8 +81,8 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Bridal & Groom Designers </h1>
-              <h2 class="caption"></h2>
+              <h1 class="mb-2">Beautician </h1>
+              <h2 class="caption">Best Bridal and Groom Designers</h2>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Description</h2>
             </div>
-            <p>You are able to find your Bridal and Groom Designer for your special day. You can contact them and make your day colourful.</p>
+            <p>You are able to find your Beautician for your special day. You can contact them and make your day colourful.</p>
            </div>
         </div>
       </div>
@@ -166,7 +166,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Our Bridel and Groom Designers</h2>
+            <h2 class="mb-5">Our Beauticians </h2>
           </div>
         </div>
         <div class="row no-gutters">

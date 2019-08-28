@@ -132,6 +132,12 @@ Route::get('/PartyCatering', 'CateringController@party')  ;
 Route::get('/OutsideCatering', 'CateringController@outside')  ;
 Route::get('/CoperateCatering', 'CateringController@coperate')  ;
 
+Route::get('/WeddingBeautician', 'salonController@wedding')  ;
+Route::get('/PartyBeautician', 'salonController@party')  ;
 
-
-
+Route::get('/BirthdayMagician', 'ActorController@birthdayMagician')  ;
+Route::get('/BirthdayEntertainer', 'ActorController@birthdayEntertainer')  ;
+Route::get('/partyEntertainer', 'ActorController@partyEntertainer')  ;
+Route::get('/ProfessionalEventAnnouncer', 'ActorController@profAnnouncer')  ;
+Route::get('/coperateEventAnnouncers', 'ActorController@copAnnouncer')  ;
+Route::get('/coperateEventEntertainer', 'ActorController@copEntertainer')  ;
