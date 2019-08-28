@@ -103,17 +103,12 @@
 				</div><!-- col-sm-4 -->
 				<div class="col-sm-8">
 					<p class="margin-b-50">{{$hotel1->Description}}</p>
-					
-					<div class="row">
-						
-					
-					</div><!-- row -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
 		</div><!-- container -->
 	</section><!-- about-section -->
-	
-	<section class="experience-section section">
+	@endforeach
+	<section class="education-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -121,16 +116,25 @@
 						<h3><b>Listing</b></h3>
 					</div>
 				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-				
-					
-					
-				</div><!-- col-sm-8 -->
 			</div><!-- row -->
+
+			<div class="row">
+			@foreach($hotel as $hotel1)
+				<div class="offset-0 col-lg-4 col-md-6">
+					<div class="feature_item"><a class="btn btn-bg-yellow" href="#">
+						<img src="uploads/hall/{{$hotel1->Main_pic}}"  width="300" height="200 ">
+						<br><br>
+						{{$hotel1->Hall_Name}}
+						</a>
+					</div>
+				</div>
+			@endforeach
+			</div>
+
 		</div><!-- container -->
-		
-	</section><!-- experience-section -->
-	@endforeach
+	</section><!-- about-section -->
+
+	
 	
 
 	

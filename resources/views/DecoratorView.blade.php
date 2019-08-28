@@ -150,7 +150,7 @@
                             <br><br>
         					<h4>Birthdays</h4>
                             @if($data1->Table_Hall == "Available")
-                            <span class="lnr lnr-checkmark-circle"></span>  Hall & Table decoration
+                            <span class="lnr lnr-checkmark-circle "></span>  Hall & Table decoration
                             @endif
                             <br>
                             @if($data1->Lighting == "Available")
