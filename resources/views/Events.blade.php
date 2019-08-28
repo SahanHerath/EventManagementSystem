@@ -111,31 +111,34 @@
                                           <a href="#"><h3>Hall and Reservation</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Bridal and Groom designers</h3></a>
+                                          <a href="/WeddingBeautician"><h3>Bridal and Groom designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/WeddingPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/WeddingMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Wedding Transport</h3></a>
+                                          <a href="/Transport"><h3>Wedding Transport</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Dancing Group</h3></a>
+                                          <a href="/WeddingDancing"><h3>Dancing Group</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/WeddingDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Costume Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
+                                          <a href="/WeddingCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Cake Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/WeddingEventPlanner"><h3>Event Planners</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -167,25 +170,28 @@
                                           <a href="#"><h3>Hall and Reservation</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/BirthdayPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/BirthdayMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Dancing Groups</h3></a>
+                                          <a href="/BirthdayDancing"><h3>Dancing Groups</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/BirthdayDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
+                                          <a href="/BirthdayCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Cake Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/BirthdayMagician"><h3>Magicians</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/BirthdayEntertainer"><h3>Entertainer</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -217,22 +223,28 @@
                                           <a href="#"><h3>Hall and Reservations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/PartyPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/PartyMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Dancing Groups</h3></a>
+                                          <a href="/PartyDancing"><h3>Dancing Groups</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/PartyDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
+                                          <a href="/PartyCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/partyEntertainer"><h3>Entertainers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/PartyBeautician"><h3>Beautician</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/PartyEventPlanner"><h3>Event Planners</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -248,7 +260,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="categories_post">
-                            <img src="images/professional.jpg" width="380" height="250" alt="post">
+                            <img src="images/Meeting.jpg" width="380" height="250" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
                                     <a data-target="#myModal4" data-toggle="modal"><h5>Professional Events</h5></a>
@@ -270,17 +282,19 @@
                                           <a href="#"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/ProfessionalEventPhotographer"><h3>Photographers</h3></a>
                                       </div>
-                                      <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
-                                      </div>
+                                      
                                       <div class="modal-body">
                                           <a href="#"><h3>Costume Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/ProfessionalEventAnnouncer"><h3>Announcers</h3></a>
                                       </div>
+                                      <div class="modal-body">
+                                          <a href="/ProfessionalEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
+                                      
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
                                       </div>
@@ -308,10 +322,13 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographers</h3></a>
+                                          <a href="/SportsPhotographer"><h3>Photographers</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Costume Designers</h3></a>
+                                          <a href="#"><h3>Sport Kit Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/SportEventPlanner"><h3>Event Planners</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -340,16 +357,19 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Photographer</h3></a>
+                                          <a href="/OutsidePhotographer"><h3>Photographer</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>DJ/Band</h3></a>
+                                          <a href="/OutsideMusic"><h3>DJ/Band</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Decorations</h3></a>
+                                          <a href="/OutsideDecoration"><h3>Decorations</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Catering</h3></a>
+                                          <a href="/catering"><h3>Catering</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/OutsideEventPlanner"><h3>Event Planners</h3></a>
                                       </div>
                                       
                                       <div class="modal-footer">
@@ -360,6 +380,104 @@
                             </div>
                         </div>
                     </div>
+                  </div>
+                    <br>
+                    <br>
+                    <br>  
+                    <div class="row">
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/CoparateEvent.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal7" data-toggle="modal"><h5>Coperate Events</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal7" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Coperate Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Photographers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/CoperateCatering"><h3>Catering</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Costume Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/coperateEventEntertainers"><h3>Entertainers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/coperateEventAnnouncers"><h3>Announcers</h3></a>
+                                      </div>
+
+                                      <div class="modal-body">
+                                          <a href="/CoperateEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="images/musical.jpg" width="380" height="250" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a data-target="#myModal8" data-toggle="modal"><h5>Musical Events</h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="myModal8" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h4 class="modal-title">Musical Events</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Decorations</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/ProfessionalEventPhotographer"><h3>Photographers</h3></a>
+                                      </div>
+                                      
+                                      <div class="modal-body">
+                                          <a href="#"><h3>Actors</h3></a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    
+
+                    
         </section>
 
     

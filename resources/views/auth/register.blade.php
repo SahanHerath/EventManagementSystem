@@ -84,7 +84,7 @@
                                     <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="category" value="Actors"><span class="custom-control-label">Artists & Announcers</span></label>
                                 </div>
                                 <div class="radio">
-                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="category" value="Bridel_Designers"><span class="custom-control-label">Bridel and Gloom Designers</span></label>
+                                    <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="category" value="Bridel_Designers"><span class="custom-control-label">Bridel & Gloom Designers , Beauticians</span></label>
                                 </div>
                                 <div class="radio">
                                     <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="category" value="Catering"><span class="custom-control-label">Catering</span></label>

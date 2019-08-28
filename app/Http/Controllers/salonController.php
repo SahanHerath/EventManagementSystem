@@ -195,5 +195,33 @@ class salonController extends Controller
 
                 return view('SalonView',compact('data'));
     }
+
+    public function wedding()
+    {
+        //
+        $level = DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->join('salon_events','users.id','=','salon_events.user_id')
+                ->where('salon_events.wedding','=','Available')
+                ->get();
+      
+       
+       return view('Salon', compact('level'));
+
+    }
+
+    public function party()
+    {
+        //
+        $level = DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->join('salon_events','users.id','=','salon_events.user_id')
+                ->where('salon_events.parties','=','Available')
+                ->get();
+      
+       
+       return view('Salon', compact('level'));
+
+    }
 }
  

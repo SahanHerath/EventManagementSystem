@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2019 at 10:58 AM
+-- Generation Time: Aug 28, 2019 at 05:11 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -135,6 +135,24 @@ CREATE TABLE `caterings` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `catering_events`
+--
+
+CREATE TABLE `catering_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Wedding` varchar(20) NOT NULL,
+  `Birthday` varchar(20) NOT NULL,
+  `Party` varchar(20) NOT NULL,
+  `Corporate_event` varchar(20) NOT NULL,
+  `Funeral` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dancers`
 --
 
@@ -251,13 +269,6 @@ CREATE TABLE `event_planners` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `event_planners`
---
-
-INSERT INTO `event_planners` (`id`, `Organization_name`, `Address`, `Contact_No`, `Link`, `Description`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'ifsefe', 'dwhdkj', 'jhbesfbjkew', 'fjhefhewj', 'fkjwkfjwe', '1566518902.jpg', '1566518903.jpg', '1566518904.jpg', '1566518905.jpg', '1566518906.jpg', 1, '2019-08-22 18:38:27', '2019-08-22 18:38:27');
-
 -- --------------------------------------------------------
 
 --
@@ -277,13 +288,6 @@ CREATE TABLE `event_planners_events` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `event_planners_events`
---
-
-INSERT INTO `event_planners_events` (`id`, `user_id`, `Wedding`, `Parties`, `Meetings`, `Corporate_event`, `Outside_event`, `Sport_event`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-22 18:38:27', '2019-08-22 18:38:27');
-
 -- --------------------------------------------------------
 
 --
@@ -301,7 +305,6 @@ CREATE TABLE `hall_events` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.hall_events: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`hall_events`' at line 1
 
 -- --------------------------------------------------------
 
@@ -369,7 +372,10 @@ CREATE TABLE `hotels` (
   `Contact_No` varchar(20) NOT NULL,
   `Link` varchar(191) NOT NULL,
   `Description` text NOT NULL,
+  `facebook` varchar(191) DEFAULT NULL,
+  `instagram` varchar(191) DEFAULT NULL,
   `Main_logo` varchar(191) NOT NULL,
+  `Cover_photo` varchar(191) NOT NULL,
   `user_id` int(11) NOT NULL,
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -663,14 +669,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `city`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Nethmi Herath', 'sumudu@gmail.com', NULL, 'Event_Planners', 'dsfs', '$2y$10$WNLQl8EjuKNHXfXHQzscQePKhJzQT3ROUJoyVuCQnjbwd8Ux.Gp7u', NULL, '2019-08-22 18:37:30', '2019-08-22 18:37:30'),
-(2, 'rfge', 'ffe@gmail.com', NULL, 'Bridel_Designers', 'drgerg', '$2y$10$Z8j0lGI2QrIEw1X0q03p9.0XgW6a2d5D91zgXLk4unfd.0j/5QS9O', NULL, '2019-08-24 11:31:30', '2019-08-24 11:31:30');
-
---
 -- Indexes for dumped tables
 --
 
@@ -696,6 +694,12 @@ ALTER TABLE `cake_designers`
 -- Indexes for table `caterings`
 --
 ALTER TABLE `caterings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `catering_events`
+--
+ALTER TABLE `catering_events`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -866,6 +870,12 @@ ALTER TABLE `caterings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `catering_events`
+--
+ALTER TABLE `catering_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `dancers`
 --
 ALTER TABLE `dancers`
@@ -893,13 +903,13 @@ ALTER TABLE `decorator_events`
 -- AUTO_INCREMENT for table `event_planners`
 --
 ALTER TABLE `event_planners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `event_planners_events`
 --
 ALTER TABLE `event_planners_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `hall_events`
@@ -995,7 +1005,7 @@ ALTER TABLE `transport_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

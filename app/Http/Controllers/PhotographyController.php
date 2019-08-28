@@ -15,7 +15,7 @@ use DB;
 class PhotographyController extends Controller
 {
 	
-	public function index(Request $request)
+	public function index()
     {    $level = DB::table('photographies')
                 ->join('users','users.id','=','photographies.user_id')
                 ->get();
@@ -196,5 +196,77 @@ class PhotographyController extends Controller
                 ->get();
 
                 return view('ActorView',compact('data'));
+    }
+
+    public function wedding()
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('photography_events.Wedding','=','Available')
+                ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
+    }
+
+    public function birthday()
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('photography_events.Birthday','=','Available')
+                ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
+    }
+
+    public function party()
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('photography_events.Get_togather','=','Available')
+                ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
+    }
+
+    public function prof()
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('photography_events.Professional_Events','=','Available')
+                ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
+    }
+
+    public function sports()
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('photography_events.Sports','=','Available')
+                ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
+    }
+
+    public function outside()
+    {    $level = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('photography_events.Trips','=','Available')
+                ->get();
+      
+       
+       return view('Photography', compact('level'));
+      
     }
 }

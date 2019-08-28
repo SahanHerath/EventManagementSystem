@@ -172,6 +172,56 @@
                         </div>   
                         </div>
 
+                        <label><b>Select are the events that you cover</b></label><br><br>
+
+                        
+                        <div class="form-group row">
+                        <label for="Wedding" class="col-md-4"></label>   
+                        <div class="col-md-4">
+                            <input type="hidden" name="Wedding" value="Not Available">
+                            <label for="Wedding">Wedding</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="Birthday" class="col-md-4"></label>   
+                        <div class="col-md-4">
+                            <input type="hidden" name="Birthday" value="Not Available">
+                            <label for="Birthday">Birthday </label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday" value="Available">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="Party" class="col-md-4"></label>   
+                        <div class="col-md-4">
+                            <input type="hidden" name="Party" value="Not Available">
+                            <label for="Party">Party</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="Corporate_event" class="col-md-4"></label>   
+                        <div class="col-md-4">
+                            <input type="hidden" name="Corporate_event" value="Not Available">
+                            <label for="Corporate_event">Corporate Event</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="Funeral" class="col-md-4"></label>   
+                        <div class="col-md-4">
+                            <input type="hidden" name="Funeral" value="Not Available">
+                            <label for="Funeral">Funeral</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Funeral" value="Available">
+                        </div>   
+                        </div>
+
+                        
+
                         <div class="form-group row">
                             <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
     

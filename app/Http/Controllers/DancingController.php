@@ -195,4 +195,43 @@ class DancingController extends Controller
 
                 return view('DanceView',compact('data'));
     }
+
+    public function wedding()
+    {
+        //
+        $level = DB::table('dancers')
+                ->join('users','users.id','=','dancers.user_id')
+                ->join('dancer_events','users.id','=','dancer_events.user_id')
+                ->where('dancer_events.Wedding','=','Available')
+                ->get();
+      
+       
+       return view('Dance', compact('level'));
+    }
+
+    public function birthday()
+    {
+        //
+        $level = DB::table('dancers')
+                ->join('users','users.id','=','dancers.user_id')
+                ->join('dancer_events','users.id','=','dancer_events.user_id')
+                ->where('dancer_events.Party','=','Available')
+                ->get();
+      
+       
+       return view('Dance', compact('level'));
+    }
+
+    public function party()
+    {
+        //
+        $level = DB::table('dancers')
+                ->join('users','users.id','=','dancers.user_id')
+                ->join('dancer_events','users.id','=','dancer_events.user_id')
+                ->where('dancer_events.Party','=','Available')
+                ->get();
+      
+       
+       return view('Dance', compact('level'));
+    }
 }

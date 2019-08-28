@@ -105,7 +105,46 @@ Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 Route::get('/Venue', 'HallController@index')  ;
 Route::get('/HotelView{id}','HallController@viewHotel');
 
+Route::get('/WeddingPhotographer', 'PhotographyController@wedding')  ;
+Route::get('/BirthdayPhotographer', 'PhotographyController@birthday')  ;
+Route::get('/PartyPhotographer', 'PhotographyController@party')  ;
+Route::get('/ProfessionalEventPhotographer', 'PhotographyController@prof')  ;
+Route::get('/SportsPhotographer', 'PhotographyController@sports')  ;
+Route::get('/OutsidePhotographer', 'PhotographyController@outside')  ;
 
-Route::get('/Hotel', function () {
-    return view('WeddingHotelProfile');
-});
+Route::get('/WeddingMusic', 'MusicianController@wedding')  ;
+Route::get('/BirthdayMusic', 'MusicianController@birthday')  ;
+Route::get('/PartyMusic', 'MusicianController@party')  ;
+Route::get('/OutsideMusic', 'MusicianController@outside')  ;
+
+Route::get('/WeddingDecoration', 'DecorationController@wedding')  ;
+Route::get('/BirthdayDecoration', 'DecorationController@birthday')  ;
+Route::get('/PartyDecoration', 'DecorationController@party')  ;
+Route::get('/OutsideDecoration', 'DecorationController@outside')  ;
+
+Route::get('/WeddingDancing', 'DancingController@wedding')  ;
+Route::get('/BirthdayDancing', 'DancingController@birthday')  ;
+Route::get('/PartyDancing', 'DancingController@party')  ;
+
+Route::get('/WeddingCatering', 'CateringController@wedding')  ;
+Route::get('/BirthdayCatering', 'CateringController@birthday')  ;
+Route::get('/PartyCatering', 'CateringController@party')  ;
+Route::get('/OutsideCatering', 'CateringController@outside')  ;
+Route::get('/CoperateCatering', 'CateringController@coperate')  ;
+
+Route::get('/WeddingBeautician', 'salonController@wedding')  ;
+Route::get('/PartyBeautician', 'salonController@party')  ;
+
+Route::get('/BirthdayMagician', 'ActorController@birthdayMagician')  ;
+Route::get('/BirthdayEntertainer', 'ActorController@birthdayEntertainer')  ;
+Route::get('/partyEntertainer', 'ActorController@partyEntertainer')  ;
+Route::get('/ProfessionalEventAnnouncer', 'ActorController@profAnnouncer')  ;
+Route::get('/coperateEventAnnouncers', 'ActorController@copAnnouncer')  ;
+Route::get('/coperateEventEntertainer', 'ActorController@copEntertainer')  ;
+
+Route::get('/WeddingEventPlanner', 'EventPlanersController@wedding')  ;
+Route::get('/PartyEventPlanner', 'EventPlanersController@party')  ;
+Route::get('/ProfessionalEventPlanner', 'EventPlanersController@prof')  ;
+Route::get('/OutsideEventPlanner', 'EventPlanersController@outside')  ;
+Route::get('/CoperateEventPlanner', 'EventPlanersController@coperate')  ;
+Route::get('/SportEventPlanner', 'EventPlanersController@sport')  ;
