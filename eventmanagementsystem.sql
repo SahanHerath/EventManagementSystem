@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2019 at 05:19 PM
+-- Generation Time: Aug 28, 2019 at 05:11 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -128,6 +128,24 @@ CREATE TABLE `caterings` (
   `pic3` varchar(20) NOT NULL,
   `pic4` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `catering_events`
+--
+
+CREATE TABLE `catering_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Wedding` varchar(20) NOT NULL,
+  `Birthday` varchar(20) NOT NULL,
+  `Party` varchar(20) NOT NULL,
+  `Corporate_event` varchar(20) NOT NULL,
+  `Funeral` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -679,6 +697,12 @@ ALTER TABLE `caterings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `catering_events`
+--
+ALTER TABLE `catering_events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dancers`
 --
 ALTER TABLE `dancers`
@@ -843,6 +867,12 @@ ALTER TABLE `cake_designers`
 -- AUTO_INCREMENT for table `caterings`
 --
 ALTER TABLE `caterings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `catering_events`
+--
+ALTER TABLE `catering_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
