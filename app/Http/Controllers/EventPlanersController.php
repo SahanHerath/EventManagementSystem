@@ -190,4 +190,84 @@ class EventPlanersController extends Controller
 
                 return view('EventPlannerView',compact('data'));
     }
+
+    public function wedding()
+    {
+        //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('event_planners_events.Wedding','=','Available')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
+    }
+
+    public function party()
+    {
+        //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('event_planners_events.Parties','=','Available')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
+    }
+
+    public function prof()
+    {
+        //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('event_planners_events.Meetings','=','Available')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
+    }
+
+    public function coperate()
+    {
+        //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('event_planners_events.Corporate_event','=','Available')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
+    }
+
+    public function outside()
+    {
+        //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('event_planners_events.Outside_event','=','Available')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
+    }
+
+    public function sport()
+    {
+        //
+        $level = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('event_planners_events.Sport_event','=','Available')
+                ->get();
+      
+       
+       return view('EventPlanner', compact('level'));
+    }
+
+    
 }

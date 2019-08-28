@@ -141,3 +141,10 @@ Route::get('/partyEntertainer', 'ActorController@partyEntertainer')  ;
 Route::get('/ProfessionalEventAnnouncer', 'ActorController@profAnnouncer')  ;
 Route::get('/coperateEventAnnouncers', 'ActorController@copAnnouncer')  ;
 Route::get('/coperateEventEntertainer', 'ActorController@copEntertainer')  ;
+
+Route::get('/WeddingEventPlanner', 'EventPlanersController@wedding')  ;
+Route::get('/PartyEventPlanner', 'EventPlanersController@party')  ;
+Route::get('/ProfessionalEventPlanner', 'EventPlanersController@prof')  ;
+Route::get('/OutsideEventPlanner', 'EventPlanersController@outside')  ;
+Route::get('/CoperateEventPlanner', 'EventPlanersController@coperate')  ;
+Route::get('/SportEventPlanner', 'EventPlanersController@sport')  ;

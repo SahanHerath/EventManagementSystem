@@ -137,6 +137,9 @@
                                       <div class="modal-body">
                                           <a href="#"><h3>Cake Designers</h3></a>
                                       </div>
+                                      <div class="modal-body">
+                                          <a href="/WeddingEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
                                       </div>
@@ -240,6 +243,9 @@
                                       <div class="modal-body">
                                           <a href="/PartyBeautician"><h3>Beautician</h3></a>
                                       </div>
+                                      <div class="modal-body">
+                                          <a href="/PartyEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
                                       </div>
@@ -285,6 +291,10 @@
                                       <div class="modal-body">
                                           <a href="/ProfessionalEventAnnouncer"><h3>Announcers</h3></a>
                                       </div>
+                                      <div class="modal-body">
+                                          <a href="/ProfessionalEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
+                                      
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
                                       </div>
@@ -316,6 +326,9 @@
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Sport Kit Designers</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/SportEventPlanner"><h3>Event Planners</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -355,6 +368,9 @@
                                       <div class="modal-body">
                                           <a href="/catering"><h3>Catering</h3></a>
                                       </div>
+                                      <div class="modal-body">
+                                          <a href="/OutsideEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
                                       
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
@@ -374,11 +390,11 @@
                             <img src="images/CoparateEvent.jpg" width="380" height="250" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
-                                    <a data-target="#myModal4" data-toggle="modal"><h5>Coperate Events</h5></a>
+                                    <a data-target="#myModal7" data-toggle="modal"><h5>Coperate Events</h5></a>
                                     <div class="border_line"></div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="myModal4" role="dialog">
+                            <div class="modal fade" id="myModal7" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -407,6 +423,10 @@
                                       <div class="modal-body">
                                           <a href="/coperateEventAnnouncers"><h3>Announcers</h3></a>
                                       </div>
+
+                                      <div class="modal-body">
+                                          <a href="/CoperateEventPlanner"><h3>Event Planners</h3></a>
+                                      </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>
                                       </div>
@@ -421,11 +441,11 @@
                             <img src="images/musical.jpg" width="380" height="250" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
-                                    <a data-target="#myModal4" data-toggle="modal"><h5>Musical Events</h5></a>
+                                    <a data-target="#myModal8" data-toggle="modal"><h5>Musical Events</h5></a>
                                     <div class="border_line"></div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="myModal4" role="dialog">
+                            <div class="modal fade" id="myModal8" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
