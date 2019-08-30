@@ -63,7 +63,7 @@
 	</section><!-- intro-section -->
 	
 	
-	
+
 	
 	<section class=" section">
 		<div class="container">
@@ -123,11 +123,11 @@
 						<h3><b>Features</b></h3>
 					</div>
 				</div><!-- col-sm-12 -->
-
+                
                 <div class="row">
 				<div class="col-sm-6 col-md-6 col-lg-4">
-					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/projection.jpg"  width="50" height="100 ">
+					<div class="iconbox margin">
+                        <img src="uploads/hall features/projection.jpg" width="42" height="42">
 						<h5 class="margin-tb-20"><b>Projection</b></h5>
 						
 					</div><!-- counter -->

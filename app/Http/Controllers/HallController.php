@@ -24,10 +24,11 @@ class HallController extends Controller
         //
         $hall = DB::table('hotels')
                 ->join('users','users.id','=','hotels.user_id')
+                ->select('hotels.id','email','Hotel_Name','Address','Contact_No','Main_logo')
                 ->get();
 
 
-        return view('hotel', compact('hall'));
+        return view('Hotel', compact('hall'));
     }
 
     /**
@@ -266,10 +267,16 @@ class HallController extends Controller
     {
         $hotel=DB::table('hotels')
               ->join('users','users.id','=','hotels.user_id')
-              ->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              //->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              ->where('hotels.id','=',$id)
               ->get();
 
-              return view('WeddingHotelProfile',compact('hotel'));
+        $hall=DB::table('reception_halls')
+             ->join('hotels','reception_halls.hotel_id','=','hotels.id')
+             ->where('hotels.id','=',$id)
+             ->get();
+
+              return view('HotelView',compact('hotel','hall'));
     }
 
    
