@@ -62,7 +62,7 @@ a b.light-color:hover{ text-decoration: none; color: #FFA804; }
 
 b{ font-weight: 600; }
 
-img{ width: 100%; }
+/* img{ width: 100%; } */
 
 li{ list-style: none; display: inline-block; }
 

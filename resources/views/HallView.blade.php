@@ -135,15 +135,15 @@
 				
 				<div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/projection.jpg"  width="50" height="100 ">
-						<h5 class="margin-tb-20"><b>Internet</b></h5>
+                        <img src="uploads/hall features/wifi.jpg"  width="42" height="42">
+						<h5 class="margin-tb-20"><b>Wireless Internet</b></h5>
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
 				
 				<div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/parking.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/parking.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Parking</b></h5>
 						
 					</div><!-- counter -->
@@ -151,7 +151,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/securitycamera.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/securitycamera.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Security Camera</b></h5>
 						
 					</div><!-- counter -->
@@ -159,7 +159,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/security personal.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/security personal.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Security Personal</b></h5>
 						
 					</div><!-- counter -->
@@ -167,7 +167,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/rec.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/rec.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Reception Area</b></h5>
 						
 					</div><!-- counter -->
@@ -175,7 +175,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/projection.jpg"  width="50" height="100 ">
+                        <img src="uploads/hall features/bar.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Bar</b></h5>
 						
 					</div><!-- counter -->
@@ -183,7 +183,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/garden.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/garden.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Garden</b></h5>
 						
 					</div><!-- counter -->
@@ -191,7 +191,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/smoking.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/smoking.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Smoking Area</b></h5>
 						
 					</div><!-- counter -->
@@ -199,7 +199,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/welcomedrink.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/welcomedrink.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Welcome Drink</b></h5>
 						
 					</div><!-- counter -->
@@ -207,7 +207,7 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/projection.jpg"  width="50" height="100 ">
+                        <img src="uploads/hall features/buffet.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Buffet</b></h5>
 						
 					</div><!-- counter -->
@@ -215,31 +215,31 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/wheelchair.png"  width="50" height="100 ">
-						<h5 class="margin-tb-20"><b>Handycap accessible</b></h5>
+                        <img src="uploads/hall features/wheelchair.png"  width="42" height="42">
+						<h5 class="margin-tb-20"><b>Handicap accessible</b></h5>
 						
 					</div><!-- counter -->
 				</div>
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/Varenda.png"  width="50" height="100 ">
-						<h5 class="margin-tb-20"><b>Outside Balcony</b></h5>
+                        <img src="uploads/hall features/Varenda.png"  width="42" height="42">
+						<h5 class="margin-tb-20"><b>Varenda</b></h5>
 						
 					</div><!-- counter -->
 				</div>
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/Varenda.png"  width="50" height="100 ">
-						<h5 class="margin-tb-20"><b>Inside Balcony</b></h5>
+                        <img src="uploads/hall features/balcony.png"  width="42" height="42">
+						<h5 class="margin-tb-20"><b>Balcony</b></h5>
 						
 					</div><!-- counter -->
 				</div>
 
                 <div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox margin-b-30">
-                        <img src="uploads/hall features/stage.png"  width="50" height="100 ">
+                        <img src="uploads/hall features/stage.png"  width="42" height="42">
 						<h5 class="margin-tb-20"><b>Stage</b></h5>
 						
 					</div><!-- counter -->
