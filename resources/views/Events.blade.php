@@ -108,7 +108,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Hall and Reservation</h3></a>
+                                          <a href="/WeddingHall"><h3>Hall and Reservation</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/WeddingBeautician"><h3>Bridal and Groom designers</h3></a>

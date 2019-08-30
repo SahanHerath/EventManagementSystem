@@ -279,5 +279,21 @@ class HallController extends Controller
               return view('HotelView',compact('hotel','hall'));
     }
 
+    public function wedding()
+    {
+        //
+        $hall = DB::table('hotels')
+                ->join('users','users.id','=','hotels.user_id')
+                ->join('reception_halls','reception_halls.hotel_id','=','hotels.id')
+                ->join('hall_events','hall_events.hall_id','=','reception_halls.id')
+                ->where('hall_events.Wedding','=','Available')
+                ->select('hotels.id','email','Hotel_Name','hotels.Address','Contact_No','Main_logo')
+                ->distinct()
+                ->get();
+
+
+        return view('Hotel', compact('hall'));
+    }
+
    
 }
