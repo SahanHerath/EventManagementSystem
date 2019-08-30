@@ -150,11 +150,10 @@ Route::get('/CoperateEventPlanner', 'EventPlanersController@coperate')  ;
 Route::get('/SportEventPlanner', 'EventPlanersController@sport')  ;
 
 Route::get('/WeddingHall', 'hallController@wedding')  ;
-Route::get('/BirthdayHall', 'EventPlanersController@party')  ;
-Route::get('/PartyHall', 'EventPlanersController@prof')  ;
-Route::get('/MeetingHall', 'EventPlanersController@outside')  ;
-Route::get('/CoperateEventHall', 'EventPlanersController@coperate')  ;
-Route::get('/ProfessionalEventHall', 'EventPlanersController@sport')  ;
+Route::get('/BirthdayHall', 'hallController@party')  ;
+Route::get('/PartyHall', 'hallController@party')  ;
+Route::get('/CoperateEventHall', 'hallController@coperate')  ;
+Route::get('/ProfessionalEventHall', 'hallController@prof')  ;
 
 Route::get('/HallView', function () {
     return view('HallView');

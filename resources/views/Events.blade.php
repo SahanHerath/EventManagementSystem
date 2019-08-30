@@ -167,7 +167,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Hall and Reservation</h3></a>
+                                          <a href="/BirthdayHall"><h3>Hall and Reservation</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/BirthdayPhotographer"><h3>Photographers</h3></a>
@@ -220,7 +220,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                          <a href="/PartyHall"><h3>Hall and Reservations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/PartyPhotographer"><h3>Photographers</h3></a>
@@ -276,7 +276,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                          <a href="/ProfessionalEventHall"><h3>Hall and Reservations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Decorations</h3></a>
@@ -403,7 +403,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Hall and Reservations</h3></a>
+                                          <a href="/CoperateEventHall"><h3>Hall and Reservations</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="#"><h3>Decorations</h3></a>
