@@ -158,3 +158,7 @@ Route::get('/ProfessionalEventHall', 'hallController@prof')  ;
 Route::get('/HallView', function () {
     return view('HallView');
 });
+
+Route::get('/CostumeDesigner', function () {
+    return view('CostumeDesigner');
+});
