@@ -38,13 +38,7 @@
                     <div class="heading-wrapper">
                         <div class="row">
                             <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="info">
-                                    <i class="icon ion-ios-location-outline"></i>
-                                    <div class="right-area">
-                                        
-                                        <h5>Address here</h5>
-                                    </div><!-- right-area -->
-                                </div><!-- info -->
+                                
                             </div><!-- col-sm-4 -->
                         </div><!-- row -->
                     </div><!-- heading-wrapper -->
@@ -93,19 +87,24 @@
                 <div class="container">
                     <div class="heading-wrapper">
                         <div class="row">
-                        <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
                                 <h5 class="margin-tb-20"><b>Cost:-cost here</b></h5>  
                             </div><!-- counter -->
                         </div><!-- col-md-4 -->
-                        <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
                                 <h5 class="margin-tb-20"><b>Capacity:-capacity here</b></h5>  
                             </div><!-- counter -->
                         </div><!-- col-md-4 -->
-                        <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
                                 <h5 class="margin-tb-20"><b>Indoor/Outdoor:-here</b></h5>  
+                            </div><!-- counter -->
+                        </div>
+						<div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="iconbox margin-b-30">
+                                <h5 class="margin-tb-20"><b>Area:-here</b></h5>  
                             </div><!-- counter -->
                         </div>
                         </div><!-- row -->
@@ -363,6 +362,114 @@
 		</div><!-- container -->
 	</section><!-- progression-section -->
 	
+	<section class="education-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="heading">
+						<h3><b>Listing</b></h3>
+					</div>
+				</div><!-- col-sm-4 -->
+			</div><!-- row -->
+
+			<div class="row">
+			
+				<div class="offset-0 col-lg-4 col-md-6">
+					<div class="feature_item"><a class="btn btn-bg-yellow" >
+						<img src="images/party.jpg"  width="300" height="200 ">
+						<br><br>
+						<h3><b>Wedding</h3></b>
+                        
+						</a>
+					</div>
+				</div>
+
+				<div class="offset-0 col-lg-4 col-md-6">
+					<div class="feature_item"><a class="btn btn-bg-yellow" >
+						<img src="images/party.jpg"  width="300" height="200 ">
+						<br><br>
+						<h3><b>Parties</h3></b>
+                        
+						</a>
+					</div>
+				</div>
+
+				<div class="offset-0 col-lg-4 col-md-6">
+					<div class="feature_item"><a class="btn btn-bg-yellow" >
+						<img src="images/party.jpg"  width="300" height="200 ">
+						<br><br>
+						<h3><b>Meetings</h3></b>
+                        
+						</a>
+					</div>
+				</div>
+
+				<div class="offset-0 col-lg-4 col-md-6">
+					<div class="feature_item"><a class="btn btn-bg-yellow" >
+						<img src="images/party.jpg"  width="300" height="200 ">
+						<br><br>
+						<h3><b>Professional Events</h3></b>
+                        
+						</a>
+					</div>
+				</div>
+
+				<div class="offset-0 col-lg-4 col-md-6">
+					<div class="feature_item"><a class="btn btn-bg-yellow" >
+						<img src="images/party.jpg"  width="300" height="200 ">
+						<br><br>
+						<h3><b>Coperate Events</h3></b>
+                        
+						</a>
+					</div>
+				</div>
+			
+			</div>
+
+		</div><!-- container -->
+	</section>
+
+	<section class="education-section section">
+				<div class="colorlib-narrow-content">
+                    
+					<div class="container">
+                    <div class="heading">
+                        <h2>Events we recently covered</h2>
+                    </div>
+					    <div class="row">
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+                                <div class="project" >
+                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <br><br><br>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                                <div class="project">
+                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					
+				</div>
+			
+        </section>
+
+
 	<footer>
 		<p class="copyright">
 		Copyright 2019 All rights reserved | Team Evora <i class="ion-heart" aria-hidden="true"></i>
