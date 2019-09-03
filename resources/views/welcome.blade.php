@@ -179,19 +179,19 @@
       </div> 
 
     </div>
-<br><br>
-    <section class="different_places">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="main_title">
-						<h1>Select your catogary.</h1>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-<br><br>
+    <div class="py-3 mb-5 mt-5">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12 d-md-flex align-items-center" data-aos="fade">
+           <h2 class="text-black mb-5 mb-md-0 text-center text-md-left">Find your service for your desired event</h2>
+           <div class="ml-auto text-center text-md-left">
+            <a href="Events" class="btn btn-danger py-3 px-5 rounded">Click Here</a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+    
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
