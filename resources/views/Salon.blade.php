@@ -56,15 +56,29 @@
                     
                     <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li >
+                    <li class="active">
                         <a href="/">Home</a>
                       </li>
-                      <li><a href="#">Wedding Hall</a></li>
                       
+                      <li class="has-children">
+                            <a>Services</a>
+                            <ul class="dropdown">
+                      <li><a href="Venue">Venues</a></li>
+                      <li><a href="Bridal">Beautician</a></li>
+                      <li><a href="Decorator">Decorators</a></li>
                       <li><a href="Music">DJs/Music</a></li>
-                      <li><a href="Photography">Photography</a></li>
-                      <li><a href="#">Cake Designers</a></li>
-                      <li class="active"><a href="Bridal">Bridal</a></li>
+                      <li><a href="Photography">Photography & Videography</a></li>
+                      <li><a href="Dancing">Dancers & Choregraphy</a></li>
+                      <li><a href="Cake">Cake Designers</a></li>
+                      <li><a href="EventPlanner">Event Planners</a></li>
+                      <li><a href="catering">Catering Service</a></li>
+                      <li><a href="CostumeDesigner">Costume Designers</a></li> 
+                      <li><a href="Poruwa">Poruwa Rituals</a></li>
+                      <li><a href="Actor">Presenters & Entertainers</a></li>
+                      <li><a href="Transport">Wedding Transport</a></li>
+                      </ul>
+                      <li><a href="login">Login</a></li>
+                      <li><a href="register">Register</a></li>
                     </ul>
                   </div>
                 </nav>
