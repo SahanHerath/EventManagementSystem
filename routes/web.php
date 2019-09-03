@@ -162,3 +162,7 @@ Route::get('/HallView', function () {
 Route::get('/CostumeDesigner', function () {
     return view('CostumeDesigner');
 });
+
+Route::get('/CostumeDesigner', 'CostumeDesignerController@index')  ;
+Route::get('/CostumeDesignerView{id}','CostumeDesignerController@viewProfile');
+Route::post('/addCostumeDesigner', 'CostumeDesignerController@store')  ;
