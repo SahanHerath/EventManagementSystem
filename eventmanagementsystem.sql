@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2019 at 05:11 AM
+-- Generation Time: Sep 03, 2019 at 04:06 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -146,6 +146,57 @@ CREATE TABLE `catering_events` (
   `Party` varchar(20) NOT NULL,
   `Corporate_event` varchar(20) NOT NULL,
   `Funeral` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `costume_designers`
+--
+
+CREATE TABLE `costume_designers` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(20) NOT NULL,
+  `Link` varchar(191) NOT NULL,
+  `Description` text NOT NULL,
+  `wedding_dress_designs` varchar(20) NOT NULL,
+  `clothing_orders` varchar(20) NOT NULL,
+  `sport_kit_designs` varchar(20) NOT NULL,
+  `saree_work` varchar(20) NOT NULL,
+  `traditional_dress` varchar(20) NOT NULL,
+  `gents_wear` varchar(20) NOT NULL,
+  `ladies_wear` varchar(20) NOT NULL,
+  `gents_foot_wear` varchar(20) NOT NULL,
+  `ladies_foot_wear` varchar(20) NOT NULL,
+  `sports_shoes` varchar(20) NOT NULL,
+  `Main_pic` varchar(191) NOT NULL,
+  `pic1` varchar(191) NOT NULL,
+  `pic2` varchar(191) NOT NULL,
+  `pic3` varchar(191) NOT NULL,
+  `pic4` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `costume_designer_events`
+--
+
+CREATE TABLE `costume_designer_events` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Wedding` varchar(20) NOT NULL,
+  `Party` varchar(20) NOT NULL,
+  `fashion_show` varchar(20) NOT NULL,
+  `sports` varchar(20) NOT NULL,
+  `Coperate_event` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -306,6 +357,14 @@ CREATE TABLE `hall_events` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `hall_events`
+--
+
+INSERT INTO `hall_events` (`id`, `hall_id`, `Wedding`, `Meeting`, `Party`, `Corporate_event`, `Professional_Event`, `Created_at`, `updated_at`) VALUES
+(1, 1, 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
+(2, 1, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-08-30 12:27:49', '2019-08-30 12:27:49');
+
 -- --------------------------------------------------------
 
 --
@@ -334,6 +393,13 @@ CREATE TABLE `hall_features` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `hall_features`
+--
+
+INSERT INTO `hall_features` (`id`, `hall_id`, `projection`, `internet`, `parking`, `security_camera`, `security_personal`, `reception_area`, `Bar`, `garden`, `smoking_area`, `welcome_drinks`, `Buffet`, `Handicap_accessible`, `outside_balcony`, `inside_balcony`, `stage`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57');
+
 -- --------------------------------------------------------
 
 --
@@ -359,6 +425,13 @@ CREATE TABLE `hall_table_arrangements` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `hall_table_arrangements`
+--
+
+INSERT INTO `hall_table_arrangements` (`id`, `hall_id`, `theatre`, `U_shape`, `V_shape`, `classroom`, `hallow_square`, `Boardroom`, `Oval`, `Herringbone`, `Top_table_springs`, `banquet`, `cabaret`, `informal`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57');
+
 -- --------------------------------------------------------
 
 --
@@ -380,6 +453,14 @@ CREATE TABLE `hotels` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hotels`
+--
+
+INSERT INTO `hotels` (`id`, `Hotel_Name`, `Address`, `Contact_No`, `Link`, `Description`, `facebook`, `instagram`, `Main_logo`, `Cover_photo`, `user_id`, `Created_at`, `Updated_at`) VALUES
+(1, 'ffgghfh', 'gyyu', 'ghy', 'tryyuyuk', 'ghhjkj TYPE, KIND, SORT, NATURE, DESCRIPTION, CHARACTER mean a number of individuals thought of as a group because of a common quality or qualities. TYPE may suggest strong and clearly marked similarity throughout the items included so that each is typical of the group.  one of three basic body types  KIND may suggest natural grouping.  a zoo seemingly having animals of every kind  SORT often suggests some ', 'yfggjhjh', 'ghjjjh', '1567012588.jpg', '1567012590.jpg', 1, '2019-08-30 08:25:12', '2019-08-30 08:25:12'),
+(2, 'cdfsdf', 'svvsd', 'dsgdsfsd', 'dsfdsf', 'dsfdsfds', 'adsdsa', 'vsdfsdf', '1567012588.jpg', '1567012588.jpg', 1, '2019-08-30 07:23:30', '2019-08-30 07:23:30');
 
 -- --------------------------------------------------------
 
@@ -556,6 +637,14 @@ CREATE TABLE `reception_halls` (
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reception_halls`
+--
+
+INSERT INTO `reception_halls` (`id`, `Hall_Name`, `Address`, `Description`, `Cost`, `Capacity`, `Square_feet`, `Overview`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `hotel_id`, `Created_at`, `Updated_at`) VALUES
+(1, 'vbhjhhjhj', 'fhjk', 'ghhjhjjk', '12.00', 123, '123.00', 'Outdoor', '1567012672.jpg', '1567012673.jpg', '1567012674.jpg', '1567012675.jpg', '1567012676.jpg', 1, '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
+(2, 'fdsfds', 'fsdfsd', 'fdsfdsfs', '12.22', 21, '12.22', 'outside', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', 1, '2019-08-30 07:40:01', '2019-08-30 07:40:01');
+
 -- --------------------------------------------------------
 
 --
@@ -669,6 +758,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `city`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Shamith athauda', 'gghj@gmail.com', NULL, 'Hall', 'dfggh', '$2y$10$98qKAj4fm6wUpy8N56LZKO0C4.uP2nJtHQtLKAsReGEmThtlZcUFe', NULL, '2019-08-28 11:45:52', '2019-08-28 11:45:52');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -700,6 +796,18 @@ ALTER TABLE `caterings`
 -- Indexes for table `catering_events`
 --
 ALTER TABLE `catering_events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `costume_designers`
+--
+ALTER TABLE `costume_designers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `costume_designer_events`
+--
+ALTER TABLE `costume_designer_events`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -876,6 +984,18 @@ ALTER TABLE `catering_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `costume_designers`
+--
+ALTER TABLE `costume_designers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `costume_designer_events`
+--
+ALTER TABLE `costume_designer_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `dancers`
 --
 ALTER TABLE `dancers`
@@ -915,25 +1035,25 @@ ALTER TABLE `event_planners_events`
 -- AUTO_INCREMENT for table `hall_events`
 --
 ALTER TABLE `hall_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hall_features`
 --
 ALTER TABLE `hall_features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `hall_table_arrangements`
 --
 ALTER TABLE `hall_table_arrangements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `hotels`
 --
 ALTER TABLE `hotels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -975,7 +1095,7 @@ ALTER TABLE `poruwa_ceramonies`
 -- AUTO_INCREMENT for table `reception_halls`
 --
 ALTER TABLE `reception_halls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `salons`
@@ -1005,7 +1125,7 @@ ALTER TABLE `transport_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

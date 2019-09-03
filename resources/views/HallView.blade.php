@@ -367,7 +367,7 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="heading">
-						<h3><b>Listing</b></h3>
+						<h3><b>We will cover your</b></h3>
 					</div>
 				</div><!-- col-sm-4 -->
 			</div><!-- row -->
