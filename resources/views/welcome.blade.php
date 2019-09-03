@@ -62,11 +62,29 @@
                       <li class="active">
                         <a href="/">Home</a>
                       </li>
-                      <li><a href="Decorator">Decorator</a></li>
-                      <li><a href="Transport">Wedding Cars</a></li>
+                      
+                      <li class="has-children">
+                            <a>Services</a>
+                            <ul class="dropdown">
+                      <li><a href="Venue">Venues</a></li>
+                      <li><a href="Bridal">Beautician</a></li>
+                      <li><a href="Decorator">Decorators</a></li>
                       <li><a href="Music">DJs/Music</a></li>
-                      <li><a href="Photography">Photography</a></li>
-                      <li><a href="Cake_Designers.html">Cake Designers</a></li>
+                      <li><a href="Photography">Photography & Videography</a></li>
+                      <li><a href="Dancing">Dancers & Choregraphy</a></li>
+                      <li><a href="Cake">Cake Designers</a></li>
+                      <li><a href="EventPlanner">Event Planners</a></li>
+                      <li><a href="catering">Catering Service</a></li>
+                      <li><a href="CostumeDesigner">Costume Designers</a></li> 
+                      <li><a href="Poruwa">Poruwa Rituals</a></li>
+                      <li><a href="Actor">Presenters & Entertainers</a></li>
+                      <li><a href="Transport">Wedding Transport</a></li>
+                       
+                       
+                      
+                      
+              
+                      </ul>
                       <li><a href="login">Login</a></li>
                       <li><a href="register">Register</a></li>
                     </ul>
