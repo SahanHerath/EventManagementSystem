@@ -84,7 +84,7 @@
         <!--================End Home Banner Area =================-->
         
         <!--================Welcome Area =================-->
-        <section class="welcome_area p_120">
+		<section class="welcome_area p_120">
         	<div class="container">
                 <div class="welcome_text">
                     <h4>What we are doing?</h4>
@@ -99,120 +99,291 @@
         			<h2>offerings to my clients</h2>
         		</div>
         		<div class="feature_inner row">
-                   
-                
-                    @if($data1->Welcome_drink=="Available")
+                    @if($data1->Wedding=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
         					<img src="images/musicwedding.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Welcome Drink</h4>
+        					<h4>Wedding</h4>
+                            @if($data1->Welcome_drink== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Welcome Drink<br>
+                            @endif
+                            
+                            @if($data1->Catering_set == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>CAtering Set<br>
+                            @endif
+                            
+                            @if($data1->Catering_tent == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Catering Tent<br>
                            
+                            @endif
+
+							@if($data1->Cake == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Cake<br>
+                            @endif
+                            
+                            @if($data1->Special_Food == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Special Food<br>
+                           
+                            @endif
+
+							@if($data1->Garden_umbrella == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Garden Umbrella<br>
+                           
+                            @endif
+
+							
+                            @if($data1->Coffee_Machine == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Coffee Machine<br>
+                           
+                            @endif
+
+							@if($data1->Table_chair == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Table Chir<br>
+                           
+                            @endif
+
+							@if($data1->sink == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Sink<br>
+                           
+                            @endif
+
+							@if($data1->dessert == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dessert<br>
+                           
+                            @endif
                             
                         </div>
         			</div>
                     @endif
 
-                    @if($data1->Catering_set=="Available")
+                    @if($data1->Birthday=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                            <img src="images/partysalon.jpg"  width="300" height="200 ">
+                            <img src="images/musicbday.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Catering Set</h4>
+        					<h4>Birthady Party</h4>
+							@if($data1->Welcome_drink== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Welcome Drink<br>
+                            @endif
+                            
+                            @if($data1->Catering_set == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>CAtering Set<br>
+                            @endif
+                            
+                            @if($data1->Catering_tent == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Catering Tent<br>
                            
+                            @endif
+
+							@if($data1->Cake == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Cake<br>
+                            @endif
+                            
+                            @if($data1->Special_Food == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Special Food<br>
+                           
+                            @endif
+
+							@if($data1->Garden_umbrella == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Garden Umbrella<br>
+                           
+                            @endif
+
+							
+                            @if($data1->Coffee_Machine == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Coffee Machine<br>
+                           
+                            @endif
+
+							@if($data1->Table_chair == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Table Chir<br>
+                           
+                            @endif
+
+							@if($data1->sink == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Sink<br>
+                           
+                            @endif
+
+							@if($data1->dessert == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dessert<br>
+                           
+                            @endif
+                            
         				</div>
         			</div>
                     @endif
 
-                    @if($data1->Catering_tent=="Available")
+                    @if($data1->Party=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/musicbday.jpg"  width="300" height="200 ">
+                        <img src="images/partysalon.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Catering Tent</h4>
+        					<h4>Parties</h4>
+							@if($data1->Welcome_drink== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Welcome Drink<br>
+                            @endif
+                            
+                            @if($data1->Catering_set == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>CAtering Set<br>
+                            @endif
+                            
+                            @if($data1->Catering_tent == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Catering Tent<br>
+                           
+                            @endif
+
+							@if($data1->Cake == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Cake<br>
+                            @endif
+                            
+                            @if($data1->Special_Food == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Special Food<br>
+                           
+                            @endif
+
+							@if($data1->Garden_umbrella == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Garden Umbrella<br>
+                           
+                            @endif
+
+							
+                            @if($data1->Coffee_Machine == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Coffee Machine<br>
+                           
+                            @endif
+
+							@if($data1->Table_chair == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Table Chir<br>
+                           
+                            @endif
+
+							@if($data1->sink == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Sink<br>
+                           
+                            @endif
+
+							@if($data1->dessert == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dessert<br>
+                           
+                            @endif
                             
                         </div>
         			</div>
                     @endif
 
-                    @if($data1->Cake=="Available")
+                    @if($data1->Corporate_event=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
+                        <img src="images/ca2.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Cakes</h4>
+        					<h4>Coparate Event</h4>
+							@if($data1->Welcome_drink== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Welcome Drink<br>
+                            @endif
                             
+                            @if($data1->Catering_set == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>CAtering Set<br>
+                            @endif
+                            
+                            @if($data1->Catering_tent == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Catering Tent<br>
+                           
+                            @endif
+
+							@if($data1->Cake == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Cake<br>
+                            @endif
+                            
+                            @if($data1->Special_Food == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Special Food<br>
+                           
+                            @endif
+
+							@if($data1->Garden_umbrella == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Garden Umbrella<br>
+                           
+                            @endif
+
+							
+                            @if($data1->Coffee_Machine == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Coffee Machine<br>
+                           
+                            @endif
+
+							@if($data1->Table_chair == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Table Chir<br>
+                           
+                            @endif
+
+							@if($data1->sink == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Sink<br>
+                           
+                            @endif
+
+							@if($data1->dessert == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dessert<br>
+                           
+                            @endif
                             
                         </div>
         			</div>
                     @endif
 
-                    @if($data1->Special_Food=="Available")
+                    @if($data1->Funeral=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
+                        <img src="images/fe.jpg"  width="300" height="200 ">
                             <br><br>
-        					<h4>Special Foods</h4>
+        					<h4>Funeral</h4>
+							@if($data1->Welcome_drink== "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Welcome Drink<br>
+                            @endif
                             
+                            @if($data1->Catering_set == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>CAtering Set<br>
+                            @endif
                             
-                        </div>
-        			</div>
-                    @endif
+                            @if($data1->Catering_tent == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Catering Tent<br>
+                           
+                            @endif
 
-                    @if($data1->Garden_umbrella=="Available")
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
-                            <br><br>
-        					<h4>Garden Umbrellas</h4>
+							@if($data1->Cake == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Cake<br>
+                            @endif
                             
-                            
-                        </div>
-        			</div>
-                    @endif
+                            @if($data1->Special_Food == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Special Food<br>
+                           
+                            @endif
 
-                    @if($data1->Coffee_Machine=="Available")
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
-                            <br><br>
-        					<h4>Coffee Machine</h4>
-                            
-                            
-                        </div>
-        			</div>
-                    @endif
+							@if($data1->Garden_umbrella == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Garden Umbrella<br>
+                           
+                            @endif
 
-                    @if($data1->Table_chair=="Available")
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
-                            <br><br>
-        					<h4>Table Chairs</h4>
-                            
-                            
-                        </div>
-        			</div>
-                    @endif
+							
+                            @if($data1->Coffee_Machine == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Coffee Machine<br>
+                           
+                            @endif
 
-                    @if($data1->sink=="Available")
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
-                            <br><br>
-        					<h4>Sink</h4>
-                            
-                            
-                        </div>
-        			</div>
-                    @endif
+							@if($data1->Table_chair == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Table Chir<br>
+                           
+                            @endif
 
-                    @if($data1->dessert=="Available")
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
-                            <br><br>
-        					<h4>Dessert</h4>
+							@if($data1->sink == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Sink<br>
+                           
+                            @endif
+
+							@if($data1->dessert == "Available")
+                            <span class="lnr lnr-checkmark-circle"></span>Dessert<br>
+                           
+                            @endif
                             
                             
                         </div>
@@ -220,6 +391,8 @@
                     @endif
                     
                     
+                    
+                   
         		</div>
         	</div>
         </section>
@@ -237,7 +410,7 @@
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="uploads/catering/{{$data1->pic1}}" alt="IMage" class="img-fluid" >
+                                    <img src="uploads/catering/{{$data1->pic1}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
@@ -300,8 +473,10 @@
 								<a href="#"><i class="fa fa-star-half-o"></i></a>
 							</div>
 						</div>
+                        
 						<div class="item">
 							<div class="testi_item">
+                                
 								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
 								<h4>Fanny Spencer</h4>
 								<a href="#"><i class="fa fa-star"></i></a>
@@ -311,6 +486,7 @@
 								<a href="#"><i class="fa fa-star-half-o"></i></a>
 							</div>
 						</div>
+                        
 					</div>
         		</div>
         	</div>
