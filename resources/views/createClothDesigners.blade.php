@@ -179,7 +179,70 @@
                         </div>   
                         </div>
 
+                        <label><b>Events That You Can Cover</b></label><br><br>
 
+                        <div class="form-group row">
+                            <label for="Wedding" class="col-md-4 col-form-label text-md-right">Wedding</label>
+                            
+                            <div class="col-md-6">
+                                <select id="Wedding" class="form-control" name="Wedding" value="{{ old('Wedding') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Party" class="col-md-4 col-form-label text-md-right">Party</label>
+                            
+                            <div class="col-md-6">
+                                <select id="Party" class="form-control" name="Party" value="{{ old('Party') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fashion_show" class="col-md-4 col-form-label text-md-right">Fashion Show</label>
+                            
+                            <div class="col-md-6">
+                                <select id="fashion_show" class="form-control" name="fashion_show" value="{{ old('fashion_show') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Coperate_event" class="col-md-4 col-form-label text-md-right">Coperate Event</label>
+                            
+                            <div class="col-md-6">
+                                <select id="Coperate_event" class="form-control" name="Coperate_event" value="{{ old('Coperate_event') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sports" class="col-md-4 col-form-label text-md-right">Sport</label>
+                            
+                            <div class="col-md-6">
+                                <select id="sports" class="form-control" name="sports" value="{{ old('sports') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        
 
                         
 

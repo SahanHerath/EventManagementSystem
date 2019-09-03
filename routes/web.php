@@ -159,9 +159,9 @@ Route::get('/HallView', function () {
     return view('HallView');
 });
 
-Route::get('/CostumeDesigner', function () {
+/*Route::get('/CostumeDesigner', function () {
     return view('CostumeDesigner');
-});
+});*/
 
 Route::get('/CostumeDesigner', 'CostumeDesignerController@index')  ;
 Route::get('/CostumeDesignerView{id}','CostumeDesignerController@viewProfile');

@@ -7,7 +7,7 @@ use App\Costume_designer;
 use App\Costume_designer_event;
 use DB;
 use Auth;
-use images;
+use Image;
 
 class CostumeDesignerController extends Controller
 {
@@ -127,7 +127,7 @@ class CostumeDesignerController extends Controller
                 $costume->save();
 
 
-            $costume_event = new Dancer_event;
+            $costume_event = new Costume_designer_event;
             $costume_event->user_id = Auth::user()->id;
             $costume_event->Wedding=$request->Wedding;
             $costume_event->Party =$request->Party;
