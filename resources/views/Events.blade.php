@@ -52,7 +52,7 @@
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">
-                <h2 class="mb-0 site-logo"><a href="index.html">Evora</a></h2>
+                <h2 class="mb-0 site-logo"><a href="/">Evora</a></h2>
               </div>
               <div class="col-10">
                 <nav class="site-navigation text-right" role="navigation">
@@ -94,7 +94,7 @@
     </div>
 
     <div class="slide-one-item home-slider owl-carousel">
-    <div class="site-blocks-cover overlay bg-light" style="background-image: url(images/events.jpg);"  data-aos="fade" data-stellar-background-ratio="0.5" >
+    <div class="site-blocks-cover overlay bg-light" style="background-image: url(images/rumith.jpg);"  data-aos="fade" data-stellar-background-ratio="0.5" >
         <div class="container">
         </div>
       </div> 
