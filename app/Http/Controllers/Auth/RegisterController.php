@@ -67,13 +67,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
+        $is_admin=0;
+        if(Auth::check()){
+            $is_admin= 1;
+        }
+        else{
+        $is_admin=0;
+        }
+
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'category'=>$data['category'],
             'city' => $data['city'],
             'password' => Hash::make($data['password']),
-            
+            'admin'=> $is_admin
         ]);
     }
 }
