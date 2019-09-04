@@ -84,7 +84,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Costume Designers</h1>
-              <h2 class="caption"> Your Dream Dress </h2>
+              <h2 class="caption">For Your Dream Dress </h2>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Best Designers</h1>
-              <h2 class="caption"> For Any Special Occations </h2>
+              <h2 class="caption"> With Modern & Creative Ideas </h2>
             </div>
           </div>
         </div>
@@ -105,19 +105,19 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Fashionable</h1>
-              <h2 class="caption">Magic Of Create</h2>
+              <h1 class="mb-2">Design Your Dream</h1>
+              <h2 class="caption">Make Your Own Dress</h2>
             </div>
           </div>
         </div>
       </div> 
       
-      <div class="site-blocks-cover overlay" style="background-image: url(images/designer2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/designer0.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Creatively</h1>
-              <h2 class="caption">Talk To Your Eye</h2>
+              <h1 class="mb-2">Pashion For Fashion</h1>
+              <h2 class="caption">Highlight Your Personality</h2>
             </div>
           </div>
         </div>
@@ -132,11 +132,11 @@
             
               <div class="img-border">
                 <a class="popup-vimeo image-play">
-                  <img src="images/designer5.jpg" alt="" class="img-fluid">
+                  <img src="images/designer10.jpg" alt="" class="img-fluid">
                 </a>
               </div>
 
-              <img src="images/designer8.jpg" alt="Image" class="img-fluid image-absolute">
+              <img src="images/designer00.jpg" alt="Image" class="img-fluid image-absolute">
             
           </div>
           <div class="col-md-5 ml-auto">
