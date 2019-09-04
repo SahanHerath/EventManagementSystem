@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2019 at 04:06 PM
+-- Generation Time: Sep 04, 2019 at 09:43 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -751,6 +751,7 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `category` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `admin` int(11) NOT NULL DEFAULT '0',
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -761,8 +762,18 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `city`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Shamith athauda', 'gghj@gmail.com', NULL, 'Hall', 'dfggh', '$2y$10$98qKAj4fm6wUpy8N56LZKO0C4.uP2nJtHQtLKAsReGEmThtlZcUFe', NULL, '2019-08-28 11:45:52', '2019-08-28 11:45:52');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `city`, `admin`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Shamith athauda', 'gghj@gmail.com', NULL, 'Hall', 'dfggh', 0, '$2y$10$98qKAj4fm6wUpy8N56LZKO0C4.uP2nJtHQtLKAsReGEmThtlZcUFe', NULL, '2019-08-28 11:45:52', '2019-08-28 11:45:52'),
+(2, 'gdfgd', 'sgsdfds@gmail.com', NULL, 'Music', 'dsfdsfsd', 1, '$2y$10$McDaVU5SZdPcq9wCd7QcKOb7SkimVMEZQHx530h1x9NV.Vt2VDgca', NULL, '2019-09-03 10:25:07', '2019-09-03 10:25:07'),
+(3, 'Shamith athauda', 'ddd@gmail.com', NULL, 'Hall', 'sadas', 1, '$2y$10$i7lynHqY223uvgLrntISheSz5WczEg87dYbyG4wB6z6mO2IklrjVq', NULL, '2019-09-03 10:26:58', '2019-09-03 10:26:58'),
+(4, 'gdthfhg', 'rgdttg@gmail.com', NULL, 'Decoration', 'gftfhgh', 1, '$2y$10$xnE.fiDS1eWQCXK2zqHQ7.6juiMfKujDSmPKb1oIZ3S65uEjJteKy', NULL, '2019-09-03 11:54:47', '2019-09-03 11:54:47'),
+(5, 'ftfgjh', 'dsfd@gmail.com', NULL, 'Hall', 'fdhj', 1, '$2y$10$17Ut/kA0qapYyaCMg3YrAOs8K5Atg1yq.JXZZf9p.s9UDqKyRCpYC', NULL, '2019-09-03 11:58:02', '2019-09-03 11:58:02'),
+(6, 'Shamith athauda', 'dddd@gmail.com', NULL, 'Hall', 'fvdsfgdf', 0, '$2y$10$W0i0xbFW4fL9ZrGm4CrcwOLG9FLm0ShhLH7mOi1MIOIfC838bOyt.', NULL, '2019-09-03 13:45:55', '2019-09-03 13:45:55'),
+(7, 'Nethmi Herath', 'dsvdf@gmail.com', NULL, 'Cloth_Designers', 'dfbfbfd', 1, '$2y$10$FPy85fboWw7MiiKq5px8m.rR9hCSNoleqhIQY0aPSMKqsarO9rUg6', NULL, '2019-09-03 14:14:11', '2019-09-03 14:14:11'),
+(8, 'Nethmi Herath', 'sumudcdvu@gmail.com', NULL, 'Hall', 'ahjfer', 1, '$2y$10$Gxa/sfmu24SCTwbFE0XYseIaXJgagEbcRtg37UlFaXD2hCXHBNW8e', NULL, '2019-09-03 14:29:34', '2019-09-03 14:29:34'),
+(9, 'dsvdfg', 'fgfdgd@gmail.com', NULL, 'Hall', 'xdvdfgd', 1, '$2y$10$qD5OvP4GZ3IoBTkhRh8Lxe2SnGaRjdpJmDmamWlo0UR6Hz4ahoueS', NULL, '2019-09-03 14:34:30', '2019-09-03 14:34:30'),
+(10, 'Philip Diass', 'ddcsdcsd@gmail.com', NULL, 'Hall', 'cbgfhrt', 1, '$2y$10$cNVdrDdrilFh0REIn3KCvOKhI6RY.hbHghvachlT/PgyNxpaEPTpu', NULL, '2019-09-03 14:35:40', '2019-09-03 14:35:40'),
+(11, 'dgs', 'dsvsd@gmail.com', NULL, 'Hall', 'fvfdgdf', 1, '$2y$10$lO44PPSbR3VRqNRit03t7O0RV4FAkhjYPMPwxs3wCm8OtjL6tBnH2', NULL, '2019-09-04 08:53:35', '2019-09-04 08:53:35');
 
 --
 -- Indexes for dumped tables
@@ -1125,7 +1136,7 @@ ALTER TABLE `transport_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
