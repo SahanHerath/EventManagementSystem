@@ -10,7 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=> ['web','auth']],function(){
 
+    Route::get('/home',function(){
+        if(Auth::user()->admin==0)
+        {
+            return view('home');
+        }
+        else
+        {
+            $users['users'] = \App\User::all();
+            return view('adminhome',$users);
+        }
+    });
+    
+
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,7 +35,7 @@ Route::get('/Photographyview{id}','PhotographyController@viewProfile');
 Route::get('/Photography', 'PhotographyController@index')  ; 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/home', 'HomeController@index')->name('home');*/
 Route::get('/category', 'HomeController@category');
 Route::get('/hall', 'HomeController@hall');
 Route::post('/addphotographyer', 'PhotographyController@store');
