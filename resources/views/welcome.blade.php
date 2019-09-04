@@ -155,6 +155,17 @@
         </div>
       </div> 
 
+      <div class="site-blocks-cover overlay" style="background-image: url(images/planners.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Event Planners</h1>
+              <h2 class="caption">Make it as your wish</h2>
+            </div>
+          </div>
+        </div>
+      </div>  
+
    
       <div class="site-blocks-cover overlay" style="background-image: url(images/dance2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -177,6 +188,41 @@
           </div>
         </div>
       </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/wedding-decoration.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Decorators</h1>
+              <h2 class="caption">Make it as your wish</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/prese.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Presenters And Entertainers</h1>
+              <h2 class="caption">Make it as your wish</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-blocks-cover overlay" style="background-image: url(images/cat.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="mb-2">Catering Service</h1>
+              <h2 class="caption">Make it as your wish</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
 
     </div>
     <div class="py-3 mb-5 mt-5">
