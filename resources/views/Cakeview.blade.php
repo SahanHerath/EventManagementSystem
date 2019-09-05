@@ -118,7 +118,7 @@
                     @if($data1->Wedding_cake=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-        					<img src="images/musicwedding.jpg"  width="300" height="200 ">
+        					<img src="images/cakew.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Wedding Cake</h4>
                            
@@ -130,7 +130,7 @@
                     @if($data1->Birthday_cake=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                            <img src="images/partysalon.jpg"  width="300" height="200 ">
+                            <img src="images/cakeb.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Birthday Cake</h4>
                           
@@ -141,7 +141,7 @@
                     @if($data1->Pastry_cake=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/musicbday.jpg"  width="300" height="200 ">
+                        <img src="images/cakep.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Pastry Cake</h4>
                            
@@ -153,7 +153,7 @@
                     @if($data1->Cup_Cake=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
+                        <img src="images/cakec.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Cup Cake</h4>
                            
@@ -165,7 +165,7 @@
                     @if($data1->Cake_Structure=="Available")
         			<div class="col-lg-4 col-md-6">
         				<div class="feature_item">
-                        <img src="images/musicget.jpg"  width="300" height="200 ">
+                        <img src="images/cakes.jpg"  width="300" height="200 ">
                             <br><br>
         					<h4>Cake Structure</h4>
                            
