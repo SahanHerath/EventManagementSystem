@@ -194,3 +194,7 @@ Route::get('/profile', function () {
 Route::get('/serviceproviders', function () {
     return view('serviceproviders');
 });
+
+Route::get('/UserProfile', function () {
+    return view('UserProfile');
+});
