@@ -4,6 +4,9 @@
 <html lang="en">
 
 <head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="css/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="css/assets/img/favicon.png">
@@ -20,6 +23,7 @@
   <link href="css/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="css/assets/demo/demo.css" rel="stylesheet" />
+  
 </head>
 
 <body class="">
@@ -44,53 +48,30 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="/home">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./icons.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
+            <a href="/rating">
+              <i class="nc-icon nc-bulb-63"></i>
+              <p>Rating</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
+            <a href="/profile">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
+            <a href="/serviceproviders">
+              <i class="nc-icon nc-badge"></i>
+              <p>Service Providers</p>
             </a>
           </li>
-          <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -106,7 +87,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Paper Dashboard 2</a>
+            <a class="navbar-brand" href="#pablo">Evora Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -126,7 +107,7 @@
             </form>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link btn-magnify" href="#pablo">
+                <a class="nav-link btn-magnify" href="#">
                   <i class="nc-icon nc-layout-11"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Stats</span>
@@ -141,13 +122,23 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item"   href="Venue">Venues</a>
+                      <a class="dropdown-item"   href="Bridal">Beautician</a>
+                      <a class="dropdown-item"   href="Decorator">Decorators</a>
+                      <a class="dropdown-item"   href="Music">DJs/Music</a>
+                      <a class="dropdown-item"   href="Photography">Photography & Videography</a>
+                      <a class="dropdown-item"   href="Dancing">Dancers & Choregraphy</a>
+                      <a class="dropdown-item"   href="Cake">Cake Designers</a>
+                      <a class="dropdown-item"   href="EventPlanner">Event Planners</a>
+                      <a class="dropdown-item"   href="catering">Catering Service</a>
+                      <a class="dropdown-item"   href="CostumeDesigner">Costume Designers</a> 
+                      <a class="dropdown-item"   href="Poruwa">Poruwa Rituals</a>
+                      <a class="dropdown-item"   href="Actor">Presenters & Entertainers</a>
+                      <a class="dropdown-item"   href="Transport">Wedding Transport</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-rotate" href="#pablo">
+                <a class="nav-link btn-rotate" href="#">
                   <i class="nc-icon nc-settings-gear-65"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
@@ -178,8 +169,8 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Capacity</p>
-                      <p class="card-title">150GB
+                      <p class="card-category">Services</p>
+                      <p class="card-title">13
                         <p>
                     </div>
                   </div>
@@ -199,13 +190,13 @@
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-success"></i>
+                      <i class="nc-icon nc-circle-10 text-success"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Revenue</p>
-                      <p class="card-title">$ 1,345
+                      <p class="card-category">Users</p>
+                      <p class="card-title">10
                         <p>
                     </div>
                   </div>
@@ -214,7 +205,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-calendar-o"></i> Last day
+                  <i class="fa fa-refresh"></i> Update Now
                 </div>
               </div>
             </div>
@@ -225,13 +216,13 @@
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-vector text-danger"></i>
+                      <i class="nc-icon nc-palette text-danger"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Errors</p>
-                      <p class="card-title">23
+                      <p class="card-category">Beautician</p>
+                      <p class="card-title">5
                         <p>
                     </div>
                   </div>
@@ -240,7 +231,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-clock-o"></i> In the last hour
+                  <i class="fa fa-refresh"></i> Update Now
                 </div>
               </div>
             </div>
@@ -251,13 +242,13 @@
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-favourite-28 text-primary"></i>
+                      <i class="nc-icon nc-vector text-primary"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Followers</p>
-                      <p class="card-title">+45K
+                      <p class="card-category">Decorators</p>
+                      <p class="card-title">3
                         <p>
                     </div>
                   </div>
@@ -266,73 +257,69 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update now
+                  <i class="fa fa-refresh"></i> Update Now
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
         <div class="row">
           <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Users Behavior</h5>
-                <p class="card-category">24 Hours performance</p>
-              </div>
-              <div class="card-body ">
-                <canvas id=chartHours width="400" height="100"></canvas>
-              </div>
-              <div class="card-footer ">
+            
+              
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Venues', 12],
+          ['Beautician', 2],
+          ['Decorators', 10],
+          ['Musicians', 12],
+          ['Photographers', 28],
+          ['Dancers', 7],
+          ['Cake Designers', 10],
+          ['Event Planners', 13],
+          ['Catering Service', 5],
+          ['Costume Designers', 9],
+          ['Poruwa Rituals', 8],
+          ['Presenters', 15],
+          ['Transport', 10]
+          
+        ]);
+
+        // Set chart options
+        var options = {'title':'Statistics of Service Providers ',
+                       'width':1155,
+                       'height':400};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+  </body>
                 <hr>
-                <div class="stats">
-                  <i class="fa fa-history"></i> Updated 3 minutes ago
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Email Statistics</h5>
-                <p class="card-category">Last Campaign Performance</p>
-              </div>
-              <div class="card-body ">
-                <canvas id="chartEmail"></canvas>
-              </div>
-              <div class="card-footer ">
-                <div class="legend">
-                  <i class="fa fa-circle text-primary"></i> Opened
-                  <i class="fa fa-circle text-warning"></i> Read
-                  <i class="fa fa-circle text-danger"></i> Deleted
-                  <i class="fa fa-circle text-gray"></i> Unopened
-                </div>
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-calendar"></i> Number of emails sent
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-title">NASDAQ: AAPL</h5>
-                <p class="card-category">Line Chart with Points</p>
-              </div>
-              <div class="card-body">
-                <canvas id="speedChart" width="400" height="100"></canvas>
-              </div>
-              <div class="card-footer">
-                <div class="chart-legend">
-                  <i class="fa fa-circle text-info"></i> Tesla Model S
-                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                </div>
-                <hr/>
-                <div class="card-stats">
-                  <i class="fa fa-check"></i> Data information certified
-                </div>
               </div>
             </div>
           </div>
@@ -344,13 +331,13 @@
             <nav class="footer-nav">
               <ul>
                 <li>
-                  <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
+                  <a href="https://www.creative-tim.com" target="_blank"></a>
                 </li>
                 <li>
-                  <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>
+                  <a href="http://blog.creative-tim.com/" target="_blank"></a>
                 </li>
                 <li>
-                  <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
+                  <a href="https://www.creative-tim.com/license" target="_blank"></a>
                 </li>
               </ul>
             </nav>
@@ -359,7 +346,7 @@
                 ©
                 <script>
                   document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                </script>, made with <i class="fa fa-heart heart"></i> Evora
               </span>
             </div>
           </div>
