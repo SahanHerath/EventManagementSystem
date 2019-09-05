@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Cake_designer;
 use Auth;
 use Image;
+use DB;
 
 
 class CakeController extends Controller
@@ -18,6 +19,12 @@ class CakeController extends Controller
     public function index()
     {
         //
+        $cake = DB::table('cake_designers')
+                ->join('users','users.id','=','cake_designers.user_id')
+                ->get();
+
+
+        return view('Cake', compact('cake'));
     }
 
     /**
@@ -162,4 +169,17 @@ class CakeController extends Controller
     {
         //
     }
+
+    public function viewProfile($id)
+    {
+        $data = DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                
+                ->where('category','=','Cake_Designers')
+                ->get();
+
+                return view('Cakeview',compact('data'));
+    }
+
 }

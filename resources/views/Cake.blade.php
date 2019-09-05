@@ -187,8 +187,24 @@
           
       
           
-			  </div>
-            </div>
+        @foreach($cake as $levee)
+        
+        <div class="site-block d-lg-flex">
+          <div class="col-md-7 col-lg-4">
+            <a href="uploads/cake/{{$levee->Main_pic}}" class="image-popup img-opacity"><img src="uploads/cake/{{$levee->Main_pic}}" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="text">
+            <br>
+            <h2 > {{$levee->Organization_Name}}</h2>
+            <h5>Address :- <i>{{$levee->Address}}</i></h5>
+            <h5>Contact No. :- <i>{{$levee->Contact_No}}</i></h5>
+            <h5>Email :-  <i>{{$levee->email}}</i> </h5>
+              
+            <p><a href="{{URL('/Cakeview'.$levee->id)}}"class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
+          </div>
+        </div>
+        <br><br><br>
+      @endforeach
 			
         </div>
       </div>

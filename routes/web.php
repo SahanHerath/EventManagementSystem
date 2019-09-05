@@ -181,3 +181,6 @@ Route::get('/HallView', function () {
 Route::get('/CostumeDesigner', 'CostumeDesignerController@index')  ;
 Route::get('/CostumeDesignerView{id}','CostumeDesignerController@viewProfile');
 Route::post('/addCostumeDesigner', 'CostumeDesignerController@store')  ;
+
+Route::get('/Cake', 'CakeController@index')  ;
+Route::get('/Cakeview{id}','CakeController@viewProfile');
