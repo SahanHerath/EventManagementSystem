@@ -184,3 +184,13 @@ Route::post('/addCostumeDesigner', 'CostumeDesignerController@store')  ;
 
 Route::get('/Cake', 'CakeController@index')  ;
 Route::get('/Cakeview{id}','CakeController@viewProfile');
+
+Route::get('/rating', function () {
+    return view('rating');
+});
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::get('/serviceproviders', function () {
+    return view('serviceproviders');
+});
