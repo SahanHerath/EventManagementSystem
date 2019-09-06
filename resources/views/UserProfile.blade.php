@@ -63,7 +63,7 @@
                             </div>
                              
                             <div class="personal_text">
-                            
+                            <h3>Organization Name</h3>
                                 <ul class="list basic_info">
                                     <li><b>Contact Person :- </b>namebgfhsgfhjdfgjfg herexdhsdhsdghsgd</li>
                                     <li><b>ADDRESS :- </b>address here</li>
@@ -71,47 +71,50 @@
                                     <li><b>email :- </b>email here</li>
                                     <li><b>Link :- </b>Link here</li>
                                     
-                                    <center><a class="genric-btn primary" href="#">Edit info</a></center>
+                                    <a class="genric-btn primary" href="#">Edit info</a>
+                                    <a class="genric-btn info" href="#">Change Password</a>
                                     <br>
                                 </ul>
                             </div>
 						</div>
                         <br>
                         
-                        <div class="welcome_text">
-                                <h4>Description</h4>
-                                <p>Description here</p>
+                        <div class="welcome">
+                                <h3>Description</h3><br>
+                                <p>typical of the group.  one of three basic body types  KIND may suggest natural grouping.  a zoo seemingly having animals of every kind  SORT often suggests some disparagement.  the sort of newspaper dealing in sensational stories  NATURE may imply inherent, essential resemblance rather than obvious or superficial likenesses.  two problems of a similar nature  DESCRIPTION implies a group marked by agreement in all details belonging to a type as described or defined.  not all acts of that description are actually illegal  CHARACTER implies a group marked by distinctive likenesses peculiar to the type.  research on the subject so far has been of an elementary character</p>
                         </div>
                         
                         <br>
                         <div class="feature_inner row">
                    
-        			<div class="col-lg-4 col-md-6 ">
-        				<div class="feature_item bg-primary text-white">
+        			<div class="col-lg-4 col-md-3" style="border: 15px solid green;">
+        				<div class="feature_item bg-white text-black" >
                             
                         <h4>Supported Events</h4>
                         <table>
                             <tr>
-                            <span class="lnr lnr-checkmark-circle "></span> Wedding
+                             Wedding
                             </tr>
                             <br>
                             <tr>
-                            <span class="lnr lnr-checkmark-circle "></span>Birthday
+                            Birthday
                             </tr>
                             <br>
                             <tr>
-                            <span class="lnr lnr-checkmark-circle "></span>Get-togrther
+                            Get-togrther
                             </tr>
                             <br>
                             <tr>
-                            <span class="lnr lnr-checkmark-circle "></span>Parties
+                            Parties
                             </tr>
                             <br>
                             <tr>
-                            <span class="lnr lnr-checkmark-circle"></span>Outside events
+                            Outside events
                             </tr>
                             
                             <tr>
+                            <br>
+                            <br>
                             <br>
                             <center><a class="genric-btn primary" href="#">Edit Events</a></center>
                             </tr>
@@ -120,23 +123,23 @@
         			</div>
                     
                    
-					<div class="offset-3 col-lg-4 col-md-6">
-        				<div class="feature_item bg-primary text-white">
+					<div class="offset-3 col-lg-5 col-md-6" style="border: 15px solid green;">
+        				<div class="feature_item bg- text-black">
                         <center><h4>Features</h4></center>
-                            <span class="lnr lnr-checkmark-circle"></span>Poruwa
+                            Poruwa
                             <br>
-                            <span class="lnr lnr-checkmark-circle"></span>Flower
+                            Flower
                             <br>
-                            <span class="lnr lnr-checkmark-circle"></span>Table hall
+                            Table hall
                             <br>
-                            <span class="lnr lnr-checkmark-circle"></span>Setty back
+                            Setty back
                             <br>
-                            <span class="lnr lnr-checkmark-circle"></span>Lighting
+                            Lighting
                             <br>
-                            <span class="lnr lnr-checkmark-circle"></span>Traditional
+                            Traditional
                             <br>
-                            <span class="lnr lnr-checkmark-circle"></span>Wedding car
-                            <br>
+                            Wedding car
+                            <br><br><br>
                             <center><a class="genric-btn primary" href="#">Edit Features</a></center>
                             
                         </div>
@@ -176,7 +179,7 @@
                             
 						</div>
                         <br><br><br>
-							<a class="offset-9 genric-btn primary" href="#">Change Photos</a>
+							<a class="offset-9 genric-btn primary" href="#">Change Recent Event Photos</a>
 					
 					</div>
 					
