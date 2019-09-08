@@ -171,6 +171,12 @@ Route::get('/PartyHall', 'hallController@party')  ;
 Route::get('/CoperateEventHall', 'hallController@coperate')  ;
 Route::get('/ProfessionalEventHall', 'hallController@prof')  ;
 
+Route::get('/WeddingDressDesigner', 'CostumeDesignerController@wedding')  ;
+Route::get('/PartyDressDesigner', 'CostumeDesignerController@party')  ;
+Route::get('/SportsKitDesigner', 'CostumeDesignerController@sportkit')  ;
+Route::get('/CoperateEventDressDesigner', 'CostumeDesignerController@coperate')  ;
+Route::get('/SportShoesDesigner', 'CostumeDesignerController@sportshoes')  ;
+
 Route::get('/HallView', function () {
     return view('HallView');
 });

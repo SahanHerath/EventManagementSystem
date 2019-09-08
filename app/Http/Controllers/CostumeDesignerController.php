@@ -197,7 +197,74 @@ class CostumeDesignerController extends Controller
                 return view('CostumeDesignerView',compact('data'));
     }
 
-    
+    public function wedding()
+    {
+        //
+        $level = DB::table('costume_designers')
+                ->join('users','users.id','=','costume_designers.user_id')
+                ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+                ->where('Wedding','=','Available')
+                ->where('wedding_dress_designs','=','Available')
+                ->get();
+      
+       
+       return view('CostumeDesigner', compact('level'));
+    }
+
+    public function party()
+    {
+        //
+        $level = DB::table('costume_designers')
+                ->join('users','users.id','=','costume_designers.user_id')
+                ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+                ->where('Party','=','Available')
+                
+                ->get();
+      
+       
+       return view('CostumeDesigner', compact('level'));
+    }
+
+    public function sportkit()
+    {
+        //
+        $level = DB::table('costume_designers')
+                ->join('users','users.id','=','costume_designers.user_id')
+                ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+                ->where('sports','=','Available')
+                ->where('sport_kit_designs','=','Available')
+                ->get();
+      
+       
+       return view('CostumeDesigner', compact('level'));
+    }
+
+    public function sportshoes()
+    {
+        //
+        $level = DB::table('costume_designers')
+                ->join('users','users.id','=','costume_designers.user_id')
+                ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+                ->where('sports','=','Available')
+                ->where('sports_shoes','=','Available')
+                ->get();
+      
+       
+       return view('CostumeDesigner', compact('level'));
+    }
+
+    public function coperate()
+    {
+        //
+        $level = DB::table('costume_designers')
+                ->join('users','users.id','=','costume_designers.user_id')
+                ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+                ->where('Coperate_event','=','Available')
+                ->get();
+      
+       
+       return view('CostumeDesigner', compact('level'));
+    }
 
     
 }
