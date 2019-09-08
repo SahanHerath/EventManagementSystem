@@ -428,56 +428,65 @@
 			</div><!-- row -->
 
 			<div class="row">
-			
+				@if($hall1->Wedding=='Available')
 				<div class="offset-0 col-lg-4 col-md-6">
 					<div class="feature_item"><a class="btn btn-bg-yellow" >
-						<img src="images/party.jpg"  width="300" height="200 ">
+						<img src="images/weddinghall.jpg"  width="300" height="200 ">
 						<br><br>
 						<h3><b>Wedding</h3></b>
                         
 						</a>
 					</div>
 				</div>
+				@endif
 
+				@if($hall1->Party=='Available')
 				<div class="offset-0 col-lg-4 col-md-6">
 					<div class="feature_item"><a class="btn btn-bg-yellow" >
-						<img src="images/party.jpg"  width="300" height="200 ">
+						<img src="images/partyhall.jpg"  width="300" height="200 ">
 						<br><br>
 						<h3><b>Parties</h3></b>
                         
 						</a>
 					</div>
 				</div>
+				@endif
 
+				@if($hall1->Meeting=='Available')
 				<div class="offset-0 col-lg-4 col-md-6">
 					<div class="feature_item"><a class="btn btn-bg-yellow" >
-						<img src="images/party.jpg"  width="300" height="200 ">
+						<img src="images/meetinghall.jpg"  width="300" height="200 ">
 						<br><br>
 						<h3><b>Meetings</h3></b>
                         
 						</a>
 					</div>
 				</div>
+				@endif
 
+				@if($hall1->Professional_Event=='Available')
 				<div class="offset-0 col-lg-4 col-md-6">
 					<div class="feature_item"><a class="btn btn-bg-yellow" >
-						<img src="images/party.jpg"  width="300" height="200 ">
+						<img src="images/professionalhall.jpg"  width="300" height="200 ">
 						<br><br>
 						<h3><b>Professional Events</h3></b>
                         
 						</a>
 					</div>
 				</div>
+				@endif
 
+				@if($hall1->Corporate_event=='Available')
 				<div class="offset-0 col-lg-4 col-md-6">
 					<div class="feature_item"><a class="btn btn-bg-yellow" >
-						<img src="images/party.jpg"  width="300" height="200 ">
+						<img src="images/coperateeventhall.jpg"  width="300" height="200 ">
 						<br><br>
 						<h3><b>Coperate Events</h3></b>
                         
 						</a>
 					</div>
 				</div>
+				@endif
 			
 			</div>
 
@@ -494,27 +503,27 @@
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <img src="uploads/hall/{{$hall1->pic1}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
                                 <div class="project" >
-                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <img src="uploads/hall/{{$hall1->pic2}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
 
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <img src="uploads/hall/{{$hall1->pic3}}" alt="IMage" class="img-fluid">
                                     <br><br><br>
                                 </div>
                             </div>
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
-                                    <img src="images/party.jpg" alt="IMage" class="img-fluid">
+                                    <img src="uploads/hall/{{$hall1->pic4}}" alt="IMage" class="img-fluid">
                                 </div>
                             </div>
                         </div>
