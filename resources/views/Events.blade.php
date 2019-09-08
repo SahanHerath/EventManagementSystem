@@ -150,7 +150,7 @@
                                           <a href="/WeddingCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Cake Designers</h3></a>
+                                          <a href="/WeddingCake"><h3>Cake Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/WeddingEventPlanner"><h3>Event Planners</h3></a>
@@ -200,7 +200,7 @@
                                           <a href="/BirthdayCatering"><h3>Catering</h3></a>
                                       </div>
                                       <div class="modal-body">
-                                          <a href="#"><h3>Cake Designers</h3></a>
+                                          <a href="/BirthdayCake"><h3>Cake Designers</h3></a>
                                       </div>
                                       <div class="modal-body">
                                           <a href="/BirthdayMagician"><h3>Magicians</h3></a>
@@ -483,7 +483,10 @@
                                       </div>
                                       
                                       <div class="modal-body">
-                                          <a href="#"><h3>Actors</h3></a>
+                                          <a href="/Singer"><h3>Singer</h3></a>
+                                      </div>
+                                      <div class="modal-body">
+                                          <a href="/musicalAnnouncer"><h3>Announcer</h3></a>
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="genric-btn danger" data-dismiss="modal">Close</button>

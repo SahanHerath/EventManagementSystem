@@ -182,4 +182,28 @@ class CakeController extends Controller
                 return view('Cakeview',compact('data'));
     }
 
+    public function wedding()
+    {
+        //
+        $cake = DB::table('cake_designers')
+                ->join('users','users.id','=','cake_designers.user_id')
+                ->where('Wedding_cake','=','Available')
+                ->get();
+
+
+        return view('Cake', compact('cake'));
+    }
+
+    public function birthday()
+    {
+        //
+        $cake = DB::table('cake_designers')
+                ->join('users','users.id','=','cake_designers.user_id')
+                ->where('Birthday_cake','=','Available')
+                ->get();
+
+
+        return view('Cake', compact('cake'));
+    }
+
 }

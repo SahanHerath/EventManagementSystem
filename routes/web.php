@@ -44,9 +44,7 @@ Route::post('/addDecorator', 'decorationController@store');
 Route::post('/addSalon', 'SalonController@store');
 
 
-Route::get('/Cake', function () {
-    return view('Cake');
-});
+
 
 Route::get('/Music', 'MusicianController@index')  ;
 Route::get('/MusicView{id}','musicianController@viewProfile');
@@ -157,6 +155,8 @@ Route::get('/partyEntertainer', 'ActorController@partyEntertainer')  ;
 Route::get('/ProfessionalEventAnnouncer', 'ActorController@profAnnouncer')  ;
 Route::get('/coperateEventAnnouncers', 'ActorController@copAnnouncer')  ;
 Route::get('/coperateEventEntertainer', 'ActorController@copEntertainer')  ;
+Route::get('/Singer', 'ActorController@singer')  ;
+Route::get('/musicalAnnouncer', 'ActorController@musicAnnouncer')  ;
 
 Route::get('/WeddingEventPlanner', 'EventPlanersController@wedding')  ;
 Route::get('/PartyEventPlanner', 'EventPlanersController@party')  ;
@@ -176,6 +176,9 @@ Route::get('/PartyDressDesigner', 'CostumeDesignerController@party')  ;
 Route::get('/SportsKitDesigner', 'CostumeDesignerController@sportkit')  ;
 Route::get('/CoperateEventDressDesigner', 'CostumeDesignerController@coperate')  ;
 Route::get('/SportShoesDesigner', 'CostumeDesignerController@sportshoes')  ;
+
+Route::get('/WeddingCake', 'CakeController@wedding')  ;
+Route::get('/BirthdayCake', 'CakeController@birthday')  ;
 
 Route::get('/HallView', function () {
     return view('HallView');

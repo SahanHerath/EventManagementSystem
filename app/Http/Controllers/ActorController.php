@@ -270,4 +270,30 @@ class ActorController extends Controller
        return view('Actor', compact('level'));
       
     }
+
+    public function singer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Musical_event','=','Available')
+                ->where('Singer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
+
+    public function musicAnnouncer(Request $request)
+    {    $level = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('actor_events.Musical_event','=','Available')
+                ->where('Announcer','=','Available')
+                ->get();
+      
+       
+       return view('Actor', compact('level'));
+      
+    }
 }
