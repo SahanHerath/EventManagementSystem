@@ -29,8 +29,8 @@
 		<!-- container -->
 	</header>
 	
-	
-	<section class="intro-section" style="background-image: url(images/party.jpg)">
+	@foreach($hall as $hall1)
+	<section class="intro-section" style="background-image: url(uploads/hall/{{$hall1->Main_pic}})">
 		<div class="container">
 		
 			<div class="row">
@@ -45,9 +45,9 @@
               
                     <div class=" ">
                         <div class="intro">
-                            <h2><b>Hotel Name</b></h2>
+                            <h2><b>{{$hall1->Hall_Name}}</b></h2>
                             <ul class="information margin-tb-30">
-                                <li><b>ADDRESS :- </b>address here</li>
+                                <li><b>ADDRESS :- </b>{{$hall1->Address}}</li>
                             </ul>
                         </div><!-- intro -->
                     </div><!-- col-sm-8 -->
@@ -68,7 +68,7 @@
 					</div>
 				</div><!-- col-sm-4 -->
 				<div class="col-sm-8">
-					<p class="margin-b-50">description here</p>
+					<p class="margin-b-50">{{$hall1->Description}}</p>
 				</div><!-- col-sm-8 -->
 			
 		</div><!-- container -->
@@ -89,22 +89,22 @@
                         <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
-                                <h5 class="margin-tb-20"><b>Cost:-cost here</b></h5>  
+                                <h5 class="margin-tb-20"><b>Cost:-{{$hall1->Cost}}</b></h5>  
                             </div><!-- counter -->
                         </div><!-- col-md-4 -->
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
-                                <h5 class="margin-tb-20"><b>Capacity:-capacity here</b></h5>  
+                                <h5 class="margin-tb-20"><b>Capacity:-{{$hall1->Capacity}}</b></h5>  
                             </div><!-- counter -->
                         </div><!-- col-md-4 -->
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
-                                <h5 class="margin-tb-20"><b>Indoor/Outdoor:-here</b></h5>  
+                                <h5 class="margin-tb-20"><b>Hall Type:-{{$hall1->Overview}}</b></h5>  
                             </div><!-- counter -->
                         </div>
 						<div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="iconbox margin-b-30">
-                                <h5 class="margin-tb-20"><b>Area:-here</b></h5>  
+                                <h5 class="margin-tb-20"><b>Area:-{{$hall1->Square_feet}}</b></h5>  
                             </div><!-- counter -->
                         </div>
                         </div><!-- row -->
@@ -123,6 +123,7 @@
 					</div>
 				</div><!-- col-sm-12 -->
                 
+				@if($hall1->projection=='Available')
                 <div class="row">
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin">
@@ -131,7 +132,9 @@
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
-				
+				@endif
+
+				@if($hall1->internet=='Available')
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/wifi.jpg"  width="42" height="42">
@@ -139,7 +142,9 @@
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
-				
+				@endif
+
+				@if($hall1->parking=='Available')
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/parking.png"  width="42" height="42">
@@ -147,7 +152,9 @@
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
-
+				@endif
+				
+				@if($hall1->security_camera=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/securitycamera.png"  width="42" height="42">
@@ -155,7 +162,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->security_personal=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/security personal.png"  width="42" height="42">
@@ -163,7 +172,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->reception_area=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/rec.png"  width="42" height="42">
@@ -171,7 +182,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Bar=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/bar.png"  width="42" height="42">
@@ -179,7 +192,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->garden=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/garden.png"  width="42" height="42">
@@ -187,7 +202,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->smoking_area=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/smoking.png"  width="42" height="42">
@@ -195,7 +212,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->welcome_drinks=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/welcomedrink.png"  width="42" height="42">
@@ -203,7 +222,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Buffet=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/buffet.png"  width="42" height="42">
@@ -211,7 +232,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Handicap_accessible=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/wheelchair.png"  width="42" height="42">
@@ -219,7 +242,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->outside_balcony=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/Varenda.png"  width="42" height="42">
@@ -227,7 +252,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->inside_balcony=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/balcony.png"  width="42" height="42">
@@ -235,7 +262,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->stage=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/hall features/stage.png"  width="42" height="42">
@@ -243,6 +272,7 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 				
 			</div><!-- row -->
 		</div><!-- container -->
@@ -259,7 +289,9 @@
 					</div>
 				</div><!-- col-sm-12 -->
                 
+				@if($hall1->theatre=='Available')
                 <div class="row">
+				
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin">
                         <img src="images/table arrangements/Theatre1.jpg" width="80" height="100">
@@ -267,7 +299,9 @@
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
-				
+				@endif
+
+				@if($hall1->U_shape=='Available')
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/Ushape1.jpg"  width="80" height="100">
@@ -275,7 +309,9 @@
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
+				@endif
 				
+				@if($hall1->V_shape=='Available')
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/VShape.jpg"  width="80" height="100">
@@ -283,7 +319,9 @@
 						
 					</div><!-- counter -->
 				</div><!-- col-md-4 -->
+				@endif
 
+				@if($hall1->banquet=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/banquet.jpg"  width="80" height="100">
@@ -291,7 +329,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->cabaret=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/caberet.jpg"  width="80" height="100">
@@ -299,7 +339,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->classroom=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/Classroom.jpg"  width="80" height="100">
@@ -307,7 +349,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Boardroom=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/Boardroom.jpg"  width="80" height="100">
@@ -315,7 +359,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->hallow_square=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/HallowSquare.jpg"  width="80" height="100">
@@ -323,7 +369,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Herringbone=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/Herringbone.jpg"  width="80" height="100">
@@ -331,7 +379,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Top_table_springs=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/TopTable.jpg"  width="80" height="100">
@@ -339,7 +389,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->informal=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/informal.jpg"  width="80" height="100">
@@ -347,7 +399,9 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
+				@if($hall1->Oval=='Available')
                 <div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="iconbox margin-b-30">
                         <img src="images/table arrangements/Oval.jpg"  width="80" height="100">
@@ -355,6 +409,7 @@
 						
 					</div><!-- counter -->
 				</div>
+				@endif
 
                 
 				
@@ -468,7 +523,7 @@
 				</div>
 			
         </section>
-
+		@endforeach
 
 	<footer>
 		<p class="copyright">

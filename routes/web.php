@@ -119,6 +119,7 @@ Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 
 Route::get('/Venue', 'HallController@index')  ;
 Route::get('/HotelView{id}','HallController@viewHotel');
+Route::get('/HallView{id}','HallController@viewHall');
 
 Route::get('/WeddingPhotographer', 'PhotographyController@wedding')  ;
 Route::get('/BirthdayPhotographer', 'PhotographyController@birthday')  ;

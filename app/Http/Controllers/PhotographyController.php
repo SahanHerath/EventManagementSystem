@@ -195,7 +195,7 @@ class PhotographyController extends Controller
                 ->join('photography_events','users.id','=','photography_events.user_id')
                 ->get();
 
-                return view('ActorView',compact('data'));
+                return view('Photographyview',compact('data'));
     }
 
     public function wedding()
