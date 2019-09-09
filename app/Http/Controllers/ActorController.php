@@ -296,4 +296,8 @@ class ActorController extends Controller
        return view('Actor', compact('level'));
       
     }
+    public function profile()
+    {
+        
+    }
 }

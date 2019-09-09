@@ -223,5 +223,10 @@ class salonController extends Controller
        return view('Salon', compact('level'));
 
     }
+
+    public function profile()
+    {
+        
+    }
 }
  

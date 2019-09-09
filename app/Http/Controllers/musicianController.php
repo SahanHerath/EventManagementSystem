@@ -242,4 +242,9 @@ class musicianController extends Controller
 
         return view('Music', compact('musics'));
     }
+
+    public function profile()
+    {
+        
+    }
 }

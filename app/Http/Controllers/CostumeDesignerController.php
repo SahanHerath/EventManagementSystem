@@ -266,6 +266,11 @@ class CostumeDesignerController extends Controller
        return view('CostumeDesigner', compact('level'));
     }
 
+    public function profile()
+    {
+        
+    }
+
     
 }
 

@@ -191,4 +191,9 @@ class TransportController extends Controller
 
                 return view('TransportView',compact('data'));
     }
+
+    public function profile()
+    {
+        
+    }
 }

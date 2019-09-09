@@ -249,4 +249,9 @@ return view('catering', compact('level'));
 
         return view('catering', compact('level'));
     }
+
+    public function profile()
+    {
+        
+    }
 }

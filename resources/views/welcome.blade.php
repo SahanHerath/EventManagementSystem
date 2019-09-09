@@ -62,6 +62,9 @@
                       <li class="active">
                         <a href="/">Home</a>
                       </li>
+                      <li class="active">
+                        <a href="/Events">Events</a>
+                      </li>
                       
                       <li class="has-children">
                             <a>Services</a>

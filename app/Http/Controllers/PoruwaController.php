@@ -180,5 +180,10 @@ class PoruwaController extends Controller
 
                 return view('PoruwaCeramonyView',compact('data'));
     }
+
+    public function profile()
+    {
+        
+    }
     
 }

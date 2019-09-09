@@ -269,5 +269,9 @@ class EventPlanersController extends Controller
        return view('EventPlanner', compact('level'));
     }
 
+    public function profile()
+    {
+        
+    }
     
 }

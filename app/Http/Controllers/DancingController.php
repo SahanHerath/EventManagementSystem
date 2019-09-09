@@ -234,4 +234,9 @@ class DancingController extends Controller
        
        return view('Dance', compact('level'));
     }
+
+    public function profile()
+    {
+        
+    }
 }

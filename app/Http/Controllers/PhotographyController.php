@@ -269,4 +269,9 @@ class PhotographyController extends Controller
        return view('Photography', compact('level'));
       
     }
+
+    public function profile()
+    {
+        
+    }
 }

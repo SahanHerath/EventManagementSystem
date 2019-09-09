@@ -206,4 +206,9 @@ class CakeController extends Controller
         return view('Cake', compact('cake'));
     }
 
+    public function profile()
+    {
+        
+    }
+
 }

@@ -208,3 +208,5 @@ Route::get('/serviceproviders', function () {
 Route::get('/UserProfile', function () {
     return view('UserProfile');
 });
+
+Route::get('/Profile', 'HomeController@profilecategory')  ;

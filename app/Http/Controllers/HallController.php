@@ -358,5 +358,10 @@ class HallController extends Controller
         return view('Hotel', compact('hall'));
     }
 
+    public function profile()
+    {
+        
+    }
+
    
 }

@@ -246,6 +246,22 @@ class decorationController extends Controller
         return view('Decorator', compact('decos'));
     }
 
+    public function profile()
+    {
+        $id1 = Auth::id();
+
+        $decos = DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','decorators.id as deco_id','Team_Name','Address','Description','Contact_No','Link','Poruwa','Flower','Table_Hall','Setty_Backs','Lighting','Traditional','Wedding_Car','Main_Pic','pic1','pic2','pic3','pic4','decorator_events.id as deco_eve_id','Wedding','Birthday','Get_Together','Parties','Outside_events')
+                ->get();
+        
+        
+
+        return view('DecoratorUserProfile', compact('decos'));
+    }
+
     
 
     
