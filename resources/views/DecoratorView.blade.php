@@ -308,29 +308,10 @@
 						<div class="rating-block">
 							<h4>Average user rating</h4>
 							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-<<<<<<< HEAD
-							<button type="button" class="btnrating btn btn-warning btn-lg" data-attr="1" id="rating-star-1" aria-label="Left Align">
-								<i class="fa fa-star"></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
-								<i class="fa fa-star"></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
-								<i class="fa fa-star"></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
-								<i class="fa fa-star"></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
-								<i class="fa fa-star"></i>
-=======
-							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+							<button  class="btnrating btn btn-warning btn-lg" aria-label="Left Align">
 								<i class="fa fa-star" ></i>
 							</button>
-							<button  class="btnrating btn btn-default btn-lg" >
-								<i class="fa fa-star" ></i>
-							</button>
-							<button  class="btnrating btn btn-default btn-lg" >
+							<button  class="btnrating btn btn-warning btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
 							<button  class="btnrating btn btn-default btn-lg" >
@@ -338,7 +319,9 @@
 							</button>
 							<button class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
->>>>>>> 5e18a9ba2a6d60b245f5922cfd596577a96bcc75
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
 							</button>
 						</div>
 					</div>
@@ -346,11 +329,11 @@
 						<h4>Rating breakdown</h4>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+								<div style="height:9px; margin:5px 0;">5 <span class="fa fa-star"></span></div>
 							</div>
 							<div class="pull-left" style="width:180px;">
-								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+								<div class="progress" style="height:9px; margin:8px 0;" >
+								<div class="progress-bar progress-bar-primary" role="progressbar"  aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
 									<span class="sr-only">80% Complete (danger)</span>
 								</div>
 								</div>
@@ -359,7 +342,7 @@
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+								<div style="height:9px; margin:5px 0;">4 <span class="fa fa-star"></span></div>
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
@@ -372,7 +355,7 @@
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+								<div style="height:9px; margin:5px 0;">3 <span class="fa fa-star"></span></div>
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
@@ -385,7 +368,7 @@
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+								<div style="height:9px; margin:5px 0;">2 <span class="fa fa-star"></span></div>
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
@@ -398,7 +381,7 @@
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+								<div style="height:9px; margin:5px 0;">1 <span class="fa fa-star"></span></div>
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
@@ -450,6 +433,8 @@
 				
 			</div> <!-- /container -->
         </section>
+
+		
         <!--================End Testimonials Area =================-->
         
         <!--================Footer Area =================-->

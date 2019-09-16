@@ -461,7 +461,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: opacity 0.08s ease 0s;
 }
 .lg-progress-bar .lg-progress {
-  background-color: #a90707;
+   background-color: #a90707; 
   height: 5px;
   width: 0;
 }
@@ -469,7 +469,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   width: 100%;
 }
 .lg-show-autoplay .lg-progress-bar {
-  opacity: 1;
+  opacity: 1; 
 }
 
 .lg-autoplay-button:after {

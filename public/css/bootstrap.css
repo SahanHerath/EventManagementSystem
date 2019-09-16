@@ -335,7 +335,7 @@ legend {
 }
 
 progress {
-    vertical-align: baseline
+     vertical-align: baseline 
 }
 
 [type=number]::-webkit-inner-spin-button,
