@@ -308,19 +308,19 @@
 						<div class="rating-block">
 							<h4>Average user rating</h4>
 							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-							<button type="button" class="btnrating btn btn-warning btn-lg" data-attr="1" id="rating-star-1" aria-label="Left Align">
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
 								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+							<button  class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+							<button  class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+							<button  class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+							<button class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
 						</div>
