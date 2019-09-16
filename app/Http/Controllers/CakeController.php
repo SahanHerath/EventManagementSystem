@@ -46,7 +46,47 @@ class CakeController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Organization_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+           
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Wedding_cake' => 'required|string|max:20',
+            'Birthday_cake' => 'required|string|max:20',
+            'Cake_Structure' => 'required|string|max:20',
+            'Pastry_cake'=> 'required|string|max:20',
+            'Cup_Cake'=> 'required|string|max:20',
+            'Other'=> 'required|string|max:20',
+
+        ],
+        ['Organization_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
         
+        'Main_pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Wedding_cake.required'=> "Fill out this field",
+        'Birthday_cake.required'=> "Fill out this field",
+        'Cake_Structure.required' => "Fill out this field",
+        'Pastry_cake.required'=> "Fill out this field",
+        'Cup_Cake.required'=> "Fill out this field",
+        'Other.required'=> "Fill out this field"
+       
+
+        ]
+    );
         $cake = new Cake_designer;
         $cake->Organization_Name=$request->Organization_Name;
         $cake->Address=$request->Address;
@@ -67,7 +107,7 @@ class CakeController extends Controller
              $Main_pic=$request->file('Main_pic');
            
              $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
+             Image::make($Main_pic)->fit(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
              $cake->Main_pic=$filename;
@@ -79,7 +119,7 @@ class CakeController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
+             Image::make($pic1)->fit(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
              $cake->pic1=$filename;
@@ -91,7 +131,7 @@ class CakeController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
+             Image::make($pic2)->fit(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
              $cake->pic2=$filename;
@@ -103,7 +143,7 @@ class CakeController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
+             Image::make($pic3)->fit(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
              $cake->pic3=$filename;
@@ -115,7 +155,7 @@ class CakeController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/cake/'. $filename));
+             Image::make($pic4)->fit(960,640)->save(public_path('/uploads/cake/'. $filename));
 
              
              $cake->pic4=$filename;

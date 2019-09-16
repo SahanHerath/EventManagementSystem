@@ -105,7 +105,7 @@ class ActorController extends Controller
              $Main_pic=$request->file('Main_pic');
            
              $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($Main_pic)->fit(960,640)->save(public_path('/uploads/actor/'. $filename));
 
              
              $actor->Main_pic=$filename;
@@ -117,7 +117,7 @@ class ActorController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic1)->fit(960,640)->save(public_path('/uploads/actor/'. $filename));
 
              
              $actor->pic1=$filename;
@@ -129,7 +129,7 @@ class ActorController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic2)->fit(960,640)->save(public_path('/uploads/actor/'. $filename));
 
              
              $actor->pic2=$filename;
@@ -141,7 +141,7 @@ class ActorController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic3)->fit(960,640)->save(public_path('/uploads/actor/'. $filename));
 
              
              $actor->pic3=$filename;
@@ -153,7 +153,7 @@ class ActorController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/actor/'. $filename));
+             Image::make($pic4)->fit(960,640)->save(public_path('/uploads/actor/'. $filename));
 
              
              $actor->pic4=$filename;
