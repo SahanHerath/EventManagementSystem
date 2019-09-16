@@ -86,7 +86,7 @@
                             <label for="Playing_Hrs" class="col-md-4 col-form-label text-md-right">Playing Hours</label>
 
                             <div class="col-md-6">
-                                <input id="Playing_Hrs" type="decimal" min="0" class="form-control @error('Playing_Hrs') is-invalid @enderror" name="Playing_Hrs" value="{{ old('Playing_Hrs') }}" autocomplete="Playing_Hrs" title="Normal Event playing hours">
+                                <input id="Playing_Hrs" type="number" min="0" class="form-control @error('Playing_Hrs') is-invalid @enderror" name="Playing_Hrs" value="{{ old('Playing_Hrs') }}" autocomplete="Playing_Hrs" title="Normal Event playing hours">
 
                                 @if ($errors->has('Playing_Hrs'))
                                     <span class="help-block">

@@ -53,9 +53,9 @@ class musicianController extends Controller
             'ContactNo' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'Link' =>'required|string|max:255',
             'Description' =>'required|string|max:500',
-            'Playing_Hrs' =>'required',
-            'Payment' => 'required',
-            'Extra_Cost' => 'required',
+            'Playing_Hrs' =>'required|numeric|min:0',
+            'Payment' => 'required|numeric|min:0',
+            'Extra_Cost' => 'required|numeric|min:0',
             'Fire' => 'required|string|max:20',
             'Smoke' => 'required|string|max:20',
             'Lights' => 'required|string|max:20',
@@ -115,7 +115,7 @@ class musicianController extends Controller
              $Main_Logo=$request->file('Main_Logo');
            
              $filename=time().'.'.$Main_Logo->getClientOriginalExtension();
-             Image::make($Main_Logo)->resize(960,640)->save(public_path('/uploads/music/'. $filename));
+             Image::make($Main_Logo)->fit(960,640)->save(public_path('/uploads/music/'. $filename));
 
              
              $music->Main_Logo=$filename;
@@ -127,7 +127,7 @@ class musicianController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/music/'. $filename));
+             Image::make($pic1)->fit(960,640)->save(public_path('/uploads/music/'. $filename));
 
              
              $music->pic1=$filename;
@@ -139,7 +139,7 @@ class musicianController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/music/'. $filename));
+             Image::make($pic2)->fit(960,640)->save(public_path('/uploads/music/'. $filename));
 
              
              $music->pic2=$filename;
@@ -151,7 +151,7 @@ class musicianController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/music/'. $filename));
+             Image::make($pic3)->fit(960,640)->save(public_path('/uploads/music/'. $filename));
 
              
              $music->pic3=$filename;
@@ -163,7 +163,7 @@ class musicianController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/music/'. $filename));
+             Image::make($pic4)->fit(960,640)->save(public_path('/uploads/music/'. $filename));
 
              
              $music->pic4=$filename;
