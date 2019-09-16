@@ -46,6 +46,56 @@ class musicianController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate(
+            ['Dj_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'ContactNo' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'Playing_Hrs' =>'required',
+            'Payment' => 'required',
+            'Extra_Cost' => 'required',
+            'Fire' => 'required|string|max:20',
+            'Smoke' => 'required|string|max:20',
+            'Lights' => 'required|string|max:20',
+            'Main_Logo'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Wedding' => 'required|string|max:20',
+            'Birthday' => 'required|string|max:20',
+            'Beach_Party' => 'required|string|max:20',
+            'Get_Together'=> 'required|string|max:20',
+            'Parties'=> 'required|string|max:20',
+
+        ],
+        ['Dj_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'ContactNo.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Playing_Hrs.required'=> "Fill out this field",
+        'Payment.required'=> "Fill out this field",
+        'Extra_Cost.required'=> "Fill out this field",
+        'Fire.required'=> "Fill out this field",
+        'Smoke.required'=> "Fill out this field",
+        'Lights.required'=> "Fill out this field",
+        'Main_Logo.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Wedding.required'=> "Fill out this field",
+        'Birthday.required'=> "Fill out this field",
+        'Beach_Party.required' => "Fill out this field",
+        'Get_Together.required'=> "Fill out this field",
+        'Parties.required'=> "Fill out this field"
+       
+
+        ]
+    );
         $music = new Musician;
         $music->Dj_Name=$request->Dj_Name;
         $music->Address=$request->Address;

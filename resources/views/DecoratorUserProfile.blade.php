@@ -87,26 +87,35 @@
                         <br>
                         <div class="feature_inner row">
                    
-        			<div class="col-lg-4 col-md-3" style="border: 15px solid green;">
+        			<div class="col-lg-4 col-md-6" style="border: 15px solid green;">
         				<div class="feature_item bg-white text-black" >
                             
                         <h4>Supported Events</h4>
                         <table>
+                        
+                        
                             @if($deco->Wedding=='Available')
                             <tr>
-                             Wedding
+                            
+                            Wedding
+                            
                             </tr>
                             <br>
                             @endif
+                            
                             @if($deco->Birthday=='Available')
                             <tr>
+                            
                             Birthday
+                            
                             </tr>
                             <br>
                             @endif
                             @if($deco->Get_Together=='Available')
                             <tr>
+                            
                             Get-togrther
+                            
                             </tr>
                             <br>
                             @endif
@@ -128,6 +137,7 @@
                             <br>
                             <center><a class="genric-btn primary" href="#">Edit Events</a></center>
                             </tr>
+                            
                         </table>
         				</div>
         			</div>
