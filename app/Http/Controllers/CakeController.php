@@ -46,6 +46,7 @@ class CakeController extends Controller
     public function store(Request $request)
     {
         //
+        
         $cake = new Cake_designer;
         $cake->Organization_Name=$request->Organization_Name;
         $cake->Address=$request->Address;
