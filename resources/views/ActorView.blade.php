@@ -19,6 +19,19 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
+
+        <!-- Bootstrap core CSS -->
+		<link href="css/rating.css" rel="stylesheet">
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="css/navbar-fixed-top.css" rel="stylesheet">
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<script src="js/ie-emulation-modes-warning.js"></script>
+		<!------ Rating css---------->
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
     </head>
     <body>
         
@@ -397,25 +410,25 @@
     			
 				<div class="row">
 					<div class="col-sm-5">
-						<div class="rating-block">
-							<h4>Average user rating</h4>
-							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-							<button type="button" class="btnrating btn btn-warning btn-lg"  id="rating-star-1" aria-label="Left Align">
-								<i class="fa fa-star" ></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg"  id="rating-star-2">
-								<i class="fa fa-star" ></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg"  id="rating-star-3">
-								<i class="fa fa-star" ></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg"  id="rating-star-4">
-								<i class="fa fa-star" ></i>
-							</button>
-							<button type="button" class="btnrating btn btn-default btn-lg"  id="rating-star-5">
-								<i class="fa fa-star" ></i>
-							</button>
-						</div>
+                        <div class="rating-block">
+                                <h4>Average user rating</h4>
+                                <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                                <button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+                                    <i class="fa fa-star" ></i>
+                                </button>
+                                <button  class="btnrating btn btn-default btn-lg" >
+                                    <i class="fa fa-star" ></i>
+                                </button>
+                                <button  class="btnrating btn btn-default btn-lg" >
+                                    <i class="fa fa-star" ></i>
+                                </button>
+                                <button  class="btnrating btn btn-default btn-lg" >
+                                    <i class="fa fa-star" ></i>
+                                </button>
+                                <button class="btnrating btn btn-default btn-lg" >
+                                    <i class="fa fa-star" ></i>
+                                </button>
+                            </div>
 					</div>
 					<div class="col-sm-3">
 						<h4>Rating breakdown</h4>
@@ -599,5 +612,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
+
+        <script src="js/Rating.js"></script>
+		<!-- Rating js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="js/ie10-viewport-bug-workaround.js"></script>
     </body>
 </html>

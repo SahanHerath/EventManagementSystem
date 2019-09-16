@@ -44,7 +44,47 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
+
         //
+        $request->validate(
+            ['Actor_name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+           
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Party' => 'required|string|max:20',
+            'Birthday' => 'required|string|max:20',
+            'Professional_event' => 'required|string|max:20',
+            'Musical_event'=> 'required|string|max:20',
+            'Corporate_event'=> 'required|string|max:20',
+
+        ],
+        ['Actor_name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        
+        'Main_pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Party.required'=> "Fill out this field",
+        'Birthday.required'=> "Fill out this field",
+        'Professional_event.required' => "Fill out this field",
+        'Musical_event.required'=> "Fill out this field",
+        'Corporate_event.required'=> "Fill out this field"
+       
+
+        ]
+    );
         $actor = new Actor;
         $actor->Actor_name=$request->Actor_name;
         $actor->Address=$request->Address;
