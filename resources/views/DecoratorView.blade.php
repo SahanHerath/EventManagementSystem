@@ -259,6 +259,7 @@
         			<h2>Testimonials</h2>
         			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
         		</div>
+<<<<<<< HEAD
         		<div class="testi_inner">
 					<div class="testi_slider owl-carousel">
 						<div class="item">
@@ -270,6 +271,101 @@
 								<a href="#"><i class="fa fa-star"></i></a>
 								<a href="#"><i class="fa fa-star"></i></a>
 								<a href="#"><i class="fa fa-star-half-o"></i></a>
+=======
+
+				
+				<div class="form-group" id="rating-ability-wrapper">
+					<label class="control-label" for="rating">
+					<span class="field-label-header">How would you rate your ability to use the computer and access internet?*</span><br>
+					<span class="field-label-info"></span>
+					<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+					</label>
+					<h2 class="bold rating-header" style="">
+					<span class="selected-rating">0</span><small> / 5</small>
+					</h2>
+					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</button>
+					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</button>
+					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</button>
+					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</button>
+					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</button>
+				</div>
+        	</div>
+			<br>
+			<br>
+			<br>
+			<div class="container">
+    			
+				<div class="row">
+					<div class="col-sm-5">
+						<div class="rating-block">
+							<h4>Average user rating</h4>
+							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+							<button type="button" class="btnrating btn btn-warning btn-lg" data-attr="1" id="rating-star-1" aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+								<i class="fa fa-star" ></i>
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<h4>Rating breakdown</h4>
+						<div class="pull-left">
+							<div class="pull-left" style="width:35px; line-height:1;">
+								<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+							</div>
+							<div class="pull-left" style="width:180px;">
+								<div class="progress" style="height:9px; margin:8px 0;">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+									<span class="sr-only">80% Complete (danger)</span>
+								</div>
+								</div>
+							</div>
+							<div class="pull-right" style="margin-left:10px;">1</div>
+						</div>
+						<div class="pull-left">
+							<div class="pull-left" style="width:35px; line-height:1;">
+								<div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+							</div>
+							<div class="pull-left" style="width:180px;">
+								<div class="progress" style="height:9px; margin:8px 0;">
+								<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+									<span class="sr-only">80% Complete (danger)</span>
+								</div>
+								</div>
+							</div>
+							<div class="pull-right" style="margin-left:10px;">1</div>
+						</div>
+						<div class="pull-left">
+							<div class="pull-left" style="width:35px; line-height:1;">
+								<div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+							</div>
+							<div class="pull-left" style="width:180px;">
+								<div class="progress" style="height:9px; margin:8px 0;">
+								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+									<span class="sr-only">80% Complete (danger)</span>
+								</div>
+								</div>
+>>>>>>> a1fbeeecc9579d3dc37b5e497d67b048e913cc8e
 							</div>
 						</div>
 						<div class="item">
