@@ -304,24 +304,24 @@
 			<div class="container">
     			
 				<div class="row">
-					<div class="col-sm-3">
+					<div class="col-sm-5">
 						<div class="rating-block">
 							<h4>Average user rating</h4>
 							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-							<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<button type="button" class="btnrating btn btn-warning btn-lg" data-attr="1" id="rating-star-1" aria-label="Left Align">
+								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+								<i class="fa fa-star" ></i>
 							</button>
-							<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+								<i class="fa fa-star" ></i>
 							</button>
 						</div>
 					</div>
