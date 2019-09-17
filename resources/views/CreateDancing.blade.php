@@ -15,7 +15,7 @@
                             <label for="Team_Name" class="col-md-4 col-form-label text-md-right">Group/Team Name</label>
 
                             <div class="col-md-6">
-                                <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror" name="Team_Name" value="{{ old('Team_Name') }}"  autocomplete="Team_Name" autofocus>
+                                <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror" name="Team_Name" value="{{ old('Team_Name') }}"  autocomplete="Team_Name" autofocus title="Fill this field with group name">
 
                                 @if ($errors->has('Team_Name'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                             <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @if ($errors->has('Address'))
                                     <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" autocomplete="Contact_No" >
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" autocomplete="Contact_No" title="Fill this field with Contact Number" >
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@
                             <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}"  autocomplete="Link" >
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}"  autocomplete="Link" title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc.">
 
                                 @if ($errors->has('Link'))
                                     <span class="help-block">
@@ -72,7 +72,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" ></textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your group. You can include what are your specialities other details."></textarea>
                             </div>
                         </div>
                         </div>
@@ -81,7 +81,7 @@
                             <label for="Gender" class="col-md-4 col-form-label text-md-right">The Team Members</label>
                             
                             <div class="col-md-6">
-                                <select id="Gender" class="form-control" name="Gender" value="{{ old('Gender') }}" class="form-control @error('Gender') is-invalid @enderror" >
+                                <select id="Gender" class="form-control" name="Gender" value="{{ old('Gender') }}" class="form-control @error('Gender') is-invalid @enderror" title="Select the type">
                                     <option value="" disabled selected>--Select Type--</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -99,7 +99,7 @@
                             <label for="choreography" class="col-md-4 col-form-label text-md-right">Choreographing</label>
                             
                             <div class="col-md-6">
-                                <select id="choreography" class="form-control" name="choreography" value="{{ old('choreography') }}" class="form-control @error('choreography') is-invalid @enderror">
+                                <select id="choreography" class="form-control" name="choreography" value="{{ old('choreography') }}" class="form-control @error('choreography') is-invalid @enderror" title="Select the availability">
                                     <option value="" disabled selected>--Select Type--</option>
                                     <option value="Available">Available</option>
                                     <option value="Not Available">Not Available</option>
@@ -125,7 +125,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Kandyan" value="Not Available">
                             <label for="Kandyan">Kandyan Dancing </label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Kandyan" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Kandyan" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -134,7 +134,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Indian" value="Not Available">
                             <label for="Indian">Indian Dancing </label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Indian" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Indian" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -143,7 +143,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Western" value="Not Available">
                             <label for="Western">Western Dancing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Western" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Western" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -152,7 +152,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Traditional" value="Not Available">
                             <label for="Traditional">Traditional Dancing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Traditional" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Traditional" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -161,7 +161,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Casual" value="Not Available">
                             <label for="Casual">Casulai Dancing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Casual" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Casual" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -172,7 +172,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Other" value="Not Available">
                             <label for="Other">Other</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -184,7 +184,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Wedding" value="Not Available">
                             <label for="Wedding">Wedding </label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" title="Mark if you are covering this event">
                         </div>   
                         </div>
 
@@ -193,7 +193,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Party" value="Not Available">
                             <label for="Party">Party </label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available"title="Mark if you are covering this event">
                         </div>   
                         </div>
 
@@ -204,7 +204,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Musical_event" value="Not Available">
                             <label for="Musical_event">Musical Events</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Musical_event" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Musical_event" value="Available" title="Mark if you are covering this event">
                         </div>   
                         </div>
 
@@ -213,7 +213,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Corporate_event" value="Not Available">
                             <label for="Corporate_event">Corporate Events</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available" title="Mark if you are covering this event">
                         </div>   
                         </div>
 
@@ -226,7 +226,7 @@
                             <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="Main_pic" id="Main_Logo" value="{{ old('Main_pic') }}" class="form-control @error('Main_pic') is-invalid @enderror">
+                                <input type="file" name="Main_pic" id="Main_Logo" value="{{ old('Main_pic') }}" class="form-control @error('Main_pic') is-invalid @enderror" title="Upload the Main picture/Profile picture/Main logo">
 
                                     @if ($errors->has('Main_pic'))
                                     <span class="help-block">
@@ -242,7 +242,7 @@
                             <label for="pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" class="form-control @error('pic1') is-invalid @enderror">
+                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" class="form-control @error('pic1') is-invalid @enderror" title="Upload the picture of recent events that you cover">
 
                                     @if ($errors->has('pic1'))
                                     <span class="help-block">
@@ -256,7 +256,7 @@
                             <label for="pic2" class="col-md-4 col-form-label text-md-right">Picture 2</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" class="form-control @error('pic2') is-invalid @enderror" >
+                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" class="form-control @error('pic2') is-invalid @enderror" title="Upload the picture of recent events that you cover">
 
                                     @if ($errors->has('pic2'))
                                     <span class="help-block">
@@ -270,7 +270,7 @@
                             <label for="pic3" class="col-md-4 col-form-label text-md-right">Picture 3</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" class="form-control @error('pic3') is-invalid @enderror" >
+                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" class="form-control @error('pic3') is-invalid @enderror" title="Upload the picture of recent events that you cover" >
 
                                     @if ($errors->has('pic3'))
                                     <span class="help-block">
@@ -284,7 +284,7 @@
                             <label for="pic4" class="col-md-4 col-form-label text-md-right">Picture 4</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" class="form-control @error('pic4') is-invalid @enderror">
+                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" class="form-control @error('pic4') is-invalid @enderror" title="Upload the picture of recent events that you cover">
 
                                     @if ($errors->has('pic4'))
                                     <span class="help-block">
