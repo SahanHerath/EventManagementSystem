@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container style=" style="background-image: url('images/nature_small_5.jpg')">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Add Photographer or Vediographer Datails</div>
+                <center class="card-header">Add Photographer or Vediographer Datails</center>
 
                 <div class="card-body">
                     <form method="POST" action="/addphotographyer" enctype="multipart/form-data">
@@ -77,7 +77,7 @@
                         </div>
                         </div>
 
-                        <label><b>Select Your Available Services</b></label><br><br>
+                        <center><label><b>Select Your Available Services</b></label><center><br><br>
 
                         <div class="form-group row">
                             <label for="Wedding_Photography" class="col-md-4 col-form-label text-md-right">Wedding Photography</label>
@@ -151,7 +151,7 @@
                             </div>
                         </div>
 
-                        <label><b>Events That You Can Cover</b></label><br><br>
+                        <center><label><b>Events That You Can Cover</b></label><center><br><br>
 
                         <div class="form-group row">
                             <label for="Wedding" class="col-md-4 col-form-label text-md-right">Wedding</label>
@@ -237,6 +237,10 @@
                             </div>
                         </div>
 
+
+                        <center><label><b>Main Logo of your company or Profile picture</b></label></center><br><br>
+
+
                         <div class="form-group row">
                             <label for="main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
     
@@ -251,6 +255,9 @@
                             </div>
                         </div>
 
+                        <center><label><b>Pictures of the events that you recently covered</b></label></center><br><br>
+
+                        
                         <div class="form-group row">
                             <label for="pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
     
@@ -312,7 +319,7 @@
                         
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-3">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>
