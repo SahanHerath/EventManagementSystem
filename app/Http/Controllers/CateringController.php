@@ -46,6 +46,63 @@ return view('catering', compact('level'));
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Service_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'Welcome_drink' => 'required|string|max:20',
+            'Catering_set' => 'required|string|max:20',
+            'Catering_tent' => 'required|string|max:20',
+            'Cake' => 'required|string|max:20',
+            'Special_Food' => 'required|string|max:20',
+            'Garden_umbrella' => 'required|string|max:20',
+            'Coffee_Machine' => 'required|string|max:20',
+            'Table_chair' => 'required|string|max:20',
+            'sink' => 'required|string|max:20',
+            'dessert' => 'required|string|max:20',
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Wedding' => 'required|string|max:20',
+            'Birthday' => 'required|string|max:20',
+            'Party' => 'required|string|max:20',
+            'Funeral'=> 'required|string|max:20',
+            'Corporate_event'=> 'required|string|max:20',
+
+        ],
+        ['Service_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Welcome_drink.required'=> "Fill out this field",
+        'Catering_set.required'=> "Fill out this field",
+        'Catering_tent.required'=> "Fill out this field",
+        'Cake.required'=> "Fill out this field",
+        'Special_Food.required'=> "Fill out this field",
+        'Garden_umbrella.required'=> "Fill out this field",
+        'Coffee_Machine.required'=> "Fill out this field",
+        'Table_chair.required'=> "Fill out this field",
+        'sink.required'=> "Fill out this field",
+        'dessert.required'=> "Fill out this field",
+        'Main_pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Party.required'=> "Fill out this field",
+        'Birthday.required'=> "Fill out this field",
+        'Wedding.required' => "Fill out this field",
+        'Funeral.required'=> "Fill out this field",
+        'Corporate_event.required'=> "Fill out this field"
+       
+
+        ]
+    );
         $catering = new Catering;
         $catering->Service_Name=$request->Service_Name;
         $catering->Address=$request->Address;
