@@ -127,7 +127,7 @@ return view('catering', compact('level'));
              $Main_pic=$request->file('Main_pic');
            
              $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/catering/'. $filename));
+             Image::make($Main_pic)->fit(960,640)->save(public_path('/uploads/catering/'. $filename));
 
              
              $catering->Main_pic=$filename;
@@ -139,7 +139,7 @@ return view('catering', compact('level'));
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/catering/'. $filename));
+             Image::make($pic1)->fit(960,640)->save(public_path('/uploads/catering/'. $filename));
 
              
              $catering->pic1=$filename;
@@ -151,7 +151,7 @@ return view('catering', compact('level'));
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/catering/'. $filename));
+             Image::make($pic2)->fit(960,640)->save(public_path('/uploads/catering/'. $filename));
 
              
              $catering->pic2=$filename;
@@ -163,7 +163,7 @@ return view('catering', compact('level'));
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/catering/'. $filename));
+             Image::make($pic3)->fit(960,640)->save(public_path('/uploads/catering/'. $filename));
 
              
              $catering->pic3=$filename;
@@ -175,7 +175,7 @@ return view('catering', compact('level'));
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/catering/'. $filename));
+             Image::make($pic4)->fit(960,640)->save(public_path('/uploads/catering/'. $filename));
 
              
              $catering->pic4=$filename;
