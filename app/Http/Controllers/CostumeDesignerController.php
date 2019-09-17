@@ -47,6 +47,63 @@ class CostumeDesignerController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'wedding_dress_designs' => 'required|string|max:20',
+            'clothing_orders' => 'required|string|max:20',
+            'sport_kit_designs' => 'required|string|max:20',
+            'saree_work' => 'required|string|max:20',
+            'traditional_dress' => 'required|string|max:20',
+            'gents_wear' => 'required|string|max:20',
+            'ladies_wear' => 'required|string|max:20',
+            'gents_foot_wear' => 'required|string|max:20',
+            'ladies_foot_wear' => 'required|string|max:20',
+            'sports_shoes' => 'required|string|max:20',
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Wedding' => 'required|string|max:20',
+            'Party' => 'required|string|max:20',
+            'fashion_show' => 'required|string|max:20',
+            'sports'=> 'required|string|max:20',
+            'Coperate_event'=> 'required|string|max:20',
+
+        ],
+        ['Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'wedding_dress_designs.required'=> "Fill out this field",
+        'clothing_orders.required'=> "Fill out this field",
+        'sport_kit_designs.required'=> "Fill out this field",
+        'saree_work.required'=> "Fill out this field",
+        'traditional_dress.required'=> "Fill out this field",
+        'gents_wear.required'=> "Fill out this field",
+        'ladies_wear.required'=> "Fill out this field",
+        'gents_foot_wear.required'=> "Fill out this field",
+        'ladies_foot_wear.required'=> "Fill out this field",
+        'sports_shoes.required'=> "Fill out this field",
+        'Main_pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Party.required'=> "Fill out this field",
+        'fashion_show.required'=> "Fill out this field",
+        'Wedding.required' => "Fill out this field",
+        'sports.required'=> "Fill out this field",
+        'Coperate_event.required'=> "Fill out this field"
+       
+
+        ]
+    );
         $costume = new Costume_designer;
         $costume->Name=$request->Name;
         $costume->Address=$request->Address;
@@ -70,7 +127,7 @@ class CostumeDesignerController extends Controller
              $Main_pic=$request->file('Main_pic');
            
              $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/costume/'. $filename));
+             Image::make($Main_pic)->fit(960,640)->save(public_path('/uploads/costume/'. $filename));
 
              
              $costume->Main_pic=$filename;
@@ -82,7 +139,7 @@ class CostumeDesignerController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/costume/'. $filename));
+             Image::make($pic1)->fit(960,640)->save(public_path('/uploads/costume/'. $filename));
 
              
              $costume->pic1=$filename;
@@ -94,7 +151,7 @@ class CostumeDesignerController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/costume/'. $filename));
+             Image::make($pic2)->fit(960,640)->save(public_path('/uploads/costume/'. $filename));
 
              
              $costume->pic2=$filename;
@@ -106,7 +163,7 @@ class CostumeDesignerController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/costume/'. $filename));
+             Image::make($pic3)->fit(960,640)->save(public_path('/uploads/costume/'. $filename));
 
              
              $costume->pic3=$filename;
@@ -118,7 +175,7 @@ class CostumeDesignerController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/costume/'. $filename));
+             Image::make($pic4)->fit(960,640)->save(public_path('/uploads/costume/'. $filename));
 
              
              $costume->pic4=$filename;

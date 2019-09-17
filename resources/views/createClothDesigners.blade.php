@@ -11,11 +11,11 @@
                     <form method="POST" action="/addCostumeDesigner" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Name') ? ' has-error' : '' }}">
                             <label for="Name" class="col-md-4 col-form-label text-md-right">Designer Name</label>
 
                             <div class="col-md-6">
-                                <input id="Name" type="text" class="form-control @error('Name') is-invalid @enderror" name="Name" value="{{ old('Name') }}" required autocomplete="Name" autofocus>
+                                <input id="Name" type="text" class="form-control @error('Name') is-invalid @enderror" name="Name" value="{{ old('Name') }}"  autocomplete="Name" autofocus>
 
                                 @if ($errors->has('Name'))
                                     <span class="help-block">
@@ -25,11 +25,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
                             <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}" required autocomplete="Address">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address">
 
                                 @if ($errors->has('Address'))
                                     <span class="help-block">
@@ -39,11 +39,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" required autocomplete="Contact_No" autofocus>
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}"  autocomplete="Contact_No" >
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -53,11 +53,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
                             <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}" required autocomplete="Link" autofocus>
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}"  autocomplete="Link" >
 
                                 @if ($errors->has('Link'))
                                     <span class="help-block">
@@ -72,7 +72,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' required></textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Link') is-invalid @enderror" ></textarea>
                             </div>
                         </div>
                         </div>
@@ -82,9 +82,9 @@
                         <label><b>Select Your Available Services</b></label><br><br>
 
                         
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('wedding_dress_designs') ? ' has-error' : '' }}">
                         <label for="wedding_dress_designs" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="wedding_dress_designs" value="Not Available">
                             <label for="wedding_dress_designs">Wedding Dress Designs</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Kandyan" value="Available">
@@ -92,27 +92,27 @@
                         </div>
 
                         
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('clothing_orders') ? ' has-error' : '' }}">
                         <label for="clothing_orders" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="clothing_orders" value="Not Available">
                             <label for="clothing_orders">Clothing Orders</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Western" value="Available">
                         </div>   
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('sport_kit_designs') ? ' has-error' : '' }}">
                         <label for="sport_kit_designs" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="sport_kit_designs" value="Not Available">
                             <label for="sport_kit_designs">Sport Kit Designing</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Traditional" value="Available">
                         </div>   
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('saree_work') ? ' has-error' : '' }}">
                         <label for="saree_work" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="saree_work" value="Not Available">
                             <label for="saree_work">Saree Designing</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Casual" value="Available">
@@ -121,9 +121,9 @@
 
                         
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('traditional_dress') ? ' has-error' : '' }}">
                         <label for="traditional_dress" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="traditional_dress" value="Not Available">
                             <label for="traditional_dress">Traditional Dress Designing</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available">
@@ -132,18 +132,18 @@
 
                         
                         
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('gents_wear') ? ' has-error' : '' }}">
                         <label for="gents_wear" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="gents_wear" value="Not Available">
                             <label for="gents_wear">Gents Wear Designing </label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available">
                         </div>   
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('ladies_wear') ? ' has-error' : '' }}">
                         <label for="ladies_wear" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="ladies_wear" value="Not Available">
                             <label for="ladies_wear">Ladies Wear Designing</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available">
@@ -152,27 +152,27 @@
 
                         
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('gents_foot_wear') ? ' has-error' : '' }}">
                         <label for="gents_foot_wear" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="gents_foot_wear" value="Not Available">
                             <label for="gents_foot_wear">Gents FootWear Designing</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Musical_event" value="Available">
                         </div>   
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('ladies_foot_wear') ? ' has-error' : '' }}">
                         <label for="ladies_foot_wear" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="ladies_foot_wear" value="Not Available">
                             <label for="ladies_foot_wear">Ladies Foot Wear</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available">
                         </div>   
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('sports_shoes') ? ' has-error' : '' }}">
                         <label for="sports_shoes" class="col-md-4"></label>   
-                        <div class="col-md-4">
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="sports_shoes" value="Not Available">
                             <label for="sports_shoes">Sport Shoes Designing</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available">
@@ -181,77 +181,62 @@
 
                         <label><b>Events That You Can Cover</b></label><br><br>
 
-                        <div class="form-group row">
-                            <label for="Wedding" class="col-md-4 col-form-label text-md-right">Wedding</label>
-                            
-                            <div class="col-md-6">
-                                <select id="Wedding" class="form-control" name="Wedding" value="{{ old('Wedding') }}" required>
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
-                            </div>
+                        <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }}">
+                        <label for="Wedding" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding" value="Not Available">
+                            <label for="Wedding">Wedding</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" title="Mark if you are covering this event">
+                        </div>   
                         </div>
 
-                        <div class="form-group row">
-                            <label for="Party" class="col-md-4 col-form-label text-md-right">Party</label>
-                            
-                            <div class="col-md-6">
-                                <select id="Party" class="form-control" name="Party" value="{{ old('Party') }}" required>
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
-                            </div>
+                        <div class="form-group row{{ $errors->has('fashion_show') ? ' has-error' : '' }}">
+                        <label for="fashion_show" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="fashion_show" value="Not Available">
+                            <label for="fashion_show">Fashion Show </label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="fashion_show" value="Available" title="Mark if you are covering this event">
+                        </div>   
                         </div>
 
-                        <div class="form-group row">
-                            <label for="fashion_show" class="col-md-4 col-form-label text-md-right">Fashion Show</label>
-                            
-                            <div class="col-md-6">
-                                <select id="fashion_show" class="form-control" name="fashion_show" value="{{ old('fashion_show') }}" required>
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
-                            </div>
+                        <div class="form-group row{{ $errors->has('Party') ? ' has-error' : '' }}">
+                        <label for="Party" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Party" value="Not Available">
+                            <label for="Party">Party</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available" title="Mark if you are covering this event">
+                        </div>   
                         </div>
 
-                        <div class="form-group row">
-                            <label for="Coperate_event" class="col-md-4 col-form-label text-md-right">Coperate Event</label>
-                            
-                            <div class="col-md-6">
-                                <select id="Coperate_event" class="form-control" name="Coperate_event" value="{{ old('Coperate_event') }}" required>
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
-                            </div>
+                        <div class="form-group row{{ $errors->has('Coperate_event') ? ' has-error' : '' }}">
+                        <label for="Coperate_event" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Coperate_event" value="Not Available">
+                            <label for="Coperate_event">Corporate Event</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Coperate_event" value="Available" title="Mark if you are covering this event">
+                        </div>   
                         </div>
 
-                        <div class="form-group row">
-                            <label for="sports" class="col-md-4 col-form-label text-md-right">Sport</label>
-                            
-                            <div class="col-md-6">
-                                <select id="sports" class="form-control" name="sports" value="{{ old('sports') }}" required>
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
-                            </div>
+                        <div class="form-group row{{ $errors->has('sports') ? ' has-error' : '' }}">
+                        <label for="sports" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="sports" value="Not Available">
+                            <label for="sports">Sports</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="sports" value="Available" title="Mark if you are covering this event">
+                        </div>   
                         </div>
 
 
                         
 
                         
-
+                        <label><b>Main Logo of your group or band or Profile picture</b></label><br><br>
                 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Main_pic') ? ' has-error' : '' }}">
                             <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="Main_pic" id="Main_Logo" value="{{ old('Main_pic') }}" required>
+                                <input type="file" name="Main_pic" id="Main_Logo" value="{{ old('Main_pic') }}"  class="form-control @error('Main_pic') is-invalid @enderror" >
 
                                     @if ($errors->has('Main_pic'))
                                     <span class="help-block">
@@ -261,11 +246,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <label><b>Pictures of the events that you recently covered</b></label><br><br>
+                        
+                        <div class="form-group row{{ $errors->has('pic1') ? ' has-error' : '' }}">
                             <label for="pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" required>
+                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}"  class="form-control @error('pic1') is-invalid @enderror" >
 
                                     @if ($errors->has('pic1'))
                                     <span class="help-block">
@@ -275,11 +262,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('pic2') ? ' has-error' : '' }}">
                             <label for="pic2" class="col-md-4 col-form-label text-md-right">Picture 2</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" required>
+                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}"   class="form-control @error('pic2') is-invalid @enderror" >
 
                                     @if ($errors->has('pic2'))
                                     <span class="help-block">
@@ -289,11 +276,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('pic3') ? ' has-error' : '' }}">
                             <label for="pic3" class="col-md-4 col-form-label text-md-right">Picture 3</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" required>
+                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}"  class="form-control @error('pic3') is-invalid @enderror"  >
 
                                     @if ($errors->has('pic3'))
                                     <span class="help-block">
@@ -303,11 +290,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('pic4') ? ' has-error' : '' }}">
                             <label for="pic4" class="col-md-4 col-form-label text-md-right">Picture 4</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" required>
+                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}"  class="form-control @error('pic4') is-invalid @enderror"  >
 
                                     @if ($errors->has('pic4'))
                                     <span class="help-block">
