@@ -145,7 +145,7 @@
 						<h5 class="margin-tb-20"><b>Projection</b></h5>
 						
 					</div><!-- counter -->
-				</div><!-- col-md-4 -->
+				</div><!-- col-md-6 -->
 				@endif
 
 				@if($hall1->internet=='Available')
