@@ -47,6 +47,62 @@ class DancingController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Team_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'choreography' =>'required|string|max:20',
+            'Gender' =>'required|string|max:20',
+            
+            
+            'Traditional' => 'required|string|max:20',
+            'Western' => 'required|string|max:20',
+            'Indian' => 'required|string|max:20',
+            'Kandyan' => 'required|string|max:20',
+            'Casual' => 'required|string|max:20',
+            'Other' => 'required|string|max:20',
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Wedding' => 'required|string|max:20',
+            'Party' => 'required|string|max:20',
+            'Corporate_event' => 'required|string|max:20',
+            'Musical_event' => 'required|string|max:20',
+            
+
+        ],
+        ['Team_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'choreography.required'=> "Fill out this field",
+        'Gender.required'=> "Fill out this field",
+        'Traditional.required'=> "Fill out this field",
+        'Western.required'=> "Fill out this field",
+        'Indian.required'=> "Fill out this field",
+        'Kandyan.required'=> "Fill out this field",
+        'Casual.required'=> "Fill out this field",
+        'Other.required'=> "Fill out this field",
+        
+        'Main_Logo.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Wedding.required'=> "Fill out this field",
+        'Party.required'=> "Fill out this field",
+        'Corporate_event.required' => "Fill out this field",
+        'Musical_event.required'=> "Fill out this field",
+        
+       
+
+        ]
+    );
         $dancing = new Dancer;
         $dancing->Team_Name=$request->Team_Name;
         $dancing->Address=$request->Address;
@@ -68,7 +124,7 @@ class DancingController extends Controller
              $Main_pic=$request->file('Main_pic');
            
              $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-             Image::make($Main_pic)->resize(960,640)->save(public_path('/uploads/dancing/'. $filename));
+             Image::make($Main_pic)->fit(960,640)->save(public_path('/uploads/dancing/'. $filename));
 
              
              $dancing->Main_pic=$filename;
@@ -80,7 +136,7 @@ class DancingController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(960,640)->save(public_path('/uploads/dancing/'. $filename));
+             Image::make($pic1)->fit(960,640)->save(public_path('/uploads/dancing/'. $filename));
 
              
              $dancing->pic1=$filename;
@@ -92,7 +148,7 @@ class DancingController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(960,640)->save(public_path('/uploads/dancing/'. $filename));
+             Image::make($pic2)->fit(960,640)->save(public_path('/uploads/dancing/'. $filename));
 
              
              $dancing->pic2=$filename;
@@ -104,7 +160,7 @@ class DancingController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(960,640)->save(public_path('/uploads/dancing/'. $filename));
+             Image::make($pic3)->fit(960,640)->save(public_path('/uploads/dancing/'. $filename));
 
              
              $dancing->pic3=$filename;
@@ -116,7 +172,7 @@ class DancingController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(960,640)->save(public_path('/uploads/dancing/'. $filename));
+             Image::make($pic4)->fit(960,640)->save(public_path('/uploads/dancing/'. $filename));
 
              
              $dancing->pic4=$filename;
