@@ -15,7 +15,7 @@
                             <label for="Organization_Name" class="col-md-4 col-form-label text-md-right">Organization/Group Name</label>
 
                             <div class="col-md-6">
-                                <input id="Organization_Name" type="text" class="form-control @error('Organization_Name') is-invalid @enderror" name="Organization_Name" value="{{ old('Organization_Name') }}"  autocomplete="Organization_Name" autofocus>
+                                <input id="Organization_Name" type="text" class="form-control @error('Organization_Name') is-invalid @enderror" name="Organization_Name" value="{{ old('Organization_Name') }}"  autocomplete="Organization_Name" autofocus  title="Fill this field with Cake Designer name">
 
                                 @if ($errors->has('Organization_Name'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                             <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @if ($errors->has('Address'))
                                     <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}"  autocomplete="Contact_No" >
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}"  autocomplete="Contact_No" title="Fill this field with Contact Number" >
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@
                             <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}" autocomplete="Link" >
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}" autocomplete="Link" title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. " >
 
                                 @if ($errors->has('Link'))
                                     <span class="help-block">
@@ -72,7 +72,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right" >Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror"></textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your Group/Designer. You can include what are your specialities other details."></textarea>
                             </div>
                         </div>
                         </div>
@@ -90,7 +90,7 @@
                             <input type="hidden" name="Wedding_cake" value="Not Available">
                             <label for="Wedding_cake"> Wedding Cake</label> 
                             <div class="primary-checkbox">
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_cake" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_cake" value="Available" title="Mark if you have this service">
                         </div></div> 
                         </div>
 
@@ -99,7 +99,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Birthday_cake" value="Not Available">
                             <label for="Birthday_cake">Birthday Cake</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday_cake" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday_cake" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -108,7 +108,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Cake_Structure" value="Not Available">
                             <label for="Cake_Structure">Cake Structure</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Cake_Structure" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Cake_Structure" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -117,7 +117,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Pastry_cake" value="Not Available">
                             <label for="Pastry_cake">Pastry Cake</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Pastry_cake" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Pastry_cake" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -126,7 +126,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Cup_Cake" value="Not Available">
                             <label for="Cup_Cake">Cup Cake</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Cup_Cake" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Cup_Cake" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -135,7 +135,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Other" value="Not Available">
                             <label for="Other">Other</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
