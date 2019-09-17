@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="background-image: url('images/form_poruwa.jpg'); background-attachment: fixed;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Add Poruwa Ritual Makers & Poruwa Item Suppliers</div>
+                <center class="card-header">Add Poruwa Ritual Makers & Poruwa Item Suppliers</center>
 
                 <div class="card-body">
                     <form method="POST" action="/addPoruwa" enctype="multipart/form-data">
@@ -93,7 +93,7 @@
 
                         
 
-                      <label><b>Select Your Available Features of Service</b></label><br><br>
+                        <label><b>Select Your Available Features of Service</b></label><br><br>
 
                         
                         <div class="form-group row">
@@ -153,7 +153,7 @@
 
 
 
-                        
+                        <label><b>Main Logo of your Company or Profile picture</b></label><br><br>
 
                 
                         <div class="form-group row">
@@ -169,6 +169,8 @@
                                 @endif
                             </div>
                         </div>
+
+                        <label><b>Main Logo of your group or band or Profile picture</b></label><br><br>
 
                         <div class="form-group row">
                             <label for="pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
@@ -231,7 +233,7 @@
                         
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-5">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>
