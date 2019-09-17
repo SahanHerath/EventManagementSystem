@@ -47,6 +47,59 @@ class decorationController extends Controller
     {
         
         //
+        $request->validate(
+            ['Team_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            
+            'Poruwa' => 'required|string|max:20',
+            'Flower' => 'required|string|max:20',
+            'Table_Hall' => 'required|string|max:20',
+            'Setty_Backs' => 'required|string|max:20',
+            'Lighting' => 'required|string|max:20',
+            'Traditional' => 'required|string|max:20',
+            'Wedding_Car' => 'required|string|max:20',
+            'Main_Pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'Wedding' => 'required|string|max:20',
+            'Birthday' => 'required|string|max:20',
+            'Outside_events' => 'required|string|max:20',
+            'Get_Together'=> 'required|string|max:20',
+            'Parties'=> 'required|string|max:20',
+
+        ],
+        ['Team_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Poruwa.required'=> "Fill out this field",
+        'Flower.required'=> "Fill out this field",
+        'Table_Hall.required'=> "Fill out this field",
+        'Setty_Backs.required'=> "Fill out this field",
+        'Lighting.required'=> "Fill out this field",
+        'Traditional.required'=> "Fill out this field",
+        
+        'Wedding_Car.required'=> "Fill out this field",
+        'Main_Logo.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'Wedding.required'=> "Fill out this field",
+        'Birthday.required'=> "Fill out this field",
+        'Outside_events.required' => "Fill out this field",
+        'Get_Together.required'=> "Fill out this field",
+        'Parties.required'=> "Fill out this field"
+       
+
+        ]
+    );
         $decorate = new Decorator;
         $decorate->Team_Name=$request->Team_Name;
         $decorate->Address=$request->Address;
@@ -67,7 +120,7 @@ class decorationController extends Controller
              $Main_Pic=$request->file('Main_Pic');
            
              $filename=time().'.'.$Main_Pic->getClientOriginalExtension();
-             Image::make($Main_Pic)->resize(480,480)->save(public_path('/uploads/decoration/'. $filename));
+             Image::make($Main_Pic)->fit(480,480)->save(public_path('/uploads/decoration/'. $filename));
 
              
              $decorate->Main_Pic=$filename;
@@ -79,7 +132,7 @@ class decorationController extends Controller
              $pic1=$request->file('pic1');
            
              $filename=time().'.'.$pic1->getClientOriginalExtension();
-             Image::make($pic1)->resize(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+             Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
              
              $decorate->pic1=$filename;
@@ -91,7 +144,7 @@ class decorationController extends Controller
              $pic2=$request->file('pic2');
            
              $filename=time().'.'.$pic2->getClientOriginalExtension();
-             Image::make($pic2)->resize(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+             Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
              
              $decorate->pic2=$filename;
@@ -103,7 +156,7 @@ class decorationController extends Controller
              $pic3=$request->file('pic3');
            
              $filename=time().'.'.$pic3->getClientOriginalExtension();
-             Image::make($pic3)->resize(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+             Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
              
              $decorate->pic3=$filename;
@@ -115,7 +168,7 @@ class decorationController extends Controller
              $pic4=$request->file('pic4');
            
              $filename=time().'.'.$pic4->getClientOriginalExtension();
-             Image::make($pic4)->resize(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+             Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
              
              $decorate->pic4=$filename;
