@@ -143,7 +143,7 @@
 
                         
 
-                
+                        <label><b>Main Logo of your group or Designer or Profile picture</b></label><br><br>
           
                         <div class="form-group row{{ $errors->has('Main_pic') ? ' has-error' : '' }}">
                             <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
@@ -158,6 +158,8 @@
                                 @endif
                             </div>
                         </div>
+
+                        <label><b>Pictures of the events that you recently covered</b></label><br><br>
 
                         <div class="form-group row{{ $errors->has('pic1') ? ' has-error' : '' }}">
                             <label for="pic1" class="col-md-4 col-form-label text-md-right" >Picture 1</label>

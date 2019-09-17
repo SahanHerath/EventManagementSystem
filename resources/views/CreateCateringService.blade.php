@@ -221,7 +221,7 @@
                         </div>   
                         </div>
 
-                        <label><b>Main Logo of your group or band or Profile picture</b></label><br><br>
+                        <label><b>Main Logo of your group or Profile picture</b></label><br><br>
 
                         <div class="form-group row{{ $errors->has('Main_pic') ? ' has-error' : '' }}">
                             <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
