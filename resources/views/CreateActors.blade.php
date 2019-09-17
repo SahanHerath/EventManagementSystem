@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="background-image: url('images/actor3.jpg'); background-attachment: fixed;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Add Artist, Announcer or Entertainer </div>
+                <center class="card-header">Add Artist, Announcer or Entertainer </center>
 
                 <div class="card-body">
                     <form method="POST" action="/addactor" enctype="multipart/form-data">
@@ -280,7 +280,7 @@
                         
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-5">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>
