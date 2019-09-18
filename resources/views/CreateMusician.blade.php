@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <center class="card-header">Add DJ Or Band Details</center>
+                <center> class="card-header">Add DJ Or Band Details</center>
 
                 <div class="card-body">
                     <form method="POST" action="/addmusician" enctype="multipart/form-data">
@@ -153,20 +153,20 @@
                         <div class="row">
                         
 
-                        <div class="form-group row{{ $errors->has('Lights') ? ' has-error' : '' }} col-md-6">
-                            <label for="Lights" class="col-md-4"></label>   
-                            <div class="col-md-6 switch-wrap d-flex justify-content-between">
-                                <input type="hidden" name="Lights" value="Not Available">
-                                <label for="Lights">Lights</label> 
-                                <input type="checkbox" class=" col-md-8 largerCheckbox" style="width:20px; height:20px;" name="Lights" value="Available" title="Mark if you have this service">
-                            </div>   
-                        </div>
+                            <div class="form-group row{{ $errors->has('Lights') ? ' has-error' : '' }} col-md-6">
+                                <label for="Lights" class="col-md-4"></label>   
+                                <div class="col-md-6 switch-wrap d-flex justify-content-between">
+                                    <input type="hidden" name="Lights" value="Not Available">
+                                    <label for="Lights">Lights</label> 
+                                    <input type="checkbox" class=" col-md-8 largerCheckbox" style="width:20px; height:20px;" name="Lights" value="Available" title="Mark if you have this service">
+                                </div>   
+                            </div>
 
                         </div>
                         
-                        </div>
+                       
 
-                        <center><label><b>Events That You Can Cover</b></label></center><br><br>
+                        <label><b>Events That You Can Cover</b></label><br><br>
                         <div class="row">
                        
 
