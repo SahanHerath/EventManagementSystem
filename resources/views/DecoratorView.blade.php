@@ -64,10 +64,14 @@
         
         <!--================Home Banner Area =================-->
         @foreach($data as $data1)
-        <section class="home_banner_area">
+		
+		<section class="home_banner_area">
+		
            	<div class="container box_1620">
-           		<div class="banner_inner d-flex align-items-center">
-					<div class="banner_content">
+				<div class="banner_inner d-flex align-items-center">
+				   
+				   <div class="banner_content">
+					
 						<div class="media">
 							<div class="d-flex">
 								<img src="uploads/decoration/{{$data1->Main_Pic}}" width="500" hight="800" alt="">

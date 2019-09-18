@@ -278,7 +278,16 @@ class salonController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->join('salon_events','users.id','=','salon_events.user_id')
+                ->where('category','=','Bridel_Designers')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','salons.id as salonid','Salon_Name','Address', 'Contact_No', 'Link','Description','Groom_Dressing','Bride_Dressing','Dress_Making','Jewelry','Makeup','Bridesman','Bridesmaid','Profile_Pic','pic1','pic2','pic3','pic4','HairStyle','salon_events.id as eventid','wedding', 'parties', 'fashion_show')
+                ->get();
+
+                return view('SalonUserProfile',compact('data'));
     }
 }
  

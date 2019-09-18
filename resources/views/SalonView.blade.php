@@ -156,7 +156,7 @@
                             @endif
                             
                             @if($data1->Bridesmaid == "Available")
-                                Bridesman Dressing and Dress Designing<br>
+                                Bridesmaid Dressing and Dress Designing<br>
                             @endif
                             
                             @if($data1->HairStyle == "Available")

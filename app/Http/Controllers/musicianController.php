@@ -295,6 +295,15 @@ class musicianController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('category','=','Music')
+                ->where('users.id','=',$id1)
+                ->select( 'users.id as userid','name','email','musicians.id as musicianid','Dj_Name', 'Address', 'ContactNo','Link','Description','Playing_Hrs','Payment','Extra_Cost','Fire','Smoke','Lights','Main_Logo','pic1','pic2','pic3','pic4','musician_events.id as eventid','Wedding', 'Birthday', 'Beach_Party','Get_Together','Parties')
+                ->get();
+
+                return view('MusicUserProfile',compact('data'));
     }
 }
