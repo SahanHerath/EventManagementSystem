@@ -271,7 +271,15 @@ class PhotographyController extends Controller
     }
 
     public function profile()
-    {
-        
+    {   
+        $id1 = Auth::id();
+        $data = DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->join('photography_events','users.id','=','photography_events.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','photographies.id as photographyid','Studio_Name', 'Address', 'ContactNo','Link','Description','Drone','Wedding_Photography','Preshoot_Vedio','Wedding_Vedio','Album_Making','Wedding_Card','main_pic','pic1','pic2','pic3','pic4','photography_events.id as eventid','Wedding', 'Get_togather','Birthday','Competition','Professional_Events','Sports','Trips')
+                ->get();
+
+                return view('PhotographyUserProfile',compact('data'));
     }
 }

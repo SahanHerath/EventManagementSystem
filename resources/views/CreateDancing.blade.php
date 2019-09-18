@@ -72,7 +72,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your group. You can include what are your specialities other details."></textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your group. You can include what are your specialities other details.">{{ old('Description') }}</textarea>
                             </div>
                         </div>
                         </div>
