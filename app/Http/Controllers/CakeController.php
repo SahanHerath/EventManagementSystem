@@ -249,7 +249,15 @@ class CakeController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('cake_designers')
+                ->join('users','users.id','=','cake_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->where('category','=','Cake_Designers')
+                ->select('users.id as userid','name','email', 'cake_designers.id as cakeid','Organization_Name', 'Address', 'Contact_No','Link','Description','Wedding_cake','Birthday_cake','Cake_Structure','Pastry_cake','Cup_Cake','Other','Main_pic','pic1','pic2','pic3','pic4')
+                ->get();
+
+                return view('CakeUserProfile',compact('data'));
     }
 
 }
