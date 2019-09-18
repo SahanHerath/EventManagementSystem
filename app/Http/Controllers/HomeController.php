@@ -153,7 +153,7 @@ class HomeController extends Controller
             }
             if(($data1->category)=='Event_Planners')
             {
-                return app('App\Http\Controllers\EventPlannersController')->profile();
+                return app('App\Http\Controllers\EventPlanersController')->profile();
             }
            
         }

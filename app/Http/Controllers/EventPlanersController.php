@@ -312,7 +312,16 @@ class EventPlanersController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+                ->where('category','=','Event_Planners')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','event_planners.id as plannersid','Organization_name', 'Address', 'Description','Contact_No','Link','Main_pic','pic1','pic2','pic3','pic4','event_planners_events.id as eventid','Wedding', 'Parties', 'Meetings','Corporate_event','Outside_event','Sport_event')
+                ->get();
+
+                return view('EventPlannerUserProfile',compact('data'));
     }
     
 }
