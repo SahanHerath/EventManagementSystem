@@ -173,14 +173,25 @@
 
                        
 
+                        <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }}">
+                        <label for="Wedding" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding" value="Not Available">
+                            <label for="Wedding">Wedding</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" title="Mark if you are covering this event">
+                        </div>   
+                        </div>
+                        
                         <div class="form-group row{{ $errors->has('Birthday') ? ' has-error' : '' }}">
                         <label for="Birthday" class="col-md-4"></label>   
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Birthday" value="Not Available">
-                            <label for="Birthday">Wedding</label> 
+                            <label for="Birthday">Birthday</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday" value="Available" title="Mark if you are covering this event">
                         </div>   
                         </div>
+
+                        
 
                         <div class="form-group row{{ $errors->has('Beach_Party') ? ' has-error' : '' }}">
                         <label for="Beach_Party" class="col-md-4"></label>   
