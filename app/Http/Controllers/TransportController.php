@@ -246,6 +246,14 @@ class TransportController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('transporters')
+                ->join('users','users.id','=','transporters.user_id')
+                ->join('transport_categories','users.id','=','transport_categories.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','transporters.id as transportid','Transport_Service','Address', 'Contact_No', 'Link','Description','driver','decoration','rent_hours','Main_pic','pic1','pic2','pic3','pic4','rent_km','transport_categories.id as categoryid','luxury', 'classic', 'vintage','horse_cart','air','travelling_coach')
+                ->get();
+
+                return view('TransportUserProfile',compact('data'));
     }
 }
