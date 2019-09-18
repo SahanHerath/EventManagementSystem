@@ -338,6 +338,14 @@ class ActorController extends Controller
     }
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->join('actor_events','users.id','=','actor_events.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','actors.id as actorid','Actor_name', 'Address', 'Contact_No','Link','Description','Singer','Magician','Comedian','Actor','Announcer','Entertainer','Other','Main_pic','pic1','pic2','pic3','pic4','actor_events.id as eventid','Birthday', 'Professional_event','Musical_event','Corporate_event','Party')
+                ->get();
+
+                return view('ActorUserProfile',compact('data'));
     }
 }

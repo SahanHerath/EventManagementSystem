@@ -87,8 +87,8 @@
                         <label for="wedding_dress_designs" class="col-md-4"></label>   
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="wedding_dress_designs" value="Not Available">
-                            <label for="wedding_dress_designs">Wedding Dress Designs</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Kandyan" value="Available" title="Mark if you have this service">
+                            <label for="wedding_dress_designs">wedding Dress Designs</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="wedding_dress_designs" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -98,7 +98,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="clothing_orders" value="Not Available">
                             <label for="clothing_orders">Clothing Orders</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Western" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="clothing_orders" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -107,7 +107,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="sport_kit_designs" value="Not Available">
                             <label for="sport_kit_designs">Sport Kit Designing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Traditional" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="sport_kit_designs" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -116,7 +116,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="saree_work" value="Not Available">
                             <label for="saree_work">Saree Designing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Casual" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="saree_work" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -127,7 +127,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="traditional_dress" value="Not Available">
                             <label for="traditional_dress">Traditional Dress Designing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="traditional_dress" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -138,7 +138,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="gents_wear" value="Not Available">
                             <label for="gents_wear">Gents Wear Designing </label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="gents_wear" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -147,7 +147,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="ladies_wear" value="Not Available">
                             <label for="ladies_wear">Ladies Wear Designing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="ladies_wear" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -158,7 +158,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="gents_foot_wear" value="Not Available">
                             <label for="gents_foot_wear">Gents FootWear Designing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Musical_event" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="gents_foot_wear" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -167,7 +167,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="ladies_foot_wear" value="Not Available">
                             <label for="ladies_foot_wear">Ladies Foot Wear</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="ladies_foot_wear" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 
@@ -176,7 +176,7 @@
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="sports_shoes" value="Not Available">
                             <label for="sports_shoes">Sport Shoes Designing</label> 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Corporate_event" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="sports_shoes" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
 

@@ -8,7 +8,7 @@ class Costume_designer_event extends Model
 {
     //
     protected $fillable = [
-        'id','user_id','Wedding','Party','fashion_show','sports','Coperate_event','created_at','updated_at'
+        'user_id','Wedding','Party','fashion_show','sports','Coperate_event'
 
     ];
 }

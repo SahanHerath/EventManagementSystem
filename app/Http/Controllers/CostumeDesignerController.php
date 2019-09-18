@@ -325,7 +325,16 @@ class CostumeDesignerController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('costume_designers')
+            ->join('users','users.id','=','costume_designers.user_id')
+            ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+            ->where('category','=','Cloth_Designers')
+            ->where('users.id','=',$id1)
+            ->select('users.id as userid','email','users.name as Uname','costume_designers.id as designerid','costume_designers.Name as Cname','Address','Contact_No','Link','Description','wedding_dress_designs','clothing_orders','sport_kit_designs','saree_work','traditional_dress','gents_wear','ladies_wear','gents_foot_wear','ladies_foot_wear','sports_shoes','Main_pic','pic1','pic2','pic3','pic4','costume_designer_events.id as eventid','Wedding','Party','fashion_show','sports','Coperate_event')
+            ->get();
+
+        return view('CostumeDesignerUserProfile',compact('data'));
     }
 
     
