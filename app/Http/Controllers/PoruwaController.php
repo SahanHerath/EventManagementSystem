@@ -45,6 +45,51 @@ class PoruwaController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            
+            'Poruwa_rituals' => 'required|string|max:20',
+            'Poruwa_items' => 'required|string|max:20',
+            'match_making' => 'required|string|max:20',
+            'Astrological_support	' => 'required|string|max:20',
+            'jayamangala_gatha' => 'required|string|max:20',
+            'Astrological_support' => 'required|string|max:20',
+            'Wedding_dancers' => 'required|string|max:20',
+            'Cost' => 'required|numeric|min:0',
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            
+
+        ],
+        ['Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Poruwa_rituals.required'=> "Fill out this field",
+        'Poruwa_items.required'=> "Fill out this field",
+        'match_making.required'=> "Fill out this field",
+        'Astrological_support.required'=> "Fill out this field",
+        'jayamangala_gatha.required'=> "Fill out this field",
+        'Wedding_dancers.required'=> "Fill out this field",
+        'Cost.required'=> "Fill out this field",
+        'Main_pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        
+       
+
+        ]
+    );
         $Poruwa = new Poruwa_ceramony;
         $Poruwa->Name=$request->Name;
         $Poruwa->Address=$request->Address;
