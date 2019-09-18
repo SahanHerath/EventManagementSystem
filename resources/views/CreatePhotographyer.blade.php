@@ -77,7 +77,7 @@
                         </div>
                         </div>
 
-<<<<<<< HEAD
+
                         <center><label><b>Select Your Available Services</b></label><center><br><br>
 
                         <div class="form-group row{{ $errors->has('Drone') ? ' has-error' : '' }}">
@@ -87,19 +87,10 @@
                                 <label for="Drone">Drone</label> 
                                 <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Drone" value="Available" title="Mark if you are covering this event">
                             </div>   
-=======
-                        <label><b>Select Your Available Services</b></label>
-                        <div class="form-group row">
-                            <label for="Wedding_Photography" class="col-md-4 col-form-label text-md-right">Wedding Photography</label>
+                        </div>
+            
                             
-                            <div class="col-md-6">
-                                <select id="Wedding_Photography" class="form-control" name="Wedding_Photography" value="{{ old('Wedding_Photography') }}" required>
-                                    <option value="" disabled selected>--Select Type--</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                </select>
->>>>>>> 76ff88dbd63e123fa084a0c8e0905c2aa1ed3a9d
-                            </div>
+                           
 
                             <div class="form-group row{{ $errors->has('Wedding_Photography') ? ' has-error' : '' }}">
                             <label for="Wedding_Photography" class="col-md-4"></label>   
