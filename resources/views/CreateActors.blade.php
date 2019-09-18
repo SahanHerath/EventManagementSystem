@@ -4,7 +4,7 @@
 <div class="container" style="background-image: url('images/actor3.jpg'); background-attachment: fixed;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background: rgba(255,255,255,0.85);">
                 <center class="card-header">Add Artist, Announcer or Entertainer </center>
 
                 <div class="card-body">
