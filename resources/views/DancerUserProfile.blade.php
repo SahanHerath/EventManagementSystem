@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Evora-DJ/Band</title>
+        <title>Evora-Dancers</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -59,21 +59,19 @@
 					<div class="offset-1 banner_content">
 						<div class="media">
                             <div class="d-flex">
-                                <img src="uploads/music/{{$data1->Main_Logo}}" width="400" hight="600" alt="">
+                                <img src="uploads/dancing/{{$data1->Main_pic}}" width="400" hight="600" alt="">
                             </div>
                              
                             <div class="personal_text">
-                            <h3>{{$data1->Dj_Name}}</h3>
+                            <h3>{{$data1->Team_Name}}</h3>
                                 <ul class="list basic_info">
                                     <li><b>Contact Person :- </b>{{$data1->name}}</li>
                                     <li><b>ADDRESS :- </b>{{$data1->Address}}</li>
-                                    <li><b>Contact_No :- </b>{{$data1->ContactNo}}</li>
+                                    <li><b>Contact_No :- </b>{{$data1->Contact_No}}</li>
                                     <li><b>email :- </b>{{$data1->email}}</li>
                                     <li><b>Link :- </b>{{$data1->Link}}</li>
-                                    <li><b>Normal Playing Hours :- </b>{{$data1->Playing_Hrs}}</li>
-                                    <li><b>Normal Cost :- </b>{{$data1->Payment}}</li>
-                                    <li><b>Cost For Extra Hour :- </b>{{$data1->Extra_Cost}}</li>
-                                    
+                                    <li><b>Dancing Team :- </b>{{$data1->Gender}}</li>
+                                    <li><b>Choreography :- </b>{{$data1->choreography}}</li>
                                     
                                     <a class="genric-btn primary" href="#">Edit info</a>
                                     <a class="genric-btn info" href="#">Change Password</a>
@@ -107,35 +105,28 @@
                             <br>
                             @endif
                             
-                            @if($data1->Get_Together=='Available')
+                            @if($data1->Party=='Available')
                             <tr>
                             
-                            Get Together
+                            Party
                             
                             </tr>
                             <br>
                             @endif
-                            @if($data1->Birthday=='Available')
+                            @if($data1->Musical_event=='Available')
                             <tr>
                             
-                            Birthday
+                            Musical Events
                             
                             </tr>
                             <br>
                             @endif
-                            @if($data1->Parties=='Available')
+                            @if($data1->Corporate_event=='Available')
                             <tr>
-                            Parties
+                            Corporate Events
                             </tr>
                             <br>
                             @endif
-                            @if($data1->Beach_Party=='Available')
-                            <tr>
-                            Beach Party
-                            </tr>
-                            <br>
-                            @endif
-                            
                             
                             
                             <tr>
@@ -153,19 +144,30 @@
 					<div class="offset-3 col-lg-5 col-md-6" style="border: 15px solid green;">
         				<div class="feature_item bg- text-black">
                         <center><h4>Features</h4></center>
-                            @if($data1->Fire=='Available')
-                            Fire Machine
+                            @if($data1->Traditional=='Available')
+                            Traditional Dancing
                             <br>
                             @endif
-                            @if($data1->Smoke=='Available')
-                            Smoking Machine
+                            @if($data1->Western=='Available')
+                            Western Dancing
                             <br>
                             @endif
-                            @if($data1->Lights=='Available')
-                            DJ Lights
+                            @if($data1->Indian=='Available')
+                            Indian Dancing
                             <br>
                             @endif
-                           
+                            @if($data1->Kandyan=='Available')
+                            Kandyan Dancing
+                            <br>
+                            @endif
+                            @if($data1->Casual=='Available')
+                            Casual Dancing
+                            <br>
+                            @endif
+                            @if($data1->Other=='Available')
+                            Other Dancing Types
+                            <br>
+                            @endif
                             
                             <br><br><br>
                             <center><a class="genric-btn primary" href="#">Edit Features</a></center>
@@ -193,16 +195,16 @@
 						<h3 class="title_color">Image Gallery</h3>
 						<div class="row gallery-item">
 							<div class="col-md-3" width="400" hight="600">
-								<a href="uploads/music/{{$data1->pic1}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/music/{{$data1->pic1}});"></div></a>
+								<a href="uploads/dancing/{{$data1->pic1}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/dancing/{{$data1->pic1}});"></div></a>
 							</div>
 							<div class="col-md-3">
-								<a href="uploads/music/{{$data1->pic2}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/music/{{$data1->pic2}});"></div></a>
+								<a href="uploads/dancing/{{$data1->pic2}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/dancing/{{$data1->pic2}});"></div></a>
 							</div>
 							<div class="col-md-3">
-								<a href="uploads/music/{{$data1->pic3}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/music/{{$data1->pic3}});"></div></a>
+								<a href="uploads/dancing/{{$data1->pic3}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/dancing/{{$data1->pic3}});"></div></a>
 							</div>
 							<div class="col-md-3">
-								<a href="uploads/music/{{$data1->pic4}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/music/{{$data1->pic4}});"></div></a>
+								<a href="uploads/dancing/{{$data1->pic4}}" class="img-gal"><div class="single-gallery-image" style="background: url(uploads/dancing/{{$data1->pic4}});"></div></a>
 							</div>
                             
 						</div>

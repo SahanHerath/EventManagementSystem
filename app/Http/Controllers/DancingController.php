@@ -293,6 +293,15 @@ class DancingController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('users')
+                ->join('dancers','users.id','=','dancers.user_id')
+                ->join('dancer_events','users.id','=','dancer_events.user_id')
+                ->where('category','=','Dancing')
+                ->where('users.id','=',$id1)
+                ->select('users.id as userid','name','email','dancers.id as dancerid','Team_Name', 'Address', 'Contact_No','Link','Description','Gender','choreography','Traditional','Western','Indian','Kandyan','Casual','Other','Main_pic','pic1','pic2','pic3','pic4','dancer_events.id as eventid', 'Wedding','Musical_event','Corporate_event','Party')
+                ->get();
+
+                return view('DancerUserProfile',compact('data'));
     }
 }
