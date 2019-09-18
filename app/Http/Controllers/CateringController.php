@@ -309,6 +309,15 @@ return view('catering', compact('level'));
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('caterings')
+            ->join('users','users.id','=','caterings.user_id')
+            ->join('catering_events','users.id','=','catering_events.user_id')
+            ->where('category','=','Catering')
+            ->where('users.id','=',$id1)
+            ->select('users.id as userid','email','name', 'caterings.id as cateringid','Service_Name', 'Address', 'Contact_No','Link','Description','Welcome_drink','Special_Food','Catering_set','Catering_tent','Cake','Garden_umbrella','Coffee_Machine','Table_chair','sink','dessert','Main_pic','pic1','pic2','pic3','pic4','catering_events.id as eventid','Wedding', 'Birthday', 'Party','Corporate_event','Funeral')
+            ->get();
+
+        return view('CateringUserProfile',compact('data'));
     }
 }
