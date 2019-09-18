@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container style=" style="background-image: url('images/nature_small_5.jpg') background-attachment: fixed;">
+<div class="container style=" style="background-image: url('images/form_person_7.jpg'); background-attachment: fixed;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background: rgba(255,255,255,0.85);">
                 <center class="card-header">Add Photographer or Vediographer Datails</center>
 
                 <div class="card-body">
@@ -77,6 +77,7 @@
                         </div>
                         </div>
 
+<<<<<<< HEAD
                         <center><label><b>Select Your Available Services</b></label><center><br><br>
 
                         <div class="form-group row{{ $errors->has('Drone') ? ' has-error' : '' }}">
@@ -86,6 +87,18 @@
                                 <label for="Drone">Drone</label> 
                                 <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Drone" value="Available" title="Mark if you are covering this event">
                             </div>   
+=======
+                        <label><b>Select Your Available Services</b></label>
+                        <div class="form-group row">
+                            <label for="Wedding_Photography" class="col-md-4 col-form-label text-md-right">Wedding Photography</label>
+                            
+                            <div class="col-md-6">
+                                <select id="Wedding_Photography" class="form-control" name="Wedding_Photography" value="{{ old('Wedding_Photography') }}" required>
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+>>>>>>> 76ff88dbd63e123fa084a0c8e0905c2aa1ed3a9d
                             </div>
 
                             <div class="form-group row{{ $errors->has('Wedding_Photography') ? ' has-error' : '' }}">
@@ -133,7 +146,7 @@
                             </div>   
                             </div>
 
-                        <center><label><b>Events That You Can Cover</b></label><center><br><br>
+                        <label><b>Events That You Can Cover</b></label>
 
                         <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }}">
                             <label for="Wedding" class="col-md-4"></label>   
@@ -201,7 +214,7 @@
                             </div>
 
 
-                        <center><label><b>Main Logo of your company or Profile picture</b></label></center><br><br>
+                        <label><b>Main Logo of your company or Profile picture</b></label>
 
 
                         <div class="form-group row{{ $errors->has('main_pic') ? ' has-error' : '' }}">
@@ -218,7 +231,7 @@
                             </div>
                         </div>
 
-                        <center><label><b>Pictures of the events that you recently covered</b></label></center><br><br>
+                        <label><b>Pictures of the events that you recently covered</b></label>
 
                         
                         <div class="form-group row{{ $errors->has('pic1') ? ' has-error' : '' }}">
@@ -282,7 +295,7 @@
                         
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-3">
+                            <div class="col-md-6 offset-5">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>

@@ -171,7 +171,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <h2 class="text-white">Are you a Professional Dancer or Choregrapher? Join with Us.</h2>
+            <h2 class="text-white">Are you a Professional Costume Designer? Join with Us.</h2>
             <a href="register" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Register Here</a>
           </div>
           <div class="col-md-6">
