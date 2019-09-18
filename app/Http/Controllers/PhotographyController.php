@@ -64,14 +64,12 @@ class PhotographyController extends Controller
             'Album_Making' => 'required|string|max:20',
             'Wedding_Card' => 'required|string|max:20',
             
-
-            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
             'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
             'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
             'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
             'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
             'Wedding' => 'required|string|max:20',
-            'Get_togather' => 'required|string|max:20',
             'Birthday' => 'required|string|max:20',
             'Competition' => 'required|string|max:20',
             'Professional_Events' => 'required|string|max:20',
@@ -90,20 +88,18 @@ class PhotographyController extends Controller
         'Preshoot_Vedio.required'=> "Fill out this field",
         'Wedding_Vedio.required'=> "Fill out this field",
         'Album_Making.required'=> "Fill out this field",
-        'Wedding_Card.required'=> "Fill out this field",
+        'Wedding_Card.required'=>"Fill out this field",
         
-
-        'Main_pic.required'=> "Add a image here",
+        'main_pic.required'=> "Add a image here",
         'pic1.required'=> "Add a image here",
         'pic2.required'=> "Add a image here",
         'pic3.required' => "Add a image here",
         'pic4.required'=> "Add a image here",
         'Wedding.required'=> "Fill out this field",
-        'Get_togather.required'=> "Fill out this field",
-        'Birthday.required' => "Fill out this field",
-        'Competition.required'=> "Fill out this field",
+        'Birthday.required'=> "Fill out this field",
+        'Competition.required' => "Fill out this field",
         'Professional_Events.required'=> "Fill out this field",
-        'Sports.required' => "Fill out this field",
+        'Sports.required'=> "Fill out this field",
         'Trips.required' => "Fill out this field",
         
        
