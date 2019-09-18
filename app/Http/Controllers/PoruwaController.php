@@ -55,10 +55,11 @@ class PoruwaController extends Controller
             'Poruwa_rituals' => 'required|string|max:20',
             'Poruwa_items' => 'required|string|max:20',
             'match_making' => 'required|string|max:20',
-            'Astrological_support	' => 'required|string|max:20',
-            'jayamangala_gatha' => 'required|string|max:20',
             'Astrological_support' => 'required|string|max:20',
+            'jayamangala_gatha' => 'required|string|max:20',
+            
             'Wedding_dancers' => 'required|string|max:20',
+
             'Cost' => 'required|numeric|min:0',
             'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
             'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
@@ -73,12 +74,14 @@ class PoruwaController extends Controller
         'Contact_No.required'=> "Fill out this field",
         'Link.required'=> "Fill out this field",
         'Description.required'=> "Fill out this field",
+
         'Poruwa_rituals.required'=> "Fill out this field",
         'Poruwa_items.required'=> "Fill out this field",
         'match_making.required'=> "Fill out this field",
         'Astrological_support.required'=> "Fill out this field",
         'jayamangala_gatha.required'=> "Fill out this field",
         'Wedding_dancers.required'=> "Fill out this field",
+
         'Cost.required'=> "Fill out this field",
         'Main_pic.required'=> "Add a image here",
         'pic1.required'=> "Add a image here",

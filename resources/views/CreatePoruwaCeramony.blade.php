@@ -67,21 +67,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('Description') ? ' has-error' : '' }}">
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
+                        
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
                                 <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Address') is-invalid @enderror" title="Fill this area with the description about your group. You can include what are your specialities other details." ></textarea>
                             </div>
-                        </div>
+                        
                         </div>
 
                         <div class="form-group row{{ $errors->has('Cost') ? ' has-error' : '' }}">
                             <label for="Cost" class="col-md-4 col-form-label text-md-right">Normal Cost for Ashtaka & Rituals </label>
 
                             <div class="col-md-6">
-                                <input id="Cost" type="number" min="0" class="form-control @error('Cost') is-invalid @enderror" name="Cost" value="{{ old('Cost') }}"  autocomplete="Cost" title="Fill this field with your cost" >
+                                <input id="Cost" type="decimal" min="0" class="form-control @error('Cost') is-invalid @enderror" name="Cost" value="{{ old('Cost') }}"  autocomplete="Cost" title="Fill this field with your cost" >
 
                                 @if ($errors->has('Cost'))
                                     <span class="help-block">
@@ -160,7 +160,7 @@
                             <label for="Main_pic" class="col-md-4 col-form-label text-md-right">Main Picture</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="Main_pic" id="Main_Logo" value="{{ old('Main_pic') }}" class="form-control @error('Main_pic') is-invalid @enderror" title="Upload the Main picture/Profile picture/Main logo">
+                                <input type="file" name="Main_pic" id="Main_pic" value="{{ old('Main_pic') }}" class="form-control @error('Main_pic') is-invalid @enderror" title="Upload the Main picture/Profile picture/Main logo">
 
                                     @if ($errors->has('Main_pic'))
                                     <span class="help-block">

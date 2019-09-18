@@ -47,6 +47,58 @@ class salonController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Salon_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            
+            'Groom_Dressing' => 'required|string|max:20',
+            'Bride_Dressing' => 'required|string|max:20',
+            'Dress_Making' => 'required|string|max:20',
+            'Jewelry' => 'required|string|max:20',
+            'Makeup' => 'required|string|max:20',
+            'Bridesman' => 'required|string|max:20',
+            'Bridesmaid' => 'required|string|max:20',
+            'HairStyle' => 'required|string|max:20',
+            'Profile_Pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'wedding' => 'required|string|max:20',
+            'parties' => 'required|string|max:20',
+            'fashion_show' => 'required|string|max:20',
+
+        ],
+        ['Salon_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+
+        'Groom_Dressing.required'=> "Fill out this field",
+        'Bride_Dressingrequired'=> "Fill out this field",
+        'Dress_Making.required'=> "Fill out this field",
+        'Jewelry.required'=> "Fill out this field",
+        'Makeup.required'=> "Fill out this field",
+        'Bridesman.required'=>"Fill out this field",
+        'Bridesmaid.required'=> "Fill out this field",
+        'HairStyle.required'=> "Fill out this field",
+        'Profile_Pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'wedding.required'=> "Fill out this field",
+        'parties.required'=> "Fill out this field",
+        'fashion_show.required' => "Fill out this field",
+        
+       
+
+        ]
+    );
         $salon = new Salon;
         $salon->Salon_Name=$request->Salon_Name;
         $salon->Address=$request->Address;

@@ -67,14 +67,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('Description') ? ' has-error' : '' }}">
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
+                        
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
                                 <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{ old('Description') }}</textarea>
                             </div>
-                        </div>
+                        
                         </div>
 
                         
@@ -91,10 +91,10 @@
                         </div>   
                         </div>
 
-                        <div class="form-group row{{ $errors->has('	Flower') ? ' has-error' : '' }}">
+                        <div class="form-group row{{ $errors->has('Flower') ? ' has-error' : '' }}">
                         <label for="Flower" class="col-md-4"></label>   
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
-                            <input type="hidden" name="	Flower" value="Not Available">
+                            <input type="hidden" name="Flower" value="Not Available">
                             <label for="Flower">Flower</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Flower" value="Available" title="Mark if you have this service">
                         </div>   
@@ -103,7 +103,7 @@
                         <div class="form-group row{{ $errors->has('Table_Hall') ? ' has-error' : '' }}">
                         <label for="Table_Hall" class="col-md-4"></label>   
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
-                            <input type="hidden" name="clothing_orders" value="Not Available">
+                            <input type="hidden" name="Table_Hall" value="Not Available">
                             <label for="Table_Hall">Table Hall</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Table_Hall" value="Available" title="Mark if you have this service">
                         </div>   
@@ -139,7 +139,7 @@
                         <div class="form-group row{{ $errors->has('Wedding_Car') ? ' has-error' : '' }}">
                         <label for="Wedding_Car" class="col-md-4"></label>   
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
-                            <input type="hidden" name="clothing_orders" value="Not Available">
+                            <input type="hidden" name="Wedding_Car" value="Not Available">
                             <label for="Wedding_Car">Wedding Car</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_Car" value="Available" title="Mark if you have this service">
                         </div>   
@@ -186,7 +186,7 @@
                         <div class="form-group row{{ $errors->has('Outside_events') ? ' has-error' : '' }}">
                         <label for="Outside_events" class="col-md-4"></label>   
                         <div class="col-md-4 switch-wrap d-flex justify-content-between">
-                            <input type="hidden" name="	Outside_events" value="Not Available">
+                            <input type="hidden" name="Outside_events" value="Not Available">
                             <label for="Outside_events">Outside Events</label> 
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Outside_events" value="Available" title="Mark if you have this service">
                         </div>   
