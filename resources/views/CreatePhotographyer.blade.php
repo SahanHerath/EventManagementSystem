@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container style=" style="background-image: url('images/nature_small_5.jpg') background-attachment: fixed;">
+<div class="container style=" style="background-image: url('images/form_person_7.jpg'); background-attachment: fixed;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background: rgba(255,255,255,0.85);">
                 <center class="card-header">Add Photographer or Vediographer Datails</center>
 
                 <div class="card-body">
@@ -77,8 +77,7 @@
                         </div>
                         </div>
 
-                        <center><label><b>Select Your Available Services</b></label><center><br><br>
-
+                        <label><b>Select Your Available Services</b></label>
                         <div class="form-group row">
                             <label for="Wedding_Photography" class="col-md-4 col-form-label text-md-right">Wedding Photography</label>
                             
@@ -151,7 +150,7 @@
                             </div>
                         </div>
 
-                        <center><label><b>Events That You Can Cover</b></label><center><br><br>
+                        <label><b>Events That You Can Cover</b></label>
 
                         <div class="form-group row">
                             <label for="Wedding" class="col-md-4 col-form-label text-md-right">Wedding</label>
@@ -238,7 +237,7 @@
                         </div>
 
 
-                        <center><label><b>Main Logo of your company or Profile picture</b></label></center><br><br>
+                        <label><b>Main Logo of your company or Profile picture</b></label>
 
 
                         <div class="form-group row">
@@ -255,7 +254,7 @@
                             </div>
                         </div>
 
-                        <center><label><b>Pictures of the events that you recently covered</b></label></center><br><br>
+                        <label><b>Pictures of the events that you recently covered</b></label>
 
                         
                         <div class="form-group row">
@@ -319,7 +318,7 @@
                         
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-3">
+                            <div class="col-md-6 offset-5">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>
