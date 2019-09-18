@@ -15,7 +15,7 @@
                             <label for="Salon_Name" class="col-md-4 col-form-label text-md-right">Salon Name</label>
 
                             <div class="col-md-6">
-                                <input id="Salon_Name" type="text" class="form-control @error('Salon_Name') is-invalid @enderror" name="Salon_Name" value="{{ old('Salon_Name') }}"  autocomplete="Salon_Name" autofocus>
+                                <input id="Salon_Name" type="text" class="form-control @error('Salon_Name') is-invalid @enderror" name="Salon_Name" value="{{ old('Salon_Name') }}"  autocomplete="Salon_Name" autofocus title="Fill this field with Your name or group name">
 
                                 @if ($errors->has('Salon_Name'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                             <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @if ($errors->has('Address'))
                                     <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" autocomplete="Contact_No" >
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" autocomplete="Contact_No" title="Fill this field with Contact Number">
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@
                             <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}"  autocomplete="Link" >
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}"  autocomplete="Link" title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc.  " >
 
                                 @if ($errors->has('Link'))
                                     <span class="help-block">
@@ -72,7 +72,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Contact_No') is-invalid @enderror" ></textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Contact_No') is-invalid @enderror" title="Fill this area with the description about your group. You can include what are your specialities other details."></textarea>
                             </div>
                         </div>
                         </div>
@@ -184,7 +184,7 @@
                             <input type="hidden" name="parties	" value="Not Available">
                             <label for="parties	">Parties</label> 
                             <div class="primary-checkbox">
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="parties" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="parties" value="Available" title="Mark if you are covering this event">
                         </div></div> 
                         </div>
 
@@ -194,7 +194,7 @@
                             <input type="hidden" name="fashion_show" value="Not Available">
                             <label for="fashion_show">Fashion show </label> 
                             <div class="primary-checkbox">
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="fashion_show" value="Available" title="Mark if you have this service">
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="fashion_show" value="Available" title="Mark if you are covering this event">
                         </div></div> 
                         </div>
 
@@ -210,7 +210,7 @@
                             <label for="Profile_Pic" class="col-md-4 col-form-label text-md-right">Profile Picture</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="Profile_Pic" id="Profile_Pic" value="{{ old('Profile_Pic') }}" class="form-control @error('Profile_Pic') is-invalid @enderror" >
+                                <input type="file" name="Profile_Pic" id="Profile_Pic" value="{{ old('Profile_Pic') }}" class="form-control @error('Profile_Pic') is-invalid @enderror" title="Upload the Main picture/Profile picture/Main logo">
 
                                     @if ($errors->has('Profile_Pic'))
                                     <span class="help-block">
@@ -224,7 +224,7 @@
                             <label for="Pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" class="form-control @error('pic1') is-invalid @enderror" >
+                                <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" class="form-control @error('pic1') is-invalid @enderror" title="Upload the picture of recent events that you cover" >
 
                                     @if ($errors->has('pic1'))
                                     <span class="help-block">
@@ -238,7 +238,7 @@
                             <label for="pic2" class="col-md-4 col-form-label text-md-right">Picture 2</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" class="form-control @error('pic2') is-invalid @enderror" >
+                                <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" class="form-control @error('pic2') is-invalid @enderror"  title="Upload the picture of recent events that you cover">
 
                                     @if ($errors->has('pic2'))
                                     <span class="help-block">
@@ -252,7 +252,7 @@
                             <label for="pic3" class="col-md-4 col-form-label text-md-right">Picture 3</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" class="form-control @error('pic3') is-invalid @enderror" >
+                                <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" class="form-control @error('pic3') is-invalid @enderror" title="Upload the picture of recent events that you cover" >
 
                                     @if ($errors->has('pic3'))
                                     <span class="help-block">
@@ -266,7 +266,7 @@
                             <label for="pic4" class="col-md-4 col-form-label text-md-right">Picture 4</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" class="form-control @error('pic4') is-invalid @enderror" >
+                                <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" class="form-control @error('pic4') is-invalid @enderror" title="Upload the picture of recent events that you cover">
 
                                     @if ($errors->has('pic4'))
                                     <span class="help-block">
