@@ -82,10 +82,10 @@
 									<h5>Contact Person :-{{$data1->name }}</h5>
                                     <br>
 									<ul class="list basic_info">
-										<li><a href="#"><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
-										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
-										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
-										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
+										<li><a><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
+										<li><a><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
+										<li><a><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
+										<li><a href="{{$data1->Link}}"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
 									</ul>
 								</div>
 							</div>

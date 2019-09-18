@@ -89,19 +89,19 @@
                                     <br>
                                     
 									<ul class="list basic_info">
-										<li><a href="#"><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
-										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
-										<li><a href="#"><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
-										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
+										<li><a><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
+										<li><a><i class="lnr lnr-phone-handset"></i>{{$data1->ContactNo}}</a></li>
+										<li><a><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
+										<li><a href="{{$data1->Link}}"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
                                         
 									</ul>
                                     <br>
                                     <h5>More Details..</h5>
                                     <br>
                                     <ul class="list basic_info">    
-                                        <li><a href="#"><i class="lnr lnr-clock"></i>Normal Playing Hours :- {{$data1->Playing_Hrs }}</a></li>
-                                        <li><a href="#"><i class="lnr lnr-star"></i>Normal Payment :- Rs {{$data1->Payment }}</a></li>
-                                        <li><a href="#"><i class="lnr lnr-hourglass"></i>Cost Per Extra Hour :- Rs {{$data1->Extra_Cost }}</a></li>
+                                        <li><a><i class="lnr lnr-clock"></i>Normal Playing Hours :- {{$data1->Playing_Hrs }}</a></li>
+                                        <li><a><i class="lnr lnr-star"></i>Normal Payment :- Rs {{$data1->Payment }}</a></li>
+                                        <li><a><i class="lnr lnr-hourglass"></i>Cost Per Extra Hour :- Rs {{$data1->Extra_Cost }}</a></li>
                                     </h5>    
 								</div>
                             </div>

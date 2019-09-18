@@ -89,16 +89,16 @@
                                     <br>
                                     
 									<ul class="list basic_info">
-										<li><a href="#"><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
-										<li><a href="#"><i class="lnr lnr-phone-handset"></i>{{$data1->Contact_No}}</a></li>
-										<li><a href="#"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
+										<li><a><i class="lnr lnr-home"></i> {{$data1->Address}}</a></li>
+										<li><a><i class="lnr lnr-phone-handset"></i>{{$data1->Contact_No}}</a></li>
+										<li><a href="{{$data1->Link}}"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
                                         
 									</ul>
                                     <br>
                                     <h5>More Details..</h5>
                                     <br>
                                     <ul class="list basic_info">    
-                                        <li><a href="#"><i class="lnr lnr-star"></i>Normal Payment :- Rs {{$data1->Cost }}</a></li>
+                                        <li><a><i class="lnr lnr-star"></i>Normal Payment :- Rs {{$data1->Cost }}</a></li>
                                    </h5>    
 								</div>
                             </div>
