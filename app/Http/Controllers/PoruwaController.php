@@ -231,7 +231,14 @@ class PoruwaController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $data = DB::table('poruwa_ceramonies')
+                ->join('users','users.id','=','poruwa_ceramonies.user_id')
+                ->where('category','=','Poruwa_Ceramony')
+                ->where('users.id','=',$id1)
+                ->get();
+
+                return view('PoruwaCeramonyUserProfile',compact('data'));
     }
     
 }
