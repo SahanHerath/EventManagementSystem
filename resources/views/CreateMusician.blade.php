@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="background-image: url('images/nature_small_5.jpg')" >
+<div class="container" style="background-image: url('images/form_music.jpg'); background-attachment: fixed;" >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <center> class="card-header">Add DJ Or Band Details</center>
+                <center class="card-header">Add DJ Or Band Details</center>
 
                 <div class="card-body">
                     <form method="POST" action="/addmusician" enctype="multipart/form-data">
@@ -126,111 +126,97 @@
 
 
 
-                        <center><label><b>Select Your Available Services</b></label></center><br><br>
+                        <label><b>Select Your Available Services</b></label><br><br>
 
-                        <div class="row">
-                            
-                                    <div class="form-group row{{ $errors->has('Fire') ? ' has-error' : '' }} col-md-6">
-                                        <label for="Fire" class="col-md-4"></label>   
-                                        <div class="col-md-5 switch-wrap d-flex justify-content-between">
-                                            <input type="hidden" name="Fire" value="Not Available">
-                                            <label for="Fire">Fire Machine</label> 
-                                            <input type="checkbox" class="col-md-8 largerCheckbox" style="width:20px; height:20px;"  name="Fire" value="Available" title="Mark if you have this service">
-                                        </div>   
-                                    </div>
-                            
-                                    <div class="form-group row{{ $errors->has('Smoke') ? ' has-error' : '' }}">
-                                    <label for="Smoke"></label>   
-                                    <div class="col-md-8 switch-wrap d-flex justify-content-between">
-                                        <input type="hidden" name="Smoke" value="Not Available">
-                                        <label for="Smoke">Smoke Machine</label> 
-                                        <input type="checkbox" class="col-md-8 largerCheckbox" style="width:20px; height:20px;" name="Smoke" value="Available" title="Mark if you have this service">
-                                    </div>   
-                                    </div>
-
+                        <div class="form-group row{{ $errors->has('Fire') ? ' has-error' : '' }}">
+                        <label for="Fire" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Fire" value="Not Available">
+                            <label for="Fire">Fire Machine</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Fire" value="Available" title="Mark if you have this service">
+                        </div>   
                         </div>
 
-                        <div class="row">
-                        
-
-                            <div class="form-group row{{ $errors->has('Lights') ? ' has-error' : '' }} col-md-6">
-                                <label for="Lights" class="col-md-4"></label>   
-                                <div class="col-md-6 switch-wrap d-flex justify-content-between">
-                                    <input type="hidden" name="Lights" value="Not Available">
-                                    <label for="Lights">Lights</label> 
-                                    <input type="checkbox" class=" col-md-8 largerCheckbox" style="width:20px; height:20px;" name="Lights" value="Available" title="Mark if you have this service">
-                                </div>   
-                            </div>
-
-                        </div>
-                        
-                       
-
-                        <label><b>Events That You Can Cover</b></label><br><br>
-                        <div class="row">
-                       
-
-                        <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }} col-md-6">
-                            <label for="Wedding" class="col-md-4" ></label>   
-                            <div class="col-md-6  switch-wrap d-flex justify-content-between">
-                                <input type="hidden" name="Wedding" value="Not Available">
-                                <label for="Wedding">Wedding</label> 
-                                <input type="checkbox" class="col-md-8 largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" title="Mark if you are covering this event">
-                            </div>   
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('Birthday') ? ' has-error' : '' }}">
-                            <label for="Birthday" ></label>   
-                            <div class="col-md-8 switch-wrap d-flex justify-content-between">
-                                <input type="hidden" name="Birthday" value="Not Available">
-                                <label for="Birthday">Birthday</label> 
-                                <input type="checkbox" class="col-md-12 largerCheckbox" style="width:20px; height:20px;" name="Birthday" value="Available" title="Mark if you are covering this event">
-                            </div>   
-                        </div>
-
-                        </div>
-                        <div class="row">
-
-
-                        <div class="form-group row{{ $errors->has('Beach_Party') ? ' has-error' : '' }} col-md-6">
-                            <label for="Beach_Party" class="col-md-4" ></label>   
-                            <div class="col-md-5 switch-wrap d-flex justify-content-between">
-                                <input type="hidden" name="Beach_Party" value="Not Available">
-                                <label for="Beach_Party">Beach Party</label> 
-                                <input type="checkbox" class="col-md-20 largerCheckbox" style="width:20px; height:20px;" name="Beach_Party" value="Available" title="Mark if you are covering this event">
-                            </div>   
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('Get_Together') ? ' has-error' : '' }} ">
-                            <label for="Get_Together" ></label>   
-                            <div class="col-md-6 switch-wrap d-flex justify-content-between">
-                                <input type="hidden" name="Get_Together" value="Not Available">
-                                <label for="Get_Together">Get Together</label> 
-                                <input type="checkbox" class="col-md-12 largerCheckbox" style="width:20px; height:20px;" name="Get_Together" value="Available" title="Mark if you are covering this event">
-                            </div>   
-                        </div>
-
-
-                        </div>
-                        <div class="row">
-
-                        <div class="form-group row{{ $errors->has('Parties') ? ' has-error' : '' }} col-md-6">
-                        <label for="Parties" class="col-md-4"></label>   
-                        <div class="col-md-5 switch-wrap d-flex justify-content-between">
-                            <input type="hidden" name="Parties" value="Not Available">
-                            <label for="Parties">Parties</label> 
-                            <input type="checkbox" class="col-md-13 largerCheckbox" style="width:20px; height:20px;" name="Parties" value="Available" title="Mark if you are covering this event">
+                        <div class="form-group row{{ $errors->has('Lights') ? ' has-error' : '' }}">
+                        <label for="Lights" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Fire" value="Not Available">
+                            <label for="Lights"> Lights</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Lights" value="Available" title="Mark if you have this service">
                         </div>   
                         </div>
                         
+
+                            
+
+                        
+                        
+                       
+
+                        
+
+                        <div class="form-group row{{ $errors->has('Smoke') ? ' has-error' : '' }}">
+                        <label for="Smoke" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Smoke" value="Not Available">
+                            <label for="Smoke">Smoke Machine</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Smoke" value="Available" title="Mark if you have this service">
+                        </div>   
+                        </div>
+
+                       
+
+         
+
+
+                        <label><b>Events That You Can Cover</b></label><br><br>
+
+                       
+
+                        <div class="form-group row{{ $errors->has('Birthday') ? ' has-error' : '' }}">
+                        <label for="Birthday" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Birthday" value="Not Available">
+                            <label for="Birthday">Wedding</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday" value="Available" title="Mark if you are covering this event">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Beach_Party') ? ' has-error' : '' }}">
+                        <label for="Beach_Party" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Beach_Party" value="Not Available">
+                            <label for="Beach_Party">Beach Party</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Beach_Party" value="Available" title="Mark if you are covering this event">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Get_Together') ? ' has-error' : '' }}">
+                        <label for="Get_Together" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Get_Together" value="Not Available">
+                            <label for="Get_Together">Get Together</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Get_Together" value="Available" title="Mark if you are covering this event">
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Parties') ? ' has-error' : '' }}">
+                        <label for="Parties" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Parties" value="Not Available">
+                            <label for="Parties">Parties</label> 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Parties" value="Available" title="Mark if you are covering this event">
+                        </div>   
                         </div>
                         
 
+                        
 
-                        <center><label><b>Main Logo of your group or band or Profile picture</b></label></center><br><br>
+
+                        <label><b>Main Logo of your group or band or Profile picture</b></label><br><br>
 
                         <div class="form-group row{{ $errors->has('Main_Logo') ? ' has-error' : '' }}">
-                            <label for="Main_Logo" class="col-md-3 col-form-label text-md-right">Main Logo</label>
+                            <label for="Main_Logo" class="col-md-4 col-form-label text-md-right">Main Logo</label>
     
                             <div class="col-md-6">
                                 <input type="file" name="Main_Logo" id="Main_Logo" value="{{ old('Main_Logo') }}" class="form-control @error('Main_Logo') is-invalid @enderror" title="Upload the Main picture/Profile picture/Main logo">
@@ -243,10 +229,10 @@
                             </div>
                         </div>
 
-                        <center><label><b>Pictures of the events that you recently covered</b></label></center><br><br>
+                        <label><b>Pictures of the events that you recently covered</b></label><br><br>
 
                         <div class="form-group row{{ $errors->has('pic1') ? ' has-error' : '' }}">
-                            <label for="pic1" class="col-md-3 col-form-label text-md-right">Picture 1</label>
+                            <label for="pic1" class="col-md-4 col-form-label text-md-right">Picture 1</label>
     
                             <div class="col-md-6">
                                 <input type="file" name="pic1" id="pic1" value="{{ old('pic1') }}" class="form-control @error('pic1') is-invalid @enderror"  title="Upload the picture of recent events that you cover">
@@ -260,7 +246,7 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('pic2') ? ' has-error' : '' }}">
-                            <label for="pic2" class="col-md-3 col-form-label text-md-right">Picture 2</label>
+                            <label for="pic2" class="col-md-4 col-form-label text-md-right">Picture 2</label>
     
                             <div class="col-md-6">
                                 <input type="file" name="pic2" id="pic2" value="{{ old('pic2') }}" class="form-control @error('pic2') is-invalid @enderror"  title="Upload the picture of recent events that you cover">
@@ -275,7 +261,7 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('pic3') ? ' has-error' : '' }}">
-                            <label for="pic3" class="col-md-3 col-form-label text-md-right">Picture 3</label>
+                            <label for="pic3" class="col-md-4 col-form-label text-md-right">Picture 3</label>
     
                             <div class="col-md-6">
                                 <input type="file" name="pic3" id="pic3" value="{{ old('pic3') }}" class="form-control @error('pic3') is-invalid @enderror" title="Upload the picture of recent events that you cover">
@@ -290,7 +276,7 @@
 
                         
                         <div class="form-group row{{ $errors->has('pic4') ? ' has-error' : '' }}">
-                            <label for="pic4" class="col-md-3 col-form-label text-md-right">Picture 4</label>
+                            <label for="pic4" class="col-md-4 col-form-label text-md-right">Picture 4</label>
     
                             <div class="col-md-6">
                                 <input type="file" name="pic4" id="pic4" value="{{ old('pic4') }}" class="form-control @error('pic4') is-invalid @enderror"  title="Upload the picture of recent events that you cover">
@@ -309,7 +295,7 @@
                         
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-4 offset-5 ">
+                            <div class="col-md-6 offset-5">
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button>
