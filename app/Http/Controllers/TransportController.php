@@ -46,6 +46,58 @@ class TransportController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Transport_Service' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            
+            'driver' => 'required|string|max:20',
+            'decoration' => 'required|string|max:20',
+            'rent_hours' => 'required|string|max:20',
+            'rent_km' => 'required|string|max:20',
+            
+            'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'pic1' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic2' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic3' => 'required|image|dimensions:min_width=300,min_height=100',
+            'pic4' => 'required|image|dimensions:min_width=300,min_height=100',
+            'luxury' => 'required|string|max:20',
+            'classic' => 'required|string|max:20',
+            'vintage' => 'required|string|max:20',
+            'horse_cart' => 'required|string|max:20',
+            'air' => 'required|string|max:20',
+            'travelling_coach' => 'required|string|max:20',
+
+        ],
+        ['Transport_Service.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+
+        'driver.required'=> "Fill out this field",
+        'decoration.required'=> "Fill out this field",
+        'rent_hours.required'=> "Fill out this field",
+        'rent_km.required'=> "Fill out this field",
+       
+        'Main_pic.required'=> "Add a image here",
+        'pic1.required'=> "Add a image here",
+        'pic2.required'=> "Add a image here",
+        'pic3.required' => "Add a image here",
+        'pic4.required'=> "Add a image here",
+        'luxury.required'=> "Fill out this field",
+        'classic.required'=> "Fill out this field",
+        'vintage.required' => "Fill out this field",
+        'horse_cart.required'=> "Fill out this field",
+        'air.required'=> "Fill out this field",
+        'travelling_coach.required' => "Fill out this field",
+        
+       
+
+        ]
+    );
         $transport = new Transporter;
         $transport->Transport_Service=$request->Transport_Service;
         $transport->Address=$request->Address;
