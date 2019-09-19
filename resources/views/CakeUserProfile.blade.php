@@ -37,11 +37,9 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="/Decorator">Decorations</a></li> 
-								<li class="nav-item"><a class="nav-link" href="/Music">DJs/Music</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/Photography">Photography</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Cake designer</a></li> 
+                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>  
 							</ul>
 						</div> 
 					</div>
