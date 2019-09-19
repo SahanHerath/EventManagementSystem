@@ -75,7 +75,8 @@
 							</div>
                             
 							<div class="media-body">
-                            
+                            <div class="row">
+                            <div class="column">
 								<div class="personal_text">
 									<h6>Hello Everybody, we are</h6>
 									<h3>{{$data1->Transport_Service	}}</h3>
@@ -89,6 +90,11 @@
                                         <img src="uploads/Gold.jpg" class="offset-2" width="200" hight="300" alt="">
 									</ul>
 								</div>
+							</div>
+							<div class="column" >
+                            <img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
+                            </div>
+                            </div>    
 							</div>
                             
 						</div>
