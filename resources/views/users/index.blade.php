@@ -176,17 +176,17 @@
         @else
         <div class="panel-body panel-body-with-table">
             <div class="table-responsive">
-
+           
                 <table class="table table-striped ">
                     <thead>
                         <tr>
-                        <th>#</th>
+                        <th></th>
                             <th>Name</th>
                             <th>Email</th>
                             
                             <th>Category</th>
                             <th>City</th>
-                            <th>Admin</th>
+                            
                             
 
                             <th></th>
@@ -194,14 +194,15 @@
                     </thead>
                     <tbody>
                     @foreach($usersObjects as $users)
+                    @if($users->admin=='0')
                         <tr>
-                        <td>{{ $users->id }}</td>
+                        <td></td>
                             <td>{{ $users->name }}</td>
                             <td>{{ $users->email }}</td>
                             
                             <td>{{ $users->category }}</td>
                             <td>{{ $users->city }}</td>
-                            <td>{{ $users->admin }}</td>
+                            
                             
                             
 
@@ -213,9 +214,7 @@
 
                                     <div class="btn-group btn-group-xs pull-right" role="group">
                                         
-                                        <a href="{{ route('users.users.edit', $users->id ) }}" class="btn btn-primary" title="Edit Users">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit</span>
-                                        </a>
+                                        
 
                                         <button type="submit" class="btn btn-danger" title="Delete Users" onclick="return confirm(&quot;Delete Users?&quot;)">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
@@ -226,9 +225,11 @@
                                 
                             </td>
                         </tr>
+                        @endif
                     @endforeach
                     </tbody>
                 </table>
+               
 
             </div>
         </div>
