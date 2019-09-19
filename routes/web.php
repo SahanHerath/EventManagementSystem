@@ -210,3 +210,36 @@ Route::get('/UserProfile', function () {
 });
 
 Route::get('/Profile', 'HomeController@profilecategory')  ;
+
+
+Route::group(
+[
+    'prefix' => 'users',
+], function () {
+
+    Route::get('/', 'UsersController@index')
+         ->name('users.users.index');
+
+    Route::get('/create','UsersController@create')
+         ->name('users.users.create');
+
+    Route::get('/show/{users}','UsersController@show')
+         ->name('users.users.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{users}/edit','UsersController@edit')
+         ->name('users.users.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'UsersController@store')
+         ->name('users.users.store');
+               
+    Route::put('users/{users}', 'UsersController@update')
+         ->name('users.users.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/users/{users}','UsersController@destroy')
+         ->name('users.users.destroy')
+         ->where('id', '[0-9]+');
+
+});
