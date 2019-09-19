@@ -12,12 +12,10 @@
             <div class="btn-group btn-group-sm pull-right" role="group">
 
                 <a href="{{ route('users.users.index') }}" class="btn btn-primary" title="Show All Users">
-                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true">Back</span>
                 </a>
 
-                <a href="{{ route('users.users.create') }}" class="btn btn-success" title="Create New Users">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                </a>
+                
 
             </div>
         </div>

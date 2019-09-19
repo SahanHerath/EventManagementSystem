@@ -66,7 +66,7 @@
             </a>
           </li>
           <li>
-            <a href="/serviceproviders">
+            <a href="/users">
               <i class="nc-icon nc-badge"></i>
               <p>Service Providers</p>
             </a>
