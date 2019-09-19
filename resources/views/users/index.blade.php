@@ -188,7 +188,6 @@
                             <th>City</th>
                             <th>Admin</th>
                             
-                            
 
                             <th></th>
                         </tr>
