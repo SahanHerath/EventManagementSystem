@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/css1/style.css">
 	<link rel="stylesheet" href="css/css1/responsive.css">
     
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
   
@@ -340,23 +341,39 @@
     
 
     
-    <footer class="site-footer">
-      <div class="container">
-        
-
-        
-        <div class="row pt-3 mt-3 text-center">
-          <div class="col-md-12">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Evora</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
+    <!--================Footer Area =================-->
+    <footer class="footer_area p_120" style="background-color:black;">
+    <font color="grey">
+        	<div class="container">
+        		<div class="row footer_inner">
+        			<div class="col-lg-7 col-sm-4">
+        				<aside class="f_widget ab_widget">
+        					<div class="f_title">
+                  <h3><font color="white">About Us</font></h3>
+        					</div>
+        					<p>Are you looking for service providers to success your dream event??? Here you have thousands of service providers to success your events.</p>
+        					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is created by Team  <a href="http://localhost:8000" target="_blank">Evora</a></p>
+        				</aside>
+        			</div>
+        			
+        			<div class="col-md-3 col-lg-5">
+        				<aside class="f_widget social_widget">
+        					<div class="f_title">
+        						<h3><font color="white">Follow Us</font></h3>
+        					</div>
+        					<p>Let us be social</p>
+        					<div class="row">
+        						<a href="#"><i class="fa fa-facebook-official col-md-2"  style="font-size:24px;color:white"></i></a>
+        						<a href="#"><i class="fa fa-twitter col-md-2" style="font-size:24px;color:white"></i></a>
+        						<a href="#"><i class="fa fa-instagram col-md-2" style="font-size:24px;color:white"></i></a>
+        					</div>
+        				</aside>
+        			</div>
+        		</div>
+        	</div>
+          </font>
+        </footer>
+        <!--================End Footer Area =================-->
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
