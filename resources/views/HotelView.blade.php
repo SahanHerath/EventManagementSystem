@@ -288,15 +288,24 @@
 	
 
 	
-	<footer>
-		<p class="copyright">
-		Copyright 2019 All rights reserved | Team Evora <i class="ion-heart" aria-hidden="true"></i>
+	<footer class="site-footer" style="background-color:black;">
+			<div class="container">
+				
 
-		</p>
-
-
-	</footer>
-	
+				
+				<div class="row pt-3 mt-3 text-center">
+				<div class="col-md-12">
+					<p>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					<br><br>
+					</p>
+				</div>
+				
+				</div>
+			</div>
+    	</footer>
 	
 	<!-- SCIPTS -->
 	
