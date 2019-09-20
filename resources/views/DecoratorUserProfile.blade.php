@@ -133,13 +133,15 @@
                             <br>
                             <br>
                             <br>
-                            <center><a class="genric-btn primary" href="#">Edit Events</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditForm">Edit Events</a></center>
                             </tr>
-                            
+                            <!-- Modal -->
+
                         </table>
         				</div>
         			</div>
                     
+                   
                    
 					<div class="offset-3 col-lg-5 col-md-6" style="border: 15px solid green;">
         				<div class="feature_item bg- text-black">
@@ -223,6 +225,104 @@
 				</div>
 			
         </section>
+        <!--==============model for edit events=================-->
+        <div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Edit Events</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="{{URL('/EditDecoratorEvents'.$deco->deco_eve_id)}}" enctype="multipart/form-data">
+                   {{ csrf_field() }}
+                   
+                        <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }}">
+                        <label for="Wedding" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding" value="Not Available">
+                            <label for="Wedding">Wedding</label>
+                            @if($deco->Wedding=='Available') 
+                            <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Wedding" value="Available" >
+                            @endif
+                            @if($deco->Wedding=='Not Available')
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Birthday') ? ' has-error' : '' }}">
+                        <label for="Birthday" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Birthday" value="Not Available">
+                            <label for="Birthday">Birthday</label> 
+                            @if($deco->Birthday=='Available') 
+                            <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Birthday" value="Available" >
+                            @endif
+                            @if($deco->Birthday=='Not Available')
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Get_Together') ? ' has-error' : '' }}">
+                        <label for="Get_Together" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Get_Together" value="Not Available">
+                            <label for="Get_Together">Get Together</label> 
+                            @if($deco->Get_Together=='Available') 
+                            <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Get_Together" value="Available" >
+                            @endif
+                            @if($deco->Get_Together=='Not Available')
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Get_Together" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Parties') ? ' has-error' : '' }}">
+                        <label for="Parties" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Parties" value="Not Available">
+                            <label for="Parties">Parties</label> 
+                            @if($deco->Parties=='Available') 
+                            <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Parties" value="Available" >
+                            @endif
+                            @if($deco->Parties=='Not Available')
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Parties" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Outside_events') ? ' has-error' : '' }}">
+                        <label for="Outside_events" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Outside_events" value="Not Available">
+                            <label for="Outside_events">Outside Events</label> 
+                            @if($deco->Outside_events=='Available')
+                            <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Outside_events" value="Available" >
+                            @endif
+                            @if($deco->Outside_events=='Not Available')
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Outside_events" value="Available">
+                            @endif
+                        </div>   
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-5">
+                                <button type="submit" class="btn btn-primary">
+                                    Update Events
+                                </button>
+                            </div>
+                        </div>
+  
+            </form>
+            
+            </div>
+        </div>
+        </div>
+         <!--==============model for edit events=================-->
+
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

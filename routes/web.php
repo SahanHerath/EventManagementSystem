@@ -243,3 +243,4 @@ Route::group(
          ->where('id', '[0-9]+');
 
 });
+Route::post('/EditDecoratorEvents{id}', 'decorationController@eventUpdate')  ;

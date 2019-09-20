@@ -315,6 +315,19 @@ class decorationController extends Controller
         return view('DecoratorUserProfile', compact('decos'));
     }
 
+    public function eventUpdate(Request $request, $id)
+    {
+        //
+        $deco = Decorator_event::find($id); 
+        $deco ->Wedding=$request->Wedding;
+        $deco ->Birthday=$request->Birthday;
+        $deco ->Get_Together =$request->Get_Together;
+        $deco ->Parties =$request->Parties;
+        $deco ->Outside_events =$request->Outside_events;
+        $deco ->update();
+
+        return redirect('/Profile');
+    }
     
 
     
