@@ -49,6 +49,10 @@
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
+        
+        
+        
+        
         @foreach($decos as $deco)
         <section class="home_banner_area">
         <div class="container box_1620">
@@ -70,6 +74,7 @@
                                     <li><b>Link :- </b>{{$deco->Link}}</li>
                                     
                                     <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
+ 
                                     <a class="genric-btn info" href="#">Change Password</a>
                                     <br>
                                 </ul>
@@ -214,7 +219,7 @@
 						</div>
                         <br>
                             
-							<a class="offset-5 genric-btn primary" href="#">Change Recent Event Photos</a>
+							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
                             <a class="offset-10 genric-btn danger" href="#">Deactivate Account</a>
@@ -567,21 +572,20 @@
                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                       </div>
                   </div>
-
+             
                   
 
       </form>
-                @if (count($errors) > 0)
-                <script>
-                    $( document ).ready(function() {
-                        $('#modalEditInfo').modal('show');
-                    });
-                </script>
-                @endif
+                
       </div>
   </div>
   </div>
+
    <!--==============model for edit info=================-->
+     
+  
+
+   
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
@@ -633,7 +637,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </footer>
         <!--================End Footer Area =================-->
         
-        
+
         
         
         

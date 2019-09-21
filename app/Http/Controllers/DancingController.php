@@ -304,4 +304,17 @@ class DancingController extends Controller
 
                 return view('DancerUserProfile',compact('data'));
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        //
+        $dance = Dancer_event::find($id); 
+        $dance ->Wedding=$request->Wedding;
+        $dance ->Party=$request->Party;
+        $dance ->Musical_event =$request->Musical_event;
+        $dance ->Corporate_event =$request->Corporate_event;
+        $dance ->update();
+
+        return redirect('/Profile');
+    }
 }

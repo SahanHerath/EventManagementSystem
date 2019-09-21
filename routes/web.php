@@ -248,3 +248,5 @@ Route::post('/EditDecoratorFeatures{id}', 'decorationController@featureUpdate') 
 
 
 Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@InfoUpdate')  ;
+
+Route::post('/EditDancerEvents{id}', 'DancingController@eventUpdate')  ;

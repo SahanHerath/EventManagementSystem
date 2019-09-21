@@ -356,7 +356,7 @@ class decorationController extends Controller
             'Link' =>'required|string|max:255',
             'Description' =>'required|string|max:500',
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255',
             
            
         ],
@@ -383,6 +383,7 @@ class decorationController extends Controller
         $deco1 ->email=$request->email;
         $deco1 ->update();
 
+        
         return redirect('/Profile');
         
     }
