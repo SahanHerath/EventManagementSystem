@@ -236,9 +236,26 @@ class PoruwaController extends Controller
                 ->join('users','users.id','=','poruwa_ceramonies.user_id')
                 ->where('category','=','Poruwa_Ceramony')
                 ->where('users.id','=',$id1)
+                ->select('users.id as userid','users.name as CName','email','poruwa_ceramonies.id as poruwaid','poruwa_ceramonies.Name as PName', 'Address', 'Contact_No','Link','Description','Poruwa_rituals','Poruwa_items','match_making','Astrological_support','jayamangala_gatha','Wedding_dancers','Cost','Main_pic','pic1','pic2','pic3','pic4')
                 ->get();
 
                 return view('PoruwaCeramonyUserProfile',compact('data'));
+    }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        $poruwa = Poruwa_ceramony::find($id); 
+        $poruwa ->Poruwa_rituals=$request->Poruwa_rituals;
+        $poruwa ->Poruwa_items=$request->Poruwa_items;
+        $poruwa ->match_making =$request->match_making;
+        $poruwa ->Astrological_support =$request->Astrological_support;
+        $poruwa ->jayamangala_gatha =$request->jayamangala_gatha;
+        $poruwa ->Wedding_dancers =$request->Wedding_dancers;
+        
+        $poruwa ->update();
+
+        return redirect('/Profile');
     }
     
 }

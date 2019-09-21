@@ -61,9 +61,9 @@
                             </div>
                              
                             <div class="personal_text">
-                            <h3>{{$data1->Name}}</h3>
+                            <h3>{{$data1->PName}}</h3>
                                 <ul class="list basic_info">
-                                    <li><b>Contact Person :- </b>{{$data1->name}}</li>
+                                    <li><b>Contact Person :- </b>{{$data1->CName}}</li>
                                     <li><b>ADDRESS :- </b>{{$data1->Address}}</li>
                                     <li><b>Contact_No :- </b>{{$data1->Contact_No}}</li>
                                     <li><b>email :- </b>{{$data1->email}}</li>
@@ -119,7 +119,7 @@
                             
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeature">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -170,6 +170,119 @@
 				</div>
 			
         </section>
+
+        <!--==============model for edit events=================-->
+    <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditPoruwaFeatures'.$data1->poruwaid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Poruwa_rituals') ? ' has-error' : '' }}">
+                        <label for="Poruwa_rituals" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Poruwa_rituals" value="Not Available">
+                            <label for="Poruwa_rituals">Poruwa Rituals</label>
+                            @if($data1->Poruwa_rituals=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Poruwa_rituals" value="Available">
+                            @endif
+                            @if($data1->Poruwa_rituals=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Poruwa_rituals" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('	Poruwa_items') ? ' has-error' : '' }}">
+                        <label for="Poruwa_items" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Poruwa_items" value="Not Available">
+                            <label for="Poruwa_items">Poruwa Items</label> 
+                            @if($data1->Poruwa_items=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Poruwa_items" value="Available">
+                            @endif
+                            @if($data1->Poruwa_items=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Poruwa_items" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('match_making') ? ' has-error' : '' }}">
+                        <label for="match_making" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="match_making" value="Not Available">
+                            <label for="match_making">Match Making</label> 
+                            @if($data1->match_making=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="match_making" value="Available">
+                            @endif
+                            @if($data1->match_making=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="match_making" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Astrological_support') ? ' has-error' : '' }}">
+                        <label for="Astrological_support" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Astrological_support" value="Not Available">
+                            <label for="Astrological_support">Astrological Support</label> 
+                            @if($data1->Astrological_support=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Astrological_support" value="Available">
+                            @endif
+                            @if($data1->Astrological_support=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Astrological_support" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('	jayamangala_gatha') ? ' has-error' : '' }}">
+                        <label for="jayamangala_gatha" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="jayamangala_gatha" value="Not Available">
+                            <label for="jayamangala_gatha">Jayamangala Gatha</label> 
+                            @if($data1->jayamangala_gatha=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="jayamangala_gatha" value="Available">
+                            @endif
+                            @if($data1->jayamangala_gatha=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="jayamangala_gatha" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Wedding_dancers') ? ' has-error' : '' }}">
+                        <label for="Wedding_dancers" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding_dancers" value="Not Available">
+                            <label for="Wedding_dancers">Wedding Dancers</label> 
+                            @if($data1->Wedding_dancers=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Wedding_dancers" value="Available">
+                            @endif
+                            @if($data1->Wedding_dancers=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_dancers" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit events=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

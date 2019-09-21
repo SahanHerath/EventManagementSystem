@@ -340,7 +340,7 @@
                             <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Western" value="Available">
                             @endif
                             @if($data1->Western=='Not Available') 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name=Western" value="Available" >
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Western" value="Available" >
                             @endif
                         </div>   
                         </div>
