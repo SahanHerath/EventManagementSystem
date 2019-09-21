@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Decorator;
 use App\Decorator_event;
 use Auth;
@@ -345,6 +346,45 @@ class decorationController extends Controller
         return redirect('/Profile');
     }
     
+    public function InfoUpdate(Request $request, $userid, $decoid)
+    {
+        //
+        $request->validate(
+            ['Team_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            
+           
+        ],
+        ['Team_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        
+         ]
+    );
+        
+        
+        $deco = Decorator::find($decoid); 
+        $deco ->Team_Name=$request->Team_Name;
+        $deco ->Address=$request->Address;
+        $deco ->Description =$request->Description;
+        $deco ->Contact_No =$request->Contact_No;
+        $deco ->Link =$request->Link;
+        $deco ->update();
 
+        $deco1 = User::find($userid); 
+        $deco1 ->name=$request->name;
+        $deco1 ->email=$request->email;
+        $deco1 ->update();
+
+        return redirect('/Profile');
+        
+    }
     
 }

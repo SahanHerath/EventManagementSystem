@@ -69,7 +69,7 @@
                                     <li><b>email :- </b>{{$deco->email}}</li>
                                     <li><b>Link :- </b>{{$deco->Link}}</li>
                                     
-                                    <a class="genric-btn primary" href="#">Edit info</a>
+                                    <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
                                     <a class="genric-btn info" href="#">Change Password</a>
                                     <br>
                                 </ul>
@@ -451,7 +451,137 @@
   </div>
   </div>
    <!--==============model for edit features=================-->
+    <!--==============model for  edit info=================-->
+    <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Events</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditDecoratorDetails'.'/'.$deco->userid.'/'.$deco->deco_id)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+                        
+             <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$deco->name}}">
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$deco->email }}" >
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row{{ $errors->has('Team_Name') ? ' has-error' : '' }}">
+                            <label for="Team_Name" class="col-md-4 col-form-label text-md-right">Team/Organization Name</label>
+
+                            <div class="col-md-6">
+                                <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror" name="Team_Name" value="{{ $deco->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Decorator name or Group name">
+
+                                @if ($errors->has('Team_Name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Team_Name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
+                            <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
+
+                            <div class="col-md-6">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
+
+                                @if ($errors->has('Address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
+                            <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
+
+                            <div class="col-md-6">
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field with Contact Number" >
+
+                                @if ($errors->has('Contact_No'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Contact_No') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
+                            <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
+
+                            <div class="col-md-6">
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $deco->Link  }}"  autocomplete="Link" title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+
+                                @if ($errors->has('Link'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Link') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
+                        
+                            <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            
+                            <div class="col-md-6">
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$deco->Description }}</textarea>
+                            </div>
+                        
+                        </div>
+
+                        <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                     
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+                  
+
+      </form>
+                @if (count($errors) > 0)
+                <script>
+                    $( document ).ready(function() {
+                        $('#modalEditInfo').modal('show');
+                    });
+                </script>
+                @endif
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit info=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

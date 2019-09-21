@@ -245,3 +245,6 @@ Route::group(
 });
 Route::post('/EditDecoratorEvents{id}', 'decorationController@eventUpdate')  ;
 Route::post('/EditDecoratorFeatures{id}', 'decorationController@featureUpdate')  ;
+
+
+Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@InfoUpdate')  ;
