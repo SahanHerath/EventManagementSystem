@@ -174,7 +174,7 @@
                             Wedding Car Decoaration 
                             @endif
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditFeatures">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -231,7 +231,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Edit Events</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Edit Your Events</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -311,8 +311,9 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-5">
                                 <button type="submit" class="btn btn-primary">
-                                    Update Events
+                                    Save Changes
                                 </button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                         </div>
   
@@ -322,6 +323,134 @@
         </div>
         </div>
          <!--==============model for edit events=================-->
+
+         <!--==============model for edit features=================-->
+        <div class="modal fade" id="modalEditFeatures" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditDecoratorFeatures'.$deco->deco_id)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Poruwa') ? ' has-error' : '' }}">
+                        <label for="Poruwa" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Poruwa" value="Not Available">
+                            <label for="Poruwa">Poruwa</label>
+                            @if($deco->Poruwa=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Poruwa" value="Available">
+                            @endif
+                            @if($deco->Poruwa=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Poruwa" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Flower') ? ' has-error' : '' }}">
+                        <label for="Flower" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Flower" value="Not Available">
+                            <label for="Flower">Flower</label> 
+                            @if($deco->Flower=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Flower" value="Available">
+                            @endif
+                            @if($deco->Flower=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Flower" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Table_Hall') ? ' has-error' : '' }}">
+                        <label for="Table_Hall" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Table_Hall" value="Not Available">
+                            <label for="Table_Hall">Table Hall</label> 
+                            @if($deco->Table_Hall=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Table_Hall" value="Available">
+                            @endif
+                            @if($deco->Table_Hall=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Table_Hall" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Setty_Backs') ? ' has-error' : '' }}">
+                        <label for="Setty_Backs" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Setty_Backs" value="Not Available">
+                            <label for="Setty_Backs">Setty Backs</label> 
+                            @if($deco->Setty_Backs=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Setty_Backs" value="Available">
+                            @endif
+                            @if($deco->Setty_Backs=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Setty_Backs" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Lighting') ? ' has-error' : '' }}">
+                        <label for="Lighting" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Lighting" value="Not Available">
+                            <label for="Lighting">Lighting</label> 
+                            @if($deco->Lighting=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Lighting" value="Available">
+                            @endif
+                            @if($deco->Lighting=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Lighting" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Traditional') ? ' has-error' : '' }}">
+                        <label for="Traditional" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Traditional" value="Not Available">
+                            <label for="Traditional">Traditional</label> 
+                            @if($deco->Traditional=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Traditional" value="Available">
+                            @endif
+                            @if($deco->Traditional=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Traditional" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Wedding_Car') ? ' has-error' : '' }}">
+                        <label for="Wedding_Car" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding_Car" value="Not Available">
+                            <label for="Wedding_Car">Wedding Car</label> 
+                            @if($deco->Wedding_Car=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Wedding_Car" value="Available">
+                            @endif
+                            @if($deco->Wedding_Car=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_Car" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                     
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit features=================-->
 
        @endforeach
         <footer class="footer_area p_120">

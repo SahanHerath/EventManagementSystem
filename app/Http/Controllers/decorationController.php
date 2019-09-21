@@ -328,6 +328,22 @@ class decorationController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        $deco = Decorator::find($id); 
+        $deco ->Poruwa=$request->Poruwa;
+        $deco ->Flower=$request->Flower;
+        $deco ->Table_Hall =$request->Table_Hall;
+        $deco ->Setty_Backs =$request->Setty_Backs;
+        $deco ->Lighting =$request->Lighting;
+        $deco ->Traditional =$request->Traditional;
+        $deco ->Wedding_Car =$request->Wedding_Car;
+        $deco ->update();
+
+        return redirect('/Profile');
+    }
     
 
     
