@@ -168,7 +168,7 @@
                             @endif
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href=""  data-toggle="modal" data-target="#modalEditFeature">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -249,7 +249,7 @@
                   <label for="Party" class="col-md-4"></label>   
                   <div class="col-md-4 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Party" value="Not Available">
-                      <label for="Party">Birthday</label> 
+                      <label for="Party">Party</label> 
                       @if($data1->Party=='Available') 
                       <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Party" value="Available" >
                       @endif
@@ -263,7 +263,7 @@
                   <label for="Musical_event" class="col-md-4"></label>   
                   <div class="col-md-4 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Musical_event" value="Not Available">
-                      <label for="Musical_event">Get Together</label> 
+                      <label for="Musical_event">Musical Event</label> 
                       @if($data1->Musical_event=='Available') 
                       <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Musical_event" value="Available" >
                       @endif
@@ -277,7 +277,7 @@
                   <label for="Corporate_event" class="col-md-4"></label>   
                   <div class="col-md-4 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Corporate_event" value="Not Available">
-                      <label for="Corporate_event">Parties</label> 
+                      <label for="Corporate_event">Corporate Event</label> 
                       @if($data1->Corporate_event=='Available') 
                       <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Corporate_event" value="Available" >
                       @endif
@@ -287,6 +287,119 @@
                   </div>   
                   </div>
 
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit events=================-->
+
+    <!--==============model for edit events=================-->
+    <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditDancerFeatures'.$data1->dancerid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Traditional') ? ' has-error' : '' }}">
+                        <label for="Traditional" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Traditional" value="Not Available">
+                            <label for="Traditional">Traditional Dancing</label>
+                            @if($data1->Traditional=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Traditional" value="Available">
+                            @endif
+                            @if($data1->Traditional=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Traditional" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Western') ? ' has-error' : '' }}">
+                        <label for="Western" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Western" value="Not Available">
+                            <label for="Western">Western Dancing</label> 
+                            @if($data1->Western=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Western" value="Available">
+                            @endif
+                            @if($data1->Western=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name=Western" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Indian') ? ' has-error' : '' }}">
+                        <label for="Indian" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Indian" value="Not Available">
+                            <label for="Indian">Indian Dancing</label> 
+                            @if($data1->Indian=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Indian" value="Available">
+                            @endif
+                            @if($data1->Indian=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Indian" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Kandyan') ? ' has-error' : '' }}">
+                        <label for="Kandyan" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Kandyan" value="Not Available">
+                            <label for="Kandyan">Kandyan Dancing</label> 
+                            @if($data1->Kandyan=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Kandyan" value="Available">
+                            @endif
+                            @if($data1->Kandyan=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Kandyan" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Casual') ? ' has-error' : '' }}">
+                        <label for="Casual" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Casual" value="Not Available">
+                            <label for="Casual">Casual Dancing</label> 
+                            @if($data1->Casual=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Casual" value="Available">
+                            @endif
+                            @if($data1->Casual=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Casual" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Other') ? ' has-error' : '' }}">
+                        <label for="Other" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Other" value="Not Available">
+                            <label for="Other">Other Dancing Styles</label> 
+                            @if($data1->Other=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Other" value="Available">
+                            @endif
+                            @if($data1->Other=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
                   
                   <div class="form-group row mb-0">
                       <div class="col-md-6 offset-5">

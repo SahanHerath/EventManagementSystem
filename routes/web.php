@@ -245,8 +245,7 @@ Route::group(
 });
 Route::post('/EditDecoratorEvents{id}', 'decorationController@eventUpdate')  ;
 Route::post('/EditDecoratorFeatures{id}', 'decorationController@featureUpdate')  ;
-
-
 Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@InfoUpdate')  ;
 
 Route::post('/EditDancerEvents{id}', 'DancingController@eventUpdate')  ;
+Route::post('/EditDancerFeatures{id}', 'DancingController@featureUpdate')  ;

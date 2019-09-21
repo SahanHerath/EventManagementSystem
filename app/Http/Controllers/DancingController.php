@@ -317,4 +317,19 @@ class DancingController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        $dance = Dancer::find($id); 
+        $dance ->Traditional=$request->Traditional;
+        $dance ->Western=$request->Western;
+        $dance ->Indian =$request->Indian;
+        $dance ->Kandyan =$request->Kandyan;
+        $dance ->Casual =$request->Casual;
+        $dance ->Other =$request->Other;
+        $dance ->update();
+
+        return redirect('/Profile');
+    }
 }
