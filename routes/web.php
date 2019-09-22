@@ -253,3 +253,4 @@ Route::post('/EditDancerDetails/{userid}/{dancerid}', 'DancingController@InfoUpd
 
 
 Route::post('/EditPoruwaFeatures{id}', 'PoruwaController@featureUpdate')  ;
+Route::post('/EditPoruwaDetails/{userid}/{poruwaid}', 'PoruwaController@InfoUpdate')  ;

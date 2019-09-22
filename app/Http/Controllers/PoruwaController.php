@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Poruwa_ceramony;
 use DB;
 use Auth;
@@ -256,6 +257,52 @@ class PoruwaController extends Controller
         $poruwa ->update();
 
         return redirect('/Profile');
+    }
+
+    public function InfoUpdate(Request $request, $userid, $poruwaid)
+    {
+        //
+        $request->validate(
+            ['Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'Cost' => 'required|numeric|min:0',
+            
+           
+        ],
+        ['Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        'Cost.required'=> "Fill out this field",
+         ]
+    );
+        
+        
+        $poruwa = Poruwa_ceramony::find($poruwaid); 
+        $poruwa ->Name=$request->Name;
+        $poruwa ->Address=$request->Address;
+        $poruwa ->Description =$request->Description;
+        $poruwa ->Contact_No =$request->Contact_No;
+        $poruwa ->Link =$request->Link;
+        $poruwa ->Cost =$request->Cost;
+        $poruwa ->update();
+
+        $poruwa1 = User::find($userid); 
+        $poruwa1 ->name=$request->name;
+        $poruwa1 ->email=$request->email;
+        $poruwa1 ->update();
+
+        
+        return redirect('/Profile');
+        
     }
     
 }
