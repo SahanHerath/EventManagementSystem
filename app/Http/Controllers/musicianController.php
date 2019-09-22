@@ -369,4 +369,24 @@ class musicianController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        
+
+        $data=Musician_event::where('id',$id)
+            
+        ->update([
+                'Wedding'=>$request->Wedding,
+                'Birthday'=>$request->Birthday,
+                'Get_Together'=>$request->Get_Together,
+                'Beach_Party'=>$request->Beach_Party,
+                'Parties'=>$request->Parties,
+               
+
+                
+        ]);
+
+        return redirect('/Profile');
+    }
 }

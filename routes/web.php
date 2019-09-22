@@ -260,3 +260,4 @@ Route::post('/EditPhotographyEvents{id}', 'PhotographyController@eventUpdate')  
 Route::post('/EditPhotographyFeatures{id}', 'PhotographyController@featureUpdate')  ;
 
 Route::post('/EditMusicDetails/{userid}/{Musicid}', 'musicianController@InfoUpdate')  ;
+Route::post('/EditMusicEvents{id}', 'musicianController@eventUpdate')  ;
