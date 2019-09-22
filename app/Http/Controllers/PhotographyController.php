@@ -383,4 +383,20 @@ class PhotographyController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        //
+        $photo = Photography_event::find($id); 
+        $photo ->Wedding=$request->Wedding;
+        $photo ->Birthday=$request->Birthday;
+        $photo ->Get_togather =$request->Get_togather;
+        $photo ->Competition =$request->Competition;
+        $photo ->Professional_Events =$request->Professional_Events;
+        $photo ->Sports =$request->Sports;
+        $photo ->Trips =$request->Trips;
+        $photo ->update();
+
+        return redirect('/Profile');
+    }
 }

@@ -256,3 +256,4 @@ Route::post('/EditPoruwaFeatures{id}', 'PoruwaController@featureUpdate')  ;
 Route::post('/EditPoruwaDetails/{userid}/{poruwaid}', 'PoruwaController@InfoUpdate')  ;
 
 Route::post('/EditPhotographyDetails/{userid}/{photographyid}', 'PhotographyController@InfoUpdate')  ;
+Route::post('/EditPhotographyEvents{id}', 'PhotographyController@eventUpdate')  ;
