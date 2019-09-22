@@ -399,4 +399,19 @@ class PhotographyController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        $photo = Photography::find($id); 
+        $photo ->Wedding_Photography=$request->Wedding_Photography;
+        $photo ->Preshoot_Vedio=$request->Preshoot_Vedio;
+        $photo ->Wedding_Vedio =$request->Wedding_Vedio;
+        $photo ->Album_Making =$request->Album_Making;
+        $photo ->Wedding_Card =$request->Wedding_Card;
+        $photo ->Drone =$request->Drone;
+        $photo ->update();
+
+        return redirect('/Profile');
+    }
 }

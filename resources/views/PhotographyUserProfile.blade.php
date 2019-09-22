@@ -182,7 +182,7 @@
                             @endif
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeatures">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -493,6 +493,120 @@
   </div>
   </div>
    <!--==============model for edit events=================-->
+    <!--==============model for edit features=================-->
+    <div class="modal fade" id="modalEditFeatures" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditPhotographyFeatures'.$data1->photographyid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Wedding_Photography') ? ' has-error' : '' }}">
+                        <label for="Wedding_Photography" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding_Photography" value="Not Available">
+                            <label for="Wedding_Photography">Wedding Photography</label>
+                            @if($data1->Wedding_Photography=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Wedding_Photography" value="Available">
+                            @endif
+                            @if($data1->Wedding_Photography=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_Photography" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Preshoot_Vedio') ? ' has-error' : '' }}">
+                        <label for="Preshoot_Vedio" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Preshoot_Vedio" value="Not Available">
+                            <label for="Preshoot_Vedio">Preshoot Vedio</label> 
+                            @if($data1->Preshoot_Vedio=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Preshoot_Vedio" value="Available">
+                            @endif
+                            @if($data1->Preshoot_Vedio=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Preshoot_Vedio" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Wedding_Vedio') ? ' has-error' : '' }}">
+                        <label for="Wedding_Vedio" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding_Vedio" value="Not Available">
+                            <label for="Wedding_Vedio">Wedding Vedio</label> 
+                            @if($data1->Wedding_Vedio=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Wedding_Vedio" value="Available">
+                            @endif
+                            @if($data1->Wedding_Vedio=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_Vedio" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Album_Making') ? ' has-error' : '' }}">
+                        <label for="Album_Making" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Album_Making" value="Not Available">
+                            <label for="Album_Making">Album Making</label> 
+                            @if($data1->Album_Making=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Album_Making" value="Available">
+                            @endif
+                            @if($data1->Album_Making=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Album_Making" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Wedding_Card') ? ' has-error' : '' }}">
+                        <label for="Wedding_Card" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding_Card" value="Not Available">
+                            <label for="Wedding_Card">Wedding Card</label> 
+                            @if($data1->Wedding_Card=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Wedding_Card" value="Available">
+                            @endif
+                            @if($data1->Wedding_Card=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_Card" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Drone') ? ' has-error' : '' }}">
+                        <label for="Drone" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Drone" value="Not Available">
+                            <label for="Drone">Drone Coverage</label> 
+                            @if($data1->Drone=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Drone" value="Available">
+                            @endif
+                            @if($data1->Drone=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Drone" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                     
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit features=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
