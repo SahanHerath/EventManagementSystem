@@ -249,6 +249,7 @@ Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@Inf
 
 Route::post('/EditDancerEvents{id}', 'DancingController@eventUpdate')  ;
 Route::post('/EditDancerFeatures{id}', 'DancingController@featureUpdate')  ;
+Route::post('/EditDancerDetails/{userid}/{dancerid}', 'DancingController@InfoUpdate')  ;
 
 
 Route::post('/EditPoruwaFeatures{id}', 'PoruwaController@featureUpdate')  ;

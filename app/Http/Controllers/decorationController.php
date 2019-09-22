@@ -365,6 +365,8 @@ class decorationController extends Controller
         'Contact_No.required'=> "Fill out this field",
         'Link.required'=> "Fill out this field",
         'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
         
          ]
     );

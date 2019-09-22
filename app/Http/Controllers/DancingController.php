@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Dancer;
 use App\Dancer_event;
 use DB;
@@ -331,5 +332,55 @@ class DancingController extends Controller
         $dance ->update();
 
         return redirect('/Profile');
+    }
+
+    public function InfoUpdate(Request $request, $userid, $dancerid)
+    {
+        //
+        $request->validate(
+            ['Team_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'choreography' => 'required|string|max:20',
+            'Gender' => 'required|string|max:20',
+            
+           
+        ],
+        ['Team_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'choreography.required'=> "Fill out this field",
+        'Gender.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        
+         ]
+    );
+        
+        
+        $dancer = Dancer::find($dancerid); 
+        $dancer ->Team_Name=$request->Team_Name;
+        $dancer ->Address=$request->Address;
+        $dancer ->Description =$request->Description;
+        $dancer ->Contact_No =$request->Contact_No;
+        $dancer ->Link =$request->Link;
+        $dancer ->choreography =$request->choreography;
+        $dancer ->Gender =$request->Gender;
+        $dancer ->update();
+
+        $dancer = User::find($userid); 
+        $dancer ->name=$request->name;
+        $dancer ->email=$request->email;
+        $dancer ->update();
+
+        
+        return redirect('/Profile');
+        
     }
 }

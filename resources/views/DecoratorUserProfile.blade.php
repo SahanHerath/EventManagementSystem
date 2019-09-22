@@ -504,11 +504,11 @@
                             <div class="col-md-6">
                                 <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror" name="Team_Name" value="{{ $deco->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Decorator name or Group name">
 
-                                @if ($errors->has('Team_Name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Team_Name') }}</strong>
+                                @error('Team_Name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
@@ -518,11 +518,11 @@
                             <div class="col-md-6">
                                 <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address"   value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
 
-                                @if ($errors->has('Address'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Address') }}</strong>
+                                @error('Address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
@@ -532,11 +532,11 @@
                             <div class="col-md-6">
                                 <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No"  required title="Fill this field .Contact Number format:+xxxxxx.." >
 
-                                @if ($errors->has('Contact_No'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Contact_No') }}</strong>
+                                @error('Contact_No')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
@@ -546,11 +546,11 @@
                             <div class="col-md-6">
                                 <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $deco->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
-                                @if ($errors->has('Link'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Link') }}</strong>
+                                @error('Link')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
@@ -560,11 +560,11 @@
                             
                             <div class="col-md-6">
                                 <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$deco->Description }}</textarea>
-                                @if ($errors->has('Description'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Description') }}</strong>
+                                @error('Description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         
                         </div>
