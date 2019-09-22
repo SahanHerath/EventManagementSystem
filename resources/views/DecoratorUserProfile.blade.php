@@ -475,7 +475,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$deco->name}}">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$deco->name}}" title="fill this field with organization name or person name">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -489,7 +489,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$deco->email }}" >
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$deco->email }}" title="fill this field">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -530,7 +530,7 @@
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field .Contact Number format:+xxxxxx.." >
+                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field" >
 
                                 @error('Contact_No')
                                     <span class="invalid-feedback" role="alert">

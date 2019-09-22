@@ -252,7 +252,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}" title="fill this field with organization name or person name  ">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -266,7 +266,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" >
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" title="fill this field">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -279,7 +279,7 @@
                             <label for="Studio_Name" class="col-md-4 col-form-label text-md-right">Studio Name</label>
 
                             <div class="col-md-6">
-                                <input id="Studio_Name" type="text" class="form-control @error('Studio_Name') is-invalid @enderror" name="Studio_Name" value="{{ $data1->Studio_Name }}"autocomplete="Studio_Name" autofocus title="Fill this field with Decorator name or Group name">
+                                <input id="Studio_Name" type="text" class="form-control @error('Studio_Name') is-invalid @enderror" name="Studio_Name" value="{{ $data1->Studio_Name }}"autocomplete="Studio_Name" autofocus title="Fill this field with Studio name or Group name">
 
                                 @error('Studio_Name')
                                     <span class="invalid-feedback" role="alert">
@@ -307,7 +307,7 @@
                             <label for="ContactNo" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="ContactNo" type="text"  class="form-control @error('ContactNo') is-invalid @enderror" name="ContactNo" value="{{ $data1->ContactNo  }}" autocomplete="ContactNo"  title="Fill this field .Contact Number format:+xxxxxx.." >
+                                <input id="ContactNo" type="text"  class="form-control @error('ContactNo') is-invalid @enderror" name="ContactNo" value="{{ $data1->ContactNo  }}" autocomplete="ContactNo"  title="Fill this field." >
 
                                 @error('ContactNo')
                                     <span class="invalid-feedback" role="alert">
@@ -336,7 +336,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your service. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
                                 @error('Description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

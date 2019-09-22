@@ -235,7 +235,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}" title="fill this field with Organization name or Person name">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -249,7 +249,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" >
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" title="fill this field">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -262,7 +262,7 @@
                             <label for="Dj_Name" class="col-md-4 col-form-label text-md-right">DJ/Band Name</label>
 
                             <div class="col-md-6">
-                                <input id="Dj_Name" type="text" class="form-control @error('Dj_Name') is-invalid @enderror" name="Dj_Name" value="{{ $data1->Dj_Name }}"autocomplete="Dj_Name" autofocus title="Fill this field with Decorator name or Group name">
+                                <input id="Dj_Name" type="text" class="form-control @error('Dj_Name') is-invalid @enderror" name="Dj_Name" value="{{ $data1->Dj_Name }}"autocomplete="Dj_Name" autofocus title="Fill this field with DJ name or Band name">
 
                                 @error('Dj_Name')
                                     <span class="invalid-feedback" role="alert">
@@ -290,7 +290,7 @@
                             <label for="ContactNo" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="ContactNo" type="text"  class="form-control @error('ContactNo') is-invalid @enderror" name="ContactNo" value="{{ $data1->ContactNo  }}" autocomplete="ContactNo"  title="Fill this field .Contact Number format:+xxxxxx.." >
+                                <input id="ContactNo" type="text"  class="form-control @error('ContactNo') is-invalid @enderror" name="ContactNo" value="{{ $data1->ContactNo  }}" autocomplete="ContactNo"  title="Fill this field" >
 
                                 @error('ContactNo')
                                     <span class="invalid-feedback" role="alert">
@@ -318,7 +318,7 @@
                             <label for="Playing_Hrs" class="col-md-4 col-form-label text-md-right">Normal Playing Hours</label>
 
                             <div class="col-md-6">
-                                <input id="Playing_Hrs" type="number" min="0" class="form-control @error('Playing_Hrs') is-invalid @enderror" name="Playing_Hrs" value="{{ $data1->Playing_Hrs  }}"   autocomplete="Playing_Hrs"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                                <input id="Playing_Hrs" type="number" min="0" class="form-control @error('Playing_Hrs') is-invalid @enderror" name="Playing_Hrs" value="{{ $data1->Playing_Hrs  }}"   autocomplete="Playing_Hrs"  title="Fill this field with normal number of hours that you play in one event">
 
                                 @error('Playing_Hrs')
                                     <span class="invalid-feedback" role="alert">
@@ -332,7 +332,7 @@
                             <label for="Payment" class="col-md-4 col-form-label text-md-right">Cost For Normal Hours</label>
 
                             <div class="col-md-6">
-                                <input id="Payment" type="decimal" class="form-control @error('Payment') is-invalid @enderror" name="Payment" value="{{ $data1->Payment  }}"   autocomplete="Payment"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                                <input id="Payment" type="decimal" class="form-control @error('Payment') is-invalid @enderror" name="Payment" value="{{ $data1->Payment  }}"   autocomplete="Payment"  title="Fill this field  with  cost for normal hours">
 
                                 @error('Payment')
                                     <span class="invalid-feedback" role="alert">
@@ -346,7 +346,7 @@
                             <label for="Extra_Cost" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Extra_Cost" type="decimal" class="form-control @error('Extra_Cost') is-invalid @enderror" name="Extra_Cost" value="{{ $data1->Extra_Cost  }}"   autocomplete="Extra_Cost"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                                <input id="Extra_Cost" type="decimal" class="form-control @error('Extra_Cost') is-invalid @enderror" name="Extra_Cost" value="{{ $data1->Extra_Cost  }}"   autocomplete="Extra_Cost"  title="Fill this field with cost that you charge for and extra hour ">
 
                                 @error('Extra_Cost')
                                     <span class="invalid-feedback" role="alert">
@@ -361,7 +361,7 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your service. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
                                 @error('Description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
