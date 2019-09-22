@@ -389,4 +389,20 @@ class musicianController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Musician::where('id',$id)
+            
+        ->update([
+                'Fire'=>$request->Fire,
+                'Smoke'=>$request->Smoke,
+                'Lights'=>$request->Lights,
+            ]);
+
+        return redirect('/Profile');
+    }
 }

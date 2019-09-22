@@ -166,7 +166,7 @@
                            
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeatures">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -488,6 +488,80 @@
   </div>
   </div>
    <!--==============model for edit events=================-->
+    <!--==============model for edit features=================-->
+    <div class="modal fade" id="modalEditFeatures" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditMusicFeatures'.$data1->musicianid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Fire') ? ' has-error' : '' }}">
+                        <label for="Fire" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Fire" value="Not Available">
+                            <label for="Fire">Fire Machine</label>
+                            @if($data1->Fire=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Fire" value="Available">
+                            @endif
+                            @if($data1->Fire=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Fire" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Smoke') ? ' has-error' : '' }}">
+                        <label for="Smoke" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Smoke" value="Not Available">
+                            <label for="Smoke">Smoke Machine</label> 
+                            @if($data1->Smoke=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Smoke" value="Available">
+                            @endif
+                            @if($data1->Smoke=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Smoke" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Lights') ? ' has-error' : '' }}">
+                        <label for="Lights" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Lights" value="Not Available">
+                            <label for="Lights">DJ Lights</label> 
+                            @if($data1->Lights=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Lights" value="Available">
+                            @endif
+                            @if($data1->Lights=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Lights" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        
+
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                     
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit features=================-->
 
        @endforeach
         <footer class="footer_area p_120">
