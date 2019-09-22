@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 use App\Photography;
 use App\Photography_event;
 use Image;
@@ -337,5 +338,49 @@ class PhotographyController extends Controller
                 ->get();
 
                 return view('PhotographyUserProfile',compact('data'));
+    }
+
+    public function InfoUpdate(Request $request, $userid, $photographyid)
+    {
+        //
+        $request->validate(
+            ['Studio_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'ContactNo' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            
+           
+        ],
+        ['Studio_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'ContactNo.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        
+         ]
+    );
+        
+        
+        $photo = Photography::find($photographyid); 
+        $photo ->Studio_Name=$request->Studio_Name;
+        $photo ->Address=$request->Address;
+        $photo ->Description =$request->Description;
+        $photo ->ContactNo =$request->ContactNo;
+        $photo ->Link =$request->Link;
+        $photo ->update();
+
+        $photo1 = User::find($userid); 
+        $photo1 ->name=$request->name;
+        $photo1 ->email=$request->email;
+        $photo1 ->update();
+
+        
+        return redirect('/Profile');
+        
     }
 }
