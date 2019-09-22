@@ -59,7 +59,8 @@
            	<div class="container">
            		<div class="banner_inner d-flex align-items-center">
 					<div class="offset-1 banner_content">
-						<div class="media">
+                
+                        <div class="media">
                             <div class="d-flex">
                                 <img src="uploads/decoration/{{$deco->Main_Pic}}" width="400" hight="600" alt="">
                             </div>
@@ -457,7 +458,7 @@
   </div>
    <!--==============model for edit features=================-->
     <!--==============model for  edit info=================-->
-    <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
   
   <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -474,7 +475,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$deco->name}}">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$deco->name}}">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -515,7 +516,7 @@
                             <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address"   value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @if ($errors->has('Address'))
                                     <span class="help-block">
@@ -529,7 +530,7 @@
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field with Contact Number" >
+                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No"  required title="Fill this field .Contact Number format:+xxxxxx.." >
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -543,7 +544,7 @@
                             <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $deco->Link  }}"  autocomplete="Link" title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $deco->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
                                 @if ($errors->has('Link'))
                                     <span class="help-block">
@@ -559,6 +560,11 @@
                             
                             <div class="col-md-6">
                                 <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$deco->Description }}</textarea>
+                                @if ($errors->has('Description'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Description') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         
                         </div>
@@ -582,7 +588,7 @@
   </div>
 
    <!--==============model for edit info=================-->
-     
+   
   
 
    
@@ -644,6 +650,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     
         <script src="js/js/jquery-3.3.1.min.js"></script>
         <script src="js/js/popper.js"></script>
         <script src="js/js/bootstrap.min.js"></script>
@@ -659,5 +666,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
+        @if (count($errors) > 0)
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalEditInfo").modal('show');
+            });
+        </script>
+        @endif
     </body>
 </html>
