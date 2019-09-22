@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Musician;
 use Auth;
 use App\Musician_event;
@@ -305,5 +306,67 @@ class musicianController extends Controller
                 ->get();
 
                 return view('MusicUserProfile',compact('data'));
+    }
+
+    public function InfoUpdate(Request $request, $userid, $musicid)
+    {
+        //
+        $request->validate(
+            ['Dj_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'ContactNo' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'Playing_Hrs' =>'required|numeric|min:0',
+            'Payment' => 'required|numeric|min:0',
+            'Extra_Cost' => 'required|numeric|min:0',
+            
+           
+        ],
+        ['Dj_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'ContactNo.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        'Playing_Hrs.required'=> "Fill out this field",
+        'Payment.required'=> "Fill out this field",
+        'Extra_Cost.required'=> "Fill out this field",
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Musician::where('id',$musicid)
+            
+        ->update([
+                'Dj_Name'=>$request->Dj_Name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'ContactNo'=>$request->ContactNo,
+                'Link'=>$request->Link,
+                'Playing_Hrs'=>$request->Playing_Hrs,
+                'Payment'=>$request->Payment,
+                'Extra_Cost'=>$request->Extra_Cost,
+
+                
+        ]);
+        
+
+        
+
+        $music1  = User::find($userid); 
+        $music1  ->name=$request->name;
+        $music1 ->email=$request->email;
+        $music1  ->update();
+
+        
+        return redirect('/Profile');
+        
     }
 }
