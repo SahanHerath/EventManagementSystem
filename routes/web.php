@@ -273,6 +273,7 @@ Route::post('/EditTransportFeatures{id}', 'TransportController@featureUpdate')  
 
 Route::post('/EditCateringDetails/{userid}/{cateringid}', 'CateringController@InfoUpdate')  ;
 Route::post('/EditCateringEvents{id}', 'CateringController@eventUpdate')  ;
+Route::post('/EditCateringFeatures{id}', 'CateringController@featureUpdate')  ;
 
 
 
