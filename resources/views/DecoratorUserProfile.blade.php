@@ -244,6 +244,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <br>
             <form method="POST" action="{{URL('/EditDecoratorEvents'.$deco->deco_eve_id)}}" enctype="multipart/form-data">
                    {{ csrf_field() }}
                    
@@ -316,12 +317,13 @@
                             @endif
                         </div>   
                         </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-5">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
                                     Save Changes
                                 </button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
                             </div>
                         </div>
   
@@ -335,14 +337,15 @@
          <!--==============model for edit features=================-->
         <div class="modal fade" id="modalEditFeatures" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   
-  <div class="modal-dialog" role="document">
-      <div class="modal-content">
-      <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <br>
       <form method="POST" action="{{URL('/EditDecoratorFeatures'.$deco->deco_id)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              <div class="form-group row{{ $errors->has('Poruwa') ? ' has-error' : '' }}">
@@ -443,15 +446,15 @@
                         </div>   
                         </div>
                   
-                  <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                     
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
 
       </form>
       
@@ -480,7 +483,7 @@
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror col-md-10 offset-1" name="name"  value="{{$deco->name}}" title="fill this field with organization name or person name">
 
                             @error('name')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -494,7 +497,7 @@
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror col-md-10 offset-1" name="email" value="{{$deco->email }}" title="fill this field">
 
                             @error('email')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -507,7 +510,7 @@
                             <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror col-md-10 offset-1" name="Team_Name" value="{{ $deco->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Decorator name or Group name">
 
                             @error('Team_Name')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -521,7 +524,7 @@
                             <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror col-md-10 offset-1" name="Address"   value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
 
                             @error('Address')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -535,7 +538,7 @@
                             <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror col-md-10 offset-1" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field" >
 
                             @error('Contact_No')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -549,7 +552,7 @@
                             <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror col-md-10 offset-1" name="Link" value="{{ $deco->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
                             @error('Link')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -563,7 +566,7 @@
                         
                             <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror col-md-10 offset-1" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$deco->Description }}</textarea>
                             @error('Description')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
