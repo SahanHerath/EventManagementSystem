@@ -224,94 +224,94 @@
       <form method="POST" action="{{URL('/EditTransportDetails'.'/'.$data1->userid.'/'.$data1->transportid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
                         
-             <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                        <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 col-form-label offset-1">Name :-</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}" title="fill this field with organization name or Person Name">
+                            
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror col-md-10 offset-1" name="name"  value="{{$data1->name}}" title="fill this field with organization name or Person Name">
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
 
                         <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
+                            <label for="email" class="col-md-4 col-form-label offset-1">Email Address :-</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" title="fill this field">
+                            
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror col-md-10 offset-1" name="email" value="{{$data1->email }}" title="fill this field">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
                         <div class="form-group row{{ $errors->has('Transport_Service') ? ' has-error' : '' }}">
-                            <label for="Transport_Service" class="col-md-4 col-form-label text-md-right">Transport Service</label>
+                            <label for="Transport_Service" class="col-md-4 col-form-label offset-1">Transport Service :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Transport_Service" type="text" class="form-control @error('Transport_Service') is-invalid @enderror" name="Transport_Service" value="{{ $data1->Transport_Service }}"autocomplete="Transport_Service" autofocus title="Fill this field with Transport Service Name">
+                           
+                                <input id="Transport_Service" type="text" class="form-control @error('Transport_Service') is-invalid @enderror col-md-10 offset-1" name="Transport_Service" value="{{ $data1->Transport_Service }}"autocomplete="Transport_Service" autofocus title="Fill this field with Transport Service Name">
 
                                 @error('Transport_Service')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         </div>
 
                         <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
-                            <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
+                            <label for="Address" class="col-md-4 col-form-label offset-1">Address :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address"   value="{{ $data1->Address  }}"  autocomplete="Address" title="Fill this field with Address">
+                          
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror col-md-10 offset-1" name="Address"   value="{{ $data1->Address  }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @error('Address')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         </div>
 
                         <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
-                            <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
+                            <label for="Contact_No" class="col-md-4 col-form-label offset-1">Contact Number :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $data1->Contact_No  }}" autocomplete="Contact_No"  title="Fill this field." >
+                            
+                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror col-md-10 offset-1" name="Contact_No" value="{{ $data1->Contact_No  }}" autocomplete="Contact_No"  title="Fill this field." >
 
                                 @error('Contact_No')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
 
                         <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
-                            <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
+                            <label for="Link" class="col-md-4 col-form-label offset-1">Link :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $data1->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                            
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror col-md-10 offset-1" name="Link" value="{{ $data1->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
                                 @error('Link')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
 
                         <div class="form-group row{{ $errors->has('driver') ? ' has-error' : '' }}">
-                            <label for="driver" class="col-md-4 col-form-label text-md-right">Driver For Vehicle</label>
+                            <label for="driver" class="col-md-6 col-form-label offset-1">Driver For Vehicle :-</label>
                             
-                            <div class="col-md-6">
-                                <select id="driver" class="form-control" name="driver" value="{{ old('driver') }}" class="form-control @error('driver') is-invalid @enderror" title="Select the availability">
+                            
+                                <select id="driver" name="driver" value="{{ old('driver') }}" class="form-control @error('driver') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
                                     @if($data1->driver=='Available')
                                     <option value="Available" selected>Available</option>
                                     <option value="Not Available">Not Available</option>
@@ -323,18 +323,17 @@
                                     
                                 </select>
                                 @error('driver')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
                         </div>
 
                         <div class="form-group row{{ $errors->has('decoration') ? ' has-error' : '' }}">
-                            <label for="decoration" class="col-md-4 col-form-label text-md-right">Decoration For Vehicle</label>
+                            <label for="decoration" class="col-md-6 col-form-label offset-1">Decoration For Vehicle :-</label>
                             
-                            <div class="col-md-6">
-                                <select id="decoration" class="form-control" name="decoration" value="{{ old('decoration') }}" class="form-control @error('decoration') is-invalid @enderror" title="Select the availability">
+                            
+                                <select id="decoration" name="decoration" value="{{ old('decoration') }}" class="form-control @error('decoration') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
                                     @if($data1->decoration=='Available')
                                     <option value="Available" selected>Available</option>
                                     <option value="Not Available">Not Available</option>
@@ -346,68 +345,68 @@
                                     
                                 </select>
                                 @error('decoration')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         </div>
 
                         <div class="form-group row{{ $errors->has('rent_hours') ? ' has-error' : '' }}">
-                            <label for="rent_hours" class="col-md-4 col-form-label text-md-right">Maximum Rent(Time/Hours)</label>
+                            <label for="rent_hours" class="col-md-6 col-form-label offset-1">Maximum Rent(Time/Hours) :-</label>
 
-                            <div class="col-md-6">
-                                <input id="rent_hours" type="number" min="0" class="form-control @error('rent_hours') is-invalid @enderror" name="rent_hours" value="{{ $data1->rent_hours }}"   autocomplete="rent_hours"  title="Fill this field  with maximum rent hours for a vehicle ">
+                            
+                                <input id="rent_hours" type="number" min="0" class="form-control @error('rent_hours') is-invalid @enderror col-md-10 offset-1" name="rent_hours" value="{{ $data1->rent_hours }}"   autocomplete="rent_hours"  title="Fill this field  with maximum rent hours for a vehicle ">
 
                                 @error('rent_hours')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         </div>
 
                         <div class="form-group row{{ $errors->has('rent_km') ? ' has-error' : '' }}">
-                            <label for="rent_km" class="col-md-4 col-form-label text-md-right">Maximum Rent(Distance/km)</label>
+                            <label for="rent_km" class="col-md-6 col-form-label offset-1">Maximum Rent(Distance/km) :-</label>
 
-                            <div class="col-md-6">
-                                <input id="rent_km" type="decimal"  class="form-control @error('rent_km') is-invalid @enderror" name="rent_km" value="{{ $data1->rent_km }}"   autocomplete="rent_km"  title="Fill this field with maximum rent destance for a vehicle( except air travel)">
+                            
+                                <input id="rent_km" type="decimal"  class="form-control @error('rent_km') is-invalid @enderror col-md-10 offset-1" name="rent_km" value="{{ $data1->rent_km }}"   autocomplete="rent_km"  title="Fill this field with maximum rent destance for a vehicle( except air travel)">
 
                                 @error('rent_km')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
 
                         
 
                         <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
                         
-                            <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            <label for="Description" class="col-md-4 col-form-label offset-1">Description :-</label>
                             
-                            <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your service. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
+                            
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror col-md-10 offset-1" title="Fill this area with the description about your service. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
                                 @error('Description')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         
                         </div>
 
-                        <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                     
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
-             
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                
                   
 
       </form>
@@ -428,6 +427,8 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
+      <br>
+      
       <form method="POST" action="{{URL('/EditTransportFeatures'.$data1->categoryid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              <div class="form-group row{{ $errors->has('luxury') ? ' has-error' : '' }}">
@@ -515,14 +516,15 @@
                         </div>
 
                        
-                  <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
 
       </form>
       
