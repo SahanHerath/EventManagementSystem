@@ -169,7 +169,7 @@
                             
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeature">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -428,6 +428,146 @@
   </div>
   </div>
    <!--==============model for edit events=================-->
+   <!--==============model for edit features=================-->
+   <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditSalonFeatures'.$data1->salonid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Groom_Dressing') ? ' has-error' : '' }}">
+                        <label for="Groom_Dressing" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Groom_Dressing" value="Not Available">
+                            <label for="Groom_Dressing">Groom Dressing</label>
+                            @if($data1->Groom_Dressing=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Groom_Dressing" value="Available">
+                            @endif
+                            @if($data1->Groom_Dressing=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Groom_Dressing" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Bride_Dressing') ? ' has-error' : '' }}">
+                        <label for="Bride_Dressing" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Bride_Dressing" value="Not Available">
+                            <label for="Bride_Dressing">Bride Dressing</label> 
+                            @if($data1->Bride_Dressing=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Bride_Dressing" value="Available">
+                            @endif
+                            @if($data1->Bride_Dressing=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Bride_Dressing" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Dress_Making') ? ' has-error' : '' }}">
+                        <label for="Dress_Making" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Dress_Making" value="Not Available">
+                            <label for="Dress_Making">Dress Making</label> 
+                            @if($data1->Dress_Making=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Dress_Making" value="Available">
+                            @endif
+                            @if($data1->Dress_Making=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Dress_Making" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Jewelry') ? ' has-error' : '' }}">
+                        <label for="Jewelry" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Jewelry" value="Not Available">
+                            <label for="Jewelry">Jewelry</label> 
+                            @if($data1->Jewelry=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Jewelry" value="Available">
+                            @endif
+                            @if($data1->Jewelry=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Jewelry" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Makeup') ? ' has-error' : '' }}">
+                        <label for="Makeup" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Makeup" value="Not Available">
+                            <label for="Makeup">Makeup & Facial</label> 
+                            @if($data1->Makeup=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Makeup" value="Available">
+                            @endif
+                            @if($data1->Makeup=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Makeup" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Bridesman') ? ' has-error' : '' }}">
+                        <label for="Bridesman" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Bridesman" value="Not Available">
+                            <label for="Bridesman">Bridesman Designing</label> 
+                            @if($data1->Bridesman=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Bridesman" value="Available">
+                            @endif
+                            @if($data1->Bridesman=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Bridesman" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Bridesmaid') ? ' has-error' : '' }}">
+                        <label for="Bridesmaid" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Bridesmaid" value="Not Available">
+                            <label for="Bridesmaid">Bridesmaid Designing</label> 
+                            @if($data1->Bridesmaid=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Bridesmaid" value="Available">
+                            @endif
+                            @if($data1->Bridesmaid=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Bridesmaid" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('HairStyle') ? ' has-error' : '' }}">
+                        <label for="HairStyle" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="HairStyle" value="Not Available">
+                            <label for="HairStyle">HairStyle</label> 
+                            @if($data1->HairStyle=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="HairStyle" value="Available">
+                            @endif
+                            @if($data1->HairStyle=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="HairStyle" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit features=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
@@ -501,12 +641,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
-        @if (count($errors) > 0)
+        @if ($errors->has('name')||$errors->has('email')||$errors->has('Salon_Name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
             });
         </script>
         @endif
+        @if ($errors->has('wedding')||$errors->has('parties')||$errors->has('fashion_show'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalEditForm").modal('show');
+            });
+        </script>
+        @endif
+
     </body>
 </html>

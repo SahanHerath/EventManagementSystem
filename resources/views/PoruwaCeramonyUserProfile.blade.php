@@ -171,7 +171,7 @@
 			
         </section>
 
-        <!--==============model for edit events=================-->
+        <!--==============model for edit features=================-->
     <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   
   <div class="modal-dialog" role="document">
@@ -282,7 +282,7 @@
       </div>
   </div>
   </div>
-   <!--==============model for edit events=================-->
+   <!--==============model for edit features=================-->
     <!--==============model for  edit info=================-->
     <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
   

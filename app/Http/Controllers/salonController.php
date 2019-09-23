@@ -346,7 +346,7 @@ class salonController extends Controller
 
     public function eventUpdate(Request $request, $id)
     {
-        
+       
 
         $data=Salon_event::where('id',$id)
             
@@ -355,7 +355,29 @@ class salonController extends Controller
                 'parties'=>$request->parties,
                 'fashion_show'=>$request->fashion_show,
                 
-        ]);
+            ]);
+
+        return redirect('/Profile');
+    }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Salon::where('id',$id)
+            
+        ->update([
+                'Groom_Dressing'=>$request->Groom_Dressing,
+                'Bride_Dressing'=>$request->Bride_Dressing,
+                'Dress_Making'=>$request->Dress_Making,
+                'Jewelry'=>$request->Jewelry,
+                'Makeup'=>$request->Makeup,
+                'Bridesman'=>$request->Bridesman,
+                'Bridesmaid'=>$request->Bridesmaid,
+                'HairStyle'=>$request->HairStyle,
+
+            ]);
 
         return redirect('/Profile');
     }
