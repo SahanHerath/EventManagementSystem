@@ -228,6 +228,7 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
+      <br>
       <form method="POST" action="{{URL('/EditDancerEvents'.$data1->eventid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              
@@ -288,14 +289,15 @@
                   </div>
 
                   
-                  <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                <div class="modal-footer">
+                    <div class="text-center">
+                    
+                        <button type="submit" class="btn btn-primary ">
+                            Save Changes
+                        </button>
+                        <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                    </div>
+                </div>
 
       </form>
       
@@ -315,11 +317,12 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
+      <br>
       <form method="POST" action="{{URL('/EditDancerFeatures'.$data1->dancerid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              <div class="form-group row{{ $errors->has('Traditional') ? ' has-error' : '' }}">
-                        <label for="Traditional" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Traditional" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Traditional" value="Not Available">
                             <label for="Traditional">Traditional Dancing</label>
                             @if($data1->Traditional=='Available') 
@@ -332,8 +335,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Western') ? ' has-error' : '' }}">
-                        <label for="Western" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Western" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Western" value="Not Available">
                             <label for="Western">Western Dancing</label> 
                             @if($data1->Western=='Available') 
@@ -346,8 +349,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Indian') ? ' has-error' : '' }}">
-                        <label for="Indian" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Indian" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Indian" value="Not Available">
                             <label for="Indian">Indian Dancing</label> 
                             @if($data1->Indian=='Available') 
@@ -360,8 +363,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Kandyan') ? ' has-error' : '' }}">
-                        <label for="Kandyan" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Kandyan" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Kandyan" value="Not Available">
                             <label for="Kandyan">Kandyan Dancing</label> 
                             @if($data1->Kandyan=='Available') 
@@ -374,8 +377,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Casual') ? ' has-error' : '' }}">
-                        <label for="Casual" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Casual" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Casual" value="Not Available">
                             <label for="Casual">Casual Dancing</label> 
                             @if($data1->Casual=='Available') 
@@ -388,8 +391,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Other') ? ' has-error' : '' }}">
-                        <label for="Other" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Other" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Other" value="Not Available">
                             <label for="Other">Other Dancing Styles</label> 
                             @if($data1->Other=='Available') 
@@ -401,14 +404,15 @@
                         </div>   
                         </div>
                   
-                  <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
 
       </form>
       
@@ -431,93 +435,93 @@
              {{ csrf_field() }}
                         
              <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                            <label for="name" class="col-md-4 col-form-label offset-1">Name :-</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}" title="fill this field with organization name or person name">
+                          
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror col-md-10 offset-1" name="name"  value="{{$data1->name}}" title="fill this field with organization name or person name">
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
 
                         <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
+                            <label for="email" class="col-md-4 col-form-label offset-1">Email Address :-</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" title="fill this field" >
+                     
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror col-md-10 offset-1" name="email" value="{{$data1->email }}" title="fill this field" >
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                        
                         </div>
                         <div class="form-group row{{ $errors->has('Team_Name') ? ' has-error' : '' }}">
-                            <label for="Team_Name" class="col-md-4 col-form-label text-md-right">Team/Group Name</label>
+                            <label for="Team_Name" class="col-md-4 col-form-label offset-1">Team/Group Name :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror" name="Team_Name" value="{{ $data1->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Dancing team or Group name">
+                          
+                                <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror col-md-10 offset-1" name="Team_Name" value="{{ $data1->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Dancing team or Group name">
 
                                 @error('Team_Name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                    
                         </div>
 
                         <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
-                            <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
+                            <label for="Address" class="col-md-4 col-form-label offset-1">Address :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address"   value="{{ $data1->Address  }}"  autocomplete="Address" title="Fill this field with Address">
+                           
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror col-md-10 offset-1" name="Address"   value="{{ $data1->Address  }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @error('Address')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                         
                         </div>
 
                         <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
-                            <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
+                            <label for="Contact_No" class="col-md-4 col-form-label offset-1">Contact Number</label>
 
-                            <div class="col-md-6">
-                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $data1->Contact_No  }}" autocomplete="Contact_No" title="Fill this field" >
+                           
+                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror col-md-10 offset-1" name="Contact_No" value="{{ $data1->Contact_No  }}" autocomplete="Contact_No" title="Fill this field" >
 
                                 @error('Contact_No')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                       
                         </div>
 
                         <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
-                            <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
+                            <label for="Link" class="col-md-4 col-form-label offset-1">Link :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $data1->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                        
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror col-md-10 offset-1" name="Link" value="{{ $data1->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
                                 @error('Link')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                       
                         </div>
 
                         <div class="form-group row{{ $errors->has('Gender') ? ' has-error' : '' }}">
-                            <label for="Gender" class="col-md-4 col-form-label text-md-right">The Team Members</label>
+                            <label for="Gender" class="col-md-6 col-form-label offset-1">The Team Members :-</label>
                             
-                            <div class="col-md-6">
-                                <select id="Gender" class="form-control" name="Gender" value="{{ old('Gender') }}" class="form-control @error('Gender') is-invalid @enderror" title="Select the type">
+                          
+                                <select id="Gender"  name="Gender" value="{{ old('Gender') }}" class="form-control @error('Gender') is-invalid @enderror col-md-10 offset-1" title="Select the type">
                                     @if($data1->Gender=='Male')
                                     <option value="Male"  selected>Male</option>
                                     <option value="Female">Female</option>
@@ -536,18 +540,18 @@
                                     
                                 </select>
                                 @error('Gender')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         </div>
 
                         <div class="form-group row{{ $errors->has('choreography') ? ' has-error' : '' }}">
-                            <label for="choreography" class="col-md-4 col-form-label text-md-right">Choreographing</label>
+                            <label for="choreography" class="col-md-4 col-form-label offset-1">Choreographing :-</label>
                             
-                            <div class="col-md-6">
-                                <select id="choreography" class="form-control" name="choreography" value="{{ old('choreography') }}" class="form-control @error('choreography') is-invalid @enderror" title="Select the availability">
+                     
+                                <select id="choreography" name="choreography" value="{{ old('choreography') }}" class="form-control @error('choreography') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
                                     @if($data1->choreography=='Available')
                                     <option value="Available" selected>Available</option>
                                     <option value="Not Available">Not Available</option>
@@ -559,36 +563,36 @@
                                     
                                 </select>
                                 @error('choreography')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                         
                         </div>
                         <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
                         
-                            <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            <label for="Description" class="col-md-4 col-form-label offset-1">Description :-</label>
                             
-                            <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your daning paterns. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
+  
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror col-md-10 offset-1" title="Fill this area with the description about your daning paterns. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
                                 @error('Description')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         
                         </div>
 
-                        <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                     
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
              
                   
 
