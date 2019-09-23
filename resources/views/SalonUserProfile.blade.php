@@ -236,114 +236,114 @@
              {{ csrf_field() }}
                         
              <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                            <label for="name" class="col-md-4 col-form-label offset-1">Name :-</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$data1->name}}" title="fill this field with organization name or Person Name">
+                            
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror col-md-10 offset-1" name="name"  value="{{$data1->name}}" title="fill this field with organization name or Person Name">
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                         
                         </div>
 
                         <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
+                            <label for="email" class="col-md-4 col-form-label offset-1">Email Address :-</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$data1->email }}" title="fill this field">
+                         
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror col-md-10 offset-1" name="email" value="{{$data1->email }}" title="fill this field">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                     
                         </div>
                         <div class="form-group row{{ $errors->has('Salon_Name') ? ' has-error' : '' }}">
-                            <label for="Salon_Name" class="col-md-4 col-form-label text-md-right">Salon Name</label>
+                            <label for="Salon_Name" class="col-md-4 col-form-label offset-1">Salon Name :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Salon_Name" type="text" class="form-control @error('Salon_Name') is-invalid @enderror" name="Salon_Name" value="{{ $data1->Salon_Name }}"autocomplete="Salon_Name" autofocus title="Fill this field with Salon_Name">
+                       
+                                <input id="Salon_Name" type="text" class="form-control @error('Salon_Name') is-invalid @enderror col-md-10 offset-1" name="Salon_Name" value="{{ $data1->Salon_Name }}"autocomplete="Salon_Name" autofocus title="Fill this field with Salon_Name">
 
                                 @error('Salon_Name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                          
                         </div>
 
                         <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
-                            <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
+                            <label for="Address" class="col-md-4 col-form-label offset-1">Address :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address"   value="{{ $data1->Address  }}"  autocomplete="Address" title="Fill this field with Address">
+                      
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror col-md-10 offset-1" name="Address"   value="{{ $data1->Address  }}"  autocomplete="Address" title="Fill this field with Address">
 
                                 @error('Address')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                           
                         </div>
 
                         <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
-                            <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
+                            <label for="Contact_No" class="col-md-4 col-form-label offset-1">Contact Number :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $data1->Contact_No  }}" autocomplete="Contact_No"  title="Fill this field." >
+                       
+                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror col-md-10 offset-1" name="Contact_No" value="{{ $data1->Contact_No  }}" autocomplete="Contact_No"  title="Fill this field." >
 
                                 @error('Contact_No')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                        
                         </div>
 
                         <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
-                            <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
+                            <label for="Link" class="col-md-4 col-form-label offset-1">Link :-</label>
 
-                            <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $data1->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
+                           
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror col-md-10 offset-1" name="Link" value="{{ $data1->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
                                 @error('Link')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                          
                         </div>
 
                         
 
                         <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
                         
-                            <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            <label for="Description" class="col-md-4 col-form-label offset-1">Description :-</label>
                             
-                            <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your service. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
+                          
+                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror col-md-10 offset-1" title="Fill this area with the description about your service. You can include what are your specialities other details.">{{$data1->Description }}</textarea>
                                 @error('Description')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback offset-1" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                         
                         
                         </div>
 
-                        <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                     
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
              
                   
 
@@ -365,6 +365,7 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
+      <br>
       <form method="POST" action="{{URL('/EditSalonEvents'.$data1->eventid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              
@@ -413,14 +414,15 @@
                   </div>
 
                   
-                  <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                <div class="modal-footer">
+                    <div class="text-center">
+                    
+                        <button type="submit" class="btn btn-primary ">
+                            Save Changes
+                        </button>
+                        <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                    </div>
+                </div>
 
       </form>
       
@@ -439,6 +441,7 @@
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
+      <br>
       <form method="POST" action="{{URL('/EditSalonFeatures'.$data1->salonid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              <div class="form-group row{{ $errors->has('Groom_Dressing') ? ' has-error' : '' }}">
@@ -553,14 +556,15 @@
                         </div>   
                         </div>
                   
-                  <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
 
       </form>
       
