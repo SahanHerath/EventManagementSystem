@@ -89,7 +89,7 @@
                         <br>
                         <div class="feature_inner row">
                    
-        			<div class="col-lg-4 col-md-6" style="border: 15px solid green;">
+        			<div class="col-lg-5 col-md-6" style="border: 15px solid green;">
         				<div class="feature_item bg-white text-black" >
                             
                         <h4>Vehicle Categories</h4>
@@ -154,7 +154,7 @@
                             <br>
                             <br>
                             <br>
-                            <center><a class="genric-btn primary" href="#">Edit Events</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeature">Edit Categories</a></center>
                             </tr>
                             
                         </table>
@@ -417,6 +417,118 @@
   </div>
 
    <!--==============model for edit info=================-->
+    <!--==============model for edit features=================-->
+    <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Vehicle Categories</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditTransportFeatures'.$data1->categoryid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('luxury') ? ' has-error' : '' }}">
+                        <label for="luxury" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="luxury" value="Not Available">
+                            <label for="luxury">Luxury</label>
+                            @if($data1->luxury=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="luxury" value="Available">
+                            @endif
+                            @if($data1->luxury=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="luxury" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('classic') ? ' has-error' : '' }}">
+                        <label for="classic" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="classic" value="Not Available">
+                            <label for="classic">Classic</label> 
+                            @if($data1->classic=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="classic" value="Available">
+                            @endif
+                            @if($data1->classic=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="classic" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('vintage') ? ' has-error' : '' }}">
+                        <label for="vintage" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="vintage" value="Not Available">
+                            <label for="vintage">Vintage</label> 
+                            @if($data1->vintage=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="vintage" value="Available">
+                            @endif
+                            @if($data1->vintage=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="vintage" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('horse_cart') ? ' has-error' : '' }}">
+                        <label for="horse_cart" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="horse_cart" value="Not Available">
+                            <label for="horse_cart">Horse Cart</label> 
+                            @if($data1->horse_cart=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="horse_cart" value="Available">
+                            @endif
+                            @if($data1->horse_cart=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="horse_cart" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('air') ? ' has-error' : '' }}">
+                        <label for="air" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="air" value="Not Available">
+                            <label for="Air">Air Travel</label> 
+                            @if($data1->air=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="air" value="Available">
+                            @endif
+                            @if($data1->air=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="air" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('travelling_coach') ? ' has-error' : '' }}">
+                        <label for="travelling_coach" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="travelling_coach" value="Not Available">
+                            <label for="travelling_coach">Travelling Coach</label> 
+                            @if($data1->travelling_coach=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="travelling_coach" value="Available">
+                            @endif
+                            @if($data1->travelling_coach=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="travelling_coach" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                       
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

@@ -323,4 +323,23 @@ class TransportController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Transport_Category::where('id',$id)
+            
+        ->update([
+                'luxury'=>$request->luxury,
+                'classic'=>$request->classic,
+                'vintage'=>$request->vintage,
+                'horse_cart'=>$request->horse_cart,
+                'air'=>$request->air,
+                'travelling_coach'=>$request->travelling_coach,
+            ]);
+
+        return redirect('/Profile');
+    }
 }

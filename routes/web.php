@@ -269,4 +269,5 @@ Route::post('/EditSalonEvents{id}', 'salonController@eventUpdate')  ;
 Route::post('/EditSalonFeatures{id}', 'salonController@featureUpdate')  ;
 
 Route::post('/EditTransportDetails/{userid}/{Transportid}', 'TransportController@InfoUpdate')  ;
+Route::post('/EditTransportFeatures{id}', 'TransportController@featureUpdate')  ;
 
