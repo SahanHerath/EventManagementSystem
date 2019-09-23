@@ -343,5 +343,21 @@ class salonController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        
+
+        $data=Salon_event::where('id',$id)
+            
+        ->update([
+                'wedding'=>$request->wedding,
+                'parties'=>$request->parties,
+                'fashion_show'=>$request->fashion_show,
+                
+        ]);
+
+        return redirect('/Profile');
+    }
 }
  

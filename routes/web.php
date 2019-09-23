@@ -265,4 +265,5 @@ Route::post('/EditMusicFeatures{id}', 'musicianController@featureUpdate')  ;
 
 
 Route::post('/EditSalonDetails/{userid}/{Salonid}', 'salonController@InfoUpdate')  ;
+Route::post('/EditSalonEvents{id}', 'salonController@eventUpdate')  ;
 
