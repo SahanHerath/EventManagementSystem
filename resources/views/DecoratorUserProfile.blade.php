@@ -19,6 +19,8 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
+
+        
     </head>
     <body>
         
@@ -459,140 +461,132 @@
    <!--==============model for edit features=================-->
     <!--==============model for  edit info=================-->
     <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-  
-  <div class="modal-dialog" role="document">
-      <div class="modal-content">
-      <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Edit Your Details</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      <form method="POST" action="{{URL('/EditDecoratorDetails'.'/'.$deco->userid.'/'.$deco->deco_id)}}" enctype="multipart/form-data">
-             {{ csrf_field() }}
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Your Details</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/EditDecoratorDetails'.'/'.$deco->userid.'/'.$deco->deco_id)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }} control-group">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Name :-</label>
+
                         
-             <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror col-md-10 offset-1" name="name"  value="{{$deco->name}}" title="fill this field with organization name or person name">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  value="{{$deco->name}}" title="fill this field with organization name or person name">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                    <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">Email Address :-</label>
 
-                        <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$deco->email }}" title="fill this field">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row{{ $errors->has('Team_Name') ? ' has-error' : '' }}">
-                            <label for="Team_Name" class="col-md-4 col-form-label text-md-right">Team/Organization Name</label>
-
-                            <div class="col-md-6">
-                                <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror" name="Team_Name" value="{{ $deco->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Decorator name or Group name">
-
-                                @error('Team_Name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
-                            <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
-
-                            <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address"   value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
-
-                                @error('Address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
-                            <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
-
-                            <div class="col-md-6">
-                                <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field" >
-
-                                @error('Contact_No')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
-                            <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
-
-                            <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ $deco->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
-
-                                @error('Link')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
                         
-                            <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
-                            
-                            <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$deco->Description }}</textarea>
-                                @error('Description')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        
-                        </div>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror col-md-10 offset-1" name="email" value="{{$deco->email }}" title="fill this field">
 
-                        <div class="form-group row mb-0">
-                      <div class="col-md-6 offset-5">
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+                    <div class="form-group row{{ $errors->has('Team_Name') ? ' has-error' : '' }}">
+                        <label for="Team_Name" class="col-md-6 col-form-label text-md-right">Team/Organization Name :-</label>
+
+                        
+                            <input id="Team_Name" type="text" class="form-control @error('Team_Name') is-invalid @enderror col-md-10 offset-1" name="Team_Name" value="{{ $deco->Team_Name }}"autocomplete="Team_Name" autofocus title="Fill this field with Decorator name or Group name">
+
+                            @error('Team_Name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
+                        <label for="Address" class="col-md-4 col-form-label text-md-right">Address :-</label>
+
+                        
+                            <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror col-md-10 offset-1" name="Address"   value="{{ $deco->Address  }}"  autocomplete="Address" title="Fill this field with Address">
+
+                            @error('Address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
+                        <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number :-</label>
+
+                        
+                            <input id="Contact_No" type="text"  class="form-control @error('Contact_No') is-invalid @enderror col-md-10 offset-1" name="Contact_No" value="{{ $deco->Contact_No  }}" autocomplete="Contact_No" title="Fill this field" >
+
+                            @error('Contact_No')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                      
-                          <button type="submit" class="btn btn-primary">
-                              Save Changes
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
-             
-                  
+                    </div>
 
-      </form>
-                
-      </div>
-  </div>
-  </div>
+                    <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
+                        <label for="Link" class="col-md-4 col-form-label text-md-right">Link :-</label>
 
-   <!--==============model for edit info=================-->
-   
-  
+                        
+                            <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror col-md-10 offset-1" name="Link" value="{{ $deco->Link  }}"   autocomplete="Link"  title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc. ">
 
-   
-       @endforeach
+                            @error('Link')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
+                    
+                        <label for="Description" class="col-md-4 col-form-label text-md-right">Description :-</label>
+                        
+                        
+                            <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror col-md-10 offset-1" title="Fill this area with the description about your designs. You can include what are your specialities other details.">{{$deco->Description }}</textarea>
+                            @error('Description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for edit info=================-->
+    @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
         		<div class="row footer_inner">
