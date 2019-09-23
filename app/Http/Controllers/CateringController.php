@@ -375,4 +375,24 @@ return view('catering', compact('level'));
         return redirect('/Profile');
         
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        
+
+        $data=Catering_event::where('id',$id)
+            
+        ->update([
+                'Wedding'=>$request->Wedding,
+                'Birthday'=>$request->Birthday,
+                'Party'=>$request->Party,
+                'Corporate_event'=>$request->Corporate_event,
+                'Funeral'=>$request->Funeral,
+               
+
+                
+        ]);
+
+        return redirect('/Profile');
+    }
 }
