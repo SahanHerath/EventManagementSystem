@@ -395,4 +395,27 @@ return view('catering', compact('level'));
 
         return redirect('/Profile');
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Catering::where('id',$id)
+            
+        ->update([
+                'Welcome_drink'=>$request->Welcome_drink,
+                'Catering_set'=>$request->Catering_set,
+                'Catering_tent'=>$request->Catering_tent,
+                'Cake'=>$request->Cake,
+                'Special_Food'=>$request->Special_Food,
+                'Garden_umbrella'=>$request->Garden_umbrella,
+                'Coffee_Machine'=>$request->Coffee_Machine,
+                'Table_chair'=>$request->Table_chair,
+                'sink'=>$request->sink,
+                'dessert'=>$request->dessert,
+            ]);
+
+        return redirect('/Profile');
+    }
 }
