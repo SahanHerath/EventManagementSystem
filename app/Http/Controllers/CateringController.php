@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Catering;
 use App\Catering_event;
 use DB;
@@ -319,5 +320,59 @@ return view('catering', compact('level'));
             ->get();
 
         return view('CateringUserProfile',compact('data'));
+    }
+
+    public function InfoUpdate(Request $request, $userid, $cateringid)
+    {
+        //
+        $request->validate(
+            ['Service_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            
+            
+           
+        ],
+        ['Service_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Catering::where('id',$cateringid)
+            
+        ->update([
+                'Service_Name'=>$request->Service_Name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'Contact_No'=>$request->Contact_No,
+                'Link'=>$request->Link,
+                
+        ]);
+        
+
+        
+
+        $music1  = User::find($userid); 
+        $music1  ->name=$request->name;
+        $music1 ->email=$request->email;
+        $music1  ->update();
+
+        
+        return redirect('/Profile');
+        
     }
 }
