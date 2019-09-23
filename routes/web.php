@@ -262,3 +262,7 @@ Route::post('/EditPhotographyFeatures{id}', 'PhotographyController@featureUpdate
 Route::post('/EditMusicDetails/{userid}/{Musicid}', 'musicianController@InfoUpdate')  ;
 Route::post('/EditMusicEvents{id}', 'musicianController@eventUpdate')  ;
 Route::post('/EditMusicFeatures{id}', 'musicianController@featureUpdate')  ;
+
+
+Route::post('/EditSalonDetails/{userid}/{Salonid}', 'salonController@InfoUpdate')  ;
+
