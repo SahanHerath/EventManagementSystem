@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Cake_designer;
 use Auth;
 use Image;
@@ -278,6 +279,60 @@ class CakeController extends Controller
             ]);
 
         return redirect('/Profile');
+    }
+
+    public function InfoUpdate(Request $request, $userid, $cakeid)
+    {
+        //
+        $request->validate(
+            ['Organization_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            
+            
+           
+        ],
+        ['Organization_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Cake_designer::where('id',$cakeid)
+            
+        ->update([
+                'Organization_Name'=>$request->Organization_Name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'Contact_No'=>$request->Contact_No,
+                'Link'=>$request->Link,
+                
+        ]);
+        
+
+        
+
+        $music1  = User::find($userid); 
+        $music1  ->name=$request->name;
+        $music1 ->email=$request->email;
+        $music1  ->update();
+
+        
+        return redirect('/Profile');
+        
     }
 
 }
