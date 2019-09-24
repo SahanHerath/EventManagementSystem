@@ -323,5 +323,26 @@ class EventPlanersController extends Controller
 
                 return view('EventPlannerUserProfile',compact('data'));
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        
+
+        $data=Event_planners_event::where('id',$id)
+            
+        ->update([
+                'Wedding'=>$request->Wedding,
+                'Parties'=>$request->Parties,
+                'Meetings'=>$request->Meetings,
+                'Corporate_event'=>$request->Corporate_event,
+                'Outside_event'=>$request->Outside_event,
+                'Sport_event'=>$request->Sport_event,
+               
+
+                
+        ]);
+
+        return redirect('/Profile');
+    }
     
 }
