@@ -119,10 +119,16 @@
 				</div>
 			@endforeach
 			</div>
-            <center><button type="button" class="btn btn-success"><a href="#" >Add Reception Hall</a></button></center>
+            @foreach($hotel as $data1)
+            <form class="form-horizontal" method="POST" action="/AddNewHall">
+                        {{ csrf_field() }}
+                        <input type="hidden" id="hotelid" name="hotelid" value="{{$data1->hotelid}}">
+                        <center><button type="submit"  class="btn btn-success">Add Reception Hall</button></center>
+            </form>
             <div class="offset-10">
             <button type="button" class="btn btn-danger"><a href="#" >Deactivate Account</a></button>
             </div>
+            @endforeach
 		</div><!-- container -->
 	</section><!-- about-section -->
 

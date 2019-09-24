@@ -292,3 +292,5 @@ Route::post('/EditCostumeDesignerFeatures{id}', 'CostumeDesignerController@featu
 Route::get('/HallUserProfile{id}','HallController@hallProfile');
 
 Route::post('/EditHotelDetails/{userid}/{hotelid}', 'HallController@HotelUpdate')  ;
+Route::post('/AddNewHall', 'HallController@AddnewHall')  ;
+Route::post('/newhall', 'HallController@newHall')  ;
