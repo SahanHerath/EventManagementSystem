@@ -360,7 +360,23 @@ class HallController extends Controller
 
     public function profile()
     {
-        
+        $id1 = Auth::id();
+        $hotel=DB::table('hotels')
+              ->join('users','users.id','=','hotels.user_id')
+              //->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              ->where('users.id','=',$id1)
+              ->select('users.id as userid','name','email','hotels.id as hotelid','Hotel_Name','Address','Contact_No','Link','Description','facebook','instagram','Main_logo','Cover_photo')
+              ->get();
+
+        foreach($hotel as $hotel1)
+        {
+              $hall=DB::table('reception_halls')
+             ->join('hotels','reception_halls.hotel_id','=','hotels.id')
+             ->where('hotels.id','=',$hotel1->hotelid)
+             ->get();
+        }
+
+              return view('HotelUserProfile',compact('hotel','hall'));
     }
 
    
