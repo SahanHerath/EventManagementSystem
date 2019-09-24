@@ -404,6 +404,29 @@ class CostumeDesignerController extends Controller
         return redirect('/Profile');
     }
 
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Costume_designer::where('id',$id)
+            
+        ->update([
+                'wedding_dress_designs'=>$request->wedding_dress_designs,
+                'clothing_orders'=>$request->clothing_orders,
+                'sport_kit_designs'=>$request->sport_kit_designs,
+                'saree_work'=>$request->saree_work,
+                'traditional_dress'=>$request->traditional_dress,
+                'gents_wear'=>$request->gents_wear,
+                'ladies_wear'=>$request->ladies_wear,
+                'gents_foot_wear'=>$request->gents_foot_wear,
+                'ladies_foot_wear'=>$request->ladies_foot_wear,
+                'sports_shoes'=>$request->sports_shoes,
+            ]);
+
+        return redirect('/Profile');
+    }
+
     
 }
 
