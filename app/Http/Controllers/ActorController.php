@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Actor;
 use App\Actor_event;
 use Auth;
@@ -347,5 +348,59 @@ class ActorController extends Controller
                 ->get();
 
                 return view('ActorUserProfile',compact('data'));
+    }
+
+    public function InfoUpdate(Request $request, $userid, $actorid)
+    {
+        //
+        $request->validate(
+            ['Actor_name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            
+            
+           
+        ],
+        ['Actor_name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Actor::where('id',$actorid)
+            
+        ->update([
+                'Actor_name'=>$request->Actor_name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'Contact_No'=>$request->Contact_No,
+                'Link'=>$request->Link,
+                
+        ]);
+        
+
+        
+
+        $act1  = User::find($userid); 
+        $act1  ->name=$request->name;
+        $act1 ->email=$request->email;
+        $act1  ->update();
+
+        
+        return redirect('/Profile');
+        
     }
 }

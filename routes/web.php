@@ -281,5 +281,7 @@ Route::post('/EditCakeDetails/{userid}/{cateringid}', 'CakeController@InfoUpdate
 Route::post('/EditEventPlannerEvents{id}', 'EventPlanersController@eventUpdate')  ;
 Route::post('/EditEventPlannerDetails/{userid}/{plannersid}', 'EventPlanersController@InfoUpdate')  ;
 
+Route::post('/EditActorDetails/{userid}/{actorid}', 'ActorController@InfoUpdate')  ;
+
 
 
