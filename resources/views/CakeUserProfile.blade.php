@@ -117,7 +117,7 @@
                             @endif
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Features</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeature">Edit Features</a></center>
                             
                         </div>
         			</div>
@@ -168,6 +168,120 @@
 				</div>
 			
         </section>
+         <!--==============model for edit features=================-->
+    <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditCakeFeatures'.$data1->cakeid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Wedding_cake') ? ' has-error' : '' }}">
+                        <label for="Wedding_cake" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Wedding_cake" value="Not Available">
+                            <label for="Wedding_cake">Wedding Cake</label>
+                            @if($data1->Wedding_cake=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Wedding_cake" value="Available">
+                            @endif
+                            @if($data1->Wedding_cake=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding_cake" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Birthday_cake') ? ' has-error' : '' }}">
+                        <label for="Birthday_cake" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Birthday_cake" value="Not Available">
+                            <label for="Birthday_cake">Birthday Cake</label> 
+                            @if($data1->Birthday_cake=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Birthday_cake" value="Available">
+                            @endif
+                            @if($data1->Birthday_cake=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Birthday_cake" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Cake_Structure') ? ' has-error' : '' }}">
+                        <label for="Cake_Structure" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Cake_Structure" value="Not Available">
+                            <label for="Cake_Structure">Cake Structure</label> 
+                            @if($data1->Cake_Structure=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Cake_Structure" value="Available">
+                            @endif
+                            @if($data1->Cake_Structure=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Cake_Structure" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Pastry_cake') ? ' has-error' : '' }}">
+                        <label for="Pastry_cake" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Pastry_cake" value="Not Available">
+                            <label for="Pastry_cake">Cake</label> 
+                            @if($data1->Pastry_cake=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Pastry_cake" value="Available">
+                            @endif
+                            @if($data1->Pastry_cake=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Pastry_cake" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Cup_Cake') ? ' has-error' : '' }}">
+                        <label for="Cup_Cake" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Cup_Cake" value="Not Available">
+                            <label for="Cup_Cake">Cup Cake</label> 
+                            @if($data1->Cup_Cake=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Cup_Cake" value="Available">
+                            @endif
+                            @if($data1->Cup_Cake=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Cup_Cake" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Other') ? ' has-error' : '' }}">
+                        <label for="Other" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Other" value="Not Available">
+                            <label for="Other">Other Cake Types</label> 
+                            @if($data1->Other=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Other" value="Available">
+                            @endif
+                            @if($data1->Other=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                    
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit features=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

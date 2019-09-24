@@ -275,5 +275,7 @@ Route::post('/EditCateringDetails/{userid}/{cateringid}', 'CateringController@In
 Route::post('/EditCateringEvents{id}', 'CateringController@eventUpdate')  ;
 Route::post('/EditCateringFeatures{id}', 'CateringController@featureUpdate')  ;
 
+Route::post('/EditCakeFeatures{id}', 'CakeController@featureUpdate')  ;
+
 
 

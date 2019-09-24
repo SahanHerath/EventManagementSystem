@@ -260,4 +260,24 @@ class CakeController extends Controller
                 return view('CakeUserProfile',compact('data'));
     }
 
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Cake_designer::where('id',$id)
+            
+        ->update([
+                'Wedding_cake'=>$request->Wedding_cake,
+                'Birthday_cake'=>$request->Birthday_cake,
+                'Cake_Structure'=>$request->Cake_Structure,
+                'Pastry_cake'=>$request->Pastry_cake,
+                'Cup_Cake'=>$request->Cup_Cake,
+                'Other'=>$request->Other,
+                
+            ]);
+
+        return redirect('/Profile');
+    }
+
 }
