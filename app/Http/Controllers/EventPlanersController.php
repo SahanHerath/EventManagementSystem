@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Event_planner;
 use App\Event_planners_event;
 use Auth;
@@ -343,6 +344,62 @@ class EventPlanersController extends Controller
         ]);
 
         return redirect('/Profile');
+    }
+
+    public function InfoUpdate(Request $request, $userid, $plannersid)
+    {
+        //
+        $request->validate(
+            ['Organization_name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            
+            
+           
+        ],
+        ['Organization_name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+      
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Event_planner::where('id',$plannersid)
+            
+        ->update([
+                'Organization_name'=>$request->Organization_name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'Contact_No'=>$request->Contact_No,
+                'Link'=>$request->Link,
+                
+
+                
+        ]);
+        
+
+        
+
+        $plan1  = User::find($userid); 
+        $plan1  ->name=$request->name;
+        $plan1 ->email=$request->email;
+        $plan1  ->update();
+
+        
+        return redirect('/Profile');
+        
     }
     
 }
