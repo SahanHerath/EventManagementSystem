@@ -373,11 +373,27 @@ class HallController extends Controller
               $hall=DB::table('reception_halls')
              ->join('hotels','reception_halls.hotel_id','=','hotels.id')
              ->where('hotels.id','=',$hotel1->hotelid)
+             ->select('reception_halls.id as recepid','Hall_Name','reception_halls.Address as add','Main_pic')
              ->get();
         }
 
               return view('HotelUserProfile',compact('hotel','hall'));
     }
 
+    public function hallProfile($id)
+    {
+        $hall=DB::table('reception_halls')
+              ->join('hall_features','reception_halls.id','=','hall_features.hall_id')
+              ->join('hall_events','reception_halls.id','=','hall_events.hall_id')
+              ->join('hall_table_arrangements','reception_halls.id','=','hall_table_arrangements.hall_id')
+              //->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              ->where('reception_halls.id','=',$id)
+              ->select( 'reception_halls.id as recepid','Hall_Name', 'Address', 'Cost','Capacity','Square_feet','Description','Overview','Main_pic','pic1','pic2','pic3','pic4','hotel_id','hall_events.id as eventid','Wedding', 'Meeting', 'Party','Corporate_event','Professional_Event','hall_features.id as featureid','projection', 'internet', 'parking','security_camera','security_personal','reception_area','Bar','garden','smoking_area','welcome_drinks','Buffet','Handicap_accessible','outside_balcony','inside_balcony','stage','hall_table_arrangements.id as arrangeid','theatre', 'U_shape', 'V_shape','classroom','hallow_square','Boardroom','Oval','Herringbone','Top_table_springs','banquet','cabaret','informal')
+              ->get();
+
+        
+
+              return view('HallUserProfile',compact('hall'));
+    }
    
 }

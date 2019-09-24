@@ -109,11 +109,11 @@
 			<div class="row">
 			@foreach($hall as $hall1)
 				<div class="offset-0 col-lg-4 col-md-6">
-					<div class="feature_item"><a class="btn btn-bg-yellow" href="{{URL('/HallUserProfile'.$hall1->id)}}">
+					<div class="feature_item"><a class="btn btn-bg-yellow" href="{{URL('/HallUserProfile'.$hall1->recepid)}}">
 						<img src="uploads/hall/{{$hall1->Main_pic}}"  width="300" height="200 ">
 						<br><br>
 						<h3><b>{{$hall1->Hall_Name}}</h3></b>
-                        <h5>{{$hall1->Address}}</h5>
+                        <h5>{{$hall1->add}}</h5>
 						</a>
 					</div>
 				</div>

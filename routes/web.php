@@ -289,4 +289,4 @@ Route::post('/EditCostumeDesignerDetails/{userid}/{costumeid}', 'CostumeDesigner
 Route::post('/EditCateringEvents{id}', 'CostumeDesignerController@eventUpdate')  ;
 Route::post('/EditCostumeDesignerFeatures{id}', 'CostumeDesignerController@featureUpdate')  ;
 
-
+Route::get('/HallUserProfile{id}','HallController@hallProfile');
