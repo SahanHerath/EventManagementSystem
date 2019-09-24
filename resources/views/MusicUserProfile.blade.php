@@ -343,7 +343,7 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Extra_Cost') ? ' has-error' : '' }}">
-                            <label for="Extra_Cost" class="col-md-4 col-form-label offset-1">Link :-</label>
+                            <label for="Extra_Cost" class="col-md-4 col-form-label offset-1">Cost for Extra Hour :-</label>
 
                            
                                 <input id="Extra_Cost" type="decimal" class="form-control @error('Extra_Cost') is-invalid @enderror col-md-10 offset-1" name="Extra_Cost" value="{{ $data1->Extra_Cost  }}"   autocomplete="Extra_Cost"  title="Fill this field with cost that you charge for and extra hour ">

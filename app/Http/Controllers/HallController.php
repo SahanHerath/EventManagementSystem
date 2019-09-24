@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Image;
+use App\User;
 use App\Hotel;
 use App\Hall_event;
 use App\Hall_feature;
@@ -394,6 +395,65 @@ class HallController extends Controller
         
 
               return view('HallUserProfile',compact('hall'));
+    }
+
+    public function HotelUpdate(Request $request, $userid, $Hotelid)
+    {
+        //
+        $request->validate(
+            ['Hotel_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'facebook' =>'required|string|max:255',
+            'instagram' =>'required|string|max:255',
+            
+           
+        ],
+        ['Hotel_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        'facebook.required'=> "Fill out this field",
+        'instagram.required'=> "Fill out this field",
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Hotel::where('id',$Hotelid)
+            
+        ->update([
+                'Hotel_Name'=>$request->Hotel_Name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'Contact_No'=>$request->Contact_No,
+                'Link'=>$request->Link,
+                'facebook'=>$request->facebook,
+                'instagram'=>$request->instagram,
+                
+                
+        ]);
+        
+
+        
+
+        $music1  = User::find($userid); 
+        $music1  ->name=$request->name;
+        $music1 ->email=$request->email;
+        $music1  ->update();
+
+        
+        return redirect('/Profile');
+        
     }
    
 }

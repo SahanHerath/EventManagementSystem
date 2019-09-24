@@ -290,3 +290,5 @@ Route::post('/EditCateringEvents{id}', 'CostumeDesignerController@eventUpdate') 
 Route::post('/EditCostumeDesignerFeatures{id}', 'CostumeDesignerController@featureUpdate')  ;
 
 Route::get('/HallUserProfile{id}','HallController@hallProfile');
+
+Route::post('/EditHotelDetails/{userid}/{hotelid}', 'HallController@HotelUpdate')  ;
