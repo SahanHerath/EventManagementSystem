@@ -177,7 +177,7 @@
                             
                             
                             <br><br><br>
-                            <center><a class="genric-btn primary" href="#">Edit Specilities</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditFeature">Edit Specilities</a></center>
                             
                         </div>
         			</div>
@@ -459,6 +459,134 @@
   </div>
   </div>
    <!--==============model for edit events=================-->
+   <!--==============model for edit features=================-->
+   <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Categories</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditActorFeatures'.$data1->actorid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('Singer') ? ' has-error' : '' }}">
+                        <label for="Singer" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Singer" value="Not Available">
+                            <label for="Singer">Singer</label>
+                            @if($data1->Singer=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Singer" value="Available">
+                            @endif
+                            @if($data1->Singer=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Singer" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Magician') ? ' has-error' : '' }}">
+                        <label for="Magician" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Magician" value="Not Available">
+                            <label for="Magician">Magician</label> 
+                            @if($data1->Magician=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Magician" value="Available">
+                            @endif
+                            @if($data1->Magician=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Magician" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Comedian') ? ' has-error' : '' }}">
+                        <label for="Comedian" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Comedian" value="Not Available">
+                            <label for="Comedian">Comedian</label> 
+                            @if($data1->Comedian=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Comedian" value="Available">
+                            @endif
+                            @if($data1->Comedian=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Comedian" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Actor') ? ' has-error' : '' }}">
+                        <label for="Actor" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Actor" value="Not Available">
+                            <label for="Actor">Actor</label> 
+                            @if($data1->Actor=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Actor" value="Available">
+                            @endif
+                            @if($data1->Actor=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Actor" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Announcer') ? ' has-error' : '' }}">
+                        <label for="Announcer" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Announcer" value="Not Available">
+                            <label for="Announcer">Announcer</label> 
+                            @if($data1->Announcer=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Announcer" value="Available">
+                            @endif
+                            @if($data1->Announcer=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Announcer" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Entertainer') ? ' has-error' : '' }}">
+                        <label for="Entertainer" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Entertainer" value="Not Available">
+                            <label for="Entertainer">Entertainer</label> 
+                            @if($data1->Entertainer=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Entertainer" value="Available">
+                            @endif
+                            @if($data1->Entertainer=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Entertainer" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Other') ? ' has-error' : '' }}">
+                        <label for="Other" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Other" value="Not Available">
+                            <label for="Other">Other</label> 
+                            @if($data1->Other=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Other" value="Available">
+                            @endif
+                            @if($data1->Other=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Other" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                    
+                  
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-5">
+                          <button type="submit" class="btn btn-primary">
+                              Save Changes
+                          </button>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit features=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

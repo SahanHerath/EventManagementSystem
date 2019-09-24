@@ -283,5 +283,6 @@ Route::post('/EditEventPlannerDetails/{userid}/{plannersid}', 'EventPlanersContr
 
 Route::post('/EditActorDetails/{userid}/{actorid}', 'ActorController@InfoUpdate')  ;
 Route::post('/EditActorEvents{id}', 'ActorController@eventUpdate')  ;
+Route::post('/EditActorFeatures{id}', 'ActorController@featureUpdate')  ;
 
 

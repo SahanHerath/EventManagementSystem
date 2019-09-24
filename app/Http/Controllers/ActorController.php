@@ -423,4 +423,25 @@ class ActorController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Actor::where('id',$id)
+            
+        ->update([
+                'Singer'=>$request->Singer,
+                'Magician'=>$request->Magician,
+                'Comedian'=>$request->Comedian,
+                'Actor'=>$request->Actor,
+                'Announcer'=>$request->Announcer,
+                'Entertainer'=>$request->Entertainer,
+                'Other'=>$request->Other,
+                
+            ]);
+
+        return redirect('/Profile');
+    }
 }
