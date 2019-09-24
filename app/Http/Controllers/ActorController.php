@@ -403,4 +403,24 @@ class ActorController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function eventUpdate(Request $request, $id)
+    {
+        
+
+        $data=Actor_event::where('id',$id)
+            
+        ->update([
+                'Birthday'=>$request->Birthday,
+                'Party'=>$request->Party,
+                'Professional_event'=>$request->Professional_event,
+                'Musical_event'=>$request->Musical_event,
+                'Corporate_event'=>$request->Corporate_event,
+               
+
+                
+        ]);
+
+        return redirect('/Profile');
+    }
 }
