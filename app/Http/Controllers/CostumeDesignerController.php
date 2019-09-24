@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Costume_designer;
 use App\Costume_designer_event;
 use DB;
@@ -335,6 +336,54 @@ class CostumeDesignerController extends Controller
             ->get();
 
         return view('CostumeDesignerUserProfile',compact('data'));
+    }
+
+    public function InfoUpdate(Request $request, $userid, $costumeid)
+    {
+        //
+        $request->validate(
+            ['Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            
+            
+           
+        ],
+        ['Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        
+         ]
+    );
+        
+        
+    $data=Costume_designer::where('id',$costumeid)
+            
+    ->update([
+            'Name'=>$request->Name,
+            'Address'=>$request->Address,
+            'Description'=>$request->Description,
+            'Contact_No'=>$request->Contact_No,
+            'Link'=>$request->Link,
+            
+    ]);
+
+        $costume1 = User::find($userid); 
+        $costume1 ->name=$request->name;
+        $costume1 ->email=$request->email;
+        $costume1 ->update();
+
+        
+      return redirect('/Profile');
+        
     }
 
     
