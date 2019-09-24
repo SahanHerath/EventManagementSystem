@@ -386,6 +386,24 @@ class CostumeDesignerController extends Controller
         
     }
 
+    public function eventUpdate(Request $request, $id)
+    {
+        
+
+        $data=Costume_designer_event::where('id',$id)
+            
+        ->update([
+                'Wedding'=>$request->Wedding,
+                'Party'=>$request->Party,
+                'fashion_show'=>$request->fashion_show,
+                'sports'=>$request->sports,
+                'Coperate_event'=>$request->Coperate_event,
+                
+            ]);
+
+        return redirect('/Profile');
+    }
+
     
 }
 

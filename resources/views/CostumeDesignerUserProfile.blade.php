@@ -133,7 +133,7 @@
                             <br>
                             <br>
                             <br>
-                            <center><a class="genric-btn primary" href="#">Edit Events</a></center>
+                            <center><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditForm">Edit Events</a></center>
                             </tr>
                             
                         </table>
@@ -369,6 +369,106 @@
   </div>
 
    <!--==============model for edit info=================-->
+   <!--==============model for edit events=================-->
+   <div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Events</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <br>
+      <form method="POST" action="{{URL('/EditCateringEvents'.$data1->eventid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             
+                  <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }}">
+                  <label for="Wedding" class="col-md-4"></label>   
+                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                      <input type="hidden" name="Wedding" value="Not Available">
+                      <label for="Wedding">Wedding</label>
+                      @if($data1->Wedding=='Available') 
+                      <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Wedding" value="Available" >
+                      @endif
+                      @if($data1->Wedding=='Not Available')
+                      <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Wedding" value="Available" >
+                      @endif
+                  </div>   
+                  </div>
+
+                  <div class="form-group row{{ $errors->has('Party') ? ' has-error' : '' }}">
+                  <label for="Party" class="col-md-4"></label>   
+                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                      <input type="hidden" name="Party" value="Not Available">
+                      <label for="Party">Party</label> 
+                      @if($data1->Party=='Available') 
+                      <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Party" value="Available" >
+                      @endif
+                      @if($data1->Party=='Not Available')
+                      <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Party" value="Available" >
+                      @endif
+                  </div>   
+                  </div>
+
+                  <div class="form-group row{{ $errors->has('fashion_show') ? ' has-error' : '' }}">
+                  <label for="fashion_show" class="col-md-4"></label>   
+                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                      <input type="hidden" name="fashion_show" value="Not Available">
+                      <label for="fashion_show">Fashion Show</label> 
+                      @if($data1->fashion_show=='Available') 
+                      <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="fashion_show" value="Available" >
+                      @endif
+                      @if($data1->fashion_show=='Not Available')
+                      <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="fashion_show" value="Available" >
+                      @endif
+                  </div>   
+                  </div>
+
+                  <div class="form-group row{{ $errors->has('sports') ? ' has-error' : '' }}">
+                  <label for="sports" class="col-md-4"></label>   
+                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                      <input type="hidden" name="sports" value="Not Available">
+                      <label for="sports">Sports</label> 
+                      @if($data1->sports=='Available') 
+                      <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="sports" value="Available" >
+                      @endif
+                      @if($data1->sports=='Not Available')
+                      <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="sports" value="Available" >
+                      @endif
+                  </div>   
+                  </div>
+
+                  <div class="form-group row{{ $errors->has('Coperate_event') ? ' has-error' : '' }}">
+                  <label for="Coperate_event" class="col-md-4"></label>   
+                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                      <input type="hidden" name="Coperate_event" value="Not Available">
+                      <label for="Coperate_event">Coperate Event</label> 
+                      @if($data1->Coperate_event=='Available')
+                      <input type="checkbox" class="largerCheckbox" checked style="width:20px; height:20px;" name="Coperate_event" value="Available" >
+                      @endif
+                      @if($data1->Coperate_event=='Not Available')
+                      <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Coperate_event" value="Available">
+                      @endif
+                  </div>   
+                  </div>
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+   <!--==============model for edit events=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

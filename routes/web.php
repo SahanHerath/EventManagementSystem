@@ -286,7 +286,7 @@ Route::post('/EditActorEvents{id}', 'ActorController@eventUpdate')  ;
 Route::post('/EditActorFeatures{id}', 'ActorController@featureUpdate')  ;
 
 Route::post('/EditCostumeDesignerDetails/{userid}/{costumeid}', 'CostumeDesignerController@InfoUpdate')  ;
-
+Route::post('/EditCateringEvents{id}', 'CostumeDesignerController@eventUpdate')  ;
 
 
 
