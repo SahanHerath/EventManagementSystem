@@ -636,6 +636,33 @@ class HallController extends Controller
 
     }
 
+    public function featureUpdate(Request $request, $id)
+    {
+        //
+        
 
+        $data=Hall_feature::where('id',$id)
+            
+        ->update([
+                'projection'=>$request->projection,
+                'internet'=>$request->internet,
+                'parking'=>$request->parking,
+                'security_camera'=>$request->security_camera,
+                'security_personal'=>$request->security_personal,
+                'reception_area'=>$request->reception_area,
+                'Bar'=>$request->Bar,
+                'garden'=>$request->garden,
+                'smoking_area'=>$request->smoking_area,
+                'welcome_drinks'=>$request->welcome_drinks,
+                'Buffet'=>$request->Buffet,
+                'Handicap_accessible'=>$request->Handicap_accessible,
+                'outside_balcony'=>$request->outside_balcony,
+                'inside_balcony'=>$request->inside_balcony,
+                'stage'=>$request->stage,
+                
+            ]);
+
+            return redirect()->back();
+    }
    
 }
