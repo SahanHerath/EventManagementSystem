@@ -691,5 +691,38 @@ class HallController extends Controller
 
             return redirect()->back();
     }
+
+    public function removehall($id)
+    {
+        
+        $id1 = Auth::user()->id;
+
+        
+
+        $hotel=DB::table('hotels')
+              ->join('users','users.id','=','hotels.user_id')
+              ->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+              ->where('users.id','=',$id1)
+              ->select('reception_halls.id')
+              ->get();
+
+        foreach($hotel as $hotel1)
+        {     
+            if($hotel1->id==$id)
+            {
+                $reception = Reception_hall::findOrFail($id); 
+                $reception->delete();
+                $feature = Hall_feature::where('hall_id',$id)->delete();
+                $arrange = Hall_table_arrangement::where('hall_id',$id)->delete();
+                $event = Hall_event::where('hall_id',$id)->delete();
+                
+                return redirect('/Profile');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        }
+    }
    
 }

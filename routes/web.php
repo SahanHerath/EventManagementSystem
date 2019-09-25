@@ -297,3 +297,4 @@ Route::post('/newhall', 'HallController@newHall')  ;
 Route::post('/EditHallDetails{hallid}', 'HallController@editHall')  ;
 Route::post('/EditHallFeatures{id}', 'HallController@featureUpdate')  ;
 Route::post('/EditHallArrangement{id}', 'HallController@arrangeUpdate')  ;
+Route::get('/RemoveHall{hallid}', 'HallController@removehall')  ;

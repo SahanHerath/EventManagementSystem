@@ -71,7 +71,7 @@
         
         <div class="offset-5" >
             <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo">Edit Hall Details</a></button>
-            <button type="button" class="btn btn-danger"><a href="#">Remove Hall</a></button>
+            <button type="button" class="btn btn-danger"><a href="{{URL('/RemoveHall'.$hall1->recepid)}}">Remove Hall</a></button>
             </div>
             
             
