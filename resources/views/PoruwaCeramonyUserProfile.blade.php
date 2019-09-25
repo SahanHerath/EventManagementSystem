@@ -194,10 +194,10 @@
                             <input type="hidden" name="Poruwa_rituals" value="Not Available">
                             <label  for="Poruwa_rituals">Poruwa Rituals</label>
                                 @if($data1->Poruwa_rituals=='Available') 
-                                <input type="checkbox" checked name="Poruwa_rituals" value="Available">
+                                <input type="checkbox"  checked name="Poruwa_rituals" value="Available">
                                 @endif
                                 @if($data1->Poruwa_rituals=='Not Available') 
-                                <input type="checkbox" name="Poruwa_rituals" value="Available" >
+                                <input type="checkbox"  name="Poruwa_rituals" value="Available" >
                                 @endif
                                 <span class="checkmark"></span>
                             
