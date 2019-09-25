@@ -294,3 +294,4 @@ Route::get('/HallUserProfile{id}','HallController@hallProfile');
 Route::post('/EditHotelDetails/{userid}/{hotelid}', 'HallController@HotelUpdate')  ;
 Route::post('/AddNewHall', 'HallController@AddnewHall')  ;
 Route::post('/newhall', 'HallController@newHall')  ;
+Route::post('/EditHallDetails{hallid}', 'HallController@editHall')  ;

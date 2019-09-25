@@ -589,6 +589,53 @@ class HallController extends Controller
             return redirect('/Profile');
     }
 
+    public function editHall(request $request,$hallid)
+    {
+        $request->validate(
+            ['Hall_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'Cost' =>'required|numeric|min:0',
+            'Capacity' => 'required|numeric|min:0',
+            'Square_feet' => 'required|numeric|min:0',
+            'Overview' => 'required|string|max:20',
+        
+        ],
+        ['Hall_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Cost.required'=> "Fill out this field",
+        'Capacity.required'=> "Fill out this field",
+        'Square_feet.required'=> "Fill out this field",
+        'Overview.required'=> "Fill out this field",
+        
+        
+         ]
+    );
+        
+        
+       
+
+        $data=Reception_hall::where('id',$hallid)
+            
+        ->update([
+                'Hall_Name'=>$request->Hall_Name,
+                'Address'=>$request->Address,
+                'Description'=>$request->Description,
+                'Cost'=>$request->Cost,
+                'Capacity'=>$request->Capacity,
+                'Square_feet'=>$request->Square_feet,
+                'Overview'=>$request->Overview,
+                
+
+                
+        ]);
+
+        return redirect()->back();
+
+
+    }
+
 
    
 }
