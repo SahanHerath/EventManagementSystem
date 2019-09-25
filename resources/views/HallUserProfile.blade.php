@@ -452,7 +452,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
         <div class="offset-9">
-            <button type="button" class="btn btn-primary"><a href="#">Edit Table Arrangements</a></button>
+            <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditTable">Edit Table Arrangements</a></button>
             </div>
 	</section><!-- progression-section -->
 	
@@ -739,7 +739,7 @@
   <div class="modal-dialog" role="document">
       <div class="modal-content">
       <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Edit Your Vehicle Categories</h4>
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Features</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -957,6 +957,212 @@
                             @endif
                         </div>   
                         </div>
+
+                       
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+    <!--==============model for edit features=================-->
+     <!--==============model for edit features=================-->
+     <div class="modal fade" id="modalEditTable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Table Arrangements </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <br>
+      
+      <form method="POST" action="{{URL('/EditHallFeatures'.$hall1->arrangeid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('theatre') ? ' has-error' : '' }}">
+                        <label for="theatre" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="theatre" value="Not Available">
+                            <label for="theatre">Theatre</label>
+                            @if($hall1->theatre=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="theatre" value="Available">
+                            @endif
+                            @if($hall1->theatre=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="theatre" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('U_shape') ? ' has-error' : '' }}">
+                        <label for="U_shape" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="U_shape" value="Not Available">
+                            <label for="U_shape">U-shape</label> 
+                            @if($hall1->U_shape=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="U_shape" value="Available">
+                            @endif
+                            @if($hall1->U_shape=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="U_shape" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('V_shape') ? ' has-error' : '' }}">
+                        <label for="V_shape" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="V_shape" value="Not Available">
+                            <label for="V_shape">V-Shape</label> 
+                            @if($hall1->V_shape=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="V_shape" value="Available">
+                            @endif
+                            @if($hall1->V_shape=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="V_shape" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('classroom') ? ' has-error' : '' }}">
+                        <label for="classroom" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="classroom" value="Not Available">
+                            <label for="classroom">Classroom</label> 
+                            @if($hall1->classroom=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="classroom" value="Available">
+                            @endif
+                            @if($hall1->classroom=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="classroom" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('hallow_square') ? ' has-error' : '' }}">
+                        <label for="hallow_square" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="hallow_square" value="Not Available">
+                            <label for="hallow_square">Hallow Square</label> 
+                            @if($hall1->hallow_square=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="hallow_square" value="Available">
+                            @endif
+                            @if($hall1->hallow_square=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="hallow_square" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Boardroom') ? ' has-error' : '' }}">
+                        <label for="Boardroom" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Boardroom" value="Not Available">
+                            <label for="Boardroom">Boardroom</label> 
+                            @if($hall1->Boardroom=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Boardroom" value="Available">
+                            @endif
+                            @if($hall1->Boardroom=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Boardroom" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Oval') ? ' has-error' : '' }}">
+                        <label for="Oval" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Oval" value="Not Available">
+                            <label for="Oval">Oval</label> 
+                            @if($hall1->Oval=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Oval" value="Available">
+                            @endif
+                            @if($hall1->Oval=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Oval" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Herringbone') ? ' has-error' : '' }}">
+                        <label for="Herringbone" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Herringbone" value="Not Available">
+                            <label for="Herringbone">Herringbone</label> 
+                            @if($hall1->Herringbone=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Herringbone" value="Available">
+                            @endif
+                            @if($hall1->Herringbone=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Herringbone" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Top_table_springs') ? ' has-error' : '' }}">
+                        <label for="Top_table_springs" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Top_table_springs" value="Not Available">
+                            <label for="Top_table_springs">Top Table Springs</label> 
+                            @if($hall1->Top_table_springs=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Top_table_springs" value="Available">
+                            @endif
+                            @if($hall1->Top_table_springs=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Top_table_springs" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        
+
+                        <div class="form-group row{{ $errors->has('banquet') ? ' has-error' : '' }}">
+                        <label for="banquet" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="banquet" value="Not Available">
+                            <label for="banquet">Banquet</label> 
+                            @if($hall1->banquet=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="banquet" value="Available">
+                            @endif
+                            @if($hall1->banquet=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="banquet" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('cabaret') ? ' has-error' : '' }}">
+                        <label for="cabaret" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="cabaret" value="Not Available">
+                            <label for="cabaret">Cabaret</label> 
+                            @if($hall1->cabaret=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="cabaret" value="Available">
+                            @endif
+                            @if($hall1->cabaret=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="cabaret" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('informal') ? ' has-error' : '' }}">
+                        <label for="informal" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="informal" value="Not Available">
+                            <label for="informal">Informal</label> 
+                            @if($hall1->informal=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="informal" value="Available">
+                            @endif
+                            @if($hall1->informal=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="informal" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        
+
+                        
 
                        
                         <div class="modal-footer">
