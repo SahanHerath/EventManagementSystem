@@ -310,7 +310,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
         <div class="offset-9">
-            <button type="button" class="btn btn-primary"><a href="#">Edit Hall Features</a></button>
+            <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditFeature">Edit Hall Features</a></button>
             </div>
 	</section><!-- progression-section -->
 
@@ -733,6 +733,248 @@
   </div>
 
    <!--==============model for edit info=================-->
+   <!--==============model for edit features=================-->
+    <div class="modal fade" id="modalEditFeature" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Vehicle Categories</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <br>
+      
+      <form method="POST" action="{{URL('/EditHallFeatures'.$hall1->featureid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+             <div class="form-group row{{ $errors->has('projection') ? ' has-error' : '' }}">
+                        <label for="projection" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="projection" value="Not Available">
+                            <label for="projection">projection</label>
+                            @if($hall1->projection=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="projection" value="Available">
+                            @endif
+                            @if($hall1->projection=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="projection" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('internet') ? ' has-error' : '' }}">
+                        <label for="internet" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="internet" value="Not Available">
+                            <label for="internet">Wireless Internet</label> 
+                            @if($hall1->internet=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="internet" value="Available">
+                            @endif
+                            @if($hall1->internet=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="internet" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('parking') ? ' has-error' : '' }}">
+                        <label for="parking" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="parking" value="Not Available">
+                            <label for="parking">Parking</label> 
+                            @if($hall1->parking=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="parking" value="Available">
+                            @endif
+                            @if($hall1->parking=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="parking" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('security_camera') ? ' has-error' : '' }}">
+                        <label for="security_camera" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="security_camera" value="Not Available">
+                            <label for="security_camera">Security Camera</label> 
+                            @if($hall1->security_camera=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="security_camera" value="Available">
+                            @endif
+                            @if($hall1->security_camera=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="security_camera" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('security_personal') ? ' has-error' : '' }}">
+                        <label for="security_personal" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="security_personal" value="Not Available">
+                            <label for="security_personal">Security Personal</label> 
+                            @if($hall1->security_personal=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="security_personal" value="Available">
+                            @endif
+                            @if($hall1->security_personal=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="security_personal" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('reception_area') ? ' has-error' : '' }}">
+                        <label for="reception_area" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="reception_area" value="Not Available">
+                            <label for="reception_area">Reception Area</label> 
+                            @if($hall1->reception_area=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="reception_area" value="Available">
+                            @endif
+                            @if($hall1->reception_area=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="reception_area" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Bar') ? ' has-error' : '' }}">
+                        <label for="Bar" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Bar" value="Not Available">
+                            <label for="Bar">Bar</label> 
+                            @if($hall1->Bar=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Bar" value="Available">
+                            @endif
+                            @if($hall1->Bar=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Bar" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('garden') ? ' has-error' : '' }}">
+                        <label for="garden" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="garden" value="Not Available">
+                            <label for="garden">Garden</label> 
+                            @if($hall1->garden=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="garden" value="Available">
+                            @endif
+                            @if($hall1->garden=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="garden" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('smoking_area') ? ' has-error' : '' }}">
+                        <label for="smoking_area" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="smoking_area" value="Not Available">
+                            <label for="smoking_area">Smoking Area</label> 
+                            @if($hall1->smoking_area=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="smoking_area" value="Available">
+                            @endif
+                            @if($hall1->smoking_area=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="smoking_area" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('welcome_drinks') ? ' has-error' : '' }}">
+                        <label for="welcome_drinks" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="welcome_drinks" value="Not Available">
+                            <label for="welcome_drinks">welcome Drinks</label> 
+                            @if($hall1->welcome_drinks=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="welcome_drinks" value="Available">
+                            @endif
+                            @if($hall1->welcome_drinks=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="welcome_drinks" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Buffet') ? ' has-error' : '' }}">
+                        <label for="Buffet" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Buffet" value="Not Available">
+                            <label for="Buffet">Buffet</label> 
+                            @if($hall1->Buffet=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Buffet" value="Available">
+                            @endif
+                            @if($hall1->Buffet=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Buffet" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Handicap_accessible') ? ' has-error' : '' }}">
+                        <label for="Handicap_accessible" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="Handicap_accessible" value="Not Available">
+                            <label for="Handicap_accessible">Handicap Accessible</label> 
+                            @if($hall1->Handicap_accessible=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="Handicap_accessible" value="Available">
+                            @endif
+                            @if($hall1->Handicap_accessible=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="Handicap_accessible" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('outside_balcony') ? ' has-error' : '' }}">
+                        <label for="outside_balcony" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="outside_balcony" value="Not Available">
+                            <label for="outside_balcony">Varenda</label> 
+                            @if($hall1->outside_balcony=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="outside_balcony" value="Available">
+                            @endif
+                            @if($hall1->outside_balcony=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="outside_balcony" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('inside_balcony') ? ' has-error' : '' }}">
+                        <label for="inside_balcony" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="inside_balcony" value="Not Available">
+                            <label for="inside_balcony">Balcony</label> 
+                            @if($hall1->inside_balcony=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="inside_balcony" value="Available">
+                            @endif
+                            @if($hall1->inside_balcony=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="inside_balcony" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('stage') ? ' has-error' : '' }}">
+                        <label for="stage" class="col-md-4"></label>   
+                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                            <input type="hidden" name="stage" value="Not Available">
+                            <label for="stage">Stage</label> 
+                            @if($hall1->stage=='Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" checked name="stage" value="Available">
+                            @endif
+                            @if($hall1->stage=='Not Available') 
+                            <input type="checkbox" class="largerCheckbox" style="width:25px; height:25px;" name="stage" value="Available" >
+                            @endif
+                        </div>   
+                        </div>
+
+                       
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+      </form>
+      
+      </div>
+  </div>
+  </div>
+    <!--==============model for edit features=================-->
 		@endforeach
 
 
