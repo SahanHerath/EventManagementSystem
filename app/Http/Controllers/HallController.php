@@ -724,5 +724,25 @@ class HallController extends Controller
             }
         }
     }
+
+    public function eventUpdate(Request $request, $eventid)
+    {
+        
+
+        $data=Hall_event::where('id',$eventid)
+            
+        ->update([
+                'Wedding'=>$request->Wedding,
+                'Meeting'=>$request->Meeting,
+                'Party'=>$request->Party,
+                'Corporate_event'=>$request->Corporate_event,
+                'Professional_Event'=>$request->Professional_Event,
+               
+
+                
+        ]);
+
+        return redirect()->back();
+    }
    
 }
