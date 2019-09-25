@@ -385,8 +385,8 @@
              {{ csrf_field() }}
              
                   <div class="form-group row{{ $errors->has('Wedding') ? ' has-error' : '' }}">
-                  <label for="Wedding" class="col-md-4"></label>   
-                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                  <label for="Wedding" class="col-md-2"></label>   
+                  <div class="col-md-6 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Wedding" value="Not Available">
                       <label for="Wedding">Wedding</label>
                       @if($data1->Wedding=='Available') 
@@ -399,8 +399,8 @@
                   </div>
 
                   <div class="form-group row{{ $errors->has('Birthday') ? ' has-error' : '' }}">
-                  <label for="Birthday" class="col-md-4"></label>   
-                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                  <label for="Birthday" class="col-md-2"></label>   
+                  <div class="col-md-6 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Birthday" value="Not Available">
                       <label for="Birthday">Birthday</label> 
                       @if($data1->Birthday=='Available') 
@@ -413,8 +413,8 @@
                   </div>
 
                   <div class="form-group row{{ $errors->has('Party') ? ' has-error' : '' }}">
-                  <label for="Party" class="col-md-4"></label>   
-                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                  <label for="Party" class="col-md-2"></label>   
+                  <div class="col-md-6 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Party" value="Not Available">
                       <label for="Party">Party</label> 
                       @if($data1->Party=='Available') 
@@ -427,8 +427,8 @@
                   </div>
 
                   <div class="form-group row{{ $errors->has('Corporate_event') ? ' has-error' : '' }}">
-                  <label for="Corporate_event" class="col-md-4"></label>   
-                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                  <label for="Corporate_event" class="col-md-2"></label>   
+                  <div class="col-md-6 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Corporate_event" value="Not Available">
                       <label for="Corporate_event">Corporate Event</label> 
                       @if($data1->Corporate_event=='Available') 
@@ -441,8 +441,8 @@
                   </div>
 
                   <div class="form-group row{{ $errors->has('Funeral') ? ' has-error' : '' }}">
-                  <label for="Funeral" class="col-md-4"></label>   
-                  <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                  <label for="Funeral" class="col-md-2"></label>   
+                  <div class="col-md-6 switch-wrap d-flex justify-content-between">
                       <input type="hidden" name="Funeral" value="Not Available">
                       <label for="Funeral">Funeral</label> 
                       @if($data1->Funeral=='Available')
@@ -484,8 +484,8 @@
       <form method="POST" action="{{URL('/EditCateringFeatures'.$data1->cateringid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              <div class="form-group row{{ $errors->has('Welcome_drink') ? ' has-error' : '' }}">
-                        <label for="Welcome_drink" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Welcome_drink" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Welcome_drink" value="Not Available">
                             <label for="Welcome_drink">Traditional Dancing</label>
                             @if($data1->Welcome_drink=='Available') 
@@ -498,8 +498,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Catering_set') ? ' has-error' : '' }}">
-                        <label for="Catering_set" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Catering_set" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Catering_set" value="Not Available">
                             <label for="Catering_set">Catering Set</label> 
                             @if($data1->Catering_set=='Available') 
@@ -512,8 +512,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Catering_tent') ? ' has-error' : '' }}">
-                        <label for="Catering_tent" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Catering_tent" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Catering_tent" value="Not Available">
                             <label for="Catering_tent">Catering Tent</label> 
                             @if($data1->Catering_tent=='Available') 
@@ -526,8 +526,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Cake') ? ' has-error' : '' }}">
-                        <label for="Cake" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Cake" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Cake" value="Not Available">
                             <label for="Cake">Cake</label> 
                             @if($data1->Cake=='Available') 
@@ -540,8 +540,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Special_Food') ? ' has-error' : '' }}">
-                        <label for="Special_Food" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Special_Food" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Special_Food" value="Not Available">
                             <label for="Special_Food">Special Food</label> 
                             @if($data1->Special_Food=='Available') 
@@ -554,8 +554,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Garden_umbrella') ? ' has-error' : '' }}">
-                        <label for="Garden_umbrella" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Garden_umbrella" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Garden_umbrella" value="Not Available">
                             <label for="Garden_umbrella">Garden Umbrella</label> 
                             @if($data1->Garden_umbrella=='Available') 
@@ -568,8 +568,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Coffee_Machine') ? ' has-error' : '' }}">
-                        <label for="Coffee_Machine" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Coffee_Machine" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Coffee_Machine" value="Not Available">
                             <label for="Coffee_Machine">Coffee Machine</label> 
                             @if($data1->Coffee_Machine=='Available') 
@@ -582,8 +582,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('Table_chair') ? ' has-error' : '' }}">
-                        <label for="Table_chair" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="Table_chair" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="Table_chair" value="Not Available">
                             <label for="Table_chair">Table ,Chair for rent</label> 
                             @if($data1->Table_chair=='Available') 
@@ -596,8 +596,8 @@
                         </div>
 
                         <div class="form-group row{{ $errors->has('sink') ? ' has-error' : '' }}">
-                        <label for="sink" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="sink" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="sink" value="Not Available">
                             <label for="sink">Sink</label> 
                             @if($data1->sink=='Available') 
@@ -611,8 +611,8 @@
 
                         
                         <div class="form-group row{{ $errors->has('dessert') ? ' has-error' : '' }}">
-                        <label for="dessert" class="col-md-4"></label>   
-                        <div class="col-md-4 switch-wrap d-flex justify-content-between">
+                        <label for="dessert" class="col-md-2"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
                             <input type="hidden" name="dessert" value="Not Available">
                             <label for="dessert">Dessert</label> 
                             @if($data1->dessert=='Available') 
