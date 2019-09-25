@@ -988,7 +988,7 @@
       </div>
       <br>
       
-      <form method="POST" action="{{URL('/EditHallFeatures'.$hall1->arrangeid)}}" enctype="multipart/form-data">
+      <form method="POST" action="{{URL('/EditHallArrangement'.$hall1->arrangeid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
              <div class="form-group row{{ $errors->has('theatre') ? ' has-error' : '' }}">
                         <label for="theatre" class="col-md-4"></label>   

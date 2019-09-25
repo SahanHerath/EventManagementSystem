@@ -664,5 +664,32 @@ class HallController extends Controller
 
             return redirect()->back();
     }
+
+    public function arrangeUpdate(Request $request, $id)
+    {
+        //
+        
+
+        $data=Hall_table_arrangement::where('id',$id)
+            
+        ->update([
+                'theatre'=>$request->theatre,
+                'U_shape'=>$request->U_shape,
+                'V_shape'=>$request->V_shape,
+                'classroom'=>$request->classroom,
+                'hallow_square'=>$request->hallow_square,
+                'Boardroom'=>$request->Boardroom,
+                'Oval'=>$request->Oval,
+                'Herringbone'=>$request->Herringbone,
+                'Top_table_springs'=>$request->Top_table_springs,
+                'banquet'=>$request->banquet,
+                'cabaret'=>$request->cabaret,
+                'informal'=>$request->informal,
+                
+                
+            ]);
+
+            return redirect()->back();
+    }
    
 }
