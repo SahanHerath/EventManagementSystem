@@ -19,6 +19,9 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
+
+        <!-- css for checkbox-->
+        <link rel="stylesheet" href="css/checkbox.css">
     </head>
     <body>
         
@@ -185,23 +188,25 @@
       <br>
       <form method="POST" action="{{URL('/EditPoruwaFeatures'.$data1->poruwaid)}}" enctype="multipart/form-data">
              {{ csrf_field() }}
-             <div class="form-group row{{ $errors->has('Poruwa_rituals') ? ' has-error' : '' }}">
-                        <label for="Poruwa_rituals" class="col-md-2"></label>   
-                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
+                        <div class="form-group row{{ $errors->has('Poruwa_rituals') ? ' has-error' : '' }}">
+                        <label for="Poruwa_rituals"></label>   
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between container">
                             <input type="hidden" name="Poruwa_rituals" value="Not Available">
-                            <label for="Poruwa_rituals">Poruwa Rituals</label>
-                            @if($data1->Poruwa_rituals=='Available') 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" checked name="Poruwa_rituals" value="Available">
-                            @endif
-                            @if($data1->Poruwa_rituals=='Not Available') 
-                            <input type="checkbox" class="largerCheckbox" style="width:20px; height:20px;" name="Poruwa_rituals" value="Available" >
-                            @endif
+                            <label  for="Poruwa_rituals">Poruwa Rituals</label>
+                                @if($data1->Poruwa_rituals=='Available') 
+                                <input type="checkbox" checked name="Poruwa_rituals" value="Available">
+                                @endif
+                                @if($data1->Poruwa_rituals=='Not Available') 
+                                <input type="checkbox" name="Poruwa_rituals" value="Available" >
+                                @endif
+                                <span class="checkmark"></span>
+                            
                         </div>   
                         </div>
 
                         <div class="form-group row{{ $errors->has('	Poruwa_items') ? ' has-error' : '' }}">
                         <label for="Poruwa_items" class="col-md-2"></label>   
-                        <div class="col-md-6 switch-wrap d-flex justify-content-between">
+                        <div class="col-md-6 switch-wrap d-flex justify-content-between inputGroup">
                             <input type="hidden" name="Poruwa_items" value="Not Available">
                             <label for="Poruwa_items">Poruwa Items</label> 
                             @if($data1->Poruwa_items=='Available') 
