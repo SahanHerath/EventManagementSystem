@@ -53,6 +53,23 @@
         <section class="home_banner_area">
         <div class="container box_1620">
            	<div class="container">
+               @if(Session::has('flash_message'))  
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!!session('flash_message')!!}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                        </div>
+                @endif
+
+                @if(Session::has('warning_message'))
+                        <div class="alert alert-warning">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!!session('warning_message')!!}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                        </div>
+                @endif
            		<div class="banner_inner d-flex align-items-center">
 					<div class="offset-1 banner_content">
 						<div class="media">
