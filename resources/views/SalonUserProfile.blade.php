@@ -53,6 +53,23 @@
         <section class="home_banner_area">
         <div class="container box_1620">
            	<div class="container">
+               @if(Session::has('flash_message'))  
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!!session('flash_message')!!}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                        </div>
+                @endif
+
+                @if(Session::has('warning_message'))
+                        <div class="alert alert-warning">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!!session('warning_message')!!}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                        </div>
+                @endif
            		<div class="banner_inner d-flex align-items-center">
 					<div class="offset-1 banner_content">
 						<div class="media">
@@ -70,7 +87,7 @@
                                     <li><b>Link :- </b>{{$data1->Link}}</li>
                                     
                                     <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
-                                    <a class="genric-btn info" href="#">Change Password</a>
+                                    <a class="genric-btn info" href="" data-toggle="modal" data-target="#password_modal">Change Password</a>
                                     <br>
                                 </ul>
                             </div>
@@ -572,6 +589,77 @@
   </div>
   </div>
    <!--==============model for edit features=================-->
+    <!--==============model for change passsword=================-->
+<div class="modal fade" id="password_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Change Password</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/ChangePassword')}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+                        
+             <form class="form-horizontal" method="POST" action="/changePW">
+                            {{ csrf_field() }}
+
+                            <div class="form-group row{{ $errors->has('current-password') ? ' has-error' : '' }}">
+                                <label for="new-password" class="col-md-4 col-form-label offset-1">Current Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="current-password" type="password" class="form-control" name="current-password" required>
+
+                                    @if ($errors->has('current-password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('current-password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row{{ $errors->has('new-password') ? ' has-error' : '' }}">
+                                <label for="new-password" class="col-md-4 col-form-label offset-1">New Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="new-password" type="password" class="form-control" name="new-password" required>
+
+                                    @if ($errors->has('new-password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('new-password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="new-password-confirm" class="col-md-4 col-form-label offset-1">Confirm New Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required>
+                                </div>
+                            </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Change Password
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+             
+                  
+
+      </form>
+                
+      </div>
+  </div>
+  </div>
+
+<!--==============model for change passsword=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
