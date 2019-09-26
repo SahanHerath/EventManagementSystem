@@ -300,3 +300,5 @@ Route::post('/EditHallArrangement{id}', 'HallController@arrangeUpdate')  ;
 Route::get('/RemoveHall{hallid}', 'HallController@removehall')  ;
 Route::post('/EditHallEvents{eventid}', 'HallController@eventUpdate')  ;
 Route::post('/ChangePassword', 'UsersController@changepassword')  ;
+
+Route::get('/AllHotels', 'UsersController@allhotel')  ;

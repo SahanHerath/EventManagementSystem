@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Exception;
 use Hash;
 use Auth;
+use DB;
 
 class UsersController extends Controller
 {
@@ -186,6 +187,15 @@ class UsersController extends Controller
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
         return redirect()->back()->with('flash_message','Password changed successfully');
+    }
+    public function allhotel()
+    {
+        $data=DB::table('hotels')
+                ->join('users','users.id','=','hotels.user_id')
+                ->where('users.category','=','Hall')
+                ->get();
+        
+         return view('users.allhotels',compact('data'));
     }
 
 }
