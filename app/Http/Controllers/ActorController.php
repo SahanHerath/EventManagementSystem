@@ -444,4 +444,29 @@ class ActorController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $cake1 = User::findOrFail($id); 
+                $cake1 ->delete();
+                $cake2  = Actor::where('user_id',$id)->delete();
+                $cake3  = Actor_event::where('user_id',$id)->delete();
+                
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
+
 }

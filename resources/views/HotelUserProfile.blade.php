@@ -126,7 +126,7 @@
                         <center><button type="submit"  class="btn btn-success">Add Reception Hall</button></center>
             </form>
             <div class="offset-10">
-            <button type="button" class="btn btn-danger"><a href="#" >Deactivate Account</a></button>
+            <button type="button" class="btn btn-danger"><a href="{{URL('/RemoveHotelAccount'.$data1->userid)}}" >Deactivate Account</a></button>
             </div>
             @endforeach
 		</div><!-- container -->

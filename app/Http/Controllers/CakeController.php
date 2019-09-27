@@ -335,4 +335,27 @@ class CakeController extends Controller
         
     }
 
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $cake1 = User::findOrFail($id); 
+                $cake1 ->delete();
+                $cake2  = Cake_designer::where('user_id',$id)->delete();
+                
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
+
 }
