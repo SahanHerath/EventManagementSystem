@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Decorator;
 use App\Decorator_event;
+use App\Decoration_package;
 use Auth;
 use Image;
 use DB;
+use PDF;
 
 class decorationController extends Controller
 {
@@ -411,6 +413,30 @@ class decorationController extends Controller
                 return redirect('/home'); 
             }
         
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $decorate_package = new Decoration_package;
+        $decorate_package->user_id = Auth::user()->id;
+        $decorate_package->Package_Name=$request->Package_Name;
+        $decorate_package->Decoration_Type =$request->Decoration_Type;
+        $decorate_package->Services =$request->Services;
+        $decorate_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/decoration') , $filename);
+             $decorate_package->Pdf=$filename;
+             
+         }
+        
+         $decorate_package->save();
+
+         return redirect('/Profile');
     }
     
 }
