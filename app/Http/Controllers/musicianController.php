@@ -405,4 +405,27 @@ class musicianController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $music1 = User::findOrFail($id); 
+                $music1->delete();
+                $music = Musician::where('user_id',$id)->delete();
+                $event = Musician_event::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
 }

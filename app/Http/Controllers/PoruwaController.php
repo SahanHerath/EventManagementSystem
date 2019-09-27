@@ -304,5 +304,28 @@ class PoruwaController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $poruwa1 = User::findOrFail($id); 
+                $poruwa1->delete();
+                $poruwa = Poruwa_ceramony::where('user_id',$id)->delete();
+                
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
     
 }
