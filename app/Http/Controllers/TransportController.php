@@ -342,4 +342,27 @@ class TransportController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $trans1 = User::findOrFail($id); 
+                $trans1->delete();
+                $trans = Transporter::where('user_id',$id)->delete();
+                $category = Transport_Category::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
 }
