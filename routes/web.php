@@ -301,4 +301,18 @@ Route::get('/RemoveHall{hallid}', 'HallController@removehall')  ;
 Route::post('/EditHallEvents{eventid}', 'HallController@eventUpdate')  ;
 Route::post('/ChangePassword', 'UsersController@changepassword')  ;
 
+Route::get('/RemoveTransportAccount{id}', 'TransportController@removeAccount')  ;
+Route::get('/RemoveMusicAccount{id}', 'musicianController@removeAccount')  ;
+Route::get('/RemoveHotelAccount{id}', 'HallController@removeAccount')  ;
+Route::get('/RemovePoruwaAccount{id}', 'PoruwaController@removeAccount')  ;
+Route::get('/RemoveEventPlannerAccount{id}', 'EventPlanersController@removeAccount')  ;
+Route::get('/RemoveDecorationAccount{id}', 'decorationController@removeAccount')  ;
+Route::get('/RemoveCateringAccount{id}', 'CateringController@removeAccount')  ;
+Route::get('/RemoveCostumeDesignerAccount{id}', 'CostumeDesignerController@removeAccount')  ;
+Route::get('/RemoveActorAccount{id}', 'ActorController@removeAccount')  ;
+Route::get('/RemoveCakeAccount{id}', 'CakeController@removeAccount')  ;
+Route::get('/RemoveSalonAccount{id}', 'salonController@removeAccount')  ;
+Route::get('/RemovePhotographyAccount{id}', 'PhotographyController@removeAccount')  ;
+Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
+
 Route::get('/AllHotels', 'UsersController@allhotel')  ;
