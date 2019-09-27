@@ -11,11 +11,11 @@
                     <form method="POST" action="/addhotel" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="Hotel_Name" class="col-md-4 col-form-label text-md-right">Hotel / Reception Hall Name</label>
+                        <div class="form-group row{{ $errors->has('Hotel_Name') ? ' has-error' : '' }}">
+                            <label for="Hotel_Name" class="col-md-4 col-form-label text-md-right">Hotel Name</label>
 
                             <div class="col-md-6">
-                                <input id="Hotel_Name" type="text" class="form-control @error('Hotel_Name') is-invalid @enderror" name="Hotel_Name" value="{{ old('Hotel_Name') }}" required autocomplete="Hotel_Name" autofocus>
+                                <input id="Hotel_Name" type="text" class="form-control @error('Hotel_Name') is-invalid @enderror" name="Hotel_Name" value="{{ old('Hotel_Name') }}" autocomplete="Hotel_Name" title="Fill this field with Hotel Name">
 
                                 @if ($errors->has('Hotel_Name'))
                                     <span class="help-block">
@@ -25,11 +25,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Address') ? ' has-error' : '' }}">
                             <label for="Address" class="col-md-4 col-form-label text-md-right">Address</label>
 
                             <div class="col-md-6">
-                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}" required autocomplete="Address">
+                                <input id="Address" type="Address" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}" autocomplete="Address" title="Fill this field with Address">
 
                                 @if ($errors->has('Address'))
                                     <span class="help-block">
@@ -39,11 +39,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
                             <label for="Contact_No" class="col-md-4 col-form-label text-md-right">Contact Number</label>
 
                             <div class="col-md-6">
-                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" required autocomplete="Contact_No" autofocus>
+                                <input id="Contact_No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}"  autocomplete="Contact_No" autofocus>
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -53,11 +53,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Link') ? ' has-error' : '' }}">
                             <label for="Link" class="col-md-4 col-form-label text-md-right">Link</label>
 
                             <div class="col-md-6">
-                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}" required autocomplete="Link" autofocus>
+                                <input id="Link" type="text" class="form-control @error('Link') is-invalid @enderror" name="Link" value="{{ old('Link') }}" autocomplete="Link" title="Fill this field with link of a webpage that gives details about your services including facebook,instagram,twitter etc.  ">
 
                                 @if ($errors->has('Link'))
                                     <span class="help-block">
@@ -67,11 +67,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('facebook') ? ' has-error' : '' }}">
                             <label for="facebook" class="col-md-4 col-form-label text-md-right">facebook</label>
 
                             <div class="col-md-6">
-                                <input id="facebook" type="text" class="form-control @error('facebook') is-invalid @enderror" name="facebook" value="{{ old('facebook') }}" required autocomplete="facebook" autofocus>
+                                <input id="facebook" type="text" class="form-control @error('facebook') is-invalid @enderror" name="facebook" value="{{ old('facebook') }}"  autocomplete="facebook" >
 
                                 @if ($errors->has('facebook'))
                                     <span class="help-block">
@@ -81,11 +81,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('instagram') ? ' has-error' : '' }}">
                             <label for="instagram" class="col-md-4 col-form-label text-md-right">Instagram</label>
 
                             <div class="col-md-6">
-                                <input id="instagram" type="text" class="form-control @error('instagram') is-invalid @enderror" name="instagram" value="{{ old('instagram') }}" required autocomplete="instagram" autofocus>
+                                <input id="instagram" type="text" class="form-control @error('instagram') is-invalid @enderror" name="instagram" value="{{ old('instagram') }}"  autocomplete="instagram" >
 
                                 @if ($errors->has('instagram'))
                                     <span class="help-block">
@@ -100,16 +100,16 @@
                             <label for="Description" class="col-md-4 col-form-label text-md-right">Description</label>
                             
                             <div class="col-md-6">
-                                <textarea name='Description' cols='50' rows='5' id='Description' required></textarea>
+                                <textarea name='Description' cols='50' rows='5' id='Description'  class="form-control @error('Description') is-invalid @enderror" ></textarea>
                             </div>
                         </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Main_logo') ? ' has-error' : '' }}">
                             <label for="Main_logo" class="col-md-4 col-form-label text-md-right">Main Logo</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="Main_logo" id="Main_logo" value="{{ old('Main_logo') }}" required>
+                                <input type="file" name="Main_logo" id="Main_logo" value="{{ old('Main_logo') }}"  class="form-control @error('Main_logo') is-invalid @enderror" >
 
                                     @if ($errors->has('Main_logo'))
                                     <span class="help-block">
@@ -119,11 +119,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row{{ $errors->has('Cover_photo') ? ' has-error' : '' }}">
                             <label for="Cover_photo" class="col-md-4 col-form-label text-md-right">Cover photo</label>
     
                             <div class="col-md-6">
-                                <input type="file" name="Cover_photo" id="Cover_photo" value="{{ old('Cover_photo') }}" required>
+                                <input type="file" name="Cover_photo" id="Cover_photo" value="{{ old('Cover_photo') }}"  class="form-control @error('Cover_photo') is-invalid @enderror" >
 
                                     @if ($errors->has('Cover_photo'))
                                     <span class="help-block">
