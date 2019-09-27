@@ -245,7 +245,31 @@
                         <div class="section-top-border">
 						<h3 class="title_color">Available Packages</h3>
                             <a class="offset-1 genric-btn info" href="{{URL('/AddDecorationPackage'.$deco->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
-                        </div>    
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
+                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
+                                    <a class="genric-btn danger" href="#">Remove</a></center>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        @endforeach
+                            
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemoveDecorationAccount'.$deco->userid)}}">Deactivate Account</a>
                             
                             
@@ -788,6 +812,8 @@
 
     <!--==============model for edit info=================-->
     @endforeach
+
+   
         <footer class="footer_area p_120">
         	<div class="container">
         		<div class="row footer_inner">

@@ -312,10 +312,15 @@ class decorationController extends Controller
                 ->where('users.id','=',$id1)
                 ->select('users.id as userid','name','email','decorators.id as deco_id','Team_Name','Address','Description','Contact_No','Link','Poruwa','Flower','Table_Hall','Setty_Backs','Lighting','Traditional','Wedding_Car','Main_Pic','pic1','pic2','pic3','pic4','decorator_events.id as deco_eve_id','Wedding','Birthday','Get_Together','Parties','Outside_events')
                 ->get();
+
+        $deto=DB::table('users')
+            ->join('decoration_packages','users.id','=','decoration_packages.user_id')
+            ->where('users.id','=',$id1)
+            ->get();
         
         
 
-        return view('DecoratorUserProfile', compact('decos'));
+        return view('DecoratorUserProfile', compact('decos','deto'));
     }
 
     public function eventUpdate(Request $request, $id)
