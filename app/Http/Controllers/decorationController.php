@@ -389,5 +389,28 @@ class decorationController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $deco1 = User::findOrFail($id); 
+                $deco1->delete();
+                $deco2 = Decorator::where('user_id',$id)->delete();
+                $deco3 = Decorator_event::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
     
 }

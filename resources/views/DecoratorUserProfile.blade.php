@@ -242,7 +242,7 @@
 							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
-                            <a class="offset-10 genric-btn danger" href="#">Deactivate Account</a>
+                            <a class="offset-10 genric-btn danger" href="{{URL('/RemoveDecorationAccount'.$deco->userid)}}">Deactivate Account</a>
                             
                             
 					</div>

@@ -383,4 +383,27 @@ class DancingController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $dance1 = User::findOrFail($id); 
+                $dance1 ->delete();
+                $dance2  = Dancer::where('user_id',$id)->delete();
+                $dance3  = Dancer_event::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
 }
