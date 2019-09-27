@@ -418,4 +418,27 @@ return view('catering', compact('level'));
 
         return redirect('/Profile');
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $catering1 = User::findOrFail($id); 
+                $catering1 ->delete();
+                $catering2  = Catering::where('user_id',$id)->delete();
+                $catering3  = Catering_event::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
 }
