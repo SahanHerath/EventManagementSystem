@@ -414,4 +414,27 @@ class PhotographyController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $photo1 = User::findOrFail($id); 
+                $photo1->delete();
+                $photo = Photography::where('user_id',$id)->delete();
+                $photo2= Photography_event::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
 }

@@ -401,5 +401,28 @@ class EventPlanersController extends Controller
         return redirect('/Profile');
         
     }
+
+    public function removeAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $event1 = User::findOrFail($id); 
+                $event1->delete();
+                $plan1 = Event_planner::where('user_id',$id)->delete();
+                $plan2 = Event_planners_event::where('user_id',$id)->delete();
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
     
 }
