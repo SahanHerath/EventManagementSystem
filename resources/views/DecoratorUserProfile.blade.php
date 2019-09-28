@@ -727,7 +727,7 @@
                         <label for="Package_Name" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
 
                         
-                            <input id="Package_Name" type="text" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
+                            <input id="Package_Name" type="text" value="{{ old('Package_Name') }}" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
 
                             @error('Package_Name')
                                 <span class="invalid-feedback offset-1" role="alert">
@@ -741,7 +741,7 @@
                         <label for="Decoration_Type" class="col-md-4 col-form-label offset-1">Decoration_Type :-</label>
 
                         
-                            <input id="Decoration_Type" type="text" class="form-control @error('Decoration_Type') is-invalid @enderror col-md-10 offset-1" name="Decoration_Type"  title="fill this field decoration type(flora, glass etc)">
+                            <input id="Decoration_Type" type="text" value="{{ old('Decoration_Type') }}" class="form-control @error('Decoration_Type') is-invalid @enderror col-md-10 offset-1" name="Decoration_Type"  title="fill this field decoration type(flora, glass etc)">
 
                             @error('Decoration_Type')
                                 <span class="invalid-feedback offset-1" role="alert">
@@ -762,7 +762,7 @@
                         <label for="Services" class="col-md-4 col-form-label offset-1">Services :-</label>
                         
                         
-                            <textarea name='Services' cols='50' rows='5' id='Services' class="form-control @error('Services') is-invalid @enderror col-md-10 offset-1" title="Fill this field with services that are include in  this package (Table decoration, Entrance decoration ,Hall decoration etc) & some other description"></textarea>
+                            <textarea name='Services' cols='50' rows='5' id='Services' class="form-control @error('Services') is-invalid @enderror col-md-10 offset-1" title="Fill this field with services that are include in  this package (Table decoration, Entrance decoration ,Hall decoration etc) & some other description">{{ old('Services') }}</textarea>
                             @error('Services')
                                 <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -776,7 +776,7 @@
                         <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
 
                         
-                            <input id="Price" type="text" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+                            <input id="Price" type="text" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
 
                             @error('Price')
                                 <span class="invalid-feedback offset-1" role="alert">
@@ -822,7 +822,7 @@
             <div class="modal-content">
             
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Add New Package</h4>
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Package Details</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -913,7 +913,7 @@
 
     <!--==============model for edit package=================-->
     @endforeach
-     <!--==============model for  edit info=================-->
+     <!--==============model for  change main pic=================-->
      <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -927,14 +927,16 @@
                 <center><img src="uploads/decoration/{{$deco->Main_Pic}}" alt="User Avatar" width="200" hight="200"></center>
                     
                     <form enctype="multipart/form-data" action="{{URL('/ChangeDecorationMainpic'.$deco->deco_id)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Main_Pic') ? ' has-error' : '' }}">
                     <label for="Main_Pic" class="offset-1">Update Main Picture :-</label>
-                    <center><input type="file" name="Main_Pic"></center>
+                    <center><input type="file" name="Main_Pic" class="form-control @error('Main_Pic') is-invalid @enderror col-md-10 offset-1"></center>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        @error('Price1')
+                        @error('Main_Pic')
                                 <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                         @enderror
+                    </div>
                         <div class="modal-footer">
                         <div class="text-center">
                         
@@ -949,7 +951,7 @@
         </div>
     </div>
 
-    <!--==============model for edit info=================-->
+    <!--==============model for change main pic=================-->
     @endforeach
 
    
@@ -1026,10 +1028,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
-        @if (count($errors) > 0)
+        
+        @if ($errors->has('name')||$errors->has('email')||$errors->has('Team_Name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name')||$errors->has('Decoration_Type')||$errors->has('Services')||$errors->has('Price')||$errors->has('Pdf'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalAddPackage").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name1')||$errors->has('Decoration_Type1')||$errors->has('Services1')||$errors->has('Price1')||$errors->has('Pdf1'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalEditPackage").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_Pic'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
             });
         </script>
         @endif

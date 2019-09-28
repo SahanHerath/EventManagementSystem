@@ -423,6 +423,25 @@ class decorationController extends Controller
 
     public function AddNewPackage(request $request,$id)
     {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Decoration_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Decoration_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
         $decorate_package = new Decoration_package;
         $decorate_package->user_id = Auth::user()->id;
         $decorate_package->Package_Name=$request->Package_Name;
@@ -447,6 +466,28 @@ class decorationController extends Controller
 
     public function EditPackage(request $request,$id)
     {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Decoration_Type1' => 'required|string|max:255',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Decoration_Type1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
         $data=Decoration_package::where('id',$id)
             
         ->update([
@@ -501,6 +542,15 @@ class decorationController extends Controller
                 ->where('users.id','=',$id1)
                 ->select('decorators.id')
                 ->get();
+
+                $request->validate(
+                [
+                    'Main_Pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_Pic.required'=> "Add a image here",
+                ]
+            );
             
             
             foreach($data as $data1)
