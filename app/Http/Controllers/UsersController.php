@@ -269,5 +269,14 @@ class UsersController extends Controller
         
          return view('users.alldancing',compact('data'));
     }
+    public function alldecoration()
+    {
+        $data=DB::table('decorators')
+                ->join('users','users.id','=','decorators.user_id')
+                ->where('users.category','=','Decoration')
+                ->get();
+        
+         return view('users.alldecoration',compact('data'));
+    }
 
 }
