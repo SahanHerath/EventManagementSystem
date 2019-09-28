@@ -215,5 +215,23 @@ class UsersController extends Controller
         
          return view('users.allbeautician',compact('data'));
     }
+    public function alldjband()
+    {
+        $data=DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->where('users.category','=','Music')
+                ->get();
+        
+         return view('users.alldjband',compact('data'));
+    }
+    public function allcatering()
+    {
+        $data=DB::table('caterings')
+                ->join('users','users.id','=','caterings.user_id')
+                ->where('users.category','=','Catering')
+                ->get();
+        
+         return view('users.allcatering',compact('data'));
+    }
 
 }
