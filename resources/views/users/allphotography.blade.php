@@ -163,7 +163,7 @@
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <button type="button" class="btn btn-warning"><a href="/AllPhotography">Photography</a></button>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
-<a href="/AllDJ/Band"><button type="button" class="btn btn-primary">DJ/Band</button></a>
+<a href="/AllDJBand"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="/AllCatering"><button type="button" class="btn btn-primary">Catering</button></a>
 <a href="/AllRepresenter"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
 <a href="/AllCakeDesigner"><button type="button" class="btn btn-primary">Cake Designer</button></a>

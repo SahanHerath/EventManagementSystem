@@ -318,7 +318,7 @@ Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
 Route::get('/AllHotels', 'UsersController@allhotel')  ;
 Route::get('/AllPhotography', 'UsersController@allphotography')  ;
 Route::get('/AllBeautician', 'UsersController@allbeautician')  ;
-Route::get('/AllDJ/Band', 'UsersController@alldjband')  ;
+Route::get('/AllDJBand', 'UsersController@alldjband')  ;
 Route::get('/AllCatering', 'UsersController@allcatering')  ;
 Route::get('/AllRepresenter', 'UsersController@allrepresenter')  ;
 Route::get('/AllCakeDesigner', 'UsersController@allcakeDesigner')  ;
