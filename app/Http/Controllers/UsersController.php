@@ -287,5 +287,15 @@ class UsersController extends Controller
         
          return view('users.alltransport',compact('data'));
     }
+    public function alleventplanners()
+    {
+        $data=DB::table('event_planners')
+                ->join('users','users.id','=','event_planners.user_id')
+                ->where('users.category','=','Event_Planners')
+                ->get();
+        
+         return view('users.alleventplanners',compact('data'));
+    }
+
 
 }
