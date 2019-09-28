@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Decorator;
 use App\Decorator_event;
+use App\Decoration_package;
 use Auth;
 use Image;
 use DB;
+use PDF;
 
 class decorationController extends Controller
 {
@@ -310,10 +312,15 @@ class decorationController extends Controller
                 ->where('users.id','=',$id1)
                 ->select('users.id as userid','name','email','decorators.id as deco_id','Team_Name','Address','Description','Contact_No','Link','Poruwa','Flower','Table_Hall','Setty_Backs','Lighting','Traditional','Wedding_Car','Main_Pic','pic1','pic2','pic3','pic4','decorator_events.id as deco_eve_id','Wedding','Birthday','Get_Together','Parties','Outside_events')
                 ->get();
+
+        $deto=DB::table('users')
+            ->join('decoration_packages','users.id','=','decoration_packages.user_id')
+            ->where('users.id','=',$id1)
+            ->get();
         
         
 
-        return view('DecoratorUserProfile', compact('decos'));
+        return view('DecoratorUserProfile', compact('decos','deto'));
     }
 
     public function eventUpdate(Request $request, $id)
@@ -411,6 +418,30 @@ class decorationController extends Controller
                 return redirect('/home'); 
             }
         
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $decorate_package = new Decoration_package;
+        $decorate_package->user_id = Auth::user()->id;
+        $decorate_package->Package_Name=$request->Package_Name;
+        $decorate_package->Decoration_Type =$request->Decoration_Type;
+        $decorate_package->Services =$request->Services;
+        $decorate_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/decoration') , $filename);
+             $decorate_package->Pdf=$filename;
+             
+         }
+        
+         $decorate_package->save();
+
+         return redirect('/Profile');
     }
     
 }

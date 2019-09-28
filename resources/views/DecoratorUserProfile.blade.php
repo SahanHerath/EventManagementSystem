@@ -242,6 +242,34 @@
 							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
+                        <div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                            <a class="offset-1 genric-btn info" href="{{URL('/AddDecorationPackage'.$deco->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
+                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
+                                    <a class="genric-btn danger" href="#">Remove</a></center>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        @endforeach
+                            
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemoveDecorationAccount'.$deco->userid)}}">Deactivate Account</a>
                             
                             
@@ -677,7 +705,115 @@
   </div>
 
 <!--==============model for change passsword=================-->
+  <!--==============model for  edit info=================-->
+  <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add New Package</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/AddDecorationPackage'.$deco->userid)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
+
+                        
+                            <input id="Package_Name" type="text" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
+
+                            @error('Package_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Decoration_Type') ? ' has-error' : '' }}">
+                        <label for="Decoration_Type" class="col-md-4 col-form-label offset-1">Decoration_Type :-</label>
+
+                        
+                            <input id="Decoration_Type" type="text" class="form-control @error('Decoration_Type') is-invalid @enderror col-md-10 offset-1" name="Decoration_Type"  title="fill this field decoration type(flora, glass etc)">
+
+                            @error('Decoration_Type')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+                   
+                   
+
+                   
+
+              
+
+                    <div class="form-group row{{ $errors->has('Services') ? ' has-error' : '' }}">
+                    
+                        <label for="Services" class="col-md-4 col-form-label offset-1">Services :-</label>
+                        
+                        
+                            <textarea name='Services' cols='50' rows='5' id='Services' class="form-control @error('Services') is-invalid @enderror col-md-10 offset-1" title="Fill this field with services that are include in  this package (Table decoration, Entrance decoration ,Hall decoration etc) & some other description"></textarea>
+                            @error('Services')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Price') ? ' has-error' : '' }}">
+                        <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
+
+                        
+                            <input id="Price" type="text" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+
+                            @error('Price')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Pdf') ? ' has-error' : '' }}">
+                            <label for="Pdf" class="col-md-4 col-form-label text-md-right">Pdf:-</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="Pdf" id="Pdf"  class="form-control @error('Pdf') is-invalid @enderror" >
+
+                                @error('Pdf')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                        </div>
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Add Package
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for edit info=================-->
     @endforeach
+
+   
         <footer class="footer_area p_120">
         	<div class="container">
         		<div class="row footer_inner">

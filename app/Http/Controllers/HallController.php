@@ -51,6 +51,38 @@ class HallController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['Hotel_Name' => 'required|string|max:255',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'Link' =>'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            
+            'facebook' => 'required|string|max:255',
+            'instagram' => 'required|string|max:255',
+            
+            'Main_logo'=> 'required|image|dimensions:min_width=300,min_height=100',
+            'Cover_photo' => 'required|image|dimensions:min_width=300,min_height=100',
+         
+            
+
+        ],
+        ['Hotel_Name.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'Link.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'facebook.required'=> "Fill out this field",
+        'instagram.required'=> "Fill out this field",
+        
+        'Main_logo.required'=> "Add a image here",
+        'Cover_photo.required'=> "Add a image here",
+        
+       
+       
+
+        ]
+    );
         $hotel = new Hotel;
         $hotel->Hotel_Name=$request->Hotel_Name;
         $hotel->Address=$request->Address;
