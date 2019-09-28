@@ -159,8 +159,8 @@
 <br><br><br><br>
 
 
-<button type="button" class="btn btn-warning"><a href="#">All</a></button>
-<a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
+<button type="button" class="btn btn-primary"><a href="#">All</a></button>
+<a href="/AllHotels"><button type="button" class="btn btn-warning">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/AllDJ/Band"><button type="button" class="btn btn-primary">DJ/Band</button></a>

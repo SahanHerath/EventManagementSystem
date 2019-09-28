@@ -316,11 +316,21 @@ Route::get('/RemovePhotographyAccount{id}', 'PhotographyController@removeAccount
 Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
 
 Route::get('/AllHotels', 'UsersController@allhotel')  ;
-
 Route::get('/AllPhotography', 'UsersController@allphotography')  ;
+Route::get('/AllBeautician', 'UsersController@allbeautician')  ;
+Route::get('/AllDJ/Band', 'UsersController@alldJ/band')  ;
+Route::get('/AllCatering', 'UsersController@allcatering')  ;
+Route::get('/AllRepresenter', 'UsersController@allrepresenter')  ;
+Route::get('/AllCakeDesigner', 'UsersController@allcakeDesigner')  ;
+Route::get('/AllCostumeDesigner', 'UsersController@allcostumeDesigner')  ;
+Route::get('/AllDancing', 'UsersController@alldancing')  ;
+Route::get('/AllDecoration', 'UsersController@alldecoration')  ;
+Route::get('/AllTransport', 'UsersController@alltransportl')  ;
+Route::get('/AllEventPlanners', 'UsersController@alleventPlanners')  ;
+Route::get('/AllPoruwaRituals', 'UsersController@/allporuwaRituals')  ;
 
 
 Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
 
 
-
+ 
