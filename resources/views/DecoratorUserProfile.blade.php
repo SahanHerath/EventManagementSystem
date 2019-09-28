@@ -82,8 +82,9 @@
                         <div class="media">
                             <div class="d-flex">
                                 <img src="uploads/decoration/{{$deco->Main_Pic}}" width="400" hight="600" alt="">
-                            </div>
-                             
+                            </div> 
+                     
+                            
                             <div class="personal_text">
                             <h3>{{$deco->Team_Name}}</h3>
                                 <ul class="list basic_info">
@@ -96,6 +97,7 @@
                                     <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
  
                                     <a class="genric-btn info" href=""  data-toggle="modal" data-target="#password_modal">Change Password</a>
+                                    <a class="genric-btn warning" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
                                     <br>
                                 </ul>
                             </div>
@@ -911,6 +913,43 @@
 
     <!--==============model for edit package=================-->
     @endforeach
+     <!--==============model for  edit info=================-->
+     <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/decoration/{{$deco->Main_Pic}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeDecorationMainpic'.$deco->deco_id)}}"  method="POST">
+                    <label for="Main_Pic" class="offset-1">Update Main Picture :-</label>
+                    <center><input type="file" name="Main_Pic"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Price1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for edit info=================-->
     @endforeach
 
    

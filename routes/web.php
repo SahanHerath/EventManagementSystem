@@ -336,6 +336,7 @@ Route::get('/AllPoruwaRituals', 'UsersController@allporuwarituals')  ;
 Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
 Route::post('/EditDecorationPackage{id}', 'decorationController@EditPackage')  ;
 Route::get('/RemoveDecorationPackage{id}', 'decorationController@deletePackage')  ;
+Route::post('/ChangeDecorationMainpic{id}', 'decorationController@changeMainPic')  ;
 
 
  

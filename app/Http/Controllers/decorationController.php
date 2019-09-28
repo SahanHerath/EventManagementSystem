@@ -489,10 +489,47 @@ class decorationController extends Controller
             }
             
         }
-      
 
-           
-        
+    }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->where('users.id','=',$id1)
+                ->select('decorators.id')
+                ->get();
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_Pic'))
+                    {
+                        $Main_Pic=$request->file('Main_Pic');
+                        $filename=time().'.'.$Main_Pic->getClientOriginalExtension();
+                        Image::make($Main_Pic)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+
+                        $picture=Decorator::where('id',$id)
+                        ->update([
+                                'Main_Pic'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
     }
     
 }
