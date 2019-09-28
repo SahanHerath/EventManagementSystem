@@ -242,5 +242,14 @@ class UsersController extends Controller
         
          return view('users.allrepresenter',compact('data'));
     }
+    public function allcakedesigner()
+    {
+        $data=DB::table('cake_designers')
+                ->join('users','users.id','=','cake_designers.user_id')
+                ->where('users.category','=','Cake_Designers')
+                ->get();
+        
+         return view('users.allcakedesigner',compact('data'));
+    }
 
 }
