@@ -325,7 +325,7 @@ Route::get('/AllCakeDesigner', 'UsersController@allcakeDesigner')  ;
 Route::get('/AllCostumeDesigner', 'UsersController@allcostumeDesigner')  ;
 Route::get('/AllDancing', 'UsersController@alldancing')  ;
 Route::get('/AllDecoration', 'UsersController@alldecoration')  ;
-Route::get('/AllTransport', 'UsersController@alltransportl')  ;
+Route::get('/AllTransport', 'UsersController@alltransport')  ;
 Route::get('/AllEventPlanners', 'UsersController@alleventPlanners')  ;
 Route::get('/AllPoruwaRituals', 'UsersController@/allporuwaRituals')  ;
 

@@ -278,5 +278,14 @@ class UsersController extends Controller
         
          return view('users.alldecoration',compact('data'));
     }
+    public function alltransport()
+    {
+        $data=DB::table('transporters')
+                ->join('users','users.id','=','transporters.user_id')
+                ->where('users.category','=','Wedding_Transport')
+                ->get();
+        
+         return view('users.alltransport',compact('data'));
+    }
 
 }
