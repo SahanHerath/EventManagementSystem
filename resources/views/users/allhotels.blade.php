@@ -158,9 +158,8 @@
     @endif
 <br><br><br><br>
 
-
-<button type="button" class="btn btn-primary"><a href="#">All</a></button>
-<a href="/AllHotels"><button type="button" class="btn btn-warning">Hotels & Halls</button></a>
+<a href="#"><button type="button" class="btn btn-primary">All</button></a>
+<button type="button" class="btn btn-warning"><a href="/AllHotels">Hotels & Halls</a></button>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/AllDJ/Band"><button type="button" class="btn btn-primary">DJ/Band</button></a>
@@ -180,7 +179,7 @@
 <div class="panel panel-default">
 <div class="panel-heading clearfix">
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Service providers</h4>
+                <h4 class="mt-5 mb-5">Hotel Service Providers</h4>
             </div>
 
             

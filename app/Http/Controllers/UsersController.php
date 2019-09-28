@@ -206,5 +206,14 @@ class UsersController extends Controller
         
          return view('users.allphotography',compact('data'));
     }
+    public function allbeautician()
+    {
+        $data=DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->where('users.category','=','Bridel_Designers')
+                ->get();
+        
+         return view('users.allbeautician',compact('data'));
+    }
 
 }
