@@ -331,6 +331,7 @@ Route::get('/AllPoruwaRituals', 'UsersController@/allporuwaRituals')  ;
 
 
 Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
+Route::post('/EditDecorationPackage{id}', 'decorationController@EditPackage')  ;
 
 
  

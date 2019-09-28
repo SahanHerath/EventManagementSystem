@@ -316,6 +316,7 @@ class decorationController extends Controller
         $deto=DB::table('users')
             ->join('decoration_packages','users.id','=','decoration_packages.user_id')
             ->where('users.id','=',$id1)
+            ->select('decoration_packages.id','Package_Name', 'Decoration_Type', 'Services','Price','Pdf')
             ->get();
         
         
@@ -442,6 +443,25 @@ class decorationController extends Controller
          $decorate_package->save();
 
          return redirect('/Profile');
+    }
+
+    public function EditPackage(request $request,$id)
+    {
+        $data=Decoration_package::where('id',$id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Decoration_Type'=>$request->Decoration_Type1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile');
     }
     
 }
