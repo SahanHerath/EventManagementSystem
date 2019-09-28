@@ -322,12 +322,12 @@ Route::get('/AllDJ/Band', 'UsersController@alldjband')  ;
 Route::get('/AllCatering', 'UsersController@allcatering')  ;
 Route::get('/AllRepresenter', 'UsersController@allrepresenter')  ;
 Route::get('/AllCakeDesigner', 'UsersController@allcakeDesigner')  ;
-Route::get('/AllCostumeDesigner', 'UsersController@allcostumeDesigner')  ;
+Route::get('/AllCostumeDesigner', 'UsersController@allcostumedesigner')  ;
 Route::get('/AllDancing', 'UsersController@alldancing')  ;
 Route::get('/AllDecoration', 'UsersController@alldecoration')  ;
 Route::get('/AllTransport', 'UsersController@alltransport')  ;
-Route::get('/AllEventPlanners', 'UsersController@alleventPlanners')  ;
-Route::get('/AllPoruwaRituals', 'UsersController@/allporuwaRituals')  ;
+Route::get('/AllEventPlanners', 'UsersController@alleventplanners')  ;
+Route::get('/AllPoruwaRituals', 'UsersController@allporuwarituals')  ;
 
 
 Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
