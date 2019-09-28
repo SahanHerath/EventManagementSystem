@@ -206,5 +206,68 @@ class UsersController extends Controller
         
          return view('users.allphotography',compact('data'));
     }
+    public function allbeautician()
+    {
+        $data=DB::table('salons')
+                ->join('users','users.id','=','salons.user_id')
+                ->where('users.category','=','Bridel_Designers')
+                ->get();
+        
+         return view('users.allbeautician',compact('data'));
+    }
+    public function alldjband()
+    {
+        $data=DB::table('musicians')
+                ->join('users','users.id','=','musicians.user_id')
+                ->where('users.category','=','Music')
+                ->get();
+        
+         return view('users.alldjband',compact('data'));
+    }
+    public function allcatering()
+    {
+        $data=DB::table('caterings')
+                ->join('users','users.id','=','caterings.user_id')
+                ->where('users.category','=','Catering')
+                ->get();
+        
+         return view('users.allcatering',compact('data'));
+    }
+    public function allrepresenter()
+    {
+        $data=DB::table('actors')
+                ->join('users','users.id','=','actors.user_id')
+                ->where('users.category','=','Actors')
+                ->get();
+        
+         return view('users.allrepresenter',compact('data'));
+    }
+    public function allcakedesigner()
+    {
+        $data=DB::table('cake_designers')
+                ->join('users','users.id','=','cake_designers.user_id')
+                ->where('users.category','=','Cake_Designers')
+                ->get();
+        
+         return view('users.allcakedesigner',compact('data'));
+    }
+    public function allcostumedesigner()
+    {
+        $data=DB::table('costume_designers')
+                ->join('users','users.id','=','costume_designers.user_id')
+                ->where('users.category','=','Cloth_Designers')
+                ->get();
+        
+         return view('users.allcostumedesigner',compact('data'));
+    }
+    public function alldancing()
+    {
+        $data=DB::table('dancers')
+                ->join('users','users.id','=','dancers.user_id')
+                ->where('users.category','=','Dancing')
+                ->get();
+        
+         return view('users.alldancing',compact('data'));
+    }
 
 }

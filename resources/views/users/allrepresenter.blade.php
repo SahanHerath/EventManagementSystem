@@ -161,11 +161,11 @@
 
 <a href="#"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
-<button type="button" class="btn btn-warning"><a href="/AllPhotography">Photography</a></button>
+<a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/AllDJ/Band"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="/AllCatering"><button type="button" class="btn btn-primary">Catering</button></a>
-<a href="/AllRepresenter"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
+<button type="button" class="btn btn-warning"><a href="/AllRepresenter">Representer & Artist</a></button>
 <a href="/AllCakeDesigner"><button type="button" class="btn btn-primary">Cake Designer</button></a>
 <a href="/AllCostumeDesigner"><button type="button" class="btn btn-primary">Costume Designer</button></a>
 <a href="/AllDancing"><button type="button" class="btn btn-primary">Dancing</button></a>
@@ -180,7 +180,7 @@
 <div class="panel panel-default">
 <div class="panel-heading clearfix">
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Photography Service Providers</h4>
+                <h4 class="mt-5 mb-5">Representer & Artist Service Providers</h4>
             </div>
 
             
@@ -189,7 +189,7 @@
         
         @if(count($data) == 0)
             <div class="panel-body text-center">
-                <h4>No Photographers Available!</h4>
+                <h4>No Representer & Artist Available!</h4>
             </div>
         
         @else
