@@ -296,6 +296,15 @@ class UsersController extends Controller
         
          return view('users.alleventplanners',compact('data'));
     }
+    public function allporuwarituals()
+    {
+        $data=DB::table('poruwa_ceramonies')
+                ->join('users','users.id','=','poruwa_ceramonies.user_id')
+                ->where('users.category','=','Poruwa_Ceramony')
+                ->get();
+        
+         return view('users.allporuwarituals',compact('data'));
+    }
 
 
 }
