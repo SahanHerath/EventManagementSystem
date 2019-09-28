@@ -463,5 +463,36 @@ class decorationController extends Controller
 
         return redirect('/Profile');
     }
+
+    public function deletePackage($id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+            ->join('decoration_packages','users.id','=','decoration_packages.user_id')
+            ->where('decoration_packages.id','=',$id)
+            ->select('users.id')
+            ->get();
+
+        foreach($data as $data1)
+        {
+            if($id1==$data1->id)
+            {
+                $deco1 = Decoration_package::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile');
+            }
+            else 
+            {
+                return redirect('/');
+            }
+            
+        }
+      
+
+           
+        
+    }
     
 }
