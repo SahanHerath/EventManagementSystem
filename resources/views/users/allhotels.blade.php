@@ -159,20 +159,20 @@
 <br><br><br><br>
 
 
-<a href="/users"><button type="button" class="btn btn-primary">All</button></a>
-<a href="/AllHotels"><button type="button" class="btn btn-warning">Hotels & Halls</button></a>
-<button type="button" class="btn btn-primary">Photography</button>
-<button type="button" class="btn btn-primary">Beautician</button>
-<button type="button" class="btn btn-primary">DJ/Band</button>
-<button type="button" class="btn btn-primary">Catering</button>
-<button type="button" class="btn btn-primary">Representer & Artist</button>
-<button type="button" class="btn btn-primary">Cake Designer</button>
-<button type="button" class="btn btn-primary">Costume Designer</button>
-<button type="button" class="btn btn-primary">Dancing</button>
-<button type="button" class="btn btn-primary">Decoration</button>
-<button type="button" class="btn btn-primary">Transport</button>
-<button type="button" class="btn btn-primary">Event Planners</button>
-<button type="button" class="btn btn-primary">Poruwa Rituals</button>
+<button type="button" class="btn btn-warning"><a href="#">All</a></button>
+<a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
+<a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
+<a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
+<a href="/AllDJ/Band"><button type="button" class="btn btn-primary">DJ/Band</button></a>
+<a href="/AllCatering"><button type="button" class="btn btn-primary">Catering</button></a>
+<a href="/AllRepresenter"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
+<a href="/AllCakeDesigner"><button type="button" class="btn btn-primary">Cake Designer</button></a>
+<a href="/AllCostumeDesigner"><button type="button" class="btn btn-primary">Costume Designer</button></a>
+<a href="/AllDancing"><button type="button" class="btn btn-primary">Dancing</button></a>
+<a href="/AllDecoration"><button type="button" class="btn btn-primary">Decoration</button></a>
+<a href="/AllTransport"><button type="button" class="btn btn-primary">Transport</button></a>
+<a href="/AllEventPlanners"><button type="button" class="btn btn-primary">Event Planners</button></a>
+<a href="/AllPoruwaRituals"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
     
 

@@ -157,6 +157,8 @@
         </div>
     @endif
 <br><br><br><br>
+
+
 <button type="button" class="btn btn-warning"><a href="#">All</a></button>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
@@ -172,11 +174,11 @@
 <a href="/AllEventPlanners"><button type="button" class="btn btn-primary">Event Planners</button></a>
 <a href="/AllPoruwaRituals"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
+    
 
-    <div class="panel panel-default">
-
-        <div class="panel-heading clearfix">
-
+       
+<div class="panel panel-default">
+<div class="panel-heading clearfix">
             <div class="pull-left">
                 <h4 class="mt-5 mb-5">Service providers</h4>
             </div>
@@ -185,10 +187,11 @@
 
         </div>
         
-        @if(count($usersObjects) == 0)
+        @if(count($data) == 0)
             <div class="panel-body text-center">
-                <h4>No Users Available!</h4>
+                <h4>No Photographers Available!</h4>
             </div>
+        
         @else
         <div class="panel-body panel-body-with-table">
             <div class="table-responsive">
@@ -209,7 +212,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($usersObjects as $users)
+                    @foreach($data as $users)
                     @if($users->admin=='0')
                         <tr>
                         <td></td>
@@ -250,10 +253,7 @@
             </div>
         </div>
 
-        <div class="panel-footer">
-            {!! $usersObjects->render() !!}
-        </div>
-        
+       
         @endif
     
     </div>

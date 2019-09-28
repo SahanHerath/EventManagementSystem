@@ -197,5 +197,14 @@ class UsersController extends Controller
         
          return view('users.allhotels',compact('data'));
     }
+    public function allphotography()
+    {
+        $data=DB::table('photographies')
+                ->join('users','users.id','=','photographies.user_id')
+                ->where('users.category','=','Photography')
+                ->get();
+        
+         return view('users.allphotography',compact('data'));
+    }
 
 }

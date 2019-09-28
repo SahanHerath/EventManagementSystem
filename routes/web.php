@@ -316,3 +316,4 @@ Route::get('/RemovePhotographyAccount{id}', 'PhotographyController@removeAccount
 Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
 
 Route::get('/AllHotels', 'UsersController@allhotel')  ;
+Route::get('/AllPhotography', 'UsersController@allphotography')  ;
