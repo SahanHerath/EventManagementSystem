@@ -338,6 +338,9 @@ Route::post('/EditDecorationPackage{id}', 'decorationController@EditPackage')  ;
 Route::get('/RemoveDecorationPackage{id}', 'decorationController@deletePackage')  ;
 Route::post('/ChangeDecorationMainpic{id}', 'decorationController@changeMainPic')  ;
 Route::post('/decarationpic1{id}', 'decorationController@changePic1')  ;
+Route::post('/decarationpic2{id}', 'decorationController@changePic2')  ;
+Route::post('/decarationpic3{id}', 'decorationController@changePic3')  ;
+Route::post('/decarationpic4{id}', 'decorationController@changePic4')  ;
 
 
  
