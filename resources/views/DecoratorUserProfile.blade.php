@@ -249,36 +249,59 @@
                             <br>
                             <br>
                         <div class="section-top-border">
-						<h3 class="title_color">Available Packages</h3>
-                            <a class="offset-1 genric-btn info" href="{{URL('/AddDecorationPackage'.$deco->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
-                        </div>
-                        @foreach($deto as $deto1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                    <li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
-                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
-                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                    <li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
-                                    <a class="genric-btn danger" href="{{URL('/RemoveDecorationPackage'.$deto1->id)}}">Remove</a></center>
-                                    
-                            
-                                    </ul>
+                            <h3 class="title_color">Available Packages</h3>
+                            <br><br>
+                            <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <h2 class="text-white">If you have package details PDF</h2>
+                                            <a href="{{URL('/AddDecorationPackage'.$deco->userid)}}" data-toggle="modal" data-target="#modalAddPackage" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Add A Package</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                            
-                        @endforeach
-                            
-                            <a class="offset-10 genric-btn danger" href="{{URL('/RemoveDecorationAccount'.$deco->userid)}}">Deactivate Account</a>
+                        <section class="feature_area p_120">
+                            <div class="container">
+                            <div class="feature_inner row">
+                                @foreach($deto as $deto1)
+                                
+                                    <div class="col-lg-6 col-md-8">
+                                        <div class="feature_item" >
+                                            <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                            <div class="media-body">
+                                                <div class="row">
+                                                    <div class="column offset-1">
+                                                        <ul class="list basic_info">
+                                                            <li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
+                                                            <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                                            <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                                        <ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="column offset-1">
+                                                        <a href="files/decoration/{{$deto1->Pdf}}" ><img src="images/pdf.png" width="80" hight="80" alt="" ></a>
+                                                    </div>
+                                                    <div class="column offset-4">
+                                                        <ul class="list basic_info">
+                                                        <li><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a><li><br>  
+                                                        <li><a class="genric-btn danger" href="{{URL('/RemoveDecorationPackage'.$deto1->id)}}">Remove</a><li>
+                                                        </ul>
+                                                    </div>
+                                                </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                @endforeach
+                            </div>
+                            </div>
+                            <br>
+                        </section>
+                        <br>  <br>  
+                        <a class="offset-10 genric-btn danger" href="{{URL('/RemoveDecorationAccount'.$deco->userid)}}">Deactivate Account</a>
                             
                             
 					</div>
