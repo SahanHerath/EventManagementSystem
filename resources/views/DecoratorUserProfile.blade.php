@@ -952,6 +952,118 @@
     </div>
 
     <!--==============model for change main pic=================-->
+     <!--==============model for  change recent pictures=================-->
+     
+  <div class="modal fade" id="modalChangepic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Event Pictures</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <table class="table table hover table-bordered">
+                       <thead>
+                            <tr>
+                                <th width="5">Picture</th>
+                                <th width="5">Change Picture</th>
+                                
+                            </tr>
+                       </thead>
+                       <tbody>
+                       
+                            <tr>
+                                <td> <img src="/uploads/decoration/{{$deco->pic1}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/decarationpic1'.$deco->deco_id)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/decoration/{{$deco->pic2}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/decarationpic2'.$deco->deco_id)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic2">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/decoration/{{$deco->pic3}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/decarationpic3'.$deco->deco_id)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic3">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  >
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/decoration/{{$deco->pic4}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/decarationpic4'.$deco->deco_id)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic4">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+                            
+                           
+                           
+                       </tbody>
+                         </table>
+
+                    
+
+                    
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change event pictures=================-->
     @endforeach
 
    

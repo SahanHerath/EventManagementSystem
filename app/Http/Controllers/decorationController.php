@@ -581,5 +581,54 @@ class decorationController extends Controller
             }
             
     }
+
+    public function changePic1(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->where('users.id','=',$id1)
+                ->select('decorators.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic1'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic1.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic1'))
+                    {
+                        $pic1=$request->file('pic1');
+                        $filename=time().'.'.$pic1->getClientOriginalExtension();
+                        Image::make($pic1)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+
+                        $picture=Decorator::where('id',$id)
+                        ->update([
+                                'pic1'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
     
 }
