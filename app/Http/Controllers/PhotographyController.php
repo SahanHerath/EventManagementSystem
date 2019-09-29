@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Photography;
+use App\Photography_package;
 use App\Photography_event;
 use Image;
 use Auth;
@@ -687,5 +688,48 @@ class PhotographyController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Event_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Event_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $decorate_package = new Photography_package;
+        $decorate_package->user_id = Auth::user()->id;
+        $decorate_package->Package_Name=$request->Package_Name;
+        $decorate_package->Event_Type =$request->Event_Type;
+        $decorate_package->Services =$request->Services;
+        $decorate_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/photography') , $filename);
+             $decorate_package->Pdf=$filename;
+             
+         }
+        
+         $decorate_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 }

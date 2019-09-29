@@ -263,7 +263,7 @@
                                 
                                     <ul class="list basic_info">
                                     <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
-                                    <a class="genric-btn danger" href="{{URL('/RemoveDecorationPackage'.$deto1->id)}}">Remove</a></center>
+                                    <a class="genric-btn danger" href="{{URL('/RemovePhotographyPackage'.$deto1->id)}}">Remove</a></center>
                                     
                             
                                     </ul>
@@ -879,6 +879,112 @@
     </div>
 
     <!--==============model for change event pictures=================-->
+      <!--==============model for  add package=================-->
+  <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add New Package</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/AddPhotographyPackage'.$data1->userid)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
+
+                        
+                            <input id="Package_Name" type="text" value="{{ old('Package_Name') }}" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
+
+                            @error('Package_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Event_Type') ? ' has-error' : '' }}">
+                        <label for="Event_Type" class="col-md-4 col-form-label offset-1">Event Type :-</label>
+
+                        
+                            <input id="Event_Type" type="text" value="{{ old('Event_Type') }}" class="form-control @error('Event_Type') is-invalid @enderror col-md-10 offset-1" name="Event_Type"  title="fill this field with the event that this package belongs">
+
+                            @error('Event_Type')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+                   
+                   
+
+                   
+
+              
+
+                    <div class="form-group row{{ $errors->has('Services') ? ' has-error' : '' }}">
+                    
+                        <label for="Services" class="col-md-4 col-form-label offset-1">Services :-</label>
+                        
+                        
+                            <textarea name='Services' cols='50' rows='5' id='Services' class="form-control @error('Services') is-invalid @enderror col-md-10 offset-1" title="Fill this field with services that are include in  this package (Table decoration, Entrance decoration ,Hall decoration etc) & some other description">{{ old('Services') }}</textarea>
+                            @error('Services')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Price') ? ' has-error' : '' }}">
+                        <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
+
+                        
+                            <input id="Price" type="text" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+
+                            @error('Price')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Pdf') ? ' has-error' : '' }}">
+                            <label for="Pdf" class="col-md-4 col-form-label text-md-right">Pdf:-</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="Pdf" id="Pdf"  class="form-control @error('Pdf') is-invalid @enderror" >
+
+                                @error('Pdf')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                        </div>
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Add Package
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for add Package=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
