@@ -342,5 +342,8 @@ Route::post('/decarationpic2{id}', 'decorationController@changePic2')  ;
 Route::post('/decarationpic3{id}', 'decorationController@changePic3')  ;
 Route::post('/decarationpic4{id}', 'decorationController@changePic4')  ;
 
+Route::post('/ChangePhotographyMainpic{id}', 'PhotographyController@changeMainPic')  ;
+
+
 
  
