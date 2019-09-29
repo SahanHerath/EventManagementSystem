@@ -247,7 +247,13 @@ class decorationController extends Controller
                 ->join('decorator_events','users.id','=','decorator_events.user_id')
                 ->get();
 
-                return view('DecoratorView',compact('data'));
+        $deto=DB::table('users')
+                ->join('decoration_packages','users.id','=','decoration_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('decoration_packages.id','Package_Name', 'Decoration_Type', 'Services','Price','Pdf')
+                ->get();
+
+                return view('DecoratorView',compact('data','deto'));
     }
 
     public function wedding()
@@ -297,6 +303,8 @@ class decorationController extends Controller
                 ->join('decorator_events','users.id','=','decorator_events.user_id')
                 ->where('decorator_events.Outside_events','=','Available')
                 ->get();
+
+        
 
 
         return view('Decorator', compact('decos'));

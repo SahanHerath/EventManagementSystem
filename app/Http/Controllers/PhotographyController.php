@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Photography;
+use App\Photography_package;
 use App\Photography_event;
 use Image;
 use Auth;
@@ -252,7 +253,12 @@ class PhotographyController extends Controller
                 ->join('photography_events','users.id','=','photography_events.user_id')
                 ->get();
 
-                return view('Photographyview',compact('data'));
+        $dec= DB::table('users')
+            ->where('users.id','=',$id)
+            ->join('photography_packages','users.id','=','photography_packages.user_id')
+            ->get();
+
+                return view('Photographyview',compact('data','dec'));
     }
 
     public function wedding()
@@ -337,7 +343,13 @@ class PhotographyController extends Controller
                 ->select('users.id as userid','name','email','photographies.id as photographyid','Studio_Name', 'Address', 'ContactNo','Link','Description','Drone','Wedding_Photography','Preshoot_Vedio','Wedding_Vedio','Album_Making','Wedding_Card','main_pic','pic1','pic2','pic3','pic4','photography_events.id as eventid','Wedding', 'Get_togather','Birthday','Competition','Professional_Events','Sports','Trips')
                 ->get();
 
-                return view('PhotographyUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('photography_packages','users.id','=','photography_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photography_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+                ->get();
+
+                return view('PhotographyUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $photographyid)
@@ -681,5 +693,89 @@ class PhotographyController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Event_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Event_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $decorate_package = new Photography_package;
+        $decorate_package->user_id = Auth::user()->id;
+        $decorate_package->Package_Name=$request->Package_Name;
+        $decorate_package->Event_Type =$request->Event_Type;
+        $decorate_package->Services =$request->Services;
+        $decorate_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/photography') , $filename);
+             $decorate_package->Pdf=$filename;
+             
+         }
+        
+         $decorate_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
+    public function EditPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Event_Type1' => 'required|string|max:255',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Event_Type1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Photography_package::where('id',$id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Event_Type'=>$request->Event_Type1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 }
