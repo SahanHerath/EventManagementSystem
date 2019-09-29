@@ -439,6 +439,7 @@ class PhotographyController extends Controller
                 $photo1->delete();
                 $photo = Photography::where('user_id',$id)->delete();
                 $photo2= Photography_event::where('user_id',$id)->delete();
+                $photo3= Photography_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -778,4 +779,33 @@ class PhotographyController extends Controller
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
+
+    public function deletePackage($id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+            ->join('photography_packages','users.id','=','photography_packages.user_id')
+            ->where('photography_packages.id','=',$id)
+            ->select('users.id')
+            ->get();
+
+        foreach($data as $data1)
+        {
+            if($id1==$data1->id)
+            {
+                $deco1 = Photography_package::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            }
+            else 
+            {
+                return redirect('/');
+            }
+            
+        }
+
+    }
+
 }

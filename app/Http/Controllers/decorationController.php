@@ -418,6 +418,7 @@ class decorationController extends Controller
                 $deco1->delete();
                 $deco2 = Decorator::where('user_id',$id)->delete();
                 $deco3 = Decorator_event::where('user_id',$id)->delete();
+                $deco4 = Decoration_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
