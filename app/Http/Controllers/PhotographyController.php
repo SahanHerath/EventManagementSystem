@@ -259,7 +259,13 @@ class PhotographyController extends Controller
             ->join('photography_packages','users.id','=','photography_packages.user_id')
             ->get();
 
-                return view('Photographyview',compact('data','dec'));
+        $saha=DB::table('users')
+            ->join('photography_videos','users.id','=','photography_videos.user_id')
+            ->where('users.id','=',$id)
+            ->select('photography_videos.id','Video_Name', 'Video')
+            ->get();
+
+                return view('Photographyview',compact('data','dec','saha'));
     }
 
     public function wedding()
@@ -447,6 +453,7 @@ class PhotographyController extends Controller
                 $photo = Photography::where('user_id',$id)->delete();
                 $photo2= Photography_event::where('user_id',$id)->delete();
                 $photo3= Photography_package::where('user_id',$id)->delete();
+                $photo4= Photography_video::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');

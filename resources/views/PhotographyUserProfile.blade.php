@@ -275,11 +275,11 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endforeach
                         <div class="section-top-border">
 						<h3 class="title_color">Your Videos</h3>
                         </div>  
-                        @endforeach
+                        
                         @foreach($saha as $sahan)
                         <div class="personal_text" >
                             <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
