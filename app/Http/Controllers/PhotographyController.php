@@ -392,7 +392,7 @@ class PhotographyController extends Controller
         $photo1 ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update photography details Successfully');
         
     }
 
@@ -409,7 +409,7 @@ class PhotographyController extends Controller
         $photo ->Trips =$request->Trips;
         $photo ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update photography event Successfully');
     }
 
     public function featureUpdate(Request $request, $id)
@@ -424,7 +424,7 @@ class PhotographyController extends Controller
         $photo ->Drone =$request->Drone;
         $photo ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update photography feature Successfully');
     }
 
     public function removeAccount($id)
