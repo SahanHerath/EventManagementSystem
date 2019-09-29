@@ -335,7 +335,7 @@ class decorationController extends Controller
         $deco ->Outside_events =$request->Outside_events;
         $deco ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Events Updated Successfully');
     }
 
     public function featureUpdate(Request $request, $id)
@@ -351,7 +351,7 @@ class decorationController extends Controller
         $deco ->Wedding_Car =$request->Wedding_Car;
         $deco ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Features Updated Successfully');
     }
     
     public function InfoUpdate(Request $request, $userid, $decoid)
@@ -394,7 +394,7 @@ class decorationController extends Controller
         $deco1 ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Profile Details Updated Successfully');
         
     }
 
@@ -461,7 +461,7 @@ class decorationController extends Controller
         
          $decorate_package->save();
 
-         return redirect('/Profile');
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
     public function EditPackage(request $request,$id)
@@ -502,7 +502,7 @@ class decorationController extends Controller
             
         
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
     public function deletePackage($id)
@@ -522,7 +522,7 @@ class decorationController extends Controller
                 $deco1 = Decoration_package::findOrFail($id);
                 $deco1->delete();
 
-                return redirect('/Profile');
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
             }
             else 
             {
@@ -561,7 +561,7 @@ class decorationController extends Controller
                     {
                         $Main_Pic=$request->file('Main_Pic');
                         $filename=time().'.'.$Main_Pic->getClientOriginalExtension();
-                        Image::make($Main_Pic)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($Main_Pic)->fit(480,480)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -571,7 +571,7 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
                 }
 
                 else
@@ -610,7 +610,7 @@ class decorationController extends Controller
                     {
                         $pic1=$request->file('pic1');
                         $filename=time().'.'.$pic1->getClientOriginalExtension();
-                        Image::make($pic1)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -620,7 +620,7 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
                 }
 
                 else
@@ -659,7 +659,7 @@ class decorationController extends Controller
                     {
                         $pic2=$request->file('pic2');
                         $filename=time().'.'.$pic2->getClientOriginalExtension();
-                        Image::make($pic2)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -669,7 +669,7 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
                 }
 
                 else
@@ -708,7 +708,7 @@ class decorationController extends Controller
                     {
                         $pic3=$request->file('pic3');
                         $filename=time().'.'.$pic3->getClientOriginalExtension();
-                        Image::make($pic3)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -718,7 +718,7 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
                 }
 
                 else
@@ -757,7 +757,7 @@ class decorationController extends Controller
                     {
                         $pic4=$request->file('pic4');
                         $filename=time().'.'.$pic4->getClientOriginalExtension();
-                        Image::make($pic4)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -767,7 +767,7 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
                 }
 
                 else

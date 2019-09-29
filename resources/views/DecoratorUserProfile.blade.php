@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -39,10 +40,13 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>  
-							</ul>
+                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                            @foreach($decos as $deco)
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/DecoratorView'.$deco->userid)}}">View Your Profile</a></li> 
+                            
+                                <li class="nav-item active"><a class="nav-link" href="{{url('/Profile')}}"  v-pre style="position:relative; padding-left:50px;"><p class="text-white"><img src="/uploads/decoration/{{$deco->Main_Pic}}" style="width:32px; height:32px; border-radius: 50%;" >{{ Auth::user()->name }}</p></a></li>  
+							@endforeach
+                            </ul>
 						</div> 
 					</div>
             	</nav>
@@ -980,7 +984,7 @@
                                 
                                 <form enctype="multipart/form-data" action="{{URL('/decarationpic1'.$deco->deco_id)}}" method="POST">
                                 <label>Update This Image</label>
-                                <input type="file" name="pic1">
+                                <input type="file" name="pic1" class="form-control @error('pic1') is-invalid @enderror col-md-10 offset-1">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit"  class="pull-right btn btn-sm btn-primary">
                                 </form>
@@ -997,7 +1001,7 @@
                                 
                                 <form enctype="multipart/form-data" action="{{URL('/decarationpic2'.$deco->deco_id)}}" method="POST">
                                 <label>Update This Image</label>
-                                <input type="file" name="pic2">
+                                <input type="file" name="pic2" class="form-control @error('pic2') is-invalid @enderror col-md-10 offset-1">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit" class="pull-right btn btn-sm btn-primary">
                                 </form>
@@ -1014,7 +1018,7 @@
                                 
                                 <form enctype="multipart/form-data" action="{{URL('/decarationpic3'.$deco->deco_id)}}" method="POST">
                                 <label>Update This Image</label>
-                                <input type="file" name="pic3">
+                                <input type="file" name="pic3" class="form-control @error('pic3') is-invalid @enderror col-md-10 offset-1">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit"  >
                                 </form>
@@ -1031,7 +1035,7 @@
                                 
                                 <form enctype="multipart/form-data" action="{{URL('/decarationpic4'.$deco->deco_id)}}" method="POST">
                                 <label>Update This Image</label>
-                                <input type="file" name="pic4">
+                                <input type="file" name="pic4" class="form-control @error('pic4') is-invalid @enderror col-md-10 offset-1">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit"  class="pull-right btn btn-sm btn-primary">
                                 </form>
@@ -1173,6 +1177,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
             });
         </script>
         @endif
