@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2019 at 10:38 PM
+-- Generation Time: Sep 29, 2019 at 05:15 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -350,8 +350,7 @@ CREATE TABLE `decoration_packages` (
 --
 
 INSERT INTO `decoration_packages` (`id`, `user_id`, `Package_Name`, `Decoration_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
-(3, 68, 'package1', 'marbles', 'dscfsdcsd', '3214532.00', '1569609879.pdf', '2019-09-27 13:14:39', '2019-09-27 13:14:39'),
-(4, 68, 'package2', 'Glass', 'Hall decorations ,Chair decorations', '12000.00', '1569616037.pdf', '2019-09-27 14:57:17', '2019-09-27 14:57:17');
+(5, 68, 'package12', 'asaf', 'ewfewf', '2131231.00', '1569667226.pdf', '2019-09-29 07:20:53', '2019-09-29 01:50:53');
 
 -- --------------------------------------------------------
 
@@ -391,7 +390,7 @@ INSERT INTO `decorators` (`id`, `Team_Name`, `Address`, `Description`, `Contact_
 (1, 'kdfhkjsjfk', 'efwe', 'jzsjhsdf', 'fewfwe', 'fefsefs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', '1567765328.jpg', '1567765329.jpg', '1567765331.jpg', '1567765332.jpg', '1567765334.jpg', 14, '2019-09-06 04:52:15', '2019-09-06 04:52:15'),
 (2, 'hshjfs', 'hjvdjgdf', 'jshbckjsdjkfsd', 'vdjhdks', 'dxbvnjdsfjks', 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1567963713.jpg', '1567963715.jpg', '1567963716.jpg', '1567963718.jpg', '1567963720.jpg', 15, '2019-09-08 11:58:41', '2019-09-08 11:58:41'),
 (3, 'sggdsaghda', 'nagahaella rd kandy', 'hjjk', '+94776530129', 'www.jfn.ac.lk', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', 'Not Available', '1569006243.jpg', '1569006244.jpg', '1569006246.jpg', '1569006247.jpg', '1569006249.jpg', 47, '2019-09-21 20:30:48', '2019-09-21 15:00:48'),
-(5, 'dfsfasdf', 'sdfsdfsd', 'fsdfsdfsf', '4535789053453', 'dsfsdf', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569492671.jpg', '1569492672.jpg', '1569492674.jpg', '1569492675.jpg', '1569492677.jpg', 68, '2019-09-26 04:41:18', '2019-09-26 04:41:18');
+(5, 'Sahan', 'sdfsdfsd', 'fsdfsdfsf', '4535789053453', 'dsfsdf', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', '1569741586.jpg', '1569742114.jpg', '1569740307.jpg', '1569740368.jpeg', '1569740388.jpg', 68, '2019-09-29 07:28:35', '2019-09-29 01:58:35');
 
 -- --------------------------------------------------------
 
@@ -419,7 +418,7 @@ INSERT INTO `decorator_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Get_Tog
 (1, 14, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-06 04:52:16', '2019-09-06 04:52:16'),
 (2, 15, 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-09-08 11:58:41', '2019-09-08 11:58:41'),
 (3, 47, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-21 04:41:44', '2019-09-20 23:11:44'),
-(5, 68, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-26 04:41:18', '2019-09-26 04:41:18');
+(5, 68, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-29 07:18:28', '2019-09-29 01:48:28');
 
 -- --------------------------------------------------------
 
@@ -611,7 +610,8 @@ INSERT INTO `hotels` (`id`, `Hotel_Name`, `Address`, `Contact_No`, `Link`, `Desc
 (1, 'ffgghfh', 'gyyu', 'ghy', 'tryyuyuk', 'ghhjkj TYPE, KIND, SORT, NATURE, DESCRIPTION, CHARACTER mean a number of individuals thought of as a group because of a common quality or qualities. TYPE may suggest strong and clearly marked similarity throughout the items included so that each is typical of the group.  one of three basic body types  KIND may suggest natural grouping.  a zoo seemingly having animals of every kind  SORT often suggests some ', 'yfggjhjh', 'ghjjjh', '1567012588.jpg', '1567012590.jpg', 1, '2019-08-30 08:25:12', '2019-08-30 08:25:12'),
 (2, 'cdfsdf', 'svvsd', 'dsgdsfsd', 'dsfdsf', 'dsfdsfds', 'adsdsa', 'vsdfsdf', '1567012588.jpg', '1567012588.jpg', 1, '2019-08-30 07:23:30', '2019-08-30 07:23:30'),
 (4, 'gjhjh', 'bbbm', 'hjhj', 'fncgm', 'hghjkkj', 'kjkn', 'bh,bjk', '1568823170.jpg', '1568823171.jpg', 35, '2019-09-18 10:42:53', '2019-09-18 10:42:53'),
-(5, 'My Hotel', 'Sahan road', '0764192310', 'facebook.com', 'cshdbsad', 'mymy', 'lifelife.com', '1569334826.jpg', '1569334828.jpg', 61, '2019-09-24 19:27:27', '2019-09-24 13:57:27');
+(5, 'My Hotel', 'Sahan road', '0764192310', 'facebook.com', 'cshdbsad', 'mymy', 'lifelife.com', '1569334826.jpg', '1569334828.jpg', 61, '2019-09-24 19:27:27', '2019-09-24 13:57:27'),
+(7, 'sdsfdfs', 'sdfsd', '325352343242', 'efwewfw', 'wefwefwefwf', 'efwfewfwef', 'wefwefwef', '1569617233.jpg', '1569617234.jpg', 76, '2019-09-27 15:17:16', '2019-09-27 15:17:16');
 
 -- --------------------------------------------------------
 
@@ -741,7 +741,8 @@ INSERT INTO `photographies` (`id`, `Studio_Name`, `Address`, `ContactNo`, `Link`
 (1, 'tfyugijok', '8h9ij[pok[', 'rt7y89-u09=-i0', '6789hij', '8gupihojpkl', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1567765049.jpg', '1567765050.jpg', '1567765051.jpg', '1567765052.jpg', '1567765053.jpg', 13, '2019-09-06 04:47:34', '2019-09-06 04:47:34'),
 (2, 'ndsfsdhfskdhj', 'jdsfkjdsf', 'bhdsfjkds', 'shjhdsjf', 'shhsdjkfjlsd', 'Available', 'Not Available', 'Available', 'Available', 'Not Available', 'Available', '1568470264.jpg', '1568470266.jpg', '1568470267.jpg', '1568470268.jpg', '1568470269.jpg', 16, '2019-09-14 08:41:10', '2019-09-14 08:41:10'),
 (3, 'efsfs', 'sdfsd', 'sfsd', 'dfsfds', 'ferfdrf', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1568793919.jpg', '1568793921.jpg', '1568793923.jpg', '1568793925.jpg', '1568793925.jpg', 29, '2019-09-18 02:35:27', '2019-09-18 02:35:27'),
-(4, 'sahan', 'No3/12 , nagahaella rd', '454654767753425', 'dsfdsfsrfefgrthefrdh', 'dffsdfdsfbdthaefgthaefsrhsefseh', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569150019.jpg', '1569150020.jpg', '1569150021.jpg', '1569150022.jpg', '1569150023.jpg', 52, '2019-09-22 19:06:20', '2019-09-22 13:36:20');
+(4, 'sahan', 'No3/12 , nagahaella rd', '454654767753425', 'dsfdsfsrfefgrthefrdh', 'dffsdfdsfbdthaefgthaefsrhsefseh', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569150019.jpg', '1569150020.jpg', '1569150021.jpg', '1569150022.jpg', '1569150023.jpg', 52, '2019-09-22 19:06:20', '2019-09-22 13:36:20'),
+(6, 'fsdfd', 'sdfsdf', '432534634643', 'dssdfsdfsd', 'sdfsfsfds', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', '1569755441.jpg', '1569760173.jpg', '1569760193.jpg', '1569760217.jpg', '1569760236.jpg', 77, '2019-09-29 12:30:38', '2019-09-29 07:00:38');
 
 -- --------------------------------------------------------
 
@@ -771,7 +772,33 @@ INSERT INTO `photography_events` (`id`, `user_id`, `Wedding`, `Get_togather`, `B
 (1, 13, 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-06 04:47:34', '2019-09-06 04:47:34'),
 (2, 16, 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-14 08:41:10', '2019-09-14 08:41:10'),
 (3, 29, 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-18 02:35:27', '2019-09-18 02:35:27'),
-(4, 52, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '2019-09-22 13:25:36', '2019-09-22 07:55:36');
+(4, 52, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '2019-09-22 13:25:36', '2019-09-22 07:55:36'),
+(6, 77, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-29 05:10:24', '2019-09-29 05:10:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `photography_packages`
+--
+
+CREATE TABLE `photography_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Event_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photography_packages`
+--
+
+INSERT INTO `photography_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 77, 'Gold Package', 'Wedding', '4X4 images', '1234.00', '1569769985.pdf', '2019-09-29 09:43:05', '2019-09-29 09:43:05');
 
 -- --------------------------------------------------------
 
@@ -1050,8 +1077,10 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (60, 'sahan', 'sahand.herath@gmail.com', NULL, 'Cloth_Designers', 'zdfeafwed', 1, '$2y$10$KXSq580YyUdoSvNiskBm0.5KQG/u6ceYqY3ZywHPsHTZzDeijrh1W', NULL, '2019-09-24 04:43:37', '2019-09-24 05:15:10'),
 (61, 'Sahan Herath', 'sahand.herathsss@gmail.com', NULL, 'Hall', 'dsfsdf', 1, '$2y$10$hM0dr1LJNz04BSf0Z8BeweckfXZi2MPpUvaiY.LaRpS3vVNsTsDfm', NULL, '2019-09-24 08:50:00', '2019-09-24 13:57:27'),
 (62, 'vdafaf', 'efef@egrdhr', NULL, 'Poruwa_Ceramony', 'frdgrefewfw', 1, '$2y$10$mMw0MSdEqCVmUxSaYFiqkex8bTAcqhFE0EQFwQEO15hr2yf.Se5P2', NULL, '2019-09-25 12:38:46', '2019-09-25 12:38:46'),
-(68, 'sgasj', 'sadasdas@gffwe', NULL, 'Decoration', 'efwefwef', 1, '$2y$10$QknMIc34.8.2DkNG4s92uut9Vze6kC2iMXSjeLgpT8J1zvou4cddm', NULL, '2019-09-26 04:39:38', '2019-09-26 04:42:32'),
-(72, 'sdsc', 'cds@rewrwe', NULL, 'Poruwa_Ceramony', 'cdscdscs', 1, '$2y$10$/CzBnhCLkP0xl0hqc9/ptO58uQqpoOncmO9gOJ21I95uTmbn5tS2i', NULL, '2019-09-26 05:59:09', '2019-09-26 05:59:09');
+(68, 'Sahan Herath', 'sadasdas@gffwe', NULL, 'Decoration', 'efwefwef', 1, '$2y$10$mRE1mUm2LRjOZRGYPh2i/u8HfUQzCtI5E09A9MkUCy1wF6f6oxA/.', NULL, '2019-09-26 04:39:38', '2019-09-29 01:49:27'),
+(72, 'sdsc', 'cds@rewrwe', NULL, 'Poruwa_Ceramony', 'cdscdscs', 1, '$2y$10$/CzBnhCLkP0xl0hqc9/ptO58uQqpoOncmO9gOJ21I95uTmbn5tS2i', NULL, '2019-09-26 05:59:09', '2019-09-26 05:59:09'),
+(76, 'Shamith athauda', 'hasdadjk@dbhahf', NULL, 'Hall', 'efewf', 1, '$2y$10$HhT7WssahyUY9gWeHI67CeGhB8qWqiPThlZHcjvaz9Tn1ZVvI7vKm', NULL, '2019-09-27 15:16:42', '2019-09-27 15:16:42'),
+(77, 'jskajksdj', 'sdsgzf@4wwta4', NULL, 'Photography', 'gerger', 0, '$2y$10$1OvjLBVvt7VGf2RqBU.9XO4vCFsSK/5KBsveKpXgbtemnGJcF2jg2', NULL, '2019-09-29 05:09:19', '2019-09-29 05:09:19');
 
 --
 -- Indexes for dumped tables
@@ -1202,6 +1231,12 @@ ALTER TABLE `photography_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `photography_packages`
+--
+ALTER TABLE `photography_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `poruwa_ceramonies`
 --
 ALTER TABLE `poruwa_ceramonies`
@@ -1306,7 +1341,7 @@ ALTER TABLE `dancer_events`
 -- AUTO_INCREMENT for table `decoration_packages`
 --
 ALTER TABLE `decoration_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `decorators`
@@ -1354,7 +1389,7 @@ ALTER TABLE `hall_table_arrangements`
 -- AUTO_INCREMENT for table `hotels`
 --
 ALTER TABLE `hotels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1378,13 +1413,19 @@ ALTER TABLE `musician_events`
 -- AUTO_INCREMENT for table `photographies`
 --
 ALTER TABLE `photographies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `photography_events`
 --
 ALTER TABLE `photography_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `photography_packages`
+--
+ALTER TABLE `photography_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `poruwa_ceramonies`
@@ -1426,7 +1467,7 @@ ALTER TABLE `transport_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
