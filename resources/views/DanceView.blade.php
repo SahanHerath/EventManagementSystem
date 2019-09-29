@@ -333,6 +333,7 @@
 			
         </section>
         @endforeach
+		
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->

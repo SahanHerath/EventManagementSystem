@@ -253,7 +253,12 @@ class PhotographyController extends Controller
                 ->join('photography_events','users.id','=','photography_events.user_id')
                 ->get();
 
-                return view('Photographyview',compact('data'));
+        $dec= DB::table('users')
+            ->where('users.id','=',$id)
+            ->join('photography_packages','users.id','=','photography_packages.user_id')
+            ->get();
+
+                return view('Photographyview',compact('data','dec'));
     }
 
     public function wedding()
