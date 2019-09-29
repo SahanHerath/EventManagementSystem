@@ -326,6 +326,8 @@ class decorationController extends Controller
             ->where('users.id','=',$id1)
             ->select('decoration_packages.id','Package_Name', 'Decoration_Type', 'Services','Price','Pdf')
             ->get();
+
+        
         
         
 

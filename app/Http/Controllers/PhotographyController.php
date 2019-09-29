@@ -350,7 +350,13 @@ class PhotographyController extends Controller
                 ->select('photography_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
                 ->get();
 
-                return view('PhotographyUserProfile',compact('data','deto'));
+        $saha=DB::table('users')
+                ->join('photography_videos','users.id','=','photography_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photography_videos.id','Video_Name', 'Video')
+                ->get();
+
+                return view('PhotographyUserProfile',compact('data','deto','saha'));
     }
 
     public function InfoUpdate(Request $request, $userid, $photographyid)
@@ -819,14 +825,16 @@ class PhotographyController extends Controller
                 ->select('users.id')
                 ->get();
 
-            //     $request->validate(
-            //     [
-            //         'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
-            //     ],
-            //     [
-            //         'pic4.required'=> "Add a image here",
-            //     ]
-            // );
+                $request->validate(
+                [
+                    'Video_Name' => 'required|string|max:255',
+                    'Video' =>'required|mimetypes:video/x-flv,video/mp4,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv',
+                ],
+                [
+                    'Video_Name.required'=> "please fill this field",
+                    'Video.required'=> "Add a video here",
+                ]
+            );
             
             
             foreach($data as $data1)
@@ -849,7 +857,7 @@ class PhotographyController extends Controller
                         $Evideo->save();
                     }
 
-                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');;
+                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');
                 }
 
                 else
@@ -858,6 +866,33 @@ class PhotographyController extends Controller
                 }
             }
             
+    }
+
+    public function deleteVideo(request $request,$id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+                ->join('photography_videos','users.id','=','photography_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photography_videos.id')
+                ->get();
+
+        foreach($data as $data1)
+        {
+            if($data1->id==$id)
+            {
+                $deco1 = Photography_video::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
+            }
+            else
+            {
+                return redirect('/');
+            }
+
+        }
     }
 
 }

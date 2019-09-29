@@ -275,10 +275,27 @@
                                 </div>
                             </div>
                         </div>
-                            
+
+                        <div class="section-top-border">
+						<h3 class="title_color">Your Videos</h3>
+                        </div>  
+                        @endforeach
+                        @foreach($saha as $sahan)
+                        <div class="personal_text" >
+                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+                                <video width="400" controls>
+                                <source src="video/photography/{{$sahan->Video}}" type="video/mp4">
+                                <source src="mov_bbb.ogg" type="video/ogg">
+                                </video>
+                                <a class="genric-btn danger" href="{{URL('/RemovePhotographyVideo'.$sahan->id)}}">Delete</a></center>
+                                </div>
+                            </div>
+                        </div>
                         @endforeach
 
-                        
+
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemovePhotographyAccount'.$data1->userid)}}">Deactivate Account</a>
                             
                             
@@ -1255,6 +1272,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalChangepic").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Video_Name')||$errors->has('Video'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#addvedio").modal('show');
             });
         </script>
         @endif
