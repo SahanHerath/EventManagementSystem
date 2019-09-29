@@ -243,6 +243,35 @@
 							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
+                            <div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                            <a class="offset-1 genric-btn info" href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Event Type :- </b>{{$deto1->Event_Type}}</li>
+                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/photography/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
+                                    <a class="genric-btn danger" href="{{URL('/RemoveDecorationPackage'.$deto1->id)}}">Remove</a></center>
+                                    
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        @endforeach
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemovePhotographyAccount'.$data1->userid)}}">Deactivate Account</a>
                             
                             

@@ -337,7 +337,13 @@ class PhotographyController extends Controller
                 ->select('users.id as userid','name','email','photographies.id as photographyid','Studio_Name', 'Address', 'ContactNo','Link','Description','Drone','Wedding_Photography','Preshoot_Vedio','Wedding_Vedio','Album_Making','Wedding_Card','main_pic','pic1','pic2','pic3','pic4','photography_events.id as eventid','Wedding', 'Get_togather','Birthday','Competition','Professional_Events','Sports','Trips')
                 ->get();
 
-                return view('PhotographyUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('photography_packages','users.id','=','photography_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photography_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+                ->get();
+
+                return view('PhotographyUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $photographyid)
