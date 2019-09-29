@@ -350,6 +350,7 @@ Route::post('/photographypic4{id}', 'PhotographyController@changePic4')  ;
 Route::post('/AddPhotographyPackage{id}', 'PhotographyController@AddNewPackage')  ;
 Route::post('/EditPhotographyPackage{id}', 'PhotographyController@EditPackage')  ;
 Route::get('/RemovePhotographyPackage{id}', 'PhotographyController@deletePackage')  ;
+Route::post('/AddVedio{id}', 'PhotographyController@uploadVideo')  ;
 
 
 

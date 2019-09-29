@@ -5,6 +5,7 @@ use App\User;
 use App\Photography;
 use App\Photography_package;
 use App\Photography_event;
+use App\Photography_video;
 use Image;
 use Auth;
 use Illuminate\Http\Request;
@@ -806,6 +807,57 @@ class PhotographyController extends Controller
             
         }
 
+    }
+
+    public function uploadVideo(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id')
+                ->get();
+
+            //     $request->validate(
+            //     [
+            //         'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+            //     ],
+            //     [
+            //         'pic4.required'=> "Add a image here",
+            //     ]
+            // );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    $Evideo = new Photography_video;
+                    $Evideo->user_id = Auth::user()->id;
+                    $Evideo->Video_Name=$request->Video_Name;
+                    
+                    
+                    
+                    if($request->hasFile('Video'))
+                    {
+                        $Video=$request->file('Video');
+           
+                        $filename=time().'.'.$Video->getClientOriginalExtension();
+                        $Video->move(public_path('/video/photography') , $filename);
+                        $Evideo->Video=$filename;
+                        $Evideo->save();
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');;
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
     }
 
 }

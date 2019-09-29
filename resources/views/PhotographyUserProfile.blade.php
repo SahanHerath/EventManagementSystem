@@ -250,6 +250,7 @@
                             <div class="section-top-border">
 						<h3 class="title_color">Available Packages</h3>
                             <a class="offset-1 genric-btn info" href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                            <a class="offset-1 genric-btn warning" href="" data-toggle="modal" data-target="#addvedio">Upload Vedio</a>
                         </div>
                         @foreach($deto as $deto1)
                         <div class="personal_text" >
@@ -276,6 +277,8 @@
                         </div>
                             
                         @endforeach
+
+                        
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemovePhotographyAccount'.$data1->userid)}}">Deactivate Account</a>
                             
                             
@@ -950,7 +953,7 @@
                         <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
 
                         
-                            <input id="Price" type="text" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+                            <input id="Price" type="decimal" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
 
                             @error('Price')
                                 <span class="invalid-feedback offset-1" role="alert">
@@ -1057,7 +1060,7 @@
                         <label for="Price1" class="col-md-4 col-form-label offset-1">Price :-</label>
 
                         
-                            <input id="Price1" type="text" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
+                            <input id="Price1" type="decimal" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
 
                             @error('Price1')
                                 <span class="invalid-feedback offset-1" role="alert">
@@ -1086,6 +1089,60 @@
     </div>
     @endforeach
     <!--==============model for edit package=================-->
+     <!--==============model for  change main pic=================-->
+ <div class="modal fade" id="addvedio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Upload Your Vedio</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/AddVedio'.$data1->userid)}}"  method="POST">
+                    
+
+                    <div class="form-group row{{ $errors->has('Video_Name') ? ' has-error' : '' }}">
+                        <label for="Video_Name" class="col-md-4 col-form-label offset-1">Video Name :-</label>
+
+                        
+                            <input id="Video_Name" type="text" value="{{ old('Video_Name') }}" class="form-control @error('Video_Name') is-invalid @enderror col-md-10 offset-1" name="Video_Name"  title="Name for your video">
+
+                            @error('Video_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+                    <div class="form-group row{{ $errors->has('Video') ? ' has-error' : '' }}">
+                    <label for="Video" class="offset-1">Upload Your Vedio :-</label>
+                    <center><input type="file" name="Video" class="form-control @error('Video') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Video')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Upload
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
