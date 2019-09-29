@@ -343,6 +343,10 @@ Route::post('/decarationpic3{id}', 'decorationController@changePic3')  ;
 Route::post('/decarationpic4{id}', 'decorationController@changePic4')  ;
 
 Route::post('/ChangePhotographyMainpic{id}', 'PhotographyController@changeMainPic')  ;
+Route::post('/photographypic1{id}', 'PhotographyController@changePic1')  ;
+Route::post('/photographypic2{id}', 'PhotographyController@changePic2')  ;
+Route::post('/photographypic3{id}', 'PhotographyController@changePic3')  ;
+Route::post('/photographypic4{id}', 'PhotographyController@changePic4')  ;
 
 
 
