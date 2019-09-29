@@ -985,6 +985,103 @@
     </div>
 
     <!--==============model for add Package=================-->
+    <!--==============model for  edit package=================-->
+    @foreach($deto as $deto1)
+  <div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Package Details</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/EditPhotographyPackage'.$deto1->id)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name1') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name1" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
+
+                        
+                            <input id="Package_Name1" type="text" value="{{$deto1->Package_Name}}" class="form-control @error('Package_Name1') is-invalid @enderror col-md-10 offset-1" name="Package_Name1"   title="fill this field with appropiate package name">
+
+                            @error('Package_Name1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Event_Type1') ? ' has-error' : '' }}">
+                        <label for="Event_Type1" class="col-md-4 col-form-label offset-1">Event Type :-</label>
+
+                        
+                            <input id="Event_Type1" type="text" value="{{$deto1->Event_Type}}" class="form-control @error('Event_Type1') is-invalid @enderror col-md-10 offset-1" name="Event_Type1"  title="fill this field with Wvent type of the package">
+
+                            @error('Event_Type1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+                   
+                   
+
+                   
+
+              
+
+                    <div class="form-group row{{ $errors->has('Services1') ? ' has-error' : '' }}">
+                    
+                        <label for="Services1" class="col-md-4 col-form-label offset-1">Services :-</label>
+                        
+                        
+                            <textarea name='Services1' cols='50' rows='5' id='Services' value="{{$deto1->Services}}" class="form-control @error('Services1') is-invalid @enderror col-md-10 offset-1" title="Fill this field with services that are include in  this package (Table decoration, Entrance decoration ,Hall decoration etc) & some other description">{{$deto1->Services}}</textarea>
+                            @error('Services1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Price1') ? ' has-error' : '' }}">
+                        <label for="Price1" class="col-md-4 col-form-label offset-1">Price :-</label>
+
+                        
+                            <input id="Price1" type="text" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
+
+                            @error('Price1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    
+
+                    
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+    @endforeach
+    <!--==============model for edit package=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
