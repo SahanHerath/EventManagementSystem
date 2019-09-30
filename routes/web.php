@@ -385,6 +385,10 @@ Route::post('/plannerpic3{id}', 'EventPlanersController@changePic3')  ;
 Route::post('/plannerpic4{id}', 'EventPlanersController@changePic4')  ;
 
 Route::post('/ChangeDancerMainpic{id}', 'DancingController@changeMainPic')  ;
+Route::post('/dancerpic1{id}', 'DancingController@changePic1')  ;
+Route::post('/dancerpic2{id}', 'DancingController@changePic2')  ;
+Route::post('/dancerpic3{id}', 'DancingController@changePic3')  ;
+Route::post('/dancerpic4{id}', 'DancingController@changePic4')  ;
 
 
  

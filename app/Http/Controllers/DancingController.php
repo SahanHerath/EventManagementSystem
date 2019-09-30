@@ -455,4 +455,200 @@ class DancingController extends Controller
             }
             
     }
+
+    public function changePic1(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('dancers','users.id','=','dancers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('dancers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic1'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic1.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic1'))
+                    {
+                        $pic1=$request->file('pic1');
+                        $filename=time().'.'.$pic1->getClientOriginalExtension();
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/dancing/'. $filename));
+
+                        $picture=Dancer::where('id',$id)
+                        ->update([
+                                'pic1'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic2(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('dancers','users.id','=','dancers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('dancers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic2'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic2.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic2'))
+                    {
+                        $pic2=$request->file('pic2');
+                        $filename=time().'.'.$pic2->getClientOriginalExtension();
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/dancing/'. $filename));
+
+                        $picture=Dancer::where('id',$id)
+                        ->update([
+                                'pic2'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic3(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('dancers','users.id','=','dancers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('dancers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic3'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic3.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic3'))
+                    {
+                        $pic3=$request->file('pic3');
+                        $filename=time().'.'.$pic3->getClientOriginalExtension();
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/dancing/'. $filename));
+
+                        $picture=Dancer::where('id',$id)
+                        ->update([
+                                'pic3'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic4(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('dancers','users.id','=','dancers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('dancers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic4.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic4'))
+                    {
+                        $pic4=$request->file('pic4');
+                        $filename=time().'.'.$pic4->getClientOriginalExtension();
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/dancing/'. $filename));
+
+                        $picture=Dancer::where('id',$id)
+                        ->update([
+                                'pic4'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
 }
