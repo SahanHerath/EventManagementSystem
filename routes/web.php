@@ -378,6 +378,8 @@ Route::post('/Transportpic2{id}', 'TransportController@changePic2')  ;
 Route::post('/Transportpic3{id}', 'TransportController@changePic3')  ;
 Route::post('/Transportpic4{id}', 'TransportController@changePic4')  ;
 
+Route::post('/ChangePlannerMainpic{id}', 'EventPlanersController@changeMainPic')  ;
+
 
 
  
