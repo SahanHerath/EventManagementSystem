@@ -354,5 +354,8 @@ Route::post('/AddVedio{id}', 'PhotographyController@uploadVideo')  ;
 Route::get('/RemovePhotographyVideo{id}', 'PhotographyController@deleteVideo')  ;
 
 
+Route::post('/ChangeSalonMainpic{id}', 'salonController@changeMainPic')  ;
+
+
 
  

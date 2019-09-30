@@ -404,5 +404,55 @@ class salonController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salons.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Profile_Pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Profile_Pic.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Profile_Pic'))
+                    {
+                        $Profile_Pic=$request->file('Profile_Pic');
+                        $filename=time().'.'.$Profile_Pic->getClientOriginalExtension();
+                        Image::make($Profile_Pic)->fit(480,480)->save(public_path('/uploads/salon/'. $filename));
+
+                        $picture=Salon::where('id',$id)
+                        ->update([
+                                'Profile_Pic'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
 }
  

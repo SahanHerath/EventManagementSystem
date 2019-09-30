@@ -88,6 +88,7 @@
                                     
                                     <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
                                     <a class="genric-btn info" href="" data-toggle="modal" data-target="#password_modal">Change Password</a>
+                                    <a class="genric-btn warning" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
                                     <br>
                                 </ul>
                             </div>
@@ -660,6 +661,45 @@
   </div>
 
 <!--==============model for change passsword=================-->
+ <!--==============model for  change main pic=================-->
+ <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/salon/{{$data1->Profile_Pic}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeSalonMainpic'.$data1->salonid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Profile_Pic') ? ' has-error' : '' }}">
+                    <label for="Profile_Pic" class="offset-1">Update Main Picture :-</label>
+                    <center><input type="file" name="Profile_Pic" class="form-control @error('Profile_Pic') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Profile_Pic')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
