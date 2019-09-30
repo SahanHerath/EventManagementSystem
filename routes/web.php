@@ -355,6 +355,10 @@ Route::get('/RemovePhotographyVideo{id}', 'PhotographyController@deleteVideo')  
 
 
 Route::post('/ChangeSalonMainpic{id}', 'salonController@changeMainPic')  ;
+Route::post('/Salonpic1{id}', 'salonController@changePic1')  ;
+Route::post('/Salonpic2{id}', 'salonController@changePic2')  ;
+Route::post('/Salonpic3{id}', 'salonController@changePic3')  ;
+Route::post('/Salonpic4{id}', 'salonController@changePic4')  ;
 
 
 
