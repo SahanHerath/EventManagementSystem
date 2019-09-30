@@ -367,6 +367,10 @@ Route::post('/poruwapic3{id}', 'PoruwaController@changePic3')  ;
 Route::post('/poruwapic4{id}', 'PoruwaController@changePic4')  ;
 
 Route::post('/ChangeMusicMainpic{id}', 'musicianController@changeMainPic')  ;
+Route::post('/Musicpic1{id}', 'musicianController@changePic1')  ;
+Route::post('/Musicpic2{id}', 'musicianController@changePic2')  ;
+Route::post('/Musicpic3{id}', 'musicianController@changePic3')  ;
+Route::post('/Musicpic4{id}', 'musicianController@changePic4')  ;
 
 
 
