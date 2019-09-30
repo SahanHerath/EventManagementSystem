@@ -428,4 +428,53 @@ class musicianController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('musicians.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Main_Logo'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_Logo.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_Logo'))
+                    {
+                        $Main_Logo=$request->file('Main_Logo');
+                        $filename=time().'.'.$Main_Logo->getClientOriginalExtension();
+                        Image::make($Main_Logo)->fit(480,480)->save(public_path('/uploads/music/'. $filename));
+
+                        $picture=Musician::where('id',$id)
+                        ->update([
+                                'Main_Logo'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
 }
