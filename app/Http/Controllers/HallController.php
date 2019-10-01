@@ -902,6 +902,56 @@ class HallController extends Controller
                         ]);
                     }
 
+                    return redirect('/Profile')->with('flash_message','Change Cover Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changeHallMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('hotels','users.id','=','hotels.user_id')
+                ->join('reception_halls','reception_halls.hotel_id','=','hotels.id')
+                ->where('users.id','=',$id1)
+                ->select('reception_halls.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_pic.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_pic'))
+                    {
+                        $Main_pic=$request->file('Main_pic');
+                        $filename=time().'.'.$Main_pic->getClientOriginalExtension();
+                        Image::make($Main_pic)->fit(1920,1080)->save(public_path('/uploads/hall/'. $filename));
+
+                        $picture=Reception_hall::where('id',$id)
+                        ->update([
+                                'Main_pic'=>$filename
+
+
+                        ]);
+                    }
+
                     return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
                 }
 

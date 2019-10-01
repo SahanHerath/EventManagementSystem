@@ -69,9 +69,10 @@
 			</div><!-- row -->
 		</div><!-- container -->
         
-        <div class="offset-5" >
+        <div class="offset-4" >
             <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo">Edit Hall Details</a></button>
             <button type="button" class="btn btn-danger"><a href="{{URL('/RemoveHall'.$hall1->recepid)}}">Remove Hall</a></button>
+            <button type="button" class="btn btn-info"><a href="" data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a></button>
             </div>
             
             
@@ -1287,6 +1288,45 @@
   </div>
   </div>
    <!--==============model for edit events=================-->
+   <!--==============model for  change main pic=================-->
+ <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/hall/{{$hall1->Main_pic}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeHallMainpic'.$hall1->recepid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Main_pic') ? ' has-error' : '' }}">
+                    <label for="Main_pic" class="offset-1">Update Main Picture :-</label>
+                    <center><input type="file" name="Main_pic" class="form-control @error('Main_pic') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Main_pic')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
 		@endforeach
 
 
