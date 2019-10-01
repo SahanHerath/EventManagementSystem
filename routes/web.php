@@ -393,6 +393,7 @@ Route::post('/AddDancerPackage{id}', 'DancingController@AddNewPackage')  ;
 Route::post('/EditDancerPackage{id}', 'DancingController@EditPackage')  ;
 Route::get('/RemoveDancingPackage{id}', 'DancingController@deletePackage')  ;
 Route::post('/AddDanceVideo{id}', 'DancingController@uploadVideo')  ;
+Route::get('/RemoveDanceVideo{id}', 'DancingController@deleteVideo')  ;
 
 
 Route::post('/ChangeCostumeMainpic{id}', 'CostumeDesignerController@changeMainPic')  ;

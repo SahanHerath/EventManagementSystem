@@ -311,7 +311,14 @@ class DancingController extends Controller
                 ->select('dance_packages.id','Package_Name', 'Dancing_Type', 'Services','Price','Pdf')
                 ->get();
 
-                return view('DancerUserProfile',compact('data','deto'));
+                
+        $saha=DB::table('users')
+            ->join('dance_videos','users.id','=','dance_videos.user_id')
+            ->where('users.id','=',$id1)
+            ->select('dance_videos.id','Video_Name', 'Video')
+            ->get();
+
+                return view('DancerUserProfile',compact('data','deto','saha'));
     }
 
     public function eventUpdate(Request $request, $id)
@@ -813,6 +820,33 @@ class DancingController extends Controller
 
                 
             
+    }
+
+    public function deleteVideo(request $request,$id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+                ->join('dance_videos','users.id','=','dance_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('dance_videos.id')
+                ->get();
+
+        foreach($data as $data1)
+        {
+            if($data1->id==$id)
+            {
+                $deco1 = Dance_video::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
+            }
+            else
+            {
+                return redirect('/');
+            }
+
+        }
     }
 
 
