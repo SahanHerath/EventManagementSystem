@@ -403,6 +403,10 @@ Route::post('/cateringpic3{id}', 'CateringController@changePic3')  ;
 Route::post('/cateringpic4{id}', 'CateringController@changePic4')  ;
 
 Route::post('/ChangeCakeMainpic{id}', 'CakeController@changeMainPic')  ;
+Route::post('/cakepic1{id}', 'CakeController@changePic1')  ;
+Route::post('/cakepic2{id}', 'CakeController@changePic2')  ;
+Route::post('/cakepic3{id}', 'CakeController@changePic3')  ;
+Route::post('/cakepic4{id}', 'CakeController@changePic4')  ;
 
 
 
