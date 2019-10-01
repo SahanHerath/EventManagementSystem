@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Dancer;
 use App\Dancer_event;
+use App\Dance_package;
 use DB;
 use Auth;
 use Image;
@@ -303,7 +304,13 @@ class DancingController extends Controller
                 ->select('users.id as userid','name','email','dancers.id as dancerid','Team_Name', 'Address', 'Contact_No','Link','Description','Gender','choreography','Traditional','Western','Indian','Kandyan','Casual','Other','Main_pic','pic1','pic2','pic3','pic4','dancer_events.id as eventid', 'Wedding','Musical_event','Corporate_event','Party')
                 ->get();
 
-                return view('DancerUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('dance_packages','users.id','=','dance_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('dance_packages.id','Package_Name', 'Dancing_Type', 'Services','Price')
+                ->get();
+
+                return view('DancerUserProfile',compact('data','deto'));
     }
 
     public function eventUpdate(Request $request, $id)
@@ -650,5 +657,37 @@ class DancingController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Dancing_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Dancing_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        $dance_package = new Dance_package;
+        $dance_package->user_id = Auth::user()->id;
+        $dance_package->Package_Name=$request->Package_Name;
+        $dance_package->Dancing_Type =$request->Dancing_Type;
+        $dance_package->Services =$request->Services;
+        $dance_package->Price =$request->Price;
+        $dance_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 }
