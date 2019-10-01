@@ -1078,8 +1078,8 @@
     
     <!--==============model for edit package=================-->
     <!--==============model for delete package=================-->
-    <div class="modal" tabindex="-1" role="dialog" id="modalDeletePackage">
-  <div class="modal-dialog" role="document">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Confirm Delete!</h5>
@@ -1098,6 +1098,60 @@
   </div>
 </div>
 <!--==============model for delete package=================-->
+ <!--==============model for  upload vedio=================-->
+ <div class="modal fade" id="addvedio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Upload Your Vedio</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/AddDanceVideo'.$data1->userid)}}"  method="POST">
+                    
+
+                    <div class="form-group row{{ $errors->has('Video_Name') ? ' has-error' : '' }}">
+                        <label for="Video_Name" class="col-md-4 col-form-label offset-1">Video Name :-</label>
+
+                        
+                            <input id="Video_Name" type="text" value="{{ old('Video_Name') }}" class="form-control @error('Video_Name') is-invalid @enderror col-md-10 offset-1" name="Video_Name"  title="Name for your video">
+
+                            @error('Video_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+                    <div class="form-group row{{ $errors->has('Video') ? ' has-error' : '' }}">
+                    <label for="Video" class="offset-1">Upload Your Vedio :-</label>
+                    <center><input type="file" name="Video" class="form-control @error('Video') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Video')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Upload
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change upload vedio=================-->
         </section>
         @endforeach
        @endforeach

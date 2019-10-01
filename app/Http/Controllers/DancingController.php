@@ -7,6 +7,7 @@ use App\User;
 use App\Dancer;
 use App\Dancer_event;
 use App\Dance_package;
+use App\Dance_video;
 use DB;
 use Auth;
 use Image;
@@ -770,6 +771,48 @@ class DancingController extends Controller
             
         }
 
+    }
+
+    public function uploadVideo(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+        
+
+                $request->validate(
+                [
+                    'Video_Name' => 'required|string|max:255',
+                    'Video' =>'required|mimetypes:video/x-flv,video/mp4,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv',
+                ],
+                [
+                    'Video_Name.required'=> "please fill this field",
+                    'Video.required'=> "Add a video here",
+                ]
+            );
+            
+            
+            
+                    $Evideo = new Dance_video;
+                    $Evideo->user_id = Auth::user()->id;
+                    $Evideo->Video_Name=$request->Video_Name;
+                    
+                    
+                    
+                    if($request->hasFile('Video'))
+                    {
+                        $Video=$request->file('Video');
+           
+                        $filename=time().'.'.$Video->getClientOriginalExtension();
+                        $Video->move(public_path('/video/dancing') , $filename);
+                        $Evideo->Video=$filename;
+                        $Evideo->save();
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');
+                
+
+                
+            
     }
 
 
