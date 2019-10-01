@@ -254,7 +254,7 @@
 								<br><br><br>
 							</div>
 						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
 							<div class="project">
 								<img src="uploads/decoration/{{$data1->pic2}}" alt="img-gal" class="img-fluid">
 								<br><br><br>
@@ -271,14 +271,9 @@
 								<img src="uploads/decoration/{{$data1->pic4}}" alt="img-gal" class="img-fluid">
 								<br><br><br>
 							</div>
-						</div>
-							
-						</div>
-					
+						</div>		
 					</div>
-					
-				</div>
-			
+				</div>		
         </section>
         @endforeach
 		<div class="section-top-border">
