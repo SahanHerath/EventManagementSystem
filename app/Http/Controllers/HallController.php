@@ -863,5 +863,54 @@ class HallController extends Controller
             }
             
     }
+
+    public function changeHotelCoverPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('hotels','users.id','=','hotels.user_id')
+                ->where('users.id','=',$id1)
+                ->select('hotels.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Cover_photo'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Cover_photo.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Cover_photo'))
+                    {
+                        $Cover_photo=$request->file('Cover_photo');
+                        $filename=time().'.'.$Cover_photo->getClientOriginalExtension();
+                        Image::make($Cover_photo)->fit(1920,1080)->save(public_path('/uploads/hall/'. $filename));
+
+                        $picture=Hotel::where('id',$id)
+                        ->update([
+                                'Cover_photo'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
    
 }

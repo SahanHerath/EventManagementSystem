@@ -414,6 +414,45 @@
     </div>
 
     <!--==============model for change main pic=================-->
+     <!--==============model for  change cover pic=================-->
+ <div class="modal fade" id="coverpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Cover Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/hall/{{$data1->Cover_photo}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeHotelCoverpic'.$data1->hotelid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Cover_photo') ? ' has-error' : '' }}">
+                    <label for="Cover_photo" class="offset-1">Update Cover Picture :-</label>
+                    <center><input type="file" name="Cover_photo" class="form-control @error('Cover_photo') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Cover_photo')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change cover pic=================-->
    @endforeach
 	
 	<footer class="site-footer" style="background-color:black;">
