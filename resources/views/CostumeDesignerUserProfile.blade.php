@@ -88,6 +88,7 @@
                                     
                                     <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
                                     <a class="genric-btn info" href="" data-toggle="modal" data-target="#password_modal">Change Password</a>
+                                    <a class="genric-btn warning" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
                                     <br>
                                 </ul>
                             </div>
@@ -244,7 +245,7 @@
 						</div>
                         <br>
                             
-							<a class="offset-5 genric-btn primary" href="#">Change Recent Event Photos</a>
+							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemoveCostumeDesignerAccount'.$data1->userid)}}">Deactivate Account</a>
@@ -767,6 +768,118 @@
     </div>
 
     <!--==============model for change main pic=================-->
+    <!--==============model for  change recent pictures=================-->
+     
+  <div class="modal fade" id="modalChangepic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Event Pictures</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <table class="table table hover table-bordered">
+                       <thead>
+                            <tr>
+                                <th width="3">Picture</th>
+                                <th width="5">Change Picture</th>
+                                
+                            </tr>
+                       </thead>
+                       <tbody>
+                       
+                            <tr>
+                                <td> <img src="/uploads/costume/{{$data1->pic1}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/costumepic1'.$data1->designerid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic1" class="form-control @error('pic1') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/costume/{{$data1->pic2}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/costumepic2'.$data1->designerid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic2" class="form-control @error('pic2') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/costume/{{$data1->pic3}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/costumepic3'.$data1->designerid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic3" class="form-control @error('pic3') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/costume/{{$data1->pic4}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/costumepic4'.$data1->designerid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic4" class="form-control @error('pic4') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+                            
+                           
+                           
+                       </tbody>
+                         </table>
+
+                    
+
+                    
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change event pictures=================-->
    
        @endforeach
         <footer class="footer_area p_120">
