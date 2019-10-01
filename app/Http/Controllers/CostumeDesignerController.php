@@ -449,6 +449,55 @@ class CostumeDesignerController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('costume_designers','users.id','=','costume_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('costume_designers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_pic.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_pic'))
+                    {
+                        $Main_pic=$request->file('Main_pic');
+                        $filename=time().'.'.$Main_pic->getClientOriginalExtension();
+                        Image::make($Main_pic)->fit(480,480)->save(public_path('/uploads/costume/'. $filename));
+
+                        $picture=Costume_designer::where('id',$id)
+                        ->update([
+                                'Main_pic'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
     
 }
 
