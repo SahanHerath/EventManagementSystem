@@ -307,7 +307,7 @@ class DancingController extends Controller
         $deto=DB::table('users')
                 ->join('dance_packages','users.id','=','dance_packages.user_id')
                 ->where('users.id','=',$id1)
-                ->select('dance_packages.id','Package_Name', 'Dancing_Type', 'Services','Price')
+                ->select('dance_packages.id','Package_Name', 'Dancing_Type', 'Services','Price','Pdf')
                 ->get();
 
                 return view('DancerUserProfile',compact('data','deto'));
@@ -666,6 +666,7 @@ class DancingController extends Controller
             'Dancing_Type' => 'required|string|max:255',
             'Services' =>'required|string|max:500',
             'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
             
             
             
@@ -675,6 +676,7 @@ class DancingController extends Controller
         'Dancing_Type.required'=> "Fill out this field",
         'Services.required'=> "Fill out this field",
         'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
         
         
         ]
@@ -686,6 +688,16 @@ class DancingController extends Controller
         $dance_package->Dancing_Type =$request->Dancing_Type;
         $dance_package->Services =$request->Services;
         $dance_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/dancing') , $filename);
+             $dance_package->Pdf=$filename;
+             
+         }
         $dance_package->save();
 
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');

@@ -8,6 +8,6 @@ class Dance_package extends Model
 {
     //
     protected $fillable = [
-        'user_id', 'Package_Name','Dancing_Type','Services','Price'
+        'user_id', 'Package_Name','Dancing_Type','Services','Price','Pdf'
     ];
 }

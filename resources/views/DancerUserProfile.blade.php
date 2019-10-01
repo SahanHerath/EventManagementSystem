@@ -244,6 +244,7 @@
                                     <li><b>Event Type :- </b>{{$deto1->Dancing_Type}}</li>
                                     <li><b>Services :- </b>{{$deto1->Services}}</li>
                                     <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/dancing/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
                                     <ul>
                                 
                                 
@@ -947,6 +948,20 @@
                             @enderror
                         
                     </div>
+
+                    <div class="form-group row{{ $errors->has('Pdf') ? ' has-error' : '' }}">
+                            <label for="Pdf" class="col-md-4 col-form-label text-md-right">Pdf:-</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="Pdf" id="Pdf"  class="form-control @error('Pdf') is-invalid @enderror" >
+
+                                @error('Pdf')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                        </div>
 
                    
 
