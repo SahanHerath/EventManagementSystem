@@ -408,6 +408,8 @@ Route::post('/cakepic2{id}', 'CakeController@changePic2')  ;
 Route::post('/cakepic3{id}', 'CakeController@changePic3')  ;
 Route::post('/cakepic4{id}', 'CakeController@changePic4')  ;
 
+Route::post('/ChangeActorMainpic{id}', 'ActorController@changeMainPic')  ;
+
 
 
 
