@@ -99,7 +99,7 @@ class HallController extends Controller
              $Main_logo=$request->file('Main_logo');
            
              $filename=time().'.'.$Main_logo->getClientOriginalExtension();
-             Image::make($Main_logo)->resize(960,640)->save(public_path('/uploads/hall/'. $filename));
+             Image::make($Main_logo)->resize(200,200)->save(public_path('/uploads/hall/'. $filename));
 
              
              $hotel->Main_logo=$filename;
@@ -813,6 +813,55 @@ class HallController extends Controller
                 return redirect('/home'); 
             }
         
+    }
+
+    public function changeHotelMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('hotels','users.id','=','hotels.user_id')
+                ->where('users.id','=',$id1)
+                ->select('hotels.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Main_logo'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_logo.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_logo'))
+                    {
+                        $Main_logo=$request->file('Main_logo');
+                        $filename=time().'.'.$Main_logo->getClientOriginalExtension();
+                        Image::make($Main_logo)->resize(200,200)->save(public_path('/uploads/hall/'. $filename));
+
+                        $picture=Hotel::where('id',$id)
+                        ->update([
+                                'Main_logo'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
     }
    
 }

@@ -43,8 +43,10 @@
 	
 	<section class="intro-section" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
 		<div class="container">
+        
 		
 			<div class="row">
+            
 				
 				<div class="offset-0 col-md-10 col-lg-4">
 					<div class="intro">
@@ -69,9 +71,13 @@
                         <ul>
                         <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo" >Edit Hotel</a></button>
                         <button type="button" class="btn btn-warning"><a href="" data-toggle="modal" data-target="#password_modal" >Change Password</a></button>
+                        <br><br>
+                        <a class="btn btn-success" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
+                        <br><br>
+                        <a class="btn btn-info" href=""  data-toggle="modal" data-target="#coverpicchange">Change Cover Picture</a>
                         </ul>
 					</div><!-- intro -->
-                    
+                        
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
 		</div><!-- container -->
@@ -369,6 +375,45 @@
   </div>
 
 <!--==============model for change passsword=================-->
+ <!--==============model for  change main pic=================-->
+ <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/hall/{{$data1->Main_logo}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeHotelMainpic'.$data1->hotelid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Main_logo') ? ' has-error' : '' }}">
+                    <label for="Main_logo" class="offset-1">Update Main Picture :-</label>
+                    <center><input type="file" name="Main_logo" class="form-control @error('Main_logo') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Main_logo')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
    @endforeach
 	
 	<footer class="site-footer" style="background-color:black;">

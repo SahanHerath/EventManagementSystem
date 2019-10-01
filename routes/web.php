@@ -414,6 +414,8 @@ Route::post('/actorpic2{id}', 'ActorController@changePic2')  ;
 Route::post('/actorpic3{id}', 'ActorController@changePic3')  ;
 Route::post('/actorpic4{id}', 'ActorController@changePic4')  ;
 
+Route::post('/ChangeHotelMainpic{id}', 'HallController@changeHotelMainPic')  ;
+
 
 
 

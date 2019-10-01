@@ -1106,7 +1106,7 @@
     </div>
     @endforeach
     <!--==============model for edit package=================-->
-     <!--==============model for  change main pic=================-->
+     <!--==============model for  upload vedio=================-->
  <div class="modal fade" id="addvedio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -1159,7 +1159,7 @@
         </div>
     </div>
 
-    <!--==============model for change main pic=================-->
+    <!--==============model for change upload vedio=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
