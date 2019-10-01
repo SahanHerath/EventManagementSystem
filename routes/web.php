@@ -402,5 +402,9 @@ Route::post('/cateringpic2{id}', 'CateringController@changePic2')  ;
 Route::post('/cateringpic3{id}', 'CateringController@changePic3')  ;
 Route::post('/cateringpic4{id}', 'CateringController@changePic4')  ;
 
+Route::post('/ChangeCakeMainpic{id}', 'CakeController@changeMainPic')  ;
+
+
+
 
  

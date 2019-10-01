@@ -541,7 +541,7 @@ class salonController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
                 }
 
                 else
@@ -590,7 +590,7 @@ class salonController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
                 }
 
                 else
@@ -639,7 +639,7 @@ class salonController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');;
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
                 }
 
                 else
