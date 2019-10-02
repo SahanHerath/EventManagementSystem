@@ -7,6 +7,8 @@ use App\User;
 use App\Musician;
 use Auth;
 use App\Musician_event;
+use App\Music_package;
+use App\Music_video;
 use Image;
 use DB;
 
@@ -239,7 +241,20 @@ class musicianController extends Controller
                 ->where('category','=','Music')
                 ->get();
 
-                return view('MusicView',compact('data'));
+        $deto=DB::table('users')
+                ->join('music_packages','users.id','=','music_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('music_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+                
+        $saha=DB::table('users')
+            ->join('music_videos','users.id','=','music_videos.user_id')
+            ->where('users.id','=',$id)
+            ->select('music_videos.id','Video_Name', 'Video')
+            ->get();
+
+                return view('MusicView',compact('data','deto','saha'));
     }
 
     public function wedding()
@@ -305,7 +320,19 @@ class musicianController extends Controller
                 ->select( 'users.id as userid','name','email','musicians.id as musicianid','Dj_Name', 'Address', 'ContactNo','Link','Description','Playing_Hrs','Payment','Extra_Cost','Fire','Smoke','Lights','Main_Logo','pic1','pic2','pic3','pic4','musician_events.id as eventid','Wedding', 'Birthday', 'Beach_Party','Get_Together','Parties')
                 ->get();
 
-                return view('MusicUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('music_packages','users.id','=','music_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+        $saha=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_videos.id','Video_Name', 'Video')
+                ->get();
+
+                return view('MusicUserProfile',compact('data','deto','saha'));
     }
 
     public function InfoUpdate(Request $request, $userid, $musicid)
@@ -418,6 +445,8 @@ class musicianController extends Controller
                 $music1->delete();
                 $music = Musician::where('user_id',$id)->delete();
                 $event = Musician_event::where('user_id',$id)->delete();
+                $event1 = Music_package::where('user_id',$id)->delete();
+                $event2 = Music_video::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -673,5 +702,198 @@ class musicianController extends Controller
             }
             
     }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Hours' => 'required|numeric|min:0',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Hours.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $music_package = new Music_package;
+        $music_package->user_id = Auth::user()->id;
+        $music_package->Package_Name=$request->Package_Name;
+        $music_package->Hours =$request->Hours;
+        $music_package->Services =$request->Services;
+        $music_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/music') , $filename);
+             $music_package->Pdf=$filename;
+             
+         }
+        
+         $music_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
+    public function EditPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Hours1' => 'required|numeric|min:0',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Hours1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Music_package::where('id',$id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Hours'=>$request->Hours1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage($id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+            ->join('music_packages','users.id','=','music_packages.user_id')
+            ->where('music_packages.id','=',$id)
+            ->select('users.id')
+            ->get();
+
+        foreach($data as $data1)
+        {
+            if($id1==$data1->id)
+            {
+                $deco1 = Music_package::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            }
+            else 
+            {
+                return redirect('/');
+            }
+            
+        }
+
+    }
+
+    public function uploadVideo(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Video_Name' => 'required|string|max:255',
+                    'Video' =>'required|mimetypes:video/x-flv,video/mp4,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv',
+                ],
+                [
+                    'Video_Name.required'=> "please fill this field",
+                    'Video.required'=> "Add a video here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    $Evideo = new Music_video;
+                    $Evideo->user_id = Auth::user()->id;
+                    $Evideo->Video_Name=$request->Video_Name;
+                    
+                    
+                    
+                    if($request->hasFile('Video'))
+                    {
+                        $Video=$request->file('Video');
+           
+                        $filename=time().'.'.$Video->getClientOriginalExtension();
+                        $Video->move(public_path('/video/music') , $filename);
+                        $Evideo->Video=$filename;
+                        $Evideo->save();
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function deleteVideo(request $request,$id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_videos.id')
+                ->get();
+
+        foreach($data as $data1)
+        {
+            if($data1->id==$id)
+            {
+                $deco1 = Music_video::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
+            }
+            else
+            {
+                return redirect('/');
+            }
+
+        }
+    }
+
 
 }

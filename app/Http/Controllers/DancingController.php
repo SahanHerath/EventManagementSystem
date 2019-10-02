@@ -252,7 +252,20 @@ class DancingController extends Controller
                 ->where('category','=','Dancing')
                 ->get();
 
-                return view('DanceView',compact('data'));
+        $deto=DB::table('users')
+                ->join('dance_packages','users.id','=','dance_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('dance_packages.id','Package_Name', 'Dancing_Type', 'Services','Price','Pdf')
+                ->get();
+
+                
+        $saha=DB::table('users')
+            ->join('dance_videos','users.id','=','dance_videos.user_id')
+            ->where('users.id','=',$id)
+            ->select('dance_videos.id','Video_Name', 'Video')
+            ->get();
+
+                return view('DanceView',compact('data','deto','saha'));
     }
 
     public function wedding()

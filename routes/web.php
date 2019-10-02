@@ -371,6 +371,11 @@ Route::post('/Musicpic1{id}', 'musicianController@changePic1')  ;
 Route::post('/Musicpic2{id}', 'musicianController@changePic2')  ;
 Route::post('/Musicpic3{id}', 'musicianController@changePic3')  ;
 Route::post('/Musicpic4{id}', 'musicianController@changePic4')  ;
+Route::post('/AddMusicPackage{id}', 'musicianController@AddNewPackage')  ;
+Route::post('/EditMusicPackage{id}', 'musicianController@EditPackage')  ;
+Route::get('/RemoveMusicPackage{id}', 'musicianController@deletePackage')  ;
+Route::post('/AddMusicVideo{id}', 'musicianController@uploadVideo')  ;
+Route::get('/RemoveMusicVideo{id}', 'musicianController@deleteVideo')  ;
 
 Route::post('/ChangeTransportMainpic{id}', 'TransportController@changeMainPic')  ;
 Route::post('/Transportpic1{id}', 'TransportController@changePic1')  ;
@@ -383,6 +388,10 @@ Route::post('/plannerpic1{id}', 'EventPlanersController@changePic1')  ;
 Route::post('/plannerpic2{id}', 'EventPlanersController@changePic2')  ;
 Route::post('/plannerpic3{id}', 'EventPlanersController@changePic3')  ;
 Route::post('/plannerpic4{id}', 'EventPlanersController@changePic4')  ;
+Route::post('/AddEventPlannerPackage{id}', 'EventPlanersController@AddNewPackage')  ;
+Route::post('/EditPlannerPackage{id}', 'EventPlanersController@EditPackage')  ;
+Route::get('/RemovePlannerPackage{id}', 'EventPlanersController@deletePackage')  ;
+
 
 Route::post('/ChangeDancerMainpic{id}', 'DancingController@changeMainPic')  ;
 Route::post('/dancerpic1{id}', 'DancingController@changePic1')  ;

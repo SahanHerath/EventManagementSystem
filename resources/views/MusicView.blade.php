@@ -295,6 +295,49 @@
 			
         </section>
         @endforeach
+		<div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                           
+                        </div>
+		@foreach($deto as $dec1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b> Hours of Playing:- </b>{{$dec1->Hours}}</li>
+                                    <li><b>Services :- </b>{{$dec1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$dec1->Price}}</li>
+                                    <li><a href="files/music/{{$dec1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+        @endforeach
+		<div class="section-top-border">
+						<h3 class="title_color">Your Videos</h3>
+                        </div>  
+                        
+                        @foreach($saha as $sahan)
+                        <div class="personal_text" >
+                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+                                <video width="400" controls>
+                                <source src="video/music/{{$sahan->Video}}" type="video/mp4">
+                                <source src="mov_bbb.ogg" type="video/ogg">
+                                </video>
+                               
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->
