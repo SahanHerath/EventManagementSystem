@@ -241,7 +241,20 @@ class musicianController extends Controller
                 ->where('category','=','Music')
                 ->get();
 
-                return view('MusicView',compact('data'));
+        $deto=DB::table('users')
+                ->join('music_packages','users.id','=','music_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('music_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+                
+        $saha=DB::table('users')
+            ->join('music_videos','users.id','=','music_videos.user_id')
+            ->where('users.id','=',$id)
+            ->select('music_videos.id','Video_Name', 'Video')
+            ->get();
+
+                return view('MusicView',compact('data','deto','saha'));
     }
 
     public function wedding()

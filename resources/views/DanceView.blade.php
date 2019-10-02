@@ -367,7 +367,7 @@
                                 <source src="video/dancing/{{$sahan->Video}}" type="video/mp4">
                                 <source src="mov_bbb.ogg" type="video/ogg">
                                 </video>
-                                <a class="genric-btn danger" href="{{URL('/RemovePhotographyVideo'.$sahan->id)}}">Delete</a></center>
+                                
                                 </div>
                             </div>
                         </div>

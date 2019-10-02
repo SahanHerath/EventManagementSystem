@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -37,10 +38,25 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
-							</ul>
+                            @foreach($data as $data1)
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/MusicView'.$data1->userid)}}">View Your Profile</a></li> 
+                            
+                            <li class="nav-item active"><a class="nav-link" href="#">
+                                    <p class="text-white"><img src="/uploads/music/{{$data1->Main_Logo}}" style="width:32px; height:32px; border-radius: 50%;" >
+                                    {{ Auth::user()->name }}</p>
+                                </a>
+                            </li>  
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+							@endforeach
 						</div> 
 					</div>
             	</nav>
@@ -1252,10 +1268,52 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
-        @if (count($errors) > 0)
+        @if ($errors->has('name')||$errors->has('email')||$errors->has('Dj_Name')||$errors->has('Address')||$errors->has('ContactNo')||$errors->has('Link')||$errors->has('Description')||$errors->has('Playing_Hrs')||$errors->has('Payment')||$errors->has('Extra_Cost'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name')||$errors->has('Hours')||$errors->has('Services')||$errors->has('Price')||$errors->has('Pdf'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalAddPackage").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name1')||$errors->has('Hours1')||$errors->has('Services1')||$errors->has('Price1')||$errors->has('Pdf1'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalEditPackage").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_Logo'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Video_Name')||$errors->has('Video'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#addvedio").modal('show');
             });
         </script>
         @endif
