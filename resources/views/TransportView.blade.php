@@ -235,6 +235,34 @@
 			
         </section>
         @endforeach
+		<div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                           
+                        </div>
+		@foreach($dec as $dec1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><img src="uploads/transport/{{$dec1->picture}}" width="200" hight="200" alt="" ></li>
+                                    <li><b>Transport type :- </b>{{$dec1->Transport_type}}</li>
+                                    <li><b>vehicle :- </b> {{$dec1->vehicle}}</li>
+									<li><b>Decoration :- </b>{{$dec1->decoration}}</li>
+                                    <li><b>Driver :- </b> {{$dec1->driver}}</li>
+									<li><b>Price :- </b>{{$dec1->Price}}</li>
+                                   
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+        @endforeach
         <!--================End Home Gallery Area =================-->
         
 

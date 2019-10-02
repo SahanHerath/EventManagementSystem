@@ -243,7 +243,12 @@ class TransportController extends Controller
                 ->join('transport_categories','users.id','=','transport_categories.user_id')
                 ->get();
 
-                return view('TransportView',compact('data'));
+        $dec= DB::table('users')
+            ->where('users.id','=',$id)
+            ->join('transport_packages','users.id','=','transport_packages.user_id')
+            ->get();
+
+                return view('TransportView',compact('data','dec'));
     }
 
     public function profile()
@@ -327,7 +332,7 @@ class TransportController extends Controller
         $music1  ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Details Successfully');
         
     }
 
@@ -347,7 +352,7 @@ class TransportController extends Controller
                 'travelling_coach'=>$request->travelling_coach,
             ]);
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your features Successfully');
     }
 
     public function removeAccount($id)
