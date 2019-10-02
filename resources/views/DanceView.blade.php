@@ -333,6 +333,45 @@
 			
         </section>
         @endforeach
+		@foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Event Type :- </b>{{$deto1->Dancing_Type}}</li>
+                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/dancing/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+        @endforeach
+		<div class="section-top-border">
+						<h3 class="title_color">Your Videos</h3>
+                        </div>  
+                        
+                        @foreach($saha as $sahan)
+                        <div class="personal_text" >
+                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+                                <video width="400" controls>
+                                <source src="video/dancing/{{$sahan->Video}}" type="video/mp4">
+                                <source src="mov_bbb.ogg" type="video/ogg">
+                                </video>
+                                <a class="genric-btn danger" href="{{URL('/RemovePhotographyVideo'.$sahan->id)}}">Delete</a></center>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
 		
         <!--================End Home Gallery Area =================-->
         

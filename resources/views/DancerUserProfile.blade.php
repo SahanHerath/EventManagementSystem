@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -37,9 +38,25 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+                            @foreach($data as $data1)
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/DanceView'.$data1->userid)}}">View Your Profile</a></li> 
+                            
+                            <li class="nav-item active"><a class="nav-link" href="#">
+                                    <p class="text-white"><img src="/uploads/dancing/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+                                    {{ Auth::user()->name }}</p>
+                                </a>
+                            </li>  
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+							@endforeach
 							</ul>
 						</div> 
 					</div>
