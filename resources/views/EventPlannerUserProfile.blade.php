@@ -213,7 +213,7 @@
                             <div class="section-top-border">
 						<h3 class="title_color">Available Packages</h3>
                             <a class="offset-1 genric-btn info" href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
-                            <a class="offset-1 genric-btn warning" href="" data-toggle="modal" data-target="#addvedio">Upload Vedio</a>
+                            
                         </div>
                         @foreach($deto as $deto1)
                         <div class="personal_text" >
@@ -231,7 +231,7 @@
                                 
                                     <ul class="list basic_info">
                                     <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
-                                    <a class="genric-btn danger" href="{{URL('/RemovePhotographyPackage'.$deto1->id)}}">Remove</a></center>
+                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage">Remove</a></center>
                                     
                             
                                     </ul>
@@ -892,6 +892,29 @@
     </div>
     @endforeach
     <!--==============model for edit package=================-->
+     <!--==============model for delete package=================-->
+     @foreach($deto as $deto1)
+     <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to delete package "{{$deto1->Package_Name}}".All the details related to this package will be removed?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemovePlannerPackage'.$deto1->id)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
+<!--==============model for delete package=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
