@@ -375,6 +375,7 @@ Route::post('/AddMusicPackage{id}', 'musicianController@AddNewPackage')  ;
 Route::post('/EditMusicPackage{id}', 'musicianController@EditPackage')  ;
 Route::get('/RemoveMusicPackage{id}', 'musicianController@deletePackage')  ;
 Route::post('/AddMusicVideo{id}', 'musicianController@uploadVideo')  ;
+Route::get('/RemoveMusicVideo{id}', 'musicianController@deleteVideo')  ;
 
 Route::post('/ChangeTransportMainpic{id}', 'TransportController@changeMainPic')  ;
 Route::post('/Transportpic1{id}', 'TransportController@changePic1')  ;

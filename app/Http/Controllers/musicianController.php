@@ -432,6 +432,8 @@ class musicianController extends Controller
                 $music1->delete();
                 $music = Musician::where('user_id',$id)->delete();
                 $event = Musician_event::where('user_id',$id)->delete();
+                $event1 = Music_package::where('user_id',$id)->delete();
+                $event2 = Music_video::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -851,6 +853,33 @@ class musicianController extends Controller
                 }
             }
             
+    }
+
+    public function deleteVideo(request $request,$id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_videos.id')
+                ->get();
+
+        foreach($data as $data1)
+        {
+            if($data1->id==$id)
+            {
+                $deco1 = Music_video::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
+            }
+            else
+            {
+                return redirect('/');
+            }
+
+        }
     }
 
 

@@ -275,7 +275,7 @@
                         </div>
                         @endforeach
 
-                            <a class="offset-10 genric-btn danger" href="{{URL('/RemoveMusicAccount'.$data1->userid)}}">Deactivate Account</a>
+                            <a class="offset-10 genric-btn danger" href=""  data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
                             
                             
 					</div>
@@ -1133,6 +1133,51 @@
     </div>
 
     <!--==============model for change upload vedio=================-->
+     <!--==============model for delete video=================-->
+     @foreach($saha as $sahan)
+     <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletevideo" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to delete video "{{$sahan->Video_Name}}".All the details related to this video will be removed?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveMusicVideo'.$sahan->id)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
+<!--==============model for delete video=================-->
+<!--==============model for deactivate account=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveMusicAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
+        </section>
 
        @endforeach
         <footer class="footer_area p_120">
