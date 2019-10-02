@@ -8,6 +8,7 @@ use App\Musician;
 use Auth;
 use App\Musician_event;
 use App\Music_package;
+use App\Music_video;
 use Image;
 use DB;
 
@@ -729,5 +730,47 @@ class musicianController extends Controller
 
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
+
+    public function EditPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Hours1' => 'required|numeric|min:0',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Hours1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Music_package::where('id',$id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Hours'=>$request->Hours1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
 
 }
