@@ -29,7 +29,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -37,12 +37,26 @@
 						</button>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+							<ul class="nav navbar-nav menu_nav ml-auto offset-1">
                             @foreach($data as $data1)
-                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/Photographyview'.$data1->userid)}}">View Your Profile</a></li> 
+                            <li class="nav-item active"><a class="nav-link" href="{{URL('/Photographyview'.$data1->userid)}}">
+                            <i class="fa fa-eye">  View Your Profile</a></i>
+                            </li> 
                             
-                                <li class="nav-item active"><a class="nav-link" href="{{url('/Profile')}}"  v-pre style="position:relative; padding-left:50px;"><p class="text-white"><img src="/uploads/photography/{{$data1->main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >{{ Auth::user()->name }}</p></a></li>  
+                            <li class="nav-item active"><a class="nav-link" href="#"  v-pre style="position:relative;">
+                                <p class="text-white"><img src="/uploads/photography/{{$data1->main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+                                {{ Auth::user()->name }}</p></a>
+                            </li> 
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li> 
 							@endforeach
 							</ul>
 						</div> 
@@ -243,90 +257,68 @@
                     <br>
                 
                     <a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
-                    <br>
-                    <br>
-
-                    <section class="feature_area p_120">
-                    <div class="section-top-border">
-                        <h3 class="title_color">Available Packages</h3>
-                        <br><br>
-                            <div class="container">
-                            <div class="feature_inner row">
-                                @foreach($deto as $deto1)
-                                
-                                    <div class="col-lg-6 col-md-8">
-                                        <div class="feature_item" >
-                                            <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-                                            <div class="media-body">
-                                                <div class="row">
-                                                    <div class="column offset-1">
-                                                        <ul class="list basic_info">
-                                                            <li><b>Event Type :- </b>{{$deto1->Event_Type}}</li>
-                                                            <li><b>Services :- </b>{{$deto1->Services}}</li>
-                                                            <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                                        <ul>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="column offset-1">
-                                                        <a href="files/photography/{{$deto1->Pdf}}" ><img src="images/pdf.png" width="80" hight="80" alt="" ></a>
-                                                    </div>
-                                                    <div class="column offset-4">
-                                                        <ul class="list basic_info">
-                                                        <li><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a><li><br>  
-                                                        <li><a class="genric-btn danger" href="{{URL('/RemovePhotographyPackage'.$deto1->id)}}">Remove</a><li>
-                                                        </ul>
-                                                    </div>
-                                                </div><br>
-                                            </div>
+                    <br><br>
+                </div>
+            </div>
+        </section>
+        <section class="feature_area p_120">
+            <div class="section-top-border">
+                <h3 class="title_color">Available Packages</h3>
+                <div class="container">
+                    <div class="feature_inner row">
+                        @foreach($deto as $deto1)
+                        <div class="col-lg-6 col-md-8">
+                            <div class="feature_item" >
+                                <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                <div class="media-body">
+                                    <div class="row">
+                                        <div class="column offset-1">
+                                            <ul class="list basic_info">
+                                                <li><b>Event Type :- </b>{{$deto1->Event_Type}}</li>
+                                                <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                                <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                            <ul>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
-                            </div>
-                            <br>
-                            <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
-                                <div class="container">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-8">
-                                            <h2 class="text-white">If you have package details PDF</h2>
-                                            <a href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage" 
-                                            class="text-white btn btn-outline-warning rounded-0 text-uppercase">Add A Package</a>
+                                    <div class="row">
+                                        <div class="column offset-1">
+                                            <a href="files/photography/{{$deto1->Pdf}}" ><img src="images/pdf.png" width="80" hight="80" alt="" ></a>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                         
-                    <div class="section-top-border">
-                    <h3 class="title_color">Your Videos</h3>
-                    </div>  
-                        
-                    <br>
-                    <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <h2 class="text-white">If you have any video clips</h2>
-                                    <a class="text-white btn btn-outline-warning rounded-0 text-uppercase" href="#" data-toggle="modal"
-                                     data-target="#addvedio">Upload Video</a>
+                                        <div class="column offset-4">
+                                            <ul class="list basic_info">
+                                            <li><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a><li><br>  
+                                            <li><a class="genric-btn danger" href="{{URL('/RemovePhotographyPackage'.$deto1->id)}}">Remove</a><li>
+                                            </ul>
+                                        </div>
+                                    </div><br>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
-
-
-                    
-                    
-                    
-                    
-                    <section class="feature_area p_120">
-                        <div class="container">
-                        <div class="feature_inner row">
-                            @foreach($saha as $sahan)
-                            <div class="col-lg-5 col-md-8">
-                                <div class="feature_item" >
-                                <h4><b><font color="black">{{$sahan->Video_Name}}</font></b></h4>
+                </div>
+                <br>
+                <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="text-white">If you have package details PDF</h2>
+                                <a href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage" 
+                                class="text-white btn btn-outline-warning rounded-0 text-uppercase">Add A Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="section-top-border">
+            <h3 class="title_color">Your Videos</h3> 
+                <div class="container">
+                    <div class="feature_inner row">
+                        @foreach($saha as $sahan)
+                        <div class="col-lg-5 col-md-8">
+                            <div class="feature_item" >
+                            <h4><b><font color="black">{{$sahan->Video_Name}}</font></b></h4>
                                 <div class="media-body">
                                     <center>
                                     <video width="400" controls>
@@ -336,16 +328,29 @@
                                     </center>
                                     <br>
                                     <center><a class="genric-btn danger" href="{{URL('/RemovePhotographyVideo'.$sahan->id)}}">Delete</a></center>
-                                </div>  
+                                </div>
                             </div>
-                            @endforeach
+                        </div>   
+                        @endforeach
+                    </div>
+                </div>
+                <br>
+                <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="text-white">If you have any video clips</h2>
+                                <a class="text-white btn btn-outline-warning rounded-0 text-uppercase" href="#" data-toggle="modal"
+                                data-target="#addvedio">Upload Video</a>
+                            </div>
                         </div>
-                        </div>
-                    </section>
-                    </section>
-                    <br>
-                    <a class="offset-10 genric-btn danger" href="{{URL('/RemovePhotographyAccount'.$data1->userid)}}">Deactivate Account</a>
-
+                    </div>
+                </div>
+                <br>
+            </div>
+            <a class="offset-10 genric-btn danger" href="{{URL('/RemovePhotographyAccount'.$data1->userid)}}">Deactivate Account</a>
+        </section>
+                    
          <!--==============model for  edit info=================-->
     <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
   
@@ -944,8 +949,8 @@
     </div>
 
     <!--==============model for change event pictures=================-->
-      <!--==============model for  add package=================-->
-  <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <!--==============model for  add package=================-->
+    <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             
@@ -1052,10 +1057,9 @@
     <!--==============model for add Package=================-->
     <!--==============model for  edit package=================-->
     @foreach($deto as $deto1)
-  <div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            
                 <div class="modal-header text-center">
                     <h4 class="modal-title w-100 font-weight-bold">Edit Package Details</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1067,38 +1071,23 @@
                                 
                     <div class="form-group row{{ $errors->has('Package_Name1') ? ' has-error' : '' }} control-group">
                         <label for="Package_Name1" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
-
-                        
                             <input id="Package_Name1" type="text" value="{{$deto1->Package_Name}}" class="form-control @error('Package_Name1') is-invalid @enderror col-md-10 offset-1" name="Package_Name1"   title="fill this field with appropiate package name">
-
                             @error('Package_Name1')
                                 <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                       
                     </div>
 
                     <div class="form-group row{{ $errors->has('Event_Type1') ? ' has-error' : '' }}">
                         <label for="Event_Type1" class="col-md-4 col-form-label offset-1">Event Type :-</label>
-
-                        
-                            <input id="Event_Type1" type="text" value="{{$deto1->Event_Type}}" class="form-control @error('Event_Type1') is-invalid @enderror col-md-10 offset-1" name="Event_Type1"  title="fill this field with Wvent type of the package">
-
-                            @error('Event_Type1')
+                        <input id="Event_Type1" type="text" value="{{$deto1->Event_Type}}" class="form-control @error('Event_Type1') is-invalid @enderror col-md-10 offset-1" name="Event_Type1"  title="fill this field with Wvent type of the package">
+                                @error('Event_Type1')
                                 <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        
                     </div>
-                   
-                   
-
-                   
-
-              
-
                     <div class="form-group row{{ $errors->has('Services1') ? ' has-error' : '' }}">
                     
                         <label for="Services1" class="col-md-4 col-form-label offset-1">Services :-</label>
@@ -1110,14 +1099,10 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                       
-                    
                     </div>
 
                     <div class="form-group row{{ $errors->has('Price1') ? ' has-error' : '' }}">
                         <label for="Price1" class="col-md-4 col-form-label offset-1">Price :-</label>
-
-                        
                             <input id="Price1" type="decimal" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
 
                             @error('Price1')
@@ -1125,131 +1110,93 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        
                     </div>
-
-                    
-
-                    
 
                     <div class="modal-footer">
                         <div class="text-center">
-                        
                             <button type="submit" class="btn btn-primary ">
                                 Save Changes
                             </button>
                             <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                </form>         
+                </form>  
             </div>
         </div>
     </div>
     @endforeach
     <!--==============model for edit package=================-->
      <!--==============model for  upload vedio=================-->
- <div class="modal fade" id="addvedio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Upload Your Vedio</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                
-                    
+    <div class="modal fade" id="addvedio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Upload Your Vedio</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <form enctype="multipart/form-data" action="{{URL('/AddVedio'.$data1->userid)}}"  method="POST">
-                    
-
-                    <div class="form-group row{{ $errors->has('Video_Name') ? ' has-error' : '' }}">
-                        <label for="Video_Name" class="col-md-4 col-form-label offset-1">Video Name :-</label>
-
-                        
+                        <div class="form-group row{{ $errors->has('Video_Name') ? ' has-error' : '' }}">
+                            <label for="Video_Name" class="col-md-4 col-form-label offset-1">Video Name :-</label>
                             <input id="Video_Name" type="text" value="{{ old('Video_Name') }}" class="form-control @error('Video_Name') is-invalid @enderror col-md-10 offset-1" name="Video_Name"  title="Name for your video">
-
                             @error('Video_Name')
                                 <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        
-                    </div>
-                    <div class="form-group row{{ $errors->has('Video') ? ' has-error' : '' }}">
-                    <label for="Video" class="offset-1">Upload Your Vedio :-</label>
-                    <center><input type="file" name="Video" class="form-control @error('Video') is-invalid @enderror col-md-10 offset-1"></center>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        @error('Video')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                        @enderror
-                    </div>
-                        <div class="modal-footer">
-                        <div class="text-center">
-                        
-                            <button type="submit" class="btn btn-primary ">
-                                Upload
-                            </button>
-                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
                         </div>
-                    </div>
+                        <div class="form-group row{{ $errors->has('Video') ? ' has-error' : '' }}">
+                            <label for="Video" class="offset-1">Upload Your Vedio :-</label>
+                            <center><input type="file" name="Video" class="form-control @error('Video') is-invalid @enderror col-md-10 offset-1"></center>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                @error('Video')
+                                        <span class="invalid-feedback offset-1" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+                        </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary ">
+                                    Upload
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
                     </form>        
+                </div>
             </div>
         </div>
-    </div>
-
+        @endforeach
     <!--==============model for change upload vedio=================-->
-       @endforeach
-        <footer class="footer_area p_120">
-        	<div class="container">
-        		<div class="row footer_inner">
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget ab_widget">
-        					<div class="f_title">
-        						<h3>About Me</h3>
-        					</div>
-        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
-        					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        				</aside>
-        			</div>
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget news_widget">
-        					<div class="f_title">
-        						<h3>Newsletter</h3>
-        					</div>
-        					<p>Stay updated with our latest trends</p>
-        					<div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                	<div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
-        				</aside>
-        			</div>
-        			<div class="col-lg-2">
-        				<aside class="f_widget social_widget">
-        					<div class="f_title">
-        						<h3>Follow Me</h3>
-        					</div>
-        					<p>Let us be social</p>
-        					<ul class="list">
-        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
-        					</ul>
-        				</aside>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
+       
+       <footer class="footer_area p_30">
+        <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </footer>
         <!--================End Footer Area =================-->
         
         
