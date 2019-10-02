@@ -927,6 +927,137 @@
     </div>
 
     <!--==============model for add Package=================-->
+      <!--==============model for  edit package=================-->
+      @foreach($deto as $deto1)
+    <div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Package Details</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/EditTransportPackage'.$deto1->id)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name1') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name1" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
+                            <input id="Package_Name1" type="text" value="{{$deto1->Package_Name}}" class="form-control @error('Package_Name1') is-invalid @enderror col-md-10 offset-1" name="Package_Name1"   title="fill this field with appropiate package name">
+                            @error('Package_Name1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Transport_type1') ? ' has-error' : '' }}">
+                        <label for="Transport_type1" class="col-md-4 col-form-label offset-1">Transport type :-</label>
+                        <input id="Transport_type1" type="text" value="{{$deto1->Transport_type}}" class="form-control @error('Transport_type1') is-invalid @enderror col-md-10 offset-1" name="Transport_type1"  title="fill this field with transport type of the package">
+                                @error('Transport_type1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('vehicle1') ? ' has-error' : '' }}">
+                        <label for="vehicle1" class="col-md-4 col-form-label offset-1">Vehicle :-</label>
+                        <input id="vehicle1" type="text" value="{{$deto1->vehicle}}" class="form-control @error('vehicle1') is-invalid @enderror col-md-10 offset-1" name="vehicle1"  title="fill this field with vehicle or vehicles name">
+                                @error('vehicle1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('driver1') ? ' has-error' : '' }}">
+                            <label for="driver1" class="col-md-6 col-form-label offset-1">Driver For Vehicle :-</label>
+                            
+                            
+                                <select id="driver1" name="driver1" value="{{ old('driver1') }}" class="form-control @error('driver1') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
+                                    @if($deto1->driver=='Available')
+                                    <option value="Available" selected>Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                    @endif
+                                    @if($deto1->driver=='Not Available')
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available" selected>Not Available</option>
+                                    @endif
+                                    
+                                </select>
+                                @error('driver1')
+                                    <span class="invalid-feedback offset-1" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('decoration1') ? ' has-error' : '' }}">
+                            <label for="decoration1" class="col-md-6 col-form-label offset-1">Decoration For Vehicle :-</label>
+                            
+                            
+                                <select id="decoration1" name="decoration1" value="{{ old('decoration1') }}" class="form-control @error('decoration') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
+                                    @if($deto1->decoration=='Available')
+                                    <option value="Available" selected>Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                    @endif
+                                    @if($deto1->decoration=='Not Available')
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available" selected>Not Available</option>
+                                    @endif
+                                    
+                                </select>
+                                @error('decoration1')
+                                    <span class="invalid-feedback offset-1" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                           
+                        </div>
+
+                        
+                    
+
+                    <div class="form-group row{{ $errors->has('Price1') ? ' has-error' : '' }}">
+                        <label for="Price1" class="col-md-4 col-form-label offset-1">Price :-</label>
+                            <input id="Price1" type="decimal" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
+
+                            @error('Price1')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('picture1') ? ' has-error' : '' }}">
+                            <label for="picture1" class="col-md-4 col-form-label text-md-right">Image</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="picture1" id="picture1" value="{{ old('picture1') }}" class="form-control @error('picture1') is-invalid @enderror" >
+
+                                    @if ($errors->has('picture1'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('picture1') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>  
+            </div>
+        </div>
+    </div>
+    @endforeach
+    <!--==============model for edit package=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">

@@ -668,4 +668,66 @@ class TransportController extends Controller
 
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
+
+    public function EditPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Transport_type1' => 'required|string|max:255',
+            'vehicle1' =>'required|string|max:255',
+            'Price1' =>'required|numeric|min:0',
+            'picture1' =>'required|image|dimensions:min_width=300,min_height=100',
+            'decoration1' =>'required|string|max:20',
+            'driver1' =>'required|string|max:20',
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Transport_type1.required'=> "Fill out this field",
+        'vehicle1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        'picture1.required'=> "Fill out this field",
+        'decoration1.required'=> "Fill out this field",
+        'driver1.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Transport_package::where('id',$id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Transport_type'=>$request->Transport_type1,
+                'vehicle'=>$request->vehicle1,
+                'Price'=>$request->Price1,
+                'decoration'=>$request->decoration1,
+                'vehicle'=>$request->vehicle1,
+                'driver'=>$request->driver1,
+                
+
+            ]);
+
+            if($request->hasFile('picture1'))
+                    {
+                        $picture1=$request->file('picture1');
+                        $filename=time().'.'.$picture1->getClientOriginalExtension();
+                        Image::make($picture1)->fit(1920,1080)->save(public_path('/uploads/transport/'. $filename));
+
+                        $picture=Transport_package::where('id',$id)
+                        ->update([
+                                'picture'=>$filename
+
+
+                        ]);
+                    }
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
 }
