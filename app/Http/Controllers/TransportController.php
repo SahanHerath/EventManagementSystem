@@ -362,6 +362,7 @@ class TransportController extends Controller
                 $trans1->delete();
                 $trans = Transporter::where('user_id',$id)->delete();
                 $category = Transport_Category::where('user_id',$id)->delete();
+                $category1 = Transport_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -729,5 +730,33 @@ class TransportController extends Controller
         
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage($id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+            ->join('transport_packages','users.id','=','transport_packages.user_id')
+            ->where('transport_packages.id','=',$id)
+            ->select('users.id')
+            ->get();
+
+        foreach($data as $data1)
+        {
+            if($id1==$data1->id)
+            {
+                $deco1 = Transport_package::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            }
+            else 
+            {
+                return redirect('/');
+            }
+            
+        }
+
     }
 }
