@@ -231,7 +231,13 @@ class EventPlanersController extends Controller
                 ->where('category','=','Event_Planners')
                 ->get();
 
-                return view('EventPlannerView',compact('data'));
+        $deto=DB::table('users')
+                ->join('planner_packages','users.id','=','planner_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('planner_packages.id','Package_Name', 'Services','Price','Pdf')
+                ->get();
+
+                return view('EventPlannerView',compact('data','deto'));
     }
 
     public function wedding()

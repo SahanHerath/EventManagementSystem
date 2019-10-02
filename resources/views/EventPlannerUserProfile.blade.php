@@ -41,7 +41,7 @@
                             @foreach($data as $data1)
                             <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/EventPlannerView'.$data1->userid)}}">View Your Profile</a></li> 
                             
-                            <li class="nav-item active"><a class="nav-link" href="#">
+                            <li class="nav-item active"><a class="nav-link" href="/Profile">
                                     <p class="text-white"><img src="/uploads/event/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
                                     {{ Auth::user()->name }}</p>
                                 </a>
