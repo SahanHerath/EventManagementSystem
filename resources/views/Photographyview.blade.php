@@ -326,23 +326,22 @@
                             
         @endforeach
 		<div class="section-top-border">
-						<h3 class="title_color">Your Videos</h3>
-                        </div>  
-                        
-                        @foreach($saha as $sahan)
-                        <div class="personal_text" >
-                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
-                                <video width="400" controls>
-                                <source src="video/photography/{{$sahan->Video}}" type="video/mp4">
-                                <source src="mov_bbb.ogg" type="video/ogg">
-                                </video>
-                                
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+			<h3 class="title_color">Your Videos</h3>
+			
+			@foreach($saha as $sahan)
+			<div class="personal_text" >
+				<div class="col-lg-5 col-md-6" style="border: 5px solid red;">
+					<div class="feature_item">
+						<h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+						<video width="400" controls>
+						<source src="video/photography/{{$sahan->Video}}" type="video/mp4">
+						<source src="mov_bbb.ogg" type="video/ogg">
+						</video>
+					</div>
+				</div>
+			</div>
+			@endforeach
+		</div> 
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->
