@@ -305,7 +305,19 @@ class musicianController extends Controller
                 ->select( 'users.id as userid','name','email','musicians.id as musicianid','Dj_Name', 'Address', 'ContactNo','Link','Description','Playing_Hrs','Payment','Extra_Cost','Fire','Smoke','Lights','Main_Logo','pic1','pic2','pic3','pic4','musician_events.id as eventid','Wedding', 'Birthday', 'Beach_Party','Get_Together','Parties')
                 ->get();
 
-                return view('MusicUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('music_packages','users.id','=','music_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+        $saha=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_videos.id','Video_Name', 'Video')
+                ->get();
+
+                return view('MusicUserProfile',compact('data','deto','saha'));
     }
 
     public function InfoUpdate(Request $request, $userid, $musicid)

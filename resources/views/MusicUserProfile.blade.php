@@ -227,6 +227,54 @@
 							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
+                            <div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                            <a class="offset-1 genric-btn info" href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                            <a class="offset-1 genric-btn warning" href="" data-toggle="modal" data-target="#addvedio">Upload Vedio</a>
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Event Type :- </b>{{$deto1->Hours}}</li>
+                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/music/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
+                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage">Remove</a></center>
+                                    
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        <div class="section-top-border">
+						<h3 class="title_color">Your Videos</h3>
+                        </div>  
+                        
+                        @foreach($saha as $sahan)
+                        <div class="personal_text" >
+                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+                                <video width="400" controls>
+                                <source src="video/music/{{$sahan->Video}}" type="video/mp4">
+                                <source src="mov_bbb.ogg" type="video/ogg">
+                                </video>
+                                <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletevideo">Delete</a></center>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemoveMusicAccount'.$data1->userid)}}">Deactivate Account</a>
                             
                             
