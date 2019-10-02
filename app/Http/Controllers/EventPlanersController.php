@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Event_planner;
 use App\Event_planners_event;
+use App\Planner_package;
 use Auth;
 use Image;
 use DB;
@@ -322,7 +323,13 @@ class EventPlanersController extends Controller
                 ->select('users.id as userid','name','email','event_planners.id as plannersid','Organization_name', 'Address', 'Description','Contact_No','Link','Main_pic','pic1','pic2','pic3','pic4','event_planners_events.id as eventid','Wedding', 'Parties', 'Meetings','Corporate_event','Outside_event','Sport_event')
                 ->get();
 
-                return view('EventPlannerUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('planner_packages','users.id','=','planner_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('planner_packages.id','Package_Name', 'Services','Price','Pdf')
+                ->get();
+
+                return view('EventPlannerUserProfile',compact('data','deto'));
     }
 
     public function eventUpdate(Request $request, $id)
@@ -669,5 +676,46 @@ class EventPlanersController extends Controller
             }
             
     }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $planner_package = new Planner_package;
+        $planner_package->user_id = Auth::user()->id;
+        $planner_package->Package_Name=$request->Package_Name;
+        $planner_package->Services =$request->Services;
+        $planner_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/photography') , $filename);
+             $planner_package->Pdf=$filename;
+             
+         }
+        
+         $planner_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
     
 }
