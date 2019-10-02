@@ -7,6 +7,7 @@ use App\User;
 use App\Musician;
 use Auth;
 use App\Musician_event;
+use App\Music_package;
 use Image;
 use DB;
 
@@ -684,6 +685,49 @@ class musicianController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Hours' => 'required|numeric|min:0',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Hours.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $music_package = new Music_package;
+        $music_package->user_id = Auth::user()->id;
+        $music_package->Package_Name=$request->Package_Name;
+        $music_package->Hours =$request->Hours;
+        $music_package->Services =$request->Services;
+        $music_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/music') , $filename);
+             $music_package->Pdf=$filename;
+             
+         }
+        
+         $music_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
 }
