@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -37,9 +38,25 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+                            @foreach($data as $data1)
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/EventPlannerView'.$data1->userid)}}">View Your Profile</a></li> 
+                            
+                            <li class="nav-item active"><a class="nav-link" href="#">
+                                    <p class="text-white"><img src="/uploads/event/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+                                    {{ Auth::user()->name }}</p>
+                                </a>
+                            </li>  
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+							@endforeach
 							</ul>
 						</div> 
 					</div>
@@ -240,7 +257,7 @@
                         </div>
                         @endforeach
                        
-                            <a class="offset-10 genric-btn danger" href="{{URL('/RemoveEventPlannerAccount'.$data1->userid)}}">Deactivate Account</a>
+                            <a class="offset-10 genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
                             
                             
 					</div>
@@ -915,6 +932,27 @@
 </div>
 @endforeach
 <!--==============model for delete package=================-->
+ <!--==============model for deactivate account=================-->
+ <div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveEventPlannerAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
@@ -988,12 +1026,48 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
-        @if (count($errors) > 0)
+        @if ($errors->has('name')||$errors->has('email')||$errors->has('Organization_name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
             });
         </script>
         @endif
+        @if ($errors->has('Package_Name')||$errors->has('Services')||$errors->has('Price')||$errors->has('Pdf'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalAddPackage").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name1')||$errors->has('Services1')||$errors->has('Price1')||$errors->has('Pdf1'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalEditPackage").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_pic'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
+            });
+        </script>
+        @endif
+        
     </body>
 </html>
