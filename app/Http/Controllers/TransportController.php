@@ -7,6 +7,7 @@ use DB;
 use App\User;
 use App\Transporter;
 use App\Transport_Category;
+use App\Transport_package;
 use Auth;
 use Image;
 
@@ -255,7 +256,13 @@ class TransportController extends Controller
                 ->select('users.id as userid','name','email','transporters.id as transportid','Transport_Service','Address', 'Contact_No', 'Link','Description','driver','decoration','rent_hours','Main_pic','pic1','pic2','pic3','pic4','rent_km','transport_categories.id as categoryid','luxury', 'classic', 'vintage','horse_cart','air','travelling_coach')
                 ->get();
 
-                return view('TransportUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('transport_packages','users.id','=','transport_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('transport_packages.id','Package_Name', 'Transport_type', 'vehicle','picture','decoration','driver','Price')
+                ->get();
+
+                return view('TransportUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $Transportid)
@@ -609,5 +616,56 @@ class TransportController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Transport_type' => 'required|string|max:255',
+            'vehicle' =>'required|string|max:255',
+            'Price' =>'required|numeric|min:0',
+            'picture' =>'required|image|dimensions:min_width=300,min_height=100',
+            'decoration' =>'required|string|max:20',
+            'driver' =>'required|string|max:20',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Transport_type.required'=> "Fill out this field",
+        'vehicle.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'picture.required'=> "Fill out this field",
+        'decoration.required'=> "Fill out this field",
+        'driver.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $transport_package = new Transport_package;
+        $transport_package->user_id = Auth::user()->id;
+        $transport_package->Package_Name=$request->Package_Name;
+        $transport_package->Transport_type=$request->Transport_type;
+        $transport_package->vehicle =$request->vehicle;
+        $transport_package->decoration=$request->decoration;
+        $transport_package->driver =$request->driver;
+        $transport_package->Price =$request->Price;
+
+        if($request->hasFile('picture'))
+          {
+             $picture=$request->file('picture');
+           
+             $filename=time().'.'.$picture->getClientOriginalExtension();
+             Image::make($picture)->resize(960,640)->save(public_path('/uploads/transport/'. $filename));
+
+             
+             $transport_package->picture=$filename;
+             
+         }
+        
+         $transport_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 }

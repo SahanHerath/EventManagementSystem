@@ -220,6 +220,37 @@
 							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
+                            <div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                            <a class="offset-1 genric-btn info" href="{{URL('/AddTransporterPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                            
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                <li><img src="uploads/transport/{{$deto1->picture}}" width="400" hight="400" alt="" ></li>
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Transport Type :- </b>{{$deto1->Transport_type}}</li>
+                                    <li><b>Vehicle :- </b>{{$deto1->vehicle}}</li>
+                                    <li><b>Price :- </b> {{$deto1->Price}}</li>
+                                    <li><b>Decoration :- </b>{{$deto1->decoration}}</li>
+                                    <li><b>Driver :- </b> {{$deto1->driver}}</li>
+                                    
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
+                                    <a class="genric-btn danger" href="{{URL('/RemovePhotographyPackage'.$deto1->id)}}">Remove</a></center>
+                                    
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemoveTransportAccount'.$data1->userid)}}">Deactivate Account</a>
                             
                             
@@ -771,6 +802,131 @@
     </div>
 
     <!--==============model for change event pictures=================-->
+     <!--==============model for  add package=================-->
+  <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add New Package</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/AddTransportPackage'.$data1->userid)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
+
+                        
+                            <input id="Package_Name" type="text" value="{{ old('Package_Name') }}" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
+
+                            @error('Package_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Transport_type') ? ' has-error' : '' }}">
+                        <label for="Transport_type" class="col-md-4 col-form-label offset-1">Transport type :-</label>
+
+                        
+                            <input id="Transport_type" type="text" value="{{ old('Transport_type') }}" class="form-control @error('Transport_type') is-invalid @enderror col-md-10 offset-1" name="Transport_type"  title="fill this field with the Transport type that this package belongs">
+
+                            @error('Transport_type')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('vehicle') ? ' has-error' : '' }}">
+                        <label for="vehicle" class="col-md-4 col-form-label offset-1">Vehicle :-</label>
+
+                        
+                            <input id="vehicle" type="text" value="{{ old('vehicle') }}" class="form-control @error('vehicle') is-invalid @enderror col-md-10 offset-1" name="vehicle"  title="fill this field with the vehicle name">
+
+                            @error('vehicle')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('decoration') ? ' has-error' : '' }}">
+                            <label for="decoration" class="col-md-4 col-form-label offset-1">Decoration for Vehicle:-</label>
+                            
+                            <div class="col-md-6">
+                                <select id="decoration" class="form-control" name="decoration" value="{{ old('decoration') }}" title="Fill this field with Avalability" >
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('driver') ? ' has-error' : '' }}">
+                            <label for="driver" class="col-md-4 col-form-label offset-1">Driver for Vehicle:-</label>
+                            
+                            <div class="col-md-6">
+                                <select id="driver" class="form-control" name="driver" value="{{ old('driver') }}" title="Fill this field with Avalability" >
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                     <div class="form-group row{{ $errors->has('Price') ? ' has-error' : '' }}">
+                        <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
+
+                        
+                            <input id="Price" type="decimal" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+
+                            @error('Price')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('picture') ? ' has-error' : '' }}">
+                            <label for="picture" class="col-md-4 col-form-label text-md-right">picture:-</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="picture" id="picture"  class="form-control @error('picture') is-invalid @enderror" >
+
+                                @error('picture')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                        </div>
+
+                   
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Add Package
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for add Package=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
