@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
+@foreach($data as $data1)
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Evora</title>
+        <title>Photographers({{$data1->Studio_Name}})-Evora</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -21,8 +22,6 @@
         <link rel="stylesheet" href="css/css/responsive.css">
 
 
-         <!-- Bootstrap core CSS -->
-		<link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -42,7 +41,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -63,7 +62,7 @@
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
-        @foreach($data as $data1)
+        
         <section class="home_banner_area">
            	<div class="container box_1620">
            		<div class="banner_inner d-flex align-items-center">
@@ -517,23 +516,32 @@
         </section>
         <!--================End Testimonials Area =================-->
         
-        <footer class="site-footer" style="background-color:black;">
+		<footer class="footer_area p_30">
 			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-				
+				<div class="row footer_inner">
+					<div class="col-lg-5 col-sm-6">
+						<aside class="f_widget ab_widget">
+							<div class="f_title"><br>
+							<a href="/aboutus" ><h3>About Us</h3></a>
+							</div>
+							<p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</p>
+						</aside>
+					</div>
+					<div class="col-lg-2 offset-4">
+						<aside class="f_widget social_widget">
+							
+							<div class="f_title"><br>
+							<a href="/#" ><h3>Contact Us</h3></a>
+							</div>
+							
+						</aside>
+					</div>
 				</div>
 			</div>
-    	</footer> 
+		</footer>
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
+@foreach($data as $data1)
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Evora-Decorators</title>
+        <title>Decorators({{$data1->Team_Name}})-Evora</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -20,8 +21,7 @@
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
 
-		<!-- Bootstrap core CSS -->
-		<link href="css/rating.css" rel="stylesheet">
+		
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -40,8 +40,10 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+						aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -61,7 +63,7 @@
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
-        @foreach($data as $data1)
+        
 		
 		<section class="home_banner_area">
 		
@@ -242,68 +244,73 @@
         
         <section class="welcome_area p_120">
 				<div class="colorlib-narrow-content">
-                    
 					<div class="container">
-                    <div class="main_title">
-                        <h2>Events we recently covered</h2>
-                    </div>
-					<div class="row">
-                    	<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project">
-								<img src="uploads/decoration/{{$data1->pic1}}" alt="img-gal" class="img-fluid">
-								<br><br><br>
-							</div>
+						<div class="main_title">
+							<h2>Events we recently covered</h2>
 						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project">
-								<img src="uploads/decoration/{{$data1->pic2}}" alt="img-gal" class="img-fluid">
-								<br><br><br>
+						<div class="row">
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="project">
+									<img src="uploads/decoration/{{$data1->pic1}}" alt="img-gal" class="img-fluid">
+									<br><br><br>
+								</div>
 							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+								<div class="project">
+									<img src="uploads/decoration/{{$data1->pic2}}" alt="img-gal" class="img-fluid">
+									<br><br><br>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="project">
+									<img src="uploads/decoration/{{$data1->pic3}}" alt="img-gal" class="img-fluid">
+									<br><br><br>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="project">
+									<img src="uploads/decoration/{{$data1->pic4}}" alt="img-gal" class="img-fluid">
+									<br><br><br>
+								</div>
+							</div>		
 						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project">
-								<img src="uploads/decoration/{{$data1->pic3}}" alt="img-gal" class="img-fluid">
-								<br><br><br>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project">
-								<img src="uploads/decoration/{{$data1->pic4}}" alt="img-gal" class="img-fluid">
-								<br><br><br>
-							</div>
-						</div>		
 					</div>
 				</div>		
         </section>
-        @endforeach
-		<div class="section-top-border">
-						<h3 class="title_color">Available Packages</h3>
-                           
-                        </div>
-                        @foreach($deto as $deto1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                    <li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
-                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
-                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                    <li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    
-                                    
-                            
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                            
-                        @endforeach
+		@endforeach
+
+		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+		
+        	
+        		<div class="main_title">
+        			<h2><a class="text-white">Available Packages</a></h2>
+        		</div>
+				@foreach($deto as $deto1)
+				<div class="container">
+        		<div class="feature_inner row">
+        			<div class="col-lg-4 col-md-6">
+        				<div class="feature_item">
+						<h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column offset-1">
+										<ul class="list basic_info">
+											<li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
+											<li><b>Services :- </b>{{$deto1->Services}}</li>
+											<li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+											<li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+			@endforeach
+        </section>
+
+
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->
@@ -479,23 +486,32 @@
 		
         <!--================End Testimonials Area =================-->
         
-        <footer class="site-footer" style="background-color:black;">
-			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-				
-				</div>
-			</div>
-    	</footer>
+        <footer class="footer_area p_30">
+        <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </footer>
         
         
         
