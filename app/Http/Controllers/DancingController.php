@@ -411,6 +411,8 @@ class DancingController extends Controller
                 $dance1 ->delete();
                 $dance2  = Dancer::where('user_id',$id)->delete();
                 $dance3  = Dancer_event::where('user_id',$id)->delete();
+                $dance4  = Dance_package::where('user_id',$id)->delete();
+                $dance5  = Dance_video::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
