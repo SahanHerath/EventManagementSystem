@@ -366,6 +366,7 @@ Route::post('/poruwapic2{id}', 'PoruwaController@changePic2')  ;
 Route::post('/poruwapic3{id}', 'PoruwaController@changePic3')  ;
 Route::post('/poruwapic4{id}', 'PoruwaController@changePic4')  ;
 Route::post('/AddPoruwaPackage{id}', 'PoruwaController@AddNewPackage')  ;
+Route::post('/EditPoruwaPackage{id}', 'PoruwaController@EditPackage')  ;
 
 Route::post('/ChangeMusicMainpic{id}', 'musicianController@changeMainPic')  ;
 Route::post('/Musicpic1{id}', 'musicianController@changePic1')  ;
