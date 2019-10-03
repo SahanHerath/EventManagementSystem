@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Poruwa_ceramony;
+use App\Poruwa_package;
 use DB;
 use Auth;
 use Image;
@@ -240,7 +241,13 @@ class PoruwaController extends Controller
                 ->select('users.id as userid','users.name as CName','email','poruwa_ceramonies.id as poruwaid','poruwa_ceramonies.Name as PName', 'Address', 'Contact_No','Link','Description','Poruwa_rituals','Poruwa_items','match_making','Astrological_support','jayamangala_gatha','Wedding_dancers','Cost','Main_pic','pic1','pic2','pic3','pic4')
                 ->get();
 
-                return view('PoruwaCeramonyUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('poruwa_packages','users.id','=','poruwa_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('poruwa_packages.id','Package_Name', 'Services','Price','Pdf')
+                ->get();
+
+                return view('PoruwaCeramonyUserProfile',compact('data','deto'));
     }
 
     public function featureUpdate(Request $request, $id)
@@ -571,6 +578,46 @@ class PoruwaController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $poruwa_package = new Poruwa_package;
+        $poruwa_package->user_id = Auth::user()->id;
+        $poruwa_package->Package_Name=$request->Package_Name;
+        $poruwa_package->Services =$request->Services;
+        $poruwa_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/poruwa') , $filename);
+             $poruwa_package->Pdf=$filename;
+             
+         }
+        
+         $poruwa_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
     
 }
