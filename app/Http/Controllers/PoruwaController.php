@@ -269,7 +269,7 @@ class PoruwaController extends Controller
         
         $poruwa ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Feature details Update Successfully');
     }
 
     public function InfoUpdate(Request $request, $userid, $poruwaid)
@@ -314,7 +314,7 @@ class PoruwaController extends Controller
         $poruwa1 ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Profile details Update Successfully');
         
     }
 

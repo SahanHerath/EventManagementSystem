@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Salon;
 use App\Salon_event;
+use App\Salon_package;
 use Auth;
 use Image;
 use DB;
@@ -288,7 +289,15 @@ class salonController extends Controller
                 ->select('users.id as userid','name','email','salons.id as salonid','Salon_Name','Address', 'Contact_No', 'Link','Description','Groom_Dressing','Bride_Dressing','Dress_Making','Jewelry','Makeup','Bridesman','Bridesmaid','Profile_Pic','pic1','pic2','pic3','pic4','HairStyle','salon_events.id as eventid','wedding', 'parties', 'fashion_show')
                 ->get();
 
-                return view('SalonUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('salon_packages','users.id','=','salon_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salon_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+                ->get();
+
+        
+
+                return view('SalonUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $salonid)
@@ -648,6 +657,49 @@ class salonController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Event_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Event_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $salon_package = new Salon_package;
+        $salon_package->user_id = Auth::user()->id;
+        $salon_package->Package_Name=$request->Package_Name;
+        $salon_package->Event_Type =$request->Event_Type;
+        $salon_package->Services =$request->Services;
+        $salon_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/salon') , $filename);
+             $salon_package->Pdf=$filename;
+             
+         }
+        
+         $salon_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
 
