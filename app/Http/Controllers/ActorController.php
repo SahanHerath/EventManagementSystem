@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Actor;
 use App\Actor_event;
+use App\Actor_package;
 use Auth;
 use Image;
 use DB;
@@ -347,7 +348,13 @@ class ActorController extends Controller
                 ->select('users.id as userid','name','email','actors.id as actorid','Actor_name', 'Address', 'Contact_No','Link','Description','Singer','Magician','Comedian','Actor','Announcer','Entertainer','Other','Main_pic','pic1','pic2','pic3','pic4','actor_events.id as eventid','Birthday', 'Professional_event','Musical_event','Corporate_event','Party')
                 ->get();
 
-                return view('ActorUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('actor_packages','users.id','=','actor_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('actor_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+                return view('ActorUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $actorid)
@@ -713,5 +720,49 @@ class ActorController extends Controller
             }
             
     }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Hours' => 'required|numeric|min:0',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Hours.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $actor_package = new Actor_package;
+        $actor_package->user_id = Auth::user()->id;
+        $actor_package->Package_Name=$request->Package_Name;
+        $actor_package->Hours =$request->Hours;
+        $actor_package->Services =$request->Services;
+        $actor_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/actor') , $filename);
+             $actor_package->Pdf=$filename;
+             
+         }
+        
+         $actor_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
 
 }
