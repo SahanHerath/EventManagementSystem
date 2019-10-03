@@ -398,8 +398,8 @@ Route::post('/plannerpic2{id}', 'EventPlanersController@changePic2')  ;
 Route::post('/plannerpic3{id}', 'EventPlanersController@changePic3')  ;
 Route::post('/plannerpic4{id}', 'EventPlanersController@changePic4')  ;
 Route::post('/AddEventPlannerPackage{id}', 'EventPlanersController@AddNewPackage')  ;
-Route::post('/EditPlannerPackage{id}', 'EventPlanersController@EditPackage')  ;
-Route::get('/RemovePlannerPackage{id}', 'EventPlanersController@deletePackage')  ;
+Route::post('/EditPlannerPackage', 'EventPlanersController@EditPackage')  ;
+Route::post('/DeletePlannerPackage', 'EventPlanersController@deletePackage')  ;
 
 
 Route::post('/ChangeDancerMainpic{id}', 'DancingController@changeMainPic')  ;

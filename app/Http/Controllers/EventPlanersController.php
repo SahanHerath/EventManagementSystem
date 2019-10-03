@@ -723,7 +723,7 @@ class EventPlanersController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
-    public function EditPackage(request $request,$id)
+    public function EditPackage(request $request)
     {
         $request->validate(
             ['Package_Name1' => 'required|string|max:255',
@@ -745,7 +745,7 @@ class EventPlanersController extends Controller
         
         
         
-        $data=Planner_package::where('id',$id)
+        $data=Planner_package::where('id',$request->id)
             
         ->update([
                 'Package_Name'=>$request->Package_Name1,
@@ -761,31 +761,16 @@ class EventPlanersController extends Controller
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
-    public function deletePackage($id)
+    public function deletePackage(request $request)
     {
-        $id1 = Auth::user()->id;
+        
 
-        $data=DB::table('users')
-            ->join('planner_packages','users.id','=','planner_packages.user_id')
-            ->where('planner_packages.id','=',$id)
-            ->select('users.id')
-            ->get();
-
-        foreach($data as $data1)
-        {
-            if($id1==$data1->id)
-            {
-                $deco1 = Planner_package::findOrFail($id);
+       
+                $deco1 = Planner_package::findOrFail($request->id);
                 $deco1->delete();
 
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
-            }
-            else 
-            {
-                return redirect('/');
-            }
-            
-        }
+          
 
     }
 
