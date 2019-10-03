@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -37,9 +38,25 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+                            @foreach($data as $data1)
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/SalonView'.$data1->userid)}}">View Your Profile</a></li> 
+                            
+                            <li class="nav-item active"><a class="nav-link" href="#">
+                                    <p class="text-white"><img src="/uploads/salon/{{$data1->Profile_Pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+                                    {{ Auth::user()->name }}</p>
+                                </a>
+                            </li>  
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+							@endforeach 
 							</ul>
 						</div> 
 					</div>
@@ -251,7 +268,7 @@
                                 
                                     <ul class="list basic_info">
                                     <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}" data-eventtype="{{$deto1->Event_Type}}" data-pakid="{{$deto1->id}}">Edit</a></center>
-                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage">Remove</a></center>
+                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}" >Remove</a></center>
                                     
                             
                                     </ul>
@@ -259,7 +276,7 @@
                             </div>
                         </div>
                         @endforeach
-                            <a class="offset-10 genric-btn danger" href="{{URL('/RemoveSalonAccount'.$data1->userid)}}">Deactivate Account</a>
+                            <a class="offset-10 genric-btn danger" data-toggle="modal" data-target="#modalDeleteAccount" href="">Deactivate Account</a>
                             
                             
 					</div>
@@ -977,7 +994,7 @@
 
                 <div class="form-group">
 		        	<label for="Price1">Price</label>
-		        	<input type="decimal" class="form-control" name="Price1" id="Price1">
+		        	<input type="decimal" class="form-control" name="Price1" id="Price1" value="{{ old('Price1') }}">
 	        	</div>
                 <input type="hidden" id="id" name="id" >
 	        	
@@ -998,6 +1015,55 @@
 <!-- Modal -->
 
     <!--==============model for edit package=================-->
+     <!--==============model for delete package=================-->
+     
+     <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{URL('/DeleteSalonPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+          <p>Do you want to delete package.All the details related to this package will be removed?</p>
+                <input type="hidden" id="id" name="id" >
+	     </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Confirm Delete</button>
+	      </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!--==============model for delete package=================-->
+<!--==============model for deactivate account=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveSalonAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
@@ -1078,14 +1144,38 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
-        @if ($errors->has('wedding')||$errors->has('parties')||$errors->has('fashion_show'))
+        @if ($errors->has('Package_Name')||$errors->has('Event_Type')||$errors->has('Services')||$errors->has('Price')||$errors->has('Pdf'))
         <script type="text/javascript">
             $(document).ready(function(){
-                $("#modalEditForm").modal('show');
+                $("#modalAddPackage").modal('show');
             });
         </script>
         @endif
-        <script>
+        
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Profile_Pic'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
+            });
+        </script>
+        @endif
+       
+        
+<script>
   
   $('#modalEditPackage').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
@@ -1099,6 +1189,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
       modal.find('.modal-body #Services1').val(services);
       modal.find('.modal-body #Price1').val(price);
       modal.find('.modal-body #Event_Type1').val(eventtype);
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
+
+<script>
+  
+  $('#modalDeletePackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var pakid = button.data('pakid') 
+     
+      var modal = $(this)
+      
       modal.find('.modal-body #id').val(pakid);
 })
   

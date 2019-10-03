@@ -260,6 +260,31 @@
 			
         </section>
         @endforeach
+		<div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                           
+                        </div>
+		@foreach($deto as $dec1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+									<li><b>Event Type :- </b>{{$dec1->Event_Type}}</li>
+                                    <li><b>Services :- </b>{{$dec1->Services}}</li>
+                                    <li><b>Price :- </b> Rs.{{$dec1->Price}}</li>
+                                    <li><a href="files/salon/{{$dec1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            
+        @endforeach
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->

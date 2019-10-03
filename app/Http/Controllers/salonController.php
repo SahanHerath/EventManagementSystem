@@ -247,7 +247,12 @@ class salonController extends Controller
                 ->where('category','=','Bridel_Designers')
                 ->get();
 
-                return view('SalonView',compact('data'));
+        $deto= DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('salon_packages','users.id','=','salon_packages.user_id')
+                ->get();
+
+                return view('SalonView',compact('data','deto'));
     }
 
     public function wedding()
@@ -272,6 +277,8 @@ class salonController extends Controller
                 ->join('salon_events','users.id','=','salon_events.user_id')
                 ->where('salon_events.parties','=','Available')
                 ->get();
+
+        
       
        
        return view('Salon', compact('level'));
@@ -349,7 +356,7 @@ class salonController extends Controller
         $music1  ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Profile Details Successfully');
         
     }
 
@@ -366,7 +373,7 @@ class salonController extends Controller
                 
             ]);
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Events Successfully');
     }
 
     public function featureUpdate(Request $request, $id)
@@ -388,7 +395,7 @@ class salonController extends Controller
 
             ]);
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Features Successfully');
     }
 
     public function removeAccount($id)
@@ -403,6 +410,7 @@ class salonController extends Controller
                 $salon1->delete();
                 $salon = Salon::where('user_id',$id)->delete();
                 $salon2 = Salon_event::where('user_id',$id)->delete();
+                $salon3 = Salon_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -741,6 +749,19 @@ class salonController extends Controller
         
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+        $deco1 = Salon_package::findOrFail($request->id);
+        $deco1->delete();
+
+        return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+           
+            
+        
+
     }
 
 
