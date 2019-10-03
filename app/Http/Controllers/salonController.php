@@ -702,6 +702,48 @@ class salonController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+            'Event_Type1' => 'required|string|max:255',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        'Event_Type1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Salon_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                'Event_Type'=>$request->Event_Type1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+
 
 }
  

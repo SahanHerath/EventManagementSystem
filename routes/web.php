@@ -360,6 +360,7 @@ Route::post('/Salonpic2{id}', 'salonController@changePic2')  ;
 Route::post('/Salonpic3{id}', 'salonController@changePic3')  ;
 Route::post('/Salonpic4{id}', 'salonController@changePic4')  ;
 Route::post('/AddSalonPackage{id}', 'salonController@AddNewPackage')  ;
+Route::post('/EditSalonPackage', 'salonController@EditPackage')  ;
 
 Route::post('/ChangePoruwaMainpic{id}', 'PoruwaController@changeMainPic')  ;
 Route::post('/poruwapic1{id}', 'PoruwaController@changePic1')  ;
