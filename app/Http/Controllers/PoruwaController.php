@@ -323,6 +323,7 @@ class PoruwaController extends Controller
                 $poruwa1 = User::findOrFail($id); 
                 $poruwa1->delete();
                 $poruwa = Poruwa_ceramony::where('user_id',$id)->delete();
+                $poruwa2 = Poruwa_package::where('user_id',$id)->delete();
                 
                 
                 
@@ -657,6 +658,36 @@ class PoruwaController extends Controller
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
+
+    public function deletePackage($id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+            ->join('poruwa_packages','users.id','=','poruwa_packages.user_id')
+            ->where('poruwa_packages.id','=',$id)
+            ->select('users.id')
+            ->get();
+
+        foreach($data as $data1)
+        {
+            if($id1==$data1->id)
+            {
+                $deco1 = Poruwa_package::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            }
+            else 
+            {
+                return redirect('/');
+            }
+            
+        }
+
+    }
+
+
 
     
 }
