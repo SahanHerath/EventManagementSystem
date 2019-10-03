@@ -432,6 +432,7 @@ Route::post('/actorpic2{id}', 'ActorController@changePic2')  ;
 Route::post('/actorpic3{id}', 'ActorController@changePic3')  ;
 Route::post('/actorpic4{id}', 'ActorController@changePic4')  ;
 Route::post('/AddActorPackage{id}', 'ActorController@AddNewPackage')  ;
+Route::post('/EditActorPackage{id}', 'ActorController@EditPackage')  ;
 
 Route::post('/ChangeHotelMainpic{id}', 'HallController@changeHotelMainPic')  ;
 Route::post('/ChangeHotelCoverpic{id}', 'HallController@changeHotelCoverPic')  ;
