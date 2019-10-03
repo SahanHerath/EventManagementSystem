@@ -228,7 +228,13 @@ class PoruwaController extends Controller
                 ->where('category','=','Poruwa_Ceramony')
                 ->get();
 
-                return view('PoruwaCeramonyView',compact('data'));
+        $deto=DB::table('users')
+                ->join('poruwa_packages','users.id','=','poruwa_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('poruwa_packages.id','Package_Name', 'Services','Price','Pdf')
+                ->get();
+
+                return view('PoruwaCeramonyView',compact('data','deto'));
     }
 
     public function profile()
