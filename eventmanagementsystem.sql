@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2019 at 11:42 PM
+-- Generation Time: Oct 03, 2019 at 11:29 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -57,7 +57,8 @@ CREATE TABLE `actors` (
 --
 
 INSERT INTO `actors` (`id`, `Actor_name`, `Address`, `Contact_No`, `Link`, `Description`, `Singer`, `Magician`, `Comedian`, `Actor`, `Announcer`, `Entertainer`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'drtwefe', 'werewr', '12613123123', 'werw', 'sdsdfdsfs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569926751.png', '1569927532.jpg', '1569927550.jpg', '1569927570.jpg', '1569927588.jpg', 39, '2019-10-01 10:59:49', '2019-10-01 05:29:49');
+(1, 'drtwefe', 'werewr', '12613123123', 'werw', 'sdsdfdsfs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569926751.png', '1569927532.jpg', '1569927550.jpg', '1569927570.jpg', '1569927588.jpg', 39, '2019-10-01 10:59:49', '2019-10-01 05:29:49'),
+(2, 'effewfwef', 'wefwefewfew', '21352453552', 'sdcsddcsdcds', 'dscdscsdcdsvsvsdv', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', '1570088398.jpg', '1570088399.jpg', '1570088401.jpg', '1570088402.jpg', '1570088403.jpg', 79, '2019-10-03 02:10:03', '2019-10-03 02:10:03');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,33 @@ CREATE TABLE `actor_events` (
 --
 
 INSERT INTO `actor_events` (`id`, `user_id`, `Birthday`, `Party`, `Professional_event`, `Musical_event`, `Corporate_event`, `created_at`, `updated_at`) VALUES
-(1, 39, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 14:26:08', '2019-09-18 14:26:08');
+(1, 39, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 14:26:08', '2019-09-18 14:26:08'),
+(2, 79, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-03 02:10:04', '2019-10-03 02:10:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actor_packages`
+--
+
+CREATE TABLE `actor_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Hours` int(11) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `actor_packages`
+--
+
+INSERT INTO `actor_packages` (`id`, `user_id`, `Package_Name`, `Hours`, `Services`, `Price`, `Pdf`, `Created_at`, `Updated_at`) VALUES
+(2, 79, 'Gold Package', 223, 'wfesfef', '124423.00', '1570093254.pdf', '2019-10-03 03:30:54', '2019-10-03 03:30:54');
 
 -- --------------------------------------------------------
 
@@ -457,16 +484,7 @@ CREATE TABLE `decorator_events` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `decorator_events`
---
-
-INSERT INTO `decorator_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Get_Together`, `Parties`, `Outside_events`, `created_at`, `updated_at`) VALUES
-(1, 14, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-06 04:52:16', '2019-09-06 04:52:16'),
-(2, 15, 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-09-08 11:58:41', '2019-09-08 11:58:41'),
-(3, 47, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-21 04:41:44', '2019-09-20 23:11:44'),
-(5, 68, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-29 07:18:28', '2019-09-29 01:48:28');
+-- Error reading data for table eventmanagementsystem.decorator_events: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`decorator_events`' at line 1
 
 -- --------------------------------------------------------
 
@@ -729,7 +747,16 @@ CREATE TABLE `musician_events` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.musician_events: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`musician_events`' at line 1
+
+--
+-- Dumping data for table `musician_events`
+--
+
+INSERT INTO `musician_events` (`Id`, `user_id`, `Wedding`, `Birthday`, `Beach_Party`, `Get_Together`, `Parties`, `Created_at`, `Updated_at`) VALUES
+(1, 17, 'Available', 'Available', 'Available', 'Not Available', 'Not Available', '2019-09-16 07:08:12', '2019-09-16 07:08:12'),
+(2, 18, 'Not Available', 'Not Available', 'Available', 'Available', 'Not Available', '2019-09-16 09:26:38', '2019-09-16 09:26:38'),
+(3, 30, 'Available', 'Available', 'Available', 'Not Available', 'Not Available', '2019-09-18 03:35:45', '2019-09-18 03:35:45'),
+(4, 53, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-22 21:20:28', '2019-09-22 15:50:28');
 
 -- --------------------------------------------------------
 
@@ -1177,7 +1204,73 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
--- Error reading data for table eventmanagementsystem.users: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`users`' at line 1
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `city`, `admin`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Shamith athauda', 'gghj@gmail.com', NULL, 'Hall', 'dfggh', 0, '$2y$10$98qKAj4fm6wUpy8N56LZKO0C4.uP2nJtHQtLKAsReGEmThtlZcUFe', NULL, '2019-08-28 11:45:52', '2019-08-28 11:45:52'),
+(2, 'gdfgd', 'sgsdfds@gmail.com', NULL, 'Music', 'dsfdsfsd', 1, '$2y$10$McDaVU5SZdPcq9wCd7QcKOb7SkimVMEZQHx530h1x9NV.Vt2VDgca', NULL, '2019-09-03 10:25:07', '2019-09-03 10:25:07'),
+(3, 'Shamith athauda', 'ddd@gmail.com', NULL, 'Hall', 'sadas', 1, '$2y$10$i7lynHqY223uvgLrntISheSz5WczEg87dYbyG4wB6z6mO2IklrjVq', NULL, '2019-09-03 10:26:58', '2019-09-03 10:26:58'),
+(4, 'gdthfhg', 'rgdttg@gmail.com', NULL, 'Decoration', 'gftfhgh', 1, '$2y$10$xnE.fiDS1eWQCXK2zqHQ7.6juiMfKujDSmPKb1oIZ3S65uEjJteKy', NULL, '2019-09-03 11:54:47', '2019-09-03 11:54:47'),
+(5, 'ftfgjh', 'dsfd@gmail.com', NULL, 'Hall', 'fdhj', 1, '$2y$10$17Ut/kA0qapYyaCMg3YrAOs8K5Atg1yq.JXZZf9p.s9UDqKyRCpYC', NULL, '2019-09-03 11:58:02', '2019-09-03 11:58:02'),
+(6, 'Shamith athauda', 'dddd@gmail.com', NULL, 'Hall', 'fvdsfgdf', 0, '$2y$10$W0i0xbFW4fL9ZrGm4CrcwOLG9FLm0ShhLH7mOi1MIOIfC838bOyt.', NULL, '2019-09-03 13:45:55', '2019-09-03 13:45:55'),
+(7, 'Nethmi Herath', 'dsvdf@gmail.com', NULL, 'Cloth_Designers', 'dfbfbfd', 1, '$2y$10$FPy85fboWw7MiiKq5px8m.rR9hCSNoleqhIQY0aPSMKqsarO9rUg6', NULL, '2019-09-03 14:14:11', '2019-09-03 14:14:11'),
+(8, 'Nethmi Herath', 'sumudcdvu@gmail.com', NULL, 'Hall', 'ahjfer', 1, '$2y$10$Gxa/sfmu24SCTwbFE0XYseIaXJgagEbcRtg37UlFaXD2hCXHBNW8e', NULL, '2019-09-03 14:29:34', '2019-09-03 14:29:34'),
+(9, 'dsvdfg', 'fgfdgd@gmail.com', NULL, 'Hall', 'xdvdfgd', 1, '$2y$10$qD5OvP4GZ3IoBTkhRh8Lxe2SnGaRjdpJmDmamWlo0UR6Hz4ahoueS', NULL, '2019-09-03 14:34:30', '2019-09-03 14:34:30'),
+(10, 'Philip Diass', 'ddcsdcsd@gmail.com', NULL, 'Hall', 'cbgfhrt', 1, '$2y$10$cNVdrDdrilFh0REIn3KCvOKhI6RY.hbHghvachlT/PgyNxpaEPTpu', NULL, '2019-09-03 14:35:40', '2019-09-03 14:35:40'),
+(11, 'dgs', 'dsvsd@gmail.com', NULL, 'Hall', 'fvfdgdf', 1, '$2y$10$lO44PPSbR3VRqNRit03t7O0RV4FAkhjYPMPwxs3wCm8OtjL6tBnH2', NULL, '2019-09-04 08:53:35', '2019-09-04 08:53:35'),
+(13, 'xtryuhij', 'rgdt76ygiuotg@gmail.com', NULL, 'Photography', '768upihoj', 1, '$2y$10$GQ/E5QpiuX0ui1nFe5I44usklUrzTPh068qWwe2Oth.etH61hO1Ai', NULL, '2019-09-06 04:45:47', '2019-09-06 04:45:47'),
+(14, 'fgjh', 'shamithfffathauda@gmail.com', NULL, 'Decoration', 'ghfghfh', 0, '$2y$10$CJShZjAkVIdngu9msNLB7.yxV/9jYKBbcpWXRwCoQwL/bMHonhkhK', NULL, '2019-09-06 04:50:55', '2019-09-06 04:50:55'),
+(15, 'rumith', 'Philipdsw.dias@gmail.com', NULL, 'Decoration', 'dsfdsf', 0, '$2y$10$hTK1WXrw/9vGLXSSnOotG.oNPiDSdNZnaYf6JRSCaHc5rAj21./Gu', NULL, '2019-09-08 11:57:34', '2019-09-08 11:57:34'),
+(16, 'Nethmi Herath', 'ubsjaffna@gmail.com', NULL, 'Photography', 'dfdsfds', 0, '$2y$10$5InVAHs0xbQJn2YEKXZ8Du0i9u.O4fN03jM8ZQ48FVsXRhzSMOR.a', NULL, '2019-09-14 08:39:53', '2019-09-14 08:39:53'),
+(17, 'vahjs', 'sumuaadu@gmail.com', NULL, 'Music', 'fsd', 0, '$2y$10$aeWIiTNXEPSCxSDDH5h8KuZZi6aK9sW025ZHlnVyO4NN3knq1d47i', NULL, '2019-09-16 02:02:59', '2019-09-16 02:02:59'),
+(18, 'Shamith athauda', 'deedd@gmail.com', NULL, 'Music', 'fferfwe', 0, '$2y$10$gZe7PRXlBYjJ2mDgHmK6weyopLImATf1..GNttN9LwbgBJBlLDhI6', NULL, '2019-09-16 09:14:11', '2019-09-16 09:14:11'),
+(19, 'Shamith athauda', 'fbgdfg@gmail.com', NULL, 'Actors', 'vdgdfg', 0, '$2y$10$fhPMv.27MzlkP/Qr9biBx.SeGEBbWt6.X6CrvFK5GBhKapzv/gBYy', NULL, '2019-09-16 13:07:08', '2019-09-16 13:07:08'),
+(20, 'Nethmi Herath', 'shamithffathauda@gmail.com', NULL, 'Poruwa_Ceramony', 'hjjh', 0, '$2y$10$fEyncjwOpL8H40xje5mp..a5V8c7A6CKP1avtfVQ6iPuAPWN7NPQ6', NULL, '2019-09-17 16:17:12', '2019-09-17 16:17:12'),
+(21, 'ghghj', 'vvbv@ygjjghggh', NULL, 'Music', 'hjbh', 1, '$2y$10$QKe5rEv/qhdvWJ3KTGz2r.JgMMOUYxH0QEPtAiRP1Y0Yf8M1Ez1/.', NULL, '2019-09-17 16:18:56', '2019-09-17 16:18:56'),
+(22, 'gregreg', 'dgfe@gmail.com', NULL, 'Decoration', 'jkvdjks', 1, '$2y$10$ZXda/caNlQdPuLtT6I9Ew.6fsdGLE1omt7IChuKBL4pKUHbJsA7FG', NULL, '2019-09-17 16:21:11', '2019-09-17 16:21:11'),
+(23, 'rgreg', 'ddacfdvdsd@gmail.com', NULL, 'Cake_Designers', 'vdsbtfg', 1, '$2y$10$.b0famjiGruIP5ovSul8TuLV9eKmTpw7MkCNm0ZYWfjaFCua9QIf2', NULL, '2019-09-17 16:22:35', '2019-09-17 16:22:35'),
+(24, 'vfdg', 'g@gmail.comds', NULL, 'Photography', 'vdgre', 1, '$2y$10$HtxyiuJsOjxIW9iH91nnzeLGlzu0Y35Qk4kg.X.q2dK6I8kIexl2y', NULL, '2019-09-17 16:25:10', '2019-09-17 16:25:10'),
+(27, 'xdgdfg', 'ddffffd@gmail.com', NULL, 'Wedding_Transport', 'dvdsgvd', 1, '$2y$10$W7ssY1pea1SmH5EZVpSto.d.h3Pc/UuOIfs9HgZDeeEHjuM3kDln2', NULL, '2019-09-17 16:30:59', '2019-09-17 16:30:59'),
+(28, 'fwrwe', 'rwerew@dgfdgswe', NULL, 'Music', 'wererw', 0, '$2y$10$WZ4AOX0Cxzt6ACpnwKBujedipw911hmEvu/G31fTbHmxQTv305y8G', NULL, '2019-09-18 00:25:03', '2019-09-18 00:25:03'),
+(29, 'Shamith athauda', 'fesfd@gamil.com', NULL, 'Photography', 'rderg', 0, '$2y$10$XknQ3P6bv1o7HPaFQ1g97Oj4JprDQFIAlqaraldssdExrtTUjLWrO', NULL, '2019-09-18 02:33:38', '2019-09-18 02:33:38'),
+(30, 'dwewe', 'werwe@hfh', NULL, 'Music', 'efefe', 0, '$2y$10$KHzuXe2awulugkyCxNHxO.hmfZjz1byTkAaxzTwVZesXqbMn6X.b.', NULL, '2019-09-18 03:22:46', '2019-09-18 03:22:46'),
+(31, 'sfd', 'Philisssp.dias@gmail.com', NULL, 'Dancing', 'sfsdsd', 1, '$2y$10$7Y0WkAmo0YvztDIdUSbtfuaEuQTaTo6W.BZfZnKoTELM8ew9s8.EK', NULL, '2019-09-18 05:24:21', '2019-09-18 05:24:21'),
+(32, 'Nethmi Herath', 'sfd@gamil.com', NULL, 'Event_Planners', 'sdfds', 0, '$2y$10$68Q.sC2dcdEL/fnI24NKS.fz2jYhmtoyZetcJHX4t6jPCRoNjVepy', NULL, '2019-09-18 08:25:32', '2019-09-18 08:25:32'),
+(33, 'gergfre', 'gerger@gmail.com', NULL, 'Cake_Designers', 'fgefg', 0, '$2y$10$2TEV.CeKIBdagLztOhrN/uCsUYXZ4N0f.Z7.8SGEIvcBpLogNMz7C', NULL, '2019-09-18 08:57:44', '2019-09-18 08:57:44'),
+(35, 'hjgyj', 'Phiujhlip.dias@gmail.com', NULL, 'Hall', 'mvhjh', 0, '$2y$10$/ic4LVbRTA8RvEidnUkXt.34fYlJDJrAbo7FdYOJZNcNkO5wXIQZa', NULL, '2019-09-18 10:42:10', '2019-09-18 10:42:10'),
+(36, 'wtert', 'erter@sdsd', NULL, 'Poruwa_Ceramony', 'ertert', 0, '$2y$10$ws.wdFpgJRSFiAhNHlSC8O//u1SgP9JLxIU8jKaKyZ2Xmn5TAZMSi', NULL, '2019-09-18 10:55:49', '2019-09-18 10:55:49'),
+(38, 'werfw', 'rwerewrew@dgfdgswe', NULL, 'Catering', 'ewrwer', 0, '$2y$10$aeJbY49OYwf7a6SZH2efN.q/oAAz6bdEu/VmRPKC59CGuUYQQ65eq', NULL, '2019-09-18 13:22:45', '2019-09-18 13:22:45'),
+(39, 'Shamith athauda', 'dscs@ykgfw', NULL, 'Actors', 'grere', 0, '$2y$10$nXZ/OlmK/twxo6fu8DvPXOV7UCPGDi7cp5LfZAjg7vIR94JUZaHu6', NULL, '2019-09-18 14:24:50', '2019-09-18 14:24:50'),
+(40, 'rgrgre', 'rerg@sefefew', NULL, 'Cloth_Designers', 'regrefe', 1, '$2y$10$j/K9odgZaVPS/h882E10VuvlaD2RUxDZosZbyqIW6/y/9qIOowMoW', NULL, '2019-09-18 15:04:56', '2019-09-18 15:04:56'),
+(41, 'efewf', 'fwefw@esgreg', NULL, 'Cloth_Designers', 'erferf', 0, '$2y$10$UYflmJLcGjObo8F/cyf55OeMjKMB87H3QIac40idSo4l4hXtZt9.K', NULL, '2019-09-18 15:11:45', '2019-09-18 15:11:45'),
+(42, 'wefwe', 'rfwefwe@fweger', NULL, 'Cloth_Designers', 'ewferfer', 1, '$2y$10$chbxZyFbU3k2hbykFHevduQVo5Qx1Ykz2q31su/LauA.3iAz0PwIC', NULL, '2019-09-18 15:19:44', '2019-09-18 15:19:44'),
+(43, 'sdvsdv', 'sdfsd@gmail.comdfsfsd', NULL, 'Cloth_Designers', 'dsfsdfsfsd', 1, '$2y$10$8VfDPdlnZTu62Zd4WowQaOiTl3Qe7oZb6vUyYxi73GmC31URRsBPe', NULL, '2019-09-18 15:27:55', '2019-09-18 15:27:55'),
+(44, 'fwfwe', 'fwefwe@gmail.com', NULL, 'Cloth_Designers', 'dsvsdvw', 1, '$2y$10$oHEGUUg.91rurGxftUpz1u1J6MljP6LlaisaT5bnuAkmdqGxETTca', NULL, '2019-09-18 15:35:24', '2019-09-18 15:35:24'),
+(45, 'uahvus', 'shamitscahathauda@gmail.com', NULL, 'Hall', 'sadasd', 1, '$2y$10$Ki6Rw4DVKlpi1rq4hGezV.f1Nm/oKrvFUDSouzjnDGRDlnonXuzoW', NULL, '2019-09-18 23:12:19', '2019-09-18 23:12:19'),
+(46, 'efjkfjke', 'Philwefwefip.dias@gmail.com', NULL, 'Event_Planners', 'efwfwefw', 1, '$2y$10$06ooFF87hh0VJ6xUh3lVM.G9rL6681i8Tn8UAGvip6.7G3ZUjyS7y', NULL, '2019-09-19 00:03:13', '2019-09-19 00:03:13'),
+(47, 'hkjjada', 'gfghhjmhm@dgh', NULL, 'Decoration', 'werew', 0, '$2y$10$fMnLSrsL7LjgELmx6BKHleq9JFrwEEmypH5eYEqrS5YR1entPjycG', NULL, '2019-09-20 13:33:16', '2019-09-21 06:16:08'),
+(48, 'fjaf', 'dejewkn@hshfw', NULL, 'Dancing', 'ewfnw', 0, '$2y$10$8AwLI.OaXGkZj6mglsZqBOQSszceOnVLbg0Em2QNi1bKyXs050bke', NULL, '2019-09-21 09:01:47', '2019-09-21 09:01:47'),
+(49, 'rumithdfqwf', 'fefwde@rdhdsgeh', NULL, 'Poruwa_Ceramony', 'gegefw', 0, '$2y$10$iR73jC6ox/UiuBjJyO75zeyCi4X3dVrhj5P8aATnMvWGO/OFwJEJy', NULL, '2019-09-21 11:59:11', '2019-09-21 11:59:11'),
+(51, 'fvdvsd', 'dfvdfvd@fjkfjkew', NULL, 'Poruwa_Ceramony', 'ewjhflwekfjwe', 0, '$2y$10$au.EF8oZxoZ0cdm93GQhD.c3VkJO32ZPZilsIFk6ycURPDGGKMfYe', NULL, '2019-09-22 04:15:31', '2019-09-22 04:15:31'),
+(52, 'eeffwe', 'fewfew@egrdge', NULL, 'Photography', 'regregefer', 0, '$2y$10$lbr.RB/5GiysgtQyAWHj0OcTAbycCO.vfoXXYtFJay7muZ55wS6Eu', NULL, '2019-09-22 05:29:27', '2019-09-22 05:29:27'),
+(53, 'nethmi', 'hasdadjk@dbhahfds', NULL, 'Music', 't43t34t', 0, '$2y$10$jH284FrCb2VjBnYX2DRPg.BtSgflEcPz2wCT4MzLs1pf/L8yy3/jK', NULL, '2019-09-22 12:58:35', '2019-09-22 14:17:40'),
+(54, 'Sahan Herath', 'ubsjafdfdfna@gmail.com', NULL, 'Bridel_Designers', 'sdffsfs', 0, '$2y$10$lUxHLHNcQEy7Ku.Y21gxbem.FVpmBnvIZKqVZxnKc.egMqGJrYWU6', NULL, '2019-09-22 18:30:36', '2019-09-22 18:43:42'),
+(55, 'fgfggh123', 'ubsjdfsdfaffna@gmail.com', NULL, 'Wedding_Transport', 'asfsdfsdfds', 0, '$2y$10$G/OIR8Iq9Xd1wcXNQEGtgea.d3Qyqx1ON2YlzeagvYS5PI5Yye4kK', NULL, '2019-09-23 08:12:18', '2019-10-02 16:10:46'),
+(56, 'Sahan', 'sahan@gmail.comdsa', NULL, 'Catering', 'dsadada', 0, '$2y$10$Xe/bBoB6l0xqymHv1nLqmu.EQITiFVGz/CRrIz41hdw8aDl3IqEgW', NULL, '2019-09-23 11:10:44', '2019-09-23 11:21:41'),
+(57, 'Sahan Herath', 'sahasssn@gmail.comdsa', NULL, 'Cake_Designers', 'dsfdsfs', 0, '$2y$10$lgNpPkRfkz.tTATswmGmeegPqEN7jtJm0umFOgCNqGu8UhvWP7vNm', NULL, '2019-09-23 21:27:40', '2019-09-23 22:08:21'),
+(58, 'Sahan Herath', 'saha@dbhahfds', NULL, 'Event_Planners', 'dsafddsad', 0, '$2y$10$zS9zuQrU6TS62ow.XfxlMOoKP1QlKDG11EwwUYU2N6ZfgGheKpCM.', NULL, '2019-09-24 00:30:17', '2019-09-24 01:03:36'),
+(60, 'sahan', 'sahand.herath@gmail.com', NULL, 'Cloth_Designers', 'zdfeafwed', 1, '$2y$10$KXSq580YyUdoSvNiskBm0.5KQG/u6ceYqY3ZywHPsHTZzDeijrh1W', NULL, '2019-09-24 04:43:37', '2019-09-24 05:15:10'),
+(61, 'Sahan Herath', 'sahand.herathsss@gmail.com', NULL, 'Hall', 'dsfsdf', 1, '$2y$10$hM0dr1LJNz04BSf0Z8BeweckfXZi2MPpUvaiY.LaRpS3vVNsTsDfm', NULL, '2019-09-24 08:50:00', '2019-09-24 13:57:27'),
+(62, 'vdafaf', 'efef@egrdhr', NULL, 'Poruwa_Ceramony', 'frdgrefewfw', 1, '$2y$10$mMw0MSdEqCVmUxSaYFiqkex8bTAcqhFE0EQFwQEO15hr2yf.Se5P2', NULL, '2019-09-25 12:38:46', '2019-09-25 12:38:46'),
+(68, 'Sahan Herath', 'sadasdas@gffwe', NULL, 'Decoration', 'efwefwef', 1, '$2y$10$mRE1mUm2LRjOZRGYPh2i/u8HfUQzCtI5E09A9MkUCy1wF6f6oxA/.', NULL, '2019-09-26 04:39:38', '2019-09-29 01:49:27'),
+(72, 'sdsc', 'cds@rewrwe', NULL, 'Poruwa_Ceramony', 'cdscdscs', 1, '$2y$10$/CzBnhCLkP0xl0hqc9/ptO58uQqpoOncmO9gOJ21I95uTmbn5tS2i', NULL, '2019-09-26 05:59:09', '2019-09-26 05:59:09'),
+(76, 'Shamith athauda', 'hasdadjk@dbhahf', NULL, 'Hall', 'efewf', 1, '$2y$10$HhT7WssahyUY9gWeHI67CeGhB8qWqiPThlZHcjvaz9Tn1ZVvI7vKm', NULL, '2019-09-27 15:16:42', '2019-09-27 15:16:42'),
+(77, 'sahan', 'sdsgzf@4wwta4', NULL, 'Photography', 'gerger', 0, '$2y$10$1OvjLBVvt7VGf2RqBU.9XO4vCFsSK/5KBsveKpXgbtemnGJcF2jg2', NULL, '2019-09-29 05:09:19', '2019-09-29 13:50:47'),
+(78, 'Shamith athauda', 'ubsjafsssfna@gmail.com', NULL, 'Bridel_Designers', 'ssfdsff', 0, '$2y$10$c7UhQSgfpWBWxXj.iAdu7OCj0jq3rGKliTWPUVkNtkIc01NQs3UfG', NULL, '2019-09-30 02:25:38', '2019-09-30 02:25:38'),
+(79, 'fefew', 'efw@rdrger', NULL, 'Actors', 'rgrgregr', 0, '$2y$10$pMTthFg9mOCzG7dOw8kOHOUcgAPSo7tfEo2buPsEBj1q0fqZnvz/G', NULL, '2019-10-03 02:08:55', '2019-10-03 02:08:55');
 
 --
 -- Indexes for dumped tables
@@ -1193,6 +1286,12 @@ ALTER TABLE `actors`
 -- Indexes for table `actor_events`
 --
 ALTER TABLE `actor_events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `actor_packages`
+--
+ALTER TABLE `actor_packages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1426,13 +1525,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `actors`
 --
 ALTER TABLE `actors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `actor_events`
 --
 ALTER TABLE `actor_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `actor_packages`
+--
+ALTER TABLE `actor_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
@@ -1648,7 +1753,7 @@ ALTER TABLE `transport_packages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
