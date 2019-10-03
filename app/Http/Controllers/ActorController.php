@@ -232,7 +232,13 @@ class ActorController extends Controller
                 ->join('actor_events','users.id','=','actor_events.user_id')
                 ->get();
 
-                return view('ActorView',compact('data'));
+        $deto= DB::table('users')
+                ->join('actor_packages','users.id','=','actor_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('actor_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+                return view('ActorView',compact('data','deto'));
     }
 
     public function birthdayMagician(Request $request)
