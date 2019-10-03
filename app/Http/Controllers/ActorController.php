@@ -464,7 +464,7 @@ class ActorController extends Controller
                 $cake1 ->delete();
                 $cake2  = Actor::where('user_id',$id)->delete();
                 $cake3  = Actor_event::where('user_id',$id)->delete();
-                
+                $cake4  = Actor_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -803,6 +803,34 @@ class ActorController extends Controller
         
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage($id)
+    {
+        $id1 = Auth::user()->id;
+
+        $data=DB::table('users')
+            ->join('actor_packages','users.id','=','actor_packages.user_id')
+            ->where('actor_packages.id','=',$id)
+            ->select('users.id')
+            ->get();
+
+        foreach($data as $data1)
+        {
+            if($id1==$data1->id)
+            {
+                $deco1 = Actor_package::findOrFail($id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            }
+            else 
+            {
+                return redirect('/');
+            }
+            
+        }
+
     }
 
 
