@@ -29,7 +29,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -223,41 +223,64 @@
                             
 						</div>
                         <br>
-                            
-							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
-                            <br>
-                            <br>
-                            <div class="section-top-border">
-						<h3 class="title_color">Available Packages</h3>
-                            <a class="offset-1 genric-btn info" href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
-                            
-                        </div>
-                        @foreach($deto as $deto1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                   
-                                    <li><b>Services :- </b>{{$deto1->Services}}</li>
-                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                    <li><a href="files/planner/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}" data-pakid="{{$deto1->id}}">Edit</a></center>
-                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
-                                    
-                            
-                                    </ul>
+
+                        <a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
+                        <br>
+                        <br>
+                        <div class="section-top-border">
+                            <h3 class="title_color">Available Packages</h3>
+                            <br><br>
+                            <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <h2 class="text-white">If you have package details PDF</h2>
+                                            <a href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage" 
+                                            class="text-white btn btn-outline-warning rounded-0 text-uppercase">Add A Package</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-                       
-                            <a class="offset-10 genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
+                        <section class="feature_area p_120">
+                            <div class="container">
+                            <div class="feature_inner row">
+                                @foreach($deto as $deto1)
+                                
+                                    <div class="col-lg-6 col-md-8">
+                                        <div class="feature_item" >
+                                            <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                            <div class="media-body">
+                                                <div class="row">
+                                                    <div class="column offset-1">
+                                                        <ul class="list basic_info">
+                                                            <li><b>Services :- </b>{{$deto1->Services}}</li>
+                                                            <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                                        <ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="column offset-1">
+                                                        <a href="files/planner/{{$deto1->Pdf}}" ><img src="images/pdf.png" width="80" hight="80" alt="" ></a>
+                                                    </div>
+                                                    <div class="column offset-4">
+                                                        <ul class="list basic_info">
+                                                        <li><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage"  data-packagename="{{$deto1->Package_Name}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}" data-pakid="{{$deto1->id}}">Edit</a><li><br>  
+                                                        <li><a class="genric-btn danger" href="{{URL('/RemoveDecorationPackage'.$deto1->id)}}" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a><li>
+                                                        </ul>
+                                                    </div>
+                                                </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                @endforeach
+                            </div>
+                            </div>
+                            <br>
+                        </section>
+                        <br>  <br>  
+                        <a class="offset-10 genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
                             
                             
 					</div>
@@ -598,6 +621,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <br>
                 <center><img src="uploads/event/{{$data1->Main_pic}}" alt="User Avatar" width="200" hight="200"></center>
                     
                     <form enctype="multipart/form-data" action="{{URL('/ChangePlannerMainpic'.$data1->plannersid)}}"  method="POST">
@@ -922,54 +946,32 @@
 </div>
 <!--==============model for deactivate account=================-->
        @endforeach
-        <footer class="footer_area p_120">
-        	<div class="container">
-        		<div class="row footer_inner">
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget ab_widget">
-        					<div class="f_title">
-        						<h3>About Me</h3>
-        					</div>
-        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
-        					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        				</aside>
-        			</div>
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget news_widget">
-        					<div class="f_title">
-        						<h3>Newsletter</h3>
-        					</div>
-        					<p>Stay updated with our latest trends</p>
-        					<div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                	<div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
-        				</aside>
-        			</div>
-        			<div class="col-lg-2">
-        				<aside class="f_widget social_widget">
-        					<div class="f_title">
-        						<h3>Follow Me</h3>
-        					</div>
-        					<p>Let us be social</p>
-        					<ul class="list">
-        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
-        					</ul>
-        				</aside>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
+    <footer class="footer_area p_30">
+        <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </footer>
         <!--================End Footer Area =================-->
         
         

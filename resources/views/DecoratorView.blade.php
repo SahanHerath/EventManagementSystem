@@ -5,6 +5,9 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- CSRF Token -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+		
         <link rel="icon" href="img/favicon.png" type="image/png">
         <title>Decorators({{$data1->Team_Name}})-Evora</title>
         <!-- Bootstrap CSS -->
@@ -52,8 +55,36 @@
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+							 <!-- Authentication Links -->
+							 @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								<img src="/uploads/decoration/{{$data1->Main_Pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }} 
+                                </a>
+
+                            </li>
+							<li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
 							</ul>
 						</div> 
 					</div>
