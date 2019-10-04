@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2019 at 11:29 AM
+-- Generation Time: Oct 04, 2019 at 04:51 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -103,13 +103,6 @@ CREATE TABLE `actor_packages` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `actor_packages`
---
-
-INSERT INTO `actor_packages` (`id`, `user_id`, `Package_Name`, `Hours`, `Services`, `Price`, `Pdf`, `Created_at`, `Updated_at`) VALUES
-(2, 79, 'Gold Package', 223, 'wfesfef', '124423.00', '1570093254.pdf', '2019-10-03 03:30:54', '2019-10-03 03:30:54');
 
 -- --------------------------------------------------------
 
@@ -424,8 +417,7 @@ CREATE TABLE `decoration_packages` (
 --
 
 INSERT INTO `decoration_packages` (`id`, `user_id`, `Package_Name`, `Decoration_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
-(5, 68, 'package12', 'asaf', 'ewfewf', '2131231.00', '1569667226.pdf', '2019-09-29 07:20:53', '2019-09-29 01:50:53'),
-(9, 68, 'Gold Package', 'Glass', 'ssfsdsggrg', '12000.00', '1569778600.pdf', '2019-09-29 12:06:40', '2019-09-29 12:06:40');
+(9, 68, 'File package', 'Flower', 'Wedding car decoration ,hall decoration', '1320.00', '1569778600.pdf', '2019-10-04 13:54:04', '2019-10-04 08:24:04');
 
 -- --------------------------------------------------------
 
@@ -484,7 +476,16 @@ CREATE TABLE `decorator_events` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.decorator_events: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`decorator_events`' at line 1
+
+--
+-- Dumping data for table `decorator_events`
+--
+
+INSERT INTO `decorator_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Get_Together`, `Parties`, `Outside_events`, `created_at`, `updated_at`) VALUES
+(1, 14, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-06 04:52:16', '2019-09-06 04:52:16'),
+(2, 15, 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-09-08 11:58:41', '2019-09-08 11:58:41'),
+(3, 47, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-21 04:41:44', '2019-09-20 23:11:44'),
+(5, 68, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-29 07:18:28', '2019-09-29 01:48:28');
 
 -- --------------------------------------------------------
 
@@ -911,7 +912,8 @@ CREATE TABLE `photography_packages` (
 --
 
 INSERT INTO `photography_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
-(2, 77, 'package1', 'Wedding', 'asdada', '12313.00', '1569781135.pdf', '2019-09-29 12:48:55', '2019-09-29 12:48:55');
+(2, 77, 'package1', 'Wedding', 'asdada', '12313.00', '1569781135.pdf', '2019-09-29 12:48:55', '2019-09-29 12:48:55'),
+(3, 52, 'Gold Package', 'Wedding', 'scghjhjew', '334234.00', '1570168114.pdf', '2019-10-04 00:18:34', '2019-10-04 00:18:34');
 
 -- --------------------------------------------------------
 
@@ -933,7 +935,8 @@ CREATE TABLE `photography_videos` (
 --
 
 INSERT INTO `photography_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
-(2, 77, 'sahan', '1569792811.mp4', '2019-09-29 16:03:31', '2019-09-29 16:03:31');
+(2, 77, 'sahan', '1569792811.mp4', '2019-09-29 16:03:31', '2019-09-29 16:03:31'),
+(3, 52, 'sahan', '1570168029.mp4', '2019-10-04 00:17:09', '2019-10-04 00:17:09');
 
 -- --------------------------------------------------------
 
@@ -957,7 +960,8 @@ CREATE TABLE `planner_packages` (
 --
 
 INSERT INTO `planner_packages` (`id`, `user_id`, `Package_Name`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
-(2, 32, 'package1', 'awfsfse', 21124, '1570030470.pdf', '2019-10-02 10:04:30', '2019-10-02 10:04:30');
+(2, 32, 'package1', 'awfsfse', 21124, '1570030470.pdf', '2019-10-02 10:04:30', '2019-10-02 10:04:30'),
+(3, 58, 'Gold Package Wedding', 'Not here', 2000, '1570142389.pdf', '2019-10-03 22:41:45', '2019-10-03 17:11:45');
 
 -- --------------------------------------------------------
 
@@ -996,8 +1000,32 @@ CREATE TABLE `poruwa_ceramonies` (
 INSERT INTO `poruwa_ceramonies` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `Poruwa_rituals`, `Poruwa_items`, `match_making`, `Astrological_support`, `jayamangala_gatha`, `Wedding_dancers`, `Cost`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'ggerge', 'erger', '984893249832', 'erferf', 'fdsdfsdf', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 32423, '1568824037.jpg', '1568824038.jpg', '1568824040.jpg', '1568824041.jpg', '1568824042.jpg', 36, '2019-09-18 10:57:24', '2019-09-18 10:57:24'),
 (2, 'rgreger', 'gergerg', '2412342342423', 'fdfgdfgsgad', 'gsdgsdgsdg', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 22342, '1569086997.jpg', '1569086998.jpg', '1569086999.jpg', '1569087000.jpg', '1569087002.jpg', 49, '2019-09-21 17:45:32', '2019-09-21 12:15:32'),
-(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-09-22 10:22:34', '2019-09-22 04:52:34'),
+(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-10-03 12:07:47', '2019-10-03 06:37:47'),
 (4, 'sdfsfsdfsd', 'sdfsdfsdf', '861324613423', 'asdfsdfasdfasd', 'sdfdsffs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 542367, '1569837898.jpg', '1569839139.jpg', '1569839417.jpg', '1569839442.jpg', '1569839466.jpeg', 62, '2019-09-30 10:31:08', '2019-09-30 05:01:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `poruwa_packages`
+--
+
+CREATE TABLE `poruwa_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `poruwa_packages`
+--
+
+INSERT INTO `poruwa_packages` (`id`, `user_id`, `Package_Name`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(2, 51, 'package1', 'sahan sevices', '3242.00', '1570101919.pdf', '2019-10-04 05:01:50', '2019-10-03 23:31:50');
 
 -- --------------------------------------------------------
 
@@ -1071,7 +1099,7 @@ CREATE TABLE `salons` (
 --
 
 INSERT INTO `salons` (`id`, `Salon_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Groom_Dressing`, `Bride_Dressing`, `Dress_Making`, `Jewelry`, `Makeup`, `Bridesman`, `Bridesmaid`, `HairStyle`, `Profile_Pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 'Sahan', 'sahan', '4325234234', 'sadfas', 'sddgsdgdsfdsfsdfdsfsd', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1569196883.jpg', '1569196884.jpg', '1569196885.jpg', '1569196887.jpg', '1569196888.jpg', 54, '2019-09-23 02:46:46', '2019-09-22 21:16:46'),
+(2, 'Sahan Salon', 'sahan', '4325234234', 'sadfas', 'sddgsdgdsfdsfsdfdsfsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569196883.jpg', '1569196884.jpg', '1569196885.jpg', '1569196887.jpg', '1569196888.jpg', 54, '2019-10-03 21:31:55', '2019-10-03 16:01:55'),
 (4, 'sdfsfd', 'sdfdsf', '3423423423423', 'dffewfwef', 'fewfwefwefw', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569831040.jpg', '1569832155.jpg', '1569832526.jpg', '1569832558.jpeg', '1569832578.jpg', 78, '2019-09-30 08:36:19', '2019-09-30 03:06:19');
 
 -- --------------------------------------------------------
@@ -1095,8 +1123,35 @@ CREATE TABLE `salon_events` (
 --
 
 INSERT INTO `salon_events` (`id`, `user_id`, `wedding`, `parties`, `fashion_show`, `created_at`, `updated_at`) VALUES
-(2, 54, 'Available', 'Available', 'Not Available', '2019-09-23 00:43:37', '2019-09-22 19:13:37'),
+(2, 54, 'Available', 'Available', 'Available', '2019-10-03 21:31:24', '2019-10-03 16:01:24'),
 (4, 78, 'Available', 'Available', 'Available', '2019-09-30 02:26:48', '2019-09-30 02:26:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salon_packages`
+--
+
+CREATE TABLE `salon_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Event_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salon_packages`
+--
+
+INSERT INTO `salon_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `Created_at`, `updated_at`) VALUES
+(1, 78, 'Gold Package', 'Wedding', 'kjvjsdkvkjadcds', '314235.00', '1570114500.pdf', '2019-10-03 09:25:00', '2019-10-03 09:25:00'),
+(2, 78, 'package12', 'Wedding', 'qdwfwefwe', '3214124.00', '1570115032.pdf', '2019-10-03 09:33:52', '2019-10-03 09:33:52'),
+(4, 54, 'Gold Package Party', 'Party House', 'Best service', '1000.00', '1570125144.pdf', '2019-10-03 21:02:32', '2019-10-03 15:32:32');
 
 -- --------------------------------------------------------
 
@@ -1475,6 +1530,12 @@ ALTER TABLE `poruwa_ceramonies`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `poruwa_packages`
+--
+ALTER TABLE `poruwa_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reception_halls`
 --
 ALTER TABLE `reception_halls`
@@ -1490,6 +1551,12 @@ ALTER TABLE `salons`
 -- Indexes for table `salon_events`
 --
 ALTER TABLE `salon_events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `salon_packages`
+--
+ALTER TABLE `salon_packages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1537,7 +1604,7 @@ ALTER TABLE `actor_events`
 -- AUTO_INCREMENT for table `actor_packages`
 --
 ALTER TABLE `actor_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
@@ -1597,7 +1664,7 @@ ALTER TABLE `dance_videos`
 -- AUTO_INCREMENT for table `decoration_packages`
 --
 ALTER TABLE `decoration_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `decorators`
@@ -1693,25 +1760,31 @@ ALTER TABLE `photography_events`
 -- AUTO_INCREMENT for table `photography_packages`
 --
 ALTER TABLE `photography_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `photography_videos`
 --
 ALTER TABLE `photography_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `planner_packages`
 --
 ALTER TABLE `planner_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `poruwa_ceramonies`
 --
 ALTER TABLE `poruwa_ceramonies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `poruwa_packages`
+--
+ALTER TABLE `poruwa_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reception_halls`
@@ -1730,6 +1803,12 @@ ALTER TABLE `salons`
 --
 ALTER TABLE `salon_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `salon_packages`
+--
+ALTER TABLE `salon_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transporters`
