@@ -677,14 +677,14 @@ class TransportController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
-    public function EditPackage(request $request,$id)
+    public function EditPackage(request $request)
     {
         $request->validate(
             ['Package_Name1' => 'required|string|max:255',
             'Transport_type1' => 'required|string|max:255',
             'vehicle1' =>'required|string|max:255',
             'Price1' =>'required|numeric|min:0',
-            'picture1' =>'required|image|dimensions:min_width=300,min_height=100',
+            
             'decoration1' =>'required|string|max:20',
             'driver1' =>'required|string|max:20',
             
@@ -695,7 +695,7 @@ class TransportController extends Controller
         'Transport_type1.required'=> "Fill out this field",
         'vehicle1.required'=> "Fill out this field",
         'Price1.required'=> "Fill out this field",
-        'picture1.required'=> "Fill out this field",
+        
         'decoration1.required'=> "Fill out this field",
         'driver1.required'=> "Fill out this field",
         
@@ -705,7 +705,7 @@ class TransportController extends Controller
         
         
         
-        $data=Transport_package::where('id',$id)
+        $data=Transport_package::where('id',$request->id)
             
         ->update([
                 'Package_Name'=>$request->Package_Name1,
@@ -719,19 +719,7 @@ class TransportController extends Controller
 
             ]);
 
-            if($request->hasFile('picture1'))
-                    {
-                        $picture1=$request->file('picture1');
-                        $filename=time().'.'.$picture1->getClientOriginalExtension();
-                        Image::make($picture1)->fit(1920,1080)->save(public_path('/uploads/transport/'. $filename));
-
-                        $picture=Transport_package::where('id',$id)
-                        ->update([
-                                'picture'=>$filename
-
-
-                        ]);
-                    }
+           
         
             
         
@@ -739,31 +727,18 @@ class TransportController extends Controller
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
-    public function deletePackage($id)
+    public function deletePackage(request $request)
     {
-        $id1 = Auth::user()->id;
+       
 
-        $data=DB::table('users')
-            ->join('transport_packages','users.id','=','transport_packages.user_id')
-            ->where('transport_packages.id','=',$id)
-            ->select('users.id')
-            ->get();
-
-        foreach($data as $data1)
-        {
-            if($id1==$data1->id)
-            {
-                $deco1 = Transport_package::findOrFail($id);
+        
+                $deco1 = Transport_package::findOrFail($request->id);
                 $deco1->delete();
 
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
-            }
-            else 
-            {
-                return redirect('/');
-            }
-            
-        }
+       
 
     }
+
+    
 }

@@ -259,9 +259,10 @@
                                 
                                 
                                     <ul class="list basic_info">
-                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a></center>
-                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage">Remove</a></center>
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-transporttype="{{$deto1->Transport_type}}" data-price="{{$deto1->Price}}" data-vehicle="{{$deto1->vehicle}}" data-decoration="{{$deto1->decoration}}" data-pakid="{{$deto1->id}}" data-driver="{{$deto1->driver}}">Edit</a></center>
+                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
                                     
+                                     
                             
                                     </ul>
                                 </div>
@@ -944,139 +945,88 @@
     </div>
 
     <!--==============model for add Package=================-->
-      <!--==============model for  edit package=================-->
-      @foreach($deto as $deto1)
-    <div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Edit Package Details</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="POST" action="{{URL('/EditTransportPackage'.$deto1->id)}}" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                                
-                    <div class="form-group row{{ $errors->has('Package_Name1') ? ' has-error' : '' }} control-group">
-                        <label for="Package_Name1" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
-                            <input id="Package_Name1" type="text" value="{{$deto1->Package_Name}}" class="form-control @error('Package_Name1') is-invalid @enderror col-md-10 offset-1" name="Package_Name1"   title="fill this field with appropiate package name">
-                            @error('Package_Name1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
+       <!--==============model for  edit package=================-->
+     <!-- Modal -->
+<div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Edit Package Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <form action="{{URL('/EditTransportPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+                <div class="form-group">
+		        	<label for="Package_Name1">Package Name</label>
+		        	<input type="text" class="form-control" name="Package_Name1" id="Package_Name1">
+	        	</div>
 
-                    <div class="form-group row{{ $errors->has('Transport_type1') ? ' has-error' : '' }}">
-                        <label for="Transport_type1" class="col-md-4 col-form-label offset-1">Transport type :-</label>
-                        <input id="Transport_type1" type="text" value="{{$deto1->Transport_type}}" class="form-control @error('Transport_type1') is-invalid @enderror col-md-10 offset-1" name="Transport_type1"  title="fill this field with transport type of the package">
-                                @error('Transport_type1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
+                <div class="form-group">
+		        	<label for="Transport_type1">Transport Type</label>
+		        	<input type="text" class="form-control" name="Transport_type1" id="Transport_type1">
+	        	</div>
 
-                    <div class="form-group row{{ $errors->has('vehicle1') ? ' has-error' : '' }}">
-                        <label for="vehicle1" class="col-md-4 col-form-label offset-1">Vehicle :-</label>
-                        <input id="vehicle1" type="text" value="{{$deto1->vehicle}}" class="form-control @error('vehicle1') is-invalid @enderror col-md-10 offset-1" name="vehicle1"  title="fill this field with vehicle or vehicles name">
-                                @error('vehicle1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
+                <div class="form-group">
+		        	<label for="vehicle1">Vehicle</label>
+		        	<input type="text" class="form-control" name="vehicle1" id="vehicle1">
+	        	</div>
 
-                    <div class="form-group row{{ $errors->has('driver1') ? ' has-error' : '' }}">
-                            <label for="driver1" class="col-md-6 col-form-label offset-1">Driver For Vehicle :-</label>
+
+                
+
+                <div class="form-group">
+		        	<label for="Price1">Price</label>
+		        	<input type="decimal" class="form-control" name="Price1" id="Price1" value="{{ old('Price1') }}">
+	        	</div>
+                
+                
+                <div class="form-group row{{ $errors->has('decoration1') ? ' has-error' : '' }}">
+                            <label for="decoration1" class="col-md-4 col-form-label offset-1">Decoration for Vehicle:-</label>
                             
-                            
-                                <select id="driver1" name="driver1" value="{{ old('driver1') }}" class="form-control @error('driver1') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
-                                    @if($deto1->driver=='Available')
-                                    <option value="Available" selected>Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                    @endif
-                                    @if($deto1->driver=='Not Available')
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available" selected>Not Available</option>
-                                    @endif
-                                    
-                                </select>
-                                @error('driver1')
-                                    <span class="invalid-feedback offset-1" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('decoration1') ? ' has-error' : '' }}">
-                            <label for="decoration1" class="col-md-6 col-form-label offset-1">Decoration For Vehicle :-</label>
-                            
-                            
-                                <select id="decoration1" name="decoration1" value="{{ old('decoration1') }}" class="form-control @error('decoration') is-invalid @enderror col-md-10 offset-1" title="Select the availability">
-                                    @if($deto1->decoration=='Available')
-                                    <option value="Available" selected>Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                    @endif
-                                    @if($deto1->decoration=='Not Available')
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available" selected>Not Available</option>
-                                    @endif
-                                    
-                                </select>
-                                @error('decoration1')
-                                    <span class="invalid-feedback offset-1" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                           
-                        </div>
-
-                        
-                    
-
-                    <div class="form-group row{{ $errors->has('Price1') ? ' has-error' : '' }}">
-                        <label for="Price1" class="col-md-4 col-form-label offset-1">Price :-</label>
-                            <input id="Price1" type="decimal" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
-
-                            @error('Price1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
-
-                    <div class="form-group row{{ $errors->has('picture1') ? ' has-error' : '' }}">
-                            <label for="picture1" class="col-md-4 col-form-label text-md-right">Image</label>
-    
                             <div class="col-md-6">
-                                <input type="file" name="picture1" id="picture1" value="{{ old('picture1') }}" class="form-control @error('picture1') is-invalid @enderror" >
-
-                                    @if ($errors->has('picture1'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('picture1') }}</strong>
-                                    </span>
-                                @endif
+                                <select id="decoration1" class="form-control" name="decoration1" value="{{ old('decoration1') }}" title="Fill this field with Avalability" >
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
                             </div>
                         </div>
 
-                    <div class="modal-footer">
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary ">
-                                Save Changes
-                            </button>
-                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        <div class="form-group row{{ $errors->has('driver1') ? ' has-error' : '' }}">
+                            <label for="driver1" class="col-md-4 col-form-label offset-1">Driver for Vehicle:-</label>
+                            
+                            <div class="col-md-6">
+                                <select id="driver1" class="form-control" name="driver1" value="{{ old('driver1') }}" title="Fill this field with Avalability" >
+                                    <option value="" disabled selected>--Select Type--</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                </form>  
-            </div>
-        </div>
+
+                        
+                        <input type="hidden" id="id" name="id" >
+
+                
+
+                
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Save Changes</button>
+	      </div>
+      </form>
     </div>
-    @endforeach
+  </div>
+</div>
+
+<!-- Modal -->
+
     <!--==============model for edit package=================-->
-    <!--==============model for delete package=================-->
-    @foreach($deto as $deto1)
+     <!--==============model for delete package=================-->
+     
      <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -1086,18 +1036,24 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <p>Do you want to delete package "{{$deto1->Package_Name}}".All the details related to this package will be removed?</p>
-      </div>
-      <div class="modal-footer">
-        <a href="{{URL('/RemoveTransportPackage'.$deto1->id)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
+      <form action="{{URL('/DeleteTransportPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+          <p>Do you want to delete package.All the details related to this package will be removed?</p>
+                <input type="hidden" id="id" name="id" >
+	     </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Confirm Delete</button>
+	      </div>
+      </form>
+      
     </div>
   </div>
 </div>
-@endforeach
+
 <!--==============model for delete package=================-->
+
 <!--==============model for deactivate account=================-->
 <div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1235,6 +1191,56 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
+
+        <script>
+  
+  $('#modalEditPackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var packagename = button.data('packagename')
+      var transporttype = button.data('transporttype') 
+      var vehicle = button.data('vehicle') 
+      var price = button.data('price')
+      var decoration = button.data('decoration')
+      var driver = button.data('driver')
+      var pakid = button.data('pakid')
+      
+      var modal = $(this)
+      modal.find('.modal-body #Package_Name1').val(packagename);
+      modal.find('.modal-body #Transport_type1').val(transporttype);
+      modal.find('.modal-body #vehicle1').val(vehicle);
+      modal.find('.modal-body #decoration1').val(decoration);
+      modal.find('.modal-body #Price1').val(price);
+      modal.find('.modal-body #driver1').val(driver);
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
+
+<script>
+  
+  $('#modalDeletePackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var pakid = button.data('pakid') 
+     
+      var modal = $(this)
+      
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
+
+<script>
+  
+  $('#modalPackpicPackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var pakid = button.data('pakid') 
+     
+      var modal = $(this)
+      
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
         
     </body>
 </html>
