@@ -1008,13 +1008,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
-        @if ($errors->has('Package_Name1')||$errors->has('Services1')||$errors->has('Price1')||$errors->has('Pdf1'))
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#modalEditPackage").modal('show');
-            });
-        </script>
-        @endif
+        
         @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
         <script type="text/javascript">
             $(document).ready(function(){

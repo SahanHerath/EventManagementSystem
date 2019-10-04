@@ -627,7 +627,7 @@ class PoruwaController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
-    public function EditPackage(request $request,$id)
+    public function EditPackage(request $request)
     {
         $request->validate(
             ['Package_Name1' => 'required|string|max:255',
@@ -649,7 +649,7 @@ class PoruwaController extends Controller
         
         
         
-        $data=Poruwa_package::where('id',$id)
+        $data=Poruwa_package::where('id',$request->id)
             
         ->update([
                 'Package_Name'=>$request->Package_Name1,
@@ -665,31 +665,18 @@ class PoruwaController extends Controller
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
-    public function deletePackage($id)
+    public function deletePackage(request $request)
     {
-        $id1 = Auth::user()->id;
+        
 
-        $data=DB::table('users')
-            ->join('poruwa_packages','users.id','=','poruwa_packages.user_id')
-            ->where('poruwa_packages.id','=',$id)
-            ->select('users.id')
-            ->get();
-
-        foreach($data as $data1)
-        {
-            if($id1==$data1->id)
-            {
-                $deco1 = Poruwa_package::findOrFail($id);
+        
+                $deco1 = Poruwa_package::findOrFail($request->id);
                 $deco1->delete();
 
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
-            }
-            else 
-            {
-                return redirect('/');
-            }
+          
             
-        }
+       
 
     }
 
