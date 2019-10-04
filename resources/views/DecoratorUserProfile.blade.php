@@ -46,7 +46,9 @@
 							<ul class="nav navbar-nav menu_nav ml-auto">
                             
                             @foreach($decos as $deco)
-                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/DecoratorView'.$deco->userid)}}">View Your Profile</a></li> 
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i>
+                            <a class="nav-link" href="{{URL('/DecoratorView'.$deco->userid)}}">
+                            View Your Profile</a></li> 
                             
                             <li class="nav-item active"><a class="nav-link" href="#">
                                     <p class="text-white"><img src="/uploads/decoration/{{$deco->Main_Pic}}" style="width:32px; height:32px; border-radius: 50%;" >
