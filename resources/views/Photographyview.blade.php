@@ -266,11 +266,13 @@
         
         <section class="welcome_area p_120">
 				<div class="colorlib-narrow-content">
-                    
-					<div class="container">
-                    <div class="main_title">
+				<div class="main_title">
                         <h2>Events we recently covered</h2>
                     </div>
+				<h3 class="title_color offset-1">Images:-</h3><br>  
+					<div class="container">
+                    
+					
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                                 <div class="project">
@@ -302,50 +304,76 @@
 					
 				</div>
 			
-        </section>
         @endforeach
-		@foreach($dec as $dec1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                    <li><b>Event Type :- </b>{{$dec1->Event_Type}}</li>
-                                    <li><b>Services :- </b>{{$dec1->Services}}</li>
-                                    <li><b>Price :- </b> Rs.{{$dec1->Price}}</li>
-                                    <li><a href="files/photography/{{$dec1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                            
-        @endforeach
-		<div class="section-top-border">
-			<h3 class="title_color">Your Videos</h3>
-			
-			@foreach($saha as $sahan)
-			<div class="personal_text" >
-				<div class="col-lg-5 col-md-6" style="border: 5px solid red;">
-					<div class="feature_item">
-						<h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
-						<video width="400" controls>
-						<source src="video/photography/{{$sahan->Video}}" type="video/mp4">
-						<source src="mov_bbb.ogg" type="video/ogg">
-						</video>
+
+		<h3 class="title_color offset-1">Videos:-</h3><br>
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($saha as $sahan)
+					
+					<div class="col-lg-6 col-md-6">
+						<div class="feature_item" >
+							<h4><font color="black"><b> Video Name </b>:- {{$sahan->Video_Name}}</font></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column">
+									<center><video width="500" controls>
+									<source src="video/photography/{{$sahan->Video}}" type="video/mp4">
+									<source src="mov_bbb.ogg" type="video/ogg">
+									</center></video>
+									</div>
+								</div>
+								
+							</div>
+						</div>
 					</div>
+				
+				@endforeach
 				</div>
 			</div>
-			@endforeach
-		</div> 
+		</section>
+		
+		
+		<section class="feature_area p_120">
+		<div class="main_title">
+                        <h2>Available Packages</h2>
+                    </div>
+		
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($dec as $dec1)
+					
+					<div class="col-lg-6 col-md-8">
+						<div class="feature_item" >
+							<h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column offset-1">
+										<ul class="list basic_info">
+										<li><b>Event Type :- </b>{{$dec1->Event_Type}}</li>
+										<li><b>Services :- </b>{{$dec1->Services}}</li>
+										<li><b>Price :- </b> Rs.{{$dec1->Price}}</li>
+										<li><a href="files/photography/{{$dec1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+									
+										<ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				
+				@endforeach
+				</div>
+			</div>
+		</section>
+
+			
+		 
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->
-        <section class="testimonials_area p_120">
+        <section class="welcome_area p_120">
         	<div class="container">
         		<div class="main_title">
         			<h2>Rating</h2>
