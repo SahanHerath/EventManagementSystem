@@ -279,37 +279,39 @@
         </section>
 		@endforeach
 
+
 		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+			<div class="main_title">
+				<h2><a class="text-white">Available Packages</a></h2>
+			</div>
 		
-        	
-        		<div class="main_title">
-        			<h2><a class="text-white">Available Packages</a></h2>
-				</div>
-					@foreach($deto as $deto1)
-					<div class="container">
-						<div class="feature_inner row">
-							<div class="col-lg-4 col-md-6">
-								<div class="feature_item">
-								<h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-									<div class="media-body">
-										<div class="row">
-											<div class="column offset-1">
-												<ul class="list basic_info">
-													<li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
-													<li><b>Services :- </b>{{$deto1->Services}}</li>
-													<li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-													<li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-												</ul>
-											</div>
-										</div>
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($deto as $deto1)
+					
+					<div class="col-lg-6 col-md-8">
+						<div class="feature_item" >
+							<h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column offset-1">
+										<ul class="list basic_info">
+										<li><b>Decoration Type :- </b>{{$deto1->Decoration_Type}}</li>
+										<li><b>Services :- </b>{{$deto1->Services}}</li>
+										<li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+										<li><a href="files/decoration/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+										<ul>
 									</div>
 								</div>
+								
 							</div>
 						</div>
 					</div>
-					@endforeach
-        </section>
-
+				
+				@endforeach
+				</div>
+			</div>
+		</section>
 
         <!--================End Home Gallery Area =================-->
         

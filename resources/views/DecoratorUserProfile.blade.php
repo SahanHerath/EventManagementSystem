@@ -967,8 +967,9 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <br>
                 <center><img src="uploads/decoration/{{$deco->Main_Pic}}" alt="User Avatar" width="200" hight="200"></center>
-                    
+                <br>
                     <form enctype="multipart/form-data" action="{{URL('/ChangeDecorationMainpic'.$deco->deco_id)}}"  method="POST">
                     <div class="form-group row{{ $errors->has('Main_Pic') ? ' has-error' : '' }}">
                     <label for="Main_Pic" class="offset-1">Update Main Picture :-</label>
