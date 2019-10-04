@@ -770,7 +770,7 @@ class ActorController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
-    public function EditPackage(request $request,$id)
+    public function EditPackage(request $request)
     {
         $request->validate(
             ['Package_Name1' => 'required|string|max:255',
@@ -794,7 +794,7 @@ class ActorController extends Controller
         
         
         
-        $data=Actor_package::where('id',$id)
+        $data=Actor_package::where('id',$request->id)
             
         ->update([
                 'Package_Name'=>$request->Package_Name1,
@@ -811,31 +811,18 @@ class ActorController extends Controller
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
-    public function deletePackage($id)
+    public function deletePackage(request $request)
     {
-        $id1 = Auth::user()->id;
+        
 
-        $data=DB::table('users')
-            ->join('actor_packages','users.id','=','actor_packages.user_id')
-            ->where('actor_packages.id','=',$id)
-            ->select('users.id')
-            ->get();
-
-        foreach($data as $data1)
-        {
-            if($id1==$data1->id)
-            {
-                $deco1 = Actor_package::findOrFail($id);
+        
+                $deco1 = Actor_package::findOrFail($request->id);
                 $deco1->delete();
 
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
-            }
-            else 
-            {
-                return redirect('/');
-            }
             
-        }
+            
+        
 
     }
 
