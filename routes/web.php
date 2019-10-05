@@ -421,6 +421,7 @@ Route::post('/costumepic2{id}', 'CostumeDesignerController@changePic2')  ;
 Route::post('/costumepic3{id}', 'CostumeDesignerController@changePic3')  ;
 Route::post('/costumepic4{id}', 'CostumeDesignerController@changePic4')  ;
 Route::post('/AddCostumePackage{id}', 'CostumeDesignerController@AddNewPackage')  ;
+Route::post('/EditCostumePackage', 'CostumeDesignerController@EditPackage')  ;
 
 Route::post('/ChangeCateringMainpic{id}', 'CateringController@changeMainPic')  ;
 Route::post('/cateringpic1{id}', 'CateringController@changePic1')  ;
