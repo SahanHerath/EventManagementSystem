@@ -793,6 +793,58 @@
     </div>
 
     <!--==============model for add Package=================-->
+     <!--==============model for  edit package=================-->
+     <!-- Modal -->
+<div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Edit Package Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <form action="{{URL('/EditCakePackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+                <div class="form-group">
+		        	<label for="Package_Name1">Package Name</label>
+		        	<input type="text" class="form-control" name="Package_Name1" id="Package_Name1">
+	        	</div>
+
+                <div class="form-group">
+	        		<label for="Cake_types1">Cake Types</label>
+	        		<textarea name="Cake_types1" id="Cake_types1" cols="20" rows="5" id='Cake_types1' class="form-control"></textarea>
+	        	</div>
+
+
+                <div class="form-group">
+	        		<label for="Description1">Description</label>
+	        		<textarea name="Description1" id="Description1" cols="20" rows="5" id='Description1' class="form-control"></textarea>
+	        	</div>
+
+                <div class="form-group">
+		        	<label for="Price1">Price</label>
+		        	<input type="decimal" class="form-control" name="Price1" id="Price1" value="{{ old('Price1') }}">
+	        	</div>
+                <input type="hidden" id="id" name="id" >
+	        	
+
+                
+
+                
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Save Changes</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+    <!--==============model for edit package=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
@@ -873,5 +925,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
+
+        
+        <script>
+  
+  $('#modalEditPackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var packagename = button.data('packagename')
+      var caketypes = button.data('caketypes') 
+      var description = button.data('description') 
+      var price = button.data('price')
+      
+      var pakid = button.data('pakid')
+      var modal = $(this)
+      modal.find('.modal-body #Package_Name1').val(packagename);
+      modal.find('.modal-body #Description1').val(description);
+      modal.find('.modal-body #Price1').val(price);
+      modal.find('.modal-body #Cake_types1').val(caketypes);
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
     </body>
 </html>

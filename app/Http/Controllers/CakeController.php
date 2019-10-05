@@ -653,4 +653,46 @@ class CakeController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Cake_types1' => 'required|string|max:500',
+            'Description1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Cake_types1.required'=> "Fill out this field",
+        'Description1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Cake_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Cake_types'=>$request->Cake_types1,
+                'Description'=>$request->Description1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+
 }
