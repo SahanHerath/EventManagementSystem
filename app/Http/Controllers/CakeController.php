@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Cake_designer;
+use App\Cake_package;
 use Auth;
 use Image;
 use DB;
@@ -258,7 +259,13 @@ class CakeController extends Controller
                 ->select('users.id as userid','name','email', 'cake_designers.id as cakeid','Organization_Name', 'Address', 'Contact_No','Link','Description','Wedding_cake','Birthday_cake','Cake_Structure','Pastry_cake','Cup_Cake','Other','Main_pic','pic1','pic2','pic3','pic4')
                 ->get();
 
-                return view('CakeUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('cake_packages','users.id','=','cake_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_packages.id','Package_Name', 'Cake_types', 'Description','Price','Pdf')
+                ->get();
+
+                return view('CakeUserProfile',compact('data','deto'));
     }
 
     public function featureUpdate(Request $request, $id)
@@ -601,6 +608,49 @@ class CakeController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'Cake_types' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Cake_types.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $cake_package = new Cake_package;
+        $cake_package->user_id = Auth::user()->id;
+        $cake_package->Package_Name=$request->Package_Name;
+        $cake_package->Cake_types =$request->Cake_types;
+        $cake_package->Description =$request->Description;
+        $cake_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/cake') , $filename);
+             $cake_package->Pdf=$filename;
+             
+         }
+        
+         $cake_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
 }
