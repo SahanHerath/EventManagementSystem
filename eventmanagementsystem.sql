@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2019 at 06:37 PM
+-- Generation Time: Oct 05, 2019 at 10:15 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -265,18 +265,7 @@ CREATE TABLE `costume_designers` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `costume_designers`
---
-
-INSERT INTO `costume_designers` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `wedding_dress_designs`, `clothing_orders`, `sport_kit_designs`, `saree_work`, `traditional_dress`, `gents_wear`, `ladies_wear`, `gents_foot_wear`, `ladies_foot_wear`, `sports_shoes`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'efdfs', 'sdfsd', '324234235423', 'dgdfgdfg', 'dfgdfgfdgdf', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568838960.jpg', '1568838962.jpg', '1568838964.jpg', '1568838965.jpg', '1568838967.jpg', 40, '2019-09-18 15:06:08', '2019-09-18 15:06:08'),
-(2, 'vdvdfvd', 'vdfdfvdf', '1232547568', 'refergerher', 'ergergreg', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568839357.jpg', '1568839359.jpg', '1568839360.jpg', '1568839362.jpg', '1568839363.jpg', 41, '2019-09-18 15:12:45', '2019-09-18 15:12:45'),
-(3, 'fwefwe', 'fwefwe', '5342748724872', 'fwefewf', 'efwef', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568839849.jpg', '1568839851.jpg', '1568839852.jpg', '1568839854.jpg', '1568839855.jpg', 42, '2019-09-18 15:20:57', '2019-09-18 15:20:57'),
-(4, 'fewef', 'wefwef', '45435346346', 'vdfvdfbdfb', 'fgegerger', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568840344.jpg', '1568840345.jpg', '1568840347.jpg', '1568840348.jpg', '1568840350.jpg', 43, '2019-09-18 15:29:11', '2019-09-18 15:29:11'),
-(5, 'dfsd', 'dsfsd', '23423785324823', 'sdf', 'fwefwefwe', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569902131.jpg', '1569911301.png', '1569911329.jpg', '1569911349.jpg', '1569911369.jpg', 44, '2019-10-01 06:29:30', '2019-10-01 00:59:30'),
-(6, 'sahan', 'sahan', '07776530129', 'me mai', 'they are', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569320078.jpg', '1569320080.jpg', '1569320081.jpg', '1569320083.jpg', '1569320083.jpg', 60, '2019-09-24 12:47:48', '2019-09-24 07:17:48');
+-- Error reading data for table eventmanagementsystem.costume_designers: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`costume_designers`' at line 1
 
 -- --------------------------------------------------------
 
@@ -307,6 +296,31 @@ INSERT INTO `costume_designer_events` (`id`, `user_id`, `Wedding`, `Party`, `fas
 (4, 43, 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-18 15:29:12', '2019-09-18 15:29:12'),
 (5, 44, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 15:36:57', '2019-09-18 15:36:57'),
 (6, 60, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-24 11:32:01', '2019-09-24 06:02:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `costume_packages`
+--
+
+CREATE TABLE `costume_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Event_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `costume_packages`
+--
+
+INSERT INTO `costume_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 43, 'Gold Package Wedding', 'Wedding party', 'best', '1200.00', '1570299027.pdf', '2019-10-05 18:24:19', '2019-10-05 12:54:19');
 
 -- --------------------------------------------------------
 
@@ -1411,6 +1425,12 @@ ALTER TABLE `costume_designer_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `costume_packages`
+--
+ALTER TABLE `costume_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dancers`
 --
 ALTER TABLE `dancers`
@@ -1672,6 +1692,12 @@ ALTER TABLE `costume_designers`
 --
 ALTER TABLE `costume_designer_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `costume_packages`
+--
+ALTER TABLE `costume_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dancers`
