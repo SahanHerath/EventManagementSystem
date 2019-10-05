@@ -359,6 +359,7 @@ class CakeController extends Controller
                 $cake1 = User::findOrFail($id); 
                 $cake1 ->delete();
                 $cake2  = Cake_designer::where('user_id',$id)->delete();
+                $cake3  = Cake_package::where('user_id',$id)->delete();
                 
                 
                 

@@ -944,7 +944,7 @@
                         
                             <input id="Dancing_Type" type="text" value="{{ old('Dancing_Type') }}" class="form-control @error('Dancing_Type') is-invalid @enderror col-md-10 offset-1" name="Dancing_Type"  title="fill this field with the dancing type that this package belongs">
 
-                            @error('Event_Type')
+                            @error('Dancing_Type')
                                 <span class="invalid-feedback offset-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

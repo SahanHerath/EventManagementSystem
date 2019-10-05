@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2019 at 04:51 PM
+-- Generation Time: Oct 05, 2019 at 06:37 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -139,7 +139,32 @@ CREATE TABLE `cake_designers` (
 
 INSERT INTO `cake_designers` (`id`, `Organization_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Wedding_cake`, `Birthday_cake`, `Cake_Structure`, `Pastry_cake`, `Cup_Cake`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'dfdfsd', 'fsdfsd', '0776530129', 'sdfsd', 'fdfasdfs', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1568816915.jpg', '1568816916.jpg', '1568816918.jpg', '1568816919.jpg', '1568816921.jpg', 33, '2019-09-18 08:58:42', '2019-09-18 08:58:42'),
-(2, 'Sahan', 'Nagaha', '0776530129', 'sahan.com', 'you are me', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569920214.jpg', '1569925061.jpg', '1569925081.jpg', '1569925101.jpg', '1569925119.jpeg', 57, '2019-10-01 10:18:41', '2019-10-01 04:48:41');
+(2, 'Sahan', 'Nagaha', '0776530129', 'sahan.com', 'you are me', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569920214.jpg', '1569925061.jpg', '1569925081.jpg', '1569925101.jpg', '1569925119.jpeg', 57, '2019-10-05 12:40:51', '2019-10-05 07:10:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cake_packages`
+--
+
+CREATE TABLE `cake_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Cake_types` text NOT NULL,
+  `Description` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cake_packages`
+--
+
+INSERT INTO `cake_packages` (`id`, `user_id`, `Package_Name`, `Cake_types`, `Description`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 57, 'Gold Package Wedding', 'Baked cake', 'best cakes in here', '2000.00', '1570287283.pdf', '2019-10-05 15:16:14', '2019-10-05 09:46:14');
 
 -- --------------------------------------------------------
 
@@ -1356,6 +1381,12 @@ ALTER TABLE `cake_designers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cake_packages`
+--
+ALTER TABLE `cake_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `caterings`
 --
 ALTER TABLE `caterings`
@@ -1610,6 +1641,12 @@ ALTER TABLE `actor_packages`
 -- AUTO_INCREMENT for table `cake_designers`
 --
 ALTER TABLE `cake_designers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cake_packages`
+--
+ALTER TABLE `cake_packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
