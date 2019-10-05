@@ -237,6 +237,38 @@
 			
         </section>
         @endforeach
+		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+			<div class="main_title">
+				<h2><a class="text-white">Available Packages</a></h2>
+			</div>
+		
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($deto as $dec1)
+					
+					<div class="col-lg-6 col-md-8">
+						<div class="feature_item" >
+							<h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column offset-1">
+										<ul class="list basic_info">
+										<li><b>Cake Types :- </b>{{$dec1->Cake_types}}</li>
+										<li><b>Description :- </b>{{$dec1->Description}}</li>
+                                    	<li><b>Price :- </b> Rs.{{$dec1->Price}}</li>
+										<li><a href="files/cake/{{$dec1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+										<ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				
+				@endforeach
+				</div>
+			</div>
+		</section>
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->

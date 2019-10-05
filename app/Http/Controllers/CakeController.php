@@ -222,7 +222,13 @@ class CakeController extends Controller
                 ->where('category','=','Cake_Designers')
                 ->get();
 
-                return view('Cakeview',compact('data'));
+        $deto=DB::table('users')
+                ->join('cake_packages','users.id','=','cake_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('cake_packages.id','Package_Name', 'Cake_types', 'Description','Price','Pdf')
+                ->get();
+
+                return view('Cakeview',compact('data','deto'));
     }
 
     public function wedding()
