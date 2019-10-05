@@ -333,6 +333,9 @@
 			
         </section>
         @endforeach
+		<div class="section-top-border">
+		<h3 class="title_color">Available Packages</h3>
+        </div>
 		@foreach($deto as $deto1)
                         <div class="personal_text" >
                             <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
@@ -340,7 +343,7 @@
                                     
                                     <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
                                     <ul class="list basic_info">
-                                    <li><b>Event Type :- </b>{{$deto1->Dancing_Type}}</li>
+                                    <li><b>Dancing Type :- </b>{{$deto1->Dancing_Type}}</li>
                                     <li><b>Services :- </b>{{$deto1->Services}}</li>
                                     <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
                                     <li><a href="files/dancing/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>

@@ -253,7 +253,13 @@ class CostumeDesignerController extends Controller
                 ->where('category','=','Cloth_Designers')
                 ->get();
 
-                return view('CostumeDesignerView',compact('data'));
+        $deto=DB::table('users')
+                ->join('costume_packages','users.id','=','costume_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('costume_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+                ->get();
+
+                return view('CostumeDesignerView',compact('data','deto'));
     }
 
     public function wedding()
