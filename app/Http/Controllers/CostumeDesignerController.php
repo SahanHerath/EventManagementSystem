@@ -446,6 +446,7 @@ class CostumeDesignerController extends Controller
                 $costume1 ->delete();
                 $costume2  = Costume_designer::where('user_id',$id)->delete();
                 $costume3  = Costume_designer_event::where('user_id',$id)->delete();
+                $costume4  = Costume_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -783,6 +784,20 @@ class CostumeDesignerController extends Controller
         
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+
+        
+            
+                $deco1 = Costume_package::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+         
+
     }
     
 }
