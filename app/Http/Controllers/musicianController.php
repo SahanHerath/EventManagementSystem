@@ -746,7 +746,7 @@ class musicianController extends Controller
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
-    public function EditPackage(request $request,$id)
+    public function EditPackage(request $request)
     {
         $request->validate(
             ['Package_Name1' => 'required|string|max:255',
@@ -770,7 +770,7 @@ class musicianController extends Controller
         
         
         
-        $data=Music_package::where('id',$id)
+        $data=Music_package::where('id',$request->id)
             
         ->update([
                 'Package_Name'=>$request->Package_Name1,
@@ -787,31 +787,15 @@ class musicianController extends Controller
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
-    public function deletePackage($id)
+    public function deletePackage(request $request)
     {
-        $id1 = Auth::user()->id;
+        
 
-        $data=DB::table('users')
-            ->join('music_packages','users.id','=','music_packages.user_id')
-            ->where('music_packages.id','=',$id)
-            ->select('users.id')
-            ->get();
-
-        foreach($data as $data1)
-        {
-            if($id1==$data1->id)
-            {
-                $deco1 = Music_package::findOrFail($id);
+                $deco1 = Music_package::findOrFail($request->id);
                 $deco1->delete();
 
-                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
-            }
-            else 
-            {
-                return redirect('/');
-            }
-            
-        }
+                return redirect('/Profile')->with('warning_message','Package is deleted Successfully');
+       
 
     }
 
@@ -868,31 +852,18 @@ class musicianController extends Controller
             
     }
 
-    public function deleteVideo(request $request,$id)
+    public function deleteVideo(request $request)
     {
-        $id1 = Auth::user()->id;
+        
 
-        $data=DB::table('users')
-                ->join('music_videos','users.id','=','music_videos.user_id')
-                ->where('users.id','=',$id1)
-                ->select('music_videos.id')
-                ->get();
-
-        foreach($data as $data1)
-        {
-            if($data1->id==$id)
-            {
-                $deco1 = Music_video::findOrFail($id);
+       
+                $deco1 = Music_video::findOrFail($request->id);
                 $deco1->delete();
 
                 return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
-            }
-            else
-            {
-                return redirect('/');
-            }
+            
 
-        }
+        
     }
 
 
