@@ -1163,13 +1163,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
-        @if ($errors->has('Package_Name1')||$errors->has('Transport_type1')||$errors->has('vehicle1')||$errors->has('picture1')||$errors->has('Price1')||$errors->has('decoration1')||$errors->has('driver1'))
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#modalEditPackage").modal('show');
-            });
-        </script>
-        @endif
+        
         @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
         <script type="text/javascript">
             $(document).ready(function(){
@@ -1229,18 +1223,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   
 </script>
 
-<script>
-  
-  $('#modalPackpicPackage').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-      var pakid = button.data('pakid') 
-     
-      var modal = $(this)
-      
-      modal.find('.modal-body #id').val(pakid);
-})
-  
-</script>
+
         
     </body>
 </html>

@@ -348,10 +348,10 @@ Route::post('/photographypic2{id}', 'PhotographyController@changePic2')  ;
 Route::post('/photographypic3{id}', 'PhotographyController@changePic3')  ;
 Route::post('/photographypic4{id}', 'PhotographyController@changePic4')  ;
 Route::post('/AddPhotographyPackage{id}', 'PhotographyController@AddNewPackage')  ;
-Route::post('/EditPhotographyPackage{id}', 'PhotographyController@EditPackage')  ;
-Route::get('/RemovePhotographyPackage{id}', 'PhotographyController@deletePackage')  ;
+Route::post('/EditPhotographyPackage', 'PhotographyController@EditPackage')  ;
+Route::post('/DeletePhotographyPackage', 'PhotographyController@deletePackage')  ;
 Route::post('/AddVedio{id}', 'PhotographyController@uploadVideo')  ;
-Route::get('/RemovePhotographyVideo{id}', 'PhotographyController@deleteVideo')  ;
+Route::post('/DeletePhotographyVideo', 'PhotographyController@deleteVideo')  ;
 
 
 Route::post('/ChangeSalonMainpic{id}', 'salonController@changeMainPic')  ;

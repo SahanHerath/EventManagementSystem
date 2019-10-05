@@ -286,8 +286,8 @@
                                         </div>
                                         <div class="column offset-4">
                                             <ul class="list basic_info">
-                                            <li><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage">Edit</a><li><br>  
-                                            <li><a class="genric-btn danger" href="{{URL('/RemovePhotographyPackage'.$deto1->id)}}">Remove</a><li>
+                                            <li><a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-services="{{$deto1->Services}}" data-eventtype="{{$deto1->Event_Type}}" data-price="{{$deto1->Price}}">Edit</a><li><br>  
+                                            <li><a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a><li>
                                             </ul>
                                         </div>
                                     </div><br>
@@ -327,7 +327,7 @@
                                     </video>
                                     </center>
                                     <br>
-                                    <center><a class="genric-btn danger" href="{{URL('/RemovePhotographyVideo'.$sahan->id)}}">Delete</a></center>
+                                    <center><a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteVideo" data-vid="{{$sahan->id}}">Delete</a></center>
                                 </div>
                             </div>
                         </div>   
@@ -1056,75 +1056,55 @@
 
     <!--==============model for add Package=================-->
     <!--==============model for  edit package=================-->
-    @foreach($deto as $deto1)
-    <div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Edit Package Details</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="POST" action="{{URL('/EditPhotographyPackage'.$deto1->id)}}" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                                
-                    <div class="form-group row{{ $errors->has('Package_Name1') ? ' has-error' : '' }} control-group">
-                        <label for="Package_Name1" class="col-md-4 col-form-label offset-1">Package_Name :-</label>
-                            <input id="Package_Name1" type="text" value="{{$deto1->Package_Name}}" class="form-control @error('Package_Name1') is-invalid @enderror col-md-10 offset-1" name="Package_Name1"   title="fill this field with appropiate package name">
-                            @error('Package_Name1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
+     <!-- Modal -->
+<div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Edit Package Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <form action="{{URL('/EditPhotographyPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+                <div class="form-group">
+		        	<label for="Package_Name1">Package Name</label>
+		        	<input type="text" class="form-control" name="Package_Name1" id="Package_Name1">
+	        	</div>
 
-                    <div class="form-group row{{ $errors->has('Event_Type1') ? ' has-error' : '' }}">
-                        <label for="Event_Type1" class="col-md-4 col-form-label offset-1">Event Type :-</label>
-                        <input id="Event_Type1" type="text" value="{{$deto1->Event_Type}}" class="form-control @error('Event_Type1') is-invalid @enderror col-md-10 offset-1" name="Event_Type1"  title="fill this field with Wvent type of the package">
-                                @error('Event_Type1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
-                    <div class="form-group row{{ $errors->has('Services1') ? ' has-error' : '' }}">
-                    
-                        <label for="Services1" class="col-md-4 col-form-label offset-1">Services :-</label>
-                        
-                        
-                            <textarea name='Services1' cols='50' rows='5' id='Services' value="{{$deto1->Services}}" class="form-control @error('Services1') is-invalid @enderror col-md-10 offset-1" title="Fill this field with services that are include in  this package (Table decoration, Entrance decoration ,Hall decoration etc) & some other description">{{$deto1->Services}}</textarea>
-                            @error('Services1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
+                <div class="form-group">
+		        	<label for="Event_Type1">Event Type</label>
+		        	<input type="text" class="form-control" name="Event_Type1" id="Event_Type1">
+	        	</div>
 
-                    <div class="form-group row{{ $errors->has('Price1') ? ' has-error' : '' }}">
-                        <label for="Price1" class="col-md-4 col-form-label offset-1">Price :-</label>
-                            <input id="Price1" type="decimal" value="{{$deto1->Price}}" class="form-control @error('Price1') is-invalid @enderror col-md-10 offset-1" name="Price1"   autocomplete="Price1"  title="Fill this field with average price of the package">
+                <div class="form-group">
+	        		<label for="Services1">Services</label>
+	        		<textarea name="Services1" id="Services1" cols="20" rows="5" id='Services1' class="form-control"></textarea>
+	        	</div>
 
-                            @error('Price1')
-                                <span class="invalid-feedback offset-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
+                <div class="form-group">
+		        	<label for="Price1">Price</label>
+		        	<input type="decimal" class="form-control" name="Price1" id="Price1" value="{{ old('Price1') }}">
+	        	</div>
+                <input type="hidden" id="id" name="id" >
+	        	
 
-                    <div class="modal-footer">
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary ">
-                                Save Changes
-                            </button>
-                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </form>  
-            </div>
-        </div>
+                
+
+                
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Save Changes</button>
+	      </div>
+      </form>
     </div>
-    @endforeach
+  </div>
+</div>
+
+<!-- Modal -->
+
     <!--==============model for edit package=================-->
      <!--==============model for  upload vedio=================-->
     <div class="modal fade" id="addvedio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
@@ -1170,6 +1150,62 @@
         </div>
         @endforeach
     <!--==============model for change upload vedio=================-->
+      <!--==============model for delete package=================-->
+     
+      <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{URL('/DeletePhotographyPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+          <p>Do you want to delete package.All the details related to this package will be removed?</p>
+                <input type="hidden" id="id" name="id" >
+	     </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Confirm Delete</button>
+	      </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!--==============model for delete package=================-->
+ <!--==============model for delete video=================-->
+     
+ <div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteVideo" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{URL('/DeletePhotographyVideo')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+          <p>Do you want to delete video.All the details related to this video will be removed?</p>
+                <input type="hidden" id="id" name="id" >
+	     </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Confirm Delete</button>
+	      </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!--==============model for delete video=================-->
        
        <footer class="footer_area p_30">
         <div class="container">
@@ -1270,5 +1306,50 @@
             });
         </script>
         @endif
+
+        <script>
+  
+  $('#modalEditPackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var packagename = button.data('packagename') 
+      var services = button.data('services') 
+      var price = button.data('price')
+      var eventtype = button.data('eventtype')
+      var pakid = button.data('pakid')
+      var modal = $(this)
+      modal.find('.modal-body #Package_Name1').val(packagename);
+      modal.find('.modal-body #Services1').val(services);
+      modal.find('.modal-body #Price1').val(price);
+      modal.find('.modal-body #Event_Type1').val(eventtype);
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
+
+<script>
+  
+  $('#modalDeletePackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var pakid = button.data('pakid') 
+     
+      var modal = $(this)
+      
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
+
+<script>
+  
+  $('#modalDeleteVideo').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var vid = button.data('vid') 
+     
+      var modal = $(this)
+      
+      modal.find('.modal-body #id').val(vid);
+})
+  
+</script>
     </body>
 </html>
