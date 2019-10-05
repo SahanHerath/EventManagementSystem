@@ -409,10 +409,10 @@ Route::post('/dancerpic2{id}', 'DancingController@changePic2')  ;
 Route::post('/dancerpic3{id}', 'DancingController@changePic3')  ;
 Route::post('/dancerpic4{id}', 'DancingController@changePic4')  ;
 Route::post('/AddDancerPackage{id}', 'DancingController@AddNewPackage')  ;
-Route::post('/EditDancerPackage{id}', 'DancingController@EditPackage')  ;
-Route::get('/RemoveDancingPackage{id}', 'DancingController@deletePackage')  ;
+Route::post('/EditDancerPackage', 'DancingController@EditPackage')  ;
+Route::post('/DeleteDancerPackage', 'DancingController@deletePackage')  ;
 Route::post('/AddDanceVideo{id}', 'DancingController@uploadVideo')  ;
-Route::get('/RemoveDanceVideo{id}', 'DancingController@deleteVideo')  ;
+Route::post('/DeleteDancerVideo', 'DancingController@deleteVideo')  ;
 
 
 Route::post('/ChangeCostumeMainpic{id}', 'CostumeDesignerController@changeMainPic')  ;
