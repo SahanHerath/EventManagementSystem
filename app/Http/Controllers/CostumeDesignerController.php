@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Costume_designer;
 use App\Costume_designer_event;
+use App\Costume_package;
 use DB;
 use Auth;
 use Image;
@@ -335,7 +336,13 @@ class CostumeDesignerController extends Controller
             ->select('users.id as userid','email','users.name as Uname','costume_designers.id as designerid','costume_designers.Name as Cname','Address','Contact_No','Link','Description','wedding_dress_designs','clothing_orders','sport_kit_designs','saree_work','traditional_dress','gents_wear','ladies_wear','gents_foot_wear','ladies_foot_wear','sports_shoes','Main_pic','pic1','pic2','pic3','pic4','costume_designer_events.id as eventid','Wedding','Party','fashion_show','sports','Coperate_event')
             ->get();
 
-        return view('CostumeDesignerUserProfile',compact('data'));
+        $deto=DB::table('users')
+            ->join('costume_packages','users.id','=','costume_packages.user_id')
+            ->where('users.id','=',$id1)
+            ->select('costume_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+            ->get();
+
+        return view('CostumeDesignerUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $costumeid)
@@ -692,6 +699,49 @@ class CostumeDesignerController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Event_Type' =>  'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Event_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $costume_package = new Costume_package;
+        $costume_package->user_id = Auth::user()->id;
+        $costume_package->Package_Name=$request->Package_Name;
+        $costume_package->Event_Type =$request->Event_Type;
+        $costume_package->Services =$request->Services;
+        $costume_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/costume') , $filename);
+             $costume_package->Pdf=$filename;
+             
+         }
+        
+         $costume_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
     
 }
