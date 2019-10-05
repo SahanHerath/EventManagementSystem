@@ -434,6 +434,7 @@ Route::post('/cakepic3{id}', 'CakeController@changePic3')  ;
 Route::post('/cakepic4{id}', 'CakeController@changePic4')  ;
 Route::post('/AddCakePackage{id}', 'CakeController@AddNewPackage')  ;
 Route::post('/EditCakePackage', 'CakeController@EditPackage')  ;
+Route::post('/DeleteCakePackage', 'CakeController@deletePackage')  ;
 
 Route::post('/ChangeActorMainpic{id}', 'ActorController@changeMainPic')  ;
 Route::post('/actorpic1{id}', 'ActorController@changePic1')  ;

@@ -694,5 +694,19 @@ class CakeController extends Controller
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
+    public function deletePackage(request $request)
+    {
+        
+
+       
+                $cake1 = Cake_package::findOrFail($request->id);
+                $cake1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            
+      
+
+    }
+
 
 }
