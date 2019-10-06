@@ -10,6 +10,7 @@ use App\Hotel;
 use App\Hall_event;
 use App\Hall_feature;
 use App\Reception_hall;
+use App\Hall_package;
 use App\Hall_table_arrangement;
 use DB;
 
@@ -424,9 +425,15 @@ class HallController extends Controller
               ->select( 'reception_halls.id as recepid','Hall_Name', 'Address', 'Cost','Capacity','Square_feet','Description','Overview','Main_pic','pic1','pic2','pic3','pic4','hotel_id','hall_events.id as eventid','Wedding', 'Meeting', 'Party','Corporate_event','Professional_Event','hall_features.id as featureid','projection', 'internet', 'parking','security_camera','security_personal','reception_area','Bar','garden','smoking_area','welcome_drinks','Buffet','Handicap_accessible','outside_balcony','inside_balcony','stage','hall_table_arrangements.id as arrangeid','theatre', 'U_shape', 'V_shape','classroom','hallow_square','Boardroom','Oval','Herringbone','Top_table_springs','banquet','cabaret','informal')
               ->get();
 
+        $deto=DB::table('reception_halls')
+              ->join('hall_packages','reception_halls.id','=','hall_packages.hall_id')
+              ->where('reception_halls.id','=',$id)
+              ->select('hall_packages.id','Package_Name', 'Appetizers', 'Welcome_drinks','Foods','Soups','Desserts','Price','Pdf')
+              ->get();
+
         
 
-              return view('HallUserProfile',compact('hall'));
+              return view('HallUserProfile',compact('hall','deto'));
     }
 
     public function HotelUpdate(Request $request, $userid, $Hotelid)
@@ -1161,6 +1168,59 @@ class HallController extends Controller
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Appetizers' =>'required|string|max:500',
+            'Welcome_drinks' =>'required|string|max:500',
+            'Soups' =>'required|string|max:500',
+            'Foods' =>'required|string|max:500',
+            'Desserts' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Appetizers.required'=> "Fill out this field",
+        'Welcome_drinks.required'=> "Fill out this field",
+        'Soups.required'=> "Fill out this field",
+        'Foods.required'=> "Fill out this field",
+        'Desserts.required'=> "Fill out this field",
+        
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $hall_package = new Hall_package;
+        $hall_package->hall_id = $id;
+        $hall_package->Package_Name=$request->Package_Name;
+        $hall_package->Appetizers =$request->Appetizers;
+        $hall_package->Welcome_drinks =$request->Welcome_drinks;
+        $hall_package->Soups =$request->Soups;
+        $hall_package->Foods =$request->Foods;
+        $hall_package->Desserts =$request->Desserts;
+        $hall_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/hall') , $filename);
+             $hall_package->Pdf=$filename;
+             
+         }
+        
+         $hall_package->save();
+
+         return redirect()->back()->with('flash_message','Add New Package Successfully');
     }
    
 }

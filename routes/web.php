@@ -458,6 +458,7 @@ Route::post('/hallpic1{id}', 'HallController@changePic1')  ;
 Route::post('/hallpic2{id}', 'HallController@changePic2')  ;
 Route::post('/hallpic3{id}', 'HallController@changePic3')  ;
 Route::post('/hallpic4{id}', 'HallController@changePic4')  ;
+Route::post('/AddHallPackage{id}', 'HallController@AddNewPackage')  ;
 
 
 

@@ -1323,7 +1323,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
-        
+   <script>     
   
   $('#modalEditPackage').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
