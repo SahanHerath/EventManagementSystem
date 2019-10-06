@@ -984,10 +984,40 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
-        @if (count($errors) > 0)
+        <script>
+         @if ($errors->has('name')||$errors->has('email')||$errors->has('Organization_Name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name')||$errors->has('Cake_types')||$errors->has('Description')||$errors->has('Price')||$errors->has('Pdf'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalAddPackage").modal('show');
+            });
+        </script>
+        @endif
+        
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_pic'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
             });
         </script>
         @endif

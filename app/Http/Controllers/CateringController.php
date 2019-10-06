@@ -254,7 +254,13 @@ return view('catering', compact('level'));
                 ->where('category','=','Catering')
                 ->get();
 
-                return view('cateringview',compact('data'));
+        $deto=DB::table('users')
+                ->join('catering_packages','users.id','=','catering_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('catering_packages.id','Package_Name', 'Appetizers', 'Welcome_drinks','Soups','Foods','Desserts','Price','Pdf')
+                ->get();
+
+                return view('cateringview',compact('data','deto'));
     }
 
     public function wedding()

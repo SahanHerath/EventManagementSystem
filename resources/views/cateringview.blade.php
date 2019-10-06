@@ -459,6 +459,46 @@
 			
         </section>
         @endforeach
+		<h3 class="title_color">Available Packages</h3>
+                            
+                            
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Appetizers :- </b>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
+                                                       {{ $appetizers }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Welcome_drinks :- </b>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
+                                                       {{ $welcomedrinks }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Soups :- </b> @foreach (explode(',', $deto1->Soups) as $soups)
+                                                       {{ $soups }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Meals :- </b>@foreach (explode(',', $deto1->Foods) as $foods)
+                                                       {{ $foods }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Desserts :- </b>@foreach (explode(',', $deto1->Desserts) as $desserts)
+                                                       {{ $desserts }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                   
+                                    
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->
