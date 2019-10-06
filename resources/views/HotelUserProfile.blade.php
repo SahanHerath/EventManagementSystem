@@ -37,6 +37,7 @@
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  
 </head>
+
 <body>
 	@foreach($hotel as $hotel1)	
 	
@@ -521,12 +522,37 @@
 		<script src="js/bootstrap.min.js"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="js/ie10-viewport-bug-workaround.js"></script>
-        @if (count($errors) > 0)
+        <script>
+         @if ($errors->has('name')||$errors->has('email')||$errors->has('Hotel_Name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description')||$errors->has('facebook')||$errors->has('instagram'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
             });
         </script>
         @endif
+        
+        
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_logo'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Cover_photo'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#coverpicchange").modal('show');
+            });
+        </script>
+        @endif
+        
 </body>
 </html>

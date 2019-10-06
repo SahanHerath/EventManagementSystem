@@ -71,7 +71,7 @@
         
         <div class="offset-4" >
             <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo">Edit Hall Details</a></button>
-            <button type="button" class="btn btn-danger"><a href="{{URL('/RemoveHall'.$hall1->recepid)}}">Remove Hall</a></button>
+            <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteHall">Remove Hall</a></button>
             <button type="button" class="btn btn-info"><a href="" data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a></button>
             </div>
             
@@ -1736,6 +1736,27 @@
 </div>
 
 <!--==============model for delete package=================-->
+<!--==============model for delete hall=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteHall" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delate Hall!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you need to remove this hall from your profile. All the details related to this hall will be removed completely from your account.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveHall'.$hall1->recepid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for delete hall=================-->
 		@endforeach
 
 
