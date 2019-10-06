@@ -259,12 +259,20 @@
                                     
                                     <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
                                     <ul class="list basic_info">
-                                    <li><b>Appetizers :- </b>{{$deto1->Appetizers}}</li>
-                                    <li><b>Welcome_drinks :- </b>{{$deto1->Welcome_drinks}}</li>
-                                    <li><b>Soups :- </b> Rs.{{$deto1->Soups}}</li>
-                                    <li><b>Foods :- </b>{{$deto1->Foods}}</li>
-                                    <li><b>Desserts :- </b>@foreach (explode(', ', $deto1->Desserts) as $desserts)
-                                                       {{ $desserts }}
+                                    <li><b>Appetizers :- </b>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
+                                                       {{ $appetizers }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Welcome_drinks :- </b>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
+                                                       {{ $welcomedrinks }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Soups :- </b> @foreach (explode(',', $deto1->Soups) as $soups)
+                                                       {{ $soups }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Foods :- </b>@foreach (explode(',', $deto1->Foods) as $foods)
+                                                       {{ $foods }}<br>
+                                                        @endforeach</li>
+                                    <li><b>Desserts :- </b>@foreach (explode(',', $deto1->Desserts) as $desserts)
+                                                       {{ $desserts }}<br>
                                                         @endforeach</li>
                                     <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
                                     <li><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
@@ -272,7 +280,7 @@
                                 
                                 
                                     <ul class="list basic_info">
-                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-hours="{{$deto1->Hours}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}">Edit</a></center>
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-welcomedrink="{{$deto1->Welcome_drinks}}" data-appetizer="{{$deto1->Appetizers}}" data-soups="{{$deto1->Soups}}">Edit</a></center>
                                     <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
                                     
                             

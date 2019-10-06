@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Catering;
 use App\Catering_event;
+use App\Catering_package;
 use DB;
 use Image;
 use Auth;
@@ -691,6 +692,59 @@ return view('catering', compact('level'));
                 }
             }
             
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Appetizers' =>'required|string|max:500',
+            'Welcome_drinks' =>'required|string|max:500',
+            'Soups' =>'required|string|max:500',
+            'Foods' =>'required|string|max:500',
+            'Desserts' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Appetizers.required'=> "Fill out this field",
+        'Welcome_drinks.required'=> "Fill out this field",
+        'Soups.required'=> "Fill out this field",
+        'Foods.required'=> "Fill out this field",
+        'Desserts.required'=> "Fill out this field",
+        
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $catering_package = new Catering_package;
+        $catering_package->user_id = Auth::user()->id;
+        $catering_package->Package_Name=$request->Package_Name;
+        $catering_package->Appetizers =$request->Appetizers;
+        $catering_package->Welcome_drinks =$request->Welcome_drinks;
+        $catering_package->Soups =$request->Soups;
+        $catering_package->Foods =$request->Foods;
+        $catering_package->Desserts =$request->Desserts;
+        $catering_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/catering') , $filename);
+             $catering_package->Pdf=$filename;
+             
+         }
+        
+         $catering_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
 }

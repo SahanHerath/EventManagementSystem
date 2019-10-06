@@ -429,6 +429,7 @@ Route::post('/cateringpic1{id}', 'CateringController@changePic1')  ;
 Route::post('/cateringpic2{id}', 'CateringController@changePic2')  ;
 Route::post('/cateringpic3{id}', 'CateringController@changePic3')  ;
 Route::post('/cateringpic4{id}', 'CateringController@changePic4')  ;
+Route::post('/AddCateringPackage{id}', 'CateringController@AddNewPackage')  ;
 
 Route::post('/ChangeCakeMainpic{id}', 'CakeController@changeMainPic')  ;
 Route::post('/cakepic1{id}', 'CakeController@changePic1')  ;
