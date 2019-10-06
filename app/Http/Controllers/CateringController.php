@@ -438,6 +438,7 @@ return view('catering', compact('level'));
                 $catering1 ->delete();
                 $catering2  = Catering::where('user_id',$id)->delete();
                 $catering3  = Catering_event::where('user_id',$id)->delete();
+                $catering4  = Catering_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -797,6 +798,21 @@ return view('catering', compact('level'));
         
 
         return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+
+        
+                $deco1 = Catering_package::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            
+            
+        
+
     }
 
 }
