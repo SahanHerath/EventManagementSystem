@@ -4,6 +4,8 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- CSRF Token -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" href="img/favicon.png" type="image/png">
         <title>Evora-Transport</title>
         <!-- Bootstrap CSS -->
@@ -29,7 +31,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>

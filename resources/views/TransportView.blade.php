@@ -5,6 +5,8 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- CSRF Token -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" href="img/favicon.png" type="image/png">
         <title>Transport({{$data1->Transport_Service}})-Evora</title>
         <!-- Bootstrap CSS -->
