@@ -747,4 +747,56 @@ return view('catering', compact('level'));
          return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Appetizers1' =>'required|string|max:500',
+            'Welcome_drinks1' =>'required|string|max:500',
+            'Soups1' =>'required|string|max:500',
+            'Foods1' =>'required|string|max:500',
+            'Desserts1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+            
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Appetizers1.required'=> "Fill out this field",
+        'Welcome_drinks1.required'=> "Fill out this field",
+        'Soups1.required'=> "Fill out this field",
+        'Foods1.required'=> "Fill out this field",
+        'Desserts1.required'=> "Fill out this field",
+        
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Catering_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Appetizers'=>$request->Appetizers1,
+                'Welcome_drinks'=>$request->Welcome_drinks1,
+                'Soups'=>$request->Soups1,
+                'Foods'=>$request->Foods1,
+                'Desserts'=>$request->Desserts1,
+                'Price'=>$request->Price1,
+               
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
 }

@@ -268,7 +268,7 @@
                                     <li><b>Soups :- </b> @foreach (explode(',', $deto1->Soups) as $soups)
                                                        {{ $soups }}<br>
                                                         @endforeach</li>
-                                    <li><b>Foods :- </b>@foreach (explode(',', $deto1->Foods) as $foods)
+                                    <li><b>Meals :- </b>@foreach (explode(',', $deto1->Foods) as $foods)
                                                        {{ $foods }}<br>
                                                         @endforeach</li>
                                     <li><b>Desserts :- </b>@foreach (explode(',', $deto1->Desserts) as $desserts)
@@ -280,7 +280,7 @@
                                 
                                 
                                     <ul class="list basic_info">
-                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-welcomedrink="{{$deto1->Welcome_drinks}}" data-appetizer="{{$deto1->Appetizers}}" data-soups="{{$deto1->Soups}}">Edit</a></center>
+                                    <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditPackage" data-pakid="{{$deto1->id}}" data-packagename="{{$deto1->Package_Name}}" data-price="{{$deto1->Price}}" data-welcomedrink="{{$deto1->Welcome_drinks}}" data-appetizer="{{$deto1->Appetizers}}" data-soup="{{$deto1->Soups}}" data-food="{{$deto1->Foods}}" data-dessert="{{$deto1->Desserts}}">Edit</a></center>
                                     <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
                                     
                             
@@ -1003,7 +1003,7 @@
 
                 <div class="form-group row{{ $errors->has('Foods') ? ' has-error' : '' }}">
                     
-                    <label for="Foods" class="col-md-4 col-form-label offset-1">Foods :-</label>
+                    <label for="Foods" class="col-md-4 col-form-label offset-1">Meals :-</label>
                     
                     
                         <textarea name='Foods' cols='50' rows='5' id='Foods' class="form-control @error('Foods') is-invalid @enderror col-md-10 offset-1" title="Fill this field with foods of the package separated by commas">{{ old('Foods') }}</textarea>
@@ -1076,6 +1076,73 @@
     </div>
 
     <!--==============model for add Package=================-->
+     <!--==============model for  edit package=================-->
+     <!-- Modal -->
+<div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Edit Package Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <form action="{{URL('/EditCateringPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+                <div class="form-group">
+		        	<label for="Package_Name1">Package Name</label>
+		        	<input type="text" class="form-control" name="Package_Name1" id="Package_Name1">
+	        	</div>
+
+                <div class="form-group">
+	        		<label for="Appetizers1">Appetizers</label>
+	        		<textarea name="Appetizers1" id="Appetizers1" cols="20" rows="5" id='Appetizers1' class="form-control"></textarea>
+	        	</div>
+
+
+                <div class="form-group">
+	        		<label for="Welcome_drinks1">Welcome Drinks</label>
+	        		<textarea name="Welcome_drinks1" id="Welcome_drinks1" cols="20" rows="5" id='Welcome_drinks1' class="form-control"></textarea>
+	        	</div>
+
+                <div class="form-group">
+	        		<label for="Soups1">Soups</label>
+	        		<textarea name="Soups1" id="Soups1" cols="20" rows="5" id='Soups1' class="form-control"></textarea>
+	        	</div>
+
+                <div class="form-group">
+	        		<label for="Foods1">Meals</label>
+	        		<textarea name="Foods1" id="Foods1" cols="20" rows="5" id='Foods1' class="form-control"></textarea>
+	        	</div>
+
+                <div class="form-group">
+	        		<label for="Desserts1">Desserts</label>
+	        		<textarea name="Desserts1" id="Desserts1" cols="20" rows="5" id='Desserts1' class="form-control"></textarea>
+	        	</div>
+
+                <div class="form-group">
+		        	<label for="Price1">Price</label>
+		        	<input type="decimal" class="form-control" name="Price1" id="Price1" value="{{ old('Price1') }}">
+	        	</div>
+                <input type="hidden" id="id" name="id" >
+	        	
+
+                
+
+                
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Save Changes</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+    <!--==============model for edit package=================-->
    
        @endforeach
         <footer class="footer_area p_120">
@@ -1157,5 +1224,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             });
         </script>
         @endif
+
+        <script>
+  
+  $('#modalEditPackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var packagename = button.data('packagename')
+      var price = button.data('price') 
+      var welcomedrink = button.data('welcomedrink')
+      var appetizer = button.data('appetizer')
+      var soup = button.data('soup')
+      var food = button.data('food')
+      var dessert = button.data('dessert')
+      
+      
+      var pakid = button.data('pakid')
+      var modal = $(this)
+      modal.find('.modal-body #Package_Name1').val(packagename);
+      modal.find('.modal-body #Price1').val(price);
+      modal.find('.modal-body #id').val(pakid);
+      modal.find('.modal-body #Welcome_drinks1').val(welcomedrink);
+      modal.find('.modal-body #Appetizers1').val(appetizer);
+      modal.find('.modal-body #Soups1').val(soup);
+      modal.find('.modal-body #Foods1').val(food);
+      modal.find('.modal-body #Desserts1').val(dessert);
+   
+})
+  
+</script>
+
+       
     </body>
 </html>
