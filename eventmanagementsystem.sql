@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2019 at 10:53 AM
+-- Generation Time: Oct 06, 2019 at 08:28 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -650,7 +650,8 @@ INSERT INTO `hall_events` (`id`, `hall_id`, `Wedding`, `Meeting`, `Party`, `Corp
 (2, 1, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-08-30 12:27:49', '2019-08-30 12:27:49'),
 (4, 4, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
 (10, 10, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
-(11, 11, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-01 07:59:26', '2019-10-01 07:59:26');
+(11, 11, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-01 07:59:26', '2019-10-01 07:59:26'),
+(12, 12, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-06 12:40:47', '2019-10-06 12:40:47');
 
 -- --------------------------------------------------------
 
@@ -688,7 +689,36 @@ INSERT INTO `hall_features` (`id`, `hall_id`, `projection`, `internet`, `parking
 (1, 1, 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
 (3, 4, 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
 (9, 10, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
-(10, 11, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-01 07:59:26', '2019-10-01 07:59:26');
+(10, 11, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-01 07:59:26', '2019-10-01 07:59:26'),
+(11, 12, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-06 12:40:47', '2019-10-06 12:40:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hall_packages`
+--
+
+CREATE TABLE `hall_packages` (
+  `id` int(11) NOT NULL,
+  `hall_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Appetizers` text NOT NULL,
+  `Welcome_drinks` text NOT NULL,
+  `Foods` text NOT NULL,
+  `Soups` text NOT NULL,
+  `Desserts` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hall_packages`
+--
+
+INSERT INTO `hall_packages` (`id`, `hall_id`, `Package_Name`, `Appetizers`, `Welcome_drinks`, `Foods`, `Soups`, `Desserts`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 12, 'Gold Package', 'murukku , bait ,wade', 'orange juice, cocacola, fruit juice', 'rice and curry, fish ,fried rice, string hoppers', 'vegetable soup, pumpkin soup, chicken soup', 'ice cream, watalappan, fruit salad, salad', '5000.00', '1570370848.pdf', '2019-10-06 15:01:32', '2019-10-06 09:31:32');
 
 -- --------------------------------------------------------
 
@@ -723,7 +753,8 @@ INSERT INTO `hall_table_arrangements` (`id`, `hall_id`, `theatre`, `U_shape`, `V
 (1, 1, 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
 (3, 4, 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
 (9, 10, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
-(10, 11, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-01 07:59:27', '2019-10-01 07:59:27');
+(10, 11, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-01 07:59:27', '2019-10-01 07:59:27'),
+(11, 12, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-06 12:40:47', '2019-10-06 12:40:47');
 
 -- --------------------------------------------------------
 
@@ -1070,7 +1101,16 @@ CREATE TABLE `poruwa_ceramonies` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.poruwa_ceramonies: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`poruwa_ceramonies`' at line 1
+
+--
+-- Dumping data for table `poruwa_ceramonies`
+--
+
+INSERT INTO `poruwa_ceramonies` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `Poruwa_rituals`, `Poruwa_items`, `match_making`, `Astrological_support`, `jayamangala_gatha`, `Wedding_dancers`, `Cost`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'ggerge', 'erger', '984893249832', 'erferf', 'fdsdfsdf', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 32423, '1568824037.jpg', '1568824038.jpg', '1568824040.jpg', '1568824041.jpg', '1568824042.jpg', 36, '2019-09-18 10:57:24', '2019-09-18 10:57:24'),
+(2, 'rgreger', 'gergerg', '2412342342423', 'fdfgdfgsgad', 'gsdgsdgsdg', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 22342, '1569086997.jpg', '1569086998.jpg', '1569086999.jpg', '1569087000.jpg', '1569087002.jpg', 49, '2019-09-21 17:45:32', '2019-09-21 12:15:32'),
+(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-10-03 12:07:47', '2019-10-03 06:37:47'),
+(4, 'sdfsfsdfsd', 'sdfsdfsdf', '861324613423', 'asdfsdfasdfasd', 'sdfdsffs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 542367, '1569837898.jpg', '1569839139.jpg', '1569839417.jpg', '1569839442.jpg', '1569839466.jpeg', 62, '2019-09-30 10:31:08', '2019-09-30 05:01:08');
 
 -- --------------------------------------------------------
 
@@ -1130,7 +1170,8 @@ INSERT INTO `reception_halls` (`id`, `Hall_Name`, `Address`, `Description`, `Cos
 (2, 'fdsfds', 'fsdfsd', 'fdsfdsfs', '12.22', 21, '12.22', 'outside', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', 1, '2019-08-30 07:40:01', '2019-08-30 07:40:01'),
 (4, 'xfgghc', 'hvj,bjk', 'ncghg12', '12.00', 21, '12.00', 'Indoor', '1568823421.jpg', '1568823423.jpg', '1568823424.jpg', '1568823425.jpg', '1568823427.jpg', 4, '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
 (10, 'kjacsjdnsad', 'sdcsdnmc,s', 'dcdscsdcsd', '123121.00', 213213, '1231231.00', 'Outdoor', '1569439887.jpg', '1569439888.jpg', '1569439890.jpg', '1569439890.jpg', '1569439891.jpg', 6, '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
-(11, 'adwdqw', 'wdqdq', 'dwqdqdwqd', '12421312.00', 2133, '123.00', 'Outdoor', '1569942736.jpg', '1569942351.jpeg', '1569942441.jpg', '1569942479.jpg', '1569942614.jpg', 5, '2019-10-01 15:12:17', '2019-10-01 09:42:17');
+(11, 'adwdqw', 'wdqdq', 'dwqdqdwqd', '12421312.00', 2133, '123.00', 'Outdoor', '1569942736.jpg', '1569942351.jpeg', '1569942441.jpg', '1569942479.jpg', '1569942614.jpg', 5, '2019-10-01 15:12:17', '2019-10-01 09:42:17'),
+(12, 'efewfwe', 'wefwf', 'ewfwfe', '2121.00', 1223, '1231.00', 'Outdoor', '1570385440.jpg', '1570385442.jpg', '1570385443.jpg', '1570385445.jpg', '1570385446.jpg', 7, '2019-10-06 12:40:47', '2019-10-06 12:40:47');
 
 -- --------------------------------------------------------
 
@@ -1533,6 +1574,12 @@ ALTER TABLE `hall_features`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `hall_packages`
+--
+ALTER TABLE `hall_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hall_table_arrangements`
 --
 ALTER TABLE `hall_table_arrangements`
@@ -1691,7 +1738,7 @@ ALTER TABLE `actor_events`
 -- AUTO_INCREMENT for table `actor_packages`
 --
 ALTER TABLE `actor_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
@@ -1703,7 +1750,7 @@ ALTER TABLE `cake_designers`
 -- AUTO_INCREMENT for table `cake_packages`
 --
 ALTER TABLE `cake_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `caterings`
@@ -1721,7 +1768,7 @@ ALTER TABLE `catering_events`
 -- AUTO_INCREMENT for table `catering_packages`
 --
 ALTER TABLE `catering_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `costume_designers`
@@ -1739,7 +1786,7 @@ ALTER TABLE `costume_designer_events`
 -- AUTO_INCREMENT for table `costume_packages`
 --
 ALTER TABLE `costume_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `dancers`
@@ -1769,7 +1816,7 @@ ALTER TABLE `dance_videos`
 -- AUTO_INCREMENT for table `decoration_packages`
 --
 ALTER TABLE `decoration_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `decorators`
@@ -1799,19 +1846,25 @@ ALTER TABLE `event_planners_events`
 -- AUTO_INCREMENT for table `hall_events`
 --
 ALTER TABLE `hall_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `hall_features`
 --
 ALTER TABLE `hall_features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `hall_packages`
+--
+ALTER TABLE `hall_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `hall_table_arrangements`
 --
 ALTER TABLE `hall_table_arrangements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `hotels`
@@ -1877,7 +1930,7 @@ ALTER TABLE `photography_videos`
 -- AUTO_INCREMENT for table `planner_packages`
 --
 ALTER TABLE `planner_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `poruwa_ceramonies`
@@ -1889,13 +1942,13 @@ ALTER TABLE `poruwa_ceramonies`
 -- AUTO_INCREMENT for table `poruwa_packages`
 --
 ALTER TABLE `poruwa_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `reception_halls`
 --
 ALTER TABLE `reception_halls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `salons`
@@ -1913,7 +1966,7 @@ ALTER TABLE `salon_events`
 -- AUTO_INCREMENT for table `salon_packages`
 --
 ALTER TABLE `salon_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transporters`
