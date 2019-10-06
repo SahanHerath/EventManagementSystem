@@ -754,6 +754,7 @@ class HallController extends Controller
                 $feature = Hall_feature::where('hall_id',$id)->delete();
                 $arrange = Hall_table_arrangement::where('hall_id',$id)->delete();
                 $event = Hall_event::where('hall_id',$id)->delete();
+                $package = Hall_package::where('hall_id',$id)->delete();
                 
                 return redirect('/Profile');
             }
@@ -810,6 +811,7 @@ class HallController extends Controller
                     $hall4= Hall_event::where('hall_id',$hotel1->id)->delete();
                     $hall5= Hall_feature::where('hall_id',$hotel1->id)->delete();
                     $hall6= Hall_table_arrangement::where('hall_id',$hotel1->id)->delete();
+                    $hall6= Hall_package::where('hall_id',$hotel1->id)->delete();
     
                   }
                 
@@ -1273,6 +1275,21 @@ class HallController extends Controller
         
 
             return redirect()->back()->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+
+        
+                $deco1 = Hall_package::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect()->back()->with('warning_message','Package Removed Successfully');
+            
+            
+        
+
     }
    
 }

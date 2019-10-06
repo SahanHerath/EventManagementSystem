@@ -1708,6 +1708,34 @@
 <!-- Modal -->
 
     <!--==============model for edit package=================-->
+     <!--==============model for delete package=================-->
+     
+     <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{URL('/DeleteHallPackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+          <p>Do you want to delete package.All the details related to this package will be removed?</p>
+                <input type="hidden" id="id" name="id" >
+	     </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Confirm Delete</button>
+	      </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!--==============model for delete package=================-->
 		@endforeach
 
 
@@ -1791,6 +1819,19 @@
       modal.find('.modal-body #Foods1').val(food);
       modal.find('.modal-body #Desserts1').val(dessert);
    
+})
+  
+</script>
+
+<script>
+  
+  $('#modalDeletePackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var pakid = button.data('pakid') 
+     
+      var modal = $(this)
+      
+      modal.find('.modal-body #id').val(pakid);
 })
   
 </script>

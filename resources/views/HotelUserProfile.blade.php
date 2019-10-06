@@ -132,7 +132,7 @@
                         <center><button type="submit"  class="btn btn-success">Add Reception Hall</button></center>
             </form>
             <div class="offset-10">
-            <button type="button" class="btn btn-danger"><a href="{{URL('/RemoveHotelAccount'.$data1->userid)}}" >Deactivate Account</a></button>
+            <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a></button>
             </div>
             @endforeach
 		</div><!-- container -->
@@ -453,6 +453,27 @@
     </div>
 
     <!--==============model for change cover pic=================-->
+    <!--==============model for deactivate account=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveHotelAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
    @endforeach
 	
 	<footer class="site-footer" style="background-color:black;">

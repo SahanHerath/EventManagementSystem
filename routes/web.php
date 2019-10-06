@@ -460,6 +460,7 @@ Route::post('/hallpic3{id}', 'HallController@changePic3')  ;
 Route::post('/hallpic4{id}', 'HallController@changePic4')  ;
 Route::post('/AddHallPackage{id}', 'HallController@AddNewPackage')  ;
 Route::post('/EditHallPackage', 'HallController@EditPackage')  ;
+Route::post('/DeleteHallPackage', 'HallController@deletePackage')  ;
 
 
 
