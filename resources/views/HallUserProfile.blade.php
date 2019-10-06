@@ -1856,5 +1856,36 @@
 })
   
 </script>
+
+@if ($errors->has('Hall_Name')||$errors->has('Address')||$errors->has('Description')||$errors->has('Cost')||$errors->has('Capacity')||$errors->has('Square_feet')||$errors->has('Overview'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalEditInfo").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Package_Name')||$errors->has('Appetizers')||$errors->has('Welcome_drinks')||$errors->has('Soups')||$errors->has('Foods')||$errors->has('Desserts')||$errors->has('Price')||$errors->has('Pdf'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalAddPackage").modal('show');
+            });
+        </script>
+        @endif
+        
+        
+        @if ($errors->has('Main_pic'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
+            });
+        </script>
+        @endif
 </body>
 </html>

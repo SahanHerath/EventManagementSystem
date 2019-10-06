@@ -308,6 +308,7 @@ class HallController extends Controller
         $hall=DB::table('reception_halls')
              ->join('hotels','reception_halls.hotel_id','=','hotels.id')
              ->where('hotels.id','=',$id)
+             ->select('reception_halls.id','reception_halls.Address','Hall_Name','Main_pic')
              ->get();
 
               return view('HotelView',compact('hotel','hall'));
@@ -323,9 +324,14 @@ class HallController extends Controller
               ->where('reception_halls.id','=',$id)
               ->get();
 
+        $deto=DB::table('reception_halls')
+              ->join('hall_packages','reception_halls.id','=','hall_packages.hall_id')
+              ->where('reception_halls.id','=',$id)
+              ->get();
+
         
 
-              return view('HallView',compact('hall'));
+              return view('HallView',compact('hall','deto'));
     }
 
     public function wedding()
