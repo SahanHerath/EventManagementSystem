@@ -248,6 +248,39 @@
 							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
+                            <h3 class="title_color">Available Packages</h3>
+                            <a class="offset-1 genric-btn info" href="" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                            
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Appetizers :- </b>{{$deto1->Appetizers}}</li>
+                                    <li><b>Welcome_drinks :- </b>{{$deto1->Welcome_drinks}}</li>
+                                    <li><b>Soups :- </b> Rs.{{$deto1->Soups}}</li>
+                                    <li><b>Foods :- </b>{{$deto1->Foods}}</li>
+                                    <li><b>Desserts :- </b>@foreach (explode(', ', $deto1->Desserts) as $desserts)
+                                                       {{ $desserts }}
+                                                        @endforeach</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-hours="{{$deto1->Hours}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}">Edit</a></center>
+                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
+                                    
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                             <a class="offset-10 genric-btn danger" href="{{URL('/RemoveCateringAccount'.$data1->userid)}}">Deactivate Account</a>
                             
                             
@@ -881,6 +914,160 @@
     </div>
 
     <!--==============model for change event pictures=================-->
+     <!--==============model for  add package=================-->
+  <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add New Package</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/AddCateringPackage'.$data1->userid)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name" class="col-md-4 col-form-label offset-1">Package Name :-</label>
+
+                        
+                            <input id="Package_Name" type="text" value="{{ old('Package_Name') }}" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
+
+                            @error('Package_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Appetizers') ? ' has-error' : '' }}">
+                    
+                    <label for="Appetizers" class="col-md-4 col-form-label offset-1">Appetizers :-</label>
+                    
+                    
+                        <textarea name='Appetizers' cols='50' rows='5' id='Appetizers' class="form-control @error('Appetizers') is-invalid @enderror col-md-10 offset-1" title="Fill this field with Appetizers separated by commas of the package">{{ old('Appetizers') }}</textarea>
+                        @error('Appetizers')
+                            <span class="invalid-feedback offset-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                   
+                
+                </div>
+                   
+                   
+
+                   
+
+              
+
+                    <div class="form-group row{{ $errors->has('Welcome_drinks') ? ' has-error' : '' }}">
+                    
+                        <label for="Welcome_drinks" class="col-md-4 col-form-label offset-1">Welcome Drinks :-</label>
+                        
+                        
+                            <textarea name='Welcome_drinks' cols='50' rows='5' id='Welcome_drinks' class="form-control @error('Welcome_drinks') is-invalid @enderror col-md-10 offset-1" title="Fill this field with Welcome_drinks of the package separated with commas">{{ old('Welcome_drinks') }}</textarea>
+                            @error('Welcome_drinks')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Soups') ? ' has-error' : '' }}">
+                    
+                    <label for="Soups" class="col-md-4 col-form-label offset-1">Soups :-</label>
+                    
+                    
+                        <textarea name='Soups' cols='50' rows='5' id='Soups' class="form-control @error('Soups') is-invalid @enderror col-md-10 offset-1" title="Fill this field with Soups of the package separated by commas">{{ old('Soups') }}</textarea>
+                        @error('Soups')
+                            <span class="invalid-feedback offset-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                   
+                
+                </div>
+
+                <div class="form-group row{{ $errors->has('Foods') ? ' has-error' : '' }}">
+                    
+                    <label for="Foods" class="col-md-4 col-form-label offset-1">Foods :-</label>
+                    
+                    
+                        <textarea name='Foods' cols='50' rows='5' id='Foods' class="form-control @error('Foods') is-invalid @enderror col-md-10 offset-1" title="Fill this field with foods of the package separated by commas">{{ old('Foods') }}</textarea>
+                        @error('Foods')
+                            <span class="invalid-feedback offset-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                   
+                
+                </div>
+
+                <div class="form-group row{{ $errors->has('Desserts') ? ' has-error' : '' }}">
+                    
+                    <label for="Desserts" class="col-md-4 col-form-label offset-1">Desserts :-</label>
+                    
+                    
+                        <textarea name='Desserts' cols='50' rows='5' id='Desserts' class="form-control @error('Desserts') is-invalid @enderror col-md-10 offset-1" title="Fill this field with Desserts of the package separated by commas">{{ old('Desserts') }}</textarea>
+                        @error('Desserts')
+                            <span class="invalid-feedback offset-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                   
+                
+                </div>
+
+                    <div class="form-group row{{ $errors->has('Price') ? ' has-error' : '' }}">
+                        <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
+
+                        
+                            <input id="Price" type="decimal" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+
+                            @error('Price')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Pdf') ? ' has-error' : '' }}">
+                            <label for="Pdf" class="col-md-4 col-form-label text-md-right">Pdf:-</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="Pdf" id="Pdf"  class="form-control @error('Pdf') is-invalid @enderror" >
+
+                                @error('Pdf')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                        </div>
+
+                   
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Add Package
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for add Package=================-->
    
        @endforeach
         <footer class="footer_area p_120">

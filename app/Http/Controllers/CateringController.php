@@ -319,7 +319,13 @@ return view('catering', compact('level'));
             ->select('users.id as userid','email','name', 'caterings.id as cateringid','Service_Name', 'Address', 'Contact_No','Link','Description','Welcome_drink','Special_Food','Catering_set','Catering_tent','Cake','Garden_umbrella','Coffee_Machine','Table_chair','sink','dessert','Main_pic','pic1','pic2','pic3','pic4','catering_events.id as eventid','Wedding', 'Birthday', 'Party','Corporate_event','Funeral')
             ->get();
 
-        return view('CateringUserProfile',compact('data'));
+        $deto=DB::table('users')
+            ->join('catering_packages','users.id','=','catering_packages.user_id')
+            ->where('users.id','=',$id1)
+            ->select('catering_packages.id','Package_Name', 'Appetizers', 'Welcome_drinks','Soups','Foods','Desserts','Price','Pdf')
+            ->get();
+
+        return view('CateringUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $cateringid)
