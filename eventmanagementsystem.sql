@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2019 at 10:15 PM
+-- Generation Time: Oct 06, 2019 at 10:53 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -236,6 +236,34 @@ INSERT INTO `catering_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Party`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `catering_packages`
+--
+
+CREATE TABLE `catering_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Appetizers` text NOT NULL,
+  `Welcome_drinks` text NOT NULL,
+  `Soups` text NOT NULL,
+  `Foods` text NOT NULL,
+  `Desserts` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `Created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `catering_packages`
+--
+
+INSERT INTO `catering_packages` (`id`, `user_id`, `Package_Name`, `Appetizers`, `Welcome_drinks`, `Soups`, `Foods`, `Desserts`, `Price`, `Pdf`, `Created_at`, `updated_at`) VALUES
+(1, 56, 'Gold Package', 'best appetizers', 'cocacola, fruit juice, sprite', 'vegetable soup, chicken soup, pumpkin soup', 'rice and curry, string hoppers, hoppers, rotti', 'ice cream, fruit salad, vatalappan, jelly, salad', '4000.00', '1570333626.pdf', '2019-10-06 07:47:02', '2019-10-06 02:17:02');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `costume_designers`
 --
 
@@ -265,7 +293,18 @@ CREATE TABLE `costume_designers` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.costume_designers: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`costume_designers`' at line 1
+
+--
+-- Dumping data for table `costume_designers`
+--
+
+INSERT INTO `costume_designers` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `wedding_dress_designs`, `clothing_orders`, `sport_kit_designs`, `saree_work`, `traditional_dress`, `gents_wear`, `ladies_wear`, `gents_foot_wear`, `ladies_foot_wear`, `sports_shoes`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'efdfs', 'sdfsd', '324234235423', 'dgdfgdfg', 'dfgdfgfdgdf', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568838960.jpg', '1568838962.jpg', '1568838964.jpg', '1568838965.jpg', '1568838967.jpg', 40, '2019-09-18 15:06:08', '2019-09-18 15:06:08'),
+(2, 'vdvdfvd', 'vdfdfvdf', '1232547568', 'refergerher', 'ergergreg', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568839357.jpg', '1568839359.jpg', '1568839360.jpg', '1568839362.jpg', '1568839363.jpg', 41, '2019-09-18 15:12:45', '2019-09-18 15:12:45'),
+(3, 'fwefwe', 'fwefwe', '5342748724872', 'fwefewf', 'efwef', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568839849.jpg', '1568839851.jpg', '1568839852.jpg', '1568839854.jpg', '1568839855.jpg', 42, '2019-09-18 15:20:57', '2019-09-18 15:20:57'),
+(4, 'fewef', 'wefwef', '45435346346', 'vdfvdfbdfb', 'fgegerger', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1570298917.jpg', '1570298935.jpg', '1570298953.jpg', '1570298973.jpg', '1570298990.jpg', 43, '2019-10-05 18:10:50', '2019-10-05 12:40:50'),
+(5, 'dfsd', 'dsfsd', '23423785324823', 'sdf', 'fwefwefwe', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569902131.jpg', '1569911301.png', '1569911329.jpg', '1569911349.jpg', '1569911369.jpg', 44, '2019-10-01 06:29:30', '2019-10-01 00:59:30'),
+(6, 'sahan', 'sahan', '07776530129', 'me mai', 'they are', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569320078.jpg', '1569320080.jpg', '1569320081.jpg', '1569320083.jpg', '1569320083.jpg', 60, '2019-09-24 12:47:48', '2019-09-24 07:17:48');
 
 -- --------------------------------------------------------
 
@@ -1031,16 +1070,7 @@ CREATE TABLE `poruwa_ceramonies` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `poruwa_ceramonies`
---
-
-INSERT INTO `poruwa_ceramonies` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `Poruwa_rituals`, `Poruwa_items`, `match_making`, `Astrological_support`, `jayamangala_gatha`, `Wedding_dancers`, `Cost`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'ggerge', 'erger', '984893249832', 'erferf', 'fdsdfsdf', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 32423, '1568824037.jpg', '1568824038.jpg', '1568824040.jpg', '1568824041.jpg', '1568824042.jpg', 36, '2019-09-18 10:57:24', '2019-09-18 10:57:24'),
-(2, 'rgreger', 'gergerg', '2412342342423', 'fdfgdfgsgad', 'gsdgsdgsdg', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 22342, '1569086997.jpg', '1569086998.jpg', '1569086999.jpg', '1569087000.jpg', '1569087002.jpg', 49, '2019-09-21 17:45:32', '2019-09-21 12:15:32'),
-(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-10-03 12:07:47', '2019-10-03 06:37:47'),
-(4, 'sdfsfsdfsd', 'sdfsdfsdf', '861324613423', 'asdfsdfasdfasd', 'sdfdsffs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 542367, '1569837898.jpg', '1569839139.jpg', '1569839417.jpg', '1569839442.jpg', '1569839466.jpeg', 62, '2019-09-30 10:31:08', '2019-09-30 05:01:08');
+-- Error reading data for table eventmanagementsystem.poruwa_ceramonies: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`poruwa_ceramonies`' at line 1
 
 -- --------------------------------------------------------
 
@@ -1413,6 +1443,12 @@ ALTER TABLE `catering_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `catering_packages`
+--
+ALTER TABLE `catering_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `costume_designers`
 --
 ALTER TABLE `costume_designers`
@@ -1679,6 +1715,12 @@ ALTER TABLE `caterings`
 -- AUTO_INCREMENT for table `catering_events`
 --
 ALTER TABLE `catering_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `catering_packages`
+--
+ALTER TABLE `catering_packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
