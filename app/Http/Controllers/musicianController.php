@@ -239,6 +239,7 @@ class musicianController extends Controller
                 ->join('musicians','users.id','=','musicians.user_id')
                 ->join('musician_events','users.id','=','musician_events.user_id')
                 ->where('category','=','Music')
+                ->select('name', 'email','users.id as userid','musicians.id as musicid','Dj_Name', 'Address', 'ContactNo','Link','Description','Playing_Hrs','Payment','Extra_Cost','Fire','Smoke','Lights','Main_Logo','pic1','pic2','pic3','pic4','musician_events.id as eventid','Wedding', 'Birthday', 'Beach_Party','Get_Together','Parties')
                 ->get();
 
         $deto=DB::table('users')

@@ -462,6 +462,8 @@ Route::post('/AddHallPackage{id}', 'HallController@AddNewPackage')  ;
 Route::post('/EditHallPackage', 'HallController@EditPackage')  ;
 Route::post('/DeleteHallPackage', 'HallController@deletePackage')  ;
 
+Route::post('/AddRating{id}', 'RatingController@addrating')  ;
+
 
 
 

@@ -347,32 +347,58 @@
         			<h2>Rating</h2>
         		</div>
 
-				
-				<div class="form-group" id="rating-ability-wrapper">
-					<label class="control-label" for="rating">
-					<span class="field-label-header">How would you rate your ability to use the computer and access internet?*</span><br>
-					<span class="field-label-info"></span>
-					<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
-					</label>
-					<h2 class="bold rating-header" style="">
-					<span class="selected-rating">0</span><small> / 5</small>
-					</h2>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-				</div>
+				<form class="form-horizontal" method="POST" action="{{URL('/AddRating'.$data1->userid)}}" enctype="multipart/form-data">
+                	{{ csrf_field() }}
+
+					<div class="form-group">
+						<label for="Email">Email</label>
+						<input type="email" class="form-control" name="Email" id="Email">
+					</div>
+
+					<div class="form-group">
+						<label for="Comment">Comment</label>
+						<textarea name="Comment" id="Comment" cols="20" rows="5" id='Comment' class="form-control"></textarea>
+					</div>
+
+					<div class="form-group">
+					<label>Add User Image(Optional)</label>
+						<input type="file" name="image" class="form-control @error('image') is-invalid @enderror col-md-12">
+					</div>
+
+					<div class="form-group" id="rating-ability-wrapper">
+						<label class="control-label" for="rating">
+						<span class="field-label-header">What is the rating you are wish to give to this DJ/Band?</span><br>
+						<span class="field-label-info"></span>
+						<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+						</label>
+						<h2 class="bold rating-header" style="">
+						<span class="selected-rating">0</span><small> / 5</small>
+						</h2>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+					</div>
+
+					<div class="form-group row mb-0">
+                            <div class="col-md-6 offset-5">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit User Review
+                                </button>
+                            </div>
+                    </div>
+				</form>
         	</div>
 			<br>
 			<br>
