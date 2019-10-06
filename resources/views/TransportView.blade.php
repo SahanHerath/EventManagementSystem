@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
+@foreach($data as $data1)
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Evora-transport</title>
+        <title>Transport({{$data1->Transport_Service}})-Evora</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -21,8 +22,6 @@
         <link rel="stylesheet" href="css/css/responsive.css">
 
 
-         <!-- Bootstrap core CSS -->
-		<link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -42,7 +41,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -51,9 +50,37 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+								<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+								<!-- Authentication Links -->
+								@guest
+								<li class="nav-item">
+									<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+								</li>
+								
+								@if (Route::has('register'))
+									<li class="nav-item">
+										<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+									</li>
+								@endif
+								@else
+								<li class="nav-item">
+									<a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+									<img src="/uploads/transport/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+									{{ Auth::user()->name }} 
+									</a>
+
+								</li>
+								<li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+										<p class="text-white" onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+											Logout
+										</p>
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+											@csrf
+										</form>
+										</a>
+								</li>
+								@endguest
 							</ul>
 						</div> 
 					</div>
@@ -63,7 +90,7 @@
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
-        @foreach($data as $data1)
+        
         <section class="home_banner_area">
            	<div class="container box_1620">
            		<div class="banner_inner d-flex align-items-center">
@@ -235,34 +262,40 @@
 			
         </section>
         @endforeach
-		<div class="section-top-border">
-						<h3 class="title_color">Available Packages</h3>
-                           
-                        </div>
-		@foreach($dec as $dec1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                    <li><img src="uploads/transport/{{$dec1->picture}}" width="200" hight="200" alt="" ></li>
-                                    <li><b>Transport type :- </b>{{$dec1->Transport_type}}</li>
-                                    <li><b>vehicle :- </b> {{$dec1->vehicle}}</li>
-									<li><b>Decoration :- </b>{{$dec1->decoration}}</li>
-                                    <li><b>Driver :- </b> {{$dec1->driver}}</li>
-									<li><b>Price :- </b>{{$dec1->Price}}</li>
-                                   
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                            
-        @endforeach
+		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+			<div class="main_title">
+				<h2><a class="text-white">Available Packages</a></h2>
+			</div>
+		
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($dec as $dec1)
+					
+					<div class="col-lg-6 col-md-8">
+						<div class="feature_item" >
+							<h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column offset-1">
+										<ul class="list basic_info">
+										<li><img src="uploads/transport/{{$dec1->picture}}" width="200" hight="200" alt="" ></li>
+										<li><b>Transport type :- </b>{{$dec1->Transport_type}}</li>
+										<li><b>vehicle :- </b> {{$dec1->vehicle}}</li>
+										<li><b>Decoration :- </b>{{$dec1->decoration}}</li>
+										<li><b>Driver :- </b> {{$dec1->driver}}</li>
+										<li><b>Price :- </b>{{$dec1->Price}}</li>
+										<ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				
+				@endforeach
+				</div>
+			</div>
+		</section>
         <!--================End Home Gallery Area =================-->
         
 
@@ -434,23 +467,32 @@
 				
 			</div> <!-- /container -->
         </section>
-        <footer class="site-footer" style="background-color:black;">
-			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-				
-				</div>
-			</div>
-    	</footer>
+		<footer class="footer_area p_30">
+        <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </footer>
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
