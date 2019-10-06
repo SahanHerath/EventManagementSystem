@@ -99,6 +99,9 @@
 		<section class="home_banner_area">
 		
            	<div class="container box_1620">
+			   <center><div>
+               <h1>Bridal And Groom Designers<h1>
+               </div></center>
 				<div class="banner_inner d-flex align-items-center">
 				   
 				   <div class="banner_content">
