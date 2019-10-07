@@ -631,8 +631,8 @@
 							<div class="row">
 								<div class="col-sm-3">
 									<img src="/uploads/avatar/{{$rate1->image}}" class="img-rounded" height="50" width="50">
-									<div class="review-block-name"><a href="#">{{$rate1->user_name}}</a></div>
-									<div class="review-block-date">{{$rate1->created_at}}<br/>1 day ago</div>
+									<div class="review-block-name"><font color="red"><a href="#">{{$rate1->user_name}}</a></font></div>
+									<div class="review-block-date">{{$rate1->created_at}}<br/></div>
 								</div>
 								<div class="col-sm-9">
 									@if($rate1->rating==0)
@@ -749,7 +749,7 @@
 										</button>
 									</div>
 									@endif
-									<div class="review-block-title">{{$rate1->Email}}</div>
+									<div class="review-block-title"><b>{{$rate1->Email}}</b></div>
 									<div class="review-block-description">{{$rate1->Comment}}</div>
 								</div>
 							</div>
