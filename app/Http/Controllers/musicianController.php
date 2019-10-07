@@ -267,7 +267,48 @@ class musicianController extends Controller
                 ->where('blocked','=',"0")
                 ->avg('rating');
 
-                return view('MusicView',compact('data','deto','saha','rate','average'));
+        $one=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','1')
+                ->count();
+
+        $two=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','2')
+                ->count();
+
+        $three=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','3')
+                ->count();
+
+        $four=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','4')
+                ->count();
+
+        $five=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','5')
+                ->count();
+
+        $all=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->count();
+
+        $precentage1=$one/$all*100;
+        $precentage2=$two/$all*100;
+        $precentage3=$three/$all*100;
+        $precentage4=$four/$all*100;
+        $precentage5=$five/$all*100;
+
+                return view('MusicView',compact('data','deto','saha','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()

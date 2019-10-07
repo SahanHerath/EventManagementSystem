@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -415,6 +416,7 @@
 						<div class="rating-block">
 							<h4>Average user rating</h4>
 							<h2 class="bold padding-bottom-7">{{$average}} <small>/ 5</small></h2>
+							<h4><small>from {{$all}} votes</small></h4>
 							@if(($average>0) && ($average<1) && ($average==0))
 							<button type="#" class="btnrating btn btn-default btn-lg"  aria-label="Left Align">
 								<i class="fa fa-star" ></i>
@@ -528,12 +530,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+								<div class="w3-container w3-green w3-center" role="progressbar" aria-valuenow="{{$five}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage5}}%">
 									<span class="sr-only">80% Complete (danger)</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">1</div>
+							<div class="pull-right" style="margin-left:10px;">{{$five}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -541,12 +543,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+								<div class="w3-container w3-blue" role="progressbar" aria-valuenow="{{$four}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage4}}%">
 									<span class="sr-only">80% Complete (danger)</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">1</div>
+							<div class="pull-right" style="margin-left:10px;">{{$four}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -554,12 +556,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+								<div class="w3-container w3-yellow" role="progressbar" aria-valuenow="{{$three}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage3}}%">
 									<span class="sr-only">80% Complete (danger)</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
+							<div class="pull-right" style="margin-left:10px;">{{$three}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -567,12 +569,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+								<div class="w3-container w3-orange" role="progressbar" aria-valuenow="{{$two}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage2}}%">
 									<span class="sr-only">80% Complete (danger)</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
+							<div class="pull-right" style="margin-left:10px;">{{$two}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -580,12 +582,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+								<div class="w3-container w3-red" role="progressbar" aria-valuenow="{{$one}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width:{{$precentage1}}%">
 									<span class="sr-only">80% Complete (danger)</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
+							<div class="pull-right" style="margin-left:10px;">{{$one}}</div>
 						</div>
 					</div>			
 				</div>			
