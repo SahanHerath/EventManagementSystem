@@ -494,45 +494,60 @@
 				<h2><a class="text-white">Available Packages</a></h2>
 			</div>
 		
-			<div class="container">
-				<div class="feature_inner row">
+			<!-- bordered table -->
+			<!-- ============================================================== -->
+			<div class="feature_inner row offset-3">
+			<div class="col-xl-8 col-lg-8 col-md-10 col-sm-10 col-10">
+				<div class="card">
 				@foreach($deto as $deto1)
-					
-					<div class="col-lg-6 col-md-8">
-						<div class="feature_item" >
-							<h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-							<div class="media-body">
-								<div class="row">
-									<div class="column offset-1">
-										<ul class="list basic_info">
-										<li><b>Appetizers :- </b>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
+					<center><h4 class="card-header">{{$deto1->Package_Name}}</h4></center>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th scope="col"><center>Appetizers</center></th>
+									
+									<th scope="col"><center>Welcome_drinks</center></th>
+									<th scope="col"><center>Soups</center></th>
+									<th scope="col"><center>Meals</center></th>
+									<th scope="col"><center>Desserts</center></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row"><center>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
 														{{ $appetizers }}<br>
-															@endforeach</li>
-										<li><b>Welcome_drinks :- </b>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
 														{{ $welcomedrinks }}<br>
-															@endforeach</li>
-										<li><b>Soups :- </b> @foreach (explode(',', $deto1->Soups) as $soups)
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Soups) as $soups)
 														{{ $soups }}<br>
-															@endforeach</li>
-										<li><b>Meals :- </b>@foreach (explode(',', $deto1->Foods) as $foods)
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Foods) as $foods)
 														{{ $foods }}<br>
-															@endforeach</li>
-										<li><b>Desserts :- </b>@foreach (explode(',', $deto1->Desserts) as $desserts)
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Desserts) as $desserts)
 														{{ $desserts }}<br>
-															@endforeach</li>
-										<li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-										<li><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-										<ul>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				
-				@endforeach
+															@endforeach</center></td>
+								</tr>
+								<tr>
+									<th scope="row" colspan="2"><center><h4>Price</h4></center></th>
+									<th scope="row" colspan="3"><center>Download PDF here</center></th>
+									
+								</tr>
+								<tr>
+									
+									<td colspan="2"><center>Rs.{{$deto1->Price}}</center></td>
+									<td colspan="3"><center><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></center></td>
+								</tr>
+							</tbody>
+						</table><br>
+					</div>@endforeach
 				</div>
-			</div>
+			</div></div>
+			<!-- ============================================================== -->
+			<!-- end bordered table -->
 		</section>
         <!--================End Home Gallery Area =================-->
         
