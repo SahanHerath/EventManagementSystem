@@ -255,7 +255,14 @@ class musicianController extends Controller
             ->select('music_videos.id','Video_Name', 'Video')
             ->get();
 
-                return view('MusicView',compact('data','deto','saha'));
+        $rate=DB::table('users')
+             ->join('ratings','ratings.user_id','=','users.id')
+             ->where('users.id','=',$id)
+             ->where('blocked','=',"0")
+             ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+             ->get();
+
+                return view('MusicView',compact('data','deto','saha','rate'));
     }
 
     public function wedding()

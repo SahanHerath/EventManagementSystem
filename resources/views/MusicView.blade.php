@@ -351,6 +351,11 @@
                 	{{ csrf_field() }}
 
 					<div class="form-group">
+						<label for="user_name">Username</label>
+						<input type="text" class="form-control" name="user_name" id="user_name">
+					</div>
+
+					<div class="form-group">
 						<label for="Email">Email</label>
 						<input type="email" class="form-control" name="Email" id="Email">
 					</div>
@@ -496,43 +501,140 @@
 						</div>
 					</div>			
 				</div>			
-				
+				@foreach($rate as $rate1)
 				<div class="row">
 					<div class="col-sm-7">
 						<hr/>
 						<div class="review-block">
 							<div class="row">
 								<div class="col-sm-3">
-									<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-									<div class="review-block-name"><a href="#">nktailor</a></div>
-									<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+									<img src="/uploads/avatar/{{$rate1->image}}" class="img-rounded" height="50" width="50">
+									<div class="review-block-name"><a href="#">{{$rate1->user_name}}</a></div>
+									<div class="review-block-date">{{$rate1->created_at}}<br/>1 day ago</div>
 								</div>
 								<div class="col-sm-9">
+									@if($rate1->rating==0)
 									<div class="review-block-rate">
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
 										</button>
 										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="fa fa-star" aria-hidden="true"></span>
 										</button>
 										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
 										</button>
 									</div>
-									<div class="review-block-title">this was nice in buy</div>
-									<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+									@endif
+									@if($rate1->rating==1)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==2)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==3)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==4)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==5)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									<div class="review-block-title">{{$rate1->Email}}</div>
+									<div class="review-block-description">{{$rate1->Comment}}</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+				@endforeach
 			</div> <!-- /container -->
         </section>
         <!--================End Testimonials Area =================-->

@@ -91,6 +91,7 @@ class RatingController extends Controller
             'selected_rating' => 'required|numeric|max:255|min:0|max:5',
             'image' => 'required|image',
             'Comment' => 'required|string|max:500',
+            'user_name' => 'required|string|max:255',
             
             
             
@@ -100,6 +101,7 @@ class RatingController extends Controller
         'selected_rating.required'=> "Fill out this field",
         'image.required'=> "Add a image here",
         'Comment.required'=> "Fill out this field",
+        'user_name.required'=> "Fill out this field",
         
         ]
         );
@@ -109,6 +111,7 @@ class RatingController extends Controller
         $rating->Email = $request->Email;
         $rating->rating=$request->selected_rating;
         $rating->Comment=$request->Comment;
+        $rating->user_name=$request->user_name;
         
         
 
