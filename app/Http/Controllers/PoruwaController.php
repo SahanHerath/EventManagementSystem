@@ -226,6 +226,7 @@ class PoruwaController extends Controller
                 ->where('users.id','=',$id)
                 ->join('poruwa_ceramonies','users.id','=','poruwa_ceramonies.user_id')
                 ->where('category','=','Poruwa_Ceramony')
+                ->select('users.id as userid','users.name','email','poruwa_ceramonies.id as poruwaid','poruwa_ceramonies.Name', 'Address', 'Contact_No','Link','Description','Poruwa_rituals','Poruwa_items','match_making','Astrological_support','jayamangala_gatha','Wedding_dancers','Cost','Main_pic','pic1','pic2','pic3','pic4')
                 ->get();
 
         $deto=DB::table('users')
@@ -234,7 +235,71 @@ class PoruwaController extends Controller
                 ->select('poruwa_packages.id','Package_Name', 'Services','Price','Pdf')
                 ->get();
 
-                return view('PoruwaCeramonyView',compact('data','deto'));
+        $rate=DB::table('users')
+                ->join('ratings','ratings.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->where('blocked','=',"0")
+                ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+                ->get();
+    
+        $average=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->avg('rating');
+    
+        $one=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','1')
+                   ->count();
+    
+        $two=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','2')
+                   ->count();
+    
+        $three=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','3')
+                   ->count();
+    
+        $four=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','4')
+                   ->count();
+    
+        $five=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','5')
+                   ->count();
+    
+        $all=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->count();
+    
+            if($all!=0)
+            {
+                $precentage1=$one/$all*100;
+                $precentage2=$two/$all*100;
+                $precentage3=$three/$all*100;
+                $precentage4=$four/$all*100;
+                $precentage5=$five/$all*100;
+            }
+            else 
+            {
+                $precentage1=0;
+                $precentage2=0;
+                $precentage3=0;
+                $precentage4=0;
+                $precentage5=0;
+            }
+
+                return view('PoruwaCeramonyView',compact('data','deto','rate','all','one','two','three','four','five','average','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function profile()
