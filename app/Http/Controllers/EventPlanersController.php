@@ -229,6 +229,7 @@ class EventPlanersController extends Controller
                 ->join('event_planners','users.id','=','event_planners.user_id')
                 ->join('event_planners_events','users.id','=','event_planners_events.user_id')
                 ->where('category','=','Event_Planners')
+                ->select('users.id as userid','name','email','event_planners.id as plannerid','Organization_name', 'Address', 'Description','Contact_No','Link','Main_pic','pic1','pic2','pic3','pic4','event_planners_events.id as eventid','Wedding', 'Parties', 'Meetings','Corporate_event','Outside_event','Sport_event')
                 ->get();
 
         $deto=DB::table('users')
@@ -237,7 +238,72 @@ class EventPlanersController extends Controller
                 ->select('planner_packages.id','Package_Name', 'Services','Price','Pdf')
                 ->get();
 
-                return view('EventPlannerView',compact('data','deto'));
+        $rate=DB::table('users')
+                ->join('ratings','ratings.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->where('blocked','=',"0")
+                ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+                ->get();
+    
+        $average=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->avg('rating');
+    
+        $one=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','1')
+                   ->count();
+    
+        $two=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','2')
+                   ->count();
+    
+        $three=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','3')
+                   ->count();
+    
+        $four=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','4')
+                   ->count();
+    
+        $five=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','5')
+                   ->count();
+    
+        $all=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->count();
+    
+            if($all!=0)
+            {
+                $precentage1=$one/$all*100;
+                $precentage2=$two/$all*100;
+                $precentage3=$three/$all*100;
+                $precentage4=$four/$all*100;
+                $precentage5=$five/$all*100;
+            }
+            else 
+            {
+                $precentage1=0;
+                $precentage2=0;
+                $precentage3=0;
+                $precentage4=0;
+                $precentage5=0;
+            }
+    
+
+                return view('EventPlannerView',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
