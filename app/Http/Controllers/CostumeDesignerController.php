@@ -260,7 +260,7 @@ class CostumeDesignerController extends Controller
                 ->select('costume_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
                 ->get();
 
-                $rate=DB::table('users')
+        $rate=DB::table('users')
                 ->join('ratings','ratings.user_id','=','users.id')
                 ->where('users.id','=',$id)
                 ->where('blocked','=',"0")
