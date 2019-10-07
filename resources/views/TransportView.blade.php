@@ -276,12 +276,12 @@
 					
 					<div class="col-lg-6 col-md-8">
 						<div class="feature_item" >
-							<h4><b><font color="black">{{$dec1->Package_Name}}</font></b></h4>
+							<h4><b><center><font color="black">{{$dec1->Package_Name}}</font></center></b></h4>
 							<div class="media-body">
 								<div class="row">
-									<div class="column offset-1">
+									<div class="column">
 										<ul class="list basic_info">
-										<li><img src="uploads/transport/{{$dec1->picture}}" width="200" hight="200" alt="" ></li>
+										<li><img src="uploads/transport/{{$dec1->picture}}" width="500" hight="700" alt="" ></li>
 										<li><b>Transport type :- </b>{{$dec1->Transport_type}}</li>
 										<li><b>vehicle :- </b> {{$dec1->vehicle}}</li>
 										<li><b>Decoration :- </b>{{$dec1->decoration}}</li>
