@@ -50,12 +50,40 @@
 						</button>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+						<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+							 <!-- Authentication Links -->
+							 @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								<img src="/uploads/photography/{{$data1->main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }} 
+                                </a>
+
+                            </li>
+							<li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
 							</ul>
-						</div> 
+						</div>  
 					</div>
             	</nav>
             </div>
@@ -335,10 +363,10 @@
 		</section>
 		
 		
-		<section class="feature_area p_120">
-		<div class="main_title">
-                        <h2>Available Packages</h2>
-                    </div>
+		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+			<div class="main_title">
+				<h2><a class="text-white">Available Packages</a></h2>
+			</div>
 		
 			<div class="container">
 				<div class="feature_inner row">
