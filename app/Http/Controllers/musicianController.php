@@ -302,12 +302,23 @@ class musicianController extends Controller
                 ->where('blocked','=',"0")
                 ->count();
 
-        $precentage1=$one/$all*100;
-        $precentage2=$two/$all*100;
-        $precentage3=$three/$all*100;
-        $precentage4=$four/$all*100;
-        $precentage5=$five/$all*100;
-
+        
+                if($all!=0)
+                {
+                    $precentage1=$one/$all*100;
+                    $precentage2=$two/$all*100;
+                    $precentage3=$three/$all*100;
+                    $precentage4=$four/$all*100;
+                    $precentage5=$five/$all*100;
+                }
+                else 
+                {
+                    $precentage1=0;
+                    $precentage2=0;
+                    $precentage3=0;
+                    $precentage4=0;
+                    $precentage5=0;
+                }
                 return view('MusicView',compact('data','deto','saha','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 

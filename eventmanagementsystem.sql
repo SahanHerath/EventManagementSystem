@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2019 at 08:28 PM
+-- Generation Time: Oct 07, 2019 at 07:29 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -253,13 +253,7 @@ CREATE TABLE `catering_packages` (
   `Created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `catering_packages`
---
-
-INSERT INTO `catering_packages` (`id`, `user_id`, `Package_Name`, `Appetizers`, `Welcome_drinks`, `Soups`, `Foods`, `Desserts`, `Price`, `Pdf`, `Created_at`, `updated_at`) VALUES
-(1, 56, 'Gold Package', 'best appetizers', 'cocacola, fruit juice, sprite', 'vegetable soup, chicken soup, pumpkin soup', 'rice and curry, string hoppers, hoppers, rotti', 'ice cream, fruit salad, vatalappan, jelly, salad', '4000.00', '1570333626.pdf', '2019-10-06 07:47:02', '2019-10-06 02:17:02');
+-- Error reading data for table eventmanagementsystem.catering_packages: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`catering_packages`' at line 1
 
 -- --------------------------------------------------------
 
@@ -1139,6 +1133,48 @@ INSERT INTO `poruwa_packages` (`id`, `user_id`, `Package_Name`, `Services`, `Pri
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(191) NOT NULL,
+  `Email` varchar(191) NOT NULL,
+  `Comment` text NOT NULL,
+  `image` varchar(191) NOT NULL DEFAULT 'default.jpg',
+  `rating` int(11) NOT NULL,
+  `blocked` tinyint(4) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ratings`
+--
+
+INSERT INTO `ratings` (`id`, `user_id`, `user_name`, `Email`, `Comment`, `image`, `rating`, `blocked`, `created_at`, `updated_at`) VALUES
+(1, 53, '', 'sahand.herath@gmail.com', 'rggwggweg', '1570398412.jpg', 3, 0, '2019-10-06 16:16:54', '2019-10-06 16:16:54'),
+(2, 53, '', 'sahand.herath@gmail.com', 'bbrbreberb', '1570398643.jpg', 4, 0, '2019-10-06 16:20:44', '2019-10-06 16:20:44'),
+(3, 53, 'Sahan', 'sahand.herath@gmail.com', 'best service', '1570423422.jpg', 4, 0, '2019-10-06 23:13:44', '2019-10-06 23:13:44'),
+(4, 53, 'Sahan', 'sahand.herath@gmail.com', 'eewferfwfw', '1570434139.jpg', 1, 0, '2019-10-07 02:12:21', '2019-10-07 02:12:21'),
+(5, 17, 'Sahan', 'sahand.herath@gmail.com', 'awvravreav', '1570434244.jpg', 3, 0, '2019-10-07 02:14:05', '2019-10-07 02:14:05'),
+(6, 17, 'Sahan', 'sahand.herath@gmail.com', 'efregtwhhe', '1570434277.jpg', 4, 0, '2019-10-07 02:14:37', '2019-10-07 02:14:37'),
+(7, 17, 'Sahan', 'sahand.herath@gmail.com', 'jskdvjkwvwr', '1570439811.jpg', 1, 0, '2019-10-07 03:46:52', '2019-10-07 03:46:52'),
+(8, 53, 'Sahan', 'sahand.herath@gmail.com', 'vvjchjewcjh', '1570444106.jpg', 5, 0, '2019-10-07 04:58:27', '2019-10-07 04:58:27'),
+(9, 53, 'Nethmi', 'nethmi@gmail.com', 'jhjbvjbherbverhjvhbjervbkherv', 'default.jpg', 3, 0, '2019-10-07 05:13:33', '2019-10-07 05:13:33'),
+(10, 52, 'Sahan', 'sahand.herath@gmail.com', 'dnbnebreberbvre', 'default.jpg', 4, 0, '2019-10-07 06:24:27', '2019-10-07 06:24:27'),
+(11, 52, 'Sahan', 'sahand.herath@gmail.com', 'rvvrever', '1570449436.jpg', 5, 0, '2019-10-07 06:27:17', '2019-10-07 06:27:17'),
+(12, 47, 'Sahan', 'sahand.herath@gmail.com', 'rgerbrstbtrbrtbrtbrtbr', 'default.jpg', 4, 0, '2019-10-07 06:59:34', '2019-10-07 06:59:34'),
+(13, 58, 'Sahan', 'sahand.herath@gmail.com', 'srnsrnetbrebnetnbrbrwebrwbtrbwtbwbrt', '1570455737.jpg', 4, 0, '2019-10-07 08:12:17', '2019-10-07 08:12:17'),
+(14, 51, 'Sahan', 'sahand.herath@gmail.com', 'dsgjegkjwhjvhejrvioewv', 'default.jpg', 4, 0, '2019-10-07 09:11:20', '2019-10-07 09:11:20'),
+(15, 55, 'Sahan', 'sahand.herath@gmail.com', '5hhrwherntebebersvwaevawrv', 'default.jpg', 5, 0, '2019-10-07 10:20:33', '2019-10-07 10:20:33'),
+(16, 79, 'Nethmi', 'sahand.herath@gmail.com', 'a5geragrgwgewgwrgerqg', 'default.jpg', 5, 0, '2019-10-07 11:03:32', '2019-10-07 11:03:32'),
+(17, 48, 'Nethmi', 'nethmi@gmail.com', 'srwgbresgeragrevrwevervree', 'default.jpg', 4, 0, '2019-10-07 11:41:41', '2019-10-07 11:41:41');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reception_halls`
 --
 
@@ -1670,6 +1706,12 @@ ALTER TABLE `poruwa_packages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ratings`
+--
+ALTER TABLE `ratings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reception_halls`
 --
 ALTER TABLE `reception_halls`
@@ -1943,6 +1985,12 @@ ALTER TABLE `poruwa_ceramonies`
 --
 ALTER TABLE `poruwa_packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `reception_halls`

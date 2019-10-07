@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -301,38 +302,69 @@
         <!--================End Home Gallery Area =================-->
         
 
-        <section class="testimonials_area p_120">
+		<section class="testimonials_area p_120">
         	<div class="container">
         		<div class="main_title">
         			<h2>Rating</h2>
         		</div>
 
-				
-				<div class="form-group" id="rating-ability-wrapper">
-					<label class="control-label" for="rating">
-					<span class="field-label-header">How would you rate your ability to use the computer and access internet?*</span><br>
-					<span class="field-label-info"></span>
-					<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
-					</label>
-					<h2 class="bold rating-header" style="">
-					<span class="selected-rating">0</span><small> / 5</small>
-					</h2>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-				</div>
+				<form class="form-horizontal" method="POST" action="{{URL('/AddRating'.$data1->userid)}}" enctype="multipart/form-data">
+                	{{ csrf_field() }}
+
+					<div class="form-group">
+						<label for="user_name">Username</label>
+						<input type="text" class="form-control" name="user_name" id="user_name">
+					</div>
+
+					<div class="form-group">
+						<label for="Email">Email</label>
+						<input type="email" class="form-control" name="Email" id="Email">
+					</div>
+
+					<div class="form-group">
+						<label for="Comment">Comment</label>
+						<textarea name="Comment" id="Comment" cols="20" rows="5" id='Comment' class="form-control"></textarea>
+					</div>
+
+					<div class="form-group">
+					<label>Add User Image(Optional)</label>
+						<input type="file" name="image" class="form-control @error('image') is-invalid @enderror col-md-12">
+					</div>
+
+					<div class="form-group" id="rating-ability-wrapper">
+						<label class="control-label" for="rating">
+						<span class="field-label-header">What is the rating you are wish to give to this DJ/Band?</span><br>
+						<span class="field-label-info"></span>
+						<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
+						</label>
+						<h2 class="bold rating-header" style="">
+						<span class="selected-rating">0</span><small> / 5</small>
+						</h2>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+							<i class="fa fa-star" aria-hidden="true"></i>
+						</button>
+					</div>
+
+					<div class="form-group row mb-0">
+                            <div class="col-md-6 offset-5">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit User Review
+                                </button>
+                            </div>
+                    </div>
+				</form>
         	</div>
 			<br>
 			<br>
@@ -343,7 +375,26 @@
 					<div class="col-sm-5">
 						<div class="rating-block">
 							<h4>Average user rating</h4>
-							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+							<h2 class="bold padding-bottom-7">{{$average}} <small>/ 5</small></h2>
+							<h4><small>from {{$all}} votes</small></h4>
+							@if(($average>0) && ($average<1) && ($average==0))
+							<button type="#" class="btnrating btn btn-default btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>0.5) && ($average<1.5))||($average==1.5))
 							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
 								<i class="fa fa-star" ></i>
 							</button>
@@ -359,8 +410,78 @@
 							<button class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
+							@endif
+							@if((($average>1.5) && ($average<2.5))||($average==1.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>2.5) && ($average<3.5))||($average==2.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>3.5) && ($average<4.5))||($average==3.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>4.5) && ($average<5))||($average==4.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
 						</div>
 					</div>
+					
 					<div class="col-sm-3">
 						<h4>Rating breakdown</h4>
 						<div class="pull-left">
@@ -369,12 +490,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-									<span class="sr-only">80% Complete (danger)</span>
+								<div class="w3-container w3-green w3-center" role="progressbar" aria-valuenow="{{$five}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage5}}%">
+									<span class="sr-only">{{$precentage5}}</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">1</div>
+							<div class="pull-right" style="margin-left:10px;">{{$five}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -382,12 +503,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
-									<span class="sr-only">80% Complete (danger)</span>
+								<div class="w3-container w3-blue" role="progressbar" aria-valuenow="{{$four}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage4}}%">
+									<span class="sr-only">{{$precentage4}}</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">1</div>
+							<div class="pull-right" style="margin-left:10px;">{{$four}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -395,12 +516,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
-									<span class="sr-only">80% Complete (danger)</span>
+								<div class="w3-container w3-yellow" role="progressbar" aria-valuenow="{{$three}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage3}}%">
+									<span class="sr-only">{{$precentage3}}</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
+							<div class="pull-right" style="margin-left:10px;">{{$three}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -408,12 +529,12 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
-									<span class="sr-only">80% Complete (danger)</span>
+								<div class="w3-container w3-orange" role="progressbar" aria-valuenow="{{$two}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage2}}%">
+									<span class="sr-only">{{$precentage2}}</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
+							<div class="pull-right" style="margin-left:10px;">{{$two}}</div>
 						</div>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -421,54 +542,152 @@
 							</div>
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
-									<span class="sr-only">80% Complete (danger)</span>
+								<div class="w3-container w3-red" role="progressbar" aria-valuenow="{{$one}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width:{{$precentage1}}%">
+									<span class="sr-only">{{$precentage1}}</span>
 								</div>
 								</div>
 							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
+							<div class="pull-right" style="margin-left:10px;">{{$one}}</div>
 						</div>
 					</div>			
 				</div>			
-				
+				@foreach($rate as $rate1)
 				<div class="row">
 					<div class="col-sm-7">
 						<hr/>
 						<div class="review-block">
 							<div class="row">
 								<div class="col-sm-3">
-									<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-									<div class="review-block-name"><a href="#">nktailor</a></div>
-									<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+									<img src="/uploads/avatar/{{$rate1->image}}" class="img-rounded" height="50" width="50">
+									<div class="review-block-name"><font color="red"><a href="#">{{$rate1->user_name}}</a></font></div>
+									<div class="review-block-date">{{$rate1->created_at}}<br/></div>
 								</div>
 								<div class="col-sm-9">
+									@if($rate1->rating==0)
 									<div class="review-block-rate">
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
 										</button>
 										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="fa fa-star" aria-hidden="true"></span>
 										</button>
 										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
 										</button>
 									</div>
-									<div class="review-block-title">this was nice in buy</div>
-									<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+									@endif
+									@if($rate1->rating==1)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==2)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==3)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==4)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									@if($rate1->rating==5)
+									<div class="review-block-rate">
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+										<span class="fa fa-star" aria-hidden="true"></span>
+										</button>
+									</div>
+									@endif
+									<div class="review-block-title"><b>{{$rate1->Email}}</b></div>
+									<div class="review-block-description">{{$rate1->Comment}}</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+				@endforeach
 			</div> <!-- /container -->
         </section>
+        
 		<footer class="footer_area p_30">
         <div class="container">
             <div class="row footer_inner">
