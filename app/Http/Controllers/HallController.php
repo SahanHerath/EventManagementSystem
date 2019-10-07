@@ -26,7 +26,7 @@ class HallController extends Controller
         //
         $hall = DB::table('hotels')
                 ->join('users','users.id','=','hotels.user_id')
-                ->select('hotels.id','email','Hotel_Name','Address','Contact_No','Main_logo')
+                ->select('hotels.id','email','Hotel_Name','Address','Contact_No','Main_logo','users.id as userid')
                 ->get();
 
 
@@ -303,6 +303,7 @@ class HallController extends Controller
               ->join('users','users.id','=','hotels.user_id')
               //->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
               ->where('hotels.id','=',$id)
+              ->select('users.id as userid','name','email','hotels.id as hotelid','Hotel_Name', 'Address', 'Contact_No','Link','Description','Main_logo','facebook','instagram','Cover_photo')
               ->get();
 
         $hall=DB::table('reception_halls')
@@ -311,7 +312,76 @@ class HallController extends Controller
              ->select('reception_halls.id','reception_halls.Address','Hall_Name','Main_pic')
              ->get();
 
-              return view('HotelView',compact('hotel','hall'));
+    foreach($hotel as $hotel1)
+    {    
+        
+        $rate=DB::table('users')
+             ->join('ratings','ratings.user_id','=','users.id')
+             ->where('users.id','=',$hotel1->userid)
+             ->where('blocked','=',"0")
+             ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+             ->get();
+
+    
+ 
+        $average=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->avg('rating');
+    
+        $one=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->where('rating','=','1')
+                    ->count();
+    
+        $two=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->where('rating','=','2')
+                    ->count();
+    
+        $three=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->where('rating','=','3')
+                    ->count();
+    
+        $four=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->where('rating','=','4')
+                    ->count();
+    
+        $five=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->where('rating','=','5')
+                    ->count();
+    
+        $all=DB::table('ratings')
+                    ->where('ratings.user_id','=',$hotel1->userid)
+                    ->where('blocked','=',"0")
+                    ->count();
+    
+            if($all!=0)
+            {
+                $precentage1=$one/$all*100;
+                $precentage2=$two/$all*100;
+                $precentage3=$three/$all*100;
+                $precentage4=$four/$all*100;
+                $precentage5=$five/$all*100;
+            }
+            else 
+            {
+                $precentage1=0;
+                $precentage2=0;
+                $precentage3=0;
+                $precentage4=0;
+                $precentage5=0;
+            }
+        }
+            return view('HotelView',compact('hotel','hall','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function viewHall($id)
