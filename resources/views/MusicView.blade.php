@@ -531,7 +531,7 @@
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
 								<div class="w3-container w3-green w3-center" role="progressbar" aria-valuenow="{{$five}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage5}}%">
-									<span class="sr-only">80% Complete (danger)</span>
+									<span class="sr-only">{{$precentage5}}</span>
 								</div>
 								</div>
 							</div>
@@ -544,7 +544,7 @@
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
 								<div class="w3-container w3-blue" role="progressbar" aria-valuenow="{{$four}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage4}}%">
-									<span class="sr-only">80% Complete (danger)</span>
+									<span class="sr-only">{{$precentage4}}</span>
 								</div>
 								</div>
 							</div>
@@ -557,7 +557,7 @@
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
 								<div class="w3-container w3-yellow" role="progressbar" aria-valuenow="{{$three}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage3}}%">
-									<span class="sr-only">80% Complete (danger)</span>
+									<span class="sr-only">{{$precentage3}}</span>
 								</div>
 								</div>
 							</div>
@@ -570,7 +570,7 @@
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
 								<div class="w3-container w3-orange" role="progressbar" aria-valuenow="{{$two}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width: {{$precentage2}}%">
-									<span class="sr-only">80% Complete (danger)</span>
+									<span class="sr-only">{{$precentage2}}</span>
 								</div>
 								</div>
 							</div>
@@ -583,7 +583,7 @@
 							<div class="pull-left" style="width:180px;">
 								<div class="progress" style="height:9px; margin:8px 0;">
 								<div class="w3-container w3-red" role="progressbar" aria-valuenow="{{$one}}" aria-valuemin="0" aria-valuemax="{{$all}}" style="width:{{$precentage1}}%">
-									<span class="sr-only">80% Complete (danger)</span>
+									<span class="sr-only">{{$precentage1}}</span>
 								</div>
 								</div>
 							</div>

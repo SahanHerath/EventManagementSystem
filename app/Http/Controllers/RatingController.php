@@ -89,7 +89,7 @@ class RatingController extends Controller
         $request->validate(
             ['Email' => 'required|string|max:255|email',
             'selected_rating' => 'required|numeric|max:255|min:0|max:5',
-            'image' => 'required|image',
+            'image' => 'image',
             'Comment' => 'required|string|max:500',
             'user_name' => 'required|string|max:255',
             
@@ -99,7 +99,7 @@ class RatingController extends Controller
         ],
         ['Email.required'=> "Fill out this field",
         'selected_rating.required'=> "Fill out this field",
-        'image.required'=> "Add a image here",
+        
         'Comment.required'=> "Fill out this field",
         'user_name.required'=> "Fill out this field",
         

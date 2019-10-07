@@ -252,6 +252,7 @@ class PhotographyController extends Controller
                 ->where('users.id','=',$id)
                 ->join('photographies','users.id','=','photographies.user_id')
                 ->join('photography_events','users.id','=','photography_events.user_id')
+                ->select('email','name','users.id as userid','photographies.id as photoid','Studio_Name', 'Address', 'ContactNo','Link','Description','Drone','Wedding_Photography','Preshoot_Vedio','Wedding_Vedio','Album_Making','Wedding_Card','main_pic','pic1','pic2','pic3','pic4','photography_events.id as eventid', 'Wedding', 'Get_togather','Birthday','Competition','Professional_Events','Sports','Trips')
                 ->get();
 
         $dec= DB::table('users')
@@ -265,7 +266,71 @@ class PhotographyController extends Controller
             ->select('photography_videos.id','Video_Name', 'Video')
             ->get();
 
-                return view('Photographyview',compact('data','dec','saha'));
+        $rate=DB::table('users')
+            ->join('ratings','ratings.user_id','=','users.id')
+            ->where('users.id','=',$id)
+            ->where('blocked','=',"0")
+            ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+            ->get();
+
+       $average=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->avg('rating');
+
+       $one=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','1')
+               ->count();
+
+       $two=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','2')
+               ->count();
+
+       $three=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','3')
+               ->count();
+
+       $four=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','4')
+               ->count();
+
+       $five=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','5')
+               ->count();
+
+       $all=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->count();
+
+        if($all!=0)
+        {
+            $precentage1=$one/$all*100;
+            $precentage2=$two/$all*100;
+            $precentage3=$three/$all*100;
+            $precentage4=$four/$all*100;
+            $precentage5=$five/$all*100;
+        }
+        else 
+        {
+            $precentage1=0;
+            $precentage2=0;
+            $precentage3=0;
+            $precentage4=0;
+            $precentage5=0;
+        }
+
+        return view('Photographyview',compact('data','dec','saha','average','rate','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
