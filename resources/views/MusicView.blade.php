@@ -414,7 +414,25 @@
 					<div class="col-sm-5">
 						<div class="rating-block">
 							<h4>Average user rating</h4>
-							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+							<h2 class="bold padding-bottom-7">{{$average}} <small>/ 5</small></h2>
+							@if(($average>0) && ($average<1) && ($average==0))
+							<button type="#" class="btnrating btn btn-default btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>0.5) && ($average<1.5))||($average==1.5))
 							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
 								<i class="fa fa-star" ></i>
 							</button>
@@ -430,8 +448,78 @@
 							<button class="btnrating btn btn-default btn-lg" >
 								<i class="fa fa-star" ></i>
 							</button>
+							@endif
+							@if((($average>1.5) && ($average<2.5))||($average==1.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>2.5) && ($average<3.5))||($average==2.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>3.5) && ($average<4.5))||($average==3.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-default btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
+							@if((($average>4.5) && ($average<5))||($average==4.5))
+							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button  class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							<button class="btnrating btn btn-warning btn-lg" >
+								<i class="fa fa-star" ></i>
+							</button>
+							@endif
 						</div>
 					</div>
+					
 					<div class="col-sm-3">
 						<h4>Rating breakdown</h4>
 						<div class="pull-left">

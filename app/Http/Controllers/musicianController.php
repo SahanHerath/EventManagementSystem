@@ -262,7 +262,12 @@ class musicianController extends Controller
              ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
              ->get();
 
-                return view('MusicView',compact('data','deto','saha','rate'));
+        $average=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->avg('rating');
+
+                return view('MusicView',compact('data','deto','saha','rate','average'));
     }
 
     public function wedding()
