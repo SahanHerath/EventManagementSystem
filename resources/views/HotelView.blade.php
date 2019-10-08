@@ -118,7 +118,10 @@
 
 		</div><!-- container -->
 	</section><!-- about-section -->
-
+	<br>
+		<div class="offset-9">
+		<a href="{{URL('/AddComplaint'.$hotel1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
+		</div>
 	<section class="testimonials_area p_120">
         	<div class="container">
         		<div class="main_title">

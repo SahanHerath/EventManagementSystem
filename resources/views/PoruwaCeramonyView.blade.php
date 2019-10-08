@@ -263,7 +263,10 @@
         @endforeach
         @endforeach
         <!--================End Home Gallery Area =================-->
-        
+        <br>
+		<div class="offset-9">
+		<a href="{{URL('/AddComplaint'.$data1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
+		</div>
         <!--================Testimonials Area =================-->
 		<section class="testimonials_area p_120">
         	<div class="container">
@@ -296,7 +299,7 @@
 
 					<div class="form-group" id="rating-ability-wrapper">
 						<label class="control-label" for="rating">
-						<span class="field-label-header">What is the rating you are wish to give to this DJ/Band?</span><br>
+						<span class="field-label-header">What is the rating you are wish to give to this Poruwa Ritual Makers?</span><br>
 						<span class="field-label-info"></span>
 						<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
 						</label>
