@@ -471,6 +471,8 @@ Route::get('/ReviewComplaint{id}', 'ComplaintController@reviewComplaint')  ;
 Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
 Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
 
+Route::get('/comments', 'RatingController@allcomments')  ;
+
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Rating;
 use Image;
+use DB;
 
 class RatingController extends Controller
 {
@@ -131,5 +132,15 @@ class RatingController extends Controller
     
          return redirect()->back();
 
+    }
+
+    public function allcomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.all',compact('data'));
     }
 }

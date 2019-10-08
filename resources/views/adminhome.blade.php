@@ -54,7 +54,7 @@
             </a>
           </li>
           <li>
-            <a href="/rating">
+            <a href="/comments">
               <i class="nc-icon nc-bulb-63"></i>
               <p>User Review</p>
             </a>
