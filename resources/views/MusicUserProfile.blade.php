@@ -239,15 +239,16 @@
                             
 						</div>
                         <br>
-                            
-							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
-                            <br>
-                            <br>
-                            <div class="section-top-border">
-						<h3 class="title_color">Available Packages</h3>
-                            <a class="offset-1 genric-btn info" href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
-                            <a class="offset-1 genric-btn warning" href="" data-toggle="modal" data-target="#addvedio">Upload Vedio</a>
-                        </div>
+                        <a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
+                    <br><br>
+                </div>
+            </div>
+        </section>
+        <section class="feature_area p_120">
+            <div class="section-top-border">
+                <h3 class="title_color">Available Packages</h3>
+                <div class="container">
+                    <div class="feature_inner row">
                         @foreach($deto as $deto1)
                         <div class="personal_text" >
                             <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
@@ -272,10 +273,26 @@
                             </div>
                         </div>
                         @endforeach
-                        <div class="section-top-border">
-						<h3 class="title_color">Your Videos</h3>
-                        </div>  
-                        
+                        </div>
+                </div>
+                <br>
+                <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="text-white">If you have package details PDF</h2>
+                                <a href="{{URL('/AddPhotographyPackage'.$data1->userid)}}" data-toggle="modal" data-target="#modalAddPackage" 
+                                class="text-white btn btn-outline-warning rounded-0 text-uppercase">Add A Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-top-border">
+            <h3 class="title_color">Your Videos</h3> 
+                <div class="container">
+                    <div class="feature_inner row">
                         @foreach($saha as $sahan)
                         <div class="personal_text" >
                             <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
@@ -290,14 +307,23 @@
                             </div>
                         </div>
                         @endforeach
-
-                            <a class="offset-10 genric-btn danger" href=""  data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
-                            
-                            
-					</div>
-					
-				</div>
-			
+            </div>
+                </div>
+                <br>
+                <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="text-white">If you have any video clips</h2>
+                                <a class="text-white btn btn-outline-warning rounded-0 text-uppercase" href="#" data-toggle="modal"
+                                data-target="#addvedio">Upload Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <a class="offset-10 genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
         </section>
          <!--==============model for  edit info=================-->
     <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
