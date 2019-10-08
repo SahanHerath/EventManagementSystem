@@ -470,6 +470,7 @@ Route::get('/complaints', 'ComplaintController@allcomplaints')  ;
 Route::get('/ReviewComplaint{id}', 'ComplaintController@reviewComplaint')  ;
 Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
 Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
+Route::get('/HotelComplaint', 'ComplaintController@Hotelcomplaints')  ;
 
 Route::get('/comments', 'RatingController@allcomments')  ;
 Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
