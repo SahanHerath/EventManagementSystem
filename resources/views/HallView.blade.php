@@ -507,11 +507,11 @@
 		</div><!-- container -->
 	</section>
 
-	<section class="education-section section"  style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+	<section class="education-section section" >
 				<div class="colorlib-narrow-content">
                     
 					<div class="container">
-                    <div class="heading text-white">
+                    <div class="heading ">
                         <h2>Events we recently covered</h2>
                     </div>
 					    <div class="row">
@@ -547,17 +547,17 @@
 			
         </section>
 		@endforeach
-		<section class="education-section section">
+		<section class="education-section section"  style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
 				<div class="colorlib-narrow-content">
                     
-					<div class="container">
-                    <div class="heading">
-                        <h2>Available Packages</h2>
-                    </div>
+				<div class="container">
+				<div class="heading text-white">
+					<h2>Available Packages</h2>
+				</div>
 
                        <!-- bordered table -->
 			<!-- ============================================================== -->
-			<div class="feature_inner row offset-3">
+			<div class="feature_inner row">
 			<div class="col-xl-8 col-lg-8 col-md-10 col-sm-10 col-10">
 				<div class="card">
 				@foreach($deto as $deto1)
