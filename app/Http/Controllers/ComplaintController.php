@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Complaint;
 
 class ComplaintController extends Controller
 {
@@ -91,5 +92,37 @@ class ComplaintController extends Controller
              ->get();
 
         return view('YourComplaint',compact('data'));
+    }
+
+    public function addcomplaint(request $request)
+    {
+        //
+        $request->validate(
+            ['user_email' => 'required|string|max:255|email',
+            'complaint_about' =>'required|string|max:20',
+            'complaint' =>'required|string|max:500',
+            
+            
+            
+           
+        ],
+        ['user_email.required'=> "Fill out this field",
+        'complaint_about.required'=> "Fill out this field",
+        'complaint.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        $complaint = new Complaint;
+        
+        $complaint->user_email=$request->user_email;
+        $complaint->user_id =$request->id;
+        $complaint->complaint_about =$request->complaint_about;
+        $complaint->complaint =$request->complaint;
+        $complaint->save();
+
+         return redirect()->back()->with('flash_message','Your Complaint is Added');
+
     }
 }
