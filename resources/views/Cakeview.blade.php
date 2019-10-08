@@ -270,6 +270,10 @@
 				</div>
 			</div>
 		</section>
+		<br>
+		<div class="offset-9">
+		<a href="{{URL('/AddComplaint'.$data1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
+		</div>
         <!--================End Home Gallery Area =================-->
         
         <!--================Testimonials Area =================-->

@@ -263,7 +263,10 @@
         @endforeach
         @endforeach
         <!--================End Home Gallery Area =================-->
-        
+        <br>
+		<div class="offset-9">
+		<a href="{{URL('/AddComplaint'.$data1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
+		</div>
         <!--================Testimonials Area =================-->
 		<section class="testimonials_area p_120">
         	<div class="container">
