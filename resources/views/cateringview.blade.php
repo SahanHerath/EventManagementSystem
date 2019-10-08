@@ -584,7 +584,7 @@
 
 					<div class="form-group" id="rating-ability-wrapper">
 						<label class="control-label" for="rating">
-						<span class="field-label-header">What is the rating you are wish to give to this DJ/Band?</span><br>
+						<span class="field-label-header">What is the rating you are wish to give to this Catering Service?</span><br>
 						<span class="field-label-info"></span>
 						<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
 						</label>

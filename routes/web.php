@@ -463,6 +463,7 @@ Route::post('/EditHallPackage', 'HallController@EditPackage')  ;
 Route::post('/DeleteHallPackage', 'HallController@deletePackage')  ;
 
 Route::post('/AddRating{id}', 'RatingController@addrating')  ;
+Route::get('/AddComplaint{id}', 'ComplaintController@form')  ;
 
 
 
