@@ -8,7 +8,7 @@
                 <div class="card-header">Add Admin </div>
 
                 <div class="card-body">
-                    <form method="POST" action="/" enctype="multipart/form-data">
+                    <form method="POST" action="/NewAdmin" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">

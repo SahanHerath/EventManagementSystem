@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Admin;
+use App\User;
+use Auth;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -41,6 +45,54 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(
+            ['name' => 'required|string|max:255',
+            'email' => 'required|string|max:255|email|unique:users',
+            'city' => 'required|string|max:255',
+            'category' => 'required|string|max:20',
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'fname' =>'required|string|max:255',
+            'lname' =>'required|string|max:255',
+            'password' => 'required|string|min:8|confirmed',
+
+            
+            
+
+        ],
+        ['name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        'city.required'=> "Fill out this field",
+        'category.required'=> "Fill out this field",
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'fname.required'=> "Fill out this field",
+        'lname.required'=> "Fill out this field",
+        'password.required'=> "Fill out this field",
+        
+        
+       
+
+        ]
+    );
+        $user = new User;
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->category =$request->category;
+        $user->city =$request->city;
+        $user->admin ="1";
+        $user->password =Hash::make($request['password']);
+        $user->save();
+        
+        $admin=new Admin;
+        $admin->user_id =$user->id;
+        $admin->fname=$request->fname;
+        $admin->lname=$request->lname;
+        $admin->Address =$request->Address;
+        $admin->Contact_No=$request->Contact_No;
+        $admin->save();
+
+        return redirect('/admins');
     }
 
     /**
