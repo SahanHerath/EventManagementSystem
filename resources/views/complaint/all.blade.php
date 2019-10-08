@@ -228,15 +228,15 @@
                             
                             
                             @if($users->state==0)
-                            <td><button type="button" class="btn btn-primary">Review</button></td>
+                            <td><a href="{{URL('/ReviewComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-primary">Review</button></a></td>
                             @endif
                             @if($users->state==1)
-                            <td><button type="button" class="btn btn-success">Solved</button></td>
+                            <td><a href="{{URL('/SolveComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-success">Solved</button></a></td>
                             @endif
                             @if($users->state==2)
-                            <td><button type="button" class="btn btn-danger">Remove</button></td>
+                            <td><a href="{{URL('/DeleteComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
                             @endif
-                            <td><button type="button" class="btn btn-danger">Delete</button></td>
+                            <td><a href="{{URL('/DeleteComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
                         </tr>
                         
                     @endforeach

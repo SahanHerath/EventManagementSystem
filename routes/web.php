@@ -467,6 +467,9 @@ Route::get('/AddComplaint{id}', 'ComplaintController@form')  ;
 Route::post('/newComplain', 'ComplaintController@addcomplaint')  ;
 
 Route::get('/complaints', 'ComplaintController@allcomplaints')  ;
+Route::get('/ReviewComplaint{id}', 'ComplaintController@reviewComplaint')  ;
+Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
+Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
 
 
 

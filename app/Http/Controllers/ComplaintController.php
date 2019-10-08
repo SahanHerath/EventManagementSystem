@@ -135,4 +135,33 @@ class ComplaintController extends Controller
 
         return view('complaint.all',compact('data'));
     }
+
+    public function reviewComplaint($id)
+    {
+        $complaint=Complaint::where('id',$id)
+                    ->update([
+                            'state'=>1
+
+                        ]);
+
+        return redirect()->back();
+    }
+
+    public function SolveComplaint($id)
+    {
+        $complaint=Complaint::where('id',$id)
+                    ->update([
+                            'state'=>2
+
+                        ]);
+
+        return redirect()->back();
+    }
+
+    public function DeleteComplaint($id)
+    {
+        $complain=Complaint::where('id',$id)->delete();
+
+        return redirect()->back();
+    }
 }
