@@ -143,4 +143,35 @@ class RatingController extends Controller
 
             return view('comment.all',compact('data'));
     }
+
+    public function blockComment($id)
+    {
+        $comment=Rating::where('id',$id)
+                    ->update([
+                            'blocked'=>1
+
+
+                    ]);
+
+        return redirect()->back();
+    }
+
+    public function unblockComment($id)
+    {
+        $comment=Rating::where('id',$id)
+                    ->update([
+                            'blocked'=>0
+
+
+                    ]);
+
+        return redirect()->back();
+    }
+
+    public function deleteComment($id)
+    {
+        $rating=Rating::where('id',$id)->delete();
+
+        return redirect()->back();
+    }
 }

@@ -472,6 +472,9 @@ Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
 Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
 
 Route::get('/comments', 'RatingController@allcomments')  ;
+Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
+Route::get('/UnblockComment{id}', 'RatingController@unblockComment')  ;
+Route::get('/DeleteComment{id}', 'RatingController@deleteComment')  ;
 
 
 

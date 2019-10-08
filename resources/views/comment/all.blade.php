@@ -234,7 +234,7 @@
                             <td><a href="{{URL('/BlockComment'.$users->id)}}"><button type="button" class="btn btn-primary">Unblocked</button></a></td>
                             @endif
                             @if($users->blocked==1)
-                            <td><a href="{{URL('/UnblockComment'.$users->id)}}"><button type="button" class="btn btn-success">Blocked</button></a></td>
+                            <td><a href="{{URL('/UnblockComment'.$users->id)}}"><button type="button" class="btn btn-danger">Blocked</button></a></td>
                             @endif
                             
                             <td><a href="{{URL('/DeleteComment'.$users->id)}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
