@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-	<title>Hotel-profile</title>
+<head>@foreach($hall as $hall1)
+	<title>Hall({{$hall1->Hall_Name}})-Evora</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -43,7 +43,7 @@
 		<!-- container -->
 	</header>
 	
-	@foreach($hall as $hall1)
+	
 	<section class="intro-section" style="background-image: url(uploads/hall/{{$hall1->Main_pic}})">
 		<div class="container">
 		
@@ -507,11 +507,11 @@
 		</div><!-- container -->
 	</section>
 
-	<section class="education-section section">
+	<section class="education-section section"  style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
 				<div class="colorlib-narrow-content">
                     
 					<div class="container">
-                    <div class="heading">
+                    <div class="heading text-white">
                         <h2>Events we recently covered</h2>
                     </div>
 					    <div class="row">
@@ -555,42 +555,60 @@
                         <h2>Available Packages</h2>
                     </div>
 
-                        @foreach($deto as $deto1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                    <li><b>Appetizers :- </b>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
-                                                       {{ $appetizers }}<br>
-                                                        @endforeach</li>
-                                    <li><b>Welcome_drinks :- </b>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
-                                                       {{ $welcomedrinks }}<br>
-                                                        @endforeach</li>
-                                    <li><b>Soups :- </b> @foreach (explode(',', $deto1->Soups) as $soups)
-                                                       {{ $soups }}<br>
-                                                        @endforeach</li>
-                                    <li><b>Meals :- </b>@foreach (explode(',', $deto1->Foods) as $foods)
-                                                       {{ $foods }}<br>
-                                                        @endforeach</li>
-                                    <li><b>Desserts :- </b>@foreach (explode(',', $deto1->Desserts) as $desserts)
-                                                       {{ $desserts }}<br>
-                                                        @endforeach</li>
-                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                    <li><a href="files/hall/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-
-                                    
-                            
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+                       <!-- bordered table -->
+			<!-- ============================================================== -->
+			<div class="feature_inner row offset-3">
+			<div class="col-xl-8 col-lg-8 col-md-10 col-sm-10 col-10">
+				<div class="card">
+				@foreach($deto as $deto1)
+					<center><h4 class="card-header">{{$deto1->Package_Name}}</h4></center>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th scope="col"><center>Appetizers</center></th>
+									
+									<th scope="col"><center>Welcome_drinks</center></th>
+									<th scope="col"><center>Soups</center></th>
+									<th scope="col"><center>Meals</center></th>
+									<th scope="col"><center>Desserts</center></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row"><center>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
+														{{ $appetizers }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
+														{{ $welcomedrinks }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Soups) as $soups)
+														{{ $soups }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Foods) as $foods)
+														{{ $foods }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Desserts) as $desserts)
+														{{ $desserts }}<br>
+															@endforeach</center></td>
+								</tr>
+								<tr>
+									<th scope="row" colspan="2"><center><h4>Price</h4></center></th>
+									<th scope="row" colspan="3"><center>Download PDF here</center></th>
+									
+								</tr>
+								<tr>
+									
+									<td colspan="2"><center>Rs.{{$deto1->Price}}</center></td>
+									<td colspan="3"><center><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></center></td>
+								</tr>
+							</tbody>
+						</table><br>
+					</div>@endforeach
+				</div>
+			</div></div>
+			<!-- ============================================================== -->
+			<!-- end bordered table -->
                         </div>
                     </div>
                 </section>
@@ -600,22 +618,30 @@
 		
 
 		<footer class="site-footer" style="background-color:black;">
-			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					<br><br>
-					</p>
-				</div>
-				
-				</div>
-			</div>
+    <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
     	</footer>
 	
 	<!-- SCIPTS -->
