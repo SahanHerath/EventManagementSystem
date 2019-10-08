@@ -222,7 +222,7 @@
             </div>
         </div>
         <div class="offset-4">
-        <a href="#"><button type="button" class="btn btn-primary">Add Admin</button></a> 
+        <a href="/addAdmin"><button type="button" class="btn btn-primary">Add Admin</button></a> 
         </div>
         @endif
     

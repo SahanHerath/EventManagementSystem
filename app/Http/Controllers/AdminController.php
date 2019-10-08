@@ -87,4 +87,10 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function registerAdmin()
+    {
+        return view('registerAdmin');
+    }
+
 }

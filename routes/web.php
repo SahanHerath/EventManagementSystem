@@ -479,6 +479,7 @@ Route::get('/DeleteComment{id}', 'RatingController@deleteComment')  ;
 Route::get('/HotelComments', 'RatingController@Hotelcomments')  ;
 
 Route::get('/admins', 'AdminController@index')  ;
+Route::get('/addAdmin', 'AdminController@registerAdmin')  ;
 
 
 
