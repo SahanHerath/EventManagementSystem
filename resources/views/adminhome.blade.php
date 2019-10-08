@@ -56,7 +56,7 @@
           <li>
             <a href="/rating">
               <i class="nc-icon nc-bulb-63"></i>
-              <p>Rating</p>
+              <p>User Review</p>
             </a>
           </li>
           <li>
@@ -69,6 +69,12 @@
             <a href="/users">
               <i class="nc-icon nc-badge"></i>
               <p>Service Providers</p>
+            </a>
+          </li>
+          <li>
+            <a href="/complaints">
+              <i class="nc-icon nc-globe-2"></i>
+              <p>Complaints</p>
             </a>
           </li>
           

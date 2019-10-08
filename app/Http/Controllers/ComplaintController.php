@@ -125,4 +125,14 @@ class ComplaintController extends Controller
          return redirect()->back()->with('flash_message','Your Complaint is Added');
 
     }
+
+    public function allcomplaints()
+    {
+        $data=DB::table('complaints')
+            ->join('users','complaints.user_id','=','users.id')
+            ->select('user_email','complaints.id as complaintid','complaint_about','user_id','complaint','state')
+            ->get();
+
+        return view('complaint.all',compact('data'));
+    }
 }
