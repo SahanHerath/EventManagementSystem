@@ -475,6 +475,7 @@ Route::get('/comments', 'RatingController@allcomments')  ;
 Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
 Route::get('/UnblockComment{id}', 'RatingController@unblockComment')  ;
 Route::get('/DeleteComment{id}', 'RatingController@deleteComment')  ;
+Route::get('/HotelComments', 'RatingController@Hotelcomments')  ;
 
 
 
