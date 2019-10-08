@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
 	<!-- Font -->
 	
@@ -103,7 +103,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 	@endforeach
-	<section class="education-section section">
+	<section class="experience-section  section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -114,31 +114,46 @@
 			</div><!-- row -->
 
 			<div class="row">
-			@foreach($hall as $hall1)
-				<div class="offset-0 col-lg-4 col-md-6">
-					<div class="feature_item"><a class="btn btn-bg-yellow" href="{{URL('/HallUserProfile'.$hall1->recepid)}}">
-						<img src="uploads/hall/{{$hall1->Main_pic}}"  width="300" height="200 ">
-						<br><br>
-						<h3><b>{{$hall1->Hall_Name}}</h3></b>
-                        <h5>{{$hall1->add}}</h5>
-						</a>
-					</div>
-				</div>
-			@endforeach
+                @foreach($hall as $hall1)
+                
+                    <div class=" col-lg-4 col-md-8">
+                        <div class="feature_item"><a class="btn btn-bg-yellow" href="{{URL('/HallUserProfile'.$hall1->recepid)}}">
+                            <img src="uploads/hall/{{$hall1->Main_pic}}"  width="300" height="200 ">
+                            <br><br>
+                            <h3><b>{{$hall1->Hall_Name}}</h3></b>
+                            <h5>{{$hall1->add}}</h5>
+                            </a>
+                        </div>
+                    </div>
+                
+                @endforeach
 			</div>
-            @foreach($hotel as $data1)
-            <form class="form-horizontal" method="POST" action="/AddNewHall">
-                        {{ csrf_field() }}
-                        <input type="hidden" id="hotelid" name="hotelid" value="{{$data1->hotelid}}">
-                        <center><button type="submit"  class="btn btn-success">Add Reception Hall</button></center>
-            </form>
-            <div class="offset-10">
-            <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a></button>
-            </div>
-            @endforeach
+            
 		</div><!-- container -->
 	</section><!-- about-section -->
-
+    <section class="quoto-section center-text" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+		<div class="container">
+        <br><br>
+    @foreach($hotel as $data1)
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="font-yellow"><b>If you have package details PDF</b></h2><br><br>
+                    <form class="form-horizontal" method="POST" action="/AddNewHall">
+                        {{ csrf_field() }}
+                        <input type="hidden" id="hotelid" name="hotelid" value="{{$data1->hotelid}}">
+                        <button type="submit"  class="btn text-white btn btn-outline-warning rounded-0 text-uppercase">Add Reception Hall</button>
+                    </form>
+                    <br><br>
+				</div><!-- col-sm-12 -->
+			</div><!-- row -->
+		</div><!-- container --> @endforeach
+	</section>
+    <br><br>
+    <div class="offset-10">
+         <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a></button>
+    </div>
+    <br><br>
+   
     @foreach($hotel as $data1)	
 	 <!--==============model for  edit info=================-->
      <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
@@ -478,22 +493,30 @@
    @endforeach
 	
 	<footer class="site-footer" style="background-color:black;">
-			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					<br><br>
-					</p>
-				</div>
-				
-				</div>
-			</div>
+    <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
     	</footer>
 	
 	<!-- SCIPTS -->
