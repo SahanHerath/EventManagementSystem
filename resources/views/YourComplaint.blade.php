@@ -35,7 +35,7 @@
         /* Left column */
         .leftcolumn {   
         float: left;
-        width: 30%;
+        width: 35%;
         padding-right: 20px;
         }
 
@@ -176,7 +176,7 @@
                            
                         </div>
                     </div>
-                    <div class="rightcolumn col-md-3 offset-3">
+                    <div class="rightcolumn  offset-2">
                              <aside class="card">
                                 <h4><center>Complaint</center></h4>
                                 <p>You can complaint about any service provider considering any of those below reasons.</p>
