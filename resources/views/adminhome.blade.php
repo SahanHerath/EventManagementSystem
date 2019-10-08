@@ -54,6 +54,13 @@
             </a>
           </li>
           <li>
+            <a href="/admins">
+              <i class="nc-icon nc-key-25"></i>
+              <p>Admins</p>
+            </a>
+          </li>
+          <li>
+          <li>
             <a href="/comments">
               <i class="nc-icon nc-bulb-63"></i>
               <p>User Review</p>
