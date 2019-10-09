@@ -482,6 +482,7 @@ Route::get('/admins', 'AdminController@index')  ;
 Route::get('/addAdmin', 'AdminController@registerAdmin')  ;
 Route::post('/NewAdmin', 'AdminController@store')  ;
 Route::get('/removeAdmin{id}', 'AdminController@destroy')  ;
+Route::post('/EditAdmin{id}', 'AdminController@update')  ;
 
 
 

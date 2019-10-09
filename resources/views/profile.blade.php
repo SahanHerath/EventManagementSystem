@@ -149,18 +149,19 @@
 
 
 </div> -->
+@foreach($data as $data1)
       <div class="content">
         <div class="row">
           <div class="col-md-4">
             <div class="card card-user">
               <div class="image">
-                <img src="css/assets/img/damir-bosnjak.jpg" alt="...">
+                <img src="/uploads/admin/{{$data1->Cover_pic}}" alt="...">
               </div>
               <div class="card-body">
                 <div class="author">
                   <a href="#">
-                    <img class="avatar border-gray" src="css/assets/img/mike.jpg" alt="...">
-                    <h5 class="title">Rumith Witharana</h5>
+                    <img class="avatar border-gray" src="/uploads/admin/{{$data1->Main_pic}}" alt="...">
+                    <h5 class="title">{{$data1->name}}</h5>
                   </a>
                   <p class="description">
                     @chetfaker
@@ -205,7 +206,8 @@
                 <h5 class="card-title">Edit Profile</h5>
               </div>
               <div class="card-body">
-                <form>
+                <form method="POST" action="{{URL('/EditAdmin'.$data1->userid)}}" enctype="multipart/form-data">
+                @csrf
                   <div class="row">
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
@@ -216,13 +218,13 @@
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Username" value="{{$data1->name}}">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{$data1->email}}">
                       </div>
                     </div>
                   </div>
@@ -230,13 +232,13 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="First Name">
+                        <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" value="{{$data1->fname}}">
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
                       <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name">
+                        <input type="text" class="form-control"  name="lname" id="lname" placeholder="Last Name" value="{{$data1->lname}}">
                       </div>
                     </div>
                   </div>
@@ -244,7 +246,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address">
+                        <input type="text" class="form-control" name="Address" id="Address" placeholder="Home Address" value="{{$data1->Address}}">
                       </div>
                     </div>
                   </div>
@@ -252,13 +254,13 @@
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>City</label>
-                        <input type="text" class="form-control" placeholder="City">
+                        <input type="text" class="form-control" placeholder="City" name="city" id="city" value="{{$data1->city}}">
                       </div>
                     </div>
                     <div class="col-md-4 px-1">
                       <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country">
+                        <label>Contact Number</label>
+                        <input type="text" class="form-control" placeholder="Contact No" name="Contact_No" id="Contact_No" value="{{$data1->Contact_No}}">
                       </div>
                     </div>
                     
@@ -267,7 +269,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>About Me</label>
-                        <textarea class="form-control textarea"></textarea>
+                        <textarea class="form-control textarea" name="About_me" id="About_me" value="{{$data1->About_me}}">{{$data1->About_me}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -282,6 +284,7 @@
           </div>
         </div>
       </div>
+      @endforeach
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
           <div class="row">
@@ -311,6 +314,7 @@
       </footer>
     </div>
   </div>
+  
   <!--   Core JS Files   -->
   <script src="css/assets/js/core/jquery.min.js"></script>
   <script src="css/assets/js/core/popper.min.js"></script>

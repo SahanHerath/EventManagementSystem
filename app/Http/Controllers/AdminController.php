@@ -127,6 +127,59 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate(
+            ['name' => 'required|string|max:255',
+            'email' => 'required|string|max:255|email',
+            'city' => 'required|string|max:255',
+            
+            'Address' => 'required|string|max:255',
+            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'fname' =>'required|string|max:255',
+            'lname' =>'required|string|max:255',
+           
+           
+
+            
+            
+
+        ],
+        ['name.required'=> "Fill out this field",
+        'email.required'=> "Fill out this field",
+        'city.required'=> "Fill out this field",
+        
+        'Address.required'=> "Fill out this field",
+        'Contact_No.required'=> "Fill out this field",
+        'fname.required'=> "Fill out this field",
+        'lname.required'=> "Fill out this field",
+        
+        ]
+    );
+
+    $data=User::where('id',$id)
+            
+    ->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'city'=>$request->city,
+            
+            
+    ]);
+
+    $data1=Admin::where('user_id',$id)
+            
+    ->update([
+            'fname'=>$request->fname,
+            'lname'=>$request->lname,
+            'Address'=>$request->Address,
+            'Contact_No'=>$request->Contact_No,
+            'About_me'=>$request->About_me,
+            
+    ]);
+
+    return redirect()->back();
+
+
+
     }
 
     /**
