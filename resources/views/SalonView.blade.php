@@ -733,7 +733,7 @@
                     <aside class="f_widget social_widget">
                         
                         <div class="f_title"><br>
-                        <a href="/#" ><h3>Contact Us</h3></a>
+                        <a href="/contact" ><h3>Contact Us</h3></a>
                         </div>
                         
                     </aside>
