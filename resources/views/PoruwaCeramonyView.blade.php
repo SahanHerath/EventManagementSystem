@@ -264,9 +264,9 @@
 					</div>
 					
 				</div>
-			
+				@endforeach
         </section>
-
+		
 
 		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
 			<div class="main_title">
@@ -301,7 +301,7 @@
 			</div>
 		</section>
 		
-        @endforeach
+       
         <!--================End Home Gallery Area =================-->
         <br>
 		<div class="offset-9">
