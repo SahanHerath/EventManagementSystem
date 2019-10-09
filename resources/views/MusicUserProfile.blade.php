@@ -250,30 +250,40 @@
                 <div class="container">
                     <div class="feature_inner row">
                         @foreach($deto as $deto1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="feature_item" >
+                            <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                <div class="media-body">
+                                <div class="row">
+                                    <div class="column offset-1"> 
                                     
-                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
                                     <ul class="list basic_info">
                                     <li><b>Hours of playing :- </b>{{$deto1->Hours}}</li>
                                     <li><b>Services :- </b>{{$deto1->Services}}</li>
                                     <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                    <li><a href="files/music/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <li></li>
                                     <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-hours="{{$deto1->Hours}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}">Edit</a></center>
-                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
-                                    
-                            
-                                    </ul>
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="column offset-1">
+                                        <a href="files/music/{{$deto1->Pdf}}"><img src="images/pdf.png" width="80" hight="80" alt="" ></a>
+                                    </div>
+                                    
+                                    <div class="column offset-4">
+                                        <ul class="list basic_info">
+                                        <li><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditPackage" data-packagename="{{$deto1->Package_Name}}" data-pakid="{{$deto1->id}}" data-hours="{{$deto1->Hours}}" data-services="{{$deto1->Services}}" data-price="{{$deto1->Price}}">Edit</a></li><br>
+                                        <li><a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></li>
+                                        </ul>
+                                    </div>
+                            
+                                    
+                                </div><br>
                             </div>
                         </div>
-                        @endforeach
-                        </div>
+                    </div>
+                    @endforeach
+                    </div>
                 </div>
                 <br>
                 <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
@@ -293,22 +303,28 @@
             <h3 class="title_color">Your Videos</h3> 
                 <div class="container">
                     <div class="feature_inner row">
+                    
                         @foreach($saha as $sahan)
-                        <div class="personal_text" >
-                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+                        <div class="col-lg-5 col-md-8">
+                        <div class="feature_item" >
+                        <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
+                            
+                                <div class="media-body">
+                                <center>
                                 <video width="400" controls>
                                 <source src="video/music/{{$sahan->Video}}" type="video/mp4">
                                 <source src="mov_bbb.ogg" type="video/ogg">
                                 </video>
-                                <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteVideo" data-vid="{{$sahan->id}}">Delete</a></center>
+                                </center>
+                                <br>
+                                <center><a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteVideo" data-vid="{{$sahan->id}}">Delete</a></center>
                                 </div>
                             </div>
                         </div>
                         @endforeach
+                    </div>
             </div>
-                </div>
+            </div>
                 <br>
                 <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
                     <div class="container">
