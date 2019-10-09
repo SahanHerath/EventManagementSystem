@@ -27,13 +27,13 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
-      <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+    <div class="logo">
+        <a  class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="css/assets/img/logo-small.jpg">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a  class="simple-text logo-normal">
           Evora
           <!-- <div class="logo-image-big">
             <img src="css/assets/img/logo-big.png">
@@ -41,7 +41,7 @@
         </a>
       </div>
       <div class="sidebar-wrapper">
-      <ul class="nav">
+        <ul class="nav">
           <li >
             <a href="/home">
               <i class="nc-icon nc-bank"></i>
@@ -49,21 +49,34 @@
             </a>
           </li>
           <li >
-            <a href="/rating">
-              <i class="nc-icon nc-bulb-63"></i>
-              <p>Rating</p>
+            <a href="/admins">
+              <i class="nc-icon nc-key-25"></i>
+              <p>Admins</p>
             </a>
           </li>
           <li>
-            <a href="/profile">
+          <li >
+            <a href="/comments">
+              <i class="nc-icon nc-bulb-63"></i>
+              <p>User Review</p>
+            </a>
+          </li>
+          <li>
+            <a href="/Profile">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="active">
+          <li class="active ">
             <a href="/users">
               <i class="nc-icon nc-badge"></i>
               <p>Service Providers</p>
+            </a>
+          </li>
+          <li>
+            <a href="/complaints">
+              <i class="nc-icon nc-globe-2"></i>
+              <p>Complaints</p>
             </a>
           </li>
           
