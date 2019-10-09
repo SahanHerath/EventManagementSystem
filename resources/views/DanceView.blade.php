@@ -69,7 +69,7 @@
                         	@else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
-								<img src="/uploads/photography/{{$data1->main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+								<img src="/uploads/dancing/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
 								{{ Auth::user()->name }} 
                                 </a>
 

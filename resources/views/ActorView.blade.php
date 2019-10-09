@@ -14,9 +14,9 @@
         <link rel="stylesheet" href="css/css/font-awesome.min.css">
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css"> 
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="vendors/popup/magnific-popup.css"> 
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- main css -->
@@ -68,7 +68,7 @@
                         	@else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
-								<img src="/uploads/photography/{{$data1->main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+								<img src="/uploads/actor/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
 								{{ Auth::user()->name }} 
                                 </a>
 
