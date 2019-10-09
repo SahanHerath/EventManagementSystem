@@ -339,5 +339,8 @@ Route::get('/RemoveDecorationPackage{id}', 'decorationController@deletePackage')
 Route::post('/ChangeDecorationMainpic{id}', 'decorationController@changeMainPic')  ;
 Route::post('/decarationpic1{id}', 'decorationController@changePic1')  ;
 
+Route::get('/contact', function () {
+    return view('contact');
+});
 
  
