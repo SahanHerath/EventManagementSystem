@@ -248,13 +248,6 @@
     </div>
 	
 	
-    
-
-
-    
-    
-        
-
         
       <footer class="footer_area p_30">
 			<div class="container">

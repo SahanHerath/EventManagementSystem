@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="css/animate.css">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-    
+    <link rel="stylesheet" href="css/css/bootstrap.css">
+    <link rel="stylesheet" href="css/css/style.css">
+    <link rel="stylesheet" href="css/css/responsive.css">
     
     
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
@@ -77,8 +79,34 @@
                       <li><a href="Actor">Presenters & Entertainers</a></li>
                       <li><a href="Transport">Wedding Transport</a></li>
                       </ul>
-                      <li><a href="login">Login</a></li>
-                      <li><a href="register">Register</a></li>
+                      @guest
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								
+								          {{ Auth::user()->name }} 
+                                </a>
+                            </li>
+							              <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
                     </ul>
                   </div>
                 </nav>
@@ -217,23 +245,32 @@
 
 
     
-    <footer class="site-footer">
-      <div class="container">
-        
-
-        
-        <div class="row pt-3 mt-3 text-center">
-          <div class="col-md-12">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourfully <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Evora</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
+    <footer class="footer_area p_30">
+			<div class="container">
+				<div class="row footer_inner">
+					<div class="col-lg-5 col-sm-6">
+						<aside class="f_widget ab_widget">
+							<div class="f_title"><br>
+							<a href="/aboutus" ><h3>About Us</h3></a>
+							</div>
+							<p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</p>
+						</aside>
+					</div>
+					<div class="col-lg-2 offset-4">
+						<aside class="f_widget social_widget">
+							
+							<div class="f_title"><br>
+							<a href="/contact" ><h3>Contact Us</h3></a>
+							</div>
+							
+						</aside>
+					</div>
+				</div>
+			</div>
+		</footer>
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
