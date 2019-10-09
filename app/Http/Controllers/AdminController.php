@@ -138,11 +138,29 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+        $admin1 = User::findOrFail($id); 
+        $admin1 ->delete();
+        $admin2  = Admin::where('user_id',$id)->delete();
+
+        return redirect()->back();
+               
     }
 
     public function registerAdmin()
     {
         return view('registerAdmin');
+    }
+
+    public function profile()
+    {
+        $id1 = Auth::id();
+        $data=DB::table('users')
+             ->join('admins','users.id','=','admins.user_id')
+             ->where('users.id','=',$id1)
+             ->select('users.id as userid','email','name','city','fname','lname','admins.id as adminid','Address','Contact_No','About_me','Main_pic','Cover_pic')
+             ->get();
+
+            return view('profile',compact('data'));
     }
 
 }

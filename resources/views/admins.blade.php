@@ -211,7 +211,7 @@
                             
                             
 
-                            <td><a href="#"><button type="button" class="btn btn-danger">Remove Admin</button></a></td>
+                            <td><a href="{{URL('/removeAdmin'.$users->id)}}"><button type="button" class="btn btn-danger">Remove Admin</button></a></td>
                         </tr>
                         @endif
                     @endforeach

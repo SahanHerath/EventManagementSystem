@@ -67,7 +67,7 @@
             </a>
           </li>
           <li>
-            <a href="/profile">
+            <a href="/Profile">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
