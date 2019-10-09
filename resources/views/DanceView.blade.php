@@ -819,23 +819,32 @@
 
         <!--================End Testimonials Area =================-->
         
-        <footer class="site-footer" style="background-color:black;">
+        <footer class="footer_area p_30">
 			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-				
+				<div class="row footer_inner">
+					<div class="col-lg-5 col-sm-6">
+						<aside class="f_widget ab_widget">
+							<div class="f_title"><br>
+							<a href="/aboutus" ><h3>About Us</h3></a>
+							</div>
+							<p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</p>
+						</aside>
+					</div>
+					<div class="col-lg-2 offset-4">
+						<aside class="f_widget social_widget">
+							
+							<div class="f_title"><br>
+							<a href="/contact" ><h3>Contact Us</h3></a>
+							</div>
+							
+						</aside>
+					</div>
 				</div>
 			</div>
-    	</footer>
+		</footer>
         
         
         
