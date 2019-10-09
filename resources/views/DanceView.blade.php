@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+@foreach($data as $data1)
+
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Evora</title>
+        <title>Dancers({{$data1->Team_Name}})-Evora</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -43,7 +45,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="/"><img src="#" alt="">Evora</a>
+						<a class="navbar-brand logo_h text-white" href="/"><img src="#" alt="">Evora</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -51,12 +53,40 @@
 						</button>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
+						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+							 <!-- Authentication Links -->
+							 @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								<img src="/uploads/photography/{{$data1->main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }} 
+                                </a>
+
+                            </li>
+							<li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
 							</ul>
-						</div> 
+						</div>  
 					</div>
             	</nav>
             </div>
@@ -64,7 +94,6 @@
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
-        @foreach($data as $data1)
         <section class="home_banner_area">
         
            	<div class="container box_1620">
@@ -331,51 +360,70 @@
 					</div>
 					
 				</div>
-			
+				@endforeach
+				<h3 class="title_color offset-1">Videos:-</h3><br>
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($saha as $sahan)
+					
+					<div class="col-lg-6 col-md-6">
+						<div class="feature_item" >
+							<h4><font color="black"><b> Video Name </b>:- {{$sahan->Video_Name}}</font></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column">
+									<center><video width="500" controls>
+									<source src="video/photography/{{$sahan->Video}}" type="video/mp4">
+									<source src="mov_bbb.ogg" type="video/ogg">
+									</center></video>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				
+				@endforeach
+				</div>
+			</div>
         </section>
-        @endforeach
-		<div class="section-top-border">
-		<h3 class="title_color">Available Packages</h3>
-        </div>
-		@foreach($deto as $deto1)
-                        <div class="personal_text" >
-                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                    
-                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
-                                    <ul class="list basic_info">
-                                    <li><b>Dancing Type :- </b>{{$deto1->Dancing_Type}}</li>
+        
+		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+			<div class="main_title">
+				<h2><a class="text-white">Available Packages</a></h2>
+			</div>
+		
+			<div class="container">
+				<div class="feature_inner row">
+				@foreach($deto as $deto1)
+					
+					<div class="col-lg-6 col-md-8">
+						<div class="feature_item" >
+							<h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+							<div class="media-body">
+								<div class="row">
+									<div class="column offset-1">
+										<ul class="list basic_info">
+										<li><b>Dancing Type :- </b>{{$deto1->Dancing_Type}}</li>
                                     <li><b>Services :- </b>{{$deto1->Services}}</li>
                                     <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
-                                    <li><a href="files/dancing/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
-                                    <ul>
-                                
-                                
-                                    <ul class="list basic_info">
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                            
-        @endforeach
-		<div class="section-top-border">
-						<h3 class="title_color">Your Videos</h3>
-                        </div>  
-                        
-                        @foreach($saha as $sahan)
-                        <div class="personal_text" >
-                            <div class="col-lg-5 col-md-6" style="border: 5px solid red;">
-                                <div class="feature_item">
-                                <h4><b><font color="black"><b>Video Name:-</b> {{$sahan->Video_Name}}</font></b></h3>
-                                <video width="400" controls>
-                                <source src="video/dancing/{{$sahan->Video}}" type="video/mp4">
-                                <source src="mov_bbb.ogg" type="video/ogg">
-                                </video>
-                                
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+										<li><a href="files/dancing/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+									
+										<ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				
+				@endforeach
+				</div>
+			</div>
+		</section>
+
+
+
 		
         <!--================End Home Gallery Area =================-->
         <br>
