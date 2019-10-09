@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2019 at 09:55 AM
+-- Generation Time: Oct 09, 2019 at 03:19 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -103,6 +103,33 @@ CREATE TABLE `actor_packages` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `fname` varchar(191) NOT NULL,
+  `lname` varchar(191) NOT NULL,
+  `Address` varchar(191) NOT NULL,
+  `Contact_No` varchar(30) NOT NULL,
+  `About_me` text,
+  `Main_pic` varchar(191) NOT NULL DEFAULT 'Maindefault.jpg',
+  `Cover_pic` varchar(191) NOT NULL DEFAULT 'Coverdefault.jpg',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `user_id`, `fname`, `lname`, `Address`, `Contact_No`, `About_me`, `Main_pic`, `Cover_pic`, `created_at`, `updated_at`) VALUES
+(3, 83, 'Sahan', 'herath', 'naththandiya sri lanka', '0764192310', 'Software developer', 'Maindefault.jpg', 'Coverdefault.jpg', '2019-10-09 08:30:43', '2019-10-09 03:00:43');
 
 -- --------------------------------------------------------
 
@@ -283,7 +310,7 @@ CREATE TABLE `complaints` (
 --
 
 INSERT INTO `complaints` (`id`, `user_email`, `user_id`, `complaint_about`, `complaint`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'sahand.herath@gmail.com', 68, 'Account', 'dvdshkcsdjckshjcvajhcbjhaschjavcjasjhcsavc', 0, '2019-10-08 02:07:18', '2019-10-08 02:07:18');
+(2, 'sahand.herath@gmail.com', 76, 'Package', 'fvvdewfqwdqwedfewf', 2, '2019-10-08 18:35:08', '2019-10-08 13:05:08');
 
 -- --------------------------------------------------------
 
@@ -859,7 +886,7 @@ CREATE TABLE `musicians` (
 --
 
 INSERT INTO `musicians` (`Id`, `Dj_Name`, `Address`, `ContactNo`, `Link`, `Description`, `Playing_Hrs`, `Payment`, `Extra_Cost`, `Fire`, `Smoke`, `Lights`, `Main_Logo`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `Created_at`, `Updated_at`) VALUES
-(1, 'sefd', 'dasdas', '077653012867', 'asda', 'fsgdfg', 12, '12.12', '12.00', 'Available', 'Available', 'Available', '1568637482.jpg', '1568637484.png', '1568637487.jpg', '1568637488.png', '1568637491.jpg', 17, '2019-09-16 07:08:12', '2019-09-16 07:08:12'),
+(1, 'sefd', 'dasdas', '077653012867', 'asda', 'fsgdfg', 12, '12.12', '12.00', 'Available', 'Available', 'Available', '1568637482.jpg', '1570626185.jpg', '1570626205.jpg', '1570626229.jpg', '1570626249.jpg', 17, '2019-10-09 13:04:10', '2019-10-09 07:34:10'),
 (2, 'fsfs', 'fdsfs', '0776530129', 'cfsdfs', 'ffrwer', 2, '121.00', '12.22', 'Available', 'Available', 'Not Available', '1568645789.jpg', '1568645790.jpg', '1568645791.png', '1568645796.jpg', '1568645796.jpg', 18, '2019-09-16 09:26:37', '2019-09-16 09:26:37'),
 (3, '4te', 'erere', '0776530129', 'fhfgdfg', 'gergerg12', 12, '21.00', '21.00', 'Not Available', 'Not Available', 'Available', '1568797535.jpg', '1568797537.jpg', '1568797540.jpg', '1568797541.jpg', '1568797543.jpg', 30, '2019-09-18 03:35:44', '2019-09-18 03:35:44'),
 (4, 'sahan', 'yuewryue', '325433453463', 'hfjsdh.com', 'bad place', 12, '123.00', '1.00', 'Available', 'Available', 'Available', '1569845530.jpg', '1569846474.jpg', '1569846500.jpg', '1569846522.jpg', '1569846544.jpg', 53, '2019-09-30 12:29:05', '2019-09-30 06:59:05');
@@ -915,7 +942,9 @@ CREATE TABLE `music_packages` (
 --
 
 INSERT INTO `music_packages` (`id`, `user_id`, `Package_Name`, `Hours`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
-(3, 53, 'Gold Package', 123, 'efdfsd', '132.00', '1570012467.pdf', '2019-10-02 05:04:27', '2019-10-02 05:04:27');
+(3, 53, 'Gold Package', 123, 'efdfsd', '132.00', '1570012467.pdf', '2019-10-02 05:04:27', '2019-10-02 05:04:27'),
+(4, 17, 'Gold Package', 112, 'wedasdfwed', '2141242.00', '1570623324.pdf', '2019-10-09 06:45:24', '2019-10-09 06:45:24'),
+(5, 17, 'Gold Package', 12, 'dccwecwecwe', '123213.00', '1570625239.pdf', '2019-10-09 07:17:19', '2019-10-09 07:17:19');
 
 -- --------------------------------------------------------
 
@@ -937,7 +966,8 @@ CREATE TABLE `music_videos` (
 --
 
 INSERT INTO `music_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
-(2, 53, 'sahan', '1570012502.mp4', '2019-10-02 05:05:02', '2019-10-02 05:05:02');
+(2, 53, 'sahan', '1570012502.mp4', '2019-10-02 05:05:02', '2019-10-02 05:05:02'),
+(3, 17, 'sahan herath', '1570623269.mp4', '2019-10-09 06:44:29', '2019-10-09 06:44:29');
 
 -- --------------------------------------------------------
 
@@ -1184,8 +1214,6 @@ CREATE TABLE `ratings` (
 --
 
 INSERT INTO `ratings` (`id`, `user_id`, `user_name`, `Email`, `Comment`, `image`, `rating`, `blocked`, `created_at`, `updated_at`) VALUES
-(1, 53, '', 'sahand.herath@gmail.com', 'rggwggweg', '1570398412.jpg', 3, 0, '2019-10-06 16:16:54', '2019-10-06 16:16:54'),
-(2, 53, '', 'sahand.herath@gmail.com', 'bbrbreberb', '1570398643.jpg', 4, 0, '2019-10-06 16:20:44', '2019-10-06 16:20:44'),
 (3, 53, 'Sahan', 'sahand.herath@gmail.com', 'best service', '1570423422.jpg', 4, 0, '2019-10-06 23:13:44', '2019-10-06 23:13:44'),
 (4, 53, 'Sahan', 'sahand.herath@gmail.com', 'eewferfwfw', '1570434139.jpg', 1, 0, '2019-10-07 02:12:21', '2019-10-07 02:12:21'),
 (5, 17, 'Sahan', 'sahand.herath@gmail.com', 'awvravreav', '1570434244.jpg', 3, 0, '2019-10-07 02:14:05', '2019-10-07 02:14:05'),
@@ -1207,7 +1235,6 @@ INSERT INTO `ratings` (`id`, `user_id`, `user_name`, `Email`, `Comment`, `image`
 (21, 57, 'Nethmi', 'nethmi@gmail.com', 'vrvrvervevervrvervrevervre', '1570480479.jpg', 2, 0, '2019-10-07 15:04:39', '2019-10-07 15:04:39'),
 (22, 57, 'Sahan', 'sahand.herath@gmail.com', 'gngbreeavervrevrevevrvrevrevv', 'default.jpg', 5, 0, '2019-10-07 15:05:06', '2019-10-07 15:05:06'),
 (23, 56, 'Nethmi', 'sahand.herath@gmail.com', 'dsdvesevwvewcwcwec', 'default.jpg', 3, 0, '2019-10-07 15:17:10', '2019-10-07 15:17:10'),
-(24, 76, 'Sahan', 'sahand.herath@gmail.com', 'wqfgergregergeervrr', 'default.jpg', 3, 0, '2019-10-07 16:01:03', '2019-10-07 16:01:03'),
 (25, 76, 'Nethmi', 'nethmi@gmail.com', 'ewfwefaweffwefwfewfwefew', '1570483899.jpg', 5, 0, '2019-10-07 16:01:40', '2019-10-07 16:01:40'),
 (26, 68, 'Nethmi', 'sahand.herath@gmail.com', 'wecwcwecwecwec', 'default.jpg', 4, 0, '2019-10-07 16:06:58', '2019-10-07 16:06:58');
 
@@ -1337,6 +1364,24 @@ INSERT INTO `salon_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Se
 (1, 78, 'Gold Package', 'Wedding', 'kjvjsdkvkjadcds', '314235.00', '1570114500.pdf', '2019-10-03 09:25:00', '2019-10-03 09:25:00'),
 (2, 78, 'package12', 'Wedding', 'qdwfwefwe', '3214124.00', '1570115032.pdf', '2019-10-03 09:33:52', '2019-10-03 09:33:52'),
 (4, 54, 'Gold Package Party', 'Party House', 'Best service', '1000.00', '1570125144.pdf', '2019-10-03 21:02:32', '2019-10-03 15:32:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suggestions`
+--
+
+CREATE TABLE `suggestions` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(191) NOT NULL,
+  `Email` varchar(191) NOT NULL,
+  `Contact_No` varchar(30) NOT NULL,
+  `Regarding` varchar(20) NOT NULL,
+  `Message` text NOT NULL,
+  `state` int(11) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1510,7 +1555,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (76, 'Shamith athauda', 'hasdadjk@dbhahf', NULL, 'Hall', 'efewf', 1, '$2y$10$HhT7WssahyUY9gWeHI67CeGhB8qWqiPThlZHcjvaz9Tn1ZVvI7vKm', NULL, '2019-09-27 15:16:42', '2019-09-27 15:16:42'),
 (77, 'sahan', 'sdsgzf@4wwta4', NULL, 'Photography', 'gerger', 0, '$2y$10$1OvjLBVvt7VGf2RqBU.9XO4vCFsSK/5KBsveKpXgbtemnGJcF2jg2', NULL, '2019-09-29 05:09:19', '2019-09-29 13:50:47'),
 (78, 'Shamith athauda', 'ubsjafsssfna@gmail.com', NULL, 'Bridel_Designers', 'ssfdsff', 0, '$2y$10$c7UhQSgfpWBWxXj.iAdu7OCj0jq3rGKliTWPUVkNtkIc01NQs3UfG', NULL, '2019-09-30 02:25:38', '2019-09-30 02:25:38'),
-(79, 'fefew', 'efw@rdrger', NULL, 'Actors', 'rgrgregr', 0, '$2y$10$pMTthFg9mOCzG7dOw8kOHOUcgAPSo7tfEo2buPsEBj1q0fqZnvz/G', NULL, '2019-10-03 02:08:55', '2019-10-03 02:08:55');
+(79, 'fefew', 'efw@rdrger', NULL, 'Actors', 'rgrgregr', 0, '$2y$10$pMTthFg9mOCzG7dOw8kOHOUcgAPSo7tfEo2buPsEBj1q0fqZnvz/G', NULL, '2019-10-03 02:08:55', '2019-10-03 02:08:55'),
+(83, 'Sahan Herath', 'hiruni@gmail.com', NULL, 'admin', 'kandy', 1, '$2y$10$WrgN6KNac9ZN2rwmmTDmmup7T9T7ybgxl2JNKIwOwNCWX67paOJja', NULL, '2019-10-09 00:59:39', '2019-10-09 03:00:43');
 
 --
 -- Indexes for dumped tables
@@ -1532,6 +1578,12 @@ ALTER TABLE `actor_events`
 -- Indexes for table `actor_packages`
 --
 ALTER TABLE `actor_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1781,6 +1833,12 @@ ALTER TABLE `salon_packages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `suggestions`
+--
+ALTER TABLE `suggestions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `transporters`
 --
 ALTER TABLE `transporters`
@@ -1828,6 +1886,12 @@ ALTER TABLE `actor_packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `cake_designers`
 --
 ALTER TABLE `cake_designers`
@@ -1861,7 +1925,7 @@ ALTER TABLE `catering_packages`
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `costume_designers`
@@ -1987,13 +2051,13 @@ ALTER TABLE `musician_events`
 -- AUTO_INCREMENT for table `music_packages`
 --
 ALTER TABLE `music_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `music_videos`
 --
 ALTER TABLE `music_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `photographies`
@@ -2068,6 +2132,12 @@ ALTER TABLE `salon_packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `suggestions`
+--
+ALTER TABLE `suggestions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `transporters`
 --
 ALTER TABLE `transporters`
@@ -2089,7 +2159,7 @@ ALTER TABLE `transport_packages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

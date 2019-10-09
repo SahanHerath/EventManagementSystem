@@ -371,7 +371,7 @@
 								<div class="row">
 									<div class="column offset-1">
 										<ul class="list basic_info">
-										<li><b>Event Type :- </b>{{$dec1->Event_Type}}</li>
+										<li><b>Hours of playing :- </b>{{$dec1->Hours}}</li>
 										<li><b>Services :- </b>{{$dec1->Services}}</li>
 										<li><b>Price :- </b> Rs.{{$dec1->Price}}</li>
 										<li><a href="files/music/{{$dec1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
