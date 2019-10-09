@@ -27,6 +27,7 @@
 	<link href="cvportfolio/01-cv-portfolio/css/responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
+	
 
 	 <!-- Bootstrap core CSS -->
 	 <link href="css/rating.css" rel="stylesheet">
@@ -39,10 +40,53 @@
 		<script src="js/ie-emulation-modes-warning.js"></script>
 		<!------ Rating css---------->
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- 
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
 	
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-left" href="/">Evora</a>
+        </div>
+        <center>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+					@guest
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								
+								          {{ Auth::user()->name }} 
+                                </a>
+                            </li>
+							              <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
+                    </div>
+                </form>
+            </div>
+        </center>
+    </div>
+</div>
 	
 	
 	<section class="intro-section" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
