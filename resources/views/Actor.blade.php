@@ -78,8 +78,35 @@
                       <li><a href="Actor">Presenters & Entertainers</a></li>
                       <li><a href="Transport">Wedding Transport</a></li>
                       </ul>
-                      <li><a href="login">Login</a></li>
-                      <li><a href="register">Register</a></li>
+                      @guest
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								
+								          {{ Auth::user()->name }} 
+                                </a>
+                            </li>
+							              <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
+                    </ul>
                   </div>
                 </nav>
               </div>
