@@ -54,13 +54,20 @@
             </a>
           </li>
           <li>
-            <a href="/rating">
-              <i class="nc-icon nc-bulb-63"></i>
-              <p>Rating</p>
+            <a href="/admins">
+              <i class="nc-icon nc-key-25"></i>
+              <p>Admins</p>
             </a>
           </li>
           <li>
-            <a href="/profile">
+          <li>
+            <a href="/comments">
+              <i class="nc-icon nc-bulb-63"></i>
+              <p>User Review</p>
+            </a>
+          </li>
+          <li>
+            <a href="/Profile">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
@@ -69,6 +76,12 @@
             <a href="/users">
               <i class="nc-icon nc-badge"></i>
               <p>Service Providers</p>
+            </a>
+          </li>
+          <li>
+            <a href="/complaints">
+              <i class="nc-icon nc-globe-2"></i>
+              <p>Complaints</p>
             </a>
           </li>
           

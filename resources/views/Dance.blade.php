@@ -195,7 +195,7 @@
           
       
         @foreach($level as $leve)
-        
+        <div class="container">
         <div class="site-block d-lg-flex">
           <div class="col-md-7 col-lg-4">
             <a href="uploads/dancing/{{$leve->Main_pic}}" class="image-popup img-opacity"><img src="uploads/dancing/{{$leve->Main_pic}}" alt="Image" class="img-fluid"></a>
@@ -210,9 +210,9 @@
             <p><a href="{{URL('/DanceView'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
           </div>
         </div>
-        <br><br><br>
+        <br><br>
         @endforeach
-			
+        </div>
         </div>
       </div>
     </div>

@@ -245,9 +245,80 @@ class decorationController extends Controller
                 ->where('users.id','=',$id)
                 ->join('decorators','users.id','=','decorators.user_id')
                 ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->select('users.id as userid','name','email','decorators.id as decoid','Team_Name', 'Address', 'Description','Contact_No','Link','Poruwa','Flower','Table_Hall','Setty_Backs','Lighting','Traditional','Wedding_Car','Main_Pic','pic1','pic2','pic3','pic4','decorator_events.id as eventid','Wedding', 'Birthday', 'Get_Together','Parties','Outside_events')
                 ->get();
 
-                return view('DecoratorView',compact('data'));
+        $deto=DB::table('users')
+                ->join('decoration_packages','users.id','=','decoration_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('decoration_packages.id','Package_Name', 'Decoration_Type', 'Services','Price','Pdf')
+                ->get();
+
+        $rate=DB::table('users')
+                ->join('ratings','ratings.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->where('blocked','=',"0")
+                ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+                ->get();
+    
+        $average=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->avg('rating');
+    
+        $one=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','1')
+                   ->count();
+    
+        $two=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','2')
+                   ->count();
+    
+        $three=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','3')
+                   ->count();
+    
+        $four=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','4')
+                   ->count();
+    
+        $five=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','5')
+                   ->count();
+    
+        $all=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->count();
+    
+            if($all!=0)
+            {
+                $precentage1=$one/$all*100;
+                $precentage2=$two/$all*100;
+                $precentage3=$three/$all*100;
+                $precentage4=$four/$all*100;
+                $precentage5=$five/$all*100;
+            }
+            else 
+            {
+                $precentage1=0;
+                $precentage2=0;
+                $precentage3=0;
+                $precentage4=0;
+                $precentage5=0;
+            }
+
+                return view('DecoratorView',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
@@ -298,6 +369,8 @@ class decorationController extends Controller
                 ->where('decorator_events.Outside_events','=','Available')
                 ->get();
 
+        
+
 
         return view('Decorator', compact('decos'));
     }
@@ -318,6 +391,8 @@ class decorationController extends Controller
             ->where('users.id','=',$id1)
             ->select('decoration_packages.id','Package_Name', 'Decoration_Type', 'Services','Price','Pdf')
             ->get();
+
+        
         
         
 
@@ -335,7 +410,7 @@ class decorationController extends Controller
         $deco ->Outside_events =$request->Outside_events;
         $deco ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Events Updated Successfully');
     }
 
     public function featureUpdate(Request $request, $id)
@@ -351,7 +426,7 @@ class decorationController extends Controller
         $deco ->Wedding_Car =$request->Wedding_Car;
         $deco ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Features Updated Successfully');
     }
     
     public function InfoUpdate(Request $request, $userid, $decoid)
@@ -394,7 +469,7 @@ class decorationController extends Controller
         $deco1 ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Profile Details Updated Successfully');
         
     }
 
@@ -410,6 +485,7 @@ class decorationController extends Controller
                 $deco1->delete();
                 $deco2 = Decorator::where('user_id',$id)->delete();
                 $deco3 = Decorator_event::where('user_id',$id)->delete();
+                $deco4 = Decoration_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -461,10 +537,10 @@ class decorationController extends Controller
         
          $decorate_package->save();
 
-         return redirect('/Profile');
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
     }
 
-    public function EditPackage(request $request,$id)
+    public function EditPackage(request $request)
     {
         $request->validate(
             ['Package_Name1' => 'required|string|max:255',
@@ -488,7 +564,7 @@ class decorationController extends Controller
         
         
         
-        $data=Decoration_package::where('id',$id)
+        $data=Decoration_package::where('id',$request->id)
             
         ->update([
                 'Package_Name'=>$request->Package_Name1,
@@ -502,35 +578,17 @@ class decorationController extends Controller
             
         
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
     }
 
-    public function deletePackage($id)
+    public function deletePackage(request $request)
     {
-        $id1 = Auth::user()->id;
+        
 
-        $data=DB::table('users')
-            ->join('decoration_packages','users.id','=','decoration_packages.user_id')
-            ->where('decoration_packages.id','=',$id)
-            ->select('users.id')
-            ->get();
-
-        foreach($data as $data1)
-        {
-            if($id1==$data1->id)
-            {
-                $deco1 = Decoration_package::findOrFail($id);
+                $deco1 = Decoration_package::findOrFail($request->id);
                 $deco1->delete();
 
-                return redirect('/Profile');
-            }
-            else 
-            {
-                return redirect('/');
-            }
-            
-        }
-
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
     }
 
     public function changeMainPic(request $request,$id)
@@ -561,7 +619,7 @@ class decorationController extends Controller
                     {
                         $Main_Pic=$request->file('Main_Pic');
                         $filename=time().'.'.$Main_Pic->getClientOriginalExtension();
-                        Image::make($Main_Pic)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($Main_Pic)->fit(480,480)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -571,7 +629,7 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
                 }
 
                 else
@@ -610,7 +668,7 @@ class decorationController extends Controller
                     {
                         $pic1=$request->file('pic1');
                         $filename=time().'.'.$pic1->getClientOriginalExtension();
-                        Image::make($pic1)->resize(300,300)->save(public_path('/uploads/decoration/'. $filename));
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
 
                         $picture=Decorator::where('id',$id)
                         ->update([
@@ -620,7 +678,154 @@ class decorationController extends Controller
                         ]);
                     }
 
-                    return redirect('/Profile');
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic2(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->where('users.id','=',$id1)
+                ->select('decorators.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic2'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic2.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic2'))
+                    {
+                        $pic2=$request->file('pic2');
+                        $filename=time().'.'.$pic2->getClientOriginalExtension();
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+
+                        $picture=Decorator::where('id',$id)
+                        ->update([
+                                'pic2'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic3(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->where('users.id','=',$id1)
+                ->select('decorators.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic3'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic3.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic3'))
+                    {
+                        $pic3=$request->file('pic3');
+                        $filename=time().'.'.$pic3->getClientOriginalExtension();
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+
+                        $picture=Decorator::where('id',$id)
+                        ->update([
+                                'pic3'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic4(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->where('users.id','=',$id1)
+                ->select('decorators.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic4.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic4'))
+                    {
+                        $pic4=$request->file('pic4');
+                        $filename=time().'.'.$pic4->getClientOriginalExtension();
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/decoration/'. $filename));
+
+                        $picture=Decorator::where('id',$id)
+                        ->update([
+                                'pic4'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
                 }
 
                 else

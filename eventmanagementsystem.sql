@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2019 at 10:38 PM
+-- Generation Time: Oct 08, 2019 at 09:55 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -57,7 +57,8 @@ CREATE TABLE `actors` (
 --
 
 INSERT INTO `actors` (`id`, `Actor_name`, `Address`, `Contact_No`, `Link`, `Description`, `Singer`, `Magician`, `Comedian`, `Actor`, `Announcer`, `Entertainer`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'drtwefe', 'werewr', '12613123123', 'werw', 'sdsdfdsfs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1568836560.jpg', '1568836561.jpg', '1568836563.jpg', '1568836565.jpg', '1568836567.jpg', 39, '2019-09-18 14:26:08', '2019-09-18 14:26:08');
+(1, 'drtwefe', 'werewr', '12613123123', 'werw', 'sdsdfdsfs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569926751.png', '1569927532.jpg', '1569927550.jpg', '1569927570.jpg', '1569927588.jpg', 39, '2019-10-01 10:59:49', '2019-10-01 05:29:49'),
+(2, 'effewfwef', 'wefwefewfew', '21352453552', 'sdcsddcsdcds', 'dscdscsdcdsvsvsdv', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', '1570088398.jpg', '1570088399.jpg', '1570088401.jpg', '1570088402.jpg', '1570088403.jpg', 79, '2019-10-03 02:10:03', '2019-10-03 02:10:03');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,26 @@ CREATE TABLE `actor_events` (
 --
 
 INSERT INTO `actor_events` (`id`, `user_id`, `Birthday`, `Party`, `Professional_event`, `Musical_event`, `Corporate_event`, `created_at`, `updated_at`) VALUES
-(1, 39, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 14:26:08', '2019-09-18 14:26:08');
+(1, 39, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 14:26:08', '2019-09-18 14:26:08'),
+(2, 79, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-03 02:10:04', '2019-10-03 02:10:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actor_packages`
+--
+
+CREATE TABLE `actor_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Hours` int(11) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,7 +139,32 @@ CREATE TABLE `cake_designers` (
 
 INSERT INTO `cake_designers` (`id`, `Organization_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Wedding_cake`, `Birthday_cake`, `Cake_Structure`, `Pastry_cake`, `Cup_Cake`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'dfdfsd', 'fsdfsd', '0776530129', 'sdfsd', 'fdfasdfs', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1568816915.jpg', '1568816916.jpg', '1568816918.jpg', '1568816919.jpg', '1568816921.jpg', 33, '2019-09-18 08:58:42', '2019-09-18 08:58:42'),
-(2, 'Sahan', 'Nagaha', '0776530129', 'sahan.com', 'you are me', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569293908.jpg', '1569293910.jpg', '1569293911.jpg', '1569293913.jpg', '1569293913.jpg', 57, '2019-09-24 03:38:21', '2019-09-23 22:08:21');
+(2, 'Sahan', 'Nagaha', '0776530129', 'sahan.com', 'you are me', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569920214.jpg', '1569925061.jpg', '1569925081.jpg', '1569925101.jpg', '1569925119.jpeg', 57, '2019-10-05 12:40:51', '2019-10-05 07:10:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cake_packages`
+--
+
+CREATE TABLE `cake_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Cake_types` text NOT NULL,
+  `Description` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cake_packages`
+--
+
+INSERT INTO `cake_packages` (`id`, `user_id`, `Package_Name`, `Cake_types`, `Description`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 57, 'Gold Package Wedding', 'Baked cake', 'best cakes in here', '2000.00', '1570287283.pdf', '2019-10-05 15:16:14', '2019-10-05 09:46:14');
 
 -- --------------------------------------------------------
 
@@ -159,7 +204,7 @@ CREATE TABLE `caterings` (
 --
 
 INSERT INTO `caterings` (`id`, `Service_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Welcome_drink`, `Catering_set`, `Catering_tent`, `Cake`, `Special_Food`, `Garden_umbrella`, `Coffee_Machine`, `Table_chair`, `sink`, `dessert`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'trete', 'ertert', '5346534345345', 'gregrgew', 'erewrewr', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1568832814.jpg', '1568832816.jpg', '1568832817.jpg', '1568832818.jpg', '1568832820.jpg', 38, '2019-09-18 13:23:41', '2019-09-18 13:23:41'),
+(1, 'trete', 'ertert', '5346534345345', 'gregrgew', 'erewrewr', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569913680.jpg', '1569914472.jpg', '1569914776.jpg', '1569914797.jpg', '1569914758.jpg', 38, '2019-10-01 07:26:38', '2019-10-01 01:56:38'),
 (2, 'sahan', 'sahan', '0711443304', 'sahan.com', 'i am sahan', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1569256894.jpg', '1569256895.jpg', '1569256897.jpg', '1569256898.jpg', '1569256899.jpg', 56, '2019-09-23 19:01:05', '2019-09-23 13:31:05');
 
 -- --------------------------------------------------------
@@ -187,6 +232,58 @@ CREATE TABLE `catering_events` (
 INSERT INTO `catering_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Party`, `Corporate_event`, `Funeral`, `created_at`, `updated_at`) VALUES
 (1, 38, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 13:23:41', '2019-09-18 13:23:41'),
 (2, 56, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-23 17:22:06', '2019-09-23 11:52:06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `catering_packages`
+--
+
+CREATE TABLE `catering_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Appetizers` text NOT NULL,
+  `Welcome_drinks` text NOT NULL,
+  `Soups` text NOT NULL,
+  `Foods` text NOT NULL,
+  `Desserts` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `Created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `catering_packages`
+--
+
+INSERT INTO `catering_packages` (`id`, `user_id`, `Package_Name`, `Appetizers`, `Welcome_drinks`, `Soups`, `Foods`, `Desserts`, `Price`, `Pdf`, `Created_at`, `updated_at`) VALUES
+(1, 56, 'Gold Package', 'best appetizers', 'cocacola, fruit juice, sprite', 'vegetable soup, chicken soup, pumpkin soup', 'rice and curry, string hoppers, hoppers, rotti', 'ice cream, fruit salad, vatalappan, jelly, salad', '4000.00', '1570333626.pdf', '2019-10-06 07:47:02', '2019-10-06 02:17:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `complaints`
+--
+
+CREATE TABLE `complaints` (
+  `id` int(11) NOT NULL,
+  `user_email` varchar(191) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `complaint_about` varchar(191) NOT NULL,
+  `complaint` text NOT NULL,
+  `state` int(11) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `complaints`
+--
+
+INSERT INTO `complaints` (`id`, `user_email`, `user_id`, `complaint_about`, `complaint`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'sahand.herath@gmail.com', 68, 'Account', 'dvdshkcsdjckshjcvajhcbjhaschjavcjasjhcsavc', 0, '2019-10-08 02:07:18', '2019-10-08 02:07:18');
 
 -- --------------------------------------------------------
 
@@ -229,8 +326,8 @@ INSERT INTO `costume_designers` (`id`, `Name`, `Address`, `Contact_No`, `Link`, 
 (1, 'efdfs', 'sdfsd', '324234235423', 'dgdfgdfg', 'dfgdfgfdgdf', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568838960.jpg', '1568838962.jpg', '1568838964.jpg', '1568838965.jpg', '1568838967.jpg', 40, '2019-09-18 15:06:08', '2019-09-18 15:06:08'),
 (2, 'vdvdfvd', 'vdfdfvdf', '1232547568', 'refergerher', 'ergergreg', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568839357.jpg', '1568839359.jpg', '1568839360.jpg', '1568839362.jpg', '1568839363.jpg', 41, '2019-09-18 15:12:45', '2019-09-18 15:12:45'),
 (3, 'fwefwe', 'fwefwe', '5342748724872', 'fwefewf', 'efwef', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568839849.jpg', '1568839851.jpg', '1568839852.jpg', '1568839854.jpg', '1568839855.jpg', 42, '2019-09-18 15:20:57', '2019-09-18 15:20:57'),
-(4, 'fewef', 'wefwef', '45435346346', 'vdfvdfbdfb', 'fgegerger', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1568840344.jpg', '1568840345.jpg', '1568840347.jpg', '1568840348.jpg', '1568840350.jpg', 43, '2019-09-18 15:29:11', '2019-09-18 15:29:11'),
-(5, 'dfsd', 'dsfsd', '23423785324823', 'sdf', 'fwefwefwe', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1568840809.jpg', '1568840810.jpg', '1568840812.jpg', '1568840813.jpg', '1568840815.jpg', 44, '2019-09-18 15:36:57', '2019-09-18 15:36:57'),
+(4, 'fewef', 'wefwef', '45435346346', 'vdfvdfbdfb', 'fgegerger', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1570298917.jpg', '1570298935.jpg', '1570298953.jpg', '1570298973.jpg', '1570298990.jpg', 43, '2019-10-05 18:10:50', '2019-10-05 12:40:50'),
+(5, 'dfsd', 'dsfsd', '23423785324823', 'sdf', 'fwefwefwe', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569902131.jpg', '1569911301.png', '1569911329.jpg', '1569911349.jpg', '1569911369.jpg', 44, '2019-10-01 06:29:30', '2019-10-01 00:59:30'),
 (6, 'sahan', 'sahan', '07776530129', 'me mai', 'they are', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569320078.jpg', '1569320080.jpg', '1569320081.jpg', '1569320083.jpg', '1569320083.jpg', 60, '2019-09-24 12:47:48', '2019-09-24 07:17:48');
 
 -- --------------------------------------------------------
@@ -262,6 +359,31 @@ INSERT INTO `costume_designer_events` (`id`, `user_id`, `Wedding`, `Party`, `fas
 (4, 43, 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-18 15:29:12', '2019-09-18 15:29:12'),
 (5, 44, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-18 15:36:57', '2019-09-18 15:36:57'),
 (6, 60, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-24 11:32:01', '2019-09-24 06:02:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `costume_packages`
+--
+
+CREATE TABLE `costume_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Event_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `costume_packages`
+--
+
+INSERT INTO `costume_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 43, 'Gold Package Wedding', 'Wedding party', 'best', '1200.00', '1570299027.pdf', '2019-10-05 18:24:19', '2019-10-05 12:54:19');
 
 -- --------------------------------------------------------
 
@@ -300,7 +422,7 @@ CREATE TABLE `dancers` (
 
 INSERT INTO `dancers` (`id`, `Team_Name`, `Address`, `Contact_No`, `Link`, `Description`, `choreography`, `Gender`, `Traditional`, `Western`, `Indian`, `Kandyan`, `Casual`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'fsdf', 'sdfds', '0776530129', 'dsfds', 'sdfsdsd', 'Available', 'Female', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', '1568804159.jpg', '1568804161.jpg', '1568804162.jpg', '1568804164.jpg', '1568804165.jpg', 31, '2019-09-18 05:26:06', '2019-09-18 05:26:06'),
-(2, 'caascas', 'cascasca', '32132131267688', 'csacass', 'dcsdvsdvds', 'Not Available', 'Male', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569076432.jpg', '1569076434.jpg', '1569076436.jpg', '1569076437.jpg', '1569076439.jpg', 48, '2019-09-22 07:50:08', '2019-09-22 02:20:08');
+(2, 'caascas', 'cascasca', '32132131267688', 'csacass', 'dcsdvsdvds', 'Not Available', 'Male', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569873824.jpg', '1569874912.jpg', '1569874936.jpg', '1569874959.jpg', '1569874982.jpg', 48, '2019-09-30 20:23:05', '2019-09-30 14:53:05');
 
 -- --------------------------------------------------------
 
@@ -330,6 +452,53 @@ INSERT INTO `dancer_events` (`id`, `user_id`, `Wedding`, `Party`, `Musical_event
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dance_packages`
+--
+
+CREATE TABLE `dance_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Dancing_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` int(11) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dance_packages`
+--
+
+INSERT INTO `dance_packages` (`id`, `user_id`, `Package_Name`, `Dancing_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(2, 48, 'Gold Package', 'salsa', 'dscs', 2132, '1569960799.pdf', '2019-10-01 14:43:19', '2019-10-01 14:43:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dance_videos`
+--
+
+CREATE TABLE `dance_videos` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Video_Name` varchar(191) NOT NULL,
+  `Video` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dance_videos`
+--
+
+INSERT INTO `dance_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
+(2, 48, 'saban', '1569985303.mp4', '2019-10-01 21:31:43', '2019-10-01 21:31:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `decoration_packages`
 --
 
@@ -338,7 +507,7 @@ CREATE TABLE `decoration_packages` (
   `user_id` int(11) NOT NULL,
   `Package_Name` varchar(191) NOT NULL,
   `Decoration_Type` varchar(191) NOT NULL,
-  `Services` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
   `Price` decimal(10,2) NOT NULL,
   `Pdf` varchar(191) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -350,8 +519,7 @@ CREATE TABLE `decoration_packages` (
 --
 
 INSERT INTO `decoration_packages` (`id`, `user_id`, `Package_Name`, `Decoration_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
-(3, 68, 'package1', 'marbles', 'dscfsdcsd', '3214532.00', '1569609879.pdf', '2019-09-27 13:14:39', '2019-09-27 13:14:39'),
-(4, 68, 'package2', 'Glass', 'Hall decorations ,Chair decorations', '12000.00', '1569616037.pdf', '2019-09-27 14:57:17', '2019-09-27 14:57:17');
+(9, 68, 'File package', 'Flower', 'Wedding car decoration ,hall decoration', '1320.00', '1569778600.pdf', '2019-10-04 13:54:04', '2019-10-04 08:24:04');
 
 -- --------------------------------------------------------
 
@@ -391,7 +559,7 @@ INSERT INTO `decorators` (`id`, `Team_Name`, `Address`, `Description`, `Contact_
 (1, 'kdfhkjsjfk', 'efwe', 'jzsjhsdf', 'fewfwe', 'fefsefs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', '1567765328.jpg', '1567765329.jpg', '1567765331.jpg', '1567765332.jpg', '1567765334.jpg', 14, '2019-09-06 04:52:15', '2019-09-06 04:52:15'),
 (2, 'hshjfs', 'hjvdjgdf', 'jshbckjsdjkfsd', 'vdjhdks', 'dxbvnjdsfjks', 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1567963713.jpg', '1567963715.jpg', '1567963716.jpg', '1567963718.jpg', '1567963720.jpg', 15, '2019-09-08 11:58:41', '2019-09-08 11:58:41'),
 (3, 'sggdsaghda', 'nagahaella rd kandy', 'hjjk', '+94776530129', 'www.jfn.ac.lk', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', 'Not Available', '1569006243.jpg', '1569006244.jpg', '1569006246.jpg', '1569006247.jpg', '1569006249.jpg', 47, '2019-09-21 20:30:48', '2019-09-21 15:00:48'),
-(5, 'dfsfasdf', 'sdfsdfsd', 'fsdfsdfsf', '4535789053453', 'dsfsdf', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569492671.jpg', '1569492672.jpg', '1569492674.jpg', '1569492675.jpg', '1569492677.jpg', 68, '2019-09-26 04:41:18', '2019-09-26 04:41:18');
+(5, 'Sahan', 'sdfsdfsd', 'fsdfsdfsf', '4535789053453', 'dsfsdf', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', '1569741586.jpg', '1569742114.jpg', '1569740307.jpg', '1569740368.jpeg', '1569740388.jpg', 68, '2019-09-29 07:28:35', '2019-09-29 01:58:35');
 
 -- --------------------------------------------------------
 
@@ -419,7 +587,7 @@ INSERT INTO `decorator_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Get_Tog
 (1, 14, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-06 04:52:16', '2019-09-06 04:52:16'),
 (2, 15, 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-09-08 11:58:41', '2019-09-08 11:58:41'),
 (3, 47, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-21 04:41:44', '2019-09-20 23:11:44'),
-(5, 68, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-26 04:41:18', '2019-09-26 04:41:18');
+(5, 68, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-29 07:18:28', '2019-09-29 01:48:28');
 
 -- --------------------------------------------------------
 
@@ -449,7 +617,7 @@ CREATE TABLE `event_planners` (
 --
 
 INSERT INTO `event_planners` (`id`, `Organization_name`, `Address`, `Contact_No`, `Link`, `Description`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'ferfer', 'ferfe', '0776530129', 'erfer', 'erfref', '1568814980.jpg', '1568814982.jpg', '1568814984.jpg', '1568814986.jpg', '1568814987.jpg', 32, '2019-09-18 08:26:29', '2019-09-18 08:26:29'),
+(1, 'ferfer', 'ferfe', '0776530129', 'erfer', 'erfref', '1569867656.jpg', '1569872298.jpg', '1569872318.jpg', '1569872340.jpg', '1569872359.jpg', 32, '2019-09-30 19:39:21', '2019-09-30 14:09:21'),
 (2, 'sahan', 'me', '222222222225', 'sahan.com', 'skhasdjkasd', '1569304867.jpg', '1569304869.jpg', '1569304871.jpg', '1569304872.jpg', '1569304873.jpg', 58, '2019-09-24 06:33:59', '2019-09-24 01:03:59');
 
 -- --------------------------------------------------------
@@ -505,8 +673,9 @@ INSERT INTO `hall_events` (`id`, `hall_id`, `Wedding`, `Meeting`, `Party`, `Corp
 (1, 1, 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
 (2, 1, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-08-30 12:27:49', '2019-08-30 12:27:49'),
 (4, 4, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
-(9, 9, 'Available', 'Not Available', 'Not Available', 'Available', 'Available', '2019-09-25 17:22:09', '2019-09-25 11:52:09'),
-(10, 10, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32');
+(10, 10, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
+(11, 11, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-01 07:59:26', '2019-10-01 07:59:26'),
+(12, 12, 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-10-06 12:40:47', '2019-10-06 12:40:47');
 
 -- --------------------------------------------------------
 
@@ -543,8 +712,37 @@ CREATE TABLE `hall_features` (
 INSERT INTO `hall_features` (`id`, `hall_id`, `projection`, `internet`, `parking`, `security_camera`, `security_personal`, `reception_area`, `Bar`, `garden`, `smoking_area`, `welcome_drinks`, `Buffet`, `Handicap_accessible`, `outside_balcony`, `inside_balcony`, `stage`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
 (3, 4, 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
-(8, 9, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 09:07:51', '2019-09-25 09:07:51'),
-(9, 10, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32');
+(9, 10, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
+(10, 11, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-01 07:59:26', '2019-10-01 07:59:26'),
+(11, 12, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-06 12:40:47', '2019-10-06 12:40:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hall_packages`
+--
+
+CREATE TABLE `hall_packages` (
+  `id` int(11) NOT NULL,
+  `hall_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Appetizers` text NOT NULL,
+  `Welcome_drinks` text NOT NULL,
+  `Foods` text NOT NULL,
+  `Soups` text NOT NULL,
+  `Desserts` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hall_packages`
+--
+
+INSERT INTO `hall_packages` (`id`, `hall_id`, `Package_Name`, `Appetizers`, `Welcome_drinks`, `Foods`, `Soups`, `Desserts`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 12, 'Gold Package', 'murukku , bait ,wade', 'orange juice, cocacola, fruit juice', 'rice and curry, fish ,fried rice, string hoppers', 'vegetable soup, pumpkin soup, chicken soup', 'ice cream, watalappan, fruit salad, salad', '5000.00', '1570370848.pdf', '2019-10-06 15:01:32', '2019-10-06 09:31:32');
 
 -- --------------------------------------------------------
 
@@ -578,8 +776,9 @@ CREATE TABLE `hall_table_arrangements` (
 INSERT INTO `hall_table_arrangements` (`id`, `hall_id`, `theatre`, `U_shape`, `V_shape`, `classroom`, `hallow_square`, `Boardroom`, `Oval`, `Herringbone`, `Top_table_springs`, `banquet`, `cabaret`, `informal`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
 (3, 4, 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
-(8, 9, 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 09:07:51', '2019-09-25 09:07:51'),
-(9, 10, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32');
+(9, 10, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
+(10, 11, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-01 07:59:27', '2019-10-01 07:59:27'),
+(11, 12, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '2019-10-06 12:40:47', '2019-10-06 12:40:47');
 
 -- --------------------------------------------------------
 
@@ -611,7 +810,8 @@ INSERT INTO `hotels` (`id`, `Hotel_Name`, `Address`, `Contact_No`, `Link`, `Desc
 (1, 'ffgghfh', 'gyyu', 'ghy', 'tryyuyuk', 'ghhjkj TYPE, KIND, SORT, NATURE, DESCRIPTION, CHARACTER mean a number of individuals thought of as a group because of a common quality or qualities. TYPE may suggest strong and clearly marked similarity throughout the items included so that each is typical of the group.  one of three basic body types  KIND may suggest natural grouping.  a zoo seemingly having animals of every kind  SORT often suggests some ', 'yfggjhjh', 'ghjjjh', '1567012588.jpg', '1567012590.jpg', 1, '2019-08-30 08:25:12', '2019-08-30 08:25:12'),
 (2, 'cdfsdf', 'svvsd', 'dsgdsfsd', 'dsfdsf', 'dsfdsfds', 'adsdsa', 'vsdfsdf', '1567012588.jpg', '1567012588.jpg', 1, '2019-08-30 07:23:30', '2019-08-30 07:23:30'),
 (4, 'gjhjh', 'bbbm', 'hjhj', 'fncgm', 'hghjkkj', 'kjkn', 'bh,bjk', '1568823170.jpg', '1568823171.jpg', 35, '2019-09-18 10:42:53', '2019-09-18 10:42:53'),
-(5, 'My Hotel', 'Sahan road', '0764192310', 'facebook.com', 'cshdbsad', 'mymy', 'lifelife.com', '1569334826.jpg', '1569334828.jpg', 61, '2019-09-24 19:27:27', '2019-09-24 13:57:27');
+(5, 'My Hotel', 'Sahan road', '0764192310', 'facebook.com', 'cshdbsad', 'mymy', 'lifelife.com', '1569931840.jpg', '1569933335.jpg', 61, '2019-10-01 12:35:37', '2019-10-01 07:05:37'),
+(7, 'sdsfdfs', 'sdfsd', '325352343242', 'efwewfw', 'wefwefwefwf', 'efwfewfwef', 'wefwefwef', '1569617233.jpg', '1569617234.jpg', 76, '2019-09-27 15:17:16', '2019-09-27 15:17:16');
 
 -- --------------------------------------------------------
 
@@ -662,7 +862,7 @@ INSERT INTO `musicians` (`Id`, `Dj_Name`, `Address`, `ContactNo`, `Link`, `Descr
 (1, 'sefd', 'dasdas', '077653012867', 'asda', 'fsgdfg', 12, '12.12', '12.00', 'Available', 'Available', 'Available', '1568637482.jpg', '1568637484.png', '1568637487.jpg', '1568637488.png', '1568637491.jpg', 17, '2019-09-16 07:08:12', '2019-09-16 07:08:12'),
 (2, 'fsfs', 'fdsfs', '0776530129', 'cfsdfs', 'ffrwer', 2, '121.00', '12.22', 'Available', 'Available', 'Not Available', '1568645789.jpg', '1568645790.jpg', '1568645791.png', '1568645796.jpg', '1568645796.jpg', 18, '2019-09-16 09:26:37', '2019-09-16 09:26:37'),
 (3, '4te', 'erere', '0776530129', 'fhfgdfg', 'gergerg12', 12, '21.00', '21.00', 'Not Available', 'Not Available', 'Available', '1568797535.jpg', '1568797537.jpg', '1568797540.jpg', '1568797541.jpg', '1568797543.jpg', 30, '2019-09-18 03:35:44', '2019-09-18 03:35:44'),
-(4, 'sahan', 'yuewryue', '325433453463', 'hfjsdh.com', 'bad place', 12, '123.00', '1.00', 'Available', 'Available', 'Available', '1569177011.jpg', '1569177012.jpg', '1569177013.jpg', '1569177015.jpg', '1569177016.jpg', 53, '2019-09-22 21:42:26', '2019-09-22 16:12:26');
+(4, 'sahan', 'yuewryue', '325433453463', 'hfjsdh.com', 'bad place', 12, '123.00', '1.00', 'Available', 'Available', 'Available', '1569845530.jpg', '1569846474.jpg', '1569846500.jpg', '1569846522.jpg', '1569846544.jpg', 53, '2019-09-30 12:29:05', '2019-09-30 06:59:05');
 
 -- --------------------------------------------------------
 
@@ -691,6 +891,53 @@ INSERT INTO `musician_events` (`Id`, `user_id`, `Wedding`, `Birthday`, `Beach_Pa
 (2, 18, 'Not Available', 'Not Available', 'Available', 'Available', 'Not Available', '2019-09-16 09:26:38', '2019-09-16 09:26:38'),
 (3, 30, 'Available', 'Available', 'Available', 'Not Available', 'Not Available', '2019-09-18 03:35:45', '2019-09-18 03:35:45'),
 (4, 53, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-22 21:20:28', '2019-09-22 15:50:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `music_packages`
+--
+
+CREATE TABLE `music_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Hours` int(11) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `music_packages`
+--
+
+INSERT INTO `music_packages` (`id`, `user_id`, `Package_Name`, `Hours`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(3, 53, 'Gold Package', 123, 'efdfsd', '132.00', '1570012467.pdf', '2019-10-02 05:04:27', '2019-10-02 05:04:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `music_videos`
+--
+
+CREATE TABLE `music_videos` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Video_Name` varchar(191) NOT NULL,
+  `Video` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `music_videos`
+--
+
+INSERT INTO `music_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
+(2, 53, 'sahan', '1570012502.mp4', '2019-10-02 05:05:02', '2019-10-02 05:05:02');
 
 -- --------------------------------------------------------
 
@@ -741,7 +988,8 @@ INSERT INTO `photographies` (`id`, `Studio_Name`, `Address`, `ContactNo`, `Link`
 (1, 'tfyugijok', '8h9ij[pok[', 'rt7y89-u09=-i0', '6789hij', '8gupihojpkl', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1567765049.jpg', '1567765050.jpg', '1567765051.jpg', '1567765052.jpg', '1567765053.jpg', 13, '2019-09-06 04:47:34', '2019-09-06 04:47:34'),
 (2, 'ndsfsdhfskdhj', 'jdsfkjdsf', 'bhdsfjkds', 'shjhdsjf', 'shhsdjkfjlsd', 'Available', 'Not Available', 'Available', 'Available', 'Not Available', 'Available', '1568470264.jpg', '1568470266.jpg', '1568470267.jpg', '1568470268.jpg', '1568470269.jpg', 16, '2019-09-14 08:41:10', '2019-09-14 08:41:10'),
 (3, 'efsfs', 'sdfsd', 'sfsd', 'dfsfds', 'ferfdrf', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1568793919.jpg', '1568793921.jpg', '1568793923.jpg', '1568793925.jpg', '1568793925.jpg', 29, '2019-09-18 02:35:27', '2019-09-18 02:35:27'),
-(4, 'sahan', 'No3/12 , nagahaella rd', '454654767753425', 'dsfdsfsrfefgrthefrdh', 'dffsdfdsfbdthaefgthaefsrhsefseh', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569150019.jpg', '1569150020.jpg', '1569150021.jpg', '1569150022.jpg', '1569150023.jpg', 52, '2019-09-22 19:06:20', '2019-09-22 13:36:20');
+(4, 'sahan', 'No3/12 , nagahaella rd', '454654767753425', 'dsfdsfsrfefgrthefrdh', 'dffsdfdsfbdthaefgthaefsrhsefseh', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569150019.jpg', '1569150020.jpg', '1569150021.jpg', '1569150022.jpg', '1569150023.jpg', 52, '2019-09-22 19:06:20', '2019-09-22 13:36:20'),
+(6, 'fsdfd', 'sdfsdf', '432534634643', 'dssdfsdfsd', 'sdfsfsfds', 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', '1569783766.jpg', '1569783840.jpg', '1569783863.jpeg', '1569783887.jpg', '1569783910.jpeg', 77, '2019-09-29 19:20:28', '2019-09-29 13:50:28');
 
 -- --------------------------------------------------------
 
@@ -771,7 +1019,82 @@ INSERT INTO `photography_events` (`id`, `user_id`, `Wedding`, `Get_togather`, `B
 (1, 13, 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-06 04:47:34', '2019-09-06 04:47:34'),
 (2, 16, 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-14 08:41:10', '2019-09-14 08:41:10'),
 (3, 29, 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-09-18 02:35:27', '2019-09-18 02:35:27'),
-(4, 52, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '2019-09-22 13:25:36', '2019-09-22 07:55:36');
+(4, 52, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '2019-09-22 13:25:36', '2019-09-22 07:55:36'),
+(6, 77, 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', '2019-09-29 19:20:17', '2019-09-29 13:50:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `photography_packages`
+--
+
+CREATE TABLE `photography_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Event_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photography_packages`
+--
+
+INSERT INTO `photography_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(2, 77, 'package1', 'Wedding', 'asdada', '12313.00', '1569781135.pdf', '2019-09-29 12:48:55', '2019-09-29 12:48:55'),
+(3, 52, 'Gold Package', 'Wedding', 'scghjhjew', '334234.00', '1570168114.pdf', '2019-10-04 00:18:34', '2019-10-04 00:18:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `photography_videos`
+--
+
+CREATE TABLE `photography_videos` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Video_Name` varchar(191) NOT NULL,
+  `Video` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photography_videos`
+--
+
+INSERT INTO `photography_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
+(2, 77, 'sahan', '1569792811.mp4', '2019-09-29 16:03:31', '2019-09-29 16:03:31'),
+(3, 52, 'sahan', '1570168029.mp4', '2019-10-04 00:17:09', '2019-10-04 00:17:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `planner_packages`
+--
+
+CREATE TABLE `planner_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` int(11) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `planner_packages`
+--
+
+INSERT INTO `planner_packages` (`id`, `user_id`, `Package_Name`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(2, 32, 'package1', 'awfsfse', 21124, '1570030470.pdf', '2019-10-02 10:04:30', '2019-10-02 10:04:30'),
+(3, 58, 'Gold Package Wedding', 'Not here', 2000, '1570142389.pdf', '2019-10-03 22:41:45', '2019-10-03 17:11:45');
 
 -- --------------------------------------------------------
 
@@ -810,8 +1133,83 @@ CREATE TABLE `poruwa_ceramonies` (
 INSERT INTO `poruwa_ceramonies` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `Poruwa_rituals`, `Poruwa_items`, `match_making`, `Astrological_support`, `jayamangala_gatha`, `Wedding_dancers`, `Cost`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'ggerge', 'erger', '984893249832', 'erferf', 'fdsdfsdf', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 32423, '1568824037.jpg', '1568824038.jpg', '1568824040.jpg', '1568824041.jpg', '1568824042.jpg', 36, '2019-09-18 10:57:24', '2019-09-18 10:57:24'),
 (2, 'rgreger', 'gergerg', '2412342342423', 'fdfgdfgsgad', 'gsdgsdgsdg', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 22342, '1569086997.jpg', '1569086998.jpg', '1569086999.jpg', '1569087000.jpg', '1569087002.jpg', 49, '2019-09-21 17:45:32', '2019-09-21 12:15:32'),
-(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-09-22 10:22:34', '2019-09-22 04:52:34'),
-(4, 'sdfsfsdfsd', 'sdfsdfsdf', '861324613423', 'asdfsdfasdfasd', 'sdfdsffs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 542367, '1569435006.jpg', '1569435007.jpg', '1569435008.jpg', '1569435009.jpg', '1569435011.jpg', 62, '2019-09-25 19:04:20', '2019-09-25 13:34:20');
+(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-10-03 12:07:47', '2019-10-03 06:37:47'),
+(4, 'sdfsfsdfsd', 'sdfsdfsdf', '861324613423', 'asdfsdfasdfasd', 'sdfdsffs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 542367, '1569837898.jpg', '1569839139.jpg', '1569839417.jpg', '1569839442.jpg', '1569839466.jpeg', 62, '2019-09-30 10:31:08', '2019-09-30 05:01:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `poruwa_packages`
+--
+
+CREATE TABLE `poruwa_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `poruwa_packages`
+--
+
+INSERT INTO `poruwa_packages` (`id`, `user_id`, `Package_Name`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(2, 51, 'package1', 'sahan sevices', '3242.00', '1570101919.pdf', '2019-10-04 05:01:50', '2019-10-03 23:31:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(191) NOT NULL,
+  `Email` varchar(191) NOT NULL,
+  `Comment` text NOT NULL,
+  `image` varchar(191) NOT NULL DEFAULT 'default.jpg',
+  `rating` int(11) NOT NULL,
+  `blocked` tinyint(4) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ratings`
+--
+
+INSERT INTO `ratings` (`id`, `user_id`, `user_name`, `Email`, `Comment`, `image`, `rating`, `blocked`, `created_at`, `updated_at`) VALUES
+(1, 53, '', 'sahand.herath@gmail.com', 'rggwggweg', '1570398412.jpg', 3, 0, '2019-10-06 16:16:54', '2019-10-06 16:16:54'),
+(2, 53, '', 'sahand.herath@gmail.com', 'bbrbreberb', '1570398643.jpg', 4, 0, '2019-10-06 16:20:44', '2019-10-06 16:20:44'),
+(3, 53, 'Sahan', 'sahand.herath@gmail.com', 'best service', '1570423422.jpg', 4, 0, '2019-10-06 23:13:44', '2019-10-06 23:13:44'),
+(4, 53, 'Sahan', 'sahand.herath@gmail.com', 'eewferfwfw', '1570434139.jpg', 1, 0, '2019-10-07 02:12:21', '2019-10-07 02:12:21'),
+(5, 17, 'Sahan', 'sahand.herath@gmail.com', 'awvravreav', '1570434244.jpg', 3, 0, '2019-10-07 02:14:05', '2019-10-07 02:14:05'),
+(6, 17, 'Sahan', 'sahand.herath@gmail.com', 'efregtwhhe', '1570434277.jpg', 4, 0, '2019-10-07 02:14:37', '2019-10-07 02:14:37'),
+(7, 17, 'Sahan', 'sahand.herath@gmail.com', 'jskdvjkwvwr', '1570439811.jpg', 1, 0, '2019-10-07 03:46:52', '2019-10-07 03:46:52'),
+(8, 53, 'Sahan', 'sahand.herath@gmail.com', 'vvjchjewcjh', '1570444106.jpg', 5, 0, '2019-10-07 04:58:27', '2019-10-07 04:58:27'),
+(9, 53, 'Nethmi', 'nethmi@gmail.com', 'jhjbvjbherbverhjvhbjervbkherv', 'default.jpg', 3, 0, '2019-10-07 05:13:33', '2019-10-07 05:13:33'),
+(10, 52, 'Sahan', 'sahand.herath@gmail.com', 'dnbnebreberbvre', 'default.jpg', 4, 0, '2019-10-07 06:24:27', '2019-10-07 06:24:27'),
+(11, 52, 'Sahan', 'sahand.herath@gmail.com', 'rvvrever', '1570449436.jpg', 5, 0, '2019-10-07 06:27:17', '2019-10-07 06:27:17'),
+(12, 47, 'Sahan', 'sahand.herath@gmail.com', 'rgerbrstbtrbrtbrtbrtbr', 'default.jpg', 4, 0, '2019-10-07 06:59:34', '2019-10-07 06:59:34'),
+(13, 58, 'Sahan', 'sahand.herath@gmail.com', 'srnsrnetbrebnetnbrbrwebrwbtrbwtbwbrt', '1570455737.jpg', 4, 0, '2019-10-07 08:12:17', '2019-10-07 08:12:17'),
+(14, 51, 'Sahan', 'sahand.herath@gmail.com', 'dsgjegkjwhjvhejrvioewv', 'default.jpg', 4, 0, '2019-10-07 09:11:20', '2019-10-07 09:11:20'),
+(15, 55, 'Sahan', 'sahand.herath@gmail.com', '5hhrwherntebebersvwaevawrv', 'default.jpg', 5, 0, '2019-10-07 10:20:33', '2019-10-07 10:20:33'),
+(16, 79, 'Nethmi', 'sahand.herath@gmail.com', 'a5geragrgwgewgwrgerqg', 'default.jpg', 5, 0, '2019-10-07 11:03:32', '2019-10-07 11:03:32'),
+(17, 48, 'Nethmi', 'nethmi@gmail.com', 'srwgbresgeragrevrwevervree', 'default.jpg', 4, 0, '2019-10-07 11:41:41', '2019-10-07 11:41:41'),
+(18, 60, 'Nethmi', 'sahand.herath@gmail.com', 'brvwvevcwecaew', 'default.jpg', 3, 0, '2019-10-07 12:13:54', '2019-10-07 12:13:54'),
+(19, 78, 'Sahan', 'sahand.herath@gmail.com', 'regsegfewfwefwf', '1570472396.jpg', 5, 0, '2019-10-07 12:49:58', '2019-10-07 12:49:58'),
+(20, 77, 'Sahan', 'sahand.herath@gmail.com', 'rryuiuyoiopio', 'default.jpg', 4, 0, '2019-10-07 14:36:46', '2019-10-07 14:36:46'),
+(21, 57, 'Nethmi', 'nethmi@gmail.com', 'vrvrvervevervrvervrevervre', '1570480479.jpg', 2, 0, '2019-10-07 15:04:39', '2019-10-07 15:04:39'),
+(22, 57, 'Sahan', 'sahand.herath@gmail.com', 'gngbreeavervrevrevevrvrevrevv', 'default.jpg', 5, 0, '2019-10-07 15:05:06', '2019-10-07 15:05:06'),
+(23, 56, 'Nethmi', 'sahand.herath@gmail.com', 'dsdvesevwvewcwcwec', 'default.jpg', 3, 0, '2019-10-07 15:17:10', '2019-10-07 15:17:10'),
+(24, 76, 'Sahan', 'sahand.herath@gmail.com', 'wqfgergregergeervrr', 'default.jpg', 3, 0, '2019-10-07 16:01:03', '2019-10-07 16:01:03'),
+(25, 76, 'Nethmi', 'nethmi@gmail.com', 'ewfwefaweffwefwfewfwefew', '1570483899.jpg', 5, 0, '2019-10-07 16:01:40', '2019-10-07 16:01:40'),
+(26, 68, 'Nethmi', 'sahand.herath@gmail.com', 'wecwcwecwecwec', 'default.jpg', 4, 0, '2019-10-07 16:06:58', '2019-10-07 16:06:58');
 
 -- --------------------------------------------------------
 
@@ -846,8 +1244,9 @@ INSERT INTO `reception_halls` (`id`, `Hall_Name`, `Address`, `Description`, `Cos
 (1, 'vbhjhhjhj', 'fhjk', 'ghhjhjjk', '12.00', 123, '123.00', 'Outdoor', '1567012672.jpg', '1567012673.jpg', '1567012674.jpg', '1567012675.jpg', '1567012676.jpg', 1, '2019-08-28 11:47:57', '2019-08-28 11:47:57'),
 (2, 'fdsfds', 'fsdfsd', 'fdsfdsfs', '12.22', 21, '12.22', 'outside', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', '1567012672.jpg', 1, '2019-08-30 07:40:01', '2019-08-30 07:40:01'),
 (4, 'xfgghc', 'hvj,bjk', 'ncghg12', '12.00', 21, '12.00', 'Indoor', '1568823421.jpg', '1568823423.jpg', '1568823424.jpg', '1568823425.jpg', '1568823427.jpg', 4, '2019-09-18 10:47:08', '2019-09-18 10:47:08'),
-(9, 'faskjdjk', 'sa.da.,md', 'm,as.mdaa', '123.00', 123, '123.00', 'Indoor', '1569422263.jpg', '1569422265.jpg', '1569422266.jpg', '1569422268.jpg', '1569422269.jpg', 5, '2019-09-25 09:07:51', '2019-09-25 09:07:51'),
-(10, 'kjacsjdnsad', 'sdcsdnmc,s', 'dcdscsdcsd', '123121.00', 213213, '1231231.00', 'Outdoor', '1569439887.jpg', '1569439888.jpg', '1569439890.jpg', '1569439890.jpg', '1569439891.jpg', 6, '2019-09-25 14:01:32', '2019-09-25 14:01:32');
+(10, 'kjacsjdnsad', 'sdcsdnmc,s', 'dcdscsdcsd', '123121.00', 213213, '1231231.00', 'Outdoor', '1569439887.jpg', '1569439888.jpg', '1569439890.jpg', '1569439890.jpg', '1569439891.jpg', 6, '2019-09-25 14:01:32', '2019-09-25 14:01:32'),
+(11, 'adwdqw', 'wdqdq', 'dwqdqdwqd', '12421312.00', 2133, '123.00', 'Outdoor', '1569942736.jpg', '1569942351.jpeg', '1569942441.jpg', '1569942479.jpg', '1569942614.jpg', 5, '2019-10-01 15:12:17', '2019-10-01 09:42:17'),
+(12, 'efewfwe', 'wefwf', 'ewfwfe', '2121.00', 1223, '1231.00', 'Outdoor', '1570385440.jpg', '1570385442.jpg', '1570385443.jpg', '1570385445.jpg', '1570385446.jpg', 7, '2019-10-06 12:40:47', '2019-10-06 12:40:47');
 
 -- --------------------------------------------------------
 
@@ -885,7 +1284,8 @@ CREATE TABLE `salons` (
 --
 
 INSERT INTO `salons` (`id`, `Salon_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Groom_Dressing`, `Bride_Dressing`, `Dress_Making`, `Jewelry`, `Makeup`, `Bridesman`, `Bridesmaid`, `HairStyle`, `Profile_Pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 'Sahan', 'sahan', '4325234234', 'sadfas', 'sddgsdgdsfdsfsdfdsfsd', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1569196883.jpg', '1569196884.jpg', '1569196885.jpg', '1569196887.jpg', '1569196888.jpg', 54, '2019-09-23 02:46:46', '2019-09-22 21:16:46');
+(2, 'Sahan Salon', 'sahan', '4325234234', 'sadfas', 'sddgsdgdsfdsfsdfdsfsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569196883.jpg', '1569196884.jpg', '1569196885.jpg', '1569196887.jpg', '1569196888.jpg', 54, '2019-10-03 21:31:55', '2019-10-03 16:01:55'),
+(4, 'sdfsfd', 'sdfdsf', '3423423423423', 'dffewfwef', 'fewfwefwefw', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1569831040.jpg', '1569832155.jpg', '1569832526.jpg', '1569832558.jpeg', '1569832578.jpg', 78, '2019-09-30 08:36:19', '2019-09-30 03:06:19');
 
 -- --------------------------------------------------------
 
@@ -908,7 +1308,35 @@ CREATE TABLE `salon_events` (
 --
 
 INSERT INTO `salon_events` (`id`, `user_id`, `wedding`, `parties`, `fashion_show`, `created_at`, `updated_at`) VALUES
-(2, 54, 'Available', 'Available', 'Not Available', '2019-09-23 00:43:37', '2019-09-22 19:13:37');
+(2, 54, 'Available', 'Available', 'Available', '2019-10-03 21:31:24', '2019-10-03 16:01:24'),
+(4, 78, 'Available', 'Available', 'Available', '2019-09-30 02:26:48', '2019-09-30 02:26:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salon_packages`
+--
+
+CREATE TABLE `salon_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Event_Type` varchar(191) NOT NULL,
+  `Services` text NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `Pdf` varchar(191) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salon_packages`
+--
+
+INSERT INTO `salon_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `Created_at`, `updated_at`) VALUES
+(1, 78, 'Gold Package', 'Wedding', 'kjvjsdkvkjadcds', '314235.00', '1570114500.pdf', '2019-10-03 09:25:00', '2019-10-03 09:25:00'),
+(2, 78, 'package12', 'Wedding', 'qdwfwefwe', '3214124.00', '1570115032.pdf', '2019-10-03 09:33:52', '2019-10-03 09:33:52'),
+(4, 54, 'Gold Package Party', 'Party House', 'Best service', '1000.00', '1570125144.pdf', '2019-10-03 21:02:32', '2019-10-03 15:32:32');
 
 -- --------------------------------------------------------
 
@@ -942,7 +1370,7 @@ CREATE TABLE `transporters` (
 --
 
 INSERT INTO `transporters` (`id`, `Transport_Service`, `Address`, `Contact_No`, `Link`, `Description`, `driver`, `decoration`, `rent_hours`, `rent_km`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 'Sahan', 'wefewfew', '43545634432453455', 'dsdfdsfsfs', 'dfsdfsdfsd', 'Available', 'Not Available', 577567, '123.00', '1569246234.jpg', '1569246235.jpg', '1569246237.jpg', '1569246239.jpg', '1569246240.jpg', 55, '2019-09-23 14:37:29', '2019-09-23 09:07:29');
+(2, 'Sahan', 'wefewfew', '43545634432453455', 'dsdfdsfsfs', 'dfsdfsdfsd', 'Available', 'Not Available', 577567, '123.00', '1570051684.jpg', '1569866034.jpeg', '1569866059.jpg', '1569866119.jpg', '1569866145.jpg', 55, '2019-10-02 21:40:46', '2019-10-02 16:10:46');
 
 -- --------------------------------------------------------
 
@@ -968,7 +1396,34 @@ CREATE TABLE `transport_categories` (
 --
 
 INSERT INTO `transport_categories` (`id`, `user_id`, `luxury`, `classic`, `vintage`, `horse_cart`, `air`, `travelling_coach`, `created_at`, `updated_at`) VALUES
-(2, 55, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '2019-09-23 14:36:40', '2019-09-23 09:06:40');
+(2, 55, 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', '2019-10-02 21:40:29', '2019-10-02 16:10:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transport_packages`
+--
+
+CREATE TABLE `transport_packages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `Package_Name` varchar(191) NOT NULL,
+  `Transport_type` varchar(191) NOT NULL,
+  `vehicle` varchar(191) NOT NULL,
+  `picture` varchar(191) NOT NULL,
+  `decoration` varchar(20) NOT NULL,
+  `driver` varchar(20) NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transport_packages`
+--
+
+INSERT INTO `transport_packages` (`id`, `user_id`, `Package_Name`, `Transport_type`, `vehicle`, `picture`, `decoration`, `driver`, `Price`, `created_at`, `updated_at`) VALUES
+(1, 55, 'package123', 'luxury modal', 'BMW BG9 3309', '1570047484.jpg', 'Not Available', 'Not Available', '150000.00', '2019-10-02 20:18:06', '2019-10-02 14:48:06');
 
 -- --------------------------------------------------------
 
@@ -1043,15 +1498,19 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (52, 'eeffwe', 'fewfew@egrdge', NULL, 'Photography', 'regregefer', 0, '$2y$10$lbr.RB/5GiysgtQyAWHj0OcTAbycCO.vfoXXYtFJay7muZ55wS6Eu', NULL, '2019-09-22 05:29:27', '2019-09-22 05:29:27'),
 (53, 'nethmi', 'hasdadjk@dbhahfds', NULL, 'Music', 't43t34t', 0, '$2y$10$jH284FrCb2VjBnYX2DRPg.BtSgflEcPz2wCT4MzLs1pf/L8yy3/jK', NULL, '2019-09-22 12:58:35', '2019-09-22 14:17:40'),
 (54, 'Sahan Herath', 'ubsjafdfdfna@gmail.com', NULL, 'Bridel_Designers', 'sdffsfs', 0, '$2y$10$lUxHLHNcQEy7Ku.Y21gxbem.FVpmBnvIZKqVZxnKc.egMqGJrYWU6', NULL, '2019-09-22 18:30:36', '2019-09-22 18:43:42'),
-(55, 'fgfggh', 'ubsjdfsdfaffna@gmail.com', NULL, 'Wedding_Transport', 'asfsdfsdfds', 0, '$2y$10$G/OIR8Iq9Xd1wcXNQEGtgea.d3Qyqx1ON2YlzeagvYS5PI5Yye4kK', NULL, '2019-09-23 08:12:18', '2019-09-23 08:12:18'),
+(55, 'fgfggh123', 'ubsjdfsdfaffna@gmail.com', NULL, 'Wedding_Transport', 'asfsdfsdfds', 0, '$2y$10$G/OIR8Iq9Xd1wcXNQEGtgea.d3Qyqx1ON2YlzeagvYS5PI5Yye4kK', NULL, '2019-09-23 08:12:18', '2019-10-02 16:10:46'),
 (56, 'Sahan', 'sahan@gmail.comdsa', NULL, 'Catering', 'dsadada', 0, '$2y$10$Xe/bBoB6l0xqymHv1nLqmu.EQITiFVGz/CRrIz41hdw8aDl3IqEgW', NULL, '2019-09-23 11:10:44', '2019-09-23 11:21:41'),
 (57, 'Sahan Herath', 'sahasssn@gmail.comdsa', NULL, 'Cake_Designers', 'dsfdsfs', 0, '$2y$10$lgNpPkRfkz.tTATswmGmeegPqEN7jtJm0umFOgCNqGu8UhvWP7vNm', NULL, '2019-09-23 21:27:40', '2019-09-23 22:08:21'),
 (58, 'Sahan Herath', 'saha@dbhahfds', NULL, 'Event_Planners', 'dsafddsad', 0, '$2y$10$zS9zuQrU6TS62ow.XfxlMOoKP1QlKDG11EwwUYU2N6ZfgGheKpCM.', NULL, '2019-09-24 00:30:17', '2019-09-24 01:03:36'),
 (60, 'sahan', 'sahand.herath@gmail.com', NULL, 'Cloth_Designers', 'zdfeafwed', 1, '$2y$10$KXSq580YyUdoSvNiskBm0.5KQG/u6ceYqY3ZywHPsHTZzDeijrh1W', NULL, '2019-09-24 04:43:37', '2019-09-24 05:15:10'),
 (61, 'Sahan Herath', 'sahand.herathsss@gmail.com', NULL, 'Hall', 'dsfsdf', 1, '$2y$10$hM0dr1LJNz04BSf0Z8BeweckfXZi2MPpUvaiY.LaRpS3vVNsTsDfm', NULL, '2019-09-24 08:50:00', '2019-09-24 13:57:27'),
 (62, 'vdafaf', 'efef@egrdhr', NULL, 'Poruwa_Ceramony', 'frdgrefewfw', 1, '$2y$10$mMw0MSdEqCVmUxSaYFiqkex8bTAcqhFE0EQFwQEO15hr2yf.Se5P2', NULL, '2019-09-25 12:38:46', '2019-09-25 12:38:46'),
-(68, 'sgasj', 'sadasdas@gffwe', NULL, 'Decoration', 'efwefwef', 1, '$2y$10$QknMIc34.8.2DkNG4s92uut9Vze6kC2iMXSjeLgpT8J1zvou4cddm', NULL, '2019-09-26 04:39:38', '2019-09-26 04:42:32'),
-(72, 'sdsc', 'cds@rewrwe', NULL, 'Poruwa_Ceramony', 'cdscdscs', 1, '$2y$10$/CzBnhCLkP0xl0hqc9/ptO58uQqpoOncmO9gOJ21I95uTmbn5tS2i', NULL, '2019-09-26 05:59:09', '2019-09-26 05:59:09');
+(68, 'Sahan Herath', 'sadasdas@gffwe', NULL, 'Decoration', 'efwefwef', 1, '$2y$10$mRE1mUm2LRjOZRGYPh2i/u8HfUQzCtI5E09A9MkUCy1wF6f6oxA/.', NULL, '2019-09-26 04:39:38', '2019-09-29 01:49:27'),
+(72, 'sdsc', 'cds@rewrwe', NULL, 'Poruwa_Ceramony', 'cdscdscs', 1, '$2y$10$/CzBnhCLkP0xl0hqc9/ptO58uQqpoOncmO9gOJ21I95uTmbn5tS2i', NULL, '2019-09-26 05:59:09', '2019-09-26 05:59:09'),
+(76, 'Shamith athauda', 'hasdadjk@dbhahf', NULL, 'Hall', 'efewf', 1, '$2y$10$HhT7WssahyUY9gWeHI67CeGhB8qWqiPThlZHcjvaz9Tn1ZVvI7vKm', NULL, '2019-09-27 15:16:42', '2019-09-27 15:16:42'),
+(77, 'sahan', 'sdsgzf@4wwta4', NULL, 'Photography', 'gerger', 0, '$2y$10$1OvjLBVvt7VGf2RqBU.9XO4vCFsSK/5KBsveKpXgbtemnGJcF2jg2', NULL, '2019-09-29 05:09:19', '2019-09-29 13:50:47'),
+(78, 'Shamith athauda', 'ubsjafsssfna@gmail.com', NULL, 'Bridel_Designers', 'ssfdsff', 0, '$2y$10$c7UhQSgfpWBWxXj.iAdu7OCj0jq3rGKliTWPUVkNtkIc01NQs3UfG', NULL, '2019-09-30 02:25:38', '2019-09-30 02:25:38'),
+(79, 'fefew', 'efw@rdrger', NULL, 'Actors', 'rgrgregr', 0, '$2y$10$pMTthFg9mOCzG7dOw8kOHOUcgAPSo7tfEo2buPsEBj1q0fqZnvz/G', NULL, '2019-10-03 02:08:55', '2019-10-03 02:08:55');
 
 --
 -- Indexes for dumped tables
@@ -1070,9 +1529,21 @@ ALTER TABLE `actor_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `actor_packages`
+--
+ALTER TABLE `actor_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `cake_designers`
 --
 ALTER TABLE `cake_designers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cake_packages`
+--
+ALTER TABLE `cake_packages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1088,6 +1559,18 @@ ALTER TABLE `catering_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `catering_packages`
+--
+ALTER TABLE `catering_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `complaints`
+--
+ALTER TABLE `complaints`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `costume_designers`
 --
 ALTER TABLE `costume_designers`
@@ -1100,6 +1583,12 @@ ALTER TABLE `costume_designer_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `costume_packages`
+--
+ALTER TABLE `costume_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dancers`
 --
 ALTER TABLE `dancers`
@@ -1109,6 +1598,18 @@ ALTER TABLE `dancers`
 -- Indexes for table `dancer_events`
 --
 ALTER TABLE `dancer_events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dance_packages`
+--
+ALTER TABLE `dance_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dance_videos`
+--
+ALTER TABLE `dance_videos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1154,6 +1655,12 @@ ALTER TABLE `hall_features`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `hall_packages`
+--
+ALTER TABLE `hall_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hall_table_arrangements`
 --
 ALTER TABLE `hall_table_arrangements`
@@ -1184,6 +1691,18 @@ ALTER TABLE `musician_events`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `music_packages`
+--
+ALTER TABLE `music_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `music_videos`
+--
+ALTER TABLE `music_videos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -1202,9 +1721,39 @@ ALTER TABLE `photography_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `photography_packages`
+--
+ALTER TABLE `photography_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `photography_videos`
+--
+ALTER TABLE `photography_videos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `planner_packages`
+--
+ALTER TABLE `planner_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `poruwa_ceramonies`
 --
 ALTER TABLE `poruwa_ceramonies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `poruwa_packages`
+--
+ALTER TABLE `poruwa_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ratings`
+--
+ALTER TABLE `ratings`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1226,6 +1775,12 @@ ALTER TABLE `salon_events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `salon_packages`
+--
+ALTER TABLE `salon_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `transporters`
 --
 ALTER TABLE `transporters`
@@ -1235,6 +1790,12 @@ ALTER TABLE `transporters`
 -- Indexes for table `transport_categories`
 --
 ALTER TABLE `transport_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `transport_packages`
+--
+ALTER TABLE `transport_packages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1261,52 +1822,94 @@ ALTER TABLE `actor_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `actor_packages`
+--
+ALTER TABLE `actor_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `cake_designers`
 --
 ALTER TABLE `cake_designers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cake_packages`
+--
+ALTER TABLE `cake_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `caterings`
 --
 ALTER TABLE `caterings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `catering_events`
 --
 ALTER TABLE `catering_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `catering_packages`
+--
+ALTER TABLE `catering_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `complaints`
+--
+ALTER TABLE `complaints`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `costume_designers`
 --
 ALTER TABLE `costume_designers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `costume_designer_events`
 --
 ALTER TABLE `costume_designer_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `costume_packages`
+--
+ALTER TABLE `costume_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `dancers`
 --
 ALTER TABLE `dancers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dancer_events`
 --
 ALTER TABLE `dancer_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `dance_packages`
+--
+ALTER TABLE `dance_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `dance_videos`
+--
+ALTER TABLE `dance_videos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `decoration_packages`
 --
 ALTER TABLE `decoration_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `decorators`
@@ -1324,37 +1927,43 @@ ALTER TABLE `decorator_events`
 -- AUTO_INCREMENT for table `event_planners`
 --
 ALTER TABLE `event_planners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `event_planners_events`
 --
 ALTER TABLE `event_planners_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hall_events`
 --
 ALTER TABLE `hall_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `hall_features`
 --
 ALTER TABLE `hall_features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `hall_packages`
+--
+ALTER TABLE `hall_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `hall_table_arrangements`
 --
 ALTER TABLE `hall_table_arrangements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `hotels`
 --
 ALTER TABLE `hotels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1366,67 +1975,121 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `musicians`
 --
 ALTER TABLE `musicians`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `musician_events`
 --
 ALTER TABLE `musician_events`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `music_packages`
+--
+ALTER TABLE `music_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `music_videos`
+--
+ALTER TABLE `music_videos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `photographies`
 --
 ALTER TABLE `photographies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `photography_events`
 --
 ALTER TABLE `photography_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `photography_packages`
+--
+ALTER TABLE `photography_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `photography_videos`
+--
+ALTER TABLE `photography_videos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `planner_packages`
+--
+ALTER TABLE `planner_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `poruwa_ceramonies`
 --
 ALTER TABLE `poruwa_ceramonies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `poruwa_packages`
+--
+ALTER TABLE `poruwa_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `reception_halls`
 --
 ALTER TABLE `reception_halls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `salons`
 --
 ALTER TABLE `salons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `salon_events`
 --
 ALTER TABLE `salon_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `salon_packages`
+--
+ALTER TABLE `salon_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transporters`
 --
 ALTER TABLE `transporters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transport_categories`
 --
 ALTER TABLE `transport_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `transport_packages`
+--
+ALTER TABLE `transport_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

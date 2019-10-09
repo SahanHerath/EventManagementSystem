@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/css/style.css">
         <link rel="stylesheet" href="css/css/responsive.css">
@@ -37,9 +38,25 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>  
+                            @foreach($data as $data1)
+                            <li class="nav-item active"><i class="fa fa-eye" style="font-size:24px"></i><a class="nav-link" href="{{URL('/Cakeview'.$data1->userid)}}">View Your Profile</a></li> 
+                            
+                            <li class="nav-item active"><a class="nav-link" href="/Profile">
+                                    <p class="text-white"><img src="/uploads/cake/{{$data1->Main_pic}}" style="width:32px; height:32px; border-radius: 50%;" >
+                                    {{ Auth::user()->name }}</p>
+                                </a>
+                            </li>  
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+							@endforeach  
 							</ul>
 						</div> 
 					</div>
@@ -90,6 +107,7 @@
                                     
                                     <a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditInfo">Edit info</a>
                                     <a class="genric-btn info" href="" data-toggle="modal" data-target="#password_modal">Change Password</a>
+                                    <a class="genric-btn warning" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
                                     <br>
                                 </ul>
                             </div>
@@ -176,10 +194,39 @@
 						</div>
                         <br>
                             
-							<a class="offset-5 genric-btn primary" href="#">Change Recent Event Photos</a>
+							<a class="offset-5 genric-btn primary" href="" data-toggle="modal" data-target="#modalChangepic">Change Recent Event Photos</a>
                             <br>
                             <br>
-                            <a class="offset-10 genric-btn danger" href="{{URL('/RemoveCakeAccount'.$data1->userid)}}">Deactivate Account</a>
+                            <div class="section-top-border">
+						<h3 class="title_color">Available Packages</h3>
+                            <a class="offset-1 genric-btn info" href="" data-toggle="modal" data-target="#modalAddPackage">Add A Package</a>
+                            
+                        </div>
+                        @foreach($deto as $deto1)
+                        <div class="personal_text" >
+                            <div class="col-lg-4 col-md-6" style="border: 5px solid red;">
+                                <div class="feature_item">
+                                    
+                                    <h4><b><font color="black">{{$deto1->Package_Name}}</font></b></h4>
+                                    <ul class="list basic_info">
+                                    <li><b>Cake Type :- </b>{{$deto1->Cake_types}}</li>
+                                    <li><b>Description :- </b>{{$deto1->Description}}</li>
+                                    <li><b>Price :- </b> Rs.{{$deto1->Price}}</li>
+                                    <li><a href="files/cake/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></li>
+                                    <ul>
+                                
+                                
+                                    <ul class="list basic_info">
+                                    <a class="genric-btn primary" href="#" data-toggle="modal" data-target="#modalEditPackage" data-pakid="{{$deto1->id}}" data-packagename="{{$deto1->Package_Name}}" data-price="{{$deto1->Price}}" data-caketypes="{{$deto1->Cake_types}}" data-description="{{$deto1->Description}}">Edit</a></center>
+                                    <a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center>
+                                    
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                            <a class="offset-10 genric-btn danger" href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a>
                             
                             
 					</div>
@@ -503,6 +550,367 @@
   </div>
 
 <!--==============model for change passsword=================-->
+<!--==============model for  change main pic=================-->
+<div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/cake/{{$data1->Main_pic}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeCakeMainpic'.$data1->cakeid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Main_pic') ? ' has-error' : '' }}">
+                    <label for="Main_pic" class="offset-1">Update Main Picture :-</label>
+                    <center><input type="file" name="Main_pic" class="form-control @error('Main_pic') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Main_pic')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
+      <!--==============model for  change recent pictures=================-->
+     
+  <div class="modal fade" id="modalChangepic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Event Pictures</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <table class="table table hover table-bordered">
+                       <thead>
+                            <tr>
+                                <th width="3">Picture</th>
+                                <th width="5">Change Picture</th>
+                                
+                            </tr>
+                       </thead>
+                       <tbody>
+                       
+                            <tr>
+                                <td> <img src="/uploads/cake/{{$data1->pic1}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/cakepic1'.$data1->cakeid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic1" class="form-control @error('pic1') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/cake/{{$data1->pic2}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/cakepic2'.$data1->cakeid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic2" class="form-control @error('pic2') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/cake/{{$data1->pic3}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/cakepic3'.$data1->cakeid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic3" class="form-control @error('pic3') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td> <img src="/uploads/cake/{{$data1->pic4}}" class="img-rounded" style="border: 2px solid black; width:150px; height:150px; float:left;  margin-right:25px;"></td>
+                                <td>
+                                
+                                <form enctype="multipart/form-data" action="{{URL('/cakepic4'.$data1->cakeid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="pic4" class="form-control @error('pic4') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit"  class="pull-right btn btn-sm btn-primary">
+                                </form>
+                                </td>
+
+                                
+
+                                
+                            </tr>
+                            
+                           
+                           
+                       </tbody>
+                         </table>
+
+                    
+
+                    
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change event pictures=================-->
+      <!--==============model for  add package=================-->
+  <div class="modal fade" id="modalAddPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add New Package</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{URL('/AddCakePackage'.$data1->userid)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                                
+                    <div class="form-group row{{ $errors->has('Package_Name') ? ' has-error' : '' }} control-group">
+                        <label for="Package_Name" class="col-md-4 col-form-label offset-1">Package Name :-</label>
+
+                        
+                            <input id="Package_Name" type="text" value="{{ old('Package_Name') }}" class="form-control @error('Package_Name') is-invalid @enderror col-md-10 offset-1" name="Package_Name"   title="fill this field with appropiate package name">
+
+                            @error('Package_Name')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Cake_types') ? ' has-error' : '' }}">
+                    
+                    <label for="Cake_types" class="col-md-4 col-form-label offset-1">Cake Types :-</label>
+                    
+                    
+                        <textarea name='Cake_types' cols='50' rows='5' id='Cake_types' class="form-control @error('Cake_types') is-invalid @enderror col-md-10 offset-1" title="Fill this field with cake types of the package">{{ old('Cake_types') }}</textarea>
+                        @error('Description')
+                            <span class="invalid-feedback offset-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                   
+                
+                </div>
+                   
+                   
+
+                   
+
+              
+
+                    <div class="form-group row{{ $errors->has('Description') ? ' has-error' : '' }}">
+                    
+                        <label for="Description" class="col-md-4 col-form-label offset-1">Description :-</label>
+                        
+                        
+                            <textarea name='Description' cols='50' rows='5' id='Description' class="form-control @error('Description') is-invalid @enderror col-md-10 offset-1" title="Fill this field with description of the package">{{ old('Description') }}</textarea>
+                            @error('Description')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                       
+                    
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Price') ? ' has-error' : '' }}">
+                        <label for="Price" class="col-md-4 col-form-label offset-1">Price :-</label>
+
+                        
+                            <input id="Price" type="decimal" value="{{ old('Price') }}" class="form-control @error('Price') is-invalid @enderror col-md-10 offset-1" name="Price"   autocomplete="Price"  title="Fill this field with average price of the package">
+
+                            @error('Price')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        
+                    </div>
+
+                    <div class="form-group row{{ $errors->has('Pdf') ? ' has-error' : '' }}">
+                            <label for="Pdf" class="col-md-4 col-form-label text-md-right">Pdf:-</label>
+    
+                            <div class="col-md-6">
+                                <input type="file" name="Pdf" id="Pdf"  class="form-control @error('Pdf') is-invalid @enderror" >
+
+                                @error('Pdf')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                        </div>
+
+                   
+
+                    <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Add Package
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for add Package=================-->
+     <!--==============model for  edit package=================-->
+     <!-- Modal -->
+<div class="modal fade" id="modalEditPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Edit Package Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <form action="{{URL('/EditCakePackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+                <div class="form-group">
+		        	<label for="Package_Name1">Package Name</label>
+		        	<input type="text" class="form-control" name="Package_Name1" id="Package_Name1">
+	        	</div>
+
+                <div class="form-group">
+	        		<label for="Cake_types1">Cake Types</label>
+	        		<textarea name="Cake_types1" id="Cake_types1" cols="20" rows="5" id='Cake_types1' class="form-control"></textarea>
+	        	</div>
+
+
+                <div class="form-group">
+	        		<label for="Description1">Description</label>
+	        		<textarea name="Description1" id="Description1" cols="20" rows="5" id='Description1' class="form-control"></textarea>
+	        	</div>
+
+                <div class="form-group">
+		        	<label for="Price1">Price</label>
+		        	<input type="decimal" class="form-control" name="Price1" id="Price1" value="{{ old('Price1') }}">
+	        	</div>
+                <input type="hidden" id="id" name="id" >
+	        	
+
+                
+
+                
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Save Changes</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+    <!--==============model for edit package=================-->
+     <!--==============model for delete package=================-->
+     
+     <div class="modal fade" tabindex="-1" role="dialog" id="modalDeletePackage" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{URL('/DeleteCakePackage')}}" method="post">
+      		{{csrf_field()}}
+	      <div class="modal-body">
+          <p>Do you want to delete package.All the details related to this package will be removed?</p>
+                <input type="hidden" id="id" name="id" >
+	     </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Confirm Delete</button>
+	      </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!--==============model for delete package=================-->
+<!--==============model for deactivate account=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveCakeAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
        @endforeach
         <footer class="footer_area p_120">
         	<div class="container">
@@ -576,12 +984,76 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/counter-up/jquery.counterup.min.js"></script>
         <script src="js/js/mail-script.js"></script>
         <script src="js/js/theme.js"></script>
-        @if (count($errors) > 0)
+        <script>
+         @if ($errors->has('name')||$errors->has('email')||$errors->has('Organization_Name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
             });
         </script>
         @endif
+        @if ($errors->has('Package_Name')||$errors->has('Cake_types')||$errors->has('Description')||$errors->has('Price')||$errors->has('Pdf'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalAddPackage").modal('show');
+            });
+        </script>
+        @endif
+        
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_pic'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('pic1')||$errors->has('pic2')||$errors->has('pic3')||$errors->has('pic4'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#modalChangepic").modal('show');
+            });
+        </script>
+        @endif
+
+        
+        <script>
+  
+  $('#modalEditPackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var packagename = button.data('packagename')
+      var caketypes = button.data('caketypes') 
+      var description = button.data('description') 
+      var price = button.data('price')
+      
+      var pakid = button.data('pakid')
+      var modal = $(this)
+      modal.find('.modal-body #Package_Name1').val(packagename);
+      modal.find('.modal-body #Description1').val(description);
+      modal.find('.modal-body #Price1').val(price);
+      modal.find('.modal-body #Cake_types1').val(caketypes);
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
+
+<script>
+  
+  $('#modalDeletePackage').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var pakid = button.data('pakid') 
+     
+      var modal = $(this)
+      
+      modal.find('.modal-body #id').val(pakid);
+})
+  
+</script>
     </body>
 </html>

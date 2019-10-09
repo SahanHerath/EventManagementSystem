@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
 	<!-- Font -->
 	
@@ -37,14 +37,17 @@
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  
 </head>
+
 <body>
 	@foreach($hotel as $hotel1)	
 	
 	
 	<section class="intro-section" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
 		<div class="container">
+        
 		
 			<div class="row">
+            
 				
 				<div class="offset-0 col-md-10 col-lg-4">
 					<div class="intro">
@@ -69,9 +72,13 @@
                         <ul>
                         <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo" >Edit Hotel</a></button>
                         <button type="button" class="btn btn-warning"><a href="" data-toggle="modal" data-target="#password_modal" >Change Password</a></button>
+                        <br><br>
+                        <a class="btn btn-success" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
+                        <br><br>
+                        <a class="btn btn-info" href=""  data-toggle="modal" data-target="#coverpicchange">Change Cover Picture</a>
                         </ul>
 					</div><!-- intro -->
-                    
+                        
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
 		</div><!-- container -->
@@ -96,7 +103,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 	@endforeach
-	<section class="education-section section">
+	<section class="experience-section  section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -107,31 +114,46 @@
 			</div><!-- row -->
 
 			<div class="row">
-			@foreach($hall as $hall1)
-				<div class="offset-0 col-lg-4 col-md-6">
-					<div class="feature_item"><a class="btn btn-bg-yellow" href="{{URL('/HallUserProfile'.$hall1->recepid)}}">
-						<img src="uploads/hall/{{$hall1->Main_pic}}"  width="300" height="200 ">
-						<br><br>
-						<h3><b>{{$hall1->Hall_Name}}</h3></b>
-                        <h5>{{$hall1->add}}</h5>
-						</a>
-					</div>
-				</div>
-			@endforeach
+                @foreach($hall as $hall1)
+                
+                    <div class=" col-lg-4 col-md-8">
+                        <div class="feature_item"><a class="btn btn-bg-yellow" href="{{URL('/HallUserProfile'.$hall1->recepid)}}">
+                            <img src="uploads/hall/{{$hall1->Main_pic}}"  width="300" height="200 ">
+                            <br><br>
+                            <h3><b>{{$hall1->Hall_Name}}</h3></b>
+                            <h5>{{$hall1->add}}</h5>
+                            </a>
+                        </div>
+                    </div>
+                
+                @endforeach
 			</div>
-            @foreach($hotel as $data1)
-            <form class="form-horizontal" method="POST" action="/AddNewHall">
-                        {{ csrf_field() }}
-                        <input type="hidden" id="hotelid" name="hotelid" value="{{$data1->hotelid}}">
-                        <center><button type="submit"  class="btn btn-success">Add Reception Hall</button></center>
-            </form>
-            <div class="offset-10">
-            <button type="button" class="btn btn-danger"><a href="{{URL('/RemoveHotelAccount'.$data1->userid)}}" >Deactivate Account</a></button>
-            </div>
-            @endforeach
+            
 		</div><!-- container -->
 	</section><!-- about-section -->
-
+    <section class="quoto-section center-text" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+		<div class="container">
+        <br><br>
+    @foreach($hotel as $data1)
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="font-yellow"><b>If you have package details PDF</b></h2><br><br>
+                    <form class="form-horizontal" method="POST" action="/AddNewHall">
+                        {{ csrf_field() }}
+                        <input type="hidden" id="hotelid" name="hotelid" value="{{$data1->hotelid}}">
+                        <button type="submit"  class="btn text-white btn btn-outline-warning rounded-0 text-uppercase">Add Reception Hall</button>
+                    </form>
+                    <br><br>
+				</div><!-- col-sm-12 -->
+			</div><!-- row -->
+		</div><!-- container --> @endforeach
+	</section>
+    <br><br>
+    <div class="offset-10">
+         <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a></button>
+    </div>
+    <br><br>
+   
     @foreach($hotel as $data1)	
 	 <!--==============model for  edit info=================-->
      <div class="modal fade" id="modalEditInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
@@ -369,25 +391,132 @@
   </div>
 
 <!--==============model for change passsword=================-->
+ <!--==============model for  change main pic=================-->
+ <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/hall/{{$data1->Main_logo}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeHotelMainpic'.$data1->hotelid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Main_logo') ? ' has-error' : '' }}">
+                    <label for="Main_logo" class="offset-1">Update Main Picture :-</label>
+                    <center><input type="file" name="Main_logo" class="form-control @error('Main_logo') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Main_logo')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
+     <!--==============model for  change cover pic=================-->
+ <div class="modal fade" id="coverpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Cover Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/hall/{{$data1->Cover_photo}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                    <form enctype="multipart/form-data" action="{{URL('/ChangeHotelCoverpic'.$data1->hotelid)}}"  method="POST">
+                    <div class="form-group row{{ $errors->has('Cover_photo') ? ' has-error' : '' }}">
+                    <label for="Cover_photo" class="offset-1">Update Cover Picture :-</label>
+                    <center><input type="file" name="Cover_photo" class="form-control @error('Cover_photo') is-invalid @enderror col-md-10 offset-1"></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        @error('Cover_photo')
+                                <span class="invalid-feedback offset-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                        @enderror
+                    </div>
+                        <div class="modal-footer">
+                        <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change cover pic=================-->
+    <!--==============model for deactivate account=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveHotelAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
    @endforeach
 	
 	<footer class="site-footer" style="background-color:black;">
-			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					<br><br>
-					</p>
-				</div>
-				
-				</div>
-			</div>
+    <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
     	</footer>
 	
 	<!-- SCIPTS -->
@@ -416,12 +545,37 @@
 		<script src="js/bootstrap.min.js"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="js/ie10-viewport-bug-workaround.js"></script>
-        @if (count($errors) > 0)
+        <script>
+         @if ($errors->has('name')||$errors->has('email')||$errors->has('Hotel_Name')||$errors->has('Address')||$errors->has('Contact_No')||$errors->has('Link')||$errors->has('Description')||$errors->has('facebook')||$errors->has('instagram'))
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#modalEditInfo").modal('show');
             });
         </script>
         @endif
+        
+        
+        @if ($errors->has('current-password')||$errors->has('new-password')||$errors->has('new-password_confirmation'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#password_modal").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Main_logo'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mainpicchange").modal('show');
+            });
+        </script>
+        @endif
+        @if ($errors->has('Cover_photo'))
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#coverpicchange").modal('show');
+            });
+        </script>
+        @endif
+        
 </body>
 </html>

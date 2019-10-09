@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Photography;
+use App\Photography_package;
 use App\Photography_event;
+use App\Photography_video;
 use Image;
 use Auth;
 use Illuminate\Http\Request;
@@ -250,9 +252,85 @@ class PhotographyController extends Controller
                 ->where('users.id','=',$id)
                 ->join('photographies','users.id','=','photographies.user_id')
                 ->join('photography_events','users.id','=','photography_events.user_id')
+                ->select('email','name','users.id as userid','photographies.id as photoid','Studio_Name', 'Address', 'ContactNo','Link','Description','Drone','Wedding_Photography','Preshoot_Vedio','Wedding_Vedio','Album_Making','Wedding_Card','main_pic','pic1','pic2','pic3','pic4','photography_events.id as eventid', 'Wedding', 'Get_togather','Birthday','Competition','Professional_Events','Sports','Trips')
                 ->get();
 
-                return view('Photographyview',compact('data'));
+        $dec= DB::table('users')
+            ->where('users.id','=',$id)
+            ->join('photography_packages','users.id','=','photography_packages.user_id')
+            ->get();
+
+        $saha=DB::table('users')
+            ->join('photography_videos','users.id','=','photography_videos.user_id')
+            ->where('users.id','=',$id)
+            ->select('photography_videos.id','Video_Name', 'Video')
+            ->get();
+
+        $rate=DB::table('users')
+            ->join('ratings','ratings.user_id','=','users.id')
+            ->where('users.id','=',$id)
+            ->where('blocked','=',"0")
+            ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+            ->get();
+
+       $average=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->avg('rating');
+
+       $one=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','1')
+               ->count();
+
+       $two=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','2')
+               ->count();
+
+       $three=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','3')
+               ->count();
+
+       $four=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','4')
+               ->count();
+
+       $five=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->where('rating','=','5')
+               ->count();
+
+       $all=DB::table('ratings')
+               ->where('ratings.user_id','=',$id)
+               ->where('blocked','=',"0")
+               ->count();
+
+        if($all!=0)
+        {
+            $precentage1=$one/$all*100;
+            $precentage2=$two/$all*100;
+            $precentage3=$three/$all*100;
+            $precentage4=$four/$all*100;
+            $precentage5=$five/$all*100;
+        }
+        else 
+        {
+            $precentage1=0;
+            $precentage2=0;
+            $precentage3=0;
+            $precentage4=0;
+            $precentage5=0;
+        }
+
+        return view('Photographyview',compact('data','dec','saha','average','rate','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
@@ -337,7 +415,19 @@ class PhotographyController extends Controller
                 ->select('users.id as userid','name','email','photographies.id as photographyid','Studio_Name', 'Address', 'ContactNo','Link','Description','Drone','Wedding_Photography','Preshoot_Vedio','Wedding_Vedio','Album_Making','Wedding_Card','main_pic','pic1','pic2','pic3','pic4','photography_events.id as eventid','Wedding', 'Get_togather','Birthday','Competition','Professional_Events','Sports','Trips')
                 ->get();
 
-                return view('PhotographyUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('photography_packages','users.id','=','photography_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photography_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+                ->get();
+
+        $saha=DB::table('users')
+                ->join('photography_videos','users.id','=','photography_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photography_videos.id','Video_Name', 'Video')
+                ->get();
+
+                return view('PhotographyUserProfile',compact('data','deto','saha'));
     }
 
     public function InfoUpdate(Request $request, $userid, $photographyid)
@@ -380,7 +470,7 @@ class PhotographyController extends Controller
         $photo1 ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update photography details Successfully');
         
     }
 
@@ -397,7 +487,7 @@ class PhotographyController extends Controller
         $photo ->Trips =$request->Trips;
         $photo ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update photography event Successfully');
     }
 
     public function featureUpdate(Request $request, $id)
@@ -412,7 +502,7 @@ class PhotographyController extends Controller
         $photo ->Drone =$request->Drone;
         $photo ->update();
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update photography feature Successfully');
     }
 
     public function removeAccount($id)
@@ -427,6 +517,8 @@ class PhotographyController extends Controller
                 $photo1->delete();
                 $photo = Photography::where('user_id',$id)->delete();
                 $photo2= Photography_event::where('user_id',$id)->delete();
+                $photo3= Photography_package::where('user_id',$id)->delete();
+                $photo4= Photography_video::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -437,4 +529,414 @@ class PhotographyController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photographies.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'main_pic.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('main_pic'))
+                    {
+                        $main_pic=$request->file('main_pic');
+                        $filename=time().'.'.$main_pic->getClientOriginalExtension();
+                        Image::make($main_pic)->fit(480,480)->save(public_path('/uploads/photography/'. $filename));
+
+                        $picture=Photography::where('id',$id)
+                        ->update([
+                                'main_pic'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic1(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photographies.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic1'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic1.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic1'))
+                    {
+                        $pic1=$request->file('pic1');
+                        $filename=time().'.'.$pic1->getClientOriginalExtension();
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/photography/'. $filename));
+
+                        $picture=Photography::where('id',$id)
+                        ->update([
+                                'pic1'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic2(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photographies.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic2'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic2.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic2'))
+                    {
+                        $pic2=$request->file('pic2');
+                        $filename=time().'.'.$pic2->getClientOriginalExtension();
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/photography/'. $filename));
+
+                        $picture=Photography::where('id',$id)
+                        ->update([
+                                'pic2'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic3(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photographies.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic3'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic3.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic3'))
+                    {
+                        $pic3=$request->file('pic3');
+                        $filename=time().'.'.$pic3->getClientOriginalExtension();
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/photography/'. $filename));
+
+                        $picture=Photography::where('id',$id)
+                        ->update([
+                                'pic3'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic4(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('photographies.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic4.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic4'))
+                    {
+                        $pic4=$request->file('pic4');
+                        $filename=time().'.'.$pic4->getClientOriginalExtension();
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/photography/'. $filename));
+
+                        $picture=Photography::where('id',$id)
+                        ->update([
+                                'pic4'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Event_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Event_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $decorate_package = new Photography_package;
+        $decorate_package->user_id = Auth::user()->id;
+        $decorate_package->Package_Name=$request->Package_Name;
+        $decorate_package->Event_Type =$request->Event_Type;
+        $decorate_package->Services =$request->Services;
+        $decorate_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/photography') , $filename);
+             $decorate_package->Pdf=$filename;
+             
+         }
+        
+         $decorate_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Event_Type1' => 'required|string|max:255',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Event_Type1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Photography_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Event_Type'=>$request->Event_Type1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+
+        
+            
+                $deco1 = Photography_package::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+         
+
+    }
+
+    public function uploadVideo(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('photographies','users.id','=','photographies.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Video_Name' => 'required|string|max:255',
+                    'Video' =>'required|mimetypes:video/x-flv,video/mp4,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv',
+                ],
+                [
+                    'Video_Name.required'=> "please fill this field",
+                    'Video.required'=> "Add a video here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    $Evideo = new Photography_video;
+                    $Evideo->user_id = Auth::user()->id;
+                    $Evideo->Video_Name=$request->Video_Name;
+                    
+                    
+                    
+                    if($request->hasFile('Video'))
+                    {
+                        $Video=$request->file('Video');
+           
+                        $filename=time().'.'.$Video->getClientOriginalExtension();
+                        $Video->move(public_path('/video/photography') , $filename);
+                        $Evideo->Video=$filename;
+                        $Evideo->save();
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function deleteVideo(request $request)
+    {
+        
+
+         $deco1 = Photography_video::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
+          
+
+        
+    }
+
 }

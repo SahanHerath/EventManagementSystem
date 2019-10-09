@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-	<title>Hotel-profile</title>
+<head>@foreach($hall as $hall1)
+	<title>Hall({{$hall1->Hall_Name}})-Evora</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -43,7 +43,7 @@
 		<!-- container -->
 	</header>
 	
-	@foreach($hall as $hall1)
+	
 	<section class="intro-section" style="background-image: url(uploads/hall/{{$hall1->Main_pic}})">
 		<div class="container">
 		
@@ -507,11 +507,11 @@
 		</div><!-- container -->
 	</section>
 
-	<section class="education-section section">
+	<section class="education-section section" >
 				<div class="colorlib-narrow-content">
                     
 					<div class="container">
-                    <div class="heading">
+                    <div class="heading ">
                         <h2>Events we recently covered</h2>
                     </div>
 					    <div class="row">
@@ -547,195 +547,101 @@
 			
         </section>
 		@endforeach
-
-
-		<section class="testimonials_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>Rating</h2>
-        		</div>
-
-				
-				<div class="form-group" id="rating-ability-wrapper">
-					<label class="control-label" for="rating">
-					<span class="field-label-header">How would you rate your ability to use the computer and access internet?*</span><br>
-					<span class="field-label-info"></span>
-					<input type="hidden" id="selected_rating" name="selected_rating" value="" required="required">
-					</label>
-					<h2 class="bold rating-header" style="">
-					<span class="selected-rating">0</span><small> / 5</small>
-					</h2>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
-					<button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</button>
+		<section class="education-section section"  style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
+				<div class="colorlib-narrow-content">
+                    
+				<div class="container">
+				<div class="heading text-white">
+					<h2>Available Packages</h2>
 				</div>
-        	</div>
-			<br>
-			<br>
-			<br>
-			<div class="container">
-    			
-				<div class="row">
-					<div class="col-sm-5">
-						<div class="rating-block">
-							<h4>Average user rating</h4>
-							<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
-								<i class="fa fa-star" ></i>
-							</button>
-							<button  class="btnrating btn btn-default btn-lg" >
-								<i class="fa fa-star" ></i>
-							</button>
-							<button  class="btnrating btn btn-default btn-lg" >
-								<i class="fa fa-star" ></i>
-							</button>
-							<button  class="btnrating btn btn-default btn-lg" >
-								<i class="fa fa-star" ></i>
-							</button>
-							<button class="btnrating btn btn-default btn-lg" >
-								<i class="fa fa-star" ></i>
-							</button>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<h4>Rating breakdown</h4>
-						<div class="pull-left">
-							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
-							</div>
-							<div class="pull-left" style="width:180px;">
-								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-									<span class="sr-only">80% Complete (danger)</span>
-								</div>
-								</div>
-							</div>
-							<div class="pull-right" style="margin-left:10px;">1</div>
-						</div>
-						<div class="pull-left">
-							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
-							</div>
-							<div class="pull-left" style="width:180px;">
-								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
-									<span class="sr-only">80% Complete (danger)</span>
-								</div>
-								</div>
-							</div>
-							<div class="pull-right" style="margin-left:10px;">1</div>
-						</div>
-						<div class="pull-left">
-							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
-							</div>
-							<div class="pull-left" style="width:180px;">
-								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
-									<span class="sr-only">80% Complete (danger)</span>
-								</div>
-								</div>
-							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
-						</div>
-						<div class="pull-left">
-							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
-							</div>
-							<div class="pull-left" style="width:180px;">
-								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
-									<span class="sr-only">80% Complete (danger)</span>
-								</div>
-								</div>
-							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
-						</div>
-						<div class="pull-left">
-							<div class="pull-left" style="width:35px; line-height:1;">
-								<div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
-							</div>
-							<div class="pull-left" style="width:180px;">
-								<div class="progress" style="height:9px; margin:8px 0;">
-								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
-									<span class="sr-only">80% Complete (danger)</span>
-								</div>
-								</div>
-							</div>
-							<div class="pull-right" style="margin-left:10px;">0</div>
-						</div>
-					</div>			
-				</div>			
-				
-				<div class="row">
-					<div class="col-sm-7">
-						<hr/>
-						<div class="review-block">
-							<div class="row">
-								<div class="col-sm-3">
-									<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-									<div class="review-block-name"><a href="#">nktailor</a></div>
-									<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-								</div>
-								<div class="col-sm-9">
-									<div class="review-block-rate">
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-										<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</button>
-									</div>
-									<div class="review-block-title">this was nice in buy</div>
-									<div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+                       <!-- bordered table -->
+			<!-- ============================================================== -->
+			<div class="feature_inner row">
+			<div class="col-xl-8 col-lg-8 col-md-10 col-sm-10 col-10">
+				<div class="card">
+				@foreach($deto as $deto1)
+					<center><h4 class="card-header">{{$deto1->Package_Name}}</h4></center>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th scope="col"><center>Appetizers</center></th>
+									
+									<th scope="col"><center>Welcome_drinks</center></th>
+									<th scope="col"><center>Soups</center></th>
+									<th scope="col"><center>Meals</center></th>
+									<th scope="col"><center>Desserts</center></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row"><center>@foreach (explode(',', $deto1->Appetizers) as $appetizers)
+														{{ $appetizers }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Welcome_drinks) as $welcomedrinks)
+														{{ $welcomedrinks }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Soups) as $soups)
+														{{ $soups }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Foods) as $foods)
+														{{ $foods }}<br>
+															@endforeach</center></td>
+									<td><center>@foreach (explode(',', $deto1->Desserts) as $desserts)
+														{{ $desserts }}<br>
+															@endforeach</center></td>
+								</tr>
+								<tr>
+									<th scope="row" colspan="2"><center><h4>Price</h4></center></th>
+									<th scope="row" colspan="3"><center>Download PDF here</center></th>
+									
+								</tr>
+								<tr>
+									
+									<td colspan="2"><center>Rs.{{$deto1->Price}}</center></td>
+									<td colspan="3"><center><a href="files/catering/{{$deto1->Pdf}}"><img src="images/pdf.png" width="40" hight="40" alt="" ></a></center></td>
+								</tr>
+							</tbody>
+						</table><br>
+					</div>@endforeach
 				</div>
-				
-			</div> <!-- /container -->
-		</section>
+			</div></div>
+			<!-- ============================================================== -->
+			<!-- end bordered table -->
+                        </div>
+                    </div>
+                </section>
+
+
+		
 		
 
 		<footer class="site-footer" style="background-color:black;">
-			<div class="container">
-				
-
-				
-				<div class="row pt-3 mt-3 text-center">
-				<div class="col-md-12">
-					<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					<br><br>
-					</p>
-				</div>
-				
-				</div>
-			</div>
+    <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title"><br>
+                        <a href="/aboutus" ><h3>About Us</h3></a>
+                        </div>
+                        <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-2 offset-4">
+                    <aside class="f_widget social_widget">
+                        
+                        <div class="f_title"><br>
+                        <a href="/#" ><h3>Contact Us</h3></a>
+                        </div>
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
     	</footer>
 	
 	<!-- SCIPTS -->

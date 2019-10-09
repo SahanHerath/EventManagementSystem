@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Salon;
 use App\Salon_event;
+use App\Salon_package;
 use Auth;
 use Image;
 use DB;
@@ -244,9 +245,80 @@ class salonController extends Controller
                 ->join('salons','users.id','=','salons.user_id')
                 ->join('salon_events','users.id','=','salon_events.user_id')
                 ->where('category','=','Bridel_Designers')
+                ->select('users.id as userid','name','email','salons.id as salonid','Salon_Name','Address', 'Contact_No', 'Link','Description','Groom_Dressing','Bride_Dressing','Dress_Making','Jewelry','Makeup','Bridesman','Bridesmaid','Profile_Pic','pic1','pic2','pic3','pic4','HairStyle','salon_events.id as eventid','wedding', 'parties', 'fashion_show')
                 ->get();
 
-                return view('SalonView',compact('data'));
+        $deto= DB::table('users')
+                ->where('users.id','=',$id)
+                ->join('salon_packages','users.id','=','salon_packages.user_id')
+                ->get();
+
+                $rate=DB::table('users')
+                ->join('ratings','ratings.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->where('blocked','=',"0")
+                ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+                ->get();
+    
+        $average=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->avg('rating');
+    
+        $one=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','1')
+                   ->count();
+    
+        $two=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','2')
+                   ->count();
+    
+        $three=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','3')
+                   ->count();
+    
+        $four=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','4')
+                   ->count();
+    
+        $five=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','5')
+                   ->count();
+    
+        $all=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->count();
+    
+            if($all!=0)
+            {
+                $precentage1=$one/$all*100;
+                $precentage2=$two/$all*100;
+                $precentage3=$three/$all*100;
+                $precentage4=$four/$all*100;
+                $precentage5=$five/$all*100;
+            }
+            else 
+            {
+                $precentage1=0;
+                $precentage2=0;
+                $precentage3=0;
+                $precentage4=0;
+                $precentage5=0;
+            }
+
+
+                return view('SalonView',compact('data','deto','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
@@ -271,6 +343,8 @@ class salonController extends Controller
                 ->join('salon_events','users.id','=','salon_events.user_id')
                 ->where('salon_events.parties','=','Available')
                 ->get();
+
+        
       
        
        return view('Salon', compact('level'));
@@ -288,7 +362,15 @@ class salonController extends Controller
                 ->select('users.id as userid','name','email','salons.id as salonid','Salon_Name','Address', 'Contact_No', 'Link','Description','Groom_Dressing','Bride_Dressing','Dress_Making','Jewelry','Makeup','Bridesman','Bridesmaid','Profile_Pic','pic1','pic2','pic3','pic4','HairStyle','salon_events.id as eventid','wedding', 'parties', 'fashion_show')
                 ->get();
 
-                return view('SalonUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('salon_packages','users.id','=','salon_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salon_packages.id','Package_Name', 'Event_Type', 'Services','Price','Pdf')
+                ->get();
+
+        
+
+                return view('SalonUserProfile',compact('data','deto'));
     }
 
     public function InfoUpdate(Request $request, $userid, $salonid)
@@ -340,7 +422,7 @@ class salonController extends Controller
         $music1  ->update();
 
         
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Profile Details Successfully');
         
     }
 
@@ -357,7 +439,7 @@ class salonController extends Controller
                 
             ]);
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Events Successfully');
     }
 
     public function featureUpdate(Request $request, $id)
@@ -379,7 +461,7 @@ class salonController extends Controller
 
             ]);
 
-        return redirect('/Profile');
+        return redirect('/Profile')->with('flash_message','Update Your Features Successfully');
     }
 
     public function removeAccount($id)
@@ -394,6 +476,7 @@ class salonController extends Controller
                 $salon1->delete();
                 $salon = Salon::where('user_id',$id)->delete();
                 $salon2 = Salon_event::where('user_id',$id)->delete();
+                $salon3 = Salon_package::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -404,5 +487,350 @@ class salonController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salons.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Profile_Pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Profile_Pic.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Profile_Pic'))
+                    {
+                        $Profile_Pic=$request->file('Profile_Pic');
+                        $filename=time().'.'.$Profile_Pic->getClientOriginalExtension();
+                        Image::make($Profile_Pic)->fit(480,480)->save(public_path('/uploads/salon/'. $filename));
+
+                        $picture=Salon::where('id',$id)
+                        ->update([
+                                'Profile_Pic'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic1(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salons.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic1'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic1.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic1'))
+                    {
+                        $pic1=$request->file('pic1');
+                        $filename=time().'.'.$pic1->getClientOriginalExtension();
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/salon/'. $filename));
+
+                        $picture=Salon::where('id',$id)
+                        ->update([
+                                'pic1'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic2(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salons.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic2'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic2.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic2'))
+                    {
+                        $pic2=$request->file('pic2');
+                        $filename=time().'.'.$pic2->getClientOriginalExtension();
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/salon/'. $filename));
+
+                        $picture=Salon::where('id',$id)
+                        ->update([
+                                'pic2'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic3(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salons.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic3'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic3.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic3'))
+                    {
+                        $pic3=$request->file('pic3');
+                        $filename=time().'.'.$pic3->getClientOriginalExtension();
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/salon/'. $filename));
+
+                        $picture=Salon::where('id',$id)
+                        ->update([
+                                'pic3'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic4(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->where('users.id','=',$id1)
+                ->select('salons.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic4.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic4'))
+                    {
+                        $pic4=$request->file('pic4');
+                        $filename=time().'.'.$pic4->getClientOriginalExtension();
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/salon/'. $filename));
+
+                        $picture=Salon::where('id',$id)
+                        ->update([
+                                'pic4'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Event_Type' => 'required|string|max:255',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Event_Type.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $salon_package = new Salon_package;
+        $salon_package->user_id = Auth::user()->id;
+        $salon_package->Package_Name=$request->Package_Name;
+        $salon_package->Event_Type =$request->Event_Type;
+        $salon_package->Services =$request->Services;
+        $salon_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/salon') , $filename);
+             $salon_package->Pdf=$filename;
+             
+         }
+        
+         $salon_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+            'Event_Type1' => 'required|string|max:255',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        'Event_Type1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Salon_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                'Event_Type'=>$request->Event_Type1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+        $deco1 = Salon_package::findOrFail($request->id);
+        $deco1->delete();
+
+        return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+           
+            
+        
+
+    }
+
+
+
 }
  

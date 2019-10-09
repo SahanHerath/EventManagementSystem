@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Cake_designer;
+use App\Cake_package;
 use Auth;
 use Image;
 use DB;
@@ -217,11 +218,81 @@ class CakeController extends Controller
         $data = DB::table('users')
                 ->where('users.id','=',$id)
                 ->join('cake_designers','users.id','=','cake_designers.user_id')
-                
                 ->where('category','=','Cake_Designers')
+                ->select('users.id as userid','email','name','cake_designers.id as cakeid', 'Organization_Name', 'Address', 'Contact_No','Link','Description','Wedding_cake','Birthday_cake','Cake_Structure','Pastry_cake','Cup_Cake','Other','Main_pic','pic1','pic2','pic3','pic4')
                 ->get();
 
-                return view('Cakeview',compact('data'));
+        $deto=DB::table('users')
+                ->join('cake_packages','users.id','=','cake_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('cake_packages.id','Package_Name', 'Cake_types', 'Description','Price','Pdf')
+                ->get();
+
+        $rate=DB::table('users')
+                ->join('ratings','ratings.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->where('blocked','=',"0")
+                ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+                ->get();
+    
+        $average=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->avg('rating');
+    
+        $one=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','1')
+                   ->count();
+    
+        $two=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','2')
+                   ->count();
+    
+        $three=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','3')
+                   ->count();
+    
+        $four=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','4')
+                   ->count();
+    
+        $five=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->where('rating','=','5')
+                   ->count();
+    
+        $all=DB::table('ratings')
+                   ->where('ratings.user_id','=',$id)
+                   ->where('blocked','=',"0")
+                   ->count();
+    
+            if($all!=0)
+            {
+                $precentage1=$one/$all*100;
+                $precentage2=$two/$all*100;
+                $precentage3=$three/$all*100;
+                $precentage4=$four/$all*100;
+                $precentage5=$five/$all*100;
+            }
+            else 
+            {
+                $precentage1=0;
+                $precentage2=0;
+                $precentage3=0;
+                $precentage4=0;
+                $precentage5=0;
+            }
+
+                return view('Cakeview',compact('data','deto','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
@@ -258,7 +329,13 @@ class CakeController extends Controller
                 ->select('users.id as userid','name','email', 'cake_designers.id as cakeid','Organization_Name', 'Address', 'Contact_No','Link','Description','Wedding_cake','Birthday_cake','Cake_Structure','Pastry_cake','Cup_Cake','Other','Main_pic','pic1','pic2','pic3','pic4')
                 ->get();
 
-                return view('CakeUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('cake_packages','users.id','=','cake_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_packages.id','Package_Name', 'Cake_types', 'Description','Price','Pdf')
+                ->get();
+
+                return view('CakeUserProfile',compact('data','deto'));
     }
 
     public function featureUpdate(Request $request, $id)
@@ -346,6 +423,7 @@ class CakeController extends Controller
                 $cake1 = User::findOrFail($id); 
                 $cake1 ->delete();
                 $cake2  = Cake_designer::where('user_id',$id)->delete();
+                $cake3  = Cake_package::where('user_id',$id)->delete();
                 
                 
                 
@@ -357,5 +435,349 @@ class CakeController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_designers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_pic.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_pic'))
+                    {
+                        $Main_pic=$request->file('Main_pic');
+                        $filename=time().'.'.$Main_pic->getClientOriginalExtension();
+                        Image::make($Main_pic)->fit(480,480)->save(public_path('/uploads/cake/'. $filename));
+
+                        $picture=Cake_designer::where('id',$id)
+                        ->update([
+                                'Main_pic'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic1(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_designers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic1'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic1.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic1'))
+                    {
+                        $pic1=$request->file('pic1');
+                        $filename=time().'.'.$pic1->getClientOriginalExtension();
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/cake/'. $filename));
+
+                        $picture=Cake_designer::where('id',$id)
+                        ->update([
+                                'pic1'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic2(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_designers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic2'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic2.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic2'))
+                    {
+                        $pic2=$request->file('pic2');
+                        $filename=time().'.'.$pic2->getClientOriginalExtension();
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/cake/'. $filename));
+
+                        $picture=Cake_designer::where('id',$id)
+                        ->update([
+                                'pic2'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic3(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_designers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic3'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic3.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic3'))
+                    {
+                        $pic3=$request->file('pic3');
+                        $filename=time().'.'.$pic3->getClientOriginalExtension();
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/cake/'. $filename));
+
+                        $picture=Cake_designer::where('id',$id)
+                        ->update([
+                                'pic3'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic4(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                ->where('users.id','=',$id1)
+                ->select('cake_designers.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic4.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic4'))
+                    {
+                        $pic4=$request->file('pic4');
+                        $filename=time().'.'.$pic4->getClientOriginalExtension();
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/cake/'. $filename));
+
+                        $picture=Cake_designer::where('id',$id)
+                        ->update([
+                                'pic4'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Description' =>'required|string|max:500',
+            'Cake_types' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Description.required'=> "Fill out this field",
+        'Cake_types.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $cake_package = new Cake_package;
+        $cake_package->user_id = Auth::user()->id;
+        $cake_package->Package_Name=$request->Package_Name;
+        $cake_package->Cake_types =$request->Cake_types;
+        $cake_package->Description =$request->Description;
+        $cake_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/cake') , $filename);
+             $cake_package->Pdf=$filename;
+             
+         }
+        
+         $cake_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Cake_types1' => 'required|string|max:500',
+            'Description1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Cake_types1.required'=> "Fill out this field",
+        'Description1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Cake_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Cake_types'=>$request->Cake_types1,
+                'Description'=>$request->Description1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+
+       
+                $cake1 = Cake_package::findOrFail($request->id);
+                $cake1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package Removed Successfully');
+            
+      
+
+    }
+
 
 }

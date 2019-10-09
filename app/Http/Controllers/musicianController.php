@@ -7,6 +7,8 @@ use App\User;
 use App\Musician;
 use Auth;
 use App\Musician_event;
+use App\Music_package;
+use App\Music_video;
 use Image;
 use DB;
 
@@ -237,9 +239,87 @@ class musicianController extends Controller
                 ->join('musicians','users.id','=','musicians.user_id')
                 ->join('musician_events','users.id','=','musician_events.user_id')
                 ->where('category','=','Music')
+                ->select('name', 'email','users.id as userid','musicians.id as musicid','Dj_Name', 'Address', 'ContactNo','Link','Description','Playing_Hrs','Payment','Extra_Cost','Fire','Smoke','Lights','Main_Logo','pic1','pic2','pic3','pic4','musician_events.id as eventid','Wedding', 'Birthday', 'Beach_Party','Get_Together','Parties')
                 ->get();
 
-                return view('MusicView',compact('data'));
+        $deto=DB::table('users')
+                ->join('music_packages','users.id','=','music_packages.user_id')
+                ->where('users.id','=',$id)
+                ->select('music_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+                
+        $saha=DB::table('users')
+            ->join('music_videos','users.id','=','music_videos.user_id')
+            ->where('users.id','=',$id)
+            ->select('music_videos.id','Video_Name', 'Video')
+            ->get();
+
+        $rate=DB::table('users')
+             ->join('ratings','ratings.user_id','=','users.id')
+             ->where('users.id','=',$id)
+             ->where('blocked','=',"0")
+             ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+             ->get();
+
+        $average=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->avg('rating');
+
+        $one=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','1')
+                ->count();
+
+        $two=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','2')
+                ->count();
+
+        $three=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','3')
+                ->count();
+
+        $four=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','4')
+                ->count();
+
+        $five=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->where('rating','=','5')
+                ->count();
+
+        $all=DB::table('ratings')
+                ->where('ratings.user_id','=',$id)
+                ->where('blocked','=',"0")
+                ->count();
+
+        
+                if($all!=0)
+                {
+                    $precentage1=$one/$all*100;
+                    $precentage2=$two/$all*100;
+                    $precentage3=$three/$all*100;
+                    $precentage4=$four/$all*100;
+                    $precentage5=$five/$all*100;
+                }
+                else 
+                {
+                    $precentage1=0;
+                    $precentage2=0;
+                    $precentage3=0;
+                    $precentage4=0;
+                    $precentage5=0;
+                }
+                return view('MusicView',compact('data','deto','saha','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
@@ -305,7 +385,19 @@ class musicianController extends Controller
                 ->select( 'users.id as userid','name','email','musicians.id as musicianid','Dj_Name', 'Address', 'ContactNo','Link','Description','Playing_Hrs','Payment','Extra_Cost','Fire','Smoke','Lights','Main_Logo','pic1','pic2','pic3','pic4','musician_events.id as eventid','Wedding', 'Birthday', 'Beach_Party','Get_Together','Parties')
                 ->get();
 
-                return view('MusicUserProfile',compact('data'));
+        $deto=DB::table('users')
+                ->join('music_packages','users.id','=','music_packages.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
+                ->get();
+
+        $saha=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->where('users.id','=',$id1)
+                ->select('music_videos.id','Video_Name', 'Video')
+                ->get();
+
+                return view('MusicUserProfile',compact('data','deto','saha'));
     }
 
     public function InfoUpdate(Request $request, $userid, $musicid)
@@ -418,6 +510,8 @@ class musicianController extends Controller
                 $music1->delete();
                 $music = Musician::where('user_id',$id)->delete();
                 $event = Musician_event::where('user_id',$id)->delete();
+                $event1 = Music_package::where('user_id',$id)->delete();
+                $event2 = Music_video::where('user_id',$id)->delete();
                 
                 
                 return redirect('/');
@@ -428,4 +522,414 @@ class musicianController extends Controller
             }
         
     }
+
+    public function changeMainPic(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('musicians.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Main_Logo'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'Main_Logo.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('Main_Logo'))
+                    {
+                        $Main_Logo=$request->file('Main_Logo');
+                        $filename=time().'.'.$Main_Logo->getClientOriginalExtension();
+                        Image::make($Main_Logo)->fit(480,480)->save(public_path('/uploads/music/'. $filename));
+
+                        $picture=Musician::where('id',$id)
+                        ->update([
+                                'Main_Logo'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Main Picture Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic1(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('musicians.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic1'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic1.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic1'))
+                    {
+                        $pic1=$request->file('pic1');
+                        $filename=time().'.'.$pic1->getClientOriginalExtension();
+                        Image::make($pic1)->fit(1920,1080)->save(public_path('/uploads/music/'. $filename));
+
+                        $picture=Musician::where('id',$id)
+                        ->update([
+                                'pic1'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic2(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('musicians.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic2'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic2.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic2'))
+                    {
+                        $pic2=$request->file('pic2');
+                        $filename=time().'.'.$pic2->getClientOriginalExtension();
+                        Image::make($pic2)->fit(1920,1080)->save(public_path('/uploads/music/'. $filename));
+
+                        $picture=Musician::where('id',$id)
+                        ->update([
+                                'pic2'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic3(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('musicians.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic3'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic3.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic3'))
+                    {
+                        $pic3=$request->file('pic3');
+                        $filename=time().'.'.$pic3->getClientOriginalExtension();
+                        Image::make($pic3)->fit(1920,1080)->save(public_path('/uploads/music/'. $filename));
+
+                        $picture=Musician::where('id',$id)
+                        ->update([
+                                'pic3'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function changePic4(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('musicians.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'pic4'=> 'required|image|dimensions:min_width=300,min_height=100',
+                ],
+                [
+                    'pic4.required'=> "Add a image here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    if($request->hasFile('pic4'))
+                    {
+                        $pic4=$request->file('pic4');
+                        $filename=time().'.'.$pic4->getClientOriginalExtension();
+                        Image::make($pic4)->fit(1920,1080)->save(public_path('/uploads/music/'. $filename));
+
+                        $picture=Musician::where('id',$id)
+                        ->update([
+                                'pic4'=>$filename
+
+
+                        ]);
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Change Your Pictures Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function AddNewPackage(request $request,$id)
+    {
+        $request->validate(
+            ['Package_Name' => 'required|string|max:255',
+            'Hours' => 'required|numeric|min:0',
+            'Services' =>'required|string|max:500',
+            'Price' =>'required|numeric|min:0',
+            'Pdf' =>'required|mimes:pdf',
+            
+            
+           
+        ],
+        ['Package_Name.required'=> "Fill out this field",
+        'Hours.required'=> "Fill out this field",
+        'Services.required'=> "Fill out this field",
+        'Price.required'=> "Fill out this field",
+        'Pdf.required'=> "Fill out this field",
+        
+        ]
+    );
+        
+        $music_package = new Music_package;
+        $music_package->user_id = Auth::user()->id;
+        $music_package->Package_Name=$request->Package_Name;
+        $music_package->Hours =$request->Hours;
+        $music_package->Services =$request->Services;
+        $music_package->Price =$request->Price;
+
+        if($request->hasFile('Pdf'))
+          {
+             $Pdf=$request->file('Pdf');
+           
+             $filename=time().'.'.$Pdf->getClientOriginalExtension();
+             $Pdf->move(public_path('/files/music') , $filename);
+             $music_package->Pdf=$filename;
+             
+         }
+        
+         $music_package->save();
+
+         return redirect('/Profile')->with('flash_message','Add New Package Successfully');
+    }
+
+    public function EditPackage(request $request)
+    {
+        $request->validate(
+            ['Package_Name1' => 'required|string|max:255',
+            'Hours1' => 'required|numeric|min:0',
+            'Services1' =>'required|string|max:500',
+            'Price1' =>'required|numeric|min:0',
+           
+            
+            
+           
+        ],
+        ['Package_Name1.required'=> "Fill out this field",
+        'Hours1.required'=> "Fill out this field",
+        'Services1.required'=> "Fill out this field",
+        'Price1.required'=> "Fill out this field",
+        
+        
+        ]
+    );
+        
+        
+        
+        
+        $data=Music_package::where('id',$request->id)
+            
+        ->update([
+                'Package_Name'=>$request->Package_Name1,
+                'Hours'=>$request->Hours1,
+                'Services'=>$request->Services1,
+                'Price'=>$request->Price1,
+                
+
+            ]);
+        
+            
+        
+
+        return redirect('/Profile')->with('flash_message','Package Updated Successfully');
+    }
+
+    public function deletePackage(request $request)
+    {
+        
+
+                $deco1 = Music_package::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Package is deleted Successfully');
+       
+
+    }
+
+    public function uploadVideo(request $request,$id)
+    {
+            $id1 = Auth::user()->id;
+            
+            $data=DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->where('users.id','=',$id1)
+                ->select('users.id')
+                ->get();
+
+                $request->validate(
+                [
+                    'Video_Name' => 'required|string|max:255',
+                    'Video' =>'required|mimetypes:video/x-flv,video/mp4,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv',
+                ],
+                [
+                    'Video_Name.required'=> "please fill this field",
+                    'Video.required'=> "Add a video here",
+                ]
+            );
+            
+            
+            foreach($data as $data1)
+            {
+                if($data1->id==$id)
+                {
+                    $Evideo = new Music_video;
+                    $Evideo->user_id = Auth::user()->id;
+                    $Evideo->Video_Name=$request->Video_Name;
+                    
+                    
+                    
+                    if($request->hasFile('Video'))
+                    {
+                        $Video=$request->file('Video');
+           
+                        $filename=time().'.'.$Video->getClientOriginalExtension();
+                        $Video->move(public_path('/video/music') , $filename);
+                        $Evideo->Video=$filename;
+                        $Evideo->save();
+                    }
+
+                    return redirect('/Profile')->with('flash_message','Video Uploaded Successfully');
+                }
+
+                else
+                {
+                    return redirect('/');
+                }
+            }
+            
+    }
+
+    public function deleteVideo(request $request)
+    {
+        
+
+       
+                $deco1 = Music_video::findOrFail($request->id);
+                $deco1->delete();
+
+                return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
+            
+
+        
+    }
+
+
 }

@@ -155,6 +155,10 @@ class HomeController extends Controller
             {
                 return app('App\Http\Controllers\EventPlanersController')->profile();
             }
+            if(($data1->category)=='admin')
+            {
+                return app('App\Http\Controllers\AdminController')->profile();
+            }
            
         }
     }
