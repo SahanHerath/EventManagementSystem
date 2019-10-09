@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2019 at 03:19 PM
+-- Generation Time: Oct 09, 2019 at 06:15 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -1383,6 +1383,13 @@ CREATE TABLE `suggestions` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `suggestions`
+--
+
+INSERT INTO `suggestions` (`id`, `Name`, `Email`, `Contact_No`, `Regarding`, `Message`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'hdsdsfsdf', 'sahand.herath@gmail.com', '3244234234234', 'Financial', 'ferfefwefwefwefwfwefwef', 0, '2019-10-09 10:09:54', '2019-10-09 10:09:54');
+
 -- --------------------------------------------------------
 
 --
@@ -2135,7 +2142,7 @@ ALTER TABLE `salon_packages`
 -- AUTO_INCREMENT for table `suggestions`
 --
 ALTER TABLE `suggestions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `transporters`
