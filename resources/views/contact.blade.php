@@ -58,27 +58,6 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-1 col-sm-2 col-xs-4">
-                                    <div class="search-wrap text-right">
-                                        <ul>
-                                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span>3</span></a></li>
-                                            <li><a href="javascript:void(0);"><i class="fa fa-search"></i></a>
-                                                <ul>
-                                                    <li>
-                                                        <form action="#">
-                                                            <input type="text" placeholder="Search Here...">
-                                                            <button><i class="fa fa-search"></i></button>
-                                                        </form>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class=" col-xs-2 col-sm-1 hidden-md hidden-lg">
-                                    <div class="responsive-menu-wrap floatright"></div>
-                                </div>
-                             </div>
                         </div>
                     </div>
                 </div>
@@ -94,7 +73,7 @@
                         <div class="breadcumb-wrap text-center">
                             <h2>Contact us</h2>
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li>/</li>
                                 <li class="active">contact</li>
                             </ul>
@@ -112,23 +91,82 @@
                     <div class="col-md-8 col-sm-6 col-xs-12">
                         <div class="contact-form">
                             <div class="cf-msg"></div>
-                            <form action="mail.php" method="post" id="cf">
+                            <form method="POST" action="/addSuggestion" enctype="multipart/form-data">
+                            @csrf
                                 <div class="row">
-                                    <div class="col-md-6 col-xs-12">
-                                        <input type="text" placeholder="Name" id="fname" name="fname">
-                                    </div>
-                                    <div class="col-md-6 col-xs-12">
-                                        <input type="text" placeholder="Email" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <input type="text" placeholder="Subject" id="subject" name="subject">
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <textarea class="contact-textarea" placeholder="Message" id="msg" name="msg"></textarea>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <button id="submit" class="cont-submit btn-contact btn-style" name="submit">SEND MESSAGE</button>
-                                    </div>
+                                <div class="form-group row{{ $errors->has('Name') ? ' has-error' : '' }}">
+                            
+
+                            <div class="col-md-11">
+                                <input id="Name" placeholder="Name" type="text" class="form-control @error('Name') is-invalid @enderror" name="Name" value="{{ old('Name') }}"  autocomplete="Name" autofocus title="Fill this field">
+
+                                @if ($errors->has('Name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row{{ $errors->has('Email') ? ' has-error' : '' }}">
+                            
+
+                            <div class="col-md-11 ">
+                                <input id="Email" placeholder="Email" type="Email" class="form-control @error('Email') is-invalid @enderror" name="Email" value="{{ old('Email') }}"  autocomplete="Email" title="Fill this field">
+
+                                @if ($errors->has('Email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
+                           
+
+                            <div class="col-md-11">
+                                <input id="Contact_No" placeholder="Contact Number" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" autocomplete="Contact_No" title="Fill this field with Contact Number">
+
+                                @if ($errors->has('Contact_No'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Contact_No') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row{{ $errors->has('Regarding') ? ' has-error' : '' }}">
+                            
+                            
+                            <div class="col-md-8">
+                                <select id="Regarding" placeholder="Regarding" class="form-control" name="Regarding" value="{{ old('Regarding') }}" title="Fill this field with Avalability" >
+                                    <option value="" disabled selected>--Select One--</option>
+                                    <option value="Financial">Financial</option>
+                                    <option value="Services">Services</option>
+                                    <option value="Community">Community</option>
+                                    <option value="Development">Development</option>
+                                    <option value="General Info">General Info</option>
+                                    <option value="Advertising">Advertising</option>
+                                    <option value="Website Bug">Website Bug</option>
+                                    <option value="Donations">Donations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group{{ $errors->has('Message') ? ' has-error' : '' }}">
+                        <div class="form-group row">
+                            
+                            <div class="col-md-11">
+                                <textarea name='Message' placeholder="Message" cols='50' rows='5' id='Message' class="form-control @error('Message') is-invalid @enderror" title="Fill this field."></textarea>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-5">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit Suggestion
+                                </button>
+                            </div>
+                        </div>
                                 </div>
                             </form>
                         </div>
@@ -140,23 +178,23 @@
                                     <i class="fa fa-phone"></i>
                                     Phone number
                                     <p>
-                                        <span>+ (0012) 123 456 789</span>
-                                        <span>+ (0012) 123 456 789</span>
+                                        <span>+94 710908891</span>
+                                        
                                     </p>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>
                                     Email Id
                                     <p>
-                                        <span>info145@gmail.com</span>
-                                        <span>info145@gmail.com</span>
+                                        <span>evora@gmail.com</span>
+                                        
                                     </p>
                                 </li>
                                 <li>
                                     <i class="fa fa-location-arrow"></i>
                                     Location
                                     <p>
-                                        <span>+227 Marion Street Address Here Columbia, SC 29201</span>
+                                        <span>+227 Marion Street Address Jaffna, SC 29201</span>
                                     </p>
                                 </li>
                             </ul>
