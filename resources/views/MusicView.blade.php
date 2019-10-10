@@ -555,7 +555,7 @@
 								<i class="fa fa-star" ></i>
 							</button>
 							@endif
-							@if((($average>4.5) && ($average<5))||($average==4.5))
+							@if((($average>4.5) && ($average<5))||($average==4.5)||($average==5))
 							<button type="#" class="btnrating btn btn-warning btn-lg"  aria-label="Left Align">
 								<i class="fa fa-star" ></i>
 							</button>

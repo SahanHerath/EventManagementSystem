@@ -98,8 +98,9 @@
                                 <div class="row">
                                 <div class="form-group row{{ $errors->has('Name') ? ' has-error' : '' }}">
                             
-
+                            
                             <div class="col-md-11">
+                            <label for="Name">Name</label>
                                 <input id="Name" placeholder="Name" type="text" class="form-control @error('Name') is-invalid @enderror" name="Name" value="{{ old('Name') }}"  autocomplete="Name" autofocus title="Fill this field">
 
                                 @if ($errors->has('Name'))
@@ -113,6 +114,7 @@
                             
 
                             <div class="col-md-11 ">
+                            <label for="Email">Email Address</label>
                                 <input id="Email" placeholder="Email" type="Email" class="form-control @error('Email') is-invalid @enderror" name="Email" value="{{ old('Email') }}"  autocomplete="Email" title="Fill this field">
 
                                 @if ($errors->has('Email'))
@@ -122,11 +124,13 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
-                           
 
-                            <div class="col-md-11">
-                                <input id="Contact_No" placeholder="Contact Number" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}" autocomplete="Contact_No" title="Fill this field with Contact Number">
+                        <div class="form-group row{{ $errors->has('Contact_No') ? ' has-error' : '' }}">
+                            
+
+                            <div class="col-md-11 ">
+                            <label for="Contact_No">Email Address</label>
+                                <input id="Contact_No" placeholder="Contact No" type="text" class="form-control @error('Contact_No') is-invalid @enderror" name="Contact_No" value="{{ old('Contact_No') }}"  autocomplete="Contact_No" title="Fill this field">
 
                                 @if ($errors->has('Contact_No'))
                                     <span class="help-block">
@@ -135,11 +139,13 @@
                                 @endif
                             </div>
                         </div>
+                        
 
                         <div class="form-group row{{ $errors->has('Regarding') ? ' has-error' : '' }}">
                             
                             
-                            <div class="col-md-8">
+                            <div class="col-md-11">
+                            <label for="Regarding">Regarding</label>
                                 <select id="Regarding" placeholder="Regarding" class="form-control" name="Regarding" value="{{ old('Regarding') }}" title="Fill this field with Avalability" >
                                     <option value="" disabled selected>--Select One--</option>
                                     <option value="Financial">Financial</option>
@@ -158,6 +164,7 @@
                         <div class="form-group row">
                             
                             <div class="col-md-11">
+                            <label for="Message">Message</label>
                                 <textarea name='Message' placeholder="Message" cols='50' rows='5' id='Message' class="form-control @error('Message') is-invalid @enderror" title="Fill this field."></textarea>
                             </div>
                         </div>
@@ -204,7 +211,14 @@
                     </div>
                 </div>
             </div>
-            <div id="googleMap"></div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=University%20of%20Jaffna&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen style="width:100%;height:100%;">
+                </iframe>
+                </div>
+                <style>.mapouter{text-align:right;height:391px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:391px;width:100%;}
+                </style>
+            </div>
         </div>
         <!-- contact-area end -->
 

@@ -92,7 +92,7 @@
                         	@else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
-								
+                                <img src="/images/default.jpg" style="width:32px; height:32px; border-radius: 50%;" >
 								          {{ Auth::user()->name }} 
                                 </a>
                             </li>
