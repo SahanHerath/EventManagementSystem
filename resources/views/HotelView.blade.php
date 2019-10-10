@@ -38,9 +38,81 @@
 		<script src="js/ie-emulation-modes-warning.js"></script>
 		<!------ Rating css---------->
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 		
 </head>
 <body>
+
+
+		<!-- Styles -->
+		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+		<style>
+		.fill {object-fit: fill;}
+		.contain {object-fit: contain;}
+		.cover {object-fit: cover;}
+		.scale-down {object-fit: scale-down;}
+		.none {object-fit: none;}
+
+				
+		
+
+
+		li a:hover {
+		background-color: #A397C6;
+		}
+
+		</style>
+
+</head>
+<body>
+	<head>
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
+			<div class="container">
+				<a class="navbar-brand text-white" href="{{ url('/') }}">
+					Evora
+				</a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+					<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item"><a class="nav-link text-white" href="/" ><br>Home<br><br></a></li> 
+							 <!-- Authentication Links -->
+							 @guest
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}<br></a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><br>
+								
+								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:16px; height:16px; border-radius: 50%;" >
+								{{ Auth::user()->name }} <br><br>
+                                </a>
+
+                            </li>
+							<li class="nav-item">
+									<a class="nav-link text-white" href="{{ route('logout') }}"><br>Logout
+                                    <p onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+									</form>
+									</a>
+                            </li>
+                        	@endguest
+							</ul>
+					</div>
+			</div>
+		</nav>
+	</head>
 
 
 
