@@ -205,4 +205,14 @@ class RatingController extends Controller
 
             return view('comment.Salon',compact('data'));
     }
+    public function DJcomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Music')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Band',compact('data'));
+    }
 }
