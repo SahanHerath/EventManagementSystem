@@ -24,17 +24,17 @@
 	<link href="cvportfolio/01-cv-portfolio/css/responsive.css" rel="stylesheet">
 
 
-	 <!-- Bootstrap core CSS -->
-	 <link href="css/rating.css" rel="stylesheet">
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		<link href="css/navbar-fixed-top.css" rel="stylesheet">
-		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-		<script src="js/ie-emulation-modes-warning.js"></script>
-		<!------ Rating css---------->
-		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- Bootstrap core CSS -->
+	<link href="css/rating.css" rel="stylesheet">
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="css/navbar-fixed-top.css" rel="stylesheet">
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="js/ie-emulation-modes-warning.js"></script>
+	<!------ Rating css---------->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		
 	
 </head>
@@ -617,7 +617,7 @@
 		
 		
 
-				<footer class="footer_area p_30">
+		<footer class="footer_area p_30" style="background-color:black;">
 			<div class="container">
 				<div class="row footer_inner">
 					<div class="col-lg-5 col-sm-6">
