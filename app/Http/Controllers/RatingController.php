@@ -265,4 +265,14 @@ class RatingController extends Controller
 
             return view('comment.Dancing',compact('data'));
     }
+    public function decorationcomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Decoration')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Decoration',compact('data'));
+    }
 }
