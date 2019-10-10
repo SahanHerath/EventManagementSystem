@@ -175,7 +175,6 @@
 <a href="#"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/DJComments"><button type="button" class="btn btn-warning">DJ/Band</button></a>
-<a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Catering</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Cake Designer</button></a>
@@ -192,7 +191,7 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Salon service providers - Comments and Ratings</h4>
+                <h4 class="mt-5 mb-5">Band service providers - Comments and Ratings</h4>
             </div>
 
             
