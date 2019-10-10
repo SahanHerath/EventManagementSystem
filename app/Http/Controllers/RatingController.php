@@ -285,4 +285,14 @@ class RatingController extends Controller
 
             return view('comment.Transport',compact('data'));
     }
+    public function EventPlannercomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Event_Planners')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Event',compact('data'));
+    }
 }
