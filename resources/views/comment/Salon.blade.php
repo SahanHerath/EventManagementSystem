@@ -171,20 +171,19 @@
     @endif
 <br><br><br><br>
 <a href="#"><button type="button" class="btn btn-primary">All</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Photography</button></a>
+<a href="/HotelComments"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
+<a href="/PhotographyComments"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonComments"><button type="button" class="btn btn-warning">Beautician</button></a>
-<a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
-<a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Catering</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Cake Designer</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Costume Designer</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Dancing</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Decoration</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Transport</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Event Planners</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
+<a href="/DJComments"><button type="button" class="btn btn-primary">DJ/Band</button></a>
+<a href="/CateringComments"><button type="button" class="btn btn-primary">Catering</button></a>
+<a href="/ActorComments"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
+<a href="/CakeComments"><button type="button" class="btn btn-primary">Cake Designer</button></a>
+<a href="/CostumeComments"><button type="button" class="btn btn-primary">Costume Designer</button></a>
+<a href="/DancingComments"><button type="button" class="btn btn-primary">Dancing</button></a>
+<a href="/DecorationComments"><button type="button" class="btn btn-primary">Decoration</button></a>
+<a href="/TransportComments"><button type="button" class="btn btn-primary">Transport</button></a>
+<a href="/EventPlannerComments"><button type="button" class="btn btn-primary">Event Planners</button></a>
+<a href="/PoruwaComments"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
 
     <div class="panel panel-default">
