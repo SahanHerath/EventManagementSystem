@@ -225,4 +225,14 @@ class RatingController extends Controller
 
             return view('comment.Catering',compact('data'));
     }
+    public function Actorcomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Actors')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Catering',compact('data'));
+    }
 }
