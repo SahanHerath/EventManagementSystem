@@ -195,4 +195,14 @@ class RatingController extends Controller
 
             return view('comment.Photography',compact('data'));
     }
+    public function Saloncomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Bridel_Designers')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Salon',compact('data'));
+    }
 }
