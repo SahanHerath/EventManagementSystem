@@ -6,9 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<!-- CSRF Token -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-		
+	
 	
 	<!-- Font -->
 	
@@ -29,6 +27,8 @@
 	
 	
 
+	 <!-- Bootstrap core CSS -->
+	 <link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -38,92 +38,24 @@
 		<script src="js/ie-emulation-modes-warning.js"></script>
 		<!------ Rating css---------->
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<!-- Styles -->
-		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-		<style>
-		.fill {object-fit: fill;}
-		.contain {object-fit: contain;}
-		.cover {object-fit: cover;}
-		.scale-down {object-fit: scale-down;}
-		.none {object-fit: none;}
-
-				
-		ul {
-		list-style-type: none;
-		margin: 100;
-		padding: 100;
-		overflow: hidden;
-		}
-
-
-		li a:hover {
-		background-color: #A397C6;
-		}
-
-		</style>
-
+		
 </head>
 <body>
-	<head>
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<div class="container">
-				<a class="navbar-brand" href="{{ url('/') }}">
-					Evora
-				</a>
-			
-				<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-							 <!-- Authentication Links -->
-							 @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-							 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        	@else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
-								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:32px; height:32px; border-radius: 50%;" >
-								{{ Auth::user()->name }} 
-                                </a>
 
-                            </li>
-							<li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
-                                    <p class="text-white" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </p>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    </a>
-                            </li>
-                        	@endguest
-							</ul>
-				
-			</div>
-		</nav>
-	</head>
 
 
 
 	
 	
-	<section class="intro-section fill" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
+	<section class="intro-section" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
 		<div class="container">
 		
 			<div class="row">
 				
 				<div class="offset-0 col-md-10 col-lg-4">
 					<div class="intro">
-						<div class="profile-img contain"><img class="contain" src="uploads/hall/{{$hotel1->Main_logo}}" alt=""></div>
+						<div class="profile-img"><img src="uploads/hall/{{$hotel1->Main_logo}}" alt=""></div>
 						<h2><b>{{$hotel1->Hotel_Name}}</b></h2>
-						<div>
 						<ul class="information margin-tb-30">
 							<li><b>ADDRESS : </b>{{$hotel1->Address}}</li>
 							<li><b>TELEPHONE : </b>{{$hotel1->Contact_No}}</li>
@@ -140,7 +72,6 @@
 							<li><a href="{{$hotel1->Link}}"><i class="ion-social-twitter"></i></a></li>
 							@endif
 						</ul>
-						</div>
 					</div><!-- intro -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
@@ -167,13 +98,13 @@
 	@endforeach
 	<section class="education-section section">
 		<div class="container">
-			
+			<div class="row">
 				<div class="col-sm-4">
 					<div class="heading">
 						<h3><b>Listing</b></h3>
 					</div>
 				</div><!-- col-sm-4 -->
-		
+			</div><!-- row -->
 
 			<div class="row">
 			@foreach($hall as $hall1)
@@ -195,14 +126,12 @@
 		<div class="offset-9">
 		<a href="{{URL('/AddComplaint'.$hotel1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
 		</div>
-	<section class="section">
+	<section class="testimonials_area p_120">
         	<div class="container">
+        		<div class="main_title">
+        			<h2>Rating</h2>
+        		</div>
 
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Rating</b></h3>
-					</div>
-				</div>
 				<form class="form-horizontal" method="POST" action="{{URL('/AddRating'.$hotel1->userid)}}" enctype="multipart/form-data">
                 	{{ csrf_field() }}
 
@@ -445,10 +374,7 @@
 							<div class="pull-right" style="margin-left:10px;">{{$one}}</div>
 						</div>
 					</div>			
-				</div>
-				<br>
-			<br>
-			<br>			
+				</div>			
 				@foreach($rate as $rate1)
 				<div class="row">
 					<div class="col-sm-7">
@@ -589,13 +515,13 @@
 	
 
 	
-		<footer class="footer_area p_30" style="background-color:black;"	>
+		<footer class="footer_area p_30">
 			<div class="container">
 				<div class="row footer_inner">
 					<div class="col-lg-5 col-sm-6">
 						<aside class="f_widget ab_widget">
-							<div class="f_title text-white"><br>
-							<a href="/aboutus"><h3>About Us</h3></a>
+							<div class="f_title"><br>
+							<a href="/aboutus" ><h3>About Us</h3></a>
 							</div>
 							<p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 								Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
@@ -606,7 +532,7 @@
 					<div class="col-lg-2 offset-4">
 						<aside class="f_widget social_widget">
 							
-							<div class="f_title text-white"><br>
+							<div class="f_title"><br>
 							<a href="/contact" ><h3>Contact Us</h3></a>
 							</div>
 							
