@@ -470,7 +470,7 @@ Route::get('/complaints', 'ComplaintController@allcomplaints')  ;
 Route::get('/ReviewComplaint{id}', 'ComplaintController@reviewComplaint')  ;
 Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
 Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
-Route::get('/HotelComplaint', 'ComplaintController@Hotelcomplaints')  ;
+
 
 Route::get('/comments', 'RatingController@allcomments')  ;
 Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
@@ -509,5 +509,19 @@ Route::get('/CateringComments', 'RatingController@Cateringcomments')  ;
 Route::get('/CostumeComments', 'RatingController@Costumecomments')  ;
 Route::get('/DancingComments', 'RatingController@Dancingcomments')  ;
 Route::get('/DecorationComments', 'RatingController@decorationcomments')  ;
+
+Route::get('/HotelComplaint', 'ComplaintController@Hotelcomplaints')  ;
+Route::get('/PhotographyComplaint', 'ComplaintController@Photographycomplaints')  ;
+Route::get('/SalonComplaint', 'ComplaintController@Saloncomplaints')  ;
+Route::get('/TransportComplaint', 'ComplaintController@Transportcomplaints')  ;
+Route::get('/CakeComplaint', 'ComplaintController@Cakecomplaints')  ;
+Route::get('/EventPlannerComplaint', 'ComplaintController@EventPlannercomplaints')  ;
+Route::get('/PoruwaComplaint', 'ComplaintController@Poruwacomplaints')  ;
+Route::get('/ActorComplaint', 'ComplaintController@Actorcomplaints')  ;
+Route::get('/DJComplaint', 'ComplaintController@DJcomplaints')  ;
+Route::get('/CateringComplaint', 'ComplaintController@Cateringcomplaints')  ;
+Route::get('/CostumeComplaint', 'ComplaintController@Costumecomplaints')  ;
+Route::get('/DancingComplaint', 'ComplaintController@Dancingcomplaints')  ;
+Route::get('/DecorationComplaint', 'ComplaintController@Decorationcomplaints')  ;
 
  
