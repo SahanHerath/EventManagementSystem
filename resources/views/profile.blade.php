@@ -195,8 +195,8 @@
               </div>
               <a href="#" data-toggle="modal" data-target="#modalEditBio"><button type="button" class="btn btn-danger btn-block">Edit Bio</button></a>
               <a href="" data-toggle="modal" data-target="#password_modal"><button type="button" class="btn btn-primary btn-block">Change Password</button></a>
-              <a href="#"><button type="button" class="btn btn-success btn-block">Change Profile Picture</button></a>
-              <a href="#"><button type="button" class="btn btn-warning btn-block">Change Cove Picture</button></a>
+              <a href="" data-toggle="modal" data-target="#mainpicchange"><button type="button" class="btn btn-success btn-block">Change Profile Picture</button></a>
+              <a href="" data-toggle="modal" data-target="#coverpicchange"><button type="button" class="btn btn-warning btn-block">Change Cover Picture</button></a>
               <div class="card-footer">
                 <hr>
                 
@@ -413,6 +413,72 @@
   </div>
 
    <!--==============model for edit info=================-->
+    <!--==============model for  change main pic=================-->
+ <div class="modal fade" id="mainpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Main Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/admin/{{$data1->Main_pic}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                <form enctype="multipart/form-data" action="{{URL('/AdminMainpic'.$data1->adminid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="Main_pic" class="form-control @error('Main_pic') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                
+                            <div class="modal-footer">
+                            <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change main pic=================-->
+    <!--==============model for  change cover pic=================-->
+ <div class="modal fade" id="coverpicchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Change Your Cover Picture</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <center><img src="uploads/admin/{{$data1->Cover_pic}}" alt="User Avatar" width="200" hight="200"></center>
+                    
+                <form enctype="multipart/form-data" action="{{URL('/AdminCoverpic'.$data1->adminid)}}" method="POST">
+                                <label>Update This Image</label>
+                                <input type="file" name="Cover_pic" class="form-control @error('Cover_pic') is-invalid @enderror col-md-10 offset-1">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                
+                            <div class="modal-footer">
+                            <div class="text-center">
+                        
+                            <button type="submit" class="btn btn-primary ">
+                                Save Changes
+                            </button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </form>        
+            </div>
+        </div>
+    </div>
+
+    <!--==============model for change cover pic=================-->
    @endforeach
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">

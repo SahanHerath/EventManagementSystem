@@ -8,6 +8,7 @@ use App\Admin;
 use App\User;
 use Auth;
 use Hash;
+use Image;
 
 class AdminController extends Controller
 {
@@ -237,6 +238,54 @@ class AdminController extends Controller
         ]);
 
     return redirect()->back()->with('flash_message','Change Your Bio Successfully');
+    }
+
+    public function changeMainpic(request $request,$id)
+    {
+        $id1 = Auth::user()->id;
+            
+        $data=DB::table('users')
+            ->join('admins','users.id','=','admins.user_id')
+            ->where('users.id','=',$id1)
+            ->select('admins.id')
+            ->get();
+
+            $request->validate(
+            [
+                'Main_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            ],
+            [
+                'Main_pic.required'=> "Add a image here",
+            ]
+        );
+        
+        
+        foreach($data as $data1)
+        {
+            if($data1->id==$id)
+            {
+                if($request->hasFile('Main_pic'))
+                {
+                    $Main_pic=$request->file('Main_pic');
+                    $filename=time().'.'.$Main_pic->getClientOriginalExtension();
+                    Image::make($Main_pic)->fit(1920,1080)->save(public_path('/uploads/admin/'. $filename));
+
+                    $picture=Admin::where('id',$id)
+                    ->update([
+                            'Main_pic'=>$filename
+
+
+                    ]);
+                }
+
+                return redirect('/Profile')->with('flash_message','Change Your Profile Picture Successfully');
+            }
+
+            else
+            {
+                return redirect('/');
+            }
+        }
     }
 
 }
