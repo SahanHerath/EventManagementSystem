@@ -275,4 +275,14 @@ class RatingController extends Controller
 
             return view('comment.Decoration',compact('data'));
     }
+    public function Transportcomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Wedding_Transport')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Transport',compact('data'));
+    }
 }
