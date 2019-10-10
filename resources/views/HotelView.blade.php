@@ -98,13 +98,13 @@
 	@endforeach
 	<section class="education-section section">
 		<div class="container">
-			<div class="row">
+			
 				<div class="col-sm-4">
 					<div class="heading">
 						<h3><b>Listing</b></h3>
 					</div>
 				</div><!-- col-sm-4 -->
-			</div><!-- row -->
+		
 
 			<div class="row">
 			@foreach($hall as $hall1)
@@ -126,12 +126,14 @@
 		<div class="offset-9">
 		<a href="{{URL('/AddComplaint'.$hotel1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
 		</div>
-	<section class="testimonials_area p_120">
+	<section class="section">
         	<div class="container">
-        		<div class="main_title">
-        			<h2>Rating</h2>
-        		</div>
 
+				<div class="col-sm-4">
+					<div class="heading">
+						<h3><b>Rating</b></h3>
+					</div>
+				</div>
 				<form class="form-horizontal" method="POST" action="{{URL('/AddRating'.$hotel1->userid)}}" enctype="multipart/form-data">
                 	{{ csrf_field() }}
 
@@ -374,7 +376,10 @@
 							<div class="pull-right" style="margin-left:10px;">{{$one}}</div>
 						</div>
 					</div>			
-				</div>			
+				</div>
+				<br>
+			<br>
+			<br>			
 				@foreach($rate as $rate1)
 				<div class="row">
 					<div class="col-sm-7">
@@ -515,13 +520,13 @@
 	
 
 	
-		<footer class="footer_area p_30">
+		<footer class="footer_area p_30" style="background-color:black;"	>
 			<div class="container">
 				<div class="row footer_inner">
 					<div class="col-lg-5 col-sm-6">
 						<aside class="f_widget ab_widget">
-							<div class="f_title"><br>
-							<a href="/aboutus" ><h3>About Us</h3></a>
+							<div class="f_title text-white"><br>
+							<a href="/aboutus"><h3>About Us</h3></a>
 							</div>
 							<p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 								Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Make your special day colourful<i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="http://localhost:8000" target="_blank" >Evora</a>
@@ -532,7 +537,7 @@
 					<div class="col-lg-2 offset-4">
 						<aside class="f_widget social_widget">
 							
-							<div class="f_title"><br>
+							<div class="f_title text-white"><br>
 							<a href="/contact" ><h3>Contact Us</h3></a>
 							</div>
 							
