@@ -233,7 +233,7 @@ class RatingController extends Controller
              ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
              ->get();
 
-            return view('comment.Catering',compact('data'));
+            return view('comment.Artist',compact('data'));
     }
     public function Cakecomments()
     {

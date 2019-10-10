@@ -67,7 +67,7 @@
               <p>User Profile</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="/users">
               <i class="nc-icon nc-badge"></i>
               <p>Service Providers</p>
@@ -77,6 +77,12 @@
             <a href="/complaints">
               <i class="nc-icon nc-globe-2"></i>
               <p>Complaints</p>
+            </a>
+          </li>
+          <li  class="active ">
+            <a href="/suggestions">
+              <i class="nc-icon nc-time-alarm"></i>
+              <p>Suggestions</p>
             </a>
           </li>
           
@@ -170,6 +176,7 @@
         </div>
     @endif
 <br><br><br><br>
+<div class="btn-group">
 <a href="#"><button type="button" class="btn btn-warning">All</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Financial</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Services</button></a>
@@ -179,7 +186,7 @@
 <a href="#"><button type="button" class="btn btn-primary">Advertising</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Website Bug</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Donations</button></a>
-
+</div>
 
 
     <div class="panel panel-default">
