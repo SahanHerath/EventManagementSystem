@@ -245,4 +245,14 @@ class RatingController extends Controller
 
             return view('comment.Cake',compact('data'));
     }
+    public function Costumecomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Cloth_Designers')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Costume',compact('data'));
+    }
 }
