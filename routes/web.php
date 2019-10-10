@@ -485,6 +485,8 @@ Route::get('/removeAdmin{id}', 'AdminController@destroy')  ;
 Route::post('/EditAdmin{id}', 'AdminController@update')  ;
 Route::post('/EditBio{id}', 'AdminController@updateBio')  ;
 Route::post('/AdminMainpic{id}', 'AdminController@changeMainpic')  ;
+Route::post('/AdminCoverpic{id}', 'AdminController@changeCoverpic')  ;
+Route::post('/RemoveAdminAccount{id}', 'AdminController@deactivateAccount')  ;
 
 Route::post('/addSuggestion', 'SuggestionsController@store')  ;
 

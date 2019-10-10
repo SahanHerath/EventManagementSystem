@@ -288,4 +288,76 @@ class AdminController extends Controller
         }
     }
 
+    public function changeCoverpic(request $request,$id)
+    {
+        $id1 = Auth::user()->id;
+            
+        $data=DB::table('users')
+            ->join('admins','users.id','=','admins.user_id')
+            ->where('users.id','=',$id1)
+            ->select('admins.id')
+            ->get();
+
+            $request->validate(
+            [
+                'Cover_pic'=> 'required|image|dimensions:min_width=300,min_height=100',
+            ],
+            [
+                'Cover_pic.required'=> "Add a image here",
+            ]
+        );
+        
+        
+        foreach($data as $data1)
+        {
+            if($data1->id==$id)
+            {
+                if($request->hasFile('Cover_pic'))
+                {
+                    $Cover_pic=$request->file('Cover_pic');
+                    $filename=time().'.'.$Cover_pic->getClientOriginalExtension();
+                    Image::make($Cover_pic)->fit(1920,1080)->save(public_path('/uploads/admin/'. $filename));
+
+                    $picture=Admin::where('id',$id)
+                    ->update([
+                            'Cover_pic'=>$filename
+
+
+                    ]);
+                }
+
+                return redirect('/Profile')->with('flash_message','Change Your Cover Picture Successfully');
+            }
+
+            else
+            {
+                return redirect('/');
+            }
+        }
+    }
+
+    public function deactivateAccount($id)
+    {
+        $id1 = Auth::user()->id;
+
+      
+
+            if($id==$id1)
+            {
+                $admin1 = User::findOrFail($id); 
+                $admin1 ->delete();
+                $cake2  = Admin::where('user_id',$id)->delete();
+                
+                
+                
+                
+                return redirect('/');
+            }
+            else 
+            {
+                return redirect('/home'); 
+            }
+        
+    }
+
 }

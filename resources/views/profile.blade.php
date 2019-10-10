@@ -197,6 +197,7 @@
               <a href="" data-toggle="modal" data-target="#password_modal"><button type="button" class="btn btn-primary btn-block">Change Password</button></a>
               <a href="" data-toggle="modal" data-target="#mainpicchange"><button type="button" class="btn btn-success btn-block">Change Profile Picture</button></a>
               <a href="" data-toggle="modal" data-target="#coverpicchange"><button type="button" class="btn btn-warning btn-block">Change Cover Picture</button></a>
+              <a href="" data-toggle="modal" data-target="#modalDeleteAccount"><button type="button" class="btn btn-dark btn-block">Deactivate Account</button></a>
               <div class="card-footer">
                 <hr>
                 
@@ -479,6 +480,27 @@
     </div>
 
     <!--==============model for change cover pic=================-->
+    <!--==============model for deactivate account=================-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalDeleteAccount" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deactivte Account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to deactivate your account .All the details related to your account will be removed and You won't be able to work as admin. If you remove your account you need to register again to use our services.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{URL('/RemoveAdminAccount'.$data1->userid)}}"><button type="button" class="btn btn-primary">Confirm Action</button></a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============model for deactivate account=================-->
    @endforeach
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
