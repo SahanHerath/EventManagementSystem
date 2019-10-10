@@ -476,7 +476,7 @@ Route::get('/comments', 'RatingController@allcomments')  ;
 Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
 Route::get('/UnblockComment{id}', 'RatingController@unblockComment')  ;
 Route::get('/DeleteComment{id}', 'RatingController@deleteComment')  ;
-Route::get('/HotelComments', 'RatingController@Hotelcomments')  ;
+
 
 Route::get('/admins', 'AdminController@index')  ;
 Route::get('/addAdmin', 'AdminController@registerAdmin')  ;
@@ -495,5 +495,19 @@ Route::post('/addSuggestion', 'SuggestionsController@store')  ;
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/HotelComments', 'RatingController@Hotelcomments')  ;
+Route::get('/PhotographyComments', 'RatingController@Photographycomments')  ;
+Route::get('/SalonComments', 'RatingController@Saloncomments')  ;
+Route::get('/TransportComments', 'RatingController@Transportcomments')  ;
+Route::get('/CakeComments', 'RatingController@Cakecomments')  ;
+Route::get('/EventPlannerComments', 'RatingController@EventPlannercomments')  ;
+Route::get('/PoruwaComments', 'RatingController@Poruwacomments')  ;
+Route::get('/ActorComments', 'RatingController@Actorcomments')  ;
+Route::get('/DJComments', 'RatingController@DJcomments')  ;
+Route::get('/CateringComments', 'RatingController@Cateringcomments')  ;
+Route::get('/CostumeComments', 'RatingController@Costumecomments')  ;
+Route::get('/DancingComments', 'RatingController@Dancingcomments')  ;
+Route::get('/DecorationComments', 'RatingController@decorationcomments')  ;
 
  
