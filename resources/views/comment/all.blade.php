@@ -172,7 +172,7 @@
 <br><br><br><br>
 <a href="#"><button type="button" class="btn btn-warning">All</button></a>
 <a href="/HotelComments"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Photography</button></a>
+<a href="/PhotographyComments"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>

@@ -185,4 +185,14 @@ class RatingController extends Controller
 
             return view('comment.Hotel',compact('data'));
     }
+    public function Photographycomments()
+    {
+        $data=DB::table('ratings')
+             ->join('users','users.id','=','ratings.user_id')
+             ->where('category','=','Photography')
+             ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
+             ->get();
+
+            return view('comment.Photography',compact('data'));
+    }
 }
