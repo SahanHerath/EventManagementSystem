@@ -23,8 +23,6 @@
         <link rel="stylesheet" href="css/css/responsive.css">
         
 
-         <!-- Bootstrap core CSS -->
-		<link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->

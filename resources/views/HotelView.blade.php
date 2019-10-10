@@ -6,7 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	
+	<!-- CSRF Token -->
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+		
 	
 	<!-- Font -->
 	
@@ -27,8 +29,6 @@
 	
 	
 
-	 <!-- Bootstrap core CSS -->
-	 <link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -38,24 +38,92 @@
 		<script src="js/ie-emulation-modes-warning.js"></script>
 		<!------ Rating css---------->
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		
+		<!-- Styles -->
+		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+		<style>
+		.fill {object-fit: fill;}
+		.contain {object-fit: contain;}
+		.cover {object-fit: cover;}
+		.scale-down {object-fit: scale-down;}
+		.none {object-fit: none;}
+
+				
+		ul {
+		list-style-type: none;
+		margin: 100;
+		padding: 100;
+		overflow: hidden;
+		}
+
+
+		li a:hover {
+		background-color: #A397C6;
+		}
+
+		</style>
+
 </head>
 <body>
+	<head>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+				<a class="navbar-brand" href="{{ url('/') }}">
+					Evora
+				</a>
+			
+				<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+							 <!-- Authentication Links -->
+							 @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{URL('/Profile')}}" aria-expanded="false" v-pre>
+								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }} 
+                                </a>
 
+                            </li>
+							<li class="nav-item active"><a class="nav-link" href="{{ route('logout') }}">
+                                    <p class="text-white" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    </a>
+                            </li>
+                        	@endguest
+							</ul>
+				
+			</div>
+		</nav>
+	</head>
 
 
 
 	
 	
-	<section class="intro-section" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
+	<section class="intro-section fill" style="background-image: url(uploads/hall/{{$hotel1->Cover_photo}})">
 		<div class="container">
 		
 			<div class="row">
 				
 				<div class="offset-0 col-md-10 col-lg-4">
 					<div class="intro">
-						<div class="profile-img"><img src="uploads/hall/{{$hotel1->Main_logo}}" alt=""></div>
+						<div class="profile-img contain"><img class="contain" src="uploads/hall/{{$hotel1->Main_logo}}" alt=""></div>
 						<h2><b>{{$hotel1->Hotel_Name}}</b></h2>
+						<div>
 						<ul class="information margin-tb-30">
 							<li><b>ADDRESS : </b>{{$hotel1->Address}}</li>
 							<li><b>TELEPHONE : </b>{{$hotel1->Contact_No}}</li>
@@ -72,6 +140,7 @@
 							<li><a href="{{$hotel1->Link}}"><i class="ion-social-twitter"></i></a></li>
 							@endif
 						</ul>
+						</div>
 					</div><!-- intro -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->

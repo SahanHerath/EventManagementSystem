@@ -36,15 +36,16 @@
 	<!------ Rating css---------->
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		
-	
+	<style>
+	.fill {object-fit: fill;}
+	.contain {object-fit: contain;}
+	.cover {object-fit: cover;}
+	.scale-down {object-fit: scale-down;}
+	.none {object-fit: none;}
+	</style>
 </head>
 <body>
-    <header>
-		<!-- container -->
-	</header>
-	
-	
-	<section class="intro-section" style="background-image: url(uploads/hall/{{$hall1->Main_pic}})">
+	<section class="intro-section fill" style="background-image: url(uploads/hall/{{$hall1->Main_pic}})">
 		<div class="container">
 		
 			<div class="row">
