@@ -210,10 +210,33 @@ class AdminController extends Controller
         $data=DB::table('users')
              ->join('admins','users.id','=','admins.user_id')
              ->where('users.id','=',$id1)
-             ->select('users.id as userid','email','name','city','fname','lname','admins.id as adminid','Address','Contact_No','About_me','Main_pic','Cover_pic')
+             ->select('users.id as userid','email','name','Bio','city','fname','lname','admins.id as adminid','Address','Contact_No','About_me','Main_pic','Cover_pic')
              ->get();
 
             return view('profile',compact('data'));
+    }
+
+    public function updateBio(request $request,$id)
+    {
+        
+        $request->validate(
+            ['Bio' => 'required|string|max:50',
+           
+           ],
+        [
+            'Bio.required'=> "Fill out this field",
+       ]
+    );
+
+        $data1=Admin::where('id',$id)
+            
+        ->update([
+                'Bio'=>$request->Bio,
+                
+                
+        ]);
+
+    return redirect()->back()->with('flash_message','Change Your Bio Successfully');
     }
 
 }

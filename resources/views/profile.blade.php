@@ -162,8 +162,17 @@
 
 
 </div> -->
+                
 @foreach($data as $data1)
       <div class="content">
+      @if(Session::has('flash_message'))  
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!!session('flash_message')!!}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                        </div>
+      @endif
         <div class="row">
           <div class="col-md-4">
             <div class="card card-user">
@@ -177,39 +186,20 @@
                     <h5 class="title">{{$data1->name}}</h5>
                   </a>
                   <p class="description">
-                    @chetfaker
+                    {{$data1->email}}
                   </p>
                 </div>
                 <p class="description text-center">
-                  "I like the way you work it
-                  <br> No diggity
-                  <br> I wanna bag it up"
+                 {{$data1->Bio}}
                 </p>
               </div>
+              <a href="#" data-toggle="modal" data-target="#modalEditBio"><button type="button" class="btn btn-danger btn-block">Edit Bio</button></a>
+              <a href="" data-toggle="modal" data-target="#password_modal"><button type="button" class="btn btn-primary btn-block">Change Password</button></a>
+              <a href="#"><button type="button" class="btn btn-success btn-block">Change Profile Picture</button></a>
+              <a href="#"><button type="button" class="btn btn-warning btn-block">Change Cove Picture</button></a>
               <div class="card-footer">
                 <hr>
-                <div class="button-container">
-                  <div class="row">
-                    <div class="col-lg-3 col-md-6 col-6 ml-auto">
-                      <h5>12
-                        <br>
-                        <small>Files</small>
-                      </h5>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                      <h5>2GB
-                        <br>
-                        <small>Used</small>
-                      </h5>
-                    </div>
-                    <div class="col-lg-3 mr-auto">
-                      <h5>24,6$
-                        <br>
-                        <small>Spent</small>
-                      </h5>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </div>
             </div>
@@ -297,7 +287,133 @@
           </div>
         </div>
       </div>
-      @endforeach
+      
+       <!--==============model for change passsword=================-->
+<div class="modal fade" id="password_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Change Password</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/ChangePassword')}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+                        
+             <form class="form-horizontal" method="POST" action="/changePW">
+                            {{ csrf_field() }}
+
+                            <div class="form-group row{{ $errors->has('current-password') ? ' has-error' : '' }}">
+                                <label for="new-password" class="col-md-4 col-form-label offset-1">Current Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="current-password" type="password" class="form-control" name="current-password" required>
+
+                                    @if ($errors->has('current-password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('current-password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row{{ $errors->has('new-password') ? ' has-error' : '' }}">
+                                <label for="new-password" class="col-md-4 col-form-label offset-1">New Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="new-password" type="password" class="form-control" name="new-password" required>
+
+                                    @if ($errors->has('new-password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('new-password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="new-password-confirm" class="col-md-4 col-form-label offset-1">Confirm New Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required>
+                                </div>
+                            </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Change Password
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+             
+                  
+
+      </form>
+                
+      </div>
+  </div>
+  </div>
+
+<!--==============model for change passsword=================-->
+<!--==============model for  edit info=================-->
+<div class="modal fade" id="modalEditBio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Edit Your Bio</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <form method="POST" action="{{URL('/EditBio'.$data1->adminid)}}" enctype="multipart/form-data">
+             {{ csrf_field() }}
+                        
+            
+
+                       
+
+                        
+                        
+                        <div class="form-group row{{ $errors->has('Bio') ? ' has-error' : '' }}">
+                        
+                            <label for="Bio" class="col-md-4 col-form-label offset-1">Bio :-</label>
+                            
+                            <label>(maximum 50 characters)</label>
+                                <textarea name='Bio' cols='20' rows='5' id='Bio' class="form-control @error('Bio') is-invalid @enderror col-md-10 offset-1" title="Edit/Add Your Bio">{{$data1->Bio }}</textarea>
+                                @error('Bio')
+                                    <span class="invalid-feedback offset-1" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         
+                        
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="text-center">
+                            
+                                <button type="submit" class="btn btn-primary ">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+             
+                  
+
+      </form>
+                
+      </div>
+  </div>
+  </div>
+
+   <!--==============model for edit info=================-->
+   @endforeach
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
           <div class="row">

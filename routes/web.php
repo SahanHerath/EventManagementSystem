@@ -483,6 +483,7 @@ Route::get('/addAdmin', 'AdminController@registerAdmin')  ;
 Route::post('/NewAdmin', 'AdminController@store')  ;
 Route::get('/removeAdmin{id}', 'AdminController@destroy')  ;
 Route::post('/EditAdmin{id}', 'AdminController@update')  ;
+Route::post('/EditBio{id}', 'AdminController@updateBio')  ;
 
 Route::post('/addSuggestion', 'SuggestionsController@store')  ;
 
