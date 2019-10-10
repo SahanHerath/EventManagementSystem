@@ -84,6 +84,12 @@
               <p>Complaints</p>
             </a>
           </li>
+          <li>
+            <a href="/suggestions">
+              <i class="nc-icon nc-time-alarm"></i>
+              <p>Suggestions</p>
+            </a>
+          </li>
           
         </ul>
       </div>

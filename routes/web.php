@@ -524,4 +524,6 @@ Route::get('/CostumeComplaint', 'ComplaintController@Costumecomplaints')  ;
 Route::get('/DancingComplaint', 'ComplaintController@Dancingcomplaints')  ;
 Route::get('/DecorationComplaint', 'ComplaintController@Decorationcomplaints')  ;
 
+Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
+
  

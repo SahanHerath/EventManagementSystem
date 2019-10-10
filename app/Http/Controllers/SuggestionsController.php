@@ -115,4 +115,13 @@ class SuggestionsController extends Controller
     {
         //
     }
+
+    public function allsuggestions()
+    {
+        //
+        $data=DB::table('suggestions')
+             ->get();
+
+        return view('suggestions',compact('data'));
+    }
 }
