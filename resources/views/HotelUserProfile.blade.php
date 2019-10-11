@@ -32,14 +32,6 @@
 		.scale-down {object-fit: scale-down;}
 		.none {object-fit: none;}
 
-				
-		
-
-
-		li a:hover {
-		background-color: #A397C6;
-		}
-
 		</style>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -78,7 +70,7 @@
                             @endif
                         	@else
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><br>
+                                <a class="nav-link text-white" href="#" aria-expanded="false" v-pre><br>
 								
 								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:16px; height:16px; border-radius: 50%;" >
 								{{ Auth::user()->name }} <br><br>
@@ -131,12 +123,12 @@
 							@endif
 						</ul>
                         <ul>
-                        <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo" >Edit Hotel</a></button>
-                        <button type="button" class="btn btn-warning"><a href="" data-toggle="modal" data-target="#password_modal" >Change Password</a></button>
+                        <button type="button" class="btn btn-primary"><a class="text-white" href="" data-toggle="modal" data-target="#modalEditInfo" >Edit Hotel</a></button>
+                        <button type="button" class="btn btn-warning"><a class="text-white" href="" data-toggle="modal" data-target="#password_modal" >Change Password</a></button>
                         <br><br>
                         <a class="btn btn-success" href=""  data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a>
                         <br><br>
-                        <a class="btn btn-info" href=""  data-toggle="modal" data-target="#coverpicchange">Change Cover Picture</a>
+                        <a class="btn btn-info text-white" href=""  data-toggle="modal" data-target="#coverpicchange">Change Cover Picture</a>
                         </ul>
 					</div><!-- intro -->
                         
@@ -211,7 +203,7 @@
 	</section>
     <br><br>
     <div class="offset-10">
-         <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a></button>
+         <button type="button" class="btn btn-danger"><a class="text-white" href="" data-toggle="modal" data-target="#modalDeleteAccount">Deactivate Account</a></button>
     </div>
     <br><br>
    

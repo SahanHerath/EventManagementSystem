@@ -51,7 +51,6 @@
 		.cover {object-fit: cover;}
 		.scale-down {object-fit: scale-down;}
 		.none {object-fit: none;}
-
 				
 		span.pixel{
 			vertical-align:-20px;
@@ -111,11 +110,11 @@
                                 </a>
 
                             </li>
-							<li class="nav-item active">
-									<a class="nav-link text-white" href="{{ route('logout') }}"><span class="pixel">Logout
+							<li class="nav-item">
+									<a class="nav-link" href="{{ route('logout') }}"><span class="pixel text-white">
                                     <p onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        
+                                        Logout
                                     </p></span>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

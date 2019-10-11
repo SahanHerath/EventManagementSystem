@@ -24,9 +24,6 @@
 	
 	<link href="cvportfolio/01-cv-portfolio/css/responsive.css" rel="stylesheet">
 
-
-	 <!-- Bootstrap core CSS -->
-	 <link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -37,13 +34,91 @@
 		<!------ Rating css---------->
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  
+		<!-- Styles -->
+		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <style>
+		.fill {object-fit: fill;}
+		.contain {object-fit: contain;}
+		.cover {object-fit: cover;}
+		.scale-down {object-fit: scale-down;}
+		.none {object-fit: none;}
+				
+		span.pixel{
+			vertical-align:-20px;
+		
+
+
+		li a:hover {
+		background-color: #A397C6;
+		
+		}
+		.navbar {
+		
+		overflow: hidden;
+		position: fixed; 
+		top: 0; 
+		width: 100%; 
+		}
+
+		.main {
+		margin-bottom: 30px; 
+		}
+
+
+		
+		</style>
 	
 </head>
 <body>
-    <header>
-		<!-- container -->
-	</header>
-	
+    <head>
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
+			<div class="container">
+			
+				<a class="navbar-brand text-white" href="{{ url('/') }}">
+					Evora
+				</a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+					<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item"><a class="nav-link text-white " href="/" ><span class="pixel">Home</span></a></li> 
+							 <!-- Authentication Links -->
+							 @guest
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('login') }}"><span class="pixel">{{ __('Login') }}</span></a>
+                            </li>
+							 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="{{ route('register') }}"><span class="pixel">{{ __('Register') }}</span></a>
+                                </li>
+                            @endif
+                        	@else
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><span class="pixel">
+								
+								<img src="/images/default.jpg" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }}</span>
+                                </a>
+
+                            </li>
+							<li class="nav-item">
+									<a class="nav-link" href="{{ route('logout') }}"><span class="pixel text-white">
+                                    <p onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </p></span>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+									</form>
+									</a>
+                            </li>
+                        	@endguest
+							</ul>
+					</div>
+					
+			</div>
+		</nav>
+	</head>
 	
 	<section class="intro-section" style="background-image: url(uploads/hall/{{$hall1->Main_pic}})">
 		<div class="container">
@@ -71,9 +146,9 @@
 		</div><!-- container -->
         
         <div class="offset-4" >
-            <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditInfo">Edit Hall Details</a></button>
-            <button type="button" class="btn btn-danger"><a href="" data-toggle="modal" data-target="#modalDeleteHall">Remove Hall</a></button>
-            <button type="button" class="btn btn-info"><a href="" data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a></button>
+            <button type="button" class="btn btn-primary"><a class="text-white" href="" data-toggle="modal" data-target="#modalEditInfo">Edit Hall Details</a></button>
+            <button type="button" class="btn btn-danger"><a class="text-white" href="" data-toggle="modal" data-target="#modalDeleteHall">Remove Hall</a></button>
+            <button type="button" class="btn btn-info"><a class="text-white" href="" data-toggle="modal" data-target="#mainpicchange">Change Main Picture</a></button>
             </div>
             
             
@@ -312,7 +387,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
         <div class="offset-9">
-            <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditFeature">Edit Hall Features</a></button>
+            <button type="button" class="btn btn-primary"><a class="text-white" href="" data-toggle="modal" data-target="#modalEditFeature">Edit Hall Features</a></button>
             </div>
 	</section><!-- progression-section -->
 
@@ -454,7 +529,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
         <div class="offset-9">
-            <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditTable">Edit Table Arrangements</a></button>
+            <button type="button" class="btn btn-primary"><a class="text-white" href="" data-toggle="modal" data-target="#modalEditTable">Edit Table Arrangements</a></button>
             </div>
 	</section><!-- progression-section -->
 	
@@ -533,7 +608,7 @@
 
 		</div><!-- container -->
         <div class="offset-9">
-            <button type="button" class="btn btn-primary"><a href="" data-toggle="modal" data-target="#modalEditForm">Edit Hall Events</a></button>
+            <button type="button" class="btn btn-primary"><a class="text-white" href="" data-toggle="modal" data-target="#modalEditForm">Edit Hall Events</a></button>
             </div>
 	</section>
 
@@ -542,7 +617,7 @@
                     
 					<div class="container">
                     <div class="heading ">
-                        <h2>Events we recently covered</h2>
+                        <h2><b>Events we recently covered</b></h2>
                     </div>
 					    <div class="row">
                             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
@@ -575,7 +650,7 @@
 					
 				</div>
                 <div class="offset-9">
-            <button type="button" class="btn btn-success"><a href="" data-toggle="modal" data-target="#modalChangepic">Edit Recent Pictures</a></button>
+            <button type="button" class="btn btn-success"><a class="text-white" href="" data-toggle="modal" data-target="#modalChangepic">Edit Recent Pictures</a></button>
             </div>
         </section>
         <section class="education-section section" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
@@ -635,8 +710,8 @@
 							</tbody>
 						</table>
                         <tr>
-                        <button type="button" class="btn btn-info  offset-4"><a class="genric-btn primary" href="" data-toggle="modal" data-target="#modalEditPackage" data-pakid="{{$deto1->id}}" data-packagename="{{$deto1->Package_Name}}" data-price="{{$deto1->Price}}" data-welcomedrink="{{$deto1->Welcome_drinks}}" data-appetizer="{{$deto1->Appetizers}}" data-soup="{{$deto1->Soups}}" data-food="{{$deto1->Foods}}" data-dessert="{{$deto1->Desserts}}"><center>Edit</center></a></button>
-                                <button type="button" class="btn btn-warning"><a class="genric-btn danger" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center></button>
+                        <button type="button" class="btn btn-info  offset-4"><a class="genric-btn primary text-white" href="" data-toggle="modal" data-target="#modalEditPackage" data-pakid="{{$deto1->id}}" data-packagename="{{$deto1->Package_Name}}" data-price="{{$deto1->Price}}" data-welcomedrink="{{$deto1->Welcome_drinks}}" data-appetizer="{{$deto1->Appetizers}}" data-soup="{{$deto1->Soups}}" data-food="{{$deto1->Foods}}" data-dessert="{{$deto1->Desserts}}"><center>Edit</center></a></button>
+                                <button type="button" class="btn btn-warning"><a class="genric-btn danger text-white" href="" data-toggle="modal" data-target="#modalDeletePackage" data-pakid="{{$deto1->id}}">Remove</a></center></button>
                                 
                         </tr>
                     </div>@endforeach
