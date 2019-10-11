@@ -245,4 +245,14 @@ class ComplaintController extends Controller
 
         return view('complaint.Costume',compact('data'));
     }
+    public function Dancingcomplaints()
+    {
+        $data=DB::table('complaints')
+            ->join('users','complaints.user_id','=','users.id')
+            ->where('category','=','Dancing')
+            ->select('user_email','complaints.id as complaintid','complaint_about','user_id','complaint','state')
+            ->get();
+
+        return view('complaint.Dancing',compact('data'));
+    }
 }
