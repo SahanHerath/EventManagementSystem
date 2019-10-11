@@ -60,6 +60,18 @@
 
 		li a:hover {
 		background-color: #A397C6;
+		
+		}
+		.navbar {
+		
+		overflow: hidden;
+		position: fixed; 
+		top: 0; 
+		width: 100%; 
+		}
+
+		.main {
+		margin-bottom: 30px; 
 		}
 
 		</style>
@@ -69,6 +81,7 @@
 	<head>
 		<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
 			<div class="container">
+			
 				<a class="navbar-brand text-white" href="{{ url('/') }}">
 					Evora
 				</a>
@@ -110,6 +123,7 @@
                         	@endguest
 							</ul>
 					</div>
+					
 			</div>
 		</nav>
 	</head>

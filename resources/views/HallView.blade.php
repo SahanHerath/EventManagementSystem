@@ -42,6 +42,8 @@
 	.cover {object-fit: cover;}
 	.scale-down {object-fit: scale-down;}
 	.none {object-fit: none;}
+
+
 	</style>
 </head>
 <body>
