@@ -216,7 +216,7 @@
                             <td>Venues & Reception Halls</td>
                             <td>{{$data8}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/VenueSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
