@@ -215,4 +215,14 @@ class ComplaintController extends Controller
 
         return view('complaint.Catering',compact('data'));
     }
+    public function Actorcomplaints()
+    {
+        $data=DB::table('complaints')
+            ->join('users','complaints.user_id','=','users.id')
+            ->where('category','=','Actors')
+            ->select('user_email','complaints.id as complaintid','complaint_about','user_id','complaint','state')
+            ->get();
+
+        return view('complaint.Artist',compact('data'));
+    }
 }
