@@ -534,5 +534,6 @@ Route::get('/DanceSummary', 'SummaryController@dance')  ;
 Route::get('/DecorationSummary', 'SummaryController@decoration')  ;
 Route::get('/ActorSummary', 'SummaryController@actor')  ;
 Route::get('/CateringSummary', 'SummaryController@catering')  ;
+Route::get('/CostumeSummary', 'SummaryController@costume')  ;
 
  

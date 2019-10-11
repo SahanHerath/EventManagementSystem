@@ -218,6 +218,22 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('CateringReport',compact('data','time'))->setPaper('a2', 'landscape');
                 return $pdf->download('CateringReport.pdf');
     }
+
+    public function  costume()
+    {
+        
+    
+        $data = DB::table('users')
+                ->join('costume_designers','users.id','=','costume_designers.user_id')
+                ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+                ->where('category','=','Cloth_Designers')
+               ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('CostumeReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('CostumeDesignerReport.pdf');
+    }
     
 
 }

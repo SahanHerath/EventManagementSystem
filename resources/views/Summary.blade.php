@@ -283,7 +283,7 @@
                             <td>Costume Designers</td>
                             <td>{{$data4}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/CostumeSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
