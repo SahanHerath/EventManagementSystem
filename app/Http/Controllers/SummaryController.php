@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Suggestion;
 
-class SuggestionsController extends Controller
+class SummaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,38 +36,6 @@ class SuggestionsController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate(
-            ['Email' => 'required|string|max:255|email',
-            'Name' =>'required|string|max:255',
-            'Message' =>'required|string|max:500',
-            'Contact_No' =>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'Regarding' =>'required|string|max:20',
-            
-            
-            
-           
-        ],
-        ['Email.required'=> "Fill out this field",
-        'Name.required'=> "Fill out this field",
-        'Message.required'=> "Fill out this field",
-        'Contact_No.required'=> "Fill out this field",
-        'Regarding.required'=> "Fill out this field",
-        
-        
-        ]
-    );
-        
-        $suggest = new Suggestion;
-        
-        $suggest->Name=$request->Name;
-        $suggest->Email =$request->Email;
-        $suggest->Contact_No =$request->Contact_No;
-        $suggest->Regarding =$request->Regarding;
-        $suggest->Message =$request->Message;
-        $suggest->state ="0";
-        $suggest->save();
-
-         return redirect()->back();
     }
 
     /**
@@ -115,20 +82,27 @@ class SuggestionsController extends Controller
     {
         //
     }
-
-    public function allsuggestions()
+    public function types()
     {
-        //
-        $data=DB::table('suggestions')
-             ->get();
+        $data=DB::table('actors')->count();
+        $data1=DB::table('caterings')->count();
+        $data2=DB::table('complaints')->count();
+        $data3=DB::table('cake_designers')->count();
+        $data4=DB::table('costume_designers')->count();
+        $data5=DB::table('dancers')->count();
+        $data6=DB::table('decorators')->count();
+        $data7=DB::table('event_planners')->count();
+        $data8=DB::table('hotels')->count();
+        $data9=DB::table('musicians')->count();
+        $data10=DB::table('photographies')->count();
+        $data11=DB::table('poruwa_ceramonies')->count();
+        $data12=DB::table('ratings')->count();
+        $data13=DB::table('salons')->count();
+        $data14=DB::table('suggestions')->count();
+        $data15=DB::table('transporters')->count();
+        
 
-        return view('suggestions',compact('data'));
-    }
+        return view('Summary',compact('data','data1','data2','data3','data4','data5','data6','data7','data8','data9','data10','data11','data12','data13','data14','data15'));
 
-    public function removesuggestions($id)
-    {
-        $data=Suggestion::where('id',$id)->delete();
-
-        return redirect()->back();
     }
 }

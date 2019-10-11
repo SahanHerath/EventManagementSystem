@@ -55,7 +55,7 @@
             </a>
           </li>
           <li>
-          <li >
+          <li class="active ">
             <a href="/comments">
               <i class="nc-icon nc-bulb-63"></i>
               <p>User Review</p>
@@ -79,7 +79,7 @@
               <p>Complaints</p>
             </a>
           </li>
-          <li  class="active ">
+          <li>
             <a href="/suggestions">
               <i class="nc-icon nc-time-alarm"></i>
               <p>Suggestions</p>
@@ -176,17 +176,7 @@
         </div>
     @endif
 <br><br><br><br>
-<div class="btn-group">
-<a href="#"><button type="button" class="btn btn-warning">All</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Financial</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Services</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Community</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Development</button></a>
-<a href="#"><button type="button" class="btn btn-primary">General Info</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Advertising</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Website Bug</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Donations</button></a>
-</div>
+
 
 
     <div class="panel panel-default">
@@ -194,18 +184,13 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Suggestions</h4>
+                <h4 class="mt-5 mb-5">Service providers - Summary</h4>
             </div>
 
             
 
         </div>
-        
-        @if(count($data) == 0)
-            <div class="panel-body text-center">
-                <h4>No Suggestions Available!</h4>
-            </div>
-        @else
+
         <div class="panel-body panel-body-with-table">
             <div class="table-responsive">
            
@@ -213,49 +198,202 @@
                     <thead>
                         <tr>
                         <th></th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>Category</th>
+                            <th>No of Records</th>
                             
-                            <th>Contact No</th>
-                            <th>Regarding</th>
-                            <th>Message</th>
+                            <th>PDF</th>
+                           
                             
                             
-                            <th>Take Action</th>
-                            <th>Remove</th>
+
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($data as $users)
                     
                         <tr>
                         <td></td>
-                            <td>{{ $users->id }}</td>
-                            <td>{{ $users->Name }}</td>
-                            <td>{{ $users->Email }}</td>
-                            <td>{{ $users->Contact_No }}</td>
-                            <td>{{ $users->Regarding }}</td>
-                            <td>{{ $users->Message }}</td>
-                            @if($users->state==0)
-                            <td><a href=""><button type="button" class="btn btn-success">Reply</button></a></td>
-                            @endif
-                            @if($users->state==1)
-                            <td><a href="{{URL('/RemoveSuggestion'.$users->id)}}"><button type="button" class="btn btn-warning">Delete</button></a></td>
-                            @endif
-                            <td><a href="{{URL('/RemoveSuggestion'.$users->id)}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
+                            <td>Venues & Reception Halls</td>
+                            <td>{{$data8}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Photography & Videography</td>
+                            <td>{{$data10}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Cake Designers</td>
+                            <td>{{$data3}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Dance & Choreography</td>
+                            <td>{{$data3}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Dance & Choreography</td>
+                            <td>{{$data5}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Decorators</td>
+                            <td>{{$data6}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Artists & Presenters</td>
+                            <td>{{$data}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Artists & Presenters</td>
+                            <td>{{$data}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Caterings</td>
+                            <td>{{$data1}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Costume Designers</td>
+                            <td>{{$data4}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Event Planners</td>
+                            <td>{{$data7}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Band & DJ</td>
+                            <td>{{$data9}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Poruwa Rituals</td>
+                            <td>{{$data11}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Bridal and Groom Designer, Beautician</td>
+                            <td>{{$data13}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Transporters</td>
+                            <td>{{$data15}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
                         </tr>
                         
-                    @endforeach
+
+                        <tr bgcolor="yellow">
+                        <td></td>
+                            <td>Comments and Ratings</td>
+                            <td>{{$data12}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+                        <tr></tr>
+
+                        <tr bgcolor="yellow">
+                        <td></td>
+                            <td>Complaints</td>
+                            <td>{{$data2}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+                        <tr></tr>
+
+                        <tr bgcolor="yellow">
+                        <td></td>
+                            <td>Suggestions</td>
+                            <td>{{$data14}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+                        
+                        
                     </tbody>
                 </table>
                
 
             </div>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
 
         
         
-        @endif
+     
     
     </div>
