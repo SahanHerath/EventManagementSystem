@@ -49,13 +49,12 @@
 		.none {object-fit: none;}
 
 				
-		
-
-
-		li a:hover {
-		background-color: #A397C6;
+		span.pixel{
+			vertical-align:-20px;
 		}
 
+
+		
 		</style>
 
 </head>
@@ -69,33 +68,33 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
                 
 					<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link text-white" href="/" ><br>Home<br><br></a></li> 
+							<li class="nav-item"><a class="nav-link text-white " href="/" ><span class="pixel">Home</span></a></li> 
 							 <!-- Authentication Links -->
 							 @guest
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}"><span class="pixel">{{ __('Login') }}</span></a>
                             </li>
 							 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}<br></a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}"><span class="pixel">{{ __('Register') }}</span></a>
                                 </li>
                             @endif
                         	@else
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><br>
+                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><span class="pixel">
 								
-								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:16px; height:16px; border-radius: 50%;" >
-								{{ Auth::user()->name }} <br><br>
+								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }}</span>
                                 </a>
 
                             </li>
-							<li class="nav-item">
-									<a class="nav-link text-white" href="{{ route('logout') }}"><br>Logout
+							<li class="nav-item active">
+									<a class="nav-link text-white" href="{{ route('logout') }}"><span class="pixel">Logout
                                     <p onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         
-                                    </p>
+                                    </p></span>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
 									</form>
