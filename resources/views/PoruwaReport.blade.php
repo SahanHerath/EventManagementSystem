@@ -28,7 +28,7 @@ tr:nth-child(even) {
 <br>
 <br>
 
-<h2><b>Event Planner Details</b></h2>
+<h2><b>Poruwa Ritual Maker Details</b></h2>
 <table>
   <tr>
     <th>ID</th>
@@ -71,7 +71,7 @@ tr:nth-child(even) {
     
   </tr>
   @endforeach
- 
+</table> 
 
 </body>
 </html>

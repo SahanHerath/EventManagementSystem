@@ -28,7 +28,7 @@ tr:nth-child(even) {
 <br>
 <br>
 
-<h2><b>Photography Details</b></h2>
+<h2><b>Transport Details</b></h2>
 <table>
   <tr>
     <th>ID</th>
