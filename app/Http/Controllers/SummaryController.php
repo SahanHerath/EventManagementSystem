@@ -146,4 +146,17 @@ class SummaryController extends Controller
             $pdf=PDF::loadview('PhotographyReport',compact('data','time'))->setPaper('a2', 'landscape');
             return $pdf->download('PhotographyReport.pdf');
     }
+
+    public function cake()
+    {
+        $data = DB::table('users')
+                ->join('cake_designers','users.id','=','cake_designers.user_id')
+                ->where('category','=','Cake_Designers')
+                ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('CakeDesignerReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('CakeDesignerReport.pdf');
+    }
 }
