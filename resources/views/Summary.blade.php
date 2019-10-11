@@ -338,7 +338,7 @@
                             <td>Comments and Ratings</td>
                             <td>{{$data12}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/CommentsSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
                         <tr></tr>
