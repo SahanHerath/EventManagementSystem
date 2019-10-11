@@ -543,5 +543,6 @@ Route::get('/TransportSummary', 'SummaryController@transport')  ;
 Route::get('/CommentsSummary', 'SummaryController@comments')  ;
 Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
 Route::get('/SuggestionSummary', 'SummaryController@suggestions')  ;
+Route::get('/FullReport', 'SummaryController@fullReport')  ;
 
  

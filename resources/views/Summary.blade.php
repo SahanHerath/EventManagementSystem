@@ -186,7 +186,9 @@
             <div class="pull-left">
                 <h4 class="mt-5 mb-5">Service providers - Summary</h4>
             </div>
-
+            <div class="offset-10">
+            <a href="/FullReport"><button type="button" class="btn btn-info">Full Report</button></a>
+            </div>
             
 
         </div>

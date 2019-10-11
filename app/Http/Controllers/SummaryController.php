@@ -351,6 +351,101 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('SuggestionReport',compact('data','time'))->setPaper('a4', 'landscape');
                 return $pdf->download('SuggestionReport.pdf');
     }
+
+    public function fullReport()
+    {
+        $Hotel=DB::table('users')
+              ->join('hotels','hotels.user_id','=','users.id')
+              ->get();
+              
+        $hall=DB::table('reception_halls')
+              ->join('hotels','reception_halls.hotel_id','=','hotels.id')
+              ->join('hall_features','reception_halls.id','=','hall_features.hall_id')
+              ->join('hall_events','reception_halls.id','=','hall_events.hall_id')
+              ->join('hall_table_arrangements','reception_halls.id','=','hall_table_arrangements.hall_id')
+              ->get();
+
+        $data = DB::table('users')
+              ->join('photographies','users.id','=','photographies.user_id')
+              ->join('photography_events','users.id','=','photography_events.user_id')
+              ->get();
+
+        $data1 = DB::table('users')
+              ->join('cake_designers','users.id','=','cake_designers.user_id')
+              ->where('category','=','Cake_Designers')
+              ->get();
+
+        $data2 = DB::table('users')
+              ->join('dancers','users.id','=','dancers.user_id')
+              ->join('dancer_events','users.id','=','dancer_events.user_id')
+              ->where('category','=','Dancing')
+              ->get();
+
+        $data3 = DB::table('users')
+              ->join('decorators','users.id','=','decorators.user_id')
+              ->join('decorator_events','users.id','=','decorator_events.user_id')
+              ->get();
+
+        $data4 = DB::table('users')
+              ->join('actors','users.id','=','actors.user_id')
+              ->join('actor_events','users.id','=','actor_events.user_id')
+              ->get();
+
+        $data5 = DB::table('users')
+              ->join('caterings','users.id','=','caterings.user_id')
+              ->join('catering_events','users.id','=','catering_events.user_id')
+              ->where('category','=','Catering')
+              ->get();
+
+        $data6 = DB::table('users')
+              ->join('costume_designers','users.id','=','costume_designers.user_id')
+              ->join('costume_designer_events','users.id','=','costume_designer_events.user_id')
+              ->where('category','=','Cloth_Designers')
+             ->get();
+
+        $data7 = DB::table('users')
+             ->join('event_planners','users.id','=','event_planners.user_id')
+             ->join('event_planners_events','users.id','=','event_planners_events.user_id')
+             ->where('category','=','Event_Planners')
+             ->get();
+
+        $data8 = DB::table('users')
+             ->join('musicians','users.id','=','musicians.user_id')
+             ->join('musician_events','users.id','=','musician_events.user_id')
+             ->where('category','=','Music')
+             ->get();
+
+        $data9 = DB::table('users')
+             ->join('poruwa_ceramonies','users.id','=','poruwa_ceramonies.user_id')
+             ->where('category','=','Poruwa_Ceramony')
+             ->get();
+
+        $data10 = DB::table('users')
+             ->join('salons','users.id','=','salons.user_id')
+             ->join('salon_events','users.id','=','salon_events.user_id')
+             ->where('category','=','Bridel_Designers')
+            ->get();
+
+        $data11 = DB::table('users')
+            ->join('transporters','users.id','=','transporters.user_id')
+            ->join('transport_categories','users.id','=','transport_categories.user_id')
+            ->get();
+
+        $data12 = DB::table('ratings')
+            ->get();
+
+        $data13 = DB::table('complaints')
+            ->get();
+
+        $data14 = DB::table('suggestions')
+            ->get();
+        
+            $mytime = Carbon\Carbon::now();
+            $time=$mytime->toDateTimeString();
+            $pdf=PDF::loadview('FullReport',compact('Hotel','hall','data','data1','data2','data3','data4','data5','data6','data7','data8','data9','data10','data11','data12','data13','data14','time'))->setPaper('a1', 'landscape');
+            return $pdf->download('FullReport.pdf');
+        
+    }
     
 
 }
