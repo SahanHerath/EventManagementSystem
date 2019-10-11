@@ -265,4 +265,14 @@ class ComplaintController extends Controller
 
         return view('complaint.Decoration',compact('data'));
     }
+    public function Transportcomplaints()
+    {
+        $data=DB::table('complaints')
+            ->join('users','complaints.user_id','=','users.id')
+            ->where('category','=','Wedding_Transport')
+            ->select('user_email','complaints.id as complaintid','complaint_about','user_id','complaint','state')
+            ->get();
+
+        return view('complaint.Transport',compact('data'));
+    }
 }
