@@ -266,6 +266,21 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('MusicReport',compact('data','time'))->setPaper('a2', 'landscape');
                 return $pdf->download('MusicReport.pdf');
     }
+
+    public function  poruwa()
+    {
+        
+    
+        $data = DB::table('users')
+                ->join('poruwa_ceramonies','users.id','=','poruwa_ceramonies.user_id')
+                ->where('category','=','Poruwa_Ceramony')
+                ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('PoruwaReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('PoruwaRitualReport.pdf');
+    }
     
 
 }

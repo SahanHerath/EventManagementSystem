@@ -310,7 +310,7 @@
                             <td>Poruwa Rituals</td>
                             <td>{{$data11}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/PoruwaSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
