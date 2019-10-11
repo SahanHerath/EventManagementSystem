@@ -27,8 +27,6 @@
 	
 	
 
-	 <!-- Bootstrap core CSS -->
-	 <link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -55,10 +53,8 @@
 		.none {object-fit: none;}
 
 				
-<<<<<<< HEAD
 		span.pixel{
 			vertical-align:-20px;
-=======
 		
 
 
@@ -76,7 +72,6 @@
 
 		.main {
 		margin-bottom: 30px; 
->>>>>>> 792a6f00d4e875d0921c19628d721384d37c4f6f
 		}
 
 
@@ -189,7 +184,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 	@endforeach
-	<section class="education-section section">
+	<section class=" experience-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -219,11 +214,15 @@
 		<div class="offset-9">
 		<a href="{{URL('/AddComplaint'.$hotel1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
 		</div>
-	<section class="testimonials_area p_120">
+	<section class="education-section section">
         	<div class="container">
-        		<div class="main_title">
-        			<h2>Rating</h2>
-        		</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Rating</b></h3>
+						</div>
+					</div><!-- col-sm-4 -->
+				</div><!-- row -->
 
 				<form class="form-horizontal" method="POST" action="{{URL('/AddRating'.$hotel1->userid)}}" enctype="multipart/form-data">
                 	{{ csrf_field() }}
@@ -467,7 +466,8 @@
 							<div class="pull-right" style="margin-left:10px;">{{$one}}</div>
 						</div>
 					</div>			
-				</div>			
+				</div>
+				<br><br>			
 				@foreach($rate as $rate1)
 				<div class="row">
 					<div class="col-sm-7">
@@ -608,7 +608,7 @@
 	
 
 	
-		<footer class="footer_area p_30">
+		<footer class="footer_area p_30"  style="background-color:black;">
 			<div class="container">
 				<div class="row footer_inner">
 					<div class="col-lg-5 col-sm-6">
