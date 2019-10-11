@@ -243,7 +243,7 @@
                             <td>Dance & Choreography</td>
                             <td>{{$data3}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/DanceSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
