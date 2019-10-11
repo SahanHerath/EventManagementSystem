@@ -180,8 +180,8 @@
 <a href="#"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Beautician</button></a>
-<a href="/DJComplaint"><button type="button" class="btn btn-warning">DJ/Band</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Catering</button></a>
+<a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
+<a href="/CateringComplaint"><button type="button" class="btn btn-warning">Catering</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Cake Designer</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Costume Designer</button></a>
@@ -197,7 +197,7 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Dj/Band - Complaints</h4>
+                <h4 class="mt-5 mb-5">Catering - Complaints</h4>
             </div>
 
             

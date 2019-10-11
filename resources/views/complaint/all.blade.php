@@ -181,7 +181,7 @@
 <a href="/PhotographyComplaint"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonComplaint"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/DJComplaint"><button type="button" class="btn btn-primary">DJ/Band</button></a>
-<a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
+<a href="/CateringComplaint"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Catering</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Cake Designer</button></a>
