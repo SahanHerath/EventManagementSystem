@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use PDF;
+use Carbon;
 
 class SummaryController extends Controller
 {
@@ -104,5 +106,28 @@ class SummaryController extends Controller
 
         return view('Summary',compact('data','data1','data2','data3','data4','data5','data6','data7','data8','data9','data10','data11','data12','data13','data14','data15'));
 
+    }
+
+    public function venue()
+    {
+        $Hotel=DB::table('users')
+              ->join('hotels','hotels.user_id','=','users.id')
+              ->get();
+              
+        $hall=DB::table('reception_halls')
+              ->join('hotels','reception_halls.hotel_id','=','hotels.id')
+              ->join('hall_features','reception_halls.id','=','hall_features.hall_id')
+              ->join('hall_events','reception_halls.id','=','hall_events.hall_id')
+              ->join('hall_table_arrangements','reception_halls.id','=','hall_table_arrangements.hall_id')
+              ->get();
+
+        
+        
+        
+        
+            $mytime = Carbon\Carbon::now();
+            $time=$mytime->toDateTimeString();
+            $pdf=PDF::loadview('VenueReport',compact('Hotel','time','hall'))->setPaper('a1', 'landscape');
+            return $pdf->download('VenueReport.pdf');
     }
 }

@@ -527,4 +527,6 @@ Route::get('/DecorationComplaint', 'ComplaintController@Decorationcomplaints')  
 Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
 Route::get('/RemoveSuggestion{id}', 'SuggestionsController@removesuggestions')  ;
 Route::get('/Summary', 'SummaryController@types')  ;
+Route::get('/VenueSummary', 'SummaryController@venue')  ;
+
  
