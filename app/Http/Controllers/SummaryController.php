@@ -250,6 +250,22 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('PlannerReport',compact('data','time'))->setPaper('a2', 'landscape');
                 return $pdf->download('PlannerReport.pdf');
     }
+
+    public function  music()
+    {
+        
+    
+        $data = DB::table('users')
+                ->join('musicians','users.id','=','musicians.user_id')
+                ->join('musician_events','users.id','=','musician_events.user_id')
+                ->where('category','=','Music')
+                ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('MusicReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('MusicReport.pdf');
+    }
     
 
 }
