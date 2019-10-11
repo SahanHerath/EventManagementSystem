@@ -176,7 +176,7 @@
         </div>
     @endif
 <br><br><br><br>
-<a href="#"><button type="button" class="btn btn-warning">All</button></a>
+<a href="#"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/HotelComplaint"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/PhotographyComplaint"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonComplaint"><button type="button" class="btn btn-primary">Beautician</button></a>
@@ -189,7 +189,7 @@
 <a href="/DecorationComplaint"><button type="button" class="btn btn-primary">Decoration</button></a>
 <a href="/TransportComplaint"><button type="button" class="btn btn-primary">Transport</button></a>
 <a href="/EventPlannerComplaint"><button type="button" class="btn btn-primary">Event Planners</button></a>
-<a href="/PoruwaComplaint"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
+<a href="/PoruwaComplaint"><button type="button" class="btn btn-warning">Poruwa Rituals</button></a>
 
 
     <div class="panel panel-default">
@@ -197,7 +197,7 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Service providers - Complaints</h4>
+                <h4 class="mt-5 mb-5">Poruwa Rituals - Complaints</h4>
             </div>
 
             

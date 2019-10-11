@@ -238,12 +238,12 @@
                             <td>{{ $users->Regarding }}</td>
                             <td>{{ $users->Message }}</td>
                             @if($users->state==0)
-                            <td><button type="button" class="btn btn-success">Reply</button></td>
+                            <td><a href=""><button type="button" class="btn btn-success">Reply</button></a></td>
                             @endif
                             @if($users->state==1)
-                            <td><button type="button" class="btn btn-warning">Considered</button></td>
+                            <td><a href="{{URL('/RemoveSuggestion'.$users->id)}}"><button type="button" class="btn btn-warning">Delete</button></a></td>
                             @endif
-                            <td><button type="button" class="btn btn-danger">Remove</button></td>
+                            <td><a href="{{URL('/RemoveSuggestion'.$users->id)}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
                         </tr>
                         
                     @endforeach

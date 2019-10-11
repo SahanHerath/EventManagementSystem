@@ -42,6 +42,8 @@
 	.cover {object-fit: cover;}
 	.scale-down {object-fit: scale-down;}
 	.none {object-fit: none;}
+
+
 	</style>
 </head>
 <body>
@@ -58,12 +60,12 @@
 							 <!-- Authentication Links -->
 							 @guest
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}"><br>{{ __('Login') }}</a>
                             </li>
 							 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}<br></a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}"><br>{{ __('Register') }}<br></a>
                                 </li>
                             @endif
                         	@else

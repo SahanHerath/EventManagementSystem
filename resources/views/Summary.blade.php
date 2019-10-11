@@ -55,25 +55,25 @@
             </a>
           </li>
           <li>
-          <li >
+          <li class="active ">
             <a href="/comments">
               <i class="nc-icon nc-bulb-63"></i>
               <p>User Review</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/Profile">
               <i class="nc-icon nc-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="/users">
               <i class="nc-icon nc-badge"></i>
               <p>Service Providers</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="/complaints">
               <i class="nc-icon nc-globe-2"></i>
               <p>Complaints</p>
@@ -176,20 +176,7 @@
         </div>
     @endif
 <br><br><br><br>
-<a href="#"><button type="button" class="btn btn-warning">All</button></a>
-<a href="/HotelComplaint"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
-<a href="/PhotographyComplaint"><button type="button" class="btn btn-primary">Photography</button></a>
-<a href="/SalonComplaint"><button type="button" class="btn btn-primary">Beautician</button></a>
-<a href="/DJComplaint"><button type="button" class="btn btn-primary">DJ/Band</button></a>
-<a href="/CateringComplaint"><button type="button" class="btn btn-primary">Catering</button></a>
-<a href="/ActorComplaint"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
-<a href="/CakeComplaint"><button type="button" class="btn btn-primary">Cake Designer</button></a>
-<a href="/CostumeComplaint"><button type="button" class="btn btn-primary">Costume Designer</button></a>
-<a href="/DancingComplaint"><button type="button" class="btn btn-primary">Dancing</button></a>
-<a href="/DecorationComplaint"><button type="button" class="btn btn-primary">Decoration</button></a>
-<a href="/TransportComplaint"><button type="button" class="btn btn-primary">Transport</button></a>
-<a href="/EventPlannerComplaint"><button type="button" class="btn btn-primary">Event Planners</button></a>
-<a href="/PoruwaComplaint"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
+
 
 
     <div class="panel panel-default">
@@ -197,18 +184,13 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Service providers - Complaints</h4>
+                <h4 class="mt-5 mb-5">Service providers - Summary</h4>
             </div>
 
             
 
         </div>
-        
-        @if(count($data) == 0)
-            <div class="panel-body text-center">
-                <h4>No Complaints Available!</h4>
-            </div>
-        @else
+
         <div class="panel-body panel-body-with-table">
             <div class="table-responsive">
            
@@ -216,51 +198,188 @@
                     <thead>
                         <tr>
                         <th></th>
-                            <th>ID</th>
-                            <th>Email</th>
-                            <th>Service id</th>
-                            <th>Complaint About</th>
-                            <th>Complaint</th>
-                            <th>Status</th>
-                            <th>Remove</th>
+                            <th>Category</th>
+                            <th>No of Records</th>
+                            
+                            <th>PDF</th>
+                           
+                            
+                            
+
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($data as $users)
-                   
+                    
                         <tr>
                         <td></td>
-                            <td>{{ $users->complaintid }}</td>
-                            <td>{{ $users->user_email }}</td>
+                            <td>Venues & Reception Halls</td>
+                            <td>{{$data8}}</td>
                             
-                            <td>{{ $users->user_id }}</td>
-                            <td>{{ $users->complaint_about }}</td>
-                            <td>{{ $users->complaint }}</td>
+                            <td><a href="/VenueSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Photography & Videography</td>
+                            <td>{{$data10}}</td>
                             
+                            <td><a href="/PhotographySummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Cake Designers</td>
+                            <td>{{$data3}}</td>
                             
+                            <td><a href="/CakeSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Dance & Choreography</td>
+                            <td>{{$data3}}</td>
                             
-                            @if($users->state==0)
-                            <td><a href="{{URL('/ReviewComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-primary">Review</button></a></td>
-                            @endif
-                            @if($users->state==1)
-                            <td><a href="{{URL('/SolveComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-success">Solved</button></a></td>
-                            @endif
-                            @if($users->state==2)
-                            <td><a href="{{URL('/DeleteComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
-                            @endif
-                            <td><a href="{{URL('/DeleteComplaint'.$users->complaintid)}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                            <td><a href="/DanceSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+           
+
+                        <tr>
+                        <td></td>
+                            <td>Decorators</td>
+                            <td>{{$data6}}</td>
+                            
+                            <td><a href="/DecorationSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Artists & Presenters</td>
+                            <td>{{$data}}</td>
+                            
+                            <td><a href="/ActorSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                       
+
+                        <tr>
+                        <td></td>
+                            <td>Caterings</td>
+                            <td>{{$data1}}</td>
+                            
+                            <td><a href="/CateringSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Costume Designers</td>
+                            <td>{{$data4}}</td>
+                            
+                            <td><a href="/CostumeSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Event Planners</td>
+                            <td>{{$data7}}</td>
+                            
+                            <td><a href="/PlannerSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Band & DJ</td>
+                            <td>{{$data9}}</td>
+                            
+                            <td><a href="/DJSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Poruwa Rituals</td>
+                            <td>{{$data11}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Bridal and Groom Designer, Beautician</td>
+                            <td>{{$data13}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                        <td></td>
+                            <td>Transporters</td>
+                            <td>{{$data15}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
                         </tr>
                         
-                    @endforeach
+
+                        <tr bgcolor="yellow">
+                        <td></td>
+                            <td>Comments and Ratings</td>
+                            <td>{{$data12}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+                        <tr></tr>
+
+                        <tr bgcolor="yellow">
+                        <td></td>
+                            <td>Complaints</td>
+                            <td>{{$data2}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+                        <tr></tr>
+
+                        <tr bgcolor="yellow">
+                        <td></td>
+                            <td>Suggestions</td>
+                            <td>{{$data14}}</td>
+                            
+                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td></td>
+                        </tr>
+                        
+                        
                     </tbody>
                 </table>
                
 
             </div>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
 
         
         
-        @endif
+     
     
     </div>

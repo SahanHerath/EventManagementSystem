@@ -23,7 +23,7 @@
   <link href="css/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="css/assets/demo/demo.css" rel="stylesheet" />
-  
+  <link href="https://demos.creative-tim.com/light-bootstrap-dashboard-pro/examples/components/icons.html" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -88,6 +88,12 @@
             <a href="/suggestions">
               <i class="nc-icon nc-time-alarm"></i>
               <p>Suggestions</p>
+            </a>
+          </li>
+          <li>
+            <a href="/Summary">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Summary</p>
             </a>
           </li>
           

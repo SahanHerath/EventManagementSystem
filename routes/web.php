@@ -525,5 +525,17 @@ Route::get('/DancingComplaint', 'ComplaintController@Dancingcomplaints')  ;
 Route::get('/DecorationComplaint', 'ComplaintController@Decorationcomplaints')  ;
 
 Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
+Route::get('/RemoveSuggestion{id}', 'SuggestionsController@removesuggestions')  ;
+Route::get('/Summary', 'SummaryController@types')  ;
+Route::get('/VenueSummary', 'SummaryController@venue')  ;
+Route::get('/PhotographySummary', 'SummaryController@photography')  ;
+Route::get('/CakeSummary', 'SummaryController@cake')  ;
+Route::get('/DanceSummary', 'SummaryController@dance')  ;
+Route::get('/DecorationSummary', 'SummaryController@decoration')  ;
+Route::get('/ActorSummary', 'SummaryController@actor')  ;
+Route::get('/CateringSummary', 'SummaryController@catering')  ;
+Route::get('/CostumeSummary', 'SummaryController@costume')  ;
+Route::get('/PlannerSummary', 'SummaryController@planner')  ;
+Route::get('/DJSummary', 'SummaryController@music')  ;
 
  

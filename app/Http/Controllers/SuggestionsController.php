@@ -124,4 +124,11 @@ class SuggestionsController extends Controller
 
         return view('suggestions',compact('data'));
     }
+
+    public function removesuggestions($id)
+    {
+        $data=Suggestion::where('id',$id)->delete();
+
+        return redirect()->back();
+    }
 }

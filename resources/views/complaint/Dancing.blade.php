@@ -176,7 +176,7 @@
         </div>
     @endif
 <br><br><br><br>
-<a href="#"><button type="button" class="btn btn-warning">All</button></a>
+<a href="#"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/HotelComplaint"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/PhotographyComplaint"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonComplaint"><button type="button" class="btn btn-primary">Beautician</button></a>
@@ -185,7 +185,7 @@
 <a href="/ActorComplaint"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
 <a href="/CakeComplaint"><button type="button" class="btn btn-primary">Cake Designer</button></a>
 <a href="/CostumeComplaint"><button type="button" class="btn btn-primary">Costume Designer</button></a>
-<a href="/DancingComplaint"><button type="button" class="btn btn-primary">Dancing</button></a>
+<a href="/DancingComplaint"><button type="button" class="btn btn-warning">Dancing</button></a>
 <a href="/DecorationComplaint"><button type="button" class="btn btn-primary">Decoration</button></a>
 <a href="/TransportComplaint"><button type="button" class="btn btn-primary">Transport</button></a>
 <a href="/EventPlannerComplaint"><button type="button" class="btn btn-primary">Event Planners</button></a>
@@ -197,7 +197,7 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Service providers - Complaints</h4>
+                <h4 class="mt-5 mb-5">Dancing Designing - Complaints</h4>
             </div>
 
             
