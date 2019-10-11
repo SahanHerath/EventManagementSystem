@@ -22,9 +22,9 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2><center>Reports and Data</center></h2>
+<b><h1>Reports and Data</h1></b>
 
-<h5>Date and Time:{{$time}}<h5>
+<h5>Date and Time:{{$time}}</h5>
 <br>
 <br>
 

@@ -528,5 +528,6 @@ Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
 Route::get('/RemoveSuggestion{id}', 'SuggestionsController@removesuggestions')  ;
 Route::get('/Summary', 'SummaryController@types')  ;
 Route::get('/VenueSummary', 'SummaryController@venue')  ;
+Route::get('/PhotographySummary', 'SummaryController@photography')  ;
 
  

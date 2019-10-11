@@ -225,7 +225,7 @@
                             <td>Photography & Videography</td>
                             <td>{{$data10}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/PhotographySummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
