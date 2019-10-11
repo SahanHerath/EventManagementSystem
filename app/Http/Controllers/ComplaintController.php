@@ -175,4 +175,14 @@ class ComplaintController extends Controller
 
         return view('complaint.Hotel',compact('data'));
     }
+    public function Photographycomplaints()
+    {
+        $data=DB::table('complaints')
+            ->join('users','complaints.user_id','=','users.id')
+            ->where('category','=','Photography')
+            ->select('user_email','complaints.id as complaintid','complaint_about','user_id','complaint','state')
+            ->get();
+
+        return view('complaint.Photography',compact('data'));
+    }
 }
