@@ -281,6 +281,22 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('PoruwaReport',compact('data','time'))->setPaper('a2', 'landscape');
                 return $pdf->download('PoruwaRitualReport.pdf');
     }
+
+    public function  salon()
+    {
+        
+    
+        $data = DB::table('users')
+                ->join('salons','users.id','=','salons.user_id')
+                ->join('salon_events','users.id','=','salon_events.user_id')
+                ->where('category','=','Bridel_Designers')
+               ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('SalonReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('SalonReport.pdf');
+    }
     
 
 }
