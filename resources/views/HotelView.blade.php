@@ -27,8 +27,6 @@
 	
 	
 
-	 <!-- Bootstrap core CSS -->
-	 <link href="css/rating.css" rel="stylesheet">
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -55,6 +53,8 @@
 		.none {object-fit: none;}
 
 				
+		span.pixel{
+			vertical-align:-20px;
 		
 
 
@@ -74,6 +74,8 @@
 		margin-bottom: 30px; 
 		}
 
+
+		
 		</style>
 
 </head>
@@ -88,33 +90,33 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
                 
 					<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link text-white" href="/" ><br>Home<br><br></a></li> 
+							<li class="nav-item"><a class="nav-link text-white " href="/" ><span class="pixel">Home</span></a></li> 
 							 <!-- Authentication Links -->
 							 @guest
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}"><span class="pixel">{{ __('Login') }}</span></a>
                             </li>
 							 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}<br></a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}"><span class="pixel">{{ __('Register') }}</span></a>
                                 </li>
                             @endif
                         	@else
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><br>
+                                <a class="nav-link text-white" href="{{URL('/Profile')}}" aria-expanded="false" v-pre><span class="pixel">
 								
-								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:16px; height:16px; border-radius: 50%;" >
-								{{ Auth::user()->name }} <br><br>
+								<img src="uploads/hall/{{$hotel1->Main_logo}}" style="width:32px; height:32px; border-radius: 50%;" >
+								{{ Auth::user()->name }}</span>
                                 </a>
 
                             </li>
-							<li class="nav-item">
-									<a class="nav-link text-white" href="{{ route('logout') }}"><br>Logout
+							<li class="nav-item active">
+									<a class="nav-link text-white" href="{{ route('logout') }}"><span class="pixel">Logout
                                     <p onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         
-                                    </p>
+                                    </p></span>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
 									</form>
@@ -182,7 +184,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 	@endforeach
-	<section class="education-section section">
+	<section class=" experience-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
@@ -212,11 +214,15 @@
 		<div class="offset-9">
 		<a href="{{URL('/AddComplaint'.$hotel1->userid)}}"><button type="button" class="btn btn-danger">Complain About This Service Provider</button></a>
 		</div>
-	<section class="testimonials_area p_120">
+	<section class="education-section section">
         	<div class="container">
-        		<div class="main_title">
-        			<h2>Rating</h2>
-        		</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Rating</b></h3>
+						</div>
+					</div><!-- col-sm-4 -->
+				</div><!-- row -->
 
 				<form class="form-horizontal" method="POST" action="{{URL('/AddRating'.$hotel1->userid)}}" enctype="multipart/form-data">
                 	{{ csrf_field() }}
@@ -460,7 +466,8 @@
 							<div class="pull-right" style="margin-left:10px;">{{$one}}</div>
 						</div>
 					</div>			
-				</div>			
+				</div>
+				<br><br>			
 				@foreach($rate as $rate1)
 				<div class="row">
 					<div class="col-sm-7">
@@ -601,7 +608,7 @@
 	
 
 	
-		<footer class="footer_area p_30">
+		<footer class="footer_area p_30"  style="background-color:black;">
 			<div class="container">
 				<div class="row footer_inner">
 					<div class="col-lg-5 col-sm-6">
