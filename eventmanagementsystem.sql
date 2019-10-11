@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2019 at 06:15 PM
+-- Generation Time: Oct 11, 2019 at 11:26 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -118,6 +118,7 @@ CREATE TABLE `admins` (
   `Address` varchar(191) NOT NULL,
   `Contact_No` varchar(30) NOT NULL,
   `About_me` text,
+  `Bio` varchar(50) NOT NULL,
   `Main_pic` varchar(191) NOT NULL DEFAULT 'Maindefault.jpg',
   `Cover_pic` varchar(191) NOT NULL DEFAULT 'Coverdefault.jpg',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -128,8 +129,8 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `user_id`, `fname`, `lname`, `Address`, `Contact_No`, `About_me`, `Main_pic`, `Cover_pic`, `created_at`, `updated_at`) VALUES
-(3, 83, 'Sahan', 'herath', 'naththandiya sri lanka', '0764192310', 'Software developer', 'Maindefault.jpg', 'Coverdefault.jpg', '2019-10-09 08:30:43', '2019-10-09 03:00:43');
+INSERT INTO `admins` (`id`, `user_id`, `fname`, `lname`, `Address`, `Contact_No`, `About_me`, `Bio`, `Main_pic`, `Cover_pic`, `created_at`, `updated_at`) VALUES
+(3, 83, 'Sahan', 'herath', 'naththandiya sri lanka', '0764192310', 'Software developer', 'Sahan is a Working developer.', '1570692830.jpg', '1570693739.jpg', '2019-10-10 07:49:01', '2019-10-10 02:19:01');
 
 -- --------------------------------------------------------
 
@@ -310,7 +311,7 @@ CREATE TABLE `complaints` (
 --
 
 INSERT INTO `complaints` (`id`, `user_email`, `user_id`, `complaint_about`, `complaint`, `state`, `created_at`, `updated_at`) VALUES
-(2, 'sahand.herath@gmail.com', 76, 'Package', 'fvvdewfqwdqwedfewf', 2, '2019-10-08 18:35:08', '2019-10-08 13:05:08');
+(3, 'sahand.herath@gmail.com', 17, 'Services', 'fwwefwefwefwfwefwefwfwefsfsf', 0, '2019-10-11 13:09:27', '2019-10-11 13:09:27');
 
 -- --------------------------------------------------------
 
@@ -1016,7 +1017,7 @@ CREATE TABLE `photographies` (
 
 INSERT INTO `photographies` (`id`, `Studio_Name`, `Address`, `ContactNo`, `Link`, `Description`, `Drone`, `Wedding_Photography`, `Preshoot_Vedio`, `Wedding_Vedio`, `Album_Making`, `Wedding_Card`, `main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'tfyugijok', '8h9ij[pok[', 'rt7y89-u09=-i0', '6789hij', '8gupihojpkl', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1567765049.jpg', '1567765050.jpg', '1567765051.jpg', '1567765052.jpg', '1567765053.jpg', 13, '2019-09-06 04:47:34', '2019-09-06 04:47:34'),
-(2, 'ndsfsdhfskdhj', 'jdsfkjdsf', 'bhdsfjkds', 'shjhdsjf', 'shhsdjkfjlsd', 'Available', 'Not Available', 'Available', 'Available', 'Not Available', 'Available', '1568470264.jpg', '1568470266.jpg', '1568470267.jpg', '1568470268.jpg', '1568470269.jpg', 16, '2019-09-14 08:41:10', '2019-09-14 08:41:10'),
+(2, 'ndsfsdhfskdhj', 'jdsfkjdsf', 'bhdsfjkds', 'shjhdsjf', 'shhsdjkfjlsd', 'Available', 'Not Available', 'Available', 'Available', 'Not Available', 'Available', '1570637985.jpg', '1570638005.jpg', '1570638027.jpg', '1570638066.jpg', '1570638085.jpg', 16, '2019-10-09 16:21:26', '2019-10-09 10:51:26'),
 (3, 'efsfs', 'sdfsd', 'sfsd', 'dfsfds', 'ferfdrf', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '1568793919.jpg', '1568793921.jpg', '1568793923.jpg', '1568793925.jpg', '1568793925.jpg', 29, '2019-09-18 02:35:27', '2019-09-18 02:35:27'),
 (4, 'sahan', 'No3/12 , nagahaella rd', '454654767753425', 'dsfdsfsrfefgrthefrdh', 'dffsdfdsfbdthaefgthaefsrhsefseh', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '1569150019.jpg', '1569150020.jpg', '1569150021.jpg', '1569150022.jpg', '1569150023.jpg', 52, '2019-09-22 19:06:20', '2019-09-22 13:36:20'),
 (6, 'fsdfd', 'sdfsdf', '432534634643', 'dssdfsdfsd', 'sdfsfsfds', 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', '1569783766.jpg', '1569783840.jpg', '1569783863.jpeg', '1569783887.jpg', '1569783910.jpeg', 77, '2019-09-29 19:20:28', '2019-09-29 13:50:28');
@@ -1076,7 +1077,8 @@ CREATE TABLE `photography_packages` (
 
 INSERT INTO `photography_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
 (2, 77, 'package1', 'Wedding', 'asdada', '12313.00', '1569781135.pdf', '2019-09-29 12:48:55', '2019-09-29 12:48:55'),
-(3, 52, 'Gold Package', 'Wedding', 'scghjhjew', '334234.00', '1570168114.pdf', '2019-10-04 00:18:34', '2019-10-04 00:18:34');
+(3, 52, 'Gold Package', 'Wedding', 'scghjhjew', '334234.00', '1570168114.pdf', '2019-10-04 00:18:34', '2019-10-04 00:18:34'),
+(4, 16, 'Gold Package', 'fewfwef', 'fdfsdwecscwewecwe', '23142342.00', '1570637933.pdf', '2019-10-09 10:48:53', '2019-10-09 10:48:53');
 
 -- --------------------------------------------------------
 
@@ -1099,7 +1101,8 @@ CREATE TABLE `photography_videos` (
 
 INSERT INTO `photography_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
 (2, 77, 'sahan', '1569792811.mp4', '2019-09-29 16:03:31', '2019-09-29 16:03:31'),
-(3, 52, 'sahan', '1570168029.mp4', '2019-10-04 00:17:09', '2019-10-04 00:17:09');
+(3, 52, 'sahan', '1570168029.mp4', '2019-10-04 00:17:09', '2019-10-04 00:17:09'),
+(4, 16, 'sahan herath', '1570638878.mp4', '2019-10-09 11:04:38', '2019-10-09 11:04:38');
 
 -- --------------------------------------------------------
 
@@ -1155,16 +1158,7 @@ CREATE TABLE `poruwa_ceramonies` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `poruwa_ceramonies`
---
-
-INSERT INTO `poruwa_ceramonies` (`id`, `Name`, `Address`, `Contact_No`, `Link`, `Description`, `Poruwa_rituals`, `Poruwa_items`, `match_making`, `Astrological_support`, `jayamangala_gatha`, `Wedding_dancers`, `Cost`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'ggerge', 'erger', '984893249832', 'erferf', 'fdsdfsdf', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 32423, '1568824037.jpg', '1568824038.jpg', '1568824040.jpg', '1568824041.jpg', '1568824042.jpg', 36, '2019-09-18 10:57:24', '2019-09-18 10:57:24'),
-(2, 'rgreger', 'gergerg', '2412342342423', 'fdfgdfgsgad', 'gsdgsdgsdg', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 22342, '1569086997.jpg', '1569086998.jpg', '1569086999.jpg', '1569087000.jpg', '1569087002.jpg', 49, '2019-09-21 17:45:32', '2019-09-21 12:15:32'),
-(3, 'hdsdsfsdf', 'dfsdvs', '2376387423', 'cn,dshcshc', 'cdcsdvsdsvsd', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 34533.33, '1569145620.jpg', '1569145621.jpg', '1569145623.jpg', '1569145624.jpg', '1569145625.jpg', 51, '2019-10-03 12:07:47', '2019-10-03 06:37:47'),
-(4, 'sdfsfsdfsd', 'sdfsdfsdf', '861324613423', 'asdfsdfasdfasd', 'sdfdsffs', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 542367, '1569837898.jpg', '1569839139.jpg', '1569839417.jpg', '1569839442.jpg', '1569839466.jpeg', 62, '2019-09-30 10:31:08', '2019-09-30 05:01:08');
+-- Error reading data for table eventmanagementsystem.poruwa_ceramonies: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`poruwa_ceramonies`' at line 1
 
 -- --------------------------------------------------------
 
@@ -1236,7 +1230,8 @@ INSERT INTO `ratings` (`id`, `user_id`, `user_name`, `Email`, `Comment`, `image`
 (22, 57, 'Sahan', 'sahand.herath@gmail.com', 'gngbreeavervrevrevevrvrevrevv', 'default.jpg', 5, 0, '2019-10-07 15:05:06', '2019-10-07 15:05:06'),
 (23, 56, 'Nethmi', 'sahand.herath@gmail.com', 'dsdvesevwvewcwcwec', 'default.jpg', 3, 0, '2019-10-07 15:17:10', '2019-10-07 15:17:10'),
 (25, 76, 'Nethmi', 'nethmi@gmail.com', 'ewfwefaweffwefwfewfwefew', '1570483899.jpg', 5, 0, '2019-10-07 16:01:40', '2019-10-07 16:01:40'),
-(26, 68, 'Nethmi', 'sahand.herath@gmail.com', 'wecwcwecwecwec', 'default.jpg', 4, 0, '2019-10-07 16:06:58', '2019-10-07 16:06:58');
+(26, 68, 'Nethmi', 'sahand.herath@gmail.com', 'wecwcwecwecwec', 'default.jpg', 4, 1, '2019-10-09 19:47:07', '2019-10-09 14:17:07'),
+(27, 76, 'Sahan', 'sahand.herath@gmail.com', 'tyuuiui', 'default.jpg', 3, 0, '2019-10-09 11:12:56', '2019-10-09 11:12:56');
 
 -- --------------------------------------------------------
 
@@ -1388,7 +1383,8 @@ CREATE TABLE `suggestions` (
 --
 
 INSERT INTO `suggestions` (`id`, `Name`, `Email`, `Contact_No`, `Regarding`, `Message`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'hdsdsfsdf', 'sahand.herath@gmail.com', '3244234234234', 'Financial', 'ferfefwefwefwefwfwefwef', 0, '2019-10-09 10:09:54', '2019-10-09 10:09:54');
+(1, 'hdsdsfsdf', 'sahand.herath@gmail.com', '3244234234234', 'Financial', 'ferfefwefwefwefwfwefwef', 0, '2019-10-09 10:09:54', '2019-10-09 10:09:54'),
+(2, 'hdsdsfsdf', 'sahand.herath@gmail.com', '56777898989009', 'Advertising', 'fghhjhjkkjjkhjk', 0, '2019-10-09 13:30:16', '2019-10-09 13:30:16');
 
 -- --------------------------------------------------------
 
@@ -1563,7 +1559,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (77, 'sahan', 'sdsgzf@4wwta4', NULL, 'Photography', 'gerger', 0, '$2y$10$1OvjLBVvt7VGf2RqBU.9XO4vCFsSK/5KBsveKpXgbtemnGJcF2jg2', NULL, '2019-09-29 05:09:19', '2019-09-29 13:50:47'),
 (78, 'Shamith athauda', 'ubsjafsssfna@gmail.com', NULL, 'Bridel_Designers', 'ssfdsff', 0, '$2y$10$c7UhQSgfpWBWxXj.iAdu7OCj0jq3rGKliTWPUVkNtkIc01NQs3UfG', NULL, '2019-09-30 02:25:38', '2019-09-30 02:25:38'),
 (79, 'fefew', 'efw@rdrger', NULL, 'Actors', 'rgrgregr', 0, '$2y$10$pMTthFg9mOCzG7dOw8kOHOUcgAPSo7tfEo2buPsEBj1q0fqZnvz/G', NULL, '2019-10-03 02:08:55', '2019-10-03 02:08:55'),
-(83, 'Sahan Herath', 'hiruni@gmail.com', NULL, 'admin', 'kandy', 1, '$2y$10$WrgN6KNac9ZN2rwmmTDmmup7T9T7ybgxl2JNKIwOwNCWX67paOJja', NULL, '2019-10-09 00:59:39', '2019-10-09 03:00:43');
+(83, 'Sahan Herath', 'hiruni@gmail.com', NULL, 'admin', 'kandy', 1, '$2y$10$K2cDFpB.tcC/j.wXjdoDHO.yCZlGzxKqOCw7PrB.eAlYekqGkVa.S', NULL, '2019-10-09 00:59:39', '2019-10-10 00:42:13');
 
 --
 -- Indexes for dumped tables
@@ -1932,7 +1928,7 @@ ALTER TABLE `catering_packages`
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `costume_designers`
@@ -2082,13 +2078,13 @@ ALTER TABLE `photography_events`
 -- AUTO_INCREMENT for table `photography_packages`
 --
 ALTER TABLE `photography_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `photography_videos`
 --
 ALTER TABLE `photography_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `planner_packages`
@@ -2112,7 +2108,7 @@ ALTER TABLE `poruwa_packages`
 -- AUTO_INCREMENT for table `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `reception_halls`
@@ -2142,7 +2138,7 @@ ALTER TABLE `salon_packages`
 -- AUTO_INCREMENT for table `suggestions`
 --
 ALTER TABLE `suggestions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transporters`
