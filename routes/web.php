@@ -541,5 +541,6 @@ Route::get('/PoruwaSummary', 'SummaryController@poruwa')  ;
 Route::get('/SalonSummary', 'SummaryController@salon')  ;
 Route::get('/TransportSummary', 'SummaryController@transport')  ;
 Route::get('/CommentsSummary', 'SummaryController@comments')  ;
+Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
 
  

@@ -325,6 +325,19 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('RatingReport',compact('data','time'))->setPaper('a4', 'landscape');
                 return $pdf->download('RatingReport.pdf');
     }
+
+    public function  complaints()
+    {
+        
+    
+        $data = DB::table('complaints')
+            ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('ComplaintReport',compact('data','time'))->setPaper('a4', 'landscape');
+                return $pdf->download('ComplaintReport.pdf');
+    }
     
 
 }
