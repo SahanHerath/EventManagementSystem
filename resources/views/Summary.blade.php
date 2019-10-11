@@ -358,7 +358,7 @@
                             <td>Suggestions</td>
                             <td>{{$data14}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/SuggestionSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
                         
