@@ -285,4 +285,14 @@ class ComplaintController extends Controller
 
         return view('complaint.Event',compact('data'));
     }
+    public function Poruwacomplaints()
+    {
+        $data=DB::table('complaints')
+            ->join('users','complaints.user_id','=','users.id')
+            ->where('category','=','Poruwa_Ceramony')
+            ->select('user_email','complaints.id as complaintid','complaint_about','user_id','complaint','state')
+            ->get();
+
+        return view('complaint.Poruwa',compact('data'));
+    }
 }
