@@ -173,4 +173,19 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('DancerReport',compact('data','time'))->setPaper('a2', 'landscape');
                 return $pdf->download('DancerReport.pdf');
     }
+
+    public function  decoration()
+    {
+        
+    
+        $data = DB::table('users')
+                ->join('decorators','users.id','=','decorators.user_id')
+                ->join('decorator_events','users.id','=','decorator_events.user_id')
+                ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('DecoratorReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('DecoratorReport.pdf');
+    }
 }

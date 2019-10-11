@@ -247,21 +247,14 @@
                             <td></td>
                         </tr>
 
-                        <tr>
-                        <td></td>
-                            <td>Dance & Choreography</td>
-                            <td>{{$data5}}</td>
-                            
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
-                            <td></td>
-                        </tr>
+           
 
                         <tr>
                         <td></td>
                             <td>Decorators</td>
                             <td>{{$data6}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/DecorationSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
@@ -274,14 +267,7 @@
                             <td></td>
                         </tr>
 
-                        <tr>
-                        <td></td>
-                            <td>Artists & Presenters</td>
-                            <td>{{$data}}</td>
-                            
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
-                            <td></td>
-                        </tr>
+                       
 
                         <tr>
                         <td></td>
