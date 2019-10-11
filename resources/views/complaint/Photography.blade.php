@@ -85,6 +85,12 @@
               <p>Suggestions</p>
             </a>
           </li>
+          <li>
+            <a href="/Summary">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Summary</p>
+            </a>
+          </li>
           
         </ul>
       </div>

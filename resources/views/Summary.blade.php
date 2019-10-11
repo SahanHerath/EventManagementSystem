@@ -55,7 +55,7 @@
             </a>
           </li>
           <li>
-          <li class="active ">
+          <li>
             <a href="/comments">
               <i class="nc-icon nc-bulb-63"></i>
               <p>User Review</p>
@@ -83,6 +83,12 @@
             <a href="/suggestions">
               <i class="nc-icon nc-time-alarm"></i>
               <p>Suggestions</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="/Summary">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Summary</p>
             </a>
           </li>
           
