@@ -328,7 +328,7 @@
                             <td>Transporters</td>
                             <td>{{$data15}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/TransportSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
                         

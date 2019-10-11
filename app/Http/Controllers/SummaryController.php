@@ -297,6 +297,21 @@ class SummaryController extends Controller
                 $pdf=PDF::loadview('SalonReport',compact('data','time'))->setPaper('a2', 'landscape');
                 return $pdf->download('SalonReport.pdf');
     }
+
+    public function  transport()
+    {
+        
+    
+        $data = DB::table('users')
+                ->join('transporters','users.id','=','transporters.user_id')
+                ->join('transport_categories','users.id','=','transport_categories.user_id')
+                ->get();
+
+                $mytime = Carbon\Carbon::now();
+                $time=$mytime->toDateTimeString();
+                $pdf=PDF::loadview('TransportReport',compact('data','time'))->setPaper('a2', 'landscape');
+                return $pdf->download('TransportReport.pdf');
+    }
     
 
 }
