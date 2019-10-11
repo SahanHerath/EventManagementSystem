@@ -292,7 +292,7 @@
                             <td>Event Planners</td>
                             <td>{{$data7}}</td>
                             
-                            <td><button type="button" class="btn btn-success">PDF Generate</button></td>
+                            <td><a href="/PlannerSummary"><button type="button" class="btn btn-success">PDF Generate</button></a></td>
                             <td></td>
                         </tr>
 
