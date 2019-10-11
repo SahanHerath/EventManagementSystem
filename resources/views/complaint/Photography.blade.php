@@ -179,7 +179,6 @@
 <a href="#"><button type="button" class="btn btn-primary">All</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/PhotographyComplaint"><button type="button" class="btn btn-warning">Photography</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="#"><button type="button" class="btn btn-primary">DJ/Band</button></a>
