@@ -532,5 +532,6 @@ Route::get('/PhotographySummary', 'SummaryController@photography')  ;
 Route::get('/CakeSummary', 'SummaryController@cake')  ;
 Route::get('/DanceSummary', 'SummaryController@dance')  ;
 Route::get('/DecorationSummary', 'SummaryController@decoration')  ;
+Route::get('/ActorSummary', 'SummaryController@actor')  ;
 
  
