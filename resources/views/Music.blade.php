@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/navbar.css">
   </head>
   <body>
   
@@ -202,7 +202,11 @@
         
       </div>
     </div>
-
+    <div class="topnav">
+    <button type="submit" >Search</button>
+      <input type="text" placeholder="Search..">
+      
+    </div>
     
     <div class="site-section border-top">
       <div class="container">
