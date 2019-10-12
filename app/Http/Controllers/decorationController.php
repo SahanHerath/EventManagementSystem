@@ -11,6 +11,7 @@ use Auth;
 use Image;
 use DB;
 use PDF;
+use App\Award;
 
 class decorationController extends Controller
 {
@@ -190,7 +191,11 @@ class decorationController extends Controller
             
             $decorate_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**

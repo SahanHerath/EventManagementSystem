@@ -9,6 +9,7 @@ use App\Poruwa_package;
 use DB;
 use Auth;
 use Image;
+use App\Award;
 
 class PoruwaController extends Controller
 {
@@ -171,7 +172,11 @@ class PoruwaController extends Controller
          }
             $Poruwa->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
 
     }
 

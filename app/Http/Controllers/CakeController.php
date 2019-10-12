@@ -9,6 +9,7 @@ use App\Cake_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 
 class CakeController extends Controller
@@ -165,7 +166,11 @@ class CakeController extends Controller
          }
                 $cake->save();
 
-                return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**

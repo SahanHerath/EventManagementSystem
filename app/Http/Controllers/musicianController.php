@@ -11,6 +11,7 @@ use App\Music_package;
 use App\Music_video;
 use Image;
 use DB;
+use App\Award;
 
 class musicianController extends Controller
 {
@@ -185,7 +186,11 @@ class musicianController extends Controller
             
             $music_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**

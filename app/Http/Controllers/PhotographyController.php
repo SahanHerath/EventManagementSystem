@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
 use DB;
+use App\Award;
 
 
 
@@ -196,7 +197,11 @@ class PhotographyController extends Controller
             $photography_event->Trips=$request->Trips;
             $photography_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
 
 
     }

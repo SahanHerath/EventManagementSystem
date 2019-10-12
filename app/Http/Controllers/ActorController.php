@@ -10,6 +10,7 @@ use App\Actor_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 class ActorController extends Controller
 {
@@ -175,7 +176,11 @@ class ActorController extends Controller
             
             $actor_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
 
     }
 

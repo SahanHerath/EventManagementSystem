@@ -10,6 +10,7 @@ use App\Transport_Category;
 use App\Transport_package;
 use Auth;
 use Image;
+use App\Award;
 
 class TransportController extends Controller
 {
@@ -185,7 +186,11 @@ class TransportController extends Controller
             
             $trans_cat->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
         
 
     }

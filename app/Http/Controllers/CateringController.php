@@ -10,6 +10,7 @@ use App\Catering_package;
 use DB;
 use Image;
 use Auth;
+use App\Award;
 
 class CateringController extends Controller
 {
@@ -195,10 +196,12 @@ return view('catering', compact('level'));
             
             $catering_event->save();
 
-            
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
            
 
-            return view('home');
+            return redirect('/home');
     }
 
     /**

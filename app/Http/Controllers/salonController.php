@@ -10,6 +10,7 @@ use App\Salon_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 class salonController extends Controller
 {
@@ -190,7 +191,11 @@ class salonController extends Controller
             
             $salon_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**

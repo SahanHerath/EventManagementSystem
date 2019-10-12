@@ -10,6 +10,7 @@ use App\Costume_package;
 use DB;
 use Auth;
 use Image;
+use App\Award;
 
 class CostumeDesignerController extends Controller
 {
@@ -196,7 +197,11 @@ class CostumeDesignerController extends Controller
             
             $costume_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**

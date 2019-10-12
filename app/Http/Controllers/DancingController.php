@@ -11,6 +11,7 @@ use App\Dance_video;
 use DB;
 use Auth;
 use Image;
+use App\Award;
 
 class DancingController extends Controller
 {
@@ -195,7 +196,11 @@ class DancingController extends Controller
             
             $dance_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**

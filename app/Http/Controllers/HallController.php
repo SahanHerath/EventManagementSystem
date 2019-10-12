@@ -13,6 +13,7 @@ use App\Reception_hall;
 use App\Hall_package;
 use App\Hall_table_arrangement;
 use DB;
+use App\Award;
 
 class HallController extends Controller
 {
@@ -120,6 +121,10 @@ class HallController extends Controller
          }
 
          $hotel->save();
+
+         $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
 
          $id=$hotel->id;
 
@@ -294,7 +299,7 @@ class HallController extends Controller
             
             $hall_arrange->save();
 
-            return view('home');
+            return redirect('/home');
     }
 
     public function viewHotel($id)

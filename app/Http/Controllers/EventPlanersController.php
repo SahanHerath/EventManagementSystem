@@ -10,6 +10,7 @@ use App\Planner_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 
 class EventPlanersController extends Controller
@@ -174,7 +175,11 @@ class EventPlanersController extends Controller
             
             $event_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**
