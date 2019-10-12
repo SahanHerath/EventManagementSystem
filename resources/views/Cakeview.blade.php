@@ -265,7 +265,7 @@
 				</div>
 			
         </section>
-        @endforeach
+        
 		<section class="feature_area p_120" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
 			<div class="main_title">
 				<h2><a class="text-white">Available Packages</a></h2>
@@ -690,7 +690,7 @@
 				@endforeach
 			</div> <!-- /container -->
         </section>
-
+		@endforeach
         <!--================End Testimonials Area =================-->
         
         <footer class="footer_area p_30">

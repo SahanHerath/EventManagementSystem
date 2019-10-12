@@ -889,4 +889,28 @@ return view('catering', compact('level'));
 
     }
 
+    public function Search(request $request)
+    {
+        $catering=Catering::all();
+        $search=$request->get('search');
+        
+        foreach($catering as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('caterings','caterings.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Service_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Service_Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('catering', compact('level'));
+        }
+    }
+
 }

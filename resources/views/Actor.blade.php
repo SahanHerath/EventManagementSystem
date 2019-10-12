@@ -206,9 +206,11 @@
     </div>
 
     <div class="topnav">
+    <form method="POST" action="/ActorSearch" enctype="multipart/form-data">
+             {{ csrf_field() }}
     <button type="submit" >Search</button>
-      <input type="text" placeholder="Search..">
-      
+      <input type="text" id="search" name="search" placeholder="Search..">
+    </form> 
     </div>
 
     <div class="site-section border-top">

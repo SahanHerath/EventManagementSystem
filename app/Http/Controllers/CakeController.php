@@ -784,5 +784,29 @@ class CakeController extends Controller
 
     }
 
+    public function Search(request $request)
+    {
+        $cake=Cake_designer::all();
+        $search=$request->get('search');
+        
+        foreach($cake as $data)
+        {
+        
+           
+            $cake=DB::table('users')->join('cake_designers','cake_designers.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Organization_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Organization_Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('Cake', compact('cake'));
+        }
+    }
+
 
 }

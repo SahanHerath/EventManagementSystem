@@ -545,4 +545,10 @@ Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
 Route::get('/SuggestionSummary', 'SummaryController@suggestions')  ;
 Route::get('/FullReport', 'SummaryController@fullReport')  ;
 
+Route::post('/ActorSearch', 'ActorController@Search')  ;
+Route::post('/CakeSearch', 'CakeController@Search')  ;
+Route::post('/CateringSearch', 'CateringController@Search')  ;
+
+
+
  
