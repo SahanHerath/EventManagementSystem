@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class AwardController extends Controller
 {
@@ -80,5 +81,14 @@ class AwardController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function all()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->get();
+
+        return view('awards.all',compact('data'));
     }
 }

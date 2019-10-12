@@ -559,6 +559,8 @@ Route::get('/SalonSearch', 'salonController@Search')  ;
 Route::get('/TransportSearch', 'TransportController@Search')  ;
 Route::get('/HotelSearch', 'HallController@Search')  ;
 
+Route::get('/Awards', 'AwardController@all')  ;
+
 
 
 
