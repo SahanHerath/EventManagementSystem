@@ -238,44 +238,39 @@
                    
                         <tr>
                         <td></td>
-                            <td>{{ $users->id }}</td>
+                            <td>{{ $users->awardid }}</td>
                             <td>{{$users->name}}</td>
                             
                             <td>{{ $users->email }}</td>
                             @if($users->Platinum==1)
-                            <td><button type="button" style="background-color: #e5e4e2;" class="btn btn-default">Awarded</button></td>
+                            <td><a href="{{URL('/RemoveAward'.$users->awardid)}}"><button type="button" style="background-color: #e5e4e2;" class="btn btn-default">Awarded</button></a></td>
                             @endif
                             @if($users->Platinum==0)
-                            <td><button type="button" class="btn btn-primary">Medal</button></td>
+                            <td><a href="{{URL('/PlatinumAward'.$users->awardid)}}"><button type="button" class="btn btn-primary">Medal</button></a></td>
                             @endif
 
                             @if($users->Gold==1)
-                            <td><button type="button" style="background-color: #AF9500;" class="btn btn-default">Awarded</button></td>
+                            <td><a href="{{URL('/RemoveAward'.$users->awardid)}}"><button type="button" style="background-color: #AF9500;" class="btn btn-default">Awarded</button></a></td>
                             @endif
                             @if($users->Gold==0)
-                            <td><button type="button" class="btn btn-primary">Medal</button></td>
+                            <td><a href="{{URL('/GoldAward'.$users->awardid)}}"><button type="button" class="btn btn-primary">Medal</button></a></td>
                             @endif
 
                             @if($users->Silver==1)
-                            <td><button type="button" style="background-color: #D7D7D7;" class="btn btn-default">Awarded</button></td>
+                            <td><a href="{{URL('/RemoveAward'.$users->awardid)}}"><button type="button" style="background-color: #D7D7D7;" class="btn btn-default">Awarded</button></a></td>
                             @endif
                             @if($users->Silver==0)
-                            <td><button type="button" class="btn btn-primary">Medal</button></td>
+                            <td><a href="{{URL('/SilverAward'.$users->awardid)}}"><button type="button" class="btn btn-primary">Medal</button></a></td>
                             @endif
                             
                             @if($users->Bronze==1)
-                            <td><button type="button" style="background-color: #6A3805;" class="btn btn-default">Awarded</button></td>
+                            <td><a href="{{URL('/RemoveAward'.$users->awardid)}}"><button type="button" style="background-color: #6A3805;" class="btn btn-default">Awarded</button></a></td>
                             @endif
                             @if($users->Bronze==0)
-                            <td><button type="button" class="btn btn-primary">Medal</button></td>
+                            <td><a href="{{URL('/BronzeAward'.$users->awardid)}}"><button type="button" class="btn btn-primary">Medal</button></a>
                             @endif
                             
-                            
-                            
-                            
-                            
-                            
-                            <td><a href="{{URL('/DeleteComment'.$users->id)}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                            <td><a href="{{URL('/RemoveAward'.$users->awardid)}}"><button type="button" class="btn btn-danger">Remove Award</button></a></td>
                         </tr>
                         
                     @endforeach

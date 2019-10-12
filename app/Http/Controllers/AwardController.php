@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Award;
 
 class AwardController extends Controller
 {
@@ -87,8 +88,88 @@ class AwardController extends Controller
         //
         $data=DB::table('users')
              ->join('awards','users.id','=','awards.user_id')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
              ->get();
 
         return view('awards.all',compact('data'));
+    }
+
+    public function platinum($id)
+    {
+        $data=Award::where('id',$id)
+            
+        ->update([
+                'Platinum'=>1,
+                'Gold'=>0,
+                'Silver'=>0,
+                'Bronze'=>0,
+                
+
+            ]);
+
+            return redirect()->back();
+    }
+    public function gold($id)
+    {
+        $data=Award::where('id',$id)
+            
+        ->update([
+                'Platinum'=>0,
+                'Gold'=>1,
+                'Silver'=>0,
+                'Bronze'=>0,
+                
+
+            ]);
+
+            return redirect()->back();
+    }
+
+    public function silver($id)
+    {
+        $data=Award::where('id',$id)
+            
+        ->update([
+                'Platinum'=>0,
+                'Gold'=>0,
+                'Silver'=>1,
+                'Bronze'=>0,
+                
+
+            ]);
+
+            return redirect()->back();
+    }
+
+    public function bronze($id)
+    {
+        $data=Award::where('id',$id)
+            
+        ->update([
+                'Platinum'=>0,
+                'Gold'=>0,
+                'Silver'=>0,
+                'Bronze'=>1,
+                
+
+            ]);
+
+            return redirect()->back();
+    }
+
+    public function remove($id)
+    {
+        $data=Award::where('id',$id)
+            
+        ->update([
+                'Platinum'=>0,
+                'Gold'=>0,
+                'Silver'=>0,
+                'Bronze'=>0,
+                
+
+            ]);
+
+            return redirect()->back();
     }
 }

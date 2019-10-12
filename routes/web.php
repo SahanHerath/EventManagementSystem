@@ -560,6 +560,11 @@ Route::get('/TransportSearch', 'TransportController@Search')  ;
 Route::get('/HotelSearch', 'HallController@Search')  ;
 
 Route::get('/Awards', 'AwardController@all')  ;
+Route::get('/PlatinumAward{id}', 'AwardController@platinum')  ;
+Route::get('/GoldAward{id}', 'AwardController@gold')  ;
+Route::get('/SilverAward{id}', 'AwardController@silver')  ;
+Route::get('/BronzeAward{id}', 'AwardController@bronze')  ;
+Route::get('/RemoveAward{id}', 'AwardController@remove')  ;
 
 
 
