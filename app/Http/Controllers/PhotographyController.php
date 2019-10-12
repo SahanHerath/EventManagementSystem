@@ -944,4 +944,28 @@ class PhotographyController extends Controller
         
     }
 
+    public function Search(request $request)
+    {
+        $photo=Photography::all();
+        $search=$request->get('search');
+        
+        foreach($photo as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('photographies','photographies.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Studio_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Studio_Name','ContactNo','Address','email','main_pic')
+            ->get();
+
+            return view('Photography', compact('level'));
+        }
+    }
+
 }

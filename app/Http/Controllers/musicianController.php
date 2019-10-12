@@ -936,5 +936,29 @@ class musicianController extends Controller
         
     }
 
+    public function Search(request $request)
+    {
+        $music=Musician::all();
+        $search=$request->get('search');
+        
+        foreach($music as $data)
+        {
+        
+           
+            $musics=DB::table('users')->join('musicians','musicians.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Dj_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Dj_Name','ContactNo','Address','email','Main_Logo')
+            ->get();
+
+            return view('Music', compact('musics'));
+        }
+    }
+
 
 }

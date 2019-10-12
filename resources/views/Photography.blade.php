@@ -208,9 +208,11 @@
     </div>
 
     <div class="topnav">
+    <form method="get" action="/PhotographySearch" enctype="multipart/form-data">
+             
     <button type="submit" >Search</button>
-      <input type="text" placeholder="Search..">
-      
+      <input type="text" id="search" name="search" placeholder="Search..">
+    </form> 
     </div>
     
     <div class="site-section border-top">

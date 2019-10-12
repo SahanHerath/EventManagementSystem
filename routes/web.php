@@ -551,6 +551,9 @@ Route::get('/CateringSearch', 'CateringController@Search')  ;
 Route::get('/CostumeDesignerSearch', 'CostumeDesignerController@Search')  ;
 Route::get('/DancerSearch', 'DancingController@Search')  ;
 Route::get('/DecoratorSearch', 'decorationController@Search')  ;
+Route::get('/EventPlannerSearch', 'EventPlanersController@Search')  ;
+Route::get('/MusicSearch', 'musicianController@Search')  ;
+Route::get('/PhotographySearch', 'PhotographyController@Search')  ;
 
 
 
