@@ -545,9 +545,13 @@ Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
 Route::get('/SuggestionSummary', 'SummaryController@suggestions')  ;
 Route::get('/FullReport', 'SummaryController@fullReport')  ;
 
-Route::post('/ActorSearch', 'ActorController@Search')  ;
-Route::post('/CakeSearch', 'CakeController@Search')  ;
-Route::post('/CateringSearch', 'CateringController@Search')  ;
+Route::get('/ActorSearch', 'ActorController@Search')  ;
+Route::get('/CakeSearch', 'CakeController@Search')  ;
+Route::get('/CateringSearch', 'CateringController@Search')  ;
+Route::get('/CostumeDesignerSearch', 'CostumeDesignerController@Search')  ;
+Route::get('/DancerSearch', 'DancingController@Search')  ;
+Route::get('/DecoratorSearch', 'decorationController@Search')  ;
+
 
 
 

@@ -875,6 +875,30 @@ class CostumeDesignerController extends Controller
          
 
     }
+
+    public function Search(request $request)
+    {
+        $costume=Costume_designer::all();
+        $search=$request->get('search');
+        
+        foreach($costume as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('costume_designers','costume_designers.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('costume_designers.Name','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','costume_designers.Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('CostumeDesigner', compact('level'));
+        }
+    }
     
 }
 

@@ -206,8 +206,8 @@
     </div>
 
     <div class="topnav">
-    <form method="POST" action="/ActorSearch" enctype="multipart/form-data">
-             {{ csrf_field() }}
+    <form method="get" action="/ActorSearch" enctype="multipart/form-data">
+            
     <button type="submit" >Search</button>
       <input type="text" id="search" name="search" placeholder="Search..">
     </form> 

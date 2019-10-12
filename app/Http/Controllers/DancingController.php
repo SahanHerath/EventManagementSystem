@@ -905,5 +905,29 @@ class DancingController extends Controller
          
     }
 
+    public function Search(request $request)
+    {
+        $dance=Dancer::all();
+        $search=$request->get('search');
+        
+        foreach($dance as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('dancers','dancers.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Team_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','Team_Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('Dance', compact('level'));
+        }
+    }
+
 
 }

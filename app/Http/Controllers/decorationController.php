@@ -840,5 +840,29 @@ class decorationController extends Controller
             }
             
     }
+
+    public function Search(request $request)
+    {
+        $decorate=Decorator::all();
+        $search=$request->get('search');
+        
+        foreach($decorate as $data)
+        {
+        
+           
+            $decos=DB::table('users')->join('decorators','decorators.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Team_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','Team_Name','Contact_No','Address','email','Main_Pic')
+            ->get();
+
+            return view('Decorator', compact('decos'));
+        }
+    }
     
 }
