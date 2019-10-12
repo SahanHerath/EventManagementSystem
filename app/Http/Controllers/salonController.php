@@ -835,6 +835,30 @@ class salonController extends Controller
 
     }
 
+    public function Search(request $request)
+    {
+        $salons=Salon::all();
+        $search=$request->get('search');
+        
+        foreach($salons as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('salons','salons.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Salon_Name','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','users.name','Salon_Name','Contact_No','Address','email','Profile_Pic')
+            ->get();
+
+            return view('Salon', compact('level'));
+        }
+    }
+
 
 
 }

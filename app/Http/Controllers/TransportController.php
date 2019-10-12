@@ -810,5 +810,29 @@ class TransportController extends Controller
 
     }
 
+    public function Search(request $request)
+    {
+        $transport=Transporter::all();
+        $search=$request->get('search');
+        
+        foreach($transport as $data)
+        {
+        
+           
+            $trans=DB::table('users')->join('transporters','transporters.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Transport_Service','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','users.name','Transport_Service','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('Transport', compact('trans'));
+        }
+    }
+
     
 }

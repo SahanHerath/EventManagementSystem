@@ -1372,5 +1372,29 @@ class HallController extends Controller
         
 
     }
+
+    public function Search(request $request)
+    {
+        $hotels=Hotel::all();
+        $search=$request->get('search');
+        
+        foreach($hotels as $data)
+        {
+        
+           
+            $hall=DB::table('users')->join('hotels','hotels.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Hotel_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('hotels.id','email','Hotel_Name','Address','Contact_No','Main_logo','users.id as userid')
+            ->get();
+
+            return view('Hotel', compact('hall'));
+        }
+    }
    
 }
