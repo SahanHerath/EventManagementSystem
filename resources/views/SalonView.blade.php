@@ -126,7 +126,20 @@
 								</div>
                             </div>
                             <div class="column">
+                            @foreach($award as $award1)
+							@if($award1->Platinum==1)
                             <img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@if($award1->Gold==1)
+                            <img src="uploads/Gold.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@if($award1->Silver==1)
+                            <img src="uploads/Silver.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@if($award1->Bronze==1)
+                            <img src="uploads/Bronze.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@endforeach
                             </div>
                             </div>    
 							</div>

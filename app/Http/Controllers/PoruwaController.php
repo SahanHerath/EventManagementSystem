@@ -286,6 +286,11 @@ class PoruwaController extends Controller
                    ->where('ratings.user_id','=',$id)
                    ->where('blocked','=',"0")
                    ->count();
+
+        $award=DB::table('users')
+                   ->join('awards','awards.user_id','=','users.id')
+                   ->where('users.id','=',$id)
+                   ->get();
     
             if($all!=0)
             {
@@ -304,7 +309,7 @@ class PoruwaController extends Controller
                 $precentage5=0;
             }
 
-                return view('PoruwaCeramonyView',compact('data','deto','rate','all','one','two','three','four','five','average','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('PoruwaCeramonyView',compact('award','data','deto','rate','all','one','two','three','four','five','average','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function profile()

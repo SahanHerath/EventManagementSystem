@@ -259,6 +259,11 @@ class decorationController extends Controller
                 ->select('decoration_packages.id','Package_Name', 'Decoration_Type', 'Services','Price','Pdf')
                 ->get();
 
+        $award=DB::table('users')
+                ->join('awards','awards.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->get();
+
         $rate=DB::table('users')
                 ->join('ratings','ratings.user_id','=','users.id')
                 ->where('users.id','=',$id)
@@ -323,7 +328,7 @@ class decorationController extends Controller
                 $precentage5=0;
             }
 
-                return view('DecoratorView',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('DecoratorView',compact('award','data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()
