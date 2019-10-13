@@ -264,6 +264,11 @@ return view('catering', compact('level'));
                 ->select('catering_packages.id','Package_Name', 'Appetizers', 'Welcome_drinks','Soups','Foods','Desserts','Price','Pdf')
                 ->get();
 
+        $award=DB::table('users')
+                ->join('awards','awards.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->get();
+
         $rate=DB::table('users')
                 ->join('ratings','ratings.user_id','=','users.id')
                 ->where('users.id','=',$id)
@@ -328,7 +333,7 @@ return view('catering', compact('level'));
                 $precentage5=0;
             }
 
-        return view('cateringview',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
+        return view('cateringview',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5','award'));
     }
 
     public function wedding()
