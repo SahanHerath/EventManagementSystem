@@ -96,6 +96,12 @@
               <p>Summary</p>
             </a>
           </li>
+          <li>
+            <a href="/Awards">
+              <i class="fa fa-trophy"></i>
+              <p>Awards</p>
+            </a>
+          </li>
           
         </ul>
       </div>

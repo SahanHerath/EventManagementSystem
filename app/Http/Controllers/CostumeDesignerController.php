@@ -10,6 +10,7 @@ use App\Costume_package;
 use DB;
 use Auth;
 use Image;
+use App\Award;
 
 class CostumeDesignerController extends Controller
 {
@@ -196,7 +197,11 @@ class CostumeDesignerController extends Controller
             
             $costume_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**
@@ -869,6 +874,30 @@ class CostumeDesignerController extends Controller
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
          
 
+    }
+
+    public function Search(request $request)
+    {
+        $costume=Costume_designer::all();
+        $search=$request->get('search');
+        
+        foreach($costume as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('costume_designers','costume_designers.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('costume_designers.Name','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','costume_designers.Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('CostumeDesigner', compact('level'));
+        }
     }
     
 }

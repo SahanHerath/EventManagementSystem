@@ -10,6 +10,7 @@ use App\Actor_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 class ActorController extends Controller
 {
@@ -175,7 +176,11 @@ class ActorController extends Controller
             
             $actor_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
 
     }
 
@@ -889,6 +894,30 @@ class ActorController extends Controller
             
         
 
+    }
+
+    public function Search(request $request)
+    {
+        $actors=Actor::all();
+        $search=$request->get('search');
+        
+        foreach($actors as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('actors','actors.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Actor_name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','email','Actor_name','Address','Contact_No','Main_pic')
+            ->get();
+
+            return view('Actor', compact('level'));
+        }
     }
 
 

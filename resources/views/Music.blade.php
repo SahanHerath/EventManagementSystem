@@ -185,6 +185,8 @@
       </div>
     </div>
 
+    
+
 
     
     <div class="py-5 upcoming-events" style="background-image: url('images/hero_1.jpg'); background-attachment: fixed;">
@@ -203,9 +205,11 @@
       </div>
     </div>
     <div class="topnav">
+    <form method="get" action="/MusicSearch" enctype="multipart/form-data">
+             
     <button type="submit" >Search</button>
-      <input type="text" placeholder="Search..">
-      
+      <input type="text" id="search" name="search" placeholder="Search..">
+    </form> 
     </div>
     
     <div class="site-section border-top">
@@ -215,8 +219,7 @@
             <h2 class="mb-5">Our DJs/Music</h2>
           </div>
         </div>
-        <div class="row no-gutters">
-          
+         
           
         @foreach($musics as $levee)
         

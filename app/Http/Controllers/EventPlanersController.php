@@ -10,6 +10,7 @@ use App\Planner_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 
 class EventPlanersController extends Controller
@@ -174,7 +175,11 @@ class EventPlanersController extends Controller
             
             $event_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**
@@ -838,6 +843,30 @@ class EventPlanersController extends Controller
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
           
 
+    }
+
+    public function Search(request $request)
+    {
+        $event=Event_planner::all();
+        $search=$request->get('search');
+        
+        foreach($event as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('event_planners','event_planners.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Organization_name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Organization_name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('EventPlanner', compact('level'));
+        }
     }
 
 

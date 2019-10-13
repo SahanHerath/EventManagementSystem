@@ -11,6 +11,7 @@ use Auth;
 use Image;
 use DB;
 use PDF;
+use App\Award;
 
 class decorationController extends Controller
 {
@@ -190,7 +191,11 @@ class decorationController extends Controller
             
             $decorate_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**
@@ -834,6 +839,30 @@ class decorationController extends Controller
                 }
             }
             
+    }
+
+    public function Search(request $request)
+    {
+        $decorate=Decorator::all();
+        $search=$request->get('search');
+        
+        foreach($decorate as $data)
+        {
+        
+           
+            $decos=DB::table('users')->join('decorators','decorators.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Team_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','Team_Name','Contact_No','Address','email','Main_Pic')
+            ->get();
+
+            return view('Decorator', compact('decos'));
+        }
     }
     
 }

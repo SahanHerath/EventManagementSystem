@@ -545,4 +545,28 @@ Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
 Route::get('/SuggestionSummary', 'SummaryController@suggestions')  ;
 Route::get('/FullReport', 'SummaryController@fullReport')  ;
 
+Route::get('/ActorSearch', 'ActorController@Search')  ;
+Route::get('/CakeSearch', 'CakeController@Search')  ;
+Route::get('/CateringSearch', 'CateringController@Search')  ;
+Route::get('/CostumeDesignerSearch', 'CostumeDesignerController@Search')  ;
+Route::get('/DancerSearch', 'DancingController@Search')  ;
+Route::get('/DecoratorSearch', 'decorationController@Search')  ;
+Route::get('/EventPlannerSearch', 'EventPlanersController@Search')  ;
+Route::get('/MusicSearch', 'musicianController@Search')  ;
+Route::get('/PhotographySearch', 'PhotographyController@Search')  ;
+Route::get('/PoruwaSearch', 'PoruwaController@Search')  ;
+Route::get('/SalonSearch', 'salonController@Search')  ;
+Route::get('/TransportSearch', 'TransportController@Search')  ;
+Route::get('/HotelSearch', 'HallController@Search')  ;
+
+Route::get('/Awards', 'AwardController@all')  ;
+Route::get('/PlatinumAward{id}', 'AwardController@platinum')  ;
+Route::get('/GoldAward{id}', 'AwardController@gold')  ;
+Route::get('/SilverAward{id}', 'AwardController@silver')  ;
+Route::get('/BronzeAward{id}', 'AwardController@bronze')  ;
+Route::get('/RemoveAward{id}', 'AwardController@remove')  ;
+
+
+
+
  

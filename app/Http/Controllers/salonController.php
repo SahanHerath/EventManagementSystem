@@ -10,6 +10,7 @@ use App\Salon_package;
 use Auth;
 use Image;
 use DB;
+use App\Award;
 
 class salonController extends Controller
 {
@@ -190,7 +191,11 @@ class salonController extends Controller
             
             $salon_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**
@@ -828,6 +833,30 @@ class salonController extends Controller
             
         
 
+    }
+
+    public function Search(request $request)
+    {
+        $salons=Salon::all();
+        $search=$request->get('search');
+        
+        foreach($salons as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('salons','salons.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Salon_Name','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','users.name','Salon_Name','Contact_No','Address','email','Profile_Pic')
+            ->get();
+
+            return view('Salon', compact('level'));
+        }
     }
 
 

@@ -10,6 +10,7 @@ use App\Catering_package;
 use DB;
 use Image;
 use Auth;
+use App\Award;
 
 class CateringController extends Controller
 {
@@ -195,10 +196,12 @@ return view('catering', compact('level'));
             
             $catering_event->save();
 
-            
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
            
 
-            return view('home');
+            return redirect('/home');
     }
 
     /**
@@ -884,6 +887,30 @@ return view('catering', compact('level'));
             
         
 
+    }
+
+    public function Search(request $request)
+    {
+        $catering=Catering::all();
+        $search=$request->get('search');
+        
+        foreach($catering as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('caterings','caterings.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Service_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Service_Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('catering', compact('level'));
+        }
     }
 
 }

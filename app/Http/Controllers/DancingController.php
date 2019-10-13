@@ -11,6 +11,7 @@ use App\Dance_video;
 use DB;
 use Auth;
 use Image;
+use App\Award;
 
 class DancingController extends Controller
 {
@@ -195,7 +196,11 @@ class DancingController extends Controller
             
             $dance_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
     }
 
     /**
@@ -898,6 +903,30 @@ class DancingController extends Controller
 
                 return redirect('/Profile')->with('warning_message','Video Deleted Successfully');
          
+    }
+
+    public function Search(request $request)
+    {
+        $dance=Dancer::all();
+        $search=$request->get('search');
+        
+        foreach($dance as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('dancers','dancers.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Team_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','Team_Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('Dance', compact('level'));
+        }
     }
 
 

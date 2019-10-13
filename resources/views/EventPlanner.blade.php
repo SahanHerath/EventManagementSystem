@@ -211,9 +211,11 @@
 
     
     <div class="topnav">
+    <form method="get" action="/EventPlannerSearch" enctype="multipart/form-data">
+             
     <button type="submit" >Search</button>
-      <input type="text" placeholder="Search..">
-      
+      <input type="text" id="search" name="search" placeholder="Search..">
+    </form> 
     </div>
 
     

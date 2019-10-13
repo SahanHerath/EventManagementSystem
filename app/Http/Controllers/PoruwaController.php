@@ -9,6 +9,7 @@ use App\Poruwa_package;
 use DB;
 use Auth;
 use Image;
+use App\Award;
 
 class PoruwaController extends Controller
 {
@@ -171,7 +172,11 @@ class PoruwaController extends Controller
          }
             $Poruwa->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
 
     }
 
@@ -743,6 +748,30 @@ class PoruwaController extends Controller
             
        
 
+    }
+
+    public function Search(request $request)
+    {
+        $poruwa=Poruwa_ceramony::all();
+        $search=$request->get('search');
+        
+        foreach($poruwa as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('poruwa_ceramonies','poruwa_ceramonies.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('poruwa_ceramonies.Name','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','users.name','poruwa_ceramonies.Name','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('PoruwaCeramony', compact('level'));
+        }
     }
 
 

@@ -10,6 +10,7 @@ use App\Transport_Category;
 use App\Transport_package;
 use Auth;
 use Image;
+use App\Award;
 
 class TransportController extends Controller
 {
@@ -185,7 +186,11 @@ class TransportController extends Controller
             
             $trans_cat->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
         
 
     }
@@ -803,6 +808,30 @@ class TransportController extends Controller
                 return redirect('/Profile')->with('warning_message','Package Removed Successfully');
        
 
+    }
+
+    public function Search(request $request)
+    {
+        $transport=Transporter::all();
+        $search=$request->get('search');
+        
+        foreach($transport as $data)
+        {
+        
+           
+            $trans=DB::table('users')->join('transporters','transporters.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Transport_Service','like','%'.$search.'%')
+                                 ->orWhere('users.name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','users.name','Transport_Service','Contact_No','Address','email','Main_pic')
+            ->get();
+
+            return view('Transport', compact('trans'));
+        }
     }
 
     

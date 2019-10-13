@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
 use DB;
+use App\Award;
 
 
 
@@ -196,7 +197,11 @@ class PhotographyController extends Controller
             $photography_event->Trips=$request->Trips;
             $photography_event->save();
 
-            return view('home');
+            $award=new Award;
+            $award->user_id=Auth::user()->id;
+            $award->save();
+
+            return redirect('/home');
 
 
     }
@@ -937,6 +942,30 @@ class PhotographyController extends Controller
           
 
         
+    }
+
+    public function Search(request $request)
+    {
+        $photo=Photography::all();
+        $search=$request->get('search');
+        
+        foreach($photo as $data)
+        {
+        
+           
+            $level=DB::table('users')->join('photographies','photographies.user_id','=','users.id')
+            
+            ->where(function($query) use ($search){
+                    return $query->where('Studio_Name','like','%'.$search.'%')
+                                 ->orWhere('name','like','%'.$search.'%')
+                                 ->orwhere('city','like','%'.$search.'%');
+                                
+            })
+            ->select('users.id','name','Studio_Name','ContactNo','Address','email','main_pic')
+            ->get();
+
+            return view('Photography', compact('level'));
+        }
     }
 
 }
