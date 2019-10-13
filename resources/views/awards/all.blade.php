@@ -244,7 +244,7 @@
                    
                         <tr>
                         <td></td>
-                            <td>{{ $users->awardid }}</td>
+                            <td>{{ $users->userid }}</td>
                             <td>{{$users->name}}</td>
                             
                             <td>{{ $users->email }}</td>

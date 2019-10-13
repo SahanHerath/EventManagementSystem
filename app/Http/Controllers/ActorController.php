@@ -244,6 +244,11 @@ class ActorController extends Controller
                 ->select('actor_packages.id','Package_Name', 'Hours', 'Services','Price','Pdf')
                 ->get();
 
+        $award=DB::table('users')
+              ->join('awards','awards.user_id','=','users.id')
+              ->where('users.id','=',$id)
+              ->get();
+
         $rate=DB::table('users')
                 ->join('ratings','ratings.user_id','=','users.id')
                 ->where('users.id','=',$id)
@@ -308,7 +313,7 @@ class ActorController extends Controller
                 $precentage5=0;
             }
 
-                return view('ActorView',compact('data','deto','all','rate','average','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('ActorView',compact('data','deto','all','rate','average','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5','award'));
     }
 
     public function birthdayMagician(Request $request)

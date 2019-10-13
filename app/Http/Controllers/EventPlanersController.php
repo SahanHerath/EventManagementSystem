@@ -249,6 +249,11 @@ class EventPlanersController extends Controller
                 ->where('blocked','=',"0")
                 ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
                 ->get();
+
+        $award=DB::table('users')
+                ->join('awards','awards.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->get();
     
         $average=DB::table('ratings')
                    ->where('ratings.user_id','=',$id)
@@ -308,7 +313,7 @@ class EventPlanersController extends Controller
             }
     
 
-                return view('EventPlannerView',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('EventPlannerView',compact('data','deto','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5','award'));
     }
 
     public function wedding()

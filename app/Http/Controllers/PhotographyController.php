@@ -278,6 +278,11 @@ class PhotographyController extends Controller
             ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
             ->get();
 
+        $award=DB::table('users')
+              ->join('awards','awards.user_id','=','users.id')
+              ->where('users.id','=',$id)
+              ->get();
+
        $average=DB::table('ratings')
                ->where('ratings.user_id','=',$id)
                ->where('blocked','=',"0")
@@ -335,7 +340,7 @@ class PhotographyController extends Controller
             $precentage5=0;
         }
 
-        return view('Photographyview',compact('data','dec','saha','average','rate','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
+        return view('Photographyview',compact('data','dec','saha','average','rate','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5','award'));
     }
 
     public function wedding()
