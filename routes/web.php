@@ -566,6 +566,10 @@ Route::get('/SilverAward{id}', 'AwardController@silver')  ;
 Route::get('/BronzeAward{id}', 'AwardController@bronze')  ;
 Route::get('/RemoveAward{id}', 'AwardController@remove')  ;
 
+Route::get('/ViewServiceProvider{id}', 'UsersController@viewService')  ;
+
+
+
 
 
 

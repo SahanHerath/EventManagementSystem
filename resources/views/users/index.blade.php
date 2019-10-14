@@ -234,6 +234,7 @@
                             
                             <th>Category</th>
                             <th>City</th>
+                            <th>View User</th>
                             
                             
 
@@ -252,7 +253,7 @@
                             <td>{{ $users->city }}</td>
                             
                             
-                            
+                            <td><a href="{{URL('/ViewServiceProvider'.$users->id)}}"><button type="button" class="btn btn-info">View</button></a></td>
 
                             <td>
 

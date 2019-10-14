@@ -195,7 +195,7 @@
             </video>
             @endif
             @if($video!=null)
-            <video width="600" height="300"  controls>
+            <video width="600" height="300" poster="/images/DancePoster.jpg" controls>
                   <source src="video/dancing/{{$video->Video}}" type="video/mp4">
 									<source src="mov_bbb.ogg" type="video/ogg">
             </video>

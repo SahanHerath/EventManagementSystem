@@ -288,7 +288,7 @@
 		
 			<div class="container">
 				<div class="feature_inner row">
-				@foreach($deto as $deto1)
+				@foreach($deto as $dec1)
 					
 					<div class="col-lg-6 col-md-8">
 						<div class="feature_item" >

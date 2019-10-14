@@ -306,5 +306,81 @@ class UsersController extends Controller
          return view('users.allporuwarituals',compact('data'));
     }
 
+    public function viewService($id)
+    {
+        $data=DB::table('users')
+             ->where('users.id','=',$id)
+             ->select('category')
+             ->get();
+
+        foreach($data as $data1)
+        {
+            if(($data1->category)=='Hall')
+            {
+                $hotel=DB::table('users')
+                     ->join('hotels','hotels.user_id','=','users.id')
+                     ->where('users.id','=',$id)
+                     ->select('hotels.id')
+                     ->get();
+                
+                foreach($hotel as $hotel1)
+                {
+                    return app('App\Http\Controllers\HallController')->viewHotel($hotel1->id);
+                }
+                
+            }
+            if(($data1->category)=='Photography')
+            {
+                return app('App\Http\Controllers\PhotographyController')->viewProfile($id);
+            }
+            if(($data1->category)=='Music')
+            {
+                return app('App\Http\Controllers\musicianController')->viewProfile($id);
+            }
+            if(($data1->category)=='Dancing')
+            {
+                return app('App\Http\Controllers\DancingController')->viewProfile($id);
+            }
+            if(($data1->category)=='Poruwa_Ceramony')
+            {
+                return app('App\Http\Controllers\PoruwaController')->viewProfile($id);
+            }
+            if(($data1->category)=='Wedding_Transport')
+            {
+                return app('App\Http\Controllers\TransportController')->viewProfile($id);
+            }
+            if(($data1->category)=='Decoration')
+            {
+               return app('App\Http\Controllers\decorationController')->viewProfile($id);
+            }
+            if(($data1->category)=='Cake_Designers')
+            {
+                return app('App\Http\Controllers\CakeController')->viewProfile($id);
+            }
+            if(($data1->category)=='Actors')
+            {
+                return app('App\Http\Controllers\ActorController')->viewProfile($id);
+            }
+            if(($data1->category)=='Bridel_Designers')
+            {
+                return app('App\Http\Controllers\salonController')->viewProfile($id);
+            }
+            if(($data1->category)=='Catering')
+            {
+                return app('App\Http\Controllers\CateringController')->viewProfile($id);
+            }
+            if(($data1->category)=='Cloth_Designers')
+            {
+                return app('App\Http\Controllers\CostumeDesignerController')->viewProfile($id);
+            }
+            if(($data1->category)=='Event_Planners')
+            {
+                return app('App\Http\Controllers\EventPlanersController')->viewProfile($id);
+            }
+            
+           
+        }
+    }
+
 
 }
