@@ -196,7 +196,7 @@
     </div>
     @endif
 <br><br><br><br>
-<button type="button" class="btn btn-warning"><a href="#">All</a></button>
+<a href="/users"><button type="button" class="btn btn-warning">All</a></button>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
@@ -237,6 +237,7 @@
                     <thead>
                         <tr>
                         <th></th>
+                        <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             
@@ -254,6 +255,7 @@
                     @if($users->admin=='0')
                         <tr>
                         <td></td>
+                        <td>{{ $users->id }}</td>
                             <td>{{ $users->name }}</td>
                             <td>{{ $users->email }}</td>
                             

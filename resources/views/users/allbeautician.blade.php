@@ -191,10 +191,10 @@
 <br><br><br><br>
 
 
-<a href="#"><button type="button" class="btn btn-primary">All</button></a>
+<a href="/users"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
-<button type="button" class="btn btn-warning"><a href="/AllBeautician">Beautician</a></button>
+<a href="/AllBeautician"><button type="button" class="btn btn-warning">Beautician</a></button>
 <a href="/AllDJBand"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="/AllCatering"><button type="button" class="btn btn-primary">Catering</button></a>
 <a href="/AllRepresenter"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
@@ -232,6 +232,7 @@
                     <thead>
                         <tr>
                         <th></th>
+                        <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             
@@ -239,8 +240,8 @@
                             <th>City</th>
                             
                             
-
-                            <th></th>
+                            <th>View User</th>
+                            <th>Remove User</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -248,6 +249,7 @@
                     @if($users->admin=='0')
                         <tr>
                         <td></td>
+                        <td>{{ $users->id }}</td>
                             <td>{{ $users->name }}</td>
                             <td>{{ $users->email }}</td>
                             
@@ -255,7 +257,7 @@
                             <td>{{ $users->city }}</td>
                             
                             
-                            
+                            <td><a href="{{URL('/ViewServiceProvider'.$users->id)}}"><button type="button" class="btn btn-info">View</button></a></td>
 
                             <td>
 

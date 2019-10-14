@@ -190,7 +190,7 @@
 <br><br><br><br>
 
 
-<a href="#"><button type="button" class="btn btn-primary">All</button></a>
+<a href="/users"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
@@ -202,7 +202,7 @@
 <a href="/AllDancing"><button type="button" class="btn btn-primary">Dancing</button></a>
 <a href="/AllDancing"><button type="button" class="btn btn-primary">Dancing</button></a>
 <a href="/AllTransport"><button type="button" class="btn btn-primary">Transport</button></a>
-<button type="button" class="btn btn-warning"><a href="/AllEventPlanners">Event Planners</a></button>
+<a href="/AllEventPlanners"><button type="button" class="btn btn-warning">Event Planners</a></button>
 <a href="/AllPoruwaRituals"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
     
@@ -231,15 +231,16 @@
                     <thead>
                         <tr>
                         <th></th>
+                        <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             
                             <th>Category</th>
                             <th>City</th>
                             
-                            
+                            <th>View User</th>
 
-                            <th></th>
+                            <th>Remove User</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -247,6 +248,7 @@
                     @if($users->admin=='0')
                         <tr>
                         <td></td>
+                        <td>{{ $users->id }}</td>
                             <td>{{ $users->name }}</td>
                             <td>{{ $users->email }}</td>
                             
@@ -254,7 +256,7 @@
                             <td>{{ $users->city }}</td>
                             
                             
-                            
+                            <td><a href="{{URL('/ViewServiceProvider'.$users->id)}}"><button type="button" class="btn btn-info">View</button></a></td>
 
                             <td>
 
