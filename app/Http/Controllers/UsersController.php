@@ -39,6 +39,23 @@ use App\Dancer;
 use App\Dancer_event;
 use App\Dance_package;
 use App\Dance_video;
+use App\Cake_designer;
+use App\Cake_package;
+use App\Actor;
+use App\Actor_event;
+use App\Actor_package;
+use App\Costume_designer;
+use App\Costume_designer_event;
+use App\Costume_package;
+use App\Catering;
+use App\Catering_event;
+use App\Catering_package;
+use App\Hotel;
+use App\Hall_event;
+use App\Hall_feature;
+use App\Reception_hall;
+use App\Hall_package;
+use App\Hall_table_arrangement;
 
 class UsersController extends Controller
 {
@@ -166,16 +183,26 @@ class UsersController extends Controller
         {
             if(($data1->category)=='Hall')
             {
-                $hotel=DB::table('users')
-                        ->join('hotels','hotels.user_id','=','users.id')
-                        ->where('users.id','=',$id)
-                        ->select('hotels.id')
-                        ->get();
-                
-                foreach($hotel as $hotel1)
-                {
-                    return app('App\Http\Controllers\HallController')->viewHotel($hotel1->id);
-                }
+                $hotel=DB::table('hotels')
+                    ->join('users','users.id','=','hotels.user_id')
+                    ->join('reception_halls','hotels.id','=','reception_halls.hotel_id')
+                    ->where('users.id','=',$id)
+                    ->select('reception_halls.id')
+                    ->get();
+
+                  foreach($hotel as $hotel1)
+                  {  
+
+                    $hall1 = User::findOrFail($id); 
+                    $hall1->delete();
+                    $hall2 = Hotel::where('user_id',$id)->delete();
+                    $hall3= Reception_hall::where('id',$hotel1->id)->delete();
+                    $hall4= Hall_event::where('hall_id',$hotel1->id)->delete();
+                    $hall5= Hall_feature::where('hall_id',$hotel1->id)->delete();
+                    $hall6= Hall_table_arrangement::where('hall_id',$hotel1->id)->delete();
+                    $hall6= Hall_package::where('hall_id',$hotel1->id)->delete();
+    
+                  }
                 
             }
             if(($data1->category)=='Photography')
@@ -249,11 +276,24 @@ class UsersController extends Controller
             }
             if(($data1->category)=='Cake_Designers')
             {
-                return app('App\Http\Controllers\CakeController')->viewProfile($id);
+                $cake1 = User::findOrFail($id); 
+                $cake1 ->delete();
+                $cake2  = Cake_designer::where('user_id',$id)->delete();
+                $cake3  = Cake_package::where('user_id',$id)->delete();
+                $cake4= Rating::where('user_id',$id)->delete();
+                $cake5= Complaint::where('user_id',$id)->delete();
+                $award=Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Actors')
             {
-                return app('App\Http\Controllers\ActorController')->viewProfile($id);
+                $actor1 = User::findOrFail($id); 
+                $actor1 ->delete();
+                $actor2  = Actor::where('user_id',$id)->delete();
+                $actor3  = Actor_event::where('user_id',$id)->delete();
+                $actor4  = Actor_package::where('user_id',$id)->delete();
+                $actor5= Rating::where('user_id',$id)->delete();
+                $actor6= Complaint::where('user_id',$id)->delete();
+                $actor7=Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Bridel_Designers')
             {
@@ -268,11 +308,25 @@ class UsersController extends Controller
             }
             if(($data1->category)=='Catering')
             {
-                return app('App\Http\Controllers\CateringController')->viewProfile($id);
+                $catering1 = User::findOrFail($id); 
+                $catering1 ->delete();
+                $catering2  = Catering::where('user_id',$id)->delete();
+                $catering3  = Catering_event::where('user_id',$id)->delete();
+                $catering4  = Catering_package::where('user_id',$id)->delete();
+                $catering5= Rating::where('user_id',$id)->delete();
+                $catering6= Complaint::where('user_id',$id)->delete();
+                $catering7= Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Cloth_Designers')
             {
-                return app('App\Http\Controllers\CostumeDesignerController')->viewProfile($id);
+                $costume1 = User::findOrFail($id); 
+                $costume1 ->delete();
+                $costume2  = Costume_designer::where('user_id',$id)->delete();
+                $costume3  = Costume_designer_event::where('user_id',$id)->delete();
+                $costume4  = Costume_package::where('user_id',$id)->delete();
+                $costume5= Rating::where('user_id',$id)->delete();
+                $costume6= Complaint::where('user_id',$id)->delete();
+                $costume7= Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Event_Planners')
             {
