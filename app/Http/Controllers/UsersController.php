@@ -9,6 +9,22 @@ use Exception;
 use Hash;
 use Auth;
 use DB;
+use App\Photography;
+use App\Photography_package;
+use App\Photography_event;
+use App\Photography_video;
+use App\Rating;
+use App\Complaint;
+use App\User;
+use App\Transporter;
+use App\Transport_Category;
+use App\Transport_package;
+use App\Salon;
+use App\Salon_event;
+use App\Salon_package;
+use App\Award;
+use App\Poruwa_ceramony;
+use App\Poruwa_package;
 
 class UsersController extends Controller
 {
@@ -127,20 +143,110 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            $users = users::findOrFail($id);
-            $users->delete();
+        $data=DB::table('users')
+        ->where('users.id','=',$id)
+        ->select('category')
+        ->get();
 
-            return redirect()->route('users.users.index')
-                             ->with('success_message', 'Users was successfully deleted!');
-
-        } catch (Exception $exception) {
-
-            return back()->withInput()
-                         ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
+        foreach($data as $data1)
+        {
+            if(($data1->category)=='Hall')
+            {
+                $hotel=DB::table('users')
+                        ->join('hotels','hotels.user_id','=','users.id')
+                        ->where('users.id','=',$id)
+                        ->select('hotels.id')
+                        ->get();
+                
+                foreach($hotel as $hotel1)
+                {
+                    return app('App\Http\Controllers\HallController')->viewHotel($hotel1->id);
+                }
+                
+            }
+            if(($data1->category)=='Photography')
+            {
+                    $photo1 = User::findOrFail($id); 
+                    $photo1->delete();
+                    $photo = Photography::where('user_id',$id)->delete();
+                    $photo2= Photography_event::where('user_id',$id)->delete();
+                    $photo3= Photography_package::where('user_id',$id)->delete();
+                    $photo4= Photography_video::where('user_id',$id)->delete();
+                    $photo5= Rating::where('user_id',$id)->delete();
+                    $photo5= Complaint::where('user_id',$id)->delete();
+                    $award=Award::where('user_id',$id)->delete();
+                    
+            }
+            if(($data1->category)=='Music')
+            {
+                return app('App\Http\Controllers\musicianController')->viewProfile($id);
+            }
+            if(($data1->category)=='Dancing')
+            {
+                return app('App\Http\Controllers\DancingController')->viewProfile($id);
+            }
+            if(($data1->category)=='Poruwa_Ceramony')
+            {
+                $poruwa1 = User::findOrFail($id); 
+                $poruwa1->delete();
+                $poruwa = Poruwa_ceramony::where('user_id',$id)->delete();
+                $poruwa2 = Poruwa_package::where('user_id',$id)->delete();
+                $poruwa3= Rating::where('user_id',$id)->delete();
+                $poruwa4= Complaint::where('user_id',$id)->delete();
+                $award=Award::where('user_id',$id)->delete();
+            }
+            if(($data1->category)=='Wedding_Transport')
+            {
+                $trans1 = User::findOrFail($id); 
+                $trans1->delete();
+                $trans = Transporter::where('user_id',$id)->delete();
+                $category = Transport_Category::where('user_id',$id)->delete();
+                $category1 = Transport_package::where('user_id',$id)->delete();
+                $category2= Rating::where('user_id',$id)->delete();
+                $category3= Complaint::where('user_id',$id)->delete();
+                $award=Award::where('user_id',$id)->delete();
+            }
+            if(($data1->category)=='Decoration')
+            {
+                return app('App\Http\Controllers\decorationController')->viewProfile($id);
+            }
+            if(($data1->category)=='Cake_Designers')
+            {
+                return app('App\Http\Controllers\CakeController')->viewProfile($id);
+            }
+            if(($data1->category)=='Actors')
+            {
+                return app('App\Http\Controllers\ActorController')->viewProfile($id);
+            }
+            if(($data1->category)=='Bridel_Designers')
+            {
+                $salon1 = User::findOrFail($id); 
+                $salon1->delete();
+                $salon = Salon::where('user_id',$id)->delete();
+                $salon2 = Salon_event::where('user_id',$id)->delete();
+                $salon3 = Salon_package::where('user_id',$id)->delete();
+                $salon4= Rating::where('user_id',$id)->delete();
+                $salon5= Complaint::where('user_id',$id)->delete();
+                $salon6= Award::where('user_id',$id)->delete();
+            }
+            if(($data1->category)=='Catering')
+            {
+                return app('App\Http\Controllers\CateringController')->viewProfile($id);
+            }
+            if(($data1->category)=='Cloth_Designers')
+            {
+                return app('App\Http\Controllers\CostumeDesignerController')->viewProfile($id);
+            }
+            if(($data1->category)=='Event_Planners')
+            {
+                return app('App\Http\Controllers\EventPlanersController')->viewProfile($id);
+            }
+            
         }
-    }
 
+        return redirect()->back()->with('flash_message','User Removed Successfully');
+    }
+  
     
     /**
      * Get the request's data from the request.

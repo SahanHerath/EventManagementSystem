@@ -187,6 +187,14 @@
 
         </div>
     @endif
+    @if(Session::has('flash_message'))  
+    <div class="alert alert-success">
+      <span class="glyphicon glyphicon-ok"></span>
+         {!!session('flash_message')!!}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </div>
+    @endif
 <br><br><br><br>
 <button type="button" class="btn btn-warning"><a href="#">All</a></button>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
@@ -238,7 +246,7 @@
                             
                             
 
-                            <th></th>
+                            <th>Remove User</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -265,7 +273,7 @@
                                         
                                         
 
-                                        <button type="submit" class="btn btn-danger" title="Delete Users" onclick="return confirm(&quot;Delete Users?&quot;)">
+                                        <button type="submit" class="btn btn-danger" title="Delete Users" onclick="return confirm(&quot;Do you want to remove this service provider?&quot;)">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
                                         </button>
                                     </div>
