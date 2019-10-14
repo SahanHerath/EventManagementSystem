@@ -189,9 +189,9 @@
             </div>
             <p class="mb-4">You are able to find best dancers and choregraphers for any of your special occasions.You can select Traditional, Western, Indian dancing teams. </p>
             @if($video==null)
-            <video width="600" height="300" poster="/images/hero_10.jpg" controls>
-                <source src="mov_bbb.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
+            <video width="600" height="300" poster="/images/DancingPoster1.JPG" controls>
+                <source src="Dancing.webm" type="video/mp4">
+                <source src="Dancing.ogg" type="video/ogg">
             </video>
             @endif
             @if($video!=null)
