@@ -188,7 +188,7 @@
         </div>
     @endif
 <br><br><br><br>
-<a href="#"><button type="button" class="btn btn-warning">All</button></a>
+<a href="/complaints"><button type="button" class="btn btn-warning">All</button></a>
 <a href="/HotelComplaint"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/PhotographyComplaint"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonComplaint"><button type="button" class="btn btn-primary">Beautician</button></a>

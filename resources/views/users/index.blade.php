@@ -175,27 +175,29 @@
           </div>
         </div>
       </nav> 
+      <br><br><br><br>
+      @if(Session::has('success_message'))
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-ok"></span>
+                {!! session('success_message') !!}
 
-    @if(Session::has('success_message'))
-        <div class="alert alert-success">
-            <span class="glyphicon glyphicon-ok"></span>
-            {!! session('success_message') !!}
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
-            <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                <span aria-hidden="true">&times;</span>
+            </div>
+            @endif
+            @if(Session::has('flash_message'))  
+            <div class="alert alert-success">
+             <span class="glyphicon glyphicon-ok"></span>
+             {!!session('flash_message')!!}
+             <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
             </button>
+            </div>
+            @endif
+    
 
-        </div>
-    @endif
-    @if(Session::has('flash_message'))  
-    <div class="alert alert-success">
-      <span class="glyphicon glyphicon-ok"></span>
-         {!!session('flash_message')!!}
-        <button type="button" class="close" data-dismiss="alert" aria-label="close">
-        <span aria-hidden="true">&times;</span>
-    </div>
-    @endif
-<br><br><br><br>
 <a href="/users"><button type="button" class="btn btn-warning">All</a></button>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
@@ -213,6 +215,7 @@
 <a href="/AllPoruwaRituals"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
 
+
     <div class="panel panel-default">
 
         <div class="panel-heading clearfix">
@@ -220,7 +223,7 @@
             <div class="pull-left">
                 <h4 class="mt-5 mb-5">Service providers</h4>
             </div>
-
+            
             
 
         </div>
@@ -230,7 +233,10 @@
                 <h4>No Users Available!</h4>
             </div>
         @else
+
+       
         <div class="panel-body panel-body-with-table">
+        
             <div class="table-responsive">
            
                 <table class="table table-striped ">
