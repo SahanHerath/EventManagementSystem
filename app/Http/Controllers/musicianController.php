@@ -27,8 +27,14 @@ class musicianController extends Controller
                 ->join('users','users.id','=','musicians.user_id')
                 ->get();
 
+        $video=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->join('awards','users.id','=','awards.user_id')
+                ->where('awards.platinum','=',1)
+                ->first();
 
-        return view('Music', compact('musics'));
+
+        return view('Music', compact('musics','video'));
     }
 
     /**

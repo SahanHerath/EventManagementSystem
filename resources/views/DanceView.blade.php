@@ -386,7 +386,7 @@
 								<div class="row">
 									<div class="column">
 									<center><video width="500" controls>
-									<source src="video/photography/{{$sahan->Video}}" type="video/mp4">
+									<source src="video/dancing/{{$sahan->Video}}" type="video/mp4">
 									<source src="mov_bbb.ogg" type="video/ogg">
 									</center></video>
 									</div>

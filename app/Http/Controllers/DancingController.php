@@ -26,9 +26,15 @@ class DancingController extends Controller
         $level = DB::table('dancers')
                 ->join('users','users.id','=','dancers.user_id')
                 ->get();
+
+        $video=DB::table('users')
+                ->join('dance_videos','users.id','=','dance_videos.user_id')
+                ->join('awards','users.id','=','awards.user_id')
+                ->where('awards.platinum','=',1)
+                ->first();
       
        
-       return view('Dance', compact('level'));
+       return view('Dance', compact('level','video'));
 
     }
 

@@ -23,9 +23,16 @@ class PhotographyController extends Controller
     {    $level = DB::table('photographies')
                 ->join('users','users.id','=','photographies.user_id')
                 ->get();
+
+
+        $video=DB::table('users')
+                ->join('photography_videos','users.id','=','photography_videos.user_id')
+                ->join('awards','users.id','=','awards.user_id')
+                ->where('awards.platinum','=',1)
+                ->first();
       
        
-       return view('Photography', compact('level'));
+       return view('Photography', compact('level','video'));
       
     }
     /**
