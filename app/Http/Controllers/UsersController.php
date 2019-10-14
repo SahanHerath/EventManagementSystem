@@ -25,6 +25,20 @@ use App\Salon_package;
 use App\Award;
 use App\Poruwa_ceramony;
 use App\Poruwa_package;
+use App\Musician;
+use App\Musician_event;
+use App\Music_package;
+use App\Music_video;
+use App\Event_planner;
+use App\Event_planners_event;
+use App\Planner_package;
+use App\Decorator;
+use App\Decorator_event;
+use App\Decoration_package;
+use App\Dancer;
+use App\Dancer_event;
+use App\Dance_package;
+use App\Dance_video;
 
 class UsersController extends Controller
 {
@@ -179,11 +193,27 @@ class UsersController extends Controller
             }
             if(($data1->category)=='Music')
             {
-                return app('App\Http\Controllers\musicianController')->viewProfile($id);
+                $music1 = User::findOrFail($id); 
+                $music1->delete();
+                $music = Musician::where('user_id',$id)->delete();
+                $event = Musician_event::where('user_id',$id)->delete();
+                $event1 = Music_package::where('user_id',$id)->delete();
+                $event2 = Music_video::where('user_id',$id)->delete();
+                $event3= Rating::where('user_id',$id)->delete();
+                $event4= Complaint::where('user_id',$id)->delete();
+                $award=Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Dancing')
             {
-                return app('App\Http\Controllers\DancingController')->viewProfile($id);
+                $dance1 = User::findOrFail($id); 
+                $dance1 ->delete();
+                $dance2  = Dancer::where('user_id',$id)->delete();
+                $dance3  = Dancer_event::where('user_id',$id)->delete();
+                $dance4  = Dance_package::where('user_id',$id)->delete();
+                $dance5  = Dance_video::where('user_id',$id)->delete();
+                $dance6= Rating::where('user_id',$id)->delete();
+                $dance7= Complaint::where('user_id',$id)->delete();
+                $award=Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Poruwa_Ceramony')
             {
@@ -208,7 +238,14 @@ class UsersController extends Controller
             }
             if(($data1->category)=='Decoration')
             {
-                return app('App\Http\Controllers\decorationController')->viewProfile($id);
+                $deco1 = User::findOrFail($id); 
+                $deco1->delete();
+                $deco2 = Decorator::where('user_id',$id)->delete();
+                $deco3 = Decorator_event::where('user_id',$id)->delete();
+                $deco4 = Decoration_package::where('user_id',$id)->delete();
+                $deco5= Rating::where('user_id',$id)->delete();
+                $deco6= Complaint::where('user_id',$id)->delete();
+                $award=Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Cake_Designers')
             {
@@ -227,7 +264,7 @@ class UsersController extends Controller
                 $salon3 = Salon_package::where('user_id',$id)->delete();
                 $salon4= Rating::where('user_id',$id)->delete();
                 $salon5= Complaint::where('user_id',$id)->delete();
-                $salon6= Award::where('user_id',$id)->delete();
+                $award= Award::where('user_id',$id)->delete();
             }
             if(($data1->category)=='Catering')
             {
@@ -239,7 +276,13 @@ class UsersController extends Controller
             }
             if(($data1->category)=='Event_Planners')
             {
-                return app('App\Http\Controllers\EventPlanersController')->viewProfile($id);
+                $event1 = User::findOrFail($id); 
+                $event1->delete();
+                $plan1 = Event_planner::where('user_id',$id)->delete();
+                $plan2 = Event_planners_event::where('user_id',$id)->delete();
+                $plan3= Rating::where('user_id',$id)->delete();
+                $plan4= Complaint::where('user_id',$id)->delete();
+                $award= Award::where('user_id',$id)->delete();
             }
             
         }
