@@ -184,4 +184,16 @@ class AwardController extends Controller
 
         return view('awards.hotel',compact('data'));
     }
+
+    public function Photography()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Photography')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.photography',compact('data'));
+    }
 }

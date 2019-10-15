@@ -189,8 +189,8 @@
     @endif
 <br><br><br><br>
 <a href="/Awards"><button type="button" class="btn btn-primary">All</button></a>
-<a href="/HotelAwards"><button type="button" class="btn btn-warning">Hotels & Halls</button></a>
-<a href="/PhotographyAwards"><button type="button" class="btn btn-primary">Photography</button></a>
+<a href="/HotelAwards"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
+<a href="/PhotographyAwards"><button type="button" class="btn btn-warning">Photography</button></a>
 <a href="/SalonAwards"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/MusicAwards"><button type="button" class="btn btn-primary">DJ/Band</button></a>
 <a href="/CateringAwards"><button type="button" class="btn btn-primary">Catering</button></a>
@@ -218,7 +218,7 @@
         
         @if(count($data) == 0)
             <div class="panel-body text-center">
-                <h4>No Hotels Available!</h4>
+                <h4>No Users Available!</h4>
             </div>
         @else
         <div class="panel-body panel-body-with-table">
