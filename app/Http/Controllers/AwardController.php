@@ -172,4 +172,16 @@ class AwardController extends Controller
 
             return redirect()->back();
     }
+
+    public function Hotel()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Hall')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.hotel',compact('data'));
+    }
 }
