@@ -450,7 +450,7 @@
 						</div>
 					</div>
 				
-				@endforeach
+				
 				</div>
 			</div>
 		</section>
@@ -528,6 +528,7 @@
                     </div>
 				</form>
         	</div>
+			@endforeach
 			<br>
 			<br>
 			<br>

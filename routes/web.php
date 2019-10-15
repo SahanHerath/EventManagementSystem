@@ -569,6 +569,18 @@ Route::get('/RemoveAward{id}', 'AwardController@remove')  ;
 Route::get('/ViewServiceProvider{id}', 'UsersController@viewService')  ;
 
 
+Route::get('/FinancialSuggestions', 'SuggestionsController@Finance')  ;
+Route::get('/AdvertisingSuggestions', 'SuggestionsController@Advertising')  ;
+Route::get('/ServiceSuggestions', 'SuggestionsController@Service')  ;
+Route::get('/CommunitySuggestions', 'SuggestionsController@Community')  ;
+Route::get('/DevelopmentSuggestions', 'SuggestionsController@Development')  ;
+Route::get('/GeneralSuggestions', 'SuggestionsController@General')  ;
+Route::get('/BugSuggestions', 'SuggestionsController@Bug')  ;
+Route::get('/DonationSuggestions', 'SuggestionsController@Donation')  ;
+
+
+
+
 
 
 

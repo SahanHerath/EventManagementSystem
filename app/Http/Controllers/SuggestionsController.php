@@ -131,4 +131,14 @@ class SuggestionsController extends Controller
 
         return redirect()->back();
     }
+
+    public function Finance()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Financial') 
+            ->get();
+
+        return view('suggestions.Finance',compact('data'));
+    }
 }

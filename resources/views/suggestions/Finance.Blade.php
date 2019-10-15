@@ -189,8 +189,8 @@
     @endif
 <br><br><br><br>
 <div class="btn-group">
-<a href="/suggestions"><button type="button" class="btn btn-warning">All</button></a>
-<a href="/FinancialSuggestions"><button type="button" class="btn btn-primary">Financial</button></a>
+<a href="/suggestions"><button type="button" class="btn btn-primary">All</button></a>
+<a href="/FinancialSuggestions"><button type="button" class="btn btn-warning">Financial</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Services</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Community</button></a>
 <a href="#"><button type="button" class="btn btn-primary">Development</button></a>
@@ -215,7 +215,7 @@
         
         @if(count($data) == 0)
             <div class="panel-body text-center">
-                <h4>No Suggestions Available!</h4>
+                <h4>No Financial Suggestions Available!</h4>
             </div>
         @else
         <div class="panel-body panel-body-with-table">
