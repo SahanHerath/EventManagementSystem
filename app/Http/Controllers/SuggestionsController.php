@@ -186,4 +186,13 @@ class SuggestionsController extends Controller
 
         return view('suggestions.Advertising',compact('data'));
     }
+    public function Bug()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Website_Bug') 
+            ->get();
+
+        return view('suggestions.Website',compact('data'));
+    }
 }
