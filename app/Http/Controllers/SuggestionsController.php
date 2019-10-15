@@ -141,4 +141,13 @@ class SuggestionsController extends Controller
 
         return view('suggestions.Finance',compact('data'));
     }
+    public function Service()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Services') 
+            ->get();
+
+        return view('suggestions.Services',compact('data'));
+    }
 }
