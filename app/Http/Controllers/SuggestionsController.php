@@ -168,4 +168,13 @@ class SuggestionsController extends Controller
 
         return view('suggestions.Development',compact('data'));
     }
+    public function General()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','General_Info') 
+            ->get();
+
+        return view('suggestions.General',compact('data'));
+    }
 }
