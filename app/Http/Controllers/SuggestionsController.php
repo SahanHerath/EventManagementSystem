@@ -177,4 +177,13 @@ class SuggestionsController extends Controller
 
         return view('suggestions.General',compact('data'));
     }
+    public function Advertising()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Advertising') 
+            ->get();
+
+        return view('suggestions.Advertising',compact('data'));
+    }
 }
