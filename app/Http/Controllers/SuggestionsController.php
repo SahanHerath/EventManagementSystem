@@ -159,4 +159,13 @@ class SuggestionsController extends Controller
 
         return view('suggestions.Community',compact('data'));
     }
+    public function Development()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Development') 
+            ->get();
+
+        return view('suggestions.Development',compact('data'));
+    }
 }
