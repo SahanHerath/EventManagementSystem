@@ -196,4 +196,16 @@ class AwardController extends Controller
 
         return view('awards.photography',compact('data'));
     }
+
+    public function Salon()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Bridel_Designers')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.beautician',compact('data'));
+    }
 }
