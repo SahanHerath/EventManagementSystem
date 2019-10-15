@@ -194,10 +194,10 @@
 <a href="/ServiceSuggestions"><button type="button" class="btn btn-primary">Services</button></a>
 <a href="/CommunitySuggestions"><button type="button" class="btn btn-primary">Community</button></a>
 <a href="/DevelopmentSuggestions"><button type="button" class="btn btn-warning">Development</button></a>
-<a href="#"><button type="button" class="btn btn-primary">General Info</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Advertising</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Website Bug</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Donations</button></a>
+<a href="/GeneralSuggestions"><button type="button" class="btn btn-primary">General Info</button></a>
+<a href="/AdvertisingSuggestions"><button type="button" class="btn btn-primary">Advertising</button></a>
+<a href="/BugSuggestions"><button type="button" class="btn btn-primary">Website Bug</button></a>
+<a href="/DonationSuggestions"><button type="button" class="btn btn-primary">Donations</button></a>
 </div>
 
 
