@@ -197,7 +197,7 @@
 <a href="/GeneralSuggestions"><button type="button" class="btn btn-primary">General Info</button></a>
 <a href="/AdvertisingSuggestions"><button type="button" class="btn btn-primary">Advertising</button></a>
 <a href="/BugSuggestions"><button type="button" class="btn btn-warning">Website Bug</button></a>
-<a href="#"><button type="button" class="btn btn-primary">Donations</button></a>
+<a href="/DonationSuggestions"><button type="button" class="btn btn-primary">Donations</button></a>
 </div>
 
 

@@ -189,7 +189,7 @@
     @endif
 <br><br><br><br>
 <div class="btn-group">
-<a href="/suggestions"><button type="button" class="btn btn-warning">All</button></a>
+<a href="/suggestions"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/FinancialSuggestions"><button type="button" class="btn btn-primary">Financial</button></a>
 <a href="/ServiceSuggestions"><button type="button" class="btn btn-primary">Services</button></a>
 <a href="/CommunitySuggestions"><button type="button" class="btn btn-primary">Community</button></a>
@@ -197,7 +197,7 @@
 <a href="/GeneralSuggestions"><button type="button" class="btn btn-primary">General Info</button></a>
 <a href="/AdvertisingSuggestions"><button type="button" class="btn btn-primary">Advertising</button></a>
 <a href="/BugSuggestions"><button type="button" class="btn btn-primary">Website Bug</button></a>
-<a href="/DonationSuggestions"><button type="button" class="btn btn-primary">Donations</button></a>
+<a href="/DonationSuggestions"><button type="button" class="btn btn-warning">Donations</button></a>
 </div>
 
 

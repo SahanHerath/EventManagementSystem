@@ -195,4 +195,13 @@ class SuggestionsController extends Controller
 
         return view('suggestions.Website',compact('data'));
     }
+    public function Donation()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Donation') 
+            ->get();
+
+        return view('suggestions.Donations',compact('data'));
+    }
 }
