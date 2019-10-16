@@ -193,8 +193,8 @@
 <a href="/PhotographyAwards"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonAwards"><button type="button" class="btn btn-primary">Beautician</button></a>
 <a href="/MusicAwards"><button type="button" class="btn btn-primary">DJ/Band</button></a>
-<a href="/CateringAwards"><button type="button" class="btn btn-warning">Catering</button></a>
-<a href="/ActorAwards"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
+<a href="/CateringAwards"><button type="button" class="btn btn-primary">Catering</button></a>
+<a href="/ActorAwards"><button type="button" class="btn btn-warning">Representer & Artist</button></a>
 <a href="/CakeAwards"><button type="button" class="btn btn-primary">Cake Designer</button></a>
 <a href="/CostumeAwards"><button type="button" class="btn btn-primary">Costume Designer</button></a>
 <a href="/DancingAwards"><button type="button" class="btn btn-primary">Dancing</button></a>
