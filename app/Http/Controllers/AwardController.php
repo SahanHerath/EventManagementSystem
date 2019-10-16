@@ -273,6 +273,6 @@ class AwardController extends Controller
              ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
              ->get();
 
-        return view('awards.',compact('data'));
+        return view('awards.dancing',compact('data'));
     }
 }
