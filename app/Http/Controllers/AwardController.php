@@ -231,4 +231,15 @@ class AwardController extends Controller
 
         return view('awards.catering',compact('data'));
     }
+    public function Actor()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Actors')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.actor',compact('data'));
+    }
 }
