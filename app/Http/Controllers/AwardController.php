@@ -275,4 +275,16 @@ class AwardController extends Controller
 
         return view('awards.dancing',compact('data'));
     }
+
+    public function Decoration()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Decoration')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.decoration',compact('data'));
+    }
 }
