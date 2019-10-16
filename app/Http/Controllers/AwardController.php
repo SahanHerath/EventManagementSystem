@@ -253,4 +253,15 @@ class AwardController extends Controller
 
         return view('awards.cake',compact('data'));
     }
+    public function Costume()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Cloth_Designers')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.costumedesigner',compact('data'));
+    }
 }
