@@ -247,7 +247,7 @@ class AwardController extends Controller
         //
         $data=DB::table('users')
              ->join('awards','users.id','=','awards.user_id')
-             ->where('category','=','Cake')
+             ->where('category','=','Cake_Designers')
              ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
              ->get();
 
@@ -263,5 +263,16 @@ class AwardController extends Controller
              ->get();
 
         return view('awards.costumedesigner',compact('data'));
+    }
+    public function Dancing()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Dancing')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.',compact('data'));
     }
 }
