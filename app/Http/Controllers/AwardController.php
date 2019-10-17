@@ -287,4 +287,6 @@ class AwardController extends Controller
 
         return view('awards.decoration',compact('data'));
     }
+
+   
 }
