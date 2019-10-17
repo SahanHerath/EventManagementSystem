@@ -298,5 +298,18 @@ class AwardController extends Controller
 
         return view('awards.transport',compact('data'));
     }
+
+    public function Event()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Event_Planners')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.eventplanner',compact('data'));
+    }
+   
    
 }
