@@ -310,6 +310,16 @@ class AwardController extends Controller
 
         return view('awards.eventplanner',compact('data'));
     }
-   
+    public function Poruwa()
+    {
+        //
+        $data=DB::table('users')
+             ->join('awards','users.id','=','awards.user_id')
+             ->where('category','=','Poruwa_Ceramon')
+             ->select('awards.id as awardid','users.id as userid','Gold','Platinum','name','Silver','Bronze','email')
+             ->get();
+
+        return view('awards.poruwa',compact('data'));
+    }
    
 }
