@@ -131,4 +131,77 @@ class SuggestionsController extends Controller
 
         return redirect()->back();
     }
+
+    public function Finance()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Financial') 
+            ->get();
+
+        return view('suggestions.Finance',compact('data'));
+    }
+    public function Service()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Services') 
+            ->get();
+
+        return view('suggestions.Services',compact('data'));
+    }
+    public function Community()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Community') 
+            ->get();
+
+        return view('suggestions.Community',compact('data'));
+    }
+    public function Development()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Development') 
+            ->get();
+
+        return view('suggestions.Development',compact('data'));
+    }
+    public function General()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','General_Info') 
+            ->get();
+
+        return view('suggestions.General',compact('data'));
+    }
+    public function Advertising()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Advertising') 
+            ->get();
+
+        return view('suggestions.Advertising',compact('data'));
+    }
+    public function Bug()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Website_Bug') 
+            ->get();
+
+        return view('suggestions.Website',compact('data'));
+    }
+    public function Donation()
+    {
+        //
+        $data=DB::table('suggestions')
+            ->where('Regarding','=','Donation') 
+            ->get();
+
+        return view('suggestions.Donations',compact('data'));
+    }
 }

@@ -117,12 +117,25 @@
 										<li><a><i class="lnr lnr-phone-handset"></i>{{$data1->Contact_No}}</a></li>
 										<li><a><i class="lnr lnr-envelope"></i> {{$data1->email}}</a></li>
 										<li><a href="{{$data1->Link}}"><i class="lnr lnr-earth" ></i>{{$data1->Link}}</a></li>
-                                        <img src="uploads/Gold.jpg" class="offset-2" width="200" hight="300" alt="">
+                                        
 									</ul>
 								</div>
 							</div>
 							<div class="column" >
-                            <img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @foreach($award as $award1)
+							@if($award1->Platinum==1)
+							<img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
+							@endif
+							@if($award1->Gold==1)
+							<img src="uploads/Gold.JPG" width="150" hight="150" class="offset-9" alt="">
+							@endif
+							@if($award1->Silver==1)
+							<img src="uploads/Silver.JPG" width="150" hight="150" class="offset-9" alt="">
+							@endif
+							@if($award1->Bronze==1)
+							<img src="uploads/Bronze.JPG" width="150" hight="150" class="offset-9" alt="">
+							@endif
+							@endforeach
                             </div>
                             </div>    
 							</div>

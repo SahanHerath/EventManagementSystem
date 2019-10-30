@@ -132,7 +132,20 @@
 								</div>
                             </div>
                             <div class="column" >
+                            @foreach($award as $award1)
+							@if($award1->Platinum==1)
                             <img src="uploads/Platinum.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@if($award1->Gold==1)
+                            <img src="uploads/Gold.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@if($award1->Silver==1)
+                            <img src="uploads/Silver.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@if($award1->Bronze==1)
+                            <img src="uploads/Bronze.JPG" width="150" hight="150" class="offset-9" alt="">
+                            @endif
+							@endforeach
                             </div>
                             </div>    
 							</div>
@@ -275,7 +288,7 @@
 		
 			<div class="container">
 				<div class="feature_inner row">
-				@foreach($deto as $deto1)
+				@foreach($deto as $dec1)
 					
 					<div class="col-lg-6 col-md-8">
 						<div class="feature_item" >

@@ -233,6 +233,11 @@ class CakeController extends Controller
                 ->select('cake_packages.id','Package_Name', 'Cake_types', 'Description','Price','Pdf')
                 ->get();
 
+        $award=DB::table('users')
+                ->join('awards','awards.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->get();
+
         $rate=DB::table('users')
                 ->join('ratings','ratings.user_id','=','users.id')
                 ->where('users.id','=',$id)
@@ -297,7 +302,7 @@ class CakeController extends Controller
                 $precentage5=0;
             }
 
-                return view('Cakeview',compact('data','deto','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('Cakeview',compact('data','deto','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5','award'));
     }
 
     public function wedding()

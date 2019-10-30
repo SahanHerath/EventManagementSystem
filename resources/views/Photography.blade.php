@@ -179,10 +179,20 @@
               <h2 class="mb-5">Description</h2>
             </div>
             <p class="mb-4">You are able to find your photographer or videographer for your special event. We can cover your Wedding, Birth day, Get together, Professional event & Party.</p>
+            
+            @if($video==null)
             <video width="600" height="300" poster="/images/hero_10.jpg" controls>
                 <source src="mov_bbb.mp4" type="video/mp4">
                 <source src="mov_bbb.ogg" type="video/ogg">
             </video>
+            @endif
+            @if($video!=null)
+            <video width="600" height="300" poster="/images/PhotographyPoster.jpg" controls>
+                  <source src="video/photography/{{$video->Video}}" type="video/mp4">
+									<source src="mov_bbb.ogg" type="video/ogg">
+            </video>
+            @endif
+            
 		  </div>
         </div>
       </div>

@@ -27,8 +27,14 @@ class musicianController extends Controller
                 ->join('users','users.id','=','musicians.user_id')
                 ->get();
 
+        $video=DB::table('users')
+                ->join('music_videos','users.id','=','music_videos.user_id')
+                ->join('awards','users.id','=','awards.user_id')
+                ->where('awards.platinum','=',1)
+                ->first();
 
-        return view('Music', compact('musics'));
+
+        return view('Music', compact('musics','video'));
     }
 
     /**
@@ -307,6 +313,11 @@ class musicianController extends Controller
                 ->where('blocked','=',"0")
                 ->count();
 
+        $award=DB::table('users')
+                ->join('awards','awards.user_id','=','users.id')
+                ->where('users.id','=',$id)
+                ->get();
+
         
                 if($all!=0)
                 {
@@ -324,7 +335,7 @@ class musicianController extends Controller
                     $precentage4=0;
                     $precentage5=0;
                 }
-                return view('MusicView',compact('data','deto','saha','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('MusicView',compact('award','data','deto','saha','rate','average','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()

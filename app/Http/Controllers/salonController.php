@@ -304,6 +304,11 @@ class salonController extends Controller
                    ->where('ratings.user_id','=',$id)
                    ->where('blocked','=',"0")
                    ->count();
+
+        $award=DB::table('users')
+                   ->join('awards','awards.user_id','=','users.id')
+                   ->where('users.id','=',$id)
+                   ->get();
     
             if($all!=0)
             {
@@ -323,7 +328,7 @@ class salonController extends Controller
             }
 
 
-                return view('SalonView',compact('data','deto','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('SalonView',compact('award','data','deto','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function wedding()

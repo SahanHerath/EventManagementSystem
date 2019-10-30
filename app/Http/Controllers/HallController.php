@@ -368,6 +368,11 @@ class HallController extends Controller
                     ->where('ratings.user_id','=',$hotel1->userid)
                     ->where('blocked','=',"0")
                     ->count();
+
+        $award=DB::table('users')
+                    ->join('awards','awards.user_id','=','users.id')
+                    ->where('users.id','=',$hotel1->userid)
+                    ->get();
     
             if($all!=0)
             {
@@ -386,7 +391,7 @@ class HallController extends Controller
                 $precentage5=0;
             }
         }
-            return view('HotelView',compact('hotel','hall','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
+            return view('HotelView',compact('award','hotel','hall','rate','average','all','one','two','three','four','five','precentage1','precentage2','precentage3','precentage4','precentage5'));
     }
 
     public function viewHall($id)

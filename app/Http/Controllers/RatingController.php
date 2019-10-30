@@ -153,7 +153,7 @@ class RatingController extends Controller
 
                     ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('flash_message','You have blocked comment Successfully');
     }
 
     public function unblockComment($id)
@@ -165,14 +165,14 @@ class RatingController extends Controller
 
                     ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('flash_message','You have unblocked comment Successfully');
     }
 
     public function deleteComment($id)
     {
         $rating=Rating::where('id',$id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('flash_message','You have deleted  comment Successfully');;
     }
 
     public function Hotelcomments()

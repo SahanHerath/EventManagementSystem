@@ -179,7 +179,18 @@
               <h2 class="mb-5">Are You Looking For ?</h2>
             </div>
             <p class="mb-4">You are able to contact Sri Lanka's Most professional, Most successful leading Dj & Bands with best music equipments. </p>
-            
+            @if($video==null)
+            <video width="600" height="300" poster="/images/MusicPoster1.jpg" controls>
+                <source src="Music.webm" type="video/mp4">
+                <source src="Music.ogg" type="video/ogg">
+            </video>
+            @endif
+            @if($video!=null)
+            <video width="600" height="300" poster="/images/MusicPoster.jpg" controls>
+                  <source src="video/music/{{$video->Video}}"  type="video/mp4">
+									<source src="mov_bbb.ogg" type="video/ogg">
+            </video>
+            @endif
           </div>
         </div>
       </div>

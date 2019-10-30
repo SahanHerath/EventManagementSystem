@@ -175,7 +175,7 @@
           </div>
         </div>
       </nav> 
-
+      <br><br><br><br>
     @if(Session::has('success_message'))
         <div class="alert alert-success">
             <span class="glyphicon glyphicon-ok"></span>
@@ -187,8 +187,17 @@
 
         </div>
     @endif
-<br><br><br><br>
-<a href="#"><button type="button" class="btn btn-primary">All</button></a>
+    @if(Session::has('flash_message'))  
+            <div class="alert alert-success">
+             <span class="glyphicon glyphicon-ok"></span>
+             {!!session('flash_message')!!}
+             <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            @endif
+
+<a href="/complaints"><button type="button" class="btn btn-primary">All</button></a>
 <a href="/HotelComplaint"><button type="button" class="btn btn-warning">Hotels & Halls</button></a>
 <a href="/PhotographyComplaint"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/SalonComplaint"><button type="button" class="btn btn-primary">Beautician</button></a>

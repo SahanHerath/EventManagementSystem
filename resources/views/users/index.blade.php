@@ -175,20 +175,30 @@
           </div>
         </div>
       </nav> 
+      <br><br><br><br>
+      @if(Session::has('success_message'))
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-ok"></span>
+                {!! session('success_message') !!}
 
-    @if(Session::has('success_message'))
-        <div class="alert alert-success">
-            <span class="glyphicon glyphicon-ok"></span>
-            {!! session('success_message') !!}
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
-            <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                <span aria-hidden="true">&times;</span>
+            </div>
+            @endif
+            @if(Session::has('flash_message'))  
+            <div class="alert alert-success">
+             <span class="glyphicon glyphicon-ok"></span>
+             {!!session('flash_message')!!}
+             <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
             </button>
+            </div>
+            @endif
+    
 
-        </div>
-    @endif
-<br><br><br><br>
-<button type="button" class="btn btn-warning"><a href="#">All</a></button>
+<a href="/users"><button type="button" class="btn btn-warning">All</a></button>
 <a href="/AllHotels"><button type="button" class="btn btn-primary">Hotels & Halls</button></a>
 <a href="/AllPhotography"><button type="button" class="btn btn-primary">Photography</button></a>
 <a href="/AllBeautician"><button type="button" class="btn btn-primary">Beautician</button></a>
@@ -205,6 +215,7 @@
 <a href="/AllPoruwaRituals"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
 
+
     <div class="panel panel-default">
 
         <div class="panel-heading clearfix">
@@ -212,7 +223,7 @@
             <div class="pull-left">
                 <h4 class="mt-5 mb-5">Service providers</h4>
             </div>
-
+            
             
 
         </div>
@@ -222,22 +233,27 @@
                 <h4>No Users Available!</h4>
             </div>
         @else
+
+       
         <div class="panel-body panel-body-with-table">
+        
             <div class="table-responsive">
            
                 <table class="table table-striped ">
                     <thead>
                         <tr>
                         <th></th>
+                        <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             
                             <th>Category</th>
                             <th>City</th>
+                            <th>View User</th>
                             
                             
 
-                            <th></th>
+                            <th>Remove User</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -245,6 +261,7 @@
                     @if($users->admin=='0')
                         <tr>
                         <td></td>
+                        <td>{{ $users->id }}</td>
                             <td>{{ $users->name }}</td>
                             <td>{{ $users->email }}</td>
                             
@@ -252,7 +269,7 @@
                             <td>{{ $users->city }}</td>
                             
                             
-                            
+                            <td><a href="{{URL('/ViewServiceProvider'.$users->id)}}"><button type="button" class="btn btn-info">View</button></a></td>
 
                             <td>
 
@@ -264,7 +281,7 @@
                                         
                                         
 
-                                        <button type="submit" class="btn btn-danger" title="Delete Users" onclick="return confirm(&quot;Delete Users?&quot;)">
+                                        <button type="submit" class="btn btn-danger" title="Delete Users" onclick="return confirm(&quot;Do you want to remove this service provider?&quot;)">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
                                         </button>
                                     </div>

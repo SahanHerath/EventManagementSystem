@@ -253,12 +253,19 @@ class TransportController extends Controller
             ->where('users.id','=',$id)
             ->join('transport_packages','users.id','=','transport_packages.user_id')
             ->get();
+
+        
             
-            $rate=DB::table('users')
+        $rate=DB::table('users')
             ->join('ratings','ratings.user_id','=','users.id')
             ->where('users.id','=',$id)
             ->where('blocked','=',"0")
             ->select('ratings.id','rating','Comment','ratings.Email','image','ratings.created_at','user_name')
+            ->get();
+
+        $award=DB::table('users')
+            ->join('awards','awards.user_id','=','users.id')
+            ->where('users.id','=',$id)
             ->get();
 
        $average=DB::table('ratings')
@@ -318,7 +325,7 @@ class TransportController extends Controller
                    $precentage4=0;
                    $precentage5=0;
                }
-                return view('TransportView',compact('data','dec','average','rate','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5'));
+                return view('TransportView',compact('data','dec','average','rate','one','two','three','four','five','all','precentage1','precentage2','precentage3','precentage4','precentage5','award'));
     }
 
     public function profile()
