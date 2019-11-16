@@ -35,17 +35,24 @@ Route::get('/Photographyview{id}','PhotographyController@viewProfile');
 Route::get('/Photography', 'PhotographyController@index')  ; 
 Auth::routes();
 
-/*Route::get('/home', 'HomeController@index')->name('home');*/
-Route::get('/category', 'HomeController@category');
-Route::get('/hall', 'HomeController@hall');
+//add all service provider
 Route::post('/addphotographyer', 'PhotographyController@store');
 Route::post('/addmusician', 'MusicianController@store');
 Route::post('/addDecorator', 'decorationController@store');
 Route::post('/addSalon', 'SalonController@store');
+Route::post('/addtransport', 'TransportController@store')  ;
+Route::post('/addactor', 'ActorController@store')  ;
+Route::post('/addcatering', 'CateringController@store')  ;
+Route::post('/adddancing', 'DancingController@store')  ;
+Route::post('/addPoruwa', 'PoruwaController@store') ;
+Route::post('/addCakeDesigner', 'CakeController@store')  ;
+Route::post('/addCakeDesigner', 'CakeController@store')  ;
+Route::post('/addeventplanner','EventPlanersController@store');
+Route::post('/addhotel', 'HallController@store');
+Route::post('/addhall{id}', 'HallController@storeReceptionHall');
+Route::post('/addCostumeDesigner', 'CostumeDesignerController@store')  ;
 
-
-
-
+//All service provider main page and profile page
 Route::get('/Music', 'MusicianController@index')  ;
 Route::get('/MusicView{id}','musicianController@viewProfile');
 
@@ -55,69 +62,62 @@ Route::get('/DecoratorView{id}','DecorationController@viewProfile');
 Route::get('/Bridal', 'salonController@index')  ;
 Route::get('/SalonView{id}','salonController@viewProfile');
 
-Route::get('/Transport', 'TransportController@index')  ;
-
-Route::post('/addtransport', 'TransportController@store')  ;
-
-/*Route::get('/Dancing', function () {
-    return view('Dance');
-});*/
-
 Route::get('/Dancing', 'DancingController@index')  ;
 Route::get('/DanceView{id}','DancingController@viewProfile');
 
+Route::get('/Transport', 'TransportController@index')  ;
 Route::get('/TransportView{id}','TransportController@viewProfile');
 
 
-Route::get('/Events', function () {
-    return view('Events');
-});
-
-Route::post('/addactor', 'ActorController@store')  ;
-
-Route::post('/addcatering', 'CateringController@store')  ;
-
-Route::post('/adddancing', 'DancingController@store')  ;
-
-/*Route::get('/Poruwa', function () {
-    return view('PoruwaCeramony');
-});*/
-
-Route::post('/addPoruwa', 'PoruwaController@store') ;
-Route::get('/Poruwa', 'PoruwaController@index')  ;
-
-
-
+//Route::get('/hall', 'HomeController@hall');
 
 Route::get('/Actor', 'ActorController@index')  ;
 Route::get('/ActorView{id}','ActorController@viewProfile');
-Route::post('/addCakeDesigner', 'CakeController@store')  ;
-
-
-
-
-Route::post('/addCakeDesigner', 'CakeController@store')  ;
 
 Route::get('/catering', 'CateringController@index')  ;
 Route::get('/cateringview{id}','CateringController@viewProfile');
 
+Route::get('/Poruwa', 'PoruwaController@index')  ;
 Route::get('/PoruwaCeramonyView{id}','PoruwaController@viewProfile');
-
 
 Route::get('/Actor', 'ActorController@index')  ;
 Route::get('/ActorView{id}','ActorController@viewProfile');
 
-Route::post('/addeventplanner','EventPlanersController@store');
 Route::get('/EventPlanner', 'EventPlanersController@index')  ;
 Route::get('/EventPlannerView{id}','EventPlanersController@viewProfile');
-
-Route::post('/addhotel', 'HallController@store');
-Route::post('/addhall{id}', 'HallController@storeReceptionHall');
-
 
 Route::get('/Venue', 'HallController@index')  ;
 Route::get('/HotelView{id}','HallController@viewHotel');
 Route::get('/HallView{id}','HallController@viewHall');
+
+Route::get('/CostumeDesigner', 'CostumeDesignerController@index')  ;
+Route::get('/CostumeDesignerView{id}','CostumeDesignerController@viewProfile');
+
+Route::get('/Cake', 'CakeController@index')  ;
+Route::get('/Cakeview{id}','CakeController@viewProfile');
+
+//search bar in main pages
+Route::get('/ActorSearch', 'ActorController@Search')  ;
+Route::get('/CakeSearch', 'CakeController@Search')  ;
+Route::get('/CateringSearch', 'CateringController@Search')  ;
+Route::get('/CostumeDesignerSearch', 'CostumeDesignerController@Search')  ;
+Route::get('/DancerSearch', 'DancingController@Search')  ;
+Route::get('/DecoratorSearch', 'decorationController@Search')  ;
+Route::get('/EventPlannerSearch', 'EventPlanersController@Search')  ;
+Route::get('/MusicSearch', 'musicianController@Search')  ;
+Route::get('/PhotographySearch', 'PhotographyController@Search')  ;
+Route::get('/PoruwaSearch', 'PoruwaController@Search')  ;
+Route::get('/SalonSearch', 'salonController@Search')  ;
+Route::get('/TransportSearch', 'TransportController@Search')  ;
+Route::get('/HotelSearch', 'HallController@Search')  ;
+
+Route::get('/category', 'HomeController@category');
+
+
+//all event page details
+Route::get('/Events', function () {
+    return view('Events');
+});
 
 Route::get('/WeddingPhotographer', 'PhotographyController@wedding')  ;
 Route::get('/BirthdayPhotographer', 'PhotographyController@birthday')  ;
@@ -180,97 +180,21 @@ Route::get('/SportShoesDesigner', 'CostumeDesignerController@sportshoes')  ;
 Route::get('/WeddingCake', 'CakeController@wedding')  ;
 Route::get('/BirthdayCake', 'CakeController@birthday')  ;
 
-Route::get('/HallView', function () {
-    return view('HallView');
-});
-
-/*Route::get('/CostumeDesigner', function () {
-    return view('CostumeDesigner');
-});*/
-
-Route::get('/CostumeDesigner', 'CostumeDesignerController@index')  ;
-Route::get('/CostumeDesignerView{id}','CostumeDesignerController@viewProfile');
-Route::post('/addCostumeDesigner', 'CostumeDesignerController@store')  ;
-
-Route::get('/Cake', 'CakeController@index')  ;
-Route::get('/Cakeview{id}','CakeController@viewProfile');
-
-Route::get('/rating', function () {
-    return view('rating');
-});
-Route::get('/profile', function () {
-    return view('profile');
-});
-Route::get('/serviceproviders', function () {
-    return view('serviceproviders');
-});
-
-Route::get('/UserProfile', function () {
-    return view('UserProfile');
-});
-Route::get('/aboutus', function () {
-    return view('aboutus');
-});
-
-
-
-
-
-
-
-
-
+//adding rating ,complaint ,suggestion
 Route::post('/AddRating{id}', 'RatingController@addrating')  ;
 Route::get('/AddComplaint{id}', 'ComplaintController@form')  ;
 Route::post('/newComplain', 'ComplaintController@addcomplaint')  ;
-
-
-
-
-
-
-
-
-
 Route::post('/addSuggestion', 'SuggestionsController@store')  ;
 
-
-
+//contact us and about us
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
 Route::get('/contact', function () {
     return view('contact');
 });
 
-
-
-
-
-
-
-
-Route::get('/ActorSearch', 'ActorController@Search')  ;
-Route::get('/CakeSearch', 'CakeController@Search')  ;
-Route::get('/CateringSearch', 'CateringController@Search')  ;
-Route::get('/CostumeDesignerSearch', 'CostumeDesignerController@Search')  ;
-Route::get('/DancerSearch', 'DancingController@Search')  ;
-Route::get('/DecoratorSearch', 'decorationController@Search')  ;
-Route::get('/EventPlannerSearch', 'EventPlanersController@Search')  ;
-Route::get('/MusicSearch', 'musicianController@Search')  ;
-Route::get('/PhotographySearch', 'PhotographyController@Search')  ;
-Route::get('/PoruwaSearch', 'PoruwaController@Search')  ;
-Route::get('/SalonSearch', 'salonController@Search')  ;
-Route::get('/TransportSearch', 'TransportController@Search')  ;
-Route::get('/HotelSearch', 'HallController@Search')  ;
-
-
-
-
-
-
-
-
-
-
-
+//all the login verified routes
 Route::group(['middleware'=> 'AuthenticateMiddleware'],function(){
 
     //All service provider functions in admin profile
