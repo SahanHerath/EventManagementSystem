@@ -56,6 +56,7 @@ use App\Hall_feature;
 use App\Reception_hall;
 use App\Hall_package;
 use App\Hall_table_arrangement;
+use Gate;
 
 class UsersController extends Controller
 {
@@ -67,9 +68,16 @@ class UsersController extends Controller
      */
     public function index()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $usersObjects = users::paginate(25);
 
         return view('users.index', compact('usersObjects'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     /**
@@ -174,6 +182,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('users')
         ->where('users.id','=',$id)
         ->select('category')
@@ -340,8 +350,14 @@ class UsersController extends Controller
             }
             
         }
+    
 
         return redirect()->back()->with('flash_message','User Removed Successfully');
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
   
     
@@ -393,195 +409,294 @@ class UsersController extends Controller
     }
     public function allhotel()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('hotels')
                 ->join('users','users.id','=','hotels.user_id')
                 ->where('users.category','=','Hall')
                 ->get();
         
          return view('users.allhotels',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function allphotography()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('photographies')
                 ->join('users','users.id','=','photographies.user_id')
                 ->where('users.category','=','Photography')
                 ->get();
         
          return view('users.allphotography',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function allbeautician()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('salons')
                 ->join('users','users.id','=','salons.user_id')
                 ->where('users.category','=','Bridel_Designers')
                 ->get();
         
          return view('users.allbeautician',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function alldjband()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('musicians')
                 ->join('users','users.id','=','musicians.user_id')
                 ->where('users.category','=','Music')
                 ->get();
         
          return view('users.alldjband',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function allcatering()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('caterings')
                 ->join('users','users.id','=','caterings.user_id')
                 ->where('users.category','=','Catering')
                 ->get();
         
          return view('users.allcatering',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function allrepresenter()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('actors')
                 ->join('users','users.id','=','actors.user_id')
                 ->where('users.category','=','Actors')
                 ->get();
         
          return view('users.allrepresenter',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function allcakedesigner()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('cake_designers')
                 ->join('users','users.id','=','cake_designers.user_id')
                 ->where('users.category','=','Cake_Designers')
                 ->get();
         
          return view('users.allcakedesigner',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function allcostumedesigner()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('costume_designers')
                 ->join('users','users.id','=','costume_designers.user_id')
                 ->where('users.category','=','Cloth_Designers')
                 ->get();
         
          return view('users.allcostumedesigner',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function alldancing()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('dancers')
                 ->join('users','users.id','=','dancers.user_id')
                 ->where('users.category','=','Dancing')
                 ->get();
         
          return view('users.alldancing',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function alldecoration()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('decorators')
                 ->join('users','users.id','=','decorators.user_id')
                 ->where('users.category','=','Decoration')
                 ->get();
         
          return view('users.alldecoration',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function alltransport()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('transporters')
                 ->join('users','users.id','=','transporters.user_id')
                 ->where('users.category','=','Wedding_Transport')
                 ->get();
         
          return view('users.alltransport',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function alleventplanners()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('event_planners')
                 ->join('users','users.id','=','event_planners.user_id')
                 ->where('users.category','=','Event_Planners')
                 ->get();
         
          return view('users.alleventplanners',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
+
     }
     public function allporuwarituals()
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('poruwa_ceramonies')
                 ->join('users','users.id','=','poruwa_ceramonies.user_id')
                 ->where('users.category','=','Poruwa_Ceramony')
                 ->get();
         
          return view('users.allporuwarituals',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function viewService($id)
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('users')
              ->where('users.id','=',$id)
              ->select('category')
              ->get();
 
-        foreach($data as $data1)
-        {
-            if(($data1->category)=='Hall')
+            foreach($data as $data1)
             {
-                $hotel=DB::table('users')
-                     ->join('hotels','hotels.user_id','=','users.id')
-                     ->where('users.id','=',$id)
-                     ->select('hotels.id')
-                     ->get();
-                
-                foreach($hotel as $hotel1)
+                if(($data1->category)=='Hall')
                 {
-                    return app('App\Http\Controllers\HallController')->viewHotel($hotel1->id);
+                    $hotel=DB::table('users')
+                        ->join('hotels','hotels.user_id','=','users.id')
+                        ->where('users.id','=',$id)
+                        ->select('hotels.id')
+                        ->get();
+                    
+                    foreach($hotel as $hotel1)
+                    {
+                        return app('App\Http\Controllers\HallController')->viewHotel($hotel1->id);
+                    }
+                    
+                }
+                if(($data1->category)=='Photography')
+                {
+                    return app('App\Http\Controllers\PhotographyController')->viewProfile($id);
+                }
+                if(($data1->category)=='Music')
+                {
+                    return app('App\Http\Controllers\musicianController')->viewProfile($id);
+                }
+                if(($data1->category)=='Dancing')
+                {
+                    return app('App\Http\Controllers\DancingController')->viewProfile($id);
+                }
+                if(($data1->category)=='Poruwa_Ceramony')
+                {
+                    return app('App\Http\Controllers\PoruwaController')->viewProfile($id);
+                }
+                if(($data1->category)=='Wedding_Transport')
+                {
+                    return app('App\Http\Controllers\TransportController')->viewProfile($id);
+                }
+                if(($data1->category)=='Decoration')
+                {
+                return app('App\Http\Controllers\decorationController')->viewProfile($id);
+                }
+                if(($data1->category)=='Cake_Designers')
+                {
+                    return app('App\Http\Controllers\CakeController')->viewProfile($id);
+                }
+                if(($data1->category)=='Actors')
+                {
+                    return app('App\Http\Controllers\ActorController')->viewProfile($id);
+                }
+                if(($data1->category)=='Bridel_Designers')
+                {
+                    return app('App\Http\Controllers\salonController')->viewProfile($id);
+                }
+                if(($data1->category)=='Catering')
+                {
+                    return app('App\Http\Controllers\CateringController')->viewProfile($id);
+                }
+                if(($data1->category)=='Cloth_Designers')
+                {
+                    return app('App\Http\Controllers\CostumeDesignerController')->viewProfile($id);
+                }
+                if(($data1->category)=='Event_Planners')
+                {
+                    return app('App\Http\Controllers\EventPlanersController')->viewProfile($id);
                 }
                 
-            }
-            if(($data1->category)=='Photography')
-            {
-                return app('App\Http\Controllers\PhotographyController')->viewProfile($id);
-            }
-            if(($data1->category)=='Music')
-            {
-                return app('App\Http\Controllers\musicianController')->viewProfile($id);
-            }
-            if(($data1->category)=='Dancing')
-            {
-                return app('App\Http\Controllers\DancingController')->viewProfile($id);
-            }
-            if(($data1->category)=='Poruwa_Ceramony')
-            {
-                return app('App\Http\Controllers\PoruwaController')->viewProfile($id);
-            }
-            if(($data1->category)=='Wedding_Transport')
-            {
-                return app('App\Http\Controllers\TransportController')->viewProfile($id);
-            }
-            if(($data1->category)=='Decoration')
-            {
-               return app('App\Http\Controllers\decorationController')->viewProfile($id);
-            }
-            if(($data1->category)=='Cake_Designers')
-            {
-                return app('App\Http\Controllers\CakeController')->viewProfile($id);
-            }
-            if(($data1->category)=='Actors')
-            {
-                return app('App\Http\Controllers\ActorController')->viewProfile($id);
-            }
-            if(($data1->category)=='Bridel_Designers')
-            {
-                return app('App\Http\Controllers\salonController')->viewProfile($id);
-            }
-            if(($data1->category)=='Catering')
-            {
-                return app('App\Http\Controllers\CateringController')->viewProfile($id);
-            }
-            if(($data1->category)=='Cloth_Designers')
-            {
-                return app('App\Http\Controllers\CostumeDesignerController')->viewProfile($id);
-            }
-            if(($data1->category)=='Event_Planners')
-            {
-                return app('App\Http\Controllers\EventPlanersController')->viewProfile($id);
-            }
             
-           
+            }
+        }
+        else 
+        {
+            return view('403error');
         }
     }
 

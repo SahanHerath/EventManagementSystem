@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Suggestion;
+use Gate;
 
 class SuggestionsController extends Controller
 {
@@ -119,89 +120,159 @@ class SuggestionsController extends Controller
     public function allsuggestions()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
              ->get();
 
         return view('suggestions',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function removesuggestions($id)
     {
+        if(Gate::allows('isAdmin'))
+        { 
         $data=Suggestion::where('id',$id)->delete();
 
         return redirect()->back();
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function Finance()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Financial') 
             ->get();
 
         return view('suggestions.Finance',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Service()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Services') 
             ->get();
 
         return view('suggestions.Services',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Community()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Community') 
             ->get();
 
         return view('suggestions.Community',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Development()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Development') 
             ->get();
 
         return view('suggestions.Development',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function General()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','General Info') 
             ->get();
 
         return view('suggestions.General',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Advertising()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Advertising') 
             ->get();
 
         return view('suggestions.Advertising',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Bug()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Website Bug') 
             ->get();
 
         return view('suggestions.Website',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Donation()
     {
         //
+        if(Gate::allows('isAdmin'))
+        { 
         $data=DB::table('suggestions')
             ->where('Regarding','=','Donations') 
             ->get();
 
         return view('suggestions.Donations',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 }

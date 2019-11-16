@@ -30,9 +30,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Photographyview{id}','PhotographyController@viewProfile');
 
-Route::get('/Photography', 'PhotographyController@index')  ; 
 Auth::routes();
 
 //add all service provider
@@ -53,6 +51,9 @@ Route::post('/addhall{id}', 'HallController@storeReceptionHall');
 Route::post('/addCostumeDesigner', 'CostumeDesignerController@store')  ;
 
 //All service provider main page and profile page
+Route::get('/Photographyview{id}','PhotographyController@viewProfile');
+Route::get('/Photography', 'PhotographyController@index')  ; 
+
 Route::get('/Music', 'MusicianController@index')  ;
 Route::get('/MusicView{id}','musicianController@viewProfile');
 
