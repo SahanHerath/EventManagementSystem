@@ -214,37 +214,7 @@ Route::get('/aboutus', function () {
 Route::get('/Profile', 'HomeController@profilecategory')  ;
 
 
-Route::group(
-[
-    'prefix' => 'users',
-], function () {
 
-    Route::get('/', 'UsersController@index')
-         ->name('users.users.index');
-
-    Route::get('/create','UsersController@create')
-         ->name('users.users.create');
-
-    Route::get('/show/{users}','UsersController@show')
-         ->name('users.users.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{users}/edit','UsersController@edit')
-         ->name('users.users.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'UsersController@store')
-         ->name('users.users.store');
-               
-    Route::put('users/{users}', 'UsersController@update')
-         ->name('users.users.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/users/{users}','UsersController@destroy')
-         ->name('users.users.destroy')
-         ->where('id', '[0-9]+');
-
-});
 Route::post('/EditDecoratorEvents{id}', 'decorationController@eventUpdate')  ;
 Route::post('/EditDecoratorFeatures{id}', 'decorationController@featureUpdate')  ;
 Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@InfoUpdate')  ;
@@ -317,20 +287,7 @@ Route::get('/RemoveSalonAccount{id}', 'salonController@removeAccount')  ;
 Route::get('/RemovePhotographyAccount{id}', 'PhotographyController@removeAccount')  ;
 Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
 
-Route::get('/AllHotels', 'UsersController@allhotel')  ;
-Route::get('/AllPhotography', 'UsersController@allphotography')  ;
-Route::get('/AllBeautician', 'UsersController@allbeautician')  ;
-Route::get('/AllMusic', 'UsersController@alldjband')  ;
-Route::get('/AllDJBand', 'UsersController@alldjband')  ;
-Route::get('/AllCatering', 'UsersController@allcatering')  ;
-Route::get('/AllRepresenter', 'UsersController@allrepresenter')  ;
-Route::get('/AllCakeDesigner', 'UsersController@allcakeDesigner')  ;
-Route::get('/AllCostumeDesigner', 'UsersController@allcostumedesigner')  ;
-Route::get('/AllDancing', 'UsersController@alldancing')  ;
-Route::get('/AllDecoration', 'UsersController@alldecoration')  ;
-Route::get('/AllTransport', 'UsersController@alltransport')  ;
-Route::get('/AllEventPlanners', 'UsersController@alleventplanners')  ;
-Route::get('/AllPoruwaRituals', 'UsersController@allporuwarituals')  ;
+
 
 
 Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
@@ -466,27 +423,13 @@ Route::post('/AddRating{id}', 'RatingController@addrating')  ;
 Route::get('/AddComplaint{id}', 'ComplaintController@form')  ;
 Route::post('/newComplain', 'ComplaintController@addcomplaint')  ;
 
-Route::get('/complaints', 'ComplaintController@allcomplaints')  ;
-Route::get('/ReviewComplaint{id}', 'ComplaintController@reviewComplaint')  ;
-Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
-Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
 
 
-Route::get('/comments', 'RatingController@allcomments')  ;
-Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
-Route::get('/UnblockComment{id}', 'RatingController@unblockComment')  ;
-Route::get('/DeleteComment{id}', 'RatingController@deleteComment')  ;
 
 
-Route::get('/admins', 'AdminController@index')  ;
-Route::get('/addAdmin', 'AdminController@registerAdmin')  ;
-Route::post('/NewAdmin', 'AdminController@store')  ;
-Route::get('/removeAdmin{id}', 'AdminController@destroy')  ;
-Route::post('/EditAdmin{id}', 'AdminController@update')  ;
-Route::post('/EditBio{id}', 'AdminController@updateBio')  ;
-Route::post('/AdminMainpic{id}', 'AdminController@changeMainpic')  ;
-Route::post('/AdminCoverpic{id}', 'AdminController@changeCoverpic')  ;
-Route::post('/RemoveAdminAccount{id}', 'AdminController@deactivateAccount')  ;
+
+
+
 
 Route::post('/addSuggestion', 'SuggestionsController@store')  ;
 
@@ -496,54 +439,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/HotelComments', 'RatingController@Hotelcomments')  ;
-Route::get('/PhotographyComments', 'RatingController@Photographycomments')  ;
-Route::get('/SalonComments', 'RatingController@Saloncomments')  ;
-Route::get('/TransportComments', 'RatingController@Transportcomments')  ;
-Route::get('/CakeComments', 'RatingController@Cakecomments')  ;
-Route::get('/EventPlannerComments', 'RatingController@EventPlannercomments')  ;
-Route::get('/PoruwaComments', 'RatingController@Poruwacomments')  ;
-Route::get('/ActorComments', 'RatingController@Actorcomments')  ;
-Route::get('/DJComments', 'RatingController@DJcomments')  ;
-Route::get('/CateringComments', 'RatingController@Cateringcomments')  ;
-Route::get('/CostumeComments', 'RatingController@Costumecomments')  ;
-Route::get('/DancingComments', 'RatingController@Dancingcomments')  ;
-Route::get('/DecorationComments', 'RatingController@decorationcomments')  ;
 
-Route::get('/HotelComplaint', 'ComplaintController@Hotelcomplaints')  ;
-Route::get('/PhotographyComplaint', 'ComplaintController@Photographycomplaints')  ;
-Route::get('/SalonComplaint', 'ComplaintController@Saloncomplaints')  ;
-Route::get('/TransportComplaint', 'ComplaintController@Transportcomplaints')  ;
-Route::get('/CakeComplaint', 'ComplaintController@Cakecomplaints')  ;
-Route::get('/EventPlannerComplaint', 'ComplaintController@EventPlannercomplaints')  ;
-Route::get('/PoruwaComplaint', 'ComplaintController@Poruwacomplaints')  ;
-Route::get('/ActorComplaint', 'ComplaintController@Actorcomplaints')  ;
-Route::get('/DJComplaint', 'ComplaintController@DJcomplaints')  ;
-Route::get('/CateringComplaint', 'ComplaintController@Cateringcomplaints')  ;
-Route::get('/CostumeComplaint', 'ComplaintController@Costumecomplaints')  ;
-Route::get('/DancingComplaint', 'ComplaintController@Dancingcomplaints')  ;
-Route::get('/DecorationComplaint', 'ComplaintController@Decorationcomplaints')  ;
 
-Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
-Route::get('/RemoveSuggestion{id}', 'SuggestionsController@removesuggestions')  ;
-Route::get('/Summary', 'SummaryController@types')  ;
-Route::get('/VenueSummary', 'SummaryController@venue')  ;
-Route::get('/PhotographySummary', 'SummaryController@photography')  ;
-Route::get('/CakeSummary', 'SummaryController@cake')  ;
-Route::get('/DanceSummary', 'SummaryController@dance')  ;
-Route::get('/DecorationSummary', 'SummaryController@decoration')  ;
-Route::get('/ActorSummary', 'SummaryController@actor')  ;
-Route::get('/CateringSummary', 'SummaryController@catering')  ;
-Route::get('/CostumeSummary', 'SummaryController@costume')  ;
-Route::get('/PlannerSummary', 'SummaryController@planner')  ;
-Route::get('/DJSummary', 'SummaryController@music')  ;
-Route::get('/PoruwaSummary', 'SummaryController@poruwa')  ;
-Route::get('/SalonSummary', 'SummaryController@salon')  ;
-Route::get('/TransportSummary', 'SummaryController@transport')  ;
-Route::get('/CommentsSummary', 'SummaryController@comments')  ;
-Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
-Route::get('/SuggestionSummary', 'SummaryController@suggestions')  ;
-Route::get('/FullReport', 'SummaryController@fullReport')  ;
+
+
+
+
 
 Route::get('/ActorSearch', 'ActorController@Search')  ;
 Route::get('/CakeSearch', 'CakeController@Search')  ;
@@ -559,38 +460,175 @@ Route::get('/SalonSearch', 'salonController@Search')  ;
 Route::get('/TransportSearch', 'TransportController@Search')  ;
 Route::get('/HotelSearch', 'HallController@Search')  ;
 
-Route::get('/Awards', 'AwardController@all')  ;
-Route::get('/PlatinumAward{id}', 'AwardController@platinum')  ;
-Route::get('/GoldAward{id}', 'AwardController@gold')  ;
-Route::get('/SilverAward{id}', 'AwardController@silver')  ;
-Route::get('/BronzeAward{id}', 'AwardController@bronze')  ;
-Route::get('/RemoveAward{id}', 'AwardController@remove')  ;
-
-Route::get('/ViewServiceProvider{id}', 'UsersController@viewService')  ;
 
 
-Route::get('/FinancialSuggestions', 'SuggestionsController@Finance')  ;
-Route::get('/AdvertisingSuggestions', 'SuggestionsController@Advertising')  ;
-Route::get('/ServiceSuggestions', 'SuggestionsController@Service')  ;
-Route::get('/CommunitySuggestions', 'SuggestionsController@Community')  ;
-Route::get('/DevelopmentSuggestions', 'SuggestionsController@Development')  ;
-Route::get('/GeneralSuggestions', 'SuggestionsController@General')  ;
-Route::get('/BugSuggestions', 'SuggestionsController@Bug')  ;
-Route::get('/DonationSuggestions', 'SuggestionsController@Donation')  ;
 
-Route::get('/HotelAwards', 'AwardController@Hotel')  ;
-Route::get('/PhotographyAwards', 'AwardController@Photography')  ;
-Route::get('/SalonAwards', 'AwardController@Salon')  ;
-Route::get('/MusicAwards', 'AwardController@Music')  ;
-Route::get('/CateringAwards', 'AwardController@Catering')  ;
-Route::get('/ActorAwards', 'AwardController@Actor')  ;
-Route::get('/CakeAwards', 'AwardController@Cake')  ;
-Route::get('/CostumeAwards', 'AwardController@Costume')  ;
-Route::get('/DancingAwards', 'AwardController@Dancing')  ;
-Route::get('/DecorationAwards', 'AwardController@Decoration')  ;
-Route::get('/TransportAwards', 'AwardController@Transport')  ;
-Route::get('/EventAwards', 'AwardController@Event')  ;
-Route::get('/PoruwaAwards', 'AwardController@Poruwa')  ;
+
+
+
+
+
+
+
+Route::group(['middleware'=> 'AuthenticateMiddleware'],function(){
+
+    //All service provider functions in admin profile
+    Route::group(
+        [
+            'prefix' => 'users',
+        ], function () {
+        
+            Route::get('/', 'UsersController@index')
+                 ->name('users.users.index');
+        
+            Route::get('/create','UsersController@create')
+                 ->name('users.users.create');
+        
+            Route::get('/show/{users}','UsersController@show')
+                 ->name('users.users.show')
+                 ->where('id', '[0-9]+');
+        
+            Route::get('/{users}/edit','UsersController@edit')
+                 ->name('users.users.edit')
+                 ->where('id', '[0-9]+');
+        
+            Route::post('/', 'UsersController@store')
+                 ->name('users.users.store');
+                       
+            Route::put('users/{users}', 'UsersController@update')
+                 ->name('users.users.update')
+                 ->where('id', '[0-9]+');
+        
+            Route::delete('/users/{users}','UsersController@destroy')
+                 ->name('users.users.destroy')
+                 ->where('id', '[0-9]+');
+        
+        });
+    
+    //All the routes related to admin dashboards awards
+    Route::get('/Awards', 'AwardController@all')  ;
+    Route::get('/HotelAwards', 'AwardController@Hotel')  ;
+    Route::get('/PhotographyAwards', 'AwardController@Photography')  ;
+    Route::get('/SalonAwards', 'AwardController@Salon')  ;
+    Route::get('/MusicAwards', 'AwardController@Music')  ;
+    Route::get('/CateringAwards', 'AwardController@Catering')  ;
+    Route::get('/ActorAwards', 'AwardController@Actor')  ;
+    Route::get('/CakeAwards', 'AwardController@Cake')  ;
+    Route::get('/CostumeAwards', 'AwardController@Costume')  ;
+    Route::get('/DancingAwards', 'AwardController@Dancing')  ;
+    Route::get('/DecorationAwards', 'AwardController@Decoration')  ;
+    Route::get('/TransportAwards', 'AwardController@Transport')  ;
+    Route::get('/EventAwards', 'AwardController@Event')  ;
+    Route::get('/PoruwaAwards', 'AwardController@Poruwa')  ;
+
+    //Awads changing in admin panel
+    Route::get('/PlatinumAward{id}', 'AwardController@platinum')  ;
+    Route::get('/GoldAward{id}', 'AwardController@gold')  ;
+    Route::get('/SilverAward{id}', 'AwardController@silver')  ;
+    Route::get('/BronzeAward{id}', 'AwardController@bronze')  ;
+    Route::get('/RemoveAward{id}', 'AwardController@remove')  ;
+
+    //All suggestions from admin panel
+    Route::get('/FinancialSuggestions', 'SuggestionsController@Finance')  ;
+    Route::get('/AdvertisingSuggestions', 'SuggestionsController@Advertising')  ;
+    Route::get('/ServiceSuggestions', 'SuggestionsController@Service')  ;
+    Route::get('/CommunitySuggestions', 'SuggestionsController@Community')  ;
+    Route::get('/DevelopmentSuggestions', 'SuggestionsController@Development')  ;
+    Route::get('/GeneralSuggestions', 'SuggestionsController@General')  ;
+    Route::get('/BugSuggestions', 'SuggestionsController@Bug')  ;
+    Route::get('/DonationSuggestions', 'SuggestionsController@Donation')  ;
+    Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
+    Route::get('/RemoveSuggestion{id}', 'SuggestionsController@removesuggestions')  ;
+
+    //all summary and report in admin panel
+    Route::get('/Summary', 'SummaryController@types')  ;
+    Route::get('/VenueSummary', 'SummaryController@venue')  ;
+    Route::get('/PhotographySummary', 'SummaryController@photography')  ;
+    Route::get('/CakeSummary', 'SummaryController@cake')  ;
+    Route::get('/DanceSummary', 'SummaryController@dance')  ;
+    Route::get('/DecorationSummary', 'SummaryController@decoration')  ;
+    Route::get('/ActorSummary', 'SummaryController@actor')  ;
+    Route::get('/CateringSummary', 'SummaryController@catering')  ;
+    Route::get('/CostumeSummary', 'SummaryController@costume')  ;
+    Route::get('/PlannerSummary', 'SummaryController@planner')  ;
+    Route::get('/DJSummary', 'SummaryController@music')  ;
+    Route::get('/PoruwaSummary', 'SummaryController@poruwa')  ;
+    Route::get('/SalonSummary', 'SummaryController@salon')  ;
+    Route::get('/TransportSummary', 'SummaryController@transport')  ;
+    Route::get('/CommentsSummary', 'SummaryController@comments')  ;
+    Route::get('/ComplaintsSummary', 'SummaryController@complaints')  ;
+    Route::get('/SuggestionSummary', 'SummaryController@suggestions')  ;
+    Route::get('/FullReport', 'SummaryController@fullReport')  ;
+
+    //All complaints in admin panel
+    Route::get('/HotelComplaint', 'ComplaintController@Hotelcomplaints')  ;
+    Route::get('/PhotographyComplaint', 'ComplaintController@Photographycomplaints')  ;
+    Route::get('/SalonComplaint', 'ComplaintController@Saloncomplaints')  ;
+    Route::get('/TransportComplaint', 'ComplaintController@Transportcomplaints')  ;
+    Route::get('/CakeComplaint', 'ComplaintController@Cakecomplaints')  ;
+    Route::get('/EventPlannerComplaint', 'ComplaintController@EventPlannercomplaints')  ;
+    Route::get('/PoruwaComplaint', 'ComplaintController@Poruwacomplaints')  ;
+    Route::get('/ActorComplaint', 'ComplaintController@Actorcomplaints')  ;
+    Route::get('/DJComplaint', 'ComplaintController@DJcomplaints')  ;
+    Route::get('/CateringComplaint', 'ComplaintController@Cateringcomplaints')  ;
+    Route::get('/CostumeComplaint', 'ComplaintController@Costumecomplaints')  ;
+    Route::get('/DancingComplaint', 'ComplaintController@Dancingcomplaints')  ;
+    Route::get('/DecorationComplaint', 'ComplaintController@Decorationcomplaints')  ;
+    //complaint options in admin panel
+    Route::get('/complaints', 'ComplaintController@allcomplaints')  ;
+    Route::get('/ReviewComplaint{id}', 'ComplaintController@reviewComplaint')  ;
+    Route::get('/SolveComplaint{id}', 'ComplaintController@SolveComplaint')  ;
+    Route::get('/DeleteComplaint{id}', 'ComplaintController@DeleteComplaint')  ;
+
+    //all comments in admin panel
+    Route::get('/HotelComments', 'RatingController@Hotelcomments')  ;
+    Route::get('/PhotographyComments', 'RatingController@Photographycomments')  ;
+    Route::get('/SalonComments', 'RatingController@Saloncomments')  ;
+    Route::get('/TransportComments', 'RatingController@Transportcomments')  ;
+    Route::get('/CakeComments', 'RatingController@Cakecomments')  ;
+    Route::get('/EventPlannerComments', 'RatingController@EventPlannercomments')  ;
+    Route::get('/PoruwaComments', 'RatingController@Poruwacomments')  ;
+    Route::get('/ActorComments', 'RatingController@Actorcomments')  ;
+    Route::get('/DJComments', 'RatingController@DJcomments')  ;
+    Route::get('/CateringComments', 'RatingController@Cateringcomments')  ;
+    Route::get('/CostumeComments', 'RatingController@Costumecomments')  ;
+    Route::get('/DancingComments', 'RatingController@Dancingcomments')  ;
+    Route::get('/DecorationComments', 'RatingController@decorationcomments')  ;
+    //comment options in admin panel
+    Route::get('/comments', 'RatingController@allcomments')  ;
+    Route::get('/BlockComment{id}', 'RatingController@blockComment')  ;
+    Route::get('/UnblockComment{id}', 'RatingController@unblockComment')  ;
+    Route::get('/DeleteComment{id}', 'RatingController@deleteComment')  ;
+
+    //admin profile and admin options in admin panel
+    Route::get('/admins', 'AdminController@index')  ;
+    Route::get('/addAdmin', 'AdminController@registerAdmin')  ;
+    Route::post('/NewAdmin', 'AdminController@store')  ;
+    Route::get('/removeAdmin{id}', 'AdminController@destroy')  ;
+    Route::post('/EditAdmin{id}', 'AdminController@update')  ;
+    Route::post('/EditBio{id}', 'AdminController@updateBio')  ;
+    Route::post('/AdminMainpic{id}', 'AdminController@changeMainpic')  ;
+    Route::post('/AdminCoverpic{id}', 'AdminController@changeCoverpic')  ;
+    Route::post('/RemoveAdminAccount{id}', 'AdminController@deactivateAccount')  ;
+
+    //all service provider details in admin profile
+    Route::get('/AllHotels', 'UsersController@allhotel')  ;
+    Route::get('/AllPhotography', 'UsersController@allphotography')  ;
+    Route::get('/AllBeautician', 'UsersController@allbeautician')  ;
+    Route::get('/AllMusic', 'UsersController@alldjband')  ;
+    Route::get('/AllDJBand', 'UsersController@alldjband')  ;
+    Route::get('/AllCatering', 'UsersController@allcatering')  ;
+    Route::get('/AllRepresenter', 'UsersController@allrepresenter')  ;
+    Route::get('/AllCakeDesigner', 'UsersController@allcakeDesigner')  ;
+    Route::get('/AllCostumeDesigner', 'UsersController@allcostumedesigner')  ;
+    Route::get('/AllDancing', 'UsersController@alldancing')  ;
+    Route::get('/AllDecoration', 'UsersController@alldecoration')  ;
+    Route::get('/AllTransport', 'UsersController@alltransport')  ;
+    Route::get('/AllEventPlanners', 'UsersController@alleventplanners')  ;
+    Route::get('/AllPoruwaRituals', 'UsersController@allporuwarituals')  ;
+    //view any service provider in admin
+    Route::get('/ViewServiceProvider{id}', 'UsersController@viewService')  ;
+});
 
 
 

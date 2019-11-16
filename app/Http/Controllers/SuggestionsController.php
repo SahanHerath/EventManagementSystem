@@ -172,7 +172,7 @@ class SuggestionsController extends Controller
     {
         //
         $data=DB::table('suggestions')
-            ->where('Regarding','=','General_Info') 
+            ->where('Regarding','=','General Info') 
             ->get();
 
         return view('suggestions.General',compact('data'));
@@ -190,7 +190,7 @@ class SuggestionsController extends Controller
     {
         //
         $data=DB::table('suggestions')
-            ->where('Regarding','=','Website_Bug') 
+            ->where('Regarding','=','Website Bug') 
             ->get();
 
         return view('suggestions.Website',compact('data'));
@@ -199,7 +199,7 @@ class SuggestionsController extends Controller
     {
         //
         $data=DB::table('suggestions')
-            ->where('Regarding','=','Donation') 
+            ->where('Regarding','=','Donations') 
             ->get();
 
         return view('suggestions.Donations',compact('data'));
