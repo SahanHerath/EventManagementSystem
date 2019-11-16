@@ -211,213 +211,14 @@ Route::get('/UserProfile', function () {
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
-Route::get('/Profile', 'HomeController@profilecategory')  ;
-
-
-
-Route::post('/EditDecoratorEvents{id}', 'decorationController@eventUpdate')  ;
-Route::post('/EditDecoratorFeatures{id}', 'decorationController@featureUpdate')  ;
-Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@InfoUpdate')  ;
-
-Route::post('/EditDancerEvents{id}', 'DancingController@eventUpdate')  ;
-Route::post('/EditDancerFeatures{id}', 'DancingController@featureUpdate')  ;
-Route::post('/EditDancerDetails/{userid}/{dancerid}', 'DancingController@InfoUpdate')  ;
-
-
-Route::post('/EditPoruwaFeatures{id}', 'PoruwaController@featureUpdate')  ;
-Route::post('/EditPoruwaDetails/{userid}/{poruwaid}', 'PoruwaController@InfoUpdate')  ;
-
-Route::post('/EditPhotographyDetails/{userid}/{photographyid}', 'PhotographyController@InfoUpdate')  ;
-Route::post('/EditPhotographyEvents{id}', 'PhotographyController@eventUpdate')  ;
-Route::post('/EditPhotographyFeatures{id}', 'PhotographyController@featureUpdate')  ;
-
-Route::post('/EditMusicDetails/{userid}/{Musicid}', 'musicianController@InfoUpdate')  ;
-Route::post('/EditMusicEvents{id}', 'musicianController@eventUpdate')  ;
-Route::post('/EditMusicFeatures{id}', 'musicianController@featureUpdate')  ;
-
-
-Route::post('/EditSalonDetails/{userid}/{Salonid}', 'salonController@InfoUpdate')  ;
-Route::post('/EditSalonEvents{id}', 'salonController@eventUpdate')  ;
-Route::post('/EditSalonFeatures{id}', 'salonController@featureUpdate')  ;
-
-Route::post('/EditTransportDetails/{userid}/{Transportid}', 'TransportController@InfoUpdate')  ;
-Route::post('/EditTransportFeatures{id}', 'TransportController@featureUpdate')  ;
-
-Route::post('/EditCateringDetails/{userid}/{cateringid}', 'CateringController@InfoUpdate')  ;
-Route::post('/EditCateringEvents{id}', 'CateringController@eventUpdate')  ;
-Route::post('/EditCateringFeatures{id}', 'CateringController@featureUpdate')  ;
-
-Route::post('/EditCakeFeatures{id}', 'CakeController@featureUpdate')  ;
-Route::post('/EditCakeDetails/{userid}/{cateringid}', 'CakeController@InfoUpdate')  ;
-
-Route::post('/EditEventPlannerEvents{id}', 'EventPlanersController@eventUpdate')  ;
-Route::post('/EditEventPlannerDetails/{userid}/{plannersid}', 'EventPlanersController@InfoUpdate')  ;
-
-Route::post('/EditActorDetails/{userid}/{actorid}', 'ActorController@InfoUpdate')  ;
-Route::post('/EditActorEvents{id}', 'ActorController@eventUpdate')  ;
-Route::post('/EditActorFeatures{id}', 'ActorController@featureUpdate')  ;
-
-Route::post('/EditCostumeDesignerDetails/{userid}/{costumeid}', 'CostumeDesignerController@InfoUpdate')  ;
-Route::post('/EditCateringEvents{id}', 'CostumeDesignerController@eventUpdate')  ;
-Route::post('/EditCostumeDesignerFeatures{id}', 'CostumeDesignerController@featureUpdate')  ;
-
-Route::get('/HallUserProfile{id}','HallController@hallProfile');
-
-Route::post('/EditHotelDetails/{userid}/{hotelid}', 'HallController@HotelUpdate')  ;
-Route::post('/AddNewHall', 'HallController@AddnewHall')  ;
-Route::post('/newhall', 'HallController@newHall')  ;
-Route::post('/EditHallDetails{hallid}', 'HallController@editHall')  ;
-Route::post('/EditHallFeatures{id}', 'HallController@featureUpdate')  ;
-Route::post('/EditHallArrangement{id}', 'HallController@arrangeUpdate')  ;
-Route::get('/RemoveHall{hallid}', 'HallController@removehall')  ;
-Route::post('/EditHallEvents{eventid}', 'HallController@eventUpdate')  ;
-Route::post('/ChangePassword', 'UsersController@changepassword')  ;
-
-Route::get('/RemoveTransportAccount{id}', 'TransportController@removeAccount')  ;
-Route::get('/RemoveMusicAccount{id}', 'musicianController@removeAccount')  ;
-Route::get('/RemoveHotelAccount{id}', 'HallController@removeAccount')  ;
-Route::get('/RemovePoruwaAccount{id}', 'PoruwaController@removeAccount')  ;
-Route::get('/RemoveEventPlannerAccount{id}', 'EventPlanersController@removeAccount')  ;
-Route::get('/RemoveDecorationAccount{id}', 'decorationController@removeAccount')  ;
-Route::get('/RemoveCateringAccount{id}', 'CateringController@removeAccount')  ;
-Route::get('/RemoveCostumeDesignerAccount{id}', 'CostumeDesignerController@removeAccount')  ;
-Route::get('/RemoveActorAccount{id}', 'ActorController@removeAccount')  ;
-Route::get('/RemoveCakeAccount{id}', 'CakeController@removeAccount')  ;
-Route::get('/RemoveSalonAccount{id}', 'salonController@removeAccount')  ;
-Route::get('/RemovePhotographyAccount{id}', 'PhotographyController@removeAccount')  ;
-Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
 
 
 
 
-Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
-Route::post('/EditDecorationPackage', 'decorationController@EditPackage')  ;
-Route::post('/DeleteDecoratorPackage', 'decorationController@deletePackage')  ;
-Route::post('/ChangeDecorationMainpic{id}', 'decorationController@changeMainPic')  ;
-Route::post('/decarationpic1{id}', 'decorationController@changePic1')  ;
-Route::post('/decarationpic2{id}', 'decorationController@changePic2')  ;
-Route::post('/decarationpic3{id}', 'decorationController@changePic3')  ;
-Route::post('/decarationpic4{id}', 'decorationController@changePic4')  ;
-
-Route::post('/ChangePhotographyMainpic{id}', 'PhotographyController@changeMainPic')  ;
-Route::post('/photographypic1{id}', 'PhotographyController@changePic1')  ;
-Route::post('/photographypic2{id}', 'PhotographyController@changePic2')  ;
-Route::post('/photographypic3{id}', 'PhotographyController@changePic3')  ;
-Route::post('/photographypic4{id}', 'PhotographyController@changePic4')  ;
-Route::post('/AddPhotographyPackage{id}', 'PhotographyController@AddNewPackage')  ;
-Route::post('/EditPhotographyPackage', 'PhotographyController@EditPackage')  ;
-Route::post('/DeletePhotographyPackage', 'PhotographyController@deletePackage')  ;
-Route::post('/AddVedio{id}', 'PhotographyController@uploadVideo')  ;
-Route::post('/DeletePhotographyVideo', 'PhotographyController@deleteVideo')  ;
 
 
-Route::post('/ChangeSalonMainpic{id}', 'salonController@changeMainPic')  ;
-Route::post('/Salonpic1{id}', 'salonController@changePic1')  ;
-Route::post('/Salonpic2{id}', 'salonController@changePic2')  ;
-Route::post('/Salonpic3{id}', 'salonController@changePic3')  ;
-Route::post('/Salonpic4{id}', 'salonController@changePic4')  ;
-Route::post('/AddSalonPackage{id}', 'salonController@AddNewPackage')  ;
-Route::post('/EditSalonPackage', 'salonController@EditPackage')  ;
-Route::post('/DeleteSalonPackage', 'salonController@deletePackage')  ;
-
-Route::post('/ChangePoruwaMainpic{id}', 'PoruwaController@changeMainPic')  ;
-Route::post('/poruwapic1{id}', 'PoruwaController@changePic1')  ;
-Route::post('/poruwapic2{id}', 'PoruwaController@changePic2')  ;
-Route::post('/poruwapic3{id}', 'PoruwaController@changePic3')  ;
-Route::post('/poruwapic4{id}', 'PoruwaController@changePic4')  ;
-Route::post('/AddPoruwaPackage{id}', 'PoruwaController@AddNewPackage')  ;
-Route::post('/EditPoruwaPackage', 'PoruwaController@EditPackage')  ;
-Route::post('/DeletePoruwaPackage', 'PoruwaController@deletePackage')  ;
-
-Route::post('/ChangeMusicMainpic{id}', 'musicianController@changeMainPic')  ;
-Route::post('/Musicpic1{id}', 'musicianController@changePic1')  ;
-Route::post('/Musicpic2{id}', 'musicianController@changePic2')  ;
-Route::post('/Musicpic3{id}', 'musicianController@changePic3')  ;
-Route::post('/Musicpic4{id}', 'musicianController@changePic4')  ;
-Route::post('/AddMusicPackage{id}', 'musicianController@AddNewPackage')  ;
-Route::post('/EditMusicPackage', 'musicianController@EditPackage')  ;
-Route::post('/DeleteMusicPackage', 'musicianController@deletePackage')  ;
-Route::post('/AddMusicVideo{id}', 'musicianController@uploadVideo')  ;
-Route::post('/DeleteMusicVideo', 'musicianController@deleteVideo')  ;
-
-Route::post('/ChangeTransportMainpic{id}', 'TransportController@changeMainPic')  ;
-Route::post('/Transportpic1{id}', 'TransportController@changePic1')  ;
-Route::post('/Transportpic2{id}', 'TransportController@changePic2')  ;
-Route::post('/Transportpic3{id}', 'TransportController@changePic3')  ;
-Route::post('/Transportpic4{id}', 'TransportController@changePic4')  ;
-Route::post('/AddTransportPackage{id}', 'TransportController@AddNewPackage')  ;
-Route::post('/EditTransportPackage', 'TransportController@EditPackage')  ;
-Route::post('/DeleteTransportPackage', 'TransportController@deletePackage')  ;
 
 
-Route::post('/ChangePlannerMainpic{id}', 'EventPlanersController@changeMainPic')  ;
-Route::post('/plannerpic1{id}', 'EventPlanersController@changePic1')  ;
-Route::post('/plannerpic2{id}', 'EventPlanersController@changePic2')  ;
-Route::post('/plannerpic3{id}', 'EventPlanersController@changePic3')  ;
-Route::post('/plannerpic4{id}', 'EventPlanersController@changePic4')  ;
-Route::post('/AddEventPlannerPackage{id}', 'EventPlanersController@AddNewPackage')  ;
-Route::post('/EditPlannerPackage', 'EventPlanersController@EditPackage')  ;
-Route::post('/DeletePlannerPackage', 'EventPlanersController@deletePackage')  ;
-
-
-Route::post('/ChangeDancerMainpic{id}', 'DancingController@changeMainPic')  ;
-Route::post('/dancerpic1{id}', 'DancingController@changePic1')  ;
-Route::post('/dancerpic2{id}', 'DancingController@changePic2')  ;
-Route::post('/dancerpic3{id}', 'DancingController@changePic3')  ;
-Route::post('/dancerpic4{id}', 'DancingController@changePic4')  ;
-Route::post('/AddDancerPackage{id}', 'DancingController@AddNewPackage')  ;
-Route::post('/EditDancerPackage', 'DancingController@EditPackage')  ;
-Route::post('/DeleteDancerPackage', 'DancingController@deletePackage')  ;
-Route::post('/AddDanceVideo{id}', 'DancingController@uploadVideo')  ;
-Route::post('/DeleteDancerVideo', 'DancingController@deleteVideo')  ;
-
-
-Route::post('/ChangeCostumeMainpic{id}', 'CostumeDesignerController@changeMainPic')  ;
-Route::post('/costumepic1{id}', 'CostumeDesignerController@changePic1')  ;
-Route::post('/costumepic2{id}', 'CostumeDesignerController@changePic2')  ;
-Route::post('/costumepic3{id}', 'CostumeDesignerController@changePic3')  ;
-Route::post('/costumepic4{id}', 'CostumeDesignerController@changePic4')  ;
-Route::post('/AddCostumePackage{id}', 'CostumeDesignerController@AddNewPackage')  ;
-Route::post('/EditCostumePackage', 'CostumeDesignerController@EditPackage')  ;
-Route::post('/DeleteCostumePackage', 'CostumeDesignerController@deletePackage')  ;
-
-Route::post('/ChangeCateringMainpic{id}', 'CateringController@changeMainPic')  ;
-Route::post('/cateringpic1{id}', 'CateringController@changePic1')  ;
-Route::post('/cateringpic2{id}', 'CateringController@changePic2')  ;
-Route::post('/cateringpic3{id}', 'CateringController@changePic3')  ;
-Route::post('/cateringpic4{id}', 'CateringController@changePic4')  ;
-Route::post('/AddCateringPackage{id}', 'CateringController@AddNewPackage')  ;
-Route::post('/EditCateringPackage', 'CateringController@EditPackage')  ;
-Route::post('/DeleteCateringPackage', 'CateringController@deletePackage')  ;
-
-Route::post('/ChangeCakeMainpic{id}', 'CakeController@changeMainPic')  ;
-Route::post('/cakepic1{id}', 'CakeController@changePic1')  ;
-Route::post('/cakepic2{id}', 'CakeController@changePic2')  ;
-Route::post('/cakepic3{id}', 'CakeController@changePic3')  ;
-Route::post('/cakepic4{id}', 'CakeController@changePic4')  ;
-Route::post('/AddCakePackage{id}', 'CakeController@AddNewPackage')  ;
-Route::post('/EditCakePackage', 'CakeController@EditPackage')  ;
-Route::post('/DeleteCakePackage', 'CakeController@deletePackage')  ;
-
-Route::post('/ChangeActorMainpic{id}', 'ActorController@changeMainPic')  ;
-Route::post('/actorpic1{id}', 'ActorController@changePic1')  ;
-Route::post('/actorpic2{id}', 'ActorController@changePic2')  ;
-Route::post('/actorpic3{id}', 'ActorController@changePic3')  ;
-Route::post('/actorpic4{id}', 'ActorController@changePic4')  ;
-Route::post('/AddActorPackage{id}', 'ActorController@AddNewPackage')  ;
-Route::post('/EditActorPackage', 'ActorController@EditPackage')  ;
-Route::post('/DeleteActorPackage', 'ActorController@deletePackage')  ;
-
-Route::post('/ChangeHotelMainpic{id}', 'HallController@changeHotelMainPic')  ;
-Route::post('/ChangeHotelCoverpic{id}', 'HallController@changeHotelCoverPic')  ;
-Route::post('/ChangeHallMainpic{id}', 'HallController@changeHallMainPic')  ;
-Route::post('/hallpic1{id}', 'HallController@changePic1')  ;
-Route::post('/hallpic2{id}', 'HallController@changePic2')  ;
-Route::post('/hallpic3{id}', 'HallController@changePic3')  ;
-Route::post('/hallpic4{id}', 'HallController@changePic4')  ;
-Route::post('/AddHallPackage{id}', 'HallController@AddNewPackage')  ;
-Route::post('/EditHallPackage', 'HallController@EditPackage')  ;
-Route::post('/DeleteHallPackage', 'HallController@deletePackage')  ;
 
 Route::post('/AddRating{id}', 'RatingController@addrating')  ;
 Route::get('/AddComplaint{id}', 'ComplaintController@form')  ;
@@ -628,6 +429,207 @@ Route::group(['middleware'=> 'AuthenticateMiddleware'],function(){
     Route::get('/AllPoruwaRituals', 'UsersController@allporuwarituals')  ;
     //view any service provider in admin
     Route::get('/ViewServiceProvider{id}', 'UsersController@viewService')  ;
+
+    //Actor profile all edits and changes
+    Route::post('/EditActorDetails/{userid}/{actorid}', 'ActorController@InfoUpdate')  ;
+    Route::post('/EditActorEvents{id}', 'ActorController@eventUpdate')  ;
+    Route::post('/EditActorFeatures{id}', 'ActorController@featureUpdate')  ;
+    Route::post('/ChangeActorMainpic{id}', 'ActorController@changeMainPic')  ;
+    Route::post('/actorpic1{id}', 'ActorController@changePic1')  ;
+    Route::post('/actorpic2{id}', 'ActorController@changePic2')  ;
+    Route::post('/actorpic3{id}', 'ActorController@changePic3')  ;
+    Route::post('/actorpic4{id}', 'ActorController@changePic4')  ;
+    Route::post('/AddActorPackage{id}', 'ActorController@AddNewPackage')  ;
+    Route::post('/EditActorPackage', 'ActorController@EditPackage')  ;
+    Route::post('/DeleteActorPackage', 'ActorController@deletePackage')  ;
+
+    //Cake Designer profile all edits and changes
+    Route::post('/EditCakeFeatures{id}', 'CakeController@featureUpdate')  ;
+    Route::post('/EditCakeDetails/{userid}/{cateringid}', 'CakeController@InfoUpdate')  ;
+    Route::post('/ChangeCakeMainpic{id}', 'CakeController@changeMainPic')  ;
+    Route::post('/cakepic1{id}', 'CakeController@changePic1')  ;
+    Route::post('/cakepic2{id}', 'CakeController@changePic2')  ;
+    Route::post('/cakepic3{id}', 'CakeController@changePic3')  ;
+    Route::post('/cakepic4{id}', 'CakeController@changePic4')  ;
+    Route::post('/AddCakePackage{id}', 'CakeController@AddNewPackage')  ;
+    Route::post('/EditCakePackage', 'CakeController@EditPackage')  ;
+    Route::post('/DeleteCakePackage', 'CakeController@deletePackage')  ;
+    
+    //all acccount deactivate routes
+    Route::get('/RemoveTransportAccount{id}', 'TransportController@removeAccount')  ;
+    Route::get('/RemoveMusicAccount{id}', 'musicianController@removeAccount')  ;
+    Route::get('/RemoveHotelAccount{id}', 'HallController@removeAccount')  ;
+    Route::get('/RemovePoruwaAccount{id}', 'PoruwaController@removeAccount')  ;
+    Route::get('/RemoveEventPlannerAccount{id}', 'EventPlanersController@removeAccount')  ;
+    Route::get('/RemoveDecorationAccount{id}', 'decorationController@removeAccount')  ;
+    Route::get('/RemoveCateringAccount{id}', 'CateringController@removeAccount')  ;
+    Route::get('/RemoveCostumeDesignerAccount{id}', 'CostumeDesignerController@removeAccount')  ;
+    Route::get('/RemoveActorAccount{id}', 'ActorController@removeAccount')  ;
+    Route::get('/RemoveCakeAccount{id}', 'CakeController@removeAccount')  ;
+    Route::get('/RemoveSalonAccount{id}', 'salonController@removeAccount')  ;
+    Route::get('/RemovePhotographyAccount{id}', 'PhotographyController@removeAccount')  ;
+    Route::get('/RemoveDancerAccount{id}', 'DancingController@removeAccount')  ;
+
+
+
+    //all Decoration profile options
+    Route::post('/EditDecoratorEvents{id}', 'decorationController@eventUpdate')  ;
+    Route::post('/EditDecoratorFeatures{id}', 'decorationController@featureUpdate')  ;
+    Route::post('/EditDecoratorDetails/{userid}/{decoid}', 'decorationController@InfoUpdate')  ;
+    Route::post('/AddDecorationPackage{id}', 'decorationController@AddNewPackage')  ;
+    Route::post('/EditDecorationPackage', 'decorationController@EditPackage')  ;
+    Route::post('/DeleteDecoratorPackage', 'decorationController@deletePackage')  ;
+    Route::post('/ChangeDecorationMainpic{id}', 'decorationController@changeMainPic')  ;
+    Route::post('/decarationpic1{id}', 'decorationController@changePic1')  ;
+    Route::post('/decarationpic2{id}', 'decorationController@changePic2')  ;
+    Route::post('/decarationpic3{id}', 'decorationController@changePic3')  ;
+    Route::post('/decarationpic4{id}', 'decorationController@changePic4')  ;
+    
+    //all photography profile options
+    Route::post('/EditPhotographyDetails/{userid}/{photographyid}', 'PhotographyController@InfoUpdate')  ;
+    Route::post('/EditPhotographyEvents{id}', 'PhotographyController@eventUpdate')  ;
+    Route::post('/EditPhotographyFeatures{id}', 'PhotographyController@featureUpdate')  ;
+    Route::post('/ChangePhotographyMainpic{id}', 'PhotographyController@changeMainPic')  ;
+    Route::post('/photographypic1{id}', 'PhotographyController@changePic1')  ;
+    Route::post('/photographypic2{id}', 'PhotographyController@changePic2')  ;
+    Route::post('/photographypic3{id}', 'PhotographyController@changePic3')  ;
+    Route::post('/photographypic4{id}', 'PhotographyController@changePic4')  ;
+    Route::post('/AddPhotographyPackage{id}', 'PhotographyController@AddNewPackage')  ;
+    Route::post('/EditPhotographyPackage', 'PhotographyController@EditPackage')  ;
+    Route::post('/DeletePhotographyPackage', 'PhotographyController@deletePackage')  ;
+    Route::post('/AddVedio{id}', 'PhotographyController@uploadVideo')  ;
+    Route::post('/DeletePhotographyVideo', 'PhotographyController@deleteVideo')  ;
+
+    //all salon profile options
+    Route::post('/EditSalonDetails/{userid}/{Salonid}', 'salonController@InfoUpdate')  ;
+    Route::post('/EditSalonEvents{id}', 'salonController@eventUpdate')  ;
+    Route::post('/EditSalonFeatures{id}', 'salonController@featureUpdate')  ;
+    Route::post('/ChangeSalonMainpic{id}', 'salonController@changeMainPic')  ;
+    Route::post('/Salonpic1{id}', 'salonController@changePic1')  ;
+    Route::post('/Salonpic2{id}', 'salonController@changePic2')  ;
+    Route::post('/Salonpic3{id}', 'salonController@changePic3')  ;
+    Route::post('/Salonpic4{id}', 'salonController@changePic4')  ;
+    Route::post('/AddSalonPackage{id}', 'salonController@AddNewPackage')  ;
+    Route::post('/EditSalonPackage', 'salonController@EditPackage')  ;
+    Route::post('/DeleteSalonPackage', 'salonController@deletePackage')  ;
+    
+    //All poruwa profile options
+    Route::post('/EditPoruwaFeatures{id}', 'PoruwaController@featureUpdate')  ;
+    Route::post('/EditPoruwaDetails/{userid}/{poruwaid}', 'PoruwaController@InfoUpdate')  ;
+    Route::post('/ChangePoruwaMainpic{id}', 'PoruwaController@changeMainPic')  ;
+    Route::post('/poruwapic1{id}', 'PoruwaController@changePic1')  ;
+    Route::post('/poruwapic2{id}', 'PoruwaController@changePic2')  ;
+    Route::post('/poruwapic3{id}', 'PoruwaController@changePic3')  ;
+    Route::post('/poruwapic4{id}', 'PoruwaController@changePic4')  ;
+    Route::post('/AddPoruwaPackage{id}', 'PoruwaController@AddNewPackage')  ;
+    Route::post('/EditPoruwaPackage', 'PoruwaController@EditPackage')  ;
+    Route::post('/DeletePoruwaPackage', 'PoruwaController@deletePackage')  ;
+    
+    //all Music profile options
+    Route::post('/EditMusicDetails/{userid}/{Musicid}', 'musicianController@InfoUpdate')  ;
+    Route::post('/EditMusicEvents{id}', 'musicianController@eventUpdate')  ;
+    Route::post('/EditMusicFeatures{id}', 'musicianController@featureUpdate')  ;
+    Route::post('/ChangeMusicMainpic{id}', 'musicianController@changeMainPic')  ;
+    Route::post('/Musicpic1{id}', 'musicianController@changePic1')  ;
+    Route::post('/Musicpic2{id}', 'musicianController@changePic2')  ;
+    Route::post('/Musicpic3{id}', 'musicianController@changePic3')  ;
+    Route::post('/Musicpic4{id}', 'musicianController@changePic4')  ;
+    Route::post('/AddMusicPackage{id}', 'musicianController@AddNewPackage')  ;
+    Route::post('/EditMusicPackage', 'musicianController@EditPackage')  ;
+    Route::post('/DeleteMusicPackage', 'musicianController@deletePackage')  ;
+    Route::post('/AddMusicVideo{id}', 'musicianController@uploadVideo')  ;
+    Route::post('/DeleteMusicVideo', 'musicianController@deleteVideo')  ;
+    
+    //all transport profile options
+    Route::post('/EditTransportDetails/{userid}/{Transportid}', 'TransportController@InfoUpdate')  ;
+    Route::post('/EditTransportFeatures{id}', 'TransportController@featureUpdate')  ;
+    Route::post('/ChangeTransportMainpic{id}', 'TransportController@changeMainPic')  ;
+    Route::post('/Transportpic1{id}', 'TransportController@changePic1')  ;
+    Route::post('/Transportpic2{id}', 'TransportController@changePic2')  ;
+    Route::post('/Transportpic3{id}', 'TransportController@changePic3')  ;
+    Route::post('/Transportpic4{id}', 'TransportController@changePic4')  ;
+    Route::post('/AddTransportPackage{id}', 'TransportController@AddNewPackage')  ;
+    Route::post('/EditTransportPackage', 'TransportController@EditPackage')  ;
+    Route::post('/DeleteTransportPackage', 'TransportController@deletePackage')  ;
+
+    //all event planner profile options
+    Route::post('/EditEventPlannerEvents{id}', 'EventPlanersController@eventUpdate')  ;
+    Route::post('/EditEventPlannerDetails/{userid}/{plannersid}', 'EventPlanersController@InfoUpdate')  ;
+    Route::post('/ChangePlannerMainpic{id}', 'EventPlanersController@changeMainPic')  ;
+    Route::post('/plannerpic1{id}', 'EventPlanersController@changePic1')  ;
+    Route::post('/plannerpic2{id}', 'EventPlanersController@changePic2')  ;
+    Route::post('/plannerpic3{id}', 'EventPlanersController@changePic3')  ;
+    Route::post('/plannerpic4{id}', 'EventPlanersController@changePic4')  ;
+    Route::post('/AddEventPlannerPackage{id}', 'EventPlanersController@AddNewPackage')  ;
+    Route::post('/EditPlannerPackage', 'EventPlanersController@EditPackage')  ;
+    Route::post('/DeletePlannerPackage', 'EventPlanersController@deletePackage')  ;
+
+    //all dancer profile options
+    Route::post('/EditDancerEvents{id}', 'DancingController@eventUpdate')  ;
+    Route::post('/EditDancerFeatures{id}', 'DancingController@featureUpdate')  ;
+    Route::post('/EditDancerDetails/{userid}/{dancerid}', 'DancingController@InfoUpdate')  ;
+    Route::post('/ChangeDancerMainpic{id}', 'DancingController@changeMainPic')  ;
+    Route::post('/dancerpic1{id}', 'DancingController@changePic1')  ;
+    Route::post('/dancerpic2{id}', 'DancingController@changePic2')  ;
+    Route::post('/dancerpic3{id}', 'DancingController@changePic3')  ;
+    Route::post('/dancerpic4{id}', 'DancingController@changePic4')  ;
+    Route::post('/AddDancerPackage{id}', 'DancingController@AddNewPackage')  ;
+    Route::post('/EditDancerPackage', 'DancingController@EditPackage')  ;
+    Route::post('/DeleteDancerPackage', 'DancingController@deletePackage')  ;
+    Route::post('/AddDanceVideo{id}', 'DancingController@uploadVideo')  ;
+    Route::post('/DeleteDancerVideo', 'DancingController@deleteVideo')  ;
+
+    //all Costume Designer profile
+    Route::post('/EditCostumeDesignerDetails/{userid}/{costumeid}', 'CostumeDesignerController@InfoUpdate')  ;
+    Route::post('/EditCateringEvents{id}', 'CostumeDesignerController@eventUpdate')  ;
+    Route::post('/EditCostumeDesignerFeatures{id}', 'CostumeDesignerController@featureUpdate')  ;
+    Route::post('/ChangeCostumeMainpic{id}', 'CostumeDesignerController@changeMainPic')  ;
+    Route::post('/costumepic1{id}', 'CostumeDesignerController@changePic1')  ;
+    Route::post('/costumepic2{id}', 'CostumeDesignerController@changePic2')  ;
+    Route::post('/costumepic3{id}', 'CostumeDesignerController@changePic3')  ;
+    Route::post('/costumepic4{id}', 'CostumeDesignerController@changePic4')  ;
+    Route::post('/AddCostumePackage{id}', 'CostumeDesignerController@AddNewPackage')  ;
+    Route::post('/EditCostumePackage', 'CostumeDesignerController@EditPackage')  ;
+    Route::post('/DeleteCostumePackage', 'CostumeDesignerController@deletePackage')  ;
+
+    //All Catering profile options
+    Route::post('/EditCateringDetails/{userid}/{cateringid}', 'CateringController@InfoUpdate')  ;
+    Route::post('/EditCateringEvents{id}', 'CateringController@eventUpdate')  ;
+    Route::post('/EditCateringFeatures{id}', 'CateringController@featureUpdate')  ;
+    Route::post('/ChangeCateringMainpic{id}', 'CateringController@changeMainPic')  ;
+    Route::post('/cateringpic1{id}', 'CateringController@changePic1')  ;
+    Route::post('/cateringpic2{id}', 'CateringController@changePic2')  ;
+    Route::post('/cateringpic3{id}', 'CateringController@changePic3')  ;
+    Route::post('/cateringpic4{id}', 'CateringController@changePic4')  ;
+    Route::post('/AddCateringPackage{id}', 'CateringController@AddNewPackage')  ;
+    Route::post('/EditCateringPackage', 'CateringController@EditPackage')  ;
+    Route::post('/DeleteCateringPackage', 'CateringController@deletePackage')  ;
+
+    //hotel and hall options
+    Route::get('/HallUserProfile{id}','HallController@hallProfile');
+    Route::post('/EditHotelDetails/{userid}/{hotelid}', 'HallController@HotelUpdate')  ;
+    Route::post('/AddNewHall', 'HallController@AddnewHall')  ;
+    Route::post('/newhall', 'HallController@newHall')  ;
+    Route::post('/EditHallDetails{hallid}', 'HallController@editHall')  ;
+    Route::post('/EditHallFeatures{id}', 'HallController@featureUpdate')  ;
+    Route::post('/EditHallArrangement{id}', 'HallController@arrangeUpdate')  ;
+    Route::get('/RemoveHall{hallid}', 'HallController@removehall')  ;
+    Route::post('/EditHallEvents{eventid}', 'HallController@eventUpdate')  ;
+    Route::post('/ChangeHotelMainpic{id}', 'HallController@changeHotelMainPic')  ;
+    Route::post('/ChangeHotelCoverpic{id}', 'HallController@changeHotelCoverPic')  ;
+    Route::post('/ChangeHallMainpic{id}', 'HallController@changeHallMainPic')  ;
+    Route::post('/hallpic1{id}', 'HallController@changePic1')  ;
+    Route::post('/hallpic2{id}', 'HallController@changePic2')  ;
+    Route::post('/hallpic3{id}', 'HallController@changePic3')  ;
+    Route::post('/hallpic4{id}', 'HallController@changePic4')  ;
+    Route::post('/AddHallPackage{id}', 'HallController@AddNewPackage')  ;
+    Route::post('/EditHallPackage', 'HallController@EditPackage')  ;
+    Route::post('/DeleteHallPackage', 'HallController@deletePackage')  ;
+    
+    //Profile
+    Route::get('/Profile', 'HomeController@profilecategory')  ;
+    Route::post('/ChangePassword', 'UsersController@changepassword')  ;
+
 });
 
 
