@@ -320,7 +320,7 @@ class AdminController extends Controller
                     {
                         $Main_pic=$request->file('Main_pic');
                         $filename=time().'.'.$Main_pic->getClientOriginalExtension();
-                        Image::make($Main_pic)->fit(1920,1080)->save(public_path('/uploads/admin/'. $filename));
+                        Image::make($Main_pic)->resize(1920,1080)->save(public_path('/uploads/admin/'. $filename));
 
                         $picture=Admin::where('id',$id)
                         ->update([
