@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2019 at 09:50 PM
+-- Generation Time: Nov 17, 2019 at 02:57 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -87,7 +87,6 @@ CREATE TABLE `actor_packages` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.actor_packages: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`actor_packages`' at line 1
 
 -- --------------------------------------------------------
 
@@ -133,6 +132,25 @@ CREATE TABLE `awards` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `awards`
+--
+
+INSERT INTO `awards` (`id`, `user_id`, `Platinum`, `Gold`, `Silver`, `Bronze`, `created_at`, `updated_at`) VALUES
+(1, 2, 0, 0, 0, 0, '2019-11-16 16:09:24', '2019-11-16 16:09:24'),
+(2, 3, 0, 0, 0, 0, '2019-11-16 16:30:36', '2019-11-16 16:30:36'),
+(3, 4, 0, 0, 0, 0, '2019-11-16 17:23:50', '2019-11-16 17:23:50'),
+(4, 5, 0, 0, 0, 0, '2019-11-16 17:48:15', '2019-11-16 17:48:15'),
+(5, 6, 0, 0, 0, 0, '2019-11-16 19:53:33', '2019-11-16 19:53:33'),
+(6, 7, 0, 0, 0, 0, '2019-11-16 20:14:46', '2019-11-16 20:14:46'),
+(7, 8, 0, 0, 0, 0, '2019-11-16 20:34:12', '2019-11-16 20:34:12'),
+(8, 9, 0, 0, 0, 0, '2019-11-16 20:49:38', '2019-11-16 20:49:38'),
+(9, 10, 0, 0, 0, 0, '2019-11-16 22:26:44', '2019-11-16 22:26:44'),
+(10, 11, 0, 0, 0, 0, '2019-11-16 23:38:21', '2019-11-16 23:38:21'),
+(11, 12, 0, 0, 0, 0, '2019-11-17 02:26:22', '2019-11-17 02:26:22'),
+(12, 13, 0, 0, 0, 0, '2019-11-17 02:43:02', '2019-11-17 02:43:02'),
+(13, 14, 0, 0, 0, 0, '2019-11-17 03:00:53', '2019-11-17 03:00:53');
 
 -- --------------------------------------------------------
 
@@ -302,6 +320,7 @@ CREATE TABLE `costume_designers` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Error reading data for table eventmanagementsystem.costume_designers: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`costume_designers`' at line 1
 
 -- --------------------------------------------------------
 
@@ -619,6 +638,7 @@ CREATE TABLE `hall_table_arrangements` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Error reading data for table eventmanagementsystem.hall_table_arrangements: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`hall_table_arrangements`' at line 1
 
 -- --------------------------------------------------------
 
@@ -775,6 +795,25 @@ CREATE TABLE `photographies` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `photographies`
+--
+
+INSERT INTO `photographies` (`id`, `Studio_Name`, `Address`, `ContactNo`, `Link`, `Description`, `Drone`, `Wedding_Photography`, `Preshoot_Vedio`, `Wedding_Vedio`, `Album_Making`, `Wedding_Card`, `main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Chanuka Samila Photography', 'N0.3 , Horana Road , Kalutara', '0727671463', 'https://www.facebook.com/chanuka.samila.5', 'Photographer with creative abilities and working experience of one year. Working hard as a photographer to achieve new level of photography', 'Not Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', '1573940359.jpg', '1573940360.jpg', '1573940361.jpg', '1573940362.jpg', '1573940363.jpg', 2, '2019-11-16 16:09:24', '2019-11-16 16:09:24'),
+(2, 'Studio 2b', '31/a/1, kiribathkumbura Kandy', '071 798 0909', 'https://www.facebook.com/MGDhanushkaPhotography/', 'Photographer with all capabilities. Specially covering Wedding ,preshoot ,event video,  Birthday and all the other special events in kandy area . I have so many services available  \r\nsuch as video coverge, photography , video makingetc.', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1573941632.jpg', '1573941633.jpg', '1573941634.jpg', '1573941722.jpg', '1573941760.jpg', 3, '2019-11-16 22:02:42', '2019-11-16 16:32:42'),
+(3, 'Pathum Kulasooriya Photography', 'No .13, Matale road , Akurana ,Kandy', '0716565101', 'https://www.facebook.com/Pathum-Kulasooriya-Photography-314527002475199/', 'Creatrive Photographer with Newest technological elements and  Day and  night photography and also special packages for wedding , parties and also for trips .', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1573944885.jpg', '1573944827.jpg', '1573944829.jpg', '1573944908.jpg', '1573944830.jpg', 4, '2019-11-16 22:55:10', '2019-11-16 17:25:10'),
+(4, 'BlueLine Photography', 'No.12, horana, Kalutara', '078 804 2574', 'https://www.facebook.com/pg/Blue-line-342429012892759/about/?ref=page_internal', 'BlueLine photography is the place where your event dreams come through .\r\nWe  cover your weddings, parties, professional events, and all your dream events with best memorable photographies.', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1573946291.jpg', '1573946292.jpg', '1573946399.jpg', '1573946293.jpg', '1573946499.jpg', 5, '2019-11-16 23:21:41', '2019-11-16 17:51:41'),
+(5, 'LOOKATME', 'No. 4 , Olcat mawath ,Colombo', '076 688 8787', 'https://www.facebook.com/LOOKATME.LK/', 'We are the most popular upcoming professional photographic page in Sri Lanka. We would like to support you by covering your event as your official photography partner.', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1573953844.jpg', '1573953809.jpg', '1573953810.jpg', '1573953811.jpg', '1573953812.jpg', 6, '2019-11-17 01:24:04', '2019-11-16 19:54:04'),
+(6, 'Sandeepa Tharinda Photography', 'N0.33 , Walimada , Badulla', '0713314134', 'https://www.facebook.com/jaffnaunilk/', 'I am a photographer who is officially  covering events in university of jaffna. And also i can cover any event in b adulla area.', 'Not Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1573955083.jpg', '1573955119.jpg', '1573955084.jpg', '1573955085.jpg', '1573955086.jpg', 7, '2019-11-17 01:45:20', '2019-11-16 20:15:20'),
+(7, 'Shehan Umayanga photography', 'No.3, Maravilla road, Wennapuwa , Puttalam', '0771233412', 'https://www.facebook.com/jaffnaunilk/', 'Covering day and night events with special discounts and packages that have special offers', 'Not Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1573956364.jpg', '1573956250.jpg', '1573956298.jpg', '1573956251.jpg', '1573956252.jpg', 8, '2019-11-17 02:06:04', '2019-11-16 20:36:04'),
+(8, 'Ma Creations', 'No,11 , Pannikar Road ,Jaffna', '0721132423', 'https://www.facebook.com/amanthaf', 'I am event photographer  with ability cover the  the events in jaffna and nuwara eliya with any time of the day.', 'Not Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '1573957236.jpg', '1573957175.jpg', '1573957176.jpg', '1573957208.jpg', '1573957177.jpg', 9, '2019-11-17 02:20:36', '2019-11-16 20:50:36'),
+(9, 'Nalinda Pubudu Photography', 'N0. 4 , walapane Road, badulla', '0771231234', 'https://www.facebook.com/pg/jaffnaunilk/posts/?ref=page_internal', 'Photographer with ability cover various events in badulla , colombo and jaffna region. \r\nBest service with best equipment. Best  Supportive Crew with best pictures.', 'Not Available', 'Available', 'Available', 'Not Available', 'Available', 'Available', '1573963000.jpg', '1573963001.jpg', '1573964993.jpg', '1573963002.jpg', '1573963003.jpg', 10, '2019-11-17 04:29:54', '2019-11-16 22:59:54'),
+(10, 'Srimal Saranga Photography', 'No.3, Dambulla Road, Dambulla.', '0772324156', 'https://www.facebook.com/jaffnaunilk/', 'Covering events in colombo, kandy ,jaffna, and matale. Covering weddings ,parties, trips and professional events.', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', '1573967298.jpg', '1573967345.jpg', '1573967388.jpg', '1573967431.jpg', '1573967300.jpg', 11, '2019-11-17 05:10:31', '2019-11-16 23:40:31'),
+(11, 'OpenSky Photography', 'No.92, dankotuwa ,wennappuwa', '0777262612', 'https://www.facebook.com/Opensky-Photography-744168515962984/', 'Photography  and videography in dankotuwa ,colombo ,puttalam, ksndy ,jaffna areas.\r\nBest service for a reasonable price .', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', '1573977363.png', '1573977372.jpg', '1573977374.jpg', '1573977375.jpg', '1573977376.jpg', 12, '2019-11-17 02:26:17', '2019-11-17 02:26:17'),
+(12, 'Studio Pabalu', 'Studio Pabalu, 21/1/3, Methsiripaya, Katugastota, Sri Lanka 20800', '077 717 6277', 'https://www.facebook.com/Madushan-Perera-Photography-178035069709196/', 'Photographer  covering events in kandy ,colombo , matale ,nuwara eliya and all other places with best services and ultimate experience of photography.', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1573978464.jpg', '1573978376.jpg', '1573978377.jpg', '1573978378.jpg', '1573978379.jpg', 13, '2019-11-17 08:14:25', '2019-11-17 02:44:25'),
+(13, 'PV photography', 'no. 4, Colombo 4, Colombo', '0710913025', 'https://www.facebook.com/PathumVRphoto/', 'best photographing and videography with best equipment and  and any condition .\r\nWeather is not a issue Time is not a issuse.\r\nWe supply you our best service', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1573979449.jpg', '1573979450.jpg', '1573979451.jpg', '1573979452.jpg', '1573979452.jpg', 14, '2019-11-17 03:00:53', '2019-11-17 03:00:53');
+
 -- --------------------------------------------------------
 
 --
@@ -794,6 +833,25 @@ CREATE TABLE `photography_events` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photography_events`
+--
+
+INSERT INTO `photography_events` (`id`, `user_id`, `Wedding`, `Get_togather`, `Birthday`, `Competition`, `Professional_Events`, `Sports`, `Trips`, `created_at`, `updated_at`) VALUES
+(1, 2, 'Not Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-16 16:09:24', '2019-11-16 16:09:24'),
+(2, 3, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Not Available', 'Not Available', '2019-11-16 16:30:36', '2019-11-16 16:30:36'),
+(3, 4, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '2019-11-16 17:23:50', '2019-11-16 17:23:50'),
+(4, 5, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-16 17:48:15', '2019-11-16 17:48:15'),
+(5, 6, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Not Available', 'Not Available', '2019-11-16 19:53:32', '2019-11-16 19:53:32'),
+(6, 7, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-16 20:14:46', '2019-11-16 20:14:46'),
+(7, 8, 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', '2019-11-16 20:34:12', '2019-11-16 20:34:12'),
+(8, 9, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-16 20:49:38', '2019-11-16 20:49:38'),
+(9, 10, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-16 22:26:44', '2019-11-16 22:26:44'),
+(10, 11, 'Not Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-16 23:38:21', '2019-11-16 23:38:21'),
+(11, 12, 'Not Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-17 02:26:21', '2019-11-17 02:26:21'),
+(12, 13, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-17 02:43:01', '2019-11-17 02:43:01'),
+(13, 14, 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', '2019-11-17 03:00:53', '2019-11-17 03:00:53');
 
 -- --------------------------------------------------------
 
@@ -1110,7 +1168,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `city`, `admin`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Sahan Herath', 'sahand.herath@gmail.com', NULL, 'admin', 'Kandy', 1, '$2y$10$PvPhV6m.Xsoxq/hdZEg06OW7oIaJrQjOwkXb3pgppez.rw1wUtXQm', NULL, '2019-11-16 14:43:02', '2019-11-16 15:06:34');
+(1, 'Sahan Herath', 'sahand.herath@gmail.com', NULL, 'admin', 'Kandy', 1, '$2y$10$PvPhV6m.Xsoxq/hdZEg06OW7oIaJrQjOwkXb3pgppez.rw1wUtXQm', NULL, '2019-11-16 14:43:02', '2019-11-16 15:06:34'),
+(2, 'Chanuka Samila', 'chanukasamila@gmail.com', NULL, 'Photography', 'Kalutara', 0, '$2y$10$z3RG0enTpHkg4M9tWTMvDuSFqeoTOfAfY5BOnYfk0HYqMcuPkpeCG', NULL, '2019-11-16 16:04:58', '2019-11-16 16:04:58'),
+(3, 'M.G. Dhanushka', 'studio2bkandy@gmail.com', NULL, 'Photography', 'Kandy', 0, '$2y$10$68F9h6y6mRjyT6Xo0Ys4S.I9jTtmboNJw4PX5KOnDpZ7csVkFlULC', NULL, '2019-11-16 16:22:37', '2019-11-16 16:22:37'),
+(4, 'Pathum Kulasooriya', 'pathumkulasooriya96@gmail.com', NULL, 'Photography', 'Kandy', 0, '$2y$10$DTXcp0Vhu2fTaja7udmc0.i6iPvRMdDYbb0MfVglTSOafMksEWYV.', NULL, '2019-11-16 17:10:34', '2019-11-16 17:10:34'),
+(5, 'Yasiru Lakshan Lokuwithana', 'yasirulakshan10@gmail.com', NULL, 'Photography', 'Kalutara', 0, '$2y$10$bbrlP0Z53CLOd5DK0GInjuYr9PakbsLdBVx88DVMCcLLor7X/rYH.', NULL, '2019-11-16 17:36:10', '2019-11-16 17:36:10'),
+(6, 'LOOKATME', 'LOOKATME@gmail.com', NULL, 'Photography', 'Colombo', 0, '$2y$10$ByPUffTi0v44i9x6Jg/hRuXR2ZzniIHm/ppKj9z7ln9s0AxvKy8YG', NULL, '2019-11-16 19:20:47', '2019-11-16 19:20:47'),
+(7, 'Sandeepa Tharinda', 'sandeepatharu@gmail.com', NULL, 'Photography', 'Badulla', 0, '$2y$10$2QOHLob6YZO7qVwpONlYaeyZNBhrX8BJHw222Za.e32Z4Ngf6iTUO', NULL, '2019-11-16 20:06:50', '2019-11-16 20:06:50'),
+(8, 'Shehan Umayanga', 'shashenumayanga@gmail.com', NULL, 'Photography', 'Nattandiya', 0, '$2y$10$9L4keQ2azwf0zOKOcLNcmenHd9cmjW.wB/UcIHzU3eZPzg5ephRu6', NULL, '2019-11-16 20:27:00', '2019-11-16 20:35:27'),
+(9, 'Manjitha  Dissanayaka', 'manjitha99@gmail.com', NULL, 'Photography', 'Nuwara Eliya', 0, '$2y$10$vlXNOCN.bNI10cKAVi4tw.ZxIq8skiabAj62KMKUpeIIuF5YcFO0W', NULL, '2019-11-16 20:39:12', '2019-11-16 20:39:12'),
+(10, 'Nalinda Pubudu', 'ies.nalindapubudu@gmail.com', NULL, 'Photography', 'Badulla', 0, '$2y$10$5vilkTmc/fBTo0w1wJMGk.D7t7UtdPalo7Vh7PjBh1WXgD/kZVQzW', NULL, '2019-11-16 22:20:40', '2019-11-16 22:20:40'),
+(11, 'srimal saranga', 'srimalsaranga1@gmail.com', NULL, 'Photography', 'Dambulla', 0, '$2y$10$Ko1ccXU6VywDHocka.raQujzlMcoN/TGE8wlOJe0jWS9wWOzBsw.e', NULL, '2019-11-16 23:22:09', '2019-11-16 23:22:09'),
+(12, 'Ashan Navinda', '95shnavi@gmail.com', NULL, 'Photography', 'Dankotuwa', 0, '$2y$10$WrEgELvY004yL2fSDtPso.nejs6aO0IBqMA9NRqHL31uE4q7i/ae2', NULL, '2019-11-17 02:20:32', '2019-11-17 02:20:32'),
+(13, 'Madhushanka Perera', 'padaludigital@gmail.com', NULL, 'Photography', 'Kandy', 0, '$2y$10$LobCDQvRim4WK2jTPTv0ieuCV/6h8sFEpLUuv6de7.O5a3kG3eoHK', NULL, '2019-11-17 02:37:36', '2019-11-17 02:37:36'),
+(14, 'Pathum V Ranasinghe', 'vrpathum94@gmail.com', NULL, 'Photography', 'Colombo', 0, '$2y$10$ooMxWxgcoKRO9P18Lh3bXOkASj8KrEK2ITo9LE4RvTZE3WnAYYGTu', NULL, '2019-11-17 02:56:48', '2019-11-17 02:56:48');
 
 --
 -- Indexes for dumped tables
@@ -1455,7 +1526,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
@@ -1629,13 +1700,13 @@ ALTER TABLE `music_videos`
 -- AUTO_INCREMENT for table `photographies`
 --
 ALTER TABLE `photographies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `photography_events`
 --
 ALTER TABLE `photography_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `photography_packages`
@@ -1725,7 +1796,7 @@ ALTER TABLE `transport_packages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
