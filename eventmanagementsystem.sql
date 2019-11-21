@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2019 at 02:57 PM
+-- Generation Time: Nov 21, 2019 at 03:19 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -150,7 +150,12 @@ INSERT INTO `awards` (`id`, `user_id`, `Platinum`, `Gold`, `Silver`, `Bronze`, `
 (10, 11, 0, 0, 0, 0, '2019-11-16 23:38:21', '2019-11-16 23:38:21'),
 (11, 12, 0, 0, 0, 0, '2019-11-17 02:26:22', '2019-11-17 02:26:22'),
 (12, 13, 0, 0, 0, 0, '2019-11-17 02:43:02', '2019-11-17 02:43:02'),
-(13, 14, 0, 0, 0, 0, '2019-11-17 03:00:53', '2019-11-17 03:00:53');
+(13, 14, 0, 0, 0, 0, '2019-11-17 03:00:53', '2019-11-17 03:00:53'),
+(14, 15, 0, 0, 0, 0, '2019-11-21 07:14:09', '2019-11-21 07:14:09'),
+(15, 16, 0, 0, 0, 0, '2019-11-21 07:25:10', '2019-11-21 07:25:10'),
+(16, 17, 0, 0, 0, 0, '2019-11-21 07:36:19', '2019-11-21 07:36:19'),
+(17, 18, 0, 0, 0, 0, '2019-11-21 07:59:47', '2019-11-21 07:59:47'),
+(18, 19, 0, 0, 0, 0, '2019-11-21 08:19:43', '2019-11-21 08:19:43');
 
 -- --------------------------------------------------------
 
@@ -320,7 +325,6 @@ CREATE TABLE `costume_designers` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.costume_designers: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`costume_designers`' at line 1
 
 -- --------------------------------------------------------
 
@@ -638,7 +642,6 @@ CREATE TABLE `hall_table_arrangements` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.hall_table_arrangements: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`hall_table_arrangements`' at line 1
 
 -- --------------------------------------------------------
 
@@ -703,6 +706,17 @@ CREATE TABLE `musicians` (
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `musicians`
+--
+
+INSERT INTO `musicians` (`Id`, `Dj_Name`, `Address`, `ContactNo`, `Link`, `Description`, `Playing_Hrs`, `Payment`, `Extra_Cost`, `Fire`, `Smoke`, `Lights`, `Main_Logo`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `Created_at`, `Updated_at`) VALUES
+(1, 'Fire Entertainment', '691/3, Wiliyam Gopallawa road, Kandy', '077 602 7028', 'https://www.facebook.com/pg/www.fireentertaiment.lk/about/?ref=page_internal', 'I am a  DJ Artist in Kandy are with all the new technologies and best music and sound for your  event. \r\nFell the music with us!!!!!!', 5, '25000.00', '7000.00', 'Not Available', 'Available', 'Available', '1574340245.jpg', '1574340246.jpg', '1574340247.jpg', '1574340305.jpg', '1574340248.jpg', 15, '2019-11-21 12:45:06', '2019-11-21 07:15:06'),
+(2, 'DJ Hash', 'Katugasthota Kandy', '077 543 9090', 'https://www.facebook.com/pg/djHash.HarshaMendis/about/?ref=page_internal', 'I am a DJ in kandy area with all the various abilities of  DJ and Music. I covered all the range of  events and technologies.', 6, '17000.00', '3000.00', 'Available', 'Available', 'Available', '1574340905.jpg', '1574340906.jpg', '1574340907.jpg', '1574340946.jpg', '1574340908.jpg', 16, '2019-11-21 12:56:07', '2019-11-21 07:26:07'),
+(3, 'Flash Music Band', 'Rupasiri Mawatha Nugegoda', '071 998 5000', 'https://www.facebook.com/flashnugegoda/', 'Our mussic band is one of the best  classic band in sri lanka. We cover Weddings , Parties and other events in jaffna area.', 6, '23000.00', '7000.00', 'Not Available', 'Available', 'Available', '1574341878.jpg', '1574341861.jpg', '1574341577.jpg', '1574341578.jpg', '1574341578.jpg', 17, '2019-11-21 13:11:18', '2019-11-21 07:41:18'),
+(4, 'isu entertainment', 'colombo ,sri lanka', '0772998021', 'https://www.facebook.com/pg/isuentertainment/about/?ref=page_internal', 'Isuru Janith Known as His field name Dj Isu He Started Deejaying In age 14 born in Colombo Sri lanka , His Genres ware Progressive House , Tech House , Commercial House , Dutch House and House . Not only as a DJ Beyond That He tried To Be a Re-mixer and a Producer in 2009 .After Playing few Beach parties and club events he was a Most wanted Deejay in Sri lankan DJ Industry...... (All Type Of Music Are include)', 8, '50000.00', '6000.00', 'Not Available', 'Available', 'Available', '1574343054.jpg', '1574342984.jpg', '1574343019.jpg', '1574342985.jpg', '1574343038.jpg', 18, '2019-11-21 13:30:55', '2019-11-21 08:00:55'),
+(5, 'Nalinda Pubudu Entertainment', 'No .13, Matale road , Akurana ,Kandy', '0714958932', 'https://www.facebook.com/nalinda.pubudu.7', 'Best DJ in jaffna area covering all the university events as DJ artist.', 7, '30000.00', '7000.00', 'Not Available', 'Available', 'Available', '1574344179.jpg', '1574344180.jpg', '1574344211.jpg', '1574344181.jpg', '1574344182.jpg', 19, '2019-11-21 13:50:13', '2019-11-21 08:20:13');
+
 -- --------------------------------------------------------
 
 --
@@ -720,6 +734,17 @@ CREATE TABLE `musician_events` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `musician_events`
+--
+
+INSERT INTO `musician_events` (`Id`, `user_id`, `Wedding`, `Birthday`, `Beach_Party`, `Get_Together`, `Parties`, `Created_at`, `Updated_at`) VALUES
+(1, 15, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:14:09', '2019-11-21 07:14:09'),
+(2, 16, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:25:09', '2019-11-21 07:25:09'),
+(3, 17, 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-11-21 07:36:19', '2019-11-21 07:36:19'),
+(4, 18, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:59:47', '2019-11-21 07:59:47'),
+(5, 19, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 08:19:43', '2019-11-21 08:19:43');
 
 -- --------------------------------------------------------
 
@@ -739,6 +764,13 @@ CREATE TABLE `music_packages` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `music_packages`
+--
+
+INSERT INTO `music_packages` (`id`, `user_id`, `Package_Name`, `Hours`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 19, 'Gold Package', 6, 'Firing Machine\r\nDJ Ligths & Disco Lights\r\nDJ 24x7\r\nNIgth Package\r\nOutside Events', '25000.00', '1574344883.pdf', '2019-11-21 08:31:23', '2019-11-21 08:31:23');
+
 -- --------------------------------------------------------
 
 --
@@ -753,6 +785,13 @@ CREATE TABLE `music_videos` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `music_videos`
+--
+
+INSERT INTO `music_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
+(1, 19, 'Nalinda Pubudu DJ', '1574345087.mp4', '2019-11-21 08:34:47', '2019-11-21 08:34:47');
 
 -- --------------------------------------------------------
 
@@ -1181,7 +1220,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (11, 'srimal saranga', 'srimalsaranga1@gmail.com', NULL, 'Photography', 'Dambulla', 0, '$2y$10$Ko1ccXU6VywDHocka.raQujzlMcoN/TGE8wlOJe0jWS9wWOzBsw.e', NULL, '2019-11-16 23:22:09', '2019-11-16 23:22:09'),
 (12, 'Ashan Navinda', '95shnavi@gmail.com', NULL, 'Photography', 'Dankotuwa', 0, '$2y$10$WrEgELvY004yL2fSDtPso.nejs6aO0IBqMA9NRqHL31uE4q7i/ae2', NULL, '2019-11-17 02:20:32', '2019-11-17 02:20:32'),
 (13, 'Madhushanka Perera', 'padaludigital@gmail.com', NULL, 'Photography', 'Kandy', 0, '$2y$10$LobCDQvRim4WK2jTPTv0ieuCV/6h8sFEpLUuv6de7.O5a3kG3eoHK', NULL, '2019-11-17 02:37:36', '2019-11-17 02:37:36'),
-(14, 'Pathum V Ranasinghe', 'vrpathum94@gmail.com', NULL, 'Photography', 'Colombo', 0, '$2y$10$ooMxWxgcoKRO9P18Lh3bXOkASj8KrEK2ITo9LE4RvTZE3WnAYYGTu', NULL, '2019-11-17 02:56:48', '2019-11-17 02:56:48');
+(14, 'Pathum V Ranasinghe', 'vrpathum94@gmail.com', NULL, 'Photography', 'Colombo', 0, '$2y$10$ooMxWxgcoKRO9P18Lh3bXOkASj8KrEK2ITo9LE4RvTZE3WnAYYGTu', NULL, '2019-11-17 02:56:48', '2019-11-17 02:56:48'),
+(15, 'DJ Kalu', 'fireentertainment@gmail.com', NULL, 'Music', 'Kalu', 0, '$2y$10$RYhvWRmR9mdY7RRbLoMT8eNAPf0Na/yO41R0Wi9TpsXeHpMt13iUy', NULL, '2019-11-21 07:06:20', '2019-11-21 07:06:20'),
+(16, 'Harsha Mendis', 'harshamendis@gmail.com', NULL, 'Music', 'kandy', 0, '$2y$10$pTTpYdKvVNNoc73lGfb22uiicag/PUHxoWxuxuJWzcVzkr2uoJEQ.', NULL, '2019-11-21 07:19:33', '2019-11-21 07:19:33'),
+(17, 'Flash Music', 'flashbands@gmail.com', NULL, 'Music', 'Nugegoda', 0, '$2y$10$v4IKizsNBSxxS4qfzwXNDerR39oN1wxUbnwPsp7AQaosdTI4FXubq', NULL, '2019-11-21 07:30:18', '2019-11-21 07:30:18'),
+(18, 'Isuru Janith', 'isurujanith@gmail.com', NULL, 'Music', 'colombo', 0, '$2y$10$91gnPe9BAMhxdiN82sRa5urEESAvgSrHm4TZ9M1Lwpz58f2Zyi0re', NULL, '2019-11-21 07:56:54', '2019-11-21 07:56:54'),
+(19, 'Nalinda Pubudu', 'nalindapubudu@gmail.com', NULL, 'Music', 'Badulla', 0, '$2y$10$f8Cm8ffm8/RH4qx840MHKOjStqfxSpYN5.fq8bD6Ash0YLgSrk43e', NULL, '2019-11-21 08:12:27', '2019-11-21 08:12:27');
 
 --
 -- Indexes for dumped tables
@@ -1526,7 +1570,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
@@ -1676,25 +1720,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `musicians`
 --
 ALTER TABLE `musicians`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `musician_events`
 --
 ALTER TABLE `musician_events`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `music_packages`
 --
 ALTER TABLE `music_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `music_videos`
 --
 ALTER TABLE `music_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `photographies`
@@ -1796,7 +1840,7 @@ ALTER TABLE `transport_packages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
