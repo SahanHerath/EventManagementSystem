@@ -195,13 +195,13 @@
 <a href="/MusicAwards"><button type="button" class="btn btn-warning">DJ/Band</button></a>
 <a href="/CateringAwards"><button type="button" class="btn btn-primary">Catering</button></a>
 <a href="/ActorAwards"><button type="button" class="btn btn-primary">Representer & Artist</button></a>
-<a href="#CakeAwards"><button type="button" class="btn btn-primary">Cake Designer</button></a>
-<a href="#CostumeAwards"><button type="button" class="btn btn-primary">Costume Designer</button></a>
-<a href="#DancingAwards"><button type="button" class="btn btn-primary">Dancing</button></a>
-<a href="#DecorationAwards"><button type="button" class="btn btn-primary">Decoration</button></a>
-<a href="#TransportAwards"><button type="button" class="btn btn-primary">Transport</button></a>
-<a href="#EventAwards"><button type="button" class="btn btn-primary">Event Planners</button></a>
-<a href="#PoruwaAwards"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
+<a href="/CakeAwards"><button type="button" class="btn btn-primary">Cake Designer</button></a>
+<a href="/CostumeAwards"><button type="button" class="btn btn-primary">Costume Designer</button></a>
+<a href="/DancingAwards"><button type="button" class="btn btn-primary">Dancing</button></a>
+<a href="/DecorationAwards"><button type="button" class="btn btn-primary">Decoration</button></a>
+<a href="/TransportAwards"><button type="button" class="btn btn-primary">Transport</button></a>
+<a href="/EventAwards"><button type="button" class="btn btn-primary">Event Planners</button></a>
+<a href="/PoruwaAwards"><button type="button" class="btn btn-primary">Poruwa Rituals</button></a>
 
 
     <div class="panel panel-default">

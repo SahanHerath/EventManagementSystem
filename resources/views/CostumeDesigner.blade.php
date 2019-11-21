@@ -188,7 +188,7 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Are you looking for?</h2>
             </div>
-            <p class="mb-4">You are able to find best dancers and choregraphers for any of your special occasions.You can select Traditional, Western, Indian dancing teams. </p>
+            <p class="mb-4">You are able to find best costume designers for any of your special occasions. You can select Traditional, Western, Indian any kind of costume designer for your dream costume. </p>
             </div>
         </div>
       </div>

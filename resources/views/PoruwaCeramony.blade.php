@@ -176,7 +176,7 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Description</h2>
             </div>
-            <p>You are able to find person for your wedding day. You can make your day most traditional & ritualistic</p>
+            <p>You are able to find the person to do all poruwa rituals for your wedding day. You can make your day most traditional & ritualistic</p>
            </div>
         </div>
       </div>

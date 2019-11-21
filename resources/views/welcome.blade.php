@@ -108,7 +108,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="mb-2">Hotels &  Resavation Halls</h1>
+              <h1 class="mb-2">Hotels &  Reservation Halls</h1>
               <h2 class="caption">Your Hotel, Your Stay</h2>
             </div>
           </div>
@@ -153,7 +153,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Cake Designers</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">Taste it as your wish</h2>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Event Planners</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">Plan it as your wish</h2>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Decorators</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">Decorate it as your wish</h2>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Presenters And Entertainers</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">Present it as your wish</h2>
             </div>
           </div>
         </div>
@@ -220,7 +220,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Catering Service</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">With your dream taste</h2>
             </div>
           </div>
         </div>
@@ -231,7 +231,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Costume Designers</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">Dress it as your wish</h2>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               <h1 class="mb-2">Poruwa Rituals</h1>
-              <h2 class="caption">Make it as your wish</h2>
+              <h2 class="caption">With the best time</h2>
             </div>
           </div>
         </div>

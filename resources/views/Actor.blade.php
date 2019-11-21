@@ -179,7 +179,7 @@
             <div class="section-heading text-left">
               <h2 class="mb-5">Description</h2>
             </div>
-            <p class="mb-4">You are able to find your photographer or videographer for your special event. We can cover your Wedding, Birth day, Get together, Professional event & Party.</p>
+            <p class="mb-4">You are able to find the best singers , announcers , magicians , entertainers , actors to make your special event more and more special. .</p>
             
 		  </div>
         </div>
