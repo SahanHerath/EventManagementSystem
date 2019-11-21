@@ -7,6 +7,7 @@ use App\Rating;
 use Image;
 use DB;
 use Gate;
+use Mail;
 
 class RatingController extends Controller
 {
@@ -163,6 +164,18 @@ class RatingController extends Controller
 
                     ]);
 
+        $user=Rating::where('id',$id)
+                    ->select('Email')              
+                    ->get();
+        
+                Mail::send('block',['user'=>$user], function($message) use ($user){
+                            $message->to($user[0]->Email)
+                                    ->subject('Evora - User Blocking');
+                
+                        $message->from('sahand.herath@gmail.com','Event Management System');
+        
+                    });
+
         return redirect()->back()->with('flash_message','You have blocked comment Successfully');
         }
         else 
@@ -181,6 +194,18 @@ class RatingController extends Controller
 
 
                     ]);
+
+                    $user=Rating::where('id',$id)
+                    ->select('Email')              
+                    ->get();
+        
+                Mail::send('unblock',['user'=>$user], function($message) use ($user){
+                            $message->to($user[0]->Email)
+                                    ->subject('Evora - User Unblocking');
+                
+                        $message->from('sahand.herath@gmail.com','Event Management System');
+        
+                    });
 
         return redirect()->back()->with('flash_message','You have unblocked comment Successfully');
         }
