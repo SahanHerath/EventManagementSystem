@@ -299,7 +299,7 @@ class HallController extends Controller
             
             $hall_arrange->save();
 
-            return redirect('/home');
+            return redirect('/Profile');
     }
 
     public function viewHotel($id)

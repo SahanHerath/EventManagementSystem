@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 03:19 PM
+-- Generation Time: Nov 21, 2019 at 05:45 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -155,7 +155,11 @@ INSERT INTO `awards` (`id`, `user_id`, `Platinum`, `Gold`, `Silver`, `Bronze`, `
 (15, 16, 0, 0, 0, 0, '2019-11-21 07:25:10', '2019-11-21 07:25:10'),
 (16, 17, 0, 0, 0, 0, '2019-11-21 07:36:19', '2019-11-21 07:36:19'),
 (17, 18, 0, 0, 0, 0, '2019-11-21 07:59:47', '2019-11-21 07:59:47'),
-(18, 19, 0, 0, 0, 0, '2019-11-21 08:19:43', '2019-11-21 08:19:43');
+(18, 19, 0, 0, 0, 0, '2019-11-21 08:19:43', '2019-11-21 08:19:43'),
+(19, 20, 0, 0, 0, 0, '2019-11-21 09:25:48', '2019-11-21 09:25:48'),
+(20, 21, 0, 0, 0, 0, '2019-11-21 10:09:10', '2019-11-21 10:09:10'),
+(21, 22, 0, 0, 0, 0, '2019-11-21 10:46:51', '2019-11-21 10:46:51'),
+(22, 23, 0, 0, 0, 0, '2019-11-21 11:06:42', '2019-11-21 11:06:42');
 
 -- --------------------------------------------------------
 
@@ -236,6 +240,7 @@ CREATE TABLE `caterings` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Error reading data for table eventmanagementsystem.caterings: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`caterings`' at line 1
 
 -- --------------------------------------------------------
 
@@ -461,6 +466,13 @@ CREATE TABLE `decoration_packages` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `decoration_packages`
+--
+
+INSERT INTO `decoration_packages` (`id`, `user_id`, `Package_Name`, `Decoration_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 22, 'Wedding Package', 'Flora', 'Entrance Decoration,\r\nPath Decoration,\r\nTable Decoration,\r\nSettyback,\r\nPoruwa', '10000.00', '1574353424.pdf', '2019-11-21 10:53:44', '2019-11-21 10:53:44');
+
 -- --------------------------------------------------------
 
 --
@@ -491,6 +503,14 @@ CREATE TABLE `decorators` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `decorators`
+--
+
+INSERT INTO `decorators` (`id`, `Team_Name`, `Address`, `Description`, `Contact_No`, `Link`, `Poruwa`, `Flower`, `Table_Hall`, `Setty_Backs`, `Lighting`, `Traditional`, `Wedding_Car`, `Main_Pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Lassana Flora', 'LassanaFlora (Pvt) Ltd,  25, Wijerama Mawatha,  Colombo 7,', 'Lassana Flora is widely considered as the no 1 choice for weddings, flowers & gift delivery, flowers for corporate events and for retail and wholesale of fresh flowers.', '011 2001122', 'https://lassana.com/', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1574352999.jpg', '1574353000.png', '1574353006.jpg', '1574353008.jpg', '1574353009.jpg', 22, '2019-11-21 10:46:51', '2019-11-21 10:46:51'),
+(2, 'Designer Flora', '241, high level road, nawinna, maharagama Maharagama, Sri Lanka', 'Designer Wedding Decorations – Elegant & Modern with the touch of classy\r\nDesigner Bouquets – Match of contrast color shades to the bridal outfit with creative shapes', '0112837838', 'https://www.facebook.com/pg/designer.wedding.sl/about/?ref=page_internal', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1574354194.jpg', '1574354196.jpg', '1574354197.jpg', '1574354198.jpg', '1574354200.jpg', 23, '2019-11-21 11:06:42', '2019-11-21 11:06:42');
+
 -- --------------------------------------------------------
 
 --
@@ -508,6 +528,14 @@ CREATE TABLE `decorator_events` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `decorator_events`
+--
+
+INSERT INTO `decorator_events` (`id`, `user_id`, `Wedding`, `Birthday`, `Get_Together`, `Parties`, `Outside_events`, `created_at`, `updated_at`) VALUES
+(1, 22, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 10:46:51', '2019-11-21 10:46:51'),
+(2, 23, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 11:06:42', '2019-11-21 11:06:42');
 
 -- --------------------------------------------------------
 
@@ -569,6 +597,14 @@ CREATE TABLE `hall_events` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `hall_events`
+--
+
+INSERT INTO `hall_events` (`id`, `hall_id`, `Wedding`, `Meeting`, `Party`, `Corporate_event`, `Professional_Event`, `Created_at`, `updated_at`) VALUES
+(1, 1, 'Available', 'Not Available', 'Available', 'Available', 'Available', '2019-11-21 09:31:15', '2019-11-21 09:31:15'),
+(2, 2, 'Available', 'Not Available', 'Available', 'Available', 'Available', '2019-11-21 10:11:53', '2019-11-21 10:11:53');
+
 -- --------------------------------------------------------
 
 --
@@ -597,6 +633,14 @@ CREATE TABLE `hall_features` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `hall_features`
+--
+
+INSERT INTO `hall_features` (`id`, `hall_id`, `projection`, `internet`, `parking`, `security_camera`, `security_personal`, `reception_area`, `Bar`, `garden`, `smoking_area`, `welcome_drinks`, `Buffet`, `Handicap_accessible`, `outside_balcony`, `inside_balcony`, `stage`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-11-21 09:31:15', '2019-11-21 09:31:15'),
+(2, 2, 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', '2019-11-21 10:11:53', '2019-11-21 10:11:53');
+
 -- --------------------------------------------------------
 
 --
@@ -617,6 +661,13 @@ CREATE TABLE `hall_packages` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hall_packages`
+--
+
+INSERT INTO `hall_packages` (`id`, `hall_id`, `Package_Name`, `Appetizers`, `Welcome_drinks`, `Foods`, `Soups`, `Desserts`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Gold Package', 'Snakes,\r\nSalmon Tartare,\r\nChilled Soba,\r\nSaucy Asian', 'Lemonade,\r\nRaspberry Mojito,\r\nOrange Juice', 'Rice and Curry,\r\nChicken dinner,\r\nBuriyani,', 'Hot & Sour chicken, \r\nvegitable soup,\r\nHot & Sour prawn,', 'Ice cream,\r\nfruit salad,\r\ncake ,\r\nvatalappan', '6330.00', '1574349405.pdf', '2019-11-21 15:21:26', '2019-11-21 09:51:26');
 
 -- --------------------------------------------------------
 
@@ -643,6 +694,14 @@ CREATE TABLE `hall_table_arrangements` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `hall_table_arrangements`
+--
+
+INSERT INTO `hall_table_arrangements` (`id`, `hall_id`, `theatre`, `U_shape`, `V_shape`, `classroom`, `hallow_square`, `Boardroom`, `Oval`, `Herringbone`, `Top_table_springs`, `banquet`, `cabaret`, `informal`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Available', 'Available', 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Available', 'Available', 'Not Available', '2019-11-21 09:31:16', '2019-11-21 09:31:16'),
+(2, 2, 'Available', 'Available', 'Available', 'Not Available', 'Not Available', 'Not Available', 'Not Available', 'Available', 'Not Available', 'Available', 'Available', 'Available', '2019-11-21 10:11:53', '2019-11-21 10:11:53');
+
 -- --------------------------------------------------------
 
 --
@@ -664,6 +723,7 @@ CREATE TABLE `hotels` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Error reading data for table eventmanagementsystem.hotels: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`hotels`' at line 1
 
 -- --------------------------------------------------------
 
@@ -734,17 +794,7 @@ CREATE TABLE `musician_events` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `musician_events`
---
-
-INSERT INTO `musician_events` (`Id`, `user_id`, `Wedding`, `Birthday`, `Beach_Party`, `Get_Together`, `Parties`, `Created_at`, `Updated_at`) VALUES
-(1, 15, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:14:09', '2019-11-21 07:14:09'),
-(2, 16, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:25:09', '2019-11-21 07:25:09'),
-(3, 17, 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-11-21 07:36:19', '2019-11-21 07:36:19'),
-(4, 18, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:59:47', '2019-11-21 07:59:47'),
-(5, 19, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 08:19:43', '2019-11-21 08:19:43');
+-- Error reading data for table eventmanagementsystem.musician_events: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`musician_events`' at line 1
 
 -- --------------------------------------------------------
 
@@ -1033,6 +1083,14 @@ CREATE TABLE `reception_halls` (
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reception_halls`
+--
+
+INSERT INTO `reception_halls` (`id`, `Hall_Name`, `Address`, `Description`, `Cost`, `Capacity`, `Square_feet`, `Overview`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `hotel_id`, `Created_at`, `Updated_at`) VALUES
+(1, 'The Grand Ballroom', 'Colombo, Western Province, Sri Lanka', 'Upholding its reputation to its name, the grandest venue at Waters Edge is located on the 3rd floor, with a panoramic view of the lake and beyond. The unique column free feature ensures the largest seating capacity.', '1500000.00', 1000, '9072.00', 'Indoor', '1574348545.jpg', '1574348467.jpg', '1574348469.jpg', '1574348471.jpg', '1574348474.jpg', 1, '2019-11-21 15:02:28', '2019-11-21 09:32:28'),
+(2, 'Empire Ballroom', 'Colombo, Sri Lanka', 'The Empire Ballroom boasts a colonial style architecture that accommodates up to 600 guests. It\'s blend of history and innovation provides aspiring couples with their dream wedding and a lifetime of memories.', '1400000.00', 600, '9012.00', 'Indoor', '1574350909.jpg', '1574350909.jpg', '1574350910.jpg', '1574350911.jpg', '1574350912.jpg', 2, '2019-11-21 10:11:53', '2019-11-21 10:11:53');
+
 -- --------------------------------------------------------
 
 --
@@ -1225,7 +1283,11 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (16, 'Harsha Mendis', 'harshamendis@gmail.com', NULL, 'Music', 'kandy', 0, '$2y$10$pTTpYdKvVNNoc73lGfb22uiicag/PUHxoWxuxuJWzcVzkr2uoJEQ.', NULL, '2019-11-21 07:19:33', '2019-11-21 07:19:33'),
 (17, 'Flash Music', 'flashbands@gmail.com', NULL, 'Music', 'Nugegoda', 0, '$2y$10$v4IKizsNBSxxS4qfzwXNDerR39oN1wxUbnwPsp7AQaosdTI4FXubq', NULL, '2019-11-21 07:30:18', '2019-11-21 07:30:18'),
 (18, 'Isuru Janith', 'isurujanith@gmail.com', NULL, 'Music', 'colombo', 0, '$2y$10$91gnPe9BAMhxdiN82sRa5urEESAvgSrHm4TZ9M1Lwpz58f2Zyi0re', NULL, '2019-11-21 07:56:54', '2019-11-21 07:56:54'),
-(19, 'Nalinda Pubudu', 'nalindapubudu@gmail.com', NULL, 'Music', 'Badulla', 0, '$2y$10$f8Cm8ffm8/RH4qx840MHKOjStqfxSpYN5.fq8bD6Ash0YLgSrk43e', NULL, '2019-11-21 08:12:27', '2019-11-21 08:12:27');
+(19, 'Nalinda Pubudu', 'nalindapubudu@gmail.com', NULL, 'Music', 'Badulla', 0, '$2y$10$f8Cm8ffm8/RH4qx840MHKOjStqfxSpYN5.fq8bD6Ash0YLgSrk43e', NULL, '2019-11-21 08:12:27', '2019-11-21 08:12:27'),
+(20, 'Waters Edge', 'we@watersedge.lk', NULL, 'Hall', 'battaramulla', 0, '$2y$10$4GIJIDZKrkZTeppfLR0igeebg.Wy3ta.dZZeMH9tAc4EfFL1ldwUO', NULL, '2019-11-21 09:21:28', '2019-11-21 09:21:28'),
+(21, 'Mount Lavinia', 'reservation@mountlaviniahotel.com', NULL, 'Hall', 'Colombo', 0, '$2y$10$zmO2p7Q23EMVX3Dmn9A0IeREJZxMNcnQ5P.NL9OeDsmjNgVcq8LQu', NULL, '2019-11-21 09:59:57', '2019-11-21 09:59:57'),
+(22, 'Lassana Flora', 'info@lassanaflora.com', NULL, 'Decoration', 'Colombo', 0, '$2y$10$yOOVZ35bjeyXubFMnLWGhOyBqxdyRbNHLIqeJ5g3DoANPjDC7PzCq', NULL, '2019-11-21 10:40:00', '2019-11-21 10:40:00'),
+(23, 'Designer Wedding', 'dsignerwedding@gmail.com', NULL, 'Decoration', 'Maharagama', 0, '$2y$10$Z8mFoyOcCEskqSUTfwsEP.IfJTtXUsS6mU0Tks1r0yRd2/02r3P/W', NULL, '2019-11-21 11:01:46', '2019-11-21 11:01:46');
 
 --
 -- Indexes for dumped tables
@@ -1570,7 +1632,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
@@ -1654,19 +1716,19 @@ ALTER TABLE `dance_videos`
 -- AUTO_INCREMENT for table `decoration_packages`
 --
 ALTER TABLE `decoration_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `decorators`
 --
 ALTER TABLE `decorators`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `decorator_events`
 --
 ALTER TABLE `decorator_events`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `event_planners`
@@ -1684,31 +1746,31 @@ ALTER TABLE `event_planners_events`
 -- AUTO_INCREMENT for table `hall_events`
 --
 ALTER TABLE `hall_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hall_features`
 --
 ALTER TABLE `hall_features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hall_packages`
 --
 ALTER TABLE `hall_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `hall_table_arrangements`
 --
 ALTER TABLE `hall_table_arrangements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hotels`
 --
 ALTER TABLE `hotels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1792,7 +1854,7 @@ ALTER TABLE `ratings`
 -- AUTO_INCREMENT for table `reception_halls`
 --
 ALTER TABLE `reception_halls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `salons`
@@ -1840,7 +1902,7 @@ ALTER TABLE `transport_packages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

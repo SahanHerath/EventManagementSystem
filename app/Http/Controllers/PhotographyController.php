@@ -208,7 +208,7 @@ class PhotographyController extends Controller
             $award->user_id=Auth::user()->id;
             $award->save();
 
-            return redirect('/home');
+            return redirect('/Profile');
 
 
     }
