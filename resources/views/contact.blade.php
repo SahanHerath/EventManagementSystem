@@ -203,7 +203,7 @@
                                     <i class="fa fa-location-arrow"></i>
                                     Location
                                     <p>
-                                        <span>+227 Marion Street Address Jaffna, SC 29201</span>
+                                        <span>No 3/12,Nagahaella Road,Mavilmada,Kandy</span>
                                     </p>
                                 </li>
                             </ul>

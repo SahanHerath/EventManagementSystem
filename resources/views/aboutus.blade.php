@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Evora</title>
+<title>Evora-AboutUs</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="vCard template project">
@@ -12,11 +12,40 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" href="css/css/bootstrap.css">
-    
+<!------ Rating css---------->
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	  
     <link rel="stylesheet" href="css/css/responsive.css">
+
+	<style>
+	.fill {object-fit: fill;}
+	.contain {object-fit: contain;}
+	.cover {object-fit: cover;}
+	.scale-down {object-fit: scale-down;}
+	.none {object-fit: none;}
+
+
+	</style>
 </head>
 <body>
-
+<head>
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
+			<div class="container">
+				<a class="navbar-brand text-white" href="{{ url('/') }}">
+					Evora
+				</a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+					<ul class="nav navbar-nav menu_nav ml-auto">
+						 
+							<!-- Authentication Links -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</head>
 
 	<div class="content_container">
 		<div class="main_content_outer d-flex flex-xl-row flex-column align-items-start justify-content-start">
@@ -32,6 +61,11 @@
 						</div>
 					</div>
 				</div>
+
+				
+
+
+
 				<div class="general_info_content">
 					<div class="general_info_content_inner mCustomScrollbar" data-mcs-theme="minimal-dark">
 						<div class="general_info_title">Sahan Herath</div>
@@ -331,7 +365,7 @@
 			<div class="general_info d-flex flex-xl-column flex-md-row flex-column">
 				<div>
 					<div class="general_info_image">
-						<div class="background_image" style="background-image:url(images/shamith.jpg)"></div>
+						<div class="background_image" style="background-image:url(images/shamith.jpeg)"></div>
 						<div class="header_button_2">
 							<a href="#">Available for freelance work</a>
 							<div class="d-flex flex-column align-items-center justify-content-center"><img src="images/download.png" alt=""></div>

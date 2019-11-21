@@ -349,7 +349,7 @@
         			<div class="col-lg-7 col-sm-4">
         				<aside class="f_widget ab_widget">
         					<div class="f_title">
-                  <h3><font color="white">About Us</font></h3>
+                  <a href="/aboutus" ><h3><font color="white">About Us</font></h3></a>
         					</div>
         					<p>Are you looking for service providers to success your dream event??? Here you have thousands of service providers to success your events.</p>
         					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is created by Team  <a href="http://localhost:8000" target="_blank">Evora</a></p>
