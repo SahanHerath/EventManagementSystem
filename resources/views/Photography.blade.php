@@ -237,9 +237,12 @@
         @foreach($level as $leve)
         
           <div class="site-block d-lg-flex">
+          
             <div class="col-md-7 col-lg-4">
-              <a href="uploads/photography/{{$leve->main_pic}}" class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image" class="img-fluid"></a>
+              <a href="uploads/photography/{{$leve->main_pic}}"  class="image-popup img-opacity"><img src="uploads/photography/{{$leve->main_pic}}" alt="Image"  class="img-fluid"></a>
+              <br><br>
             </div>
+          
             <div class="text">
               <br>
               <h2 > {{$leve->Studio_Name}}</h2>
@@ -249,8 +252,10 @@
                 
               <p><a href="{{URL('/Photographyview'.$leve->id)}}" class=""><button class="btn btn-danger ">View More <span class="icon-arrow-right small"></button></span></a></p>          
             </div>
+          
+         
           </div>
-          <br><br><br>
+          
         @endforeach
 			
 			

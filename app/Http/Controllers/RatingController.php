@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Rating;
 use Image;
 use DB;
+use Gate;
 
 class RatingController extends Controller
 {
@@ -136,16 +137,25 @@ class RatingController extends Controller
 
     public function allcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->select('ratings.id','user_id','ratings.Email', 'Comment','image','rating','blocked','user_name')
              ->get();
 
             return view('comment.all',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function blockComment($id)
     {
+        if(Gate::allows('isAdmin'))
+        {
         $comment=Rating::where('id',$id)
                     ->update([
                             'blocked'=>1
@@ -154,10 +164,17 @@ class RatingController extends Controller
                     ]);
 
         return redirect()->back()->with('flash_message','You have blocked comment Successfully');
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function unblockComment($id)
     {
+        if(Gate::allows('isAdmin'))
+        {
         $comment=Rating::where('id',$id)
                     ->update([
                             'blocked'=>0
@@ -166,17 +183,32 @@ class RatingController extends Controller
                     ]);
 
         return redirect()->back()->with('flash_message','You have unblocked comment Successfully');
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function deleteComment($id)
     {
+        if(Gate::allows('isAdmin'))
+        {
         $rating=Rating::where('id',$id)->delete();
 
-        return redirect()->back()->with('flash_message','You have deleted  comment Successfully');;
+        return redirect()->back()->with('flash_message','You have deleted  comment Successfully');
+        
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 
     public function Hotelcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Hall')
@@ -184,9 +216,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Hotel',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Photographycomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Photography')
@@ -194,9 +233,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Photography',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Saloncomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Bridel_Designers')
@@ -204,9 +250,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Salon',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function DJcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Music')
@@ -214,9 +267,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Band',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Cateringcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Catering')
@@ -224,9 +284,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Catering',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Actorcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Actors')
@@ -234,9 +301,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Artist',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Cakecomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Cake_Designers')
@@ -244,9 +318,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Cake',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Costumecomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Cloth_Designers')
@@ -254,9 +335,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Costume',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Dancingcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Dancing')
@@ -264,9 +352,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Dancing',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function decorationcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Decoration')
@@ -274,9 +369,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Decoration',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Transportcomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Wedding_Transport')
@@ -284,9 +386,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Transport',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function EventPlannercomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Event_Planners')
@@ -294,9 +403,16 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Event',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
     public function Poruwacomments()
     {
+        if(Gate::allows('isAdmin'))
+        {
         $data=DB::table('ratings')
              ->join('users','users.id','=','ratings.user_id')
              ->where('category','=','Poruwa_Ceramony')
@@ -304,5 +420,10 @@ class RatingController extends Controller
              ->get();
 
             return view('comment.Poruwa',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
     }
 }
