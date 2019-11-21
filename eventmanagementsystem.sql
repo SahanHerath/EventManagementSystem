@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 05:45 PM
+-- Generation Time: Nov 21, 2019 at 11:05 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -159,7 +159,12 @@ INSERT INTO `awards` (`id`, `user_id`, `Platinum`, `Gold`, `Silver`, `Bronze`, `
 (19, 20, 0, 0, 0, 0, '2019-11-21 09:25:48', '2019-11-21 09:25:48'),
 (20, 21, 0, 0, 0, 0, '2019-11-21 10:09:10', '2019-11-21 10:09:10'),
 (21, 22, 0, 0, 0, 0, '2019-11-21 10:46:51', '2019-11-21 10:46:51'),
-(22, 23, 0, 0, 0, 0, '2019-11-21 11:06:42', '2019-11-21 11:06:42');
+(22, 23, 0, 0, 0, 0, '2019-11-21 11:06:42', '2019-11-21 11:06:42'),
+(23, 24, 0, 0, 0, 0, '2019-11-21 11:37:10', '2019-11-21 11:37:10'),
+(24, 25, 0, 0, 0, 0, '2019-11-21 15:18:29', '2019-11-21 15:18:29'),
+(25, 26, 0, 0, 0, 0, '2019-11-21 15:30:35', '2019-11-21 15:30:35'),
+(26, 27, 0, 0, 0, 0, '2019-11-21 15:46:32', '2019-11-21 15:46:32'),
+(27, 28, 0, 0, 0, 0, '2019-11-21 16:24:57', '2019-11-21 16:24:57');
 
 -- --------------------------------------------------------
 
@@ -190,6 +195,13 @@ CREATE TABLE `cake_designers` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `cake_designers`
+--
+
+INSERT INTO `cake_designers` (`id`, `Organization_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Wedding_cake`, `Birthday_cake`, `Cake_Structure`, `Pastry_cake`, `Cup_Cake`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Kanrich Cake Designers', 'Kadawatha, Western Province, Sri Lanka', '077 274 2332', 'http://www.kanrichcakes.com/?fbclid=IwAR2AgZe_5QRKdTHS5kmz5KmiTLuxi6Z6Uyzrukep0ho1ymfZsOCSdO0K62A', 'best cake designer and sweets make in colombo area. hire and enjoy the taste and beauty', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1574373293.jpg', '1574373294.jpg', '1574373386.jpg', '1574373295.jpg', '1574373296.jpg', 28, '2019-11-21 21:56:28', '2019-11-21 16:26:28');
+
 -- --------------------------------------------------------
 
 --
@@ -207,6 +219,13 @@ CREATE TABLE `cake_packages` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cake_packages`
+--
+
+INSERT INTO `cake_packages` (`id`, `user_id`, `Package_Name`, `Cake_types`, `Description`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 28, 'Gold Package', 'Cup cakes', 'cupcakes with chocolate ,vanila ,straberry and much other flavours', '3000.00', '1574373809.pdf', '2019-11-21 16:33:29', '2019-11-21 16:33:29');
 
 -- --------------------------------------------------------
 
@@ -240,7 +259,6 @@ CREATE TABLE `caterings` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.caterings: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`caterings`' at line 1
 
 -- --------------------------------------------------------
 
@@ -398,6 +416,14 @@ CREATE TABLE `dancers` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `dancers`
+--
+
+INSERT INTO `dancers` (`id`, `Team_Name`, `Address`, `Contact_No`, `Link`, `Description`, `choreography`, `Gender`, `Traditional`, `Western`, `Indian`, `Kandyan`, `Casual`, `Other`, `Main_pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Tharanga Dance Group', 'No.5/3, Parakum mawatha, Attidiya, Dehiwala, Sri lanka Colombo, Sri Lanka', '071 391 4002', 'https://www.facebook.com/Tharanga-Dance-Group-1629799320623966/', 'We are covering sri lankan traditional dance,bollywood dance,western dance & lathin dance etc..Please contact us for your any function', 'Available', 'Mix', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1574370103.jpg', '1574370032.jpg', '1574370033.jpg', '1574370033.png', '1574370035.jpg', 26, '2019-11-21 21:01:44', '2019-11-21 15:31:44'),
+(2, 'Cool Steps Studio', 'Colombo - Chilaw Main Road Negombo', '077 774 5746', 'http://www.coolsteps.lk/?fbclid=IwAR2tFdBiNOe4nscSr7WLYbithFCgDllQ6ss80KObgq7dU7mO2udcddaiv4w', 'Sri lankas best dancing crew on the stage right now.  We cover your weddings ,parties , any other events .', 'Available', 'Mix', 'Not Available', 'Available', 'Available', 'Not Available', 'Available', 'Available', '1574370970.jpg', '1574371061.jpg', '1574370989.jpg', '1574370990.jpg', '1574370991.jpg', 27, '2019-11-21 21:17:42', '2019-11-21 15:47:42');
+
 -- --------------------------------------------------------
 
 --
@@ -414,6 +440,14 @@ CREATE TABLE `dancer_events` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dancer_events`
+--
+
+INSERT INTO `dancer_events` (`id`, `user_id`, `Wedding`, `Party`, `Musical_event`, `Corporate_event`, `created_at`, `updated_at`) VALUES
+(1, 26, 'Available', 'Available', 'Available', 'Available', '2019-11-21 15:30:35', '2019-11-21 15:30:35'),
+(2, 27, 'Available', 'Available', 'Available', 'Available', '2019-11-21 15:46:32', '2019-11-21 15:46:32');
 
 -- --------------------------------------------------------
 
@@ -433,6 +467,13 @@ CREATE TABLE `dance_packages` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `dance_packages`
+--
+
+INSERT INTO `dance_packages` (`id`, `user_id`, `Package_Name`, `Dancing_Type`, `Services`, `Price`, `Pdf`, `created_at`, `updated_at`) VALUES
+(1, 27, 'Gold Package', 'Western', '10 members\r\nGroup Dance\r\nMix team\r\n2 hours( max)', 35000, '1574372555.pdf', '2019-11-21 16:12:35', '2019-11-21 16:12:35');
+
 -- --------------------------------------------------------
 
 --
@@ -447,6 +488,13 @@ CREATE TABLE `dance_videos` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dance_videos`
+--
+
+INSERT INTO `dance_videos` (`id`, `user_id`, `Video_Name`, `Video`, `Created_at`, `Updated_at`) VALUES
+(1, 27, 'Cool step best', '1574372606.mp4', '2019-11-21 16:13:26', '2019-11-21 16:13:26');
 
 -- --------------------------------------------------------
 
@@ -723,7 +771,14 @@ CREATE TABLE `hotels` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.hotels: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`hotels`' at line 1
+
+--
+-- Dumping data for table `hotels`
+--
+
+INSERT INTO `hotels` (`id`, `Hotel_Name`, `Address`, `Contact_No`, `Link`, `Description`, `facebook`, `instagram`, `Main_logo`, `Cover_photo`, `user_id`, `Created_at`, `Updated_at`) VALUES
+(1, 'Waters Edge', '316, Ethul Kotte Rd. Aturugiriya, Sri Lanka', '0112 863 863', 'watersedge.lk', 'Poised On The Edge Of Serene Water Ways And Framed By Luscious Green Pastures Dovetailed With Pools Filled With Exotic Water Lilies, “Waters Edge” Elucidates A Picturesque Tranquility In The Capital Of Sri Lanka. Situated In A Quaint Location The Hotel Proposes Various Islets Of Beauty, Comfort And Wellness, Offering Its Guests A Spacious State Of The Art Fitness Center,', 'https://www.facebook.com/WatersEdgeSL/', 'https://www.instagram.com/watersedgesl/', '1574348143.png', '1574348144.jpeg', 20, '2019-11-21 09:25:47', '2019-11-21 09:25:47'),
+(2, 'Hotel Mount Lavinia', '100 Hotel Road Dehiwala 10350', '0112711711', 'https://www.mountlaviniahotel.com/', 'Mount Lavinia hotel is a luxury beach hotel famous for the many traditional weddings it has organized for couples who have arrived from around the world for their nuptials', 'https://www.facebook.com/mountlaviniahotel/', 'https://www.instagram.com/explore/locations/218074054/mount-lavinia-hotel/', '1574350747.jpg', '1574350748.jpg', 21, '2019-11-21 10:09:10', '2019-11-21 10:09:10');
 
 -- --------------------------------------------------------
 
@@ -794,7 +849,17 @@ CREATE TABLE `musician_events` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- Error reading data for table eventmanagementsystem.musician_events: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `eventmanagementsystem`.`musician_events`' at line 1
+
+--
+-- Dumping data for table `musician_events`
+--
+
+INSERT INTO `musician_events` (`Id`, `user_id`, `Wedding`, `Birthday`, `Beach_Party`, `Get_Together`, `Parties`, `Created_at`, `Updated_at`) VALUES
+(1, 15, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:14:09', '2019-11-21 07:14:09'),
+(2, 16, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:25:09', '2019-11-21 07:25:09'),
+(3, 17, 'Available', 'Available', 'Available', 'Not Available', 'Available', '2019-11-21 07:36:19', '2019-11-21 07:36:19'),
+(4, 18, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 07:59:47', '2019-11-21 07:59:47'),
+(5, 19, 'Available', 'Available', 'Available', 'Available', 'Available', '2019-11-21 08:19:43', '2019-11-21 08:19:43');
 
 -- --------------------------------------------------------
 
@@ -1122,6 +1187,14 @@ CREATE TABLE `salons` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `salons`
+--
+
+INSERT INTO `salons` (`id`, `Salon_Name`, `Address`, `Contact_No`, `Link`, `Description`, `Groom_Dressing`, `Bride_Dressing`, `Dress_Making`, `Jewelry`, `Makeup`, `Bridesman`, `Bridesmaid`, `HairStyle`, `Profile_Pic`, `pic1`, `pic2`, `pic3`, `pic4`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Salon Champi', '600, Nawala Rd Rajagiriya', '0773053912', 'https://www.facebook.com/pg/ChampiSiriwardena/about/?ref=page_internal', 'Under the direction of Salon Champi our stylists have been achieving the hottest looks for years. Our hair dressers & bridal wearers bring the latest styles and trends from around the world to Sri Lanka', 'Available', 'Not Available', 'Available', 'Available', 'Available', 'Available', 'Available', 'Available', '1574356025.jpg', '1574356026.jpg', '1574356138.jpg', '1574356027.jpg', '1574356028.jpg', 24, '2019-11-21 17:09:00', '2019-11-21 11:39:00'),
+(2, 'Vish Salon', '41/A kolonnawa Road,Gothatuwa new town. Angoda, Sri Lanka', '077 775 4534', 'https://www.facebook.com/Vish-Salon-240149112851786/', 'Bridal and groom designers in colombo with special dress designing facilities.', 'Not Available', 'Not Available', 'Available', 'Available', 'Available', 'Not Available', 'Available', 'Available', '1574369301.jpg', '1574369302.jpg', '1574369305.jpg', '1574369306.jpg', '1574369307.png', 25, '2019-11-21 15:18:29', '2019-11-21 15:18:29');
+
 -- --------------------------------------------------------
 
 --
@@ -1137,6 +1210,14 @@ CREATE TABLE `salon_events` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salon_events`
+--
+
+INSERT INTO `salon_events` (`id`, `user_id`, `wedding`, `parties`, `fashion_show`, `created_at`, `updated_at`) VALUES
+(1, 24, 'Available', 'Available', 'Available', '2019-11-21 11:37:10', '2019-11-21 11:37:10'),
+(2, 25, 'Available', 'Available', 'Available', '2019-11-21 15:18:29', '2019-11-21 15:18:29');
 
 -- --------------------------------------------------------
 
@@ -1155,6 +1236,13 @@ CREATE TABLE `salon_packages` (
   `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salon_packages`
+--
+
+INSERT INTO `salon_packages` (`id`, `user_id`, `Package_Name`, `Event_Type`, `Services`, `Price`, `Pdf`, `Created_at`, `updated_at`) VALUES
+(1, 24, 'Homecoming package', 'Homecoming', 'Bride Dressing\r\nGroom dressing\r\nBride and groom dress making\r\nFlower girls and boys gress making\r\nMakeup\r\nFacial', '50000.00', '1574356553.pdf', '2019-11-21 11:45:53', '2019-11-21 11:45:53');
 
 -- --------------------------------------------------------
 
@@ -1287,7 +1375,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `category`, `ci
 (20, 'Waters Edge', 'we@watersedge.lk', NULL, 'Hall', 'battaramulla', 0, '$2y$10$4GIJIDZKrkZTeppfLR0igeebg.Wy3ta.dZZeMH9tAc4EfFL1ldwUO', NULL, '2019-11-21 09:21:28', '2019-11-21 09:21:28'),
 (21, 'Mount Lavinia', 'reservation@mountlaviniahotel.com', NULL, 'Hall', 'Colombo', 0, '$2y$10$zmO2p7Q23EMVX3Dmn9A0IeREJZxMNcnQ5P.NL9OeDsmjNgVcq8LQu', NULL, '2019-11-21 09:59:57', '2019-11-21 09:59:57'),
 (22, 'Lassana Flora', 'info@lassanaflora.com', NULL, 'Decoration', 'Colombo', 0, '$2y$10$yOOVZ35bjeyXubFMnLWGhOyBqxdyRbNHLIqeJ5g3DoANPjDC7PzCq', NULL, '2019-11-21 10:40:00', '2019-11-21 10:40:00'),
-(23, 'Designer Wedding', 'dsignerwedding@gmail.com', NULL, 'Decoration', 'Maharagama', 0, '$2y$10$Z8mFoyOcCEskqSUTfwsEP.IfJTtXUsS6mU0Tks1r0yRd2/02r3P/W', NULL, '2019-11-21 11:01:46', '2019-11-21 11:01:46');
+(23, 'Designer Wedding', 'dsignerwedding@gmail.com', NULL, 'Decoration', 'Maharagama', 0, '$2y$10$Z8mFoyOcCEskqSUTfwsEP.IfJTtXUsS6mU0Tks1r0yRd2/02r3P/W', NULL, '2019-11-21 11:01:46', '2019-11-21 11:01:46'),
+(24, 'Champi Siriwardana', 'champisiriwardanasalon@gmail.com', NULL, 'Bridel_Designers', 'Colombo', 0, '$2y$10$C7WnceSAsJyvzbSFRXfni.GUQlMdDTKawMd7PdhTt8kLKAvZjTdjC', NULL, '2019-11-21 11:33:47', '2019-11-21 11:33:47'),
+(25, 'Vishaka Fernando', 'vishakafernando@gmail.com', NULL, 'Bridel_Designers', 'Colombo', 0, '$2y$10$.L19xkUlajFomPcl4Tw8pePhU0OJeRBwsrcOIEuBUqP5fkeYFNZQe', NULL, '2019-11-21 15:13:43', '2019-11-21 15:13:43'),
+(26, 'Vimod Ranasinghe', 'tharangadance@gmail.com', NULL, 'Dancing', 'Dehiwala', 0, '$2y$10$ylg61NyTIJ3K2iTso5w/cuDfiUYV63i7f0yo1LgUVBbqB/zniGZIe', NULL, '2019-11-21 15:25:04', '2019-11-21 15:25:04'),
+(27, 'Ramod Malaka', 'coolsteps@gmail.com', NULL, 'Dancing', 'Colombo', 0, '$2y$10$nIbo1CbXZRh.kD7OqkcVXeegei8wr0lnwuU0MmKRjXEIsJtLlEZ6C', NULL, '2019-11-21 15:35:18', '2019-11-21 15:35:18'),
+(28, 'Kanrich Cake', 'kanrichcake@gmail.com', NULL, 'Cake_Designers', 'Kadawatha', 0, '$2y$10$ACn.tqzC6v1hv2QxQSzIze1DwofBCXjyWm6c9x2ZsbA4JgDMUMkVm', NULL, '2019-11-21 16:18:39', '2019-11-21 16:18:39');
 
 --
 -- Indexes for dumped tables
@@ -1632,19 +1725,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `cake_designers`
 --
 ALTER TABLE `cake_designers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cake_packages`
 --
 ALTER TABLE `cake_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `caterings`
@@ -1692,25 +1785,25 @@ ALTER TABLE `costume_packages`
 -- AUTO_INCREMENT for table `dancers`
 --
 ALTER TABLE `dancers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dancer_events`
 --
 ALTER TABLE `dancer_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dance_packages`
 --
 ALTER TABLE `dance_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `dance_videos`
 --
 ALTER TABLE `dance_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `decoration_packages`
@@ -1860,19 +1953,19 @@ ALTER TABLE `reception_halls`
 -- AUTO_INCREMENT for table `salons`
 --
 ALTER TABLE `salons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `salon_events`
 --
 ALTER TABLE `salon_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `salon_packages`
 --
 ALTER TABLE `salon_packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `suggestions`
@@ -1902,7 +1995,7 @@ ALTER TABLE `transport_packages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
