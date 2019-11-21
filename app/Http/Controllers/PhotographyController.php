@@ -976,7 +976,13 @@ class PhotographyController extends Controller
             ->select('users.id','name','Studio_Name','ContactNo','Address','email','main_pic')
             ->get();
 
-            return view('Photography', compact('level'));
+            $video=DB::table('users')
+                ->join('photography_videos','users.id','=','photography_videos.user_id')
+                ->join('awards','users.id','=','awards.user_id')
+                ->where('awards.platinum','=',1)
+                ->first();
+
+            return view('Photography', compact('level','video'));
         }
     }
 
