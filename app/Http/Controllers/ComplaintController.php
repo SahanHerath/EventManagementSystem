@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Complaint;
 use Gate;
+use Mail;
 
 class ComplaintController extends Controller
 {
@@ -154,6 +155,18 @@ class ComplaintController extends Controller
 
                         ]);
 
+                $user=Complaint::where('id',$id)
+                    ->select('user_email')              
+                    ->get();
+            
+                    Mail::send('received',['user'=>$user], function($message) use ($user){
+                                $message->to($user[0]->user_email)
+                                        ->subject('Evora - Complaint Reveiewing');
+                    
+                            $message->from('sahand.herath@gmail.com','Event Management System');
+            
+                        });
+
         return redirect()->back();
         }
         else 
@@ -171,6 +184,17 @@ class ComplaintController extends Controller
                             'state'=>2
 
                         ]);
+                        $user=Complaint::where('id',$id)
+                        ->select('user_email')              
+                        ->get();
+                
+                        Mail::send('solved',['user'=>$user], function($message) use ($user){
+                                    $message->to($user[0]->user_email)
+                                            ->subject('Evora - Complaint Solved');
+                        
+                                $message->from('sahand.herath@gmail.com','Event Management System');
+                
+                            });
 
         return redirect()->back();
         }
