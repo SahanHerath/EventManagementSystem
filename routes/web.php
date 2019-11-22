@@ -265,6 +265,7 @@ Route::group(['middleware'=> 'AuthenticateMiddleware'],function(){
     Route::get('/DonationSuggestions', 'SuggestionsController@Donation')  ;
     Route::get('/suggestions', 'SuggestionsController@allsuggestions')  ;
     Route::get('/RemoveSuggestion{id}', 'SuggestionsController@removesuggestions')  ;
+    Route::get('/ReplySuggestion{id}', 'SuggestionsController@reply')  ;
 
     //all summary and report in admin panel
     Route::get('/Summary', 'SummaryController@types')  ;

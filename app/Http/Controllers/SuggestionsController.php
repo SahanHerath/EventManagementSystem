@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Suggestion;
 use Gate;
+use Mail;
 
 class SuggestionsController extends Controller
 {
@@ -269,6 +270,31 @@ class SuggestionsController extends Controller
             ->get();
 
         return view('suggestions.Donations',compact('data'));
+        }
+        else 
+        {
+            return view('403error');
+        }
+    }
+    public function reply($id)
+    {
+        //
+        if(Gate::allows('isAdmin'))
+        { 
+        $user=DB::table('suggestions')
+            ->where('id','=',$id) 
+            ->select('Email')
+            ->get();
+
+            Mail::send('reply',['user'=>$user], function($message) use ($user){
+                $message->to($user[0]->Email)
+                        ->subject('Evora - Suggestions');
+    
+            $message->from('sahand.herath@gmail.com','Event Management System');
+
+        });
+
+        return redirect()->back();
         }
         else 
         {
